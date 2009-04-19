@@ -2,6 +2,9 @@
 
 = The main page forth PropForth 2.0 =
 
+  * PropForthStatus
+  * PropForthUtilities
+
 PropForth was written specifically for the Propeller from Parallax. A really cool architecture but different enough that a forth tuned to the Propeller was necessary.
 
 PropForth is very useful for interactive hardware and software development. It is optimized for as many free registers as possible in the cogs and reasonable performance. 
