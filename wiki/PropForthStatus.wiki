@@ -1,5 +1,5 @@
 #summary Status of PropForth
 
-= 2009 April 19 =
+=== 2009 April 19 ===
 
 Files uploaded, basics documented, fair bit more documentation required.
