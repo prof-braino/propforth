@@ -34,3 +34,10 @@ Cog6 ok
 9100
 Cog6 ok
 }}}
+*forget build0*
+{{{
+Cog6 ok
+}}}
+
+forget build0 "forgets" the build0 and all the words after it, so we are back to an unmodified system. The next step is to open PropForthPart1.f, copy all of the text, and paste it into the terminal.
+
