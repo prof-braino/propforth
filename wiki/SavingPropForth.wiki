@@ -37,3 +37,6 @@ Cog6 ok
 4319 bytes free - A3 cog longs free
 Cog6 ok
 }}}
+
+Let us assume this is not adequate and you want to generate the spin code which incorporates this change.
+  * RebuildingPropForth
