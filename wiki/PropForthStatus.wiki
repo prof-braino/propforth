@@ -2,4 +2,4 @@
 
 = 2009 April 19 =
 
-Files Uploaded, basics documented, fair bit more documentation required.
+Files uploaded, basics documented, fair bit more documentation required.
