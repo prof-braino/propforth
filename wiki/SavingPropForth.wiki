@@ -38,5 +38,5 @@ Cog6 ok
 Cog6 ok
 }}}
 
-Let us assume this is not adequate and you want to generate the spin code which incorporates this change.
+Let us assume this is not adequate for our purposes and we want to generate spin code which incorporates this change.
   * RebuildingPropForth
