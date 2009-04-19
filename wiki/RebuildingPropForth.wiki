@@ -6,9 +6,9 @@
   * Download PropForthPart2.f
   * Download [spinmaker].f
 
-There are a few ways to do this, but we are going to take one path which modifies the original source code and regenerates the the spin code.
+There are a few ways to do this, but we are going to take one path which modifies the original source code and regenerates the spin code.
 
-In the demo board the eeprom (those equipped with a 512k bit eeprom) there is 32k bytes of unused memory. This memory is used by PropForth as a "file system". A place to put routines which are handy, and necessary, but not used normally. We are going to put spinmaker.f into this "file system".
+In the demo board the eeprom (those equipped with a 512k bit eeprom) there are 32k bytes of unused eeprom memory. This memory is used by PropForth as a "file system". A place to put routines which are handy, and necessary, but not used normally. We are going to put spinmaker.f into this "file system".
 
 *reboot*
 {{{
@@ -39,7 +39,7 @@ Cog6 ok
 Cog6 ok
 }}}
 
-forget build0 "forgets" the build0 and all the words after it, so we are back to an unmodified system. The next step is to open PropForthPart1.f, copy all of the text, and paste it into the terminal.
+forget build0 "forgets" the build0 word and all the words after it, so we are back to an unmodified system. The next step is to open PropForthPart1.f, copy all of the text, and paste it into the terminal.
 
 {{{
 Cog6 ok
@@ -117,9 +117,7 @@ Cog6 ok
 Cog6 ok
 }}}
 
-As you may have noticed this take a lot longer than SavingPropForth, but you do get a few more bytes. This is because we replaced the boot6 routine rather than add another one to the dictionary.
+As you may have noticed this takes a lot longer than SavingPropForth, but you do get a few more bytes. This is because we replaced the boot6 routine rather than add another one to the dictionary.
 
-This is should be an exercise used infrequently through the development cycle. Normally only when major fundamental changes are made.
-
-
+This should be an exercise used infrequently through the development cycle, normally only when major fundamental changes are made.
 
