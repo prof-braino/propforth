@@ -1,5 +1,3 @@
-SpinForth - PropForth was based on SpinForth
-
-= Introduction =
+#summary SpinForth - PropForth was based on SpinForth
 
 http://code.google.com/p/spinforth/
