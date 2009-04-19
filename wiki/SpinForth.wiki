@@ -1,4 +1,4 @@
-#SpinForth - PropForth was based on SpinForth
+SpinForth - PropForth was based on SpinForth
 
 = Introduction =
 
