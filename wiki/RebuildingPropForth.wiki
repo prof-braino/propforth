@@ -106,5 +106,20 @@ Cog6 ok
 Copy all of the text from !ForthDictStart to !ForthMemoryEnd in the terminal window.
 Open PropForth.spin in the Propeller Tool, and paste in the text replacing all the text between !ForthDictStart to !ForthMemoryEnd in the current version. Recompile and load the eeprom.
 
+*reboot*
+{{{
+PropForth v2.0 2009APR19 13:30 0
+Cog6 ok
+}}}
+*free*
+{{{
+4337 bytes free - A3 cog longs free
+Cog6 ok
+}}}
+
+As you may have noticed this take a lot longer than SavingPropForth, but you do get a few more bytes. This is because we replaced the boot6 routine rather than add another one to the dictionary.
+
+This is should be an exercise used infrequently through the development cycle. Normally only when major fundamental changes are made.
+
 
 
