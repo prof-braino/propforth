@@ -1,0 +1,8 @@
+#summary PropForthUtilities - a collection of useful utilities
+
+= PropForthUtilities - a collection of useful utilities =
+
+
+\ f_erase ( -- ) erase the word following from eeprom - DANGER - should be the last word only
+\ or following words may get overwritten when a new file is written to eeprom
+: f_erase parsenw dup if f_find dup if eeTop swap do FFFF i eeWriteWord 80 +loop else drop then else drop then ;
