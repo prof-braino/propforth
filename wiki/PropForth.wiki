@@ -1,4 +1,4 @@
-#The main page forth PropForth 2.0
+The main page forth PropForth 2.0
 
 = Introduction =
 
