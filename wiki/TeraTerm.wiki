@@ -1,5 +1,3 @@
-Terminal program used to develop and debug PropForth.
-
-= Introduction =
+#summary Terminal program used to develop and debug PropForth
 
 http://ttssh2.sourceforge.jp/
