@@ -1,6 +1,6 @@
-Getting PropForth going.
+# summary Getting PropForth going.
 
-= Introduction =
+= Getting PropForth going =
 
 Assumes a Propeller demo board is the target.
 
