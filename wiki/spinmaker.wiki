@@ -1,0 +1,3 @@
+#summary spimaker.f - forth code which generates spin from the current image, see the downloads
+
+http://code.google.com/p/propforth/downloads/list
