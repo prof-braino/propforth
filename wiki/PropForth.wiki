@@ -15,3 +15,5 @@ PropForth was developed on a Propeller demo board, 80Mhz, 512k bit (64k 8 bit ee
 The terminal used is TeraTerm, but just about terminal should work. 
 
 GettingStarted
+SavingPropForth
+RebuildingPropForth
