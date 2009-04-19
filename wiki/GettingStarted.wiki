@@ -16,4 +16,5 @@ I run teraterm at 57.6 kb with 8 bits, no parity, 1 stop bit, no flow control, n
 
 Start playing with PropForth. PropForth starts up in hex mode. Documentation for the words in PropForth are in PropForthPart1.f and PropForthPart2.f.
 
-RebuildingPropForth
+  * SavingPropForth
+  * RebuildingPropForth
