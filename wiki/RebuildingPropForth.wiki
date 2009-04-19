@@ -1,0 +1,36 @@
+#summary Rebuilding PropForth - generating the spin code for the currently running image
+
+= Rebuilding PropForth - generating the spin code for the currently running image =
+
+  * Download PropForthPart1.f
+  * Download PropForthPart2.f
+  * Download [spinmaker].f
+
+There are a few ways to do this, but we are going to take one path which modifies the original source code and regenerates the the spin code.
+
+In the demo board the eeprom (those equipped with a 512k bit eeprom) there is 32k bytes of unused memory. This memory is used by PropForth as a "file system". A place to put routines which are handy, and necessary, but not used normally. We are going to put spinmaker.f into this "file system".
+
+*reboot*
+{{{
+PropForth v2.0 2009APR19 11:00 1
+Cog6 ok
+}}}
+*f_clear*
+{{{
+Cog6 ok
+}}}
+
+f_clear will clear out the upper 32k bytes of eeprom and initialize the file system. The next step is to open spinmaker.f, copy all of the text, and paste it into the terminal. 
+
+{{{
+Cog6 ok
+FW
+10BD chars
+Cog6 ok
+}}}
+*list*
+{{{
+8000 10AC spinmaker
+9100
+Cog6 ok
+}}}
