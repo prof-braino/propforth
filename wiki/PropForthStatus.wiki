@@ -1,0 +1,5 @@
+#summary Status of PropForth
+
+= 2009 April 19 =
+
+Files Uploaded, basics documented, fair bit more documentation required.
