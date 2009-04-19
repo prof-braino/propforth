@@ -1,0 +1,18 @@
+Getting PropForth going.
+
+= Introduction =
+
+Assumes a Propeller demo board is the target.
+
+I run teraterm at 57.6 kb with 8 bits, no parity, 1 stop bit, no flow control, no delays. Tested with prop clip only, but other serial ports should be fine.
+
+  * Download PropForth.spin
+  * Compile with the Propeller Tool
+  * Load into eepropm 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
