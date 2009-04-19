@@ -2,7 +2,7 @@
 
 = Saving a copy of modifications to eeprom =
 
-When PropForth starts up it is actually not using all of main memory. This is because the memory allocated to spin is not allocated to the forth dictionary. We are going to write a forth word which will change this, and then save a copy to eeprom so this happens automatically at each new reboot.
+When PropForth starts up it is actually not using all of main memory. This is because the memory allocated to spin is not allocated to the forth dictionary. Assuming you have not modified PropForth.spin to leave spin running, we are now going to reclaim that memory. We are going to write a forth word which will change this, and then save a copy to eeprom so this happens automatically at each new reboot.
 
 *reboot*
 {{{
