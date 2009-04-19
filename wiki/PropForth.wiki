@@ -1,0 +1,14 @@
+#The main page forth PropForth 2.0
+
+= Introduction =
+
+
+PropForth was written specifically for the Propeller from Parallax. A really cool architecture but different enough that a forth tuned to the Propeller was necessay.
+
+PropForth is very useful for interactive hardware and software development. It is optimized for as many free registers as possible in the cogs and reasonable performance. 
+
+The stacks are in the cogs, and there is stack checking. The dictionary is in main memory.
+
+PropForth is fast enough for many tasks, it is not fast enough for all.
+
+So there is an assembler available. Easy to mix PropForth and assembler and get fast development and fast execution speed. You are pretty close to metal in this paradigm. It is easy to assume you have a high level language, but you can modify running code, and with the Propeller architecture this is a common pattern.
