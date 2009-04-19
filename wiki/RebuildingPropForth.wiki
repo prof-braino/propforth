@@ -20,7 +20,7 @@ Cog6 ok
 Cog6 ok
 }}}
 
-f_clear will clear out the upper 32k bytes of eeprom and initialize the file system. The next step is to open spinmaker.f, copy all of the text, and paste it into the terminal. 
+f_clear will clear out the upper 32k bytes of eeprom and initialize the file system. The next step is to open spinmaker.f, copy all of the text, and paste it into the terminal.
 
 {{{
 Cog6 ok
@@ -40,4 +40,71 @@ Cog6 ok
 }}}
 
 forget build0 "forgets" the build0 and all the words after it, so we are back to an unmodified system. The next step is to open PropForthPart1.f, copy all of the text, and paste it into the terminal.
+
+{{{
+Cog6 ok
+FL
+363F chars
+Cog6 ok
+
+<<<Lots of text>>>
+
+Cog6 ok
+: decimal A mcwBase w! ;
+Cog6 ok
+
+Cog6 ok
+}}}
+
+The next step is to open PropForthPart2.f, find the boot6 word, and replace it with the boot6 word form the SavingPropForth exercise. It is also recommended you edit the version string to make sure you do not confuse the version you are working with. Now copy all of the text, and paste it into the terminal.
+
+{{{
+Cog6 ok
+FL
+1E7C chars
+Cog6 ok
+
+Cog6 ok
+
+<<<Lots of text>>>
+
+Cog6 ok
+: lasm 4+ dup m@ swap 4+ swap over m@ dup mcwAhere w! do 4+ dup m@ a, loop drop ;
+Cog6 ok
+
+Cog6 ok
+}}}
+
+*load spinmaker*
+{{{
+Cog6 ok
+
+<<<Lots of text>>>
+
+ ."                         long    0,0, 0,0, 0,0, 0,0,  0,0, 0,0, 0,0, 0,0" cr
+40 +loop cr ." ForthDictEnd" cr ." ForthMemoryEnd" cr cr else 3drop then ;
+Cog6 ok
+}}}
+
+*spinmaker*
+{{{
+
+ForthDictStart
+
+                        word    0
+
+<<<Lots of text>>>
+
+                        long    0,0, 0,0, 0,0, 0,0,  0,0, 0,0, 0,0, 0,0
+
+ForthDictEnd
+ForthMemoryEnd
+
+Cog6 ok
+}}}
+
+Copy all of the text from !ForthDictStart to !ForthMemoryEnd in the terminal window.
+Open PropForth.spin in the Propeller Tool, and paste in the text replacing all the text between !ForthDictStart to !ForthMemoryEnd in the current version. Recompile and load the eeprom.
+
+
 
