@@ -1,4 +1,4 @@
-# summary Getting PropForth going.
+#summary Getting PropForth going.
 
 = Getting PropForth going =
 
