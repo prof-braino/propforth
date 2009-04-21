@@ -1,0 +1,7 @@
+#summary La.f - A virtual logic analyzer for the propeller
+
+http://code.google.com/p/propforth/downloads/list
+
+Uses 2 cogs, the currently running cog and the next PropForth cog. Use TAB to go between fields, cursor up/down to change values, cursor right/left to change sensitivity / position.
+
+Very useful tool for debugging code which twiddles io pins.
