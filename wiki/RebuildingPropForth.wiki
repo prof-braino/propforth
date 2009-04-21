@@ -121,3 +121,6 @@ As you may have noticed this takes a lot longer than SavingPropForth, but you do
 
 This should be an exercise used infrequently through the development cycle, normally only when major fundamental changes are made.
 
+The next step will change cog 7 to start as a PropForth cog, and run the assembler and forth time slicers to provide a serial monitor. 
+
+  * AddingSerialMonitor
