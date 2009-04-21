@@ -2,7 +2,7 @@
 
 = Setting up cog 7 to run as a PropForth cog and using the assembler and forth time slicers =
 
-PropForth boots up with a serial driver which consumes a cog. We are now going to change it so cog 7 boots as a PropForth cog, loads the assembler time slicer [aslicer].f, load the [Serial].f, and then starts the SerialMonitor.
+PropForth boots up with a serial driver which consumes a cog. We are now going to change it so cog 7 boots as a PropForth cog, loads the assembler time slicer [aslicer].f, load the [serial].f, and then starts the SerialMonitor.
 
   * n >cog - connects the terminal to cog n.
   * cog+   - starts another forth cog.
