@@ -1,5 +1,10 @@
 #summary Status of PropForth
 
+
+=== 2009 April 20 ===
+
+Added doc for AddingSerialMonitor and a page for the logic analyzer [La], which is early code (V0.8)
+
 === 2009 April 19 ===
 
 Files uploaded, basics documented, fair bit more documentation required.
