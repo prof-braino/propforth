@@ -20,3 +20,4 @@ The terminal used is TeraTerm, but just about terminal should work.
   * GettingStarted
   * SavingPropForth
   * RebuildingPropForth
+  * AddingSerialMonitor
