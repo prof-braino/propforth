@@ -1,0 +1,109 @@
+#summary Adding SerialMonitor - Setting up cog 7 to run as a PropForth cog and using the assembler and forth time slicers
+
+= Setting up cog 7 to run as a PropForth cog and using the assembler and forth time slicers =
+
+PropForth boots up with a serial driver which consumes a cog. We are now going to change it so cog 7 boots as a PropForth cog, loads the assembler time slicer [aslicer].f, load the [Serial].f, and then starts the SerialMonitor.
+
+  * n >cog - connects the terminal to cog n.
+  * cog+   - starts another forth cog.
+  * cog-   - stops the first running forth cog.
+  * cog?   - tells you what forth cogs are running.
+
+After loading SerialMonitor, CTL-A moves forward one forth cog, CTL-B moves backward one forth cog. CTL-C reboots the propeller. This is both convenient and allows easy movement.
+
+To begin the process:
+
+  * Download [aslicer].f
+  * Download [serial].f
+  * Download SerialMonitor.f
+
+
+
+*reboot*
+{{{
+PropForth v2.0 2009APR19 11:00 0
+Cog6 ok
+}}}
+Open [aslicer].f, copy all of the text, and paste it into the terminal.
+{{{
+Cog6 ok
+FW
+38F chars
+Cog6 ok
+}}}
+Open [serial].f, copy all of the text, and paste it into the terminal.
+{{{
+Cog6 ok
+FW
+611 chars
+Cog6 ok
+}}}
+Open [SerialMonitor].f, copy all of the text, and paste it into the terminal.
+{{{
+Cog6 ok
+FW
+215 chars
+Cog6 ok
+}}}
+*list*
+{{{
+8000 10AC spinmaker
+9100 384 aslicer
+9500 606 serial
+9B80 202 SerialMonitor
+9E00
+Cog6 ok
+
+}}}
+*0 wconstant build0*
+{{{
+Cog6 ok
+}}}
+*load aslicer*
+{{{
+Cog6 ok
+161 wconstant c_tmain 160 wconstant v_trp 15D wconstant v_tk6 15C wconstant v_tk5 15B wconstant v_tk4 15A wconstant v_tk3
+Cog6 ok
+
+<<<Lots of text>>>
+
+: aslice? v_tmaxcnt @ . cr ;
+Cog6 ok
+
+Cog6 ok
+}}}
+*load serial*
+{{{
+Cog6 ok
+1BA wconstant c_srXmtEnd 1A5 wconstant c_srXmt 196 wconstant c_srRecBuf 17C wconstant c_srRec
+Cog6 ok
+
+<<<Lots of text>>>
+
+Cog6 ok
+c_srRec v_tk1 ! c_srRecBuf v_tk2 ! c_srXmt v_tk3 ! ;
+Cog6 ok
+}}}
+*load SerialMonitor*
+{{{
+Cog6 ok
+
+<<<Lots of text>>>
+
+c" ctlac" find if mcwFsliceptr w! then 0 mcFslicecnt m! lockdict 7FFF dup mswMemend w! mswDictend w! freedict 6 >cog ;
+Cog6 ok
+}}}
+*saveforth*
+{{{
+
+Cog6 ok
+saveforth
+............................................................................................................
+Cog6 ok
+}}}
+*reboot*
+{{{
+reboot
+PropForth v2.0 2009APR19 11:00 1
+Cog7 ok
+}}}
