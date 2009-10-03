@@ -5,7 +5,7 @@
 
 Releasing PropForth 2.4. A few bug fixes, and a number of enhancements. Stack over/underflow reporting, the divide is now a mixed divide, 64 bits divided by 32 bits to give a 32 bit remainder and result. This is very useful when scaling prop counters.
 
-lalite.f - a lighter version of La, missing the gui but more power and easily usable in other forth words.
+La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle.
 
 === 2009 April 20 ===
 
