@@ -4,7 +4,9 @@
 === 2009 October 24 ===
 
 Releasing PropForth 2.5. One few bug fix, cogreset issue. eeReadPage and eeWritePage have been modified to support multiple 64kx8 eeproms. eeCopy word was added into the base image.
-La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle. Some minor adds, words to sample at different rates
+
+La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle. Some minor adds, words to sample at different rates.
+
 float.f - ieee754 floating point routines added, very useful in development, still need to use fixed point math where speed is essential.
 
 
