@@ -1,5 +1,7 @@
 #summary Status of PropForth
+=== 2010 May 9 ===
 
+Releasing PropForth 2.6. A number of bug fixes.
 
 === 2009 October 24 ===
 
