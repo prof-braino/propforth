@@ -11,42 +11,46 @@ Main functions are
 
 Using the stack
   
-  Type in 1 2 3, and type in the st? word to display the stack:
+  *Type in 1 2 3, and type in the st? word to display the stack:
 
-  Cog6 ok
-  1 2 3
-  Cog6 
-  st?
-  ST: 00000001 00000002 00000003
-  Cog6 ok
+Cog6 ok
 
-  Add the top two numbers together, print the result, and re-display the remaining stack
+1 2 3
 
-  Cog6 ok
-  + . st?
-  Cog6 ok
-  5 ST: 00000001
-  Cog6 ok
+Cog6 
 
-Defining New words (Extending the FORTH dictionary)
+st?
+ST: 00000001 00000002 00000003
+
+Cog6 ok
+
+  *Add the top two numbers together, print the result, and re-display the remaining stack
+
+Cog6 ok
++ . st?
+Cog6 ok
+5 ST: 00000001
+Cog6 ok
+
+  *Defining New words (Extending the FORTH dictionary)
 
   Type an undefined token, create a definition using that token execute the definition; discard the definition  
 
-  Cog6 ok
-  hello
-  UNDEFINED WORD hello
-  Cog6 ok
-  : hello ." Hello Welcome to PropForth" ;
-  Cog6 ok
-  hello 
-  Hello Welcome to PropForth
-  Cog6 ok
-  reboot
-  PropForth 2.7 2010May24 16:58 0
-  Cog6 ok
-  hello
-  UNDEFINED WORD hello
-  Cog6 ok
+Cog6 ok
+hello
+UNDEFINED WORD hello
+Cog6 ok
+: hello ." Hello Welcome to PropForth" ;
+Cog6 ok
+hello 
+Hello Welcome to PropForth
+Cog6 ok
+reboot
+PropForth 2.7 2010May24 16:58 0
+Cog6 ok
+hello
+UNDEFINED WORD hello
+Cog6 ok
 
   
  
