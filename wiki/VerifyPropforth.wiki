@@ -111,11 +111,6 @@ Hello Welcome back to PropForth
 
 Cog6 ok  
 
-   NOTICE above that the digit after the version string increamented after executing the saveforth word 
+   NOTICE above that the digit after the version string incremented after executing the saveforth word 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= The above results indicate that the  main functions of PropForth are working  =
