@@ -94,7 +94,9 @@ Hello Welcome back to PropForth
 Cog6 ok
 
 saveforth
+
 ...............................................................................................................................................
+
 Cog6 ok
 
 reboot
@@ -108,7 +110,8 @@ hello
 Hello Welcome back to PropForth
 
 Cog6 ok  
- 
+
+   NOTICE above that the digit after the version string increamented after executing the saveforth word 
 
 = Details =
 
