@@ -3,10 +3,10 @@
 = Introduction =
 
 Main functions are 
- *using the stack
- *defining new words (extending the dictionary)
- *saving the modified dictionary
- *rebuilding the entire forth dictionary
+ * using the stack
+ * defining new words (extending the dictionary)
+ * saving the modified dictionary
+ * rebuilding the entire forth dictionary
 
 
   = Using the stack =
