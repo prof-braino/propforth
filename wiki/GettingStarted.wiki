@@ -19,7 +19,7 @@ Start playing with PropForth. PropForth starts up in hex mode.
 
 NOTE: Propeller Tool releases the serial port after the load is complete, so TeraTerm can be start without closing Propeller Tool.  However, TeraTerm will keep control of the serial port until the File>Disconnect (Alt-I) command is issued, or TeraTerm is shut down. The Propeller Tool issues the message "Communications Error - No propeller Chip found on serial port" when Propeeler Tool attempts communication with the Prop chip while  TeraTerm still has the serial port. 
 
-* VerifyPropForth on your hardware
+* VerifyPropforth on your hardware
 * Generating a new Propforth image
 
 Documentation for the words in PropForth are in PropForthPart1.f and PropForthPart2.f.
