@@ -1,6 +1,6 @@
 #summary Status of PropForth
 
-=== 2010 May 24 ===
+=== 2010 May 25 ===
 
 PropForth 2.7 
 
@@ -10,7 +10,7 @@ Fix key input time out
 
 Some documentation changes
 
-NOTE - update in progress, should be complete by tonight
+NOTE - update is in progress, will be completed shortly.
 
 === 2010 May 9 ===
 
