@@ -16,7 +16,8 @@ DownloadSourceText
 
 ** NOTICE ** Per the instruction, reboot or power cycle the prop before starting this process, but do not reboot or power cycle between files, or the previous definitions loaded will be lost. 
 
-Step 1 Load the Propforth source text, which is presently in twp parts:
+Step 1 Load the Propforth source text, which is presently in two parts:
+
   
 Step 1a Load PRopForthPart1.f
 
