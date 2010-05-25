@@ -1,0 +1,85 @@
+#summary Download and compile the source for the propforth kernel
+
+= Use Propforth to generate new propforth.spin from source code =
+
+Generating a New PropForth Image
+
+The Propforth image is created by the Propeller Tool using PropForth.spin.
+
+Once propforth running on the propeller chip, it can generate an new propforth.spin file.
+Any words that were changed or redefined are updated to use the most recent definition,
+space from changed or superseded definitions is reclaimed. 
+
+The propforth soruce code for the kernel is not loaded by default.  To rebuild the kernel, download the propforth source text to the prop using the steps described in:
+
+DownloadSourceText   
+
+** NOTICE ** Per the instruction, reboot or power cycle the prop before starting this process, but do not reboot or power cycle between files, or the previous definitions loaded will be lost. 
+
+Step 1 Load the Propforth source text, which is presently in twp parts:
+  
+Step 1a Load PRopForthPart1.f
+Step 1b Load PropforthPart2.f
+
+= The spinmaker word = 
+
+The word spinmaker is not in the default propforth kernel but may be loaded from the source text using the steps described in 
+
+DownloadSourceText   
+
+Step 2 Load spnmaker source text, which is in two parts:
+
+Step 2a load spinmakerpart1.f
+Step 2b load spinmakerpart2.f
+
+After all four files have been down loaded successfully, preform step 3.
+
+Step 3 Execute the word spinmaker
+
+Cog6 ok
+spinmaker
+
+ForthDictStart
+....  wait several seconds....
+...loads of text ....
+ForthDictEnd
+
+
+Cog6
+
+six or eight lines will dispaly showing four or six definitions, for a couple seconds, but right when you start to count them, a whole bunch of text starts scrolling by.  This is normal.
+
+The code that is scrolling by it the forth portion of the source for propforth.spin.
+
+This takes a minute or two to scroll by if all goes well.
+
+Leave this teraterm window open, you will come back to it in a bit when you paste this text into the new propforth.spin file.
+
+Now is the slightly tricky part: (you didn't think its been tricky so far did you?)
+
+In Windows, make a copy of propforth_template.spin. This example will use the name NewPropForth.spin for the file name.
+
+propforth_template.spin is the same as propforth.spin, except there is no forth code between the words ForthDictStart and ForthMemoryEnd
+
+Open NewPropForth.spin
+
+Scroll down past the initial comments, the sections for CON, VAR, OBJ, PUB, and find the DAT section.
+In the DAT section  find 
+
+ForthDictStart
+
+Highlight from this text to the end of the file (ForthMemoryEnd) and delete it all.
+
+Go back to the teraterm window and scroll way up to ForthDictStart and highlight this word.
+
+Highlight to the end (ForthMemoryEnd).  If ForthDictStart is highlighted, and you scroll to the end, hold down the SHIFT key, and mouse click on ForthMemoryEnd, the whole block of text will be highlighted.
+
+Copy and paste this into the end of the file NewPropForth.spin.
+
+Scroll up to around line 5632 and find the version string, something like  "Propforth v2.7 2010May22 17:00 0"
+
+Change this to the current date and time, or whatever will helps you keep you project organized.  Notice that this string is 32 characters long and stringlength is controled by the byte preceding it being $20.  It is useful to edit this string each time the spin source is edited and recompiled. For example, if the version string is the same as the filename, its easier to figure out which version is in which file, as opposed to always naming the file "propforth.spin"
+
+Of course, you can manually edit anything in the propforth.spin file after it is generated and before Propeller Tool loads it into the propeller chip.
+
+Once NewPropforth.spin has been saved, it can be loaded into Propeller Tool and burned into eeProm.  You should see your new version string if the process was successful.
