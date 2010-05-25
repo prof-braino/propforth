@@ -39,11 +39,15 @@ After all four files have been down loaded successfully, preform step 3.
 Step 3 Execute the word spinmaker
 
 Cog6 ok
+
 spinmaker
 
 ForthDictStart
+
 ....  wait several seconds....
+
 ...loads of text ....
+
 ForthDictEnd
 
 
