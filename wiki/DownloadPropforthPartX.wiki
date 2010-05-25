@@ -19,6 +19,7 @@ DownloadSourceText
 Step 1 Load the Propforth source text, which is presently in twp parts:
   
 Step 1a Load PRopForthPart1.f
+
 Step 1b Load PropforthPart2.f
 
 = The spinmaker word = 
