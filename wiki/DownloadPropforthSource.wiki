@@ -1,0 +1,70 @@
+#summary Download the PropForth source code text files to the propeller chip
+
+= Introduction =
+
+The PropForth kernel source code in is two text files, PropForthPart1.f and PropForthPart2.f
+
+Once the kernel source code is loaded into the propeller chip,  an additional forth word, spinmaker, generates spin code from these definitions.  The definitions for the spinmaker word and its supporting words are in spinmakerPart1.f and spinmakerPart2.f
+
+The files must be loaded in proper sequence.  This is
+PropForthPart1.f PropForthPart2.f  spinmakerPart1.f spinmakerPart2.f
+
+= Load the four source files into the prop =
+
+Downloading is done by pasting the source file contents into the teraterm window as described in DownloadSourceText.
+
+Be sure that the word FL is present at the begining of each file.
+
+
+= execute the spinmaker word =
+
+After all four files have been loaded in the proper order, execute the spinmaker word at the forth command prompt
+
+spinmaker
+
+A few lines of text will be displayed, starting with
+
+ForthDictStart
+
+After a few seconds, a large amount of text will scroll across the window.  This text will later be captured and pasted into the PropForth-template.spin file.
+
+Upon completion the last lines to be displayed are 
+
+ForthDictEnd
+ForthMemoryEnd
+
+= Paste the output of spinmaker into PropForth-template.spin =
+
+Copy the text from the teraterm window or from the teraterm logfile and paste it into the PropForth-template.spin file.  Be sure to search for and update the version string in resultant file. Name the file as appropriate, the suggestion is to name the file similar to the version string to ease identification.  
+
+  
+= Load the new version of PropForth.spin into eeProm =
+
+Use the Propeller Tool to load the new PropForth.spin file into the propeller's eeProm.
+
+Start TeraTerm and verify the forth prompt is present.
+
+Type 
+reboot
+to display the propForth startup message.  Verify the version string displayed matches the version string in PropForth.spin
+
+
+
+
+
+
+
+
+
+
+
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
