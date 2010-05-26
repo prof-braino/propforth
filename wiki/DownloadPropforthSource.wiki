@@ -47,24 +47,3 @@ Start TeraTerm and verify the forth prompt is present.
 Type 
 reboot
 to display the propForth startup message.  Verify the version string displayed matches the version string in PropForth.spin
-
-
-
-
-
-
-
-
-
-
-
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
