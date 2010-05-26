@@ -1,5 +1,4 @@
 #summary Status of PropForth
-#labels Featured
 
 === 2010 May 26 ===
 
