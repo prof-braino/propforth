@@ -1,6 +1,7 @@
 #summary Status of PropForth
+#labels Featured
 
-=== 2010 May 25 ===
+=== 2010 May 26 ===
 
 PropForth 2.7 
 
@@ -9,8 +10,6 @@ fix bug in saveforth for 64k page eeProm write
 Fix key input time out 
 
 Some documentation changes
-
-NOTE - update is in progress, will be completed shortly.
 
 === 2010 May 9 ===
 
