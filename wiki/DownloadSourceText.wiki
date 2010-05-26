@@ -57,8 +57,11 @@ highlight the entire source text file contents including the FL at the begining 
 The FL will display for several seconds, and the blue LED  on the Demo board USB/COM port will flicker, indicating that the transfer is underway. After a bit the FL word will display the HEX number of character recieved as in: 
 
 FL
+
 C3F chars
+
 Cog6 Ok
+
 
 The tera termininal display will begin displaying the source text pasted in interspersed with 
 
