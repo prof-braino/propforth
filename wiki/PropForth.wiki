@@ -20,7 +20,7 @@ The terminal used is TeraTerm, but just about terminal should work.
   * GettingStarted
   * VerifyPropforth
   * DownloadSourceText
-  * DownloadPropforth.f
+  * DownloadPropforthSource
 
   * SavingPropForth
   * RebuildingPropForth
