@@ -1,5 +1,7 @@
 #summary Frequently Asked Questions
 
+
+
 = How Do I Submit a Question? =
 
   * Sign in to your gmail account enter comments at the bottom of the page in question
@@ -46,13 +48,16 @@
 
 = What is does the "aslice" word do? =
 
-  * 
+  * aslice is an assembly level time slicer.  The assembly time slicing happens between forth words rather than between tasks.  This is the "me-first" time slicer.
 
+= What is does the "_fslice" word do? =
 
+  * _fslice is forth level time slicer.  It works in the forth round robin software multitasker with pause and next.  This is the "wait for my turn / cooperative" time slicer 
 
-= Details =
+= What is the difference between _fslice and aslice? =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * The round robin multitasker "_fslice" happens between tasks.  The assembly multitasker "aslice" happens between forth words.   The result is that the assembler multitasker executed a LOT more often than the round robin.  The engineer has to know whats what about all this in order  to decide what to use.  
+
+= What is "serialdriver.f"? =
+
+  * The serial driver contains the same code as in the default senetry routine that run on cog7 at boot time.  Since serial communications is not very demanding, it is possible to use cog seven for something else, and have cog 6 run the serial port, and run a serial monitor and a terminal and other useful functions.  
