@@ -111,6 +111,8 @@ Hello Welcome back to PropForth
 
 Cog6 ok  
 
-   NOTICE above that the digit after the version string incremented after executing the saveforth word 
+   NOTICE above that the digit after the version string incremented after executing the saveforth word.  The saveforth word has written the RAM image into eeprom.  
+
+
 
 = The above results indicate that the  main functions of PropForth are working  =
