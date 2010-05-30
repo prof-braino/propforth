@@ -1,6 +1,6 @@
-#summary The main page forth PropForth 2.6
+#summary The main page forth PropForth
 
-= The main page forth PropForth 2.6 =
+= The main page forth PropForth =
 
   * PropForthStatus
   * PropForthUtilities
