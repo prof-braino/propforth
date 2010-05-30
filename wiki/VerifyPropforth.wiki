@@ -60,7 +60,7 @@ Cog6 ok
 
 reboot
 
-PropForth 2.7 2010May24 16:58 0
+PropForth 2.7 2010May25 14:50 0
 
 Cog6 ok
 
@@ -101,7 +101,7 @@ Cog6 ok
 
 reboot
 
-PropForth 2.7 2010May24 16:58 1
+PropForth 2.7 2010May25 14:50 1
 
 Cog6 ok
 
