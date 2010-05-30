@@ -135,13 +135,15 @@ Upload spinmakerPart2.f to the prop by copy and pasting the entire file into the
 
 wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm window
 
+  * copy the output of spinmaker from the TeraTerm window and paste it into PropForth-Template.spin
+
 In the teraterm window, after 
 
 ForthMemoryEnd 
 
 Cog6 ok
 
-is displayed and the text stops scrolling, copy the output of spinmaker.  This is all the text from ForthDictStart to ForthMemoryEnd.
+is displayed and the text stops scrolling, copy the output of spinmaker. (I.E Ctl^A to "Select All" and Ctil^C to copy the highlighted text).  Include all the text from ForthDictStart to ForthMemoryEnd. (About 26,000 characters)
 
 Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".  Update the version string, and save the file with an appropriate name.  
 For Example PropForthToday.spin.
