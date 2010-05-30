@@ -135,7 +135,7 @@ Upload spinmakerPart2.f to the prop by copy and pasting the entire file into the
 
 wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm window
 
-  * copy the output of spinmaker from the TeraTerm window and paste it into PropForth-Template.spin
+  * copy the output of spinmaker from the TeraTerm window and paste it into PropForth-Template.spin, save the resulting new file
 
 In the teraterm window, after 
 
@@ -146,9 +146,13 @@ Cog6 ok
 is displayed and the text stops scrolling, copy the output of spinmaker. (I.E Ctl^A to "Select All" and Ctil^C to copy the highlighted text).  Include all the text from ForthDictStart to ForthMemoryEnd. (About 26,000 characters)
 
 Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".  Update the version string, and save the file with an appropriate name.  
-For Example PropForthToday.spin.
+For Example propforthxxx.spin.
 
-Use Propeller Tool to open PropForthToday.spin and load it into the Prop eeprom.
+  * Load the new propforthxxx.spin into the prop using Propeller Tool
+
+Use Propeller Tool to open propforthxxx.spin and load it into the Prop eeprom.
+
+  * confirm the version string 
 
 Open teraterm and verify that the prop now displays the new version string and the dictionary contains the new or modified definitions. 
 
