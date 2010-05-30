@@ -4,7 +4,7 @@
 
 There were no issues with a Propeller proto board, Propeller demo board Rev (F), and homebrew boards, 40 pin prop chips with a 64kx8 eeprom, one at 96Mhz, one at 80Mhz as the target.
 
-There were no isues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/ttssh2/downloads/46035/teraterm-4.65.exe/ with 57.6 kb with 8 bits, no parity, 1 stop bit, no flow control, no delays.
+There were no issues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/ttssh2/downloads/46035/teraterm-4.65.exe/ with 57.6 kb with 8 bits, no parity, 1 stop bit, no flow control, no delays.
 
 
   * Download PropForth.spin
@@ -17,7 +17,7 @@ There were no isues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/t
 
 Start playing with PropForth. PropForth starts up in hex mode. 
 
-NOTE: Propeller Tool releases the serial port after the load is complete, so TeraTerm can be start without closing Propeller Tool.  However, TeraTerm will keep control of the serial port until the File>Disconnect (Alt-I) command is issued, or TeraTerm is shut down. The Propeller Tool issues the message "Communications Error - No propeller Chip found on serial port" when Propeeler Tool attempts communication with the Prop chip while  TeraTerm still has the serial port. 
+NOTE: Propeller Tool releases the serial port after the load is complete, so TeraTerm can be start without closing Propeller Tool.  However, TeraTerm will keep control of the serial port until the File>Disconnect (Alt-I) command is issued, or TeraTerm is shut down. The Propeller Tool issues the message "Communications Error - No propeller Chip found on serial port" when Propeller Tool attempts communication with the Prop chip while  TeraTerm still has the serial port. 
 
 * VerifyPropforth on your hardware
 * Generating a new Propforth image
