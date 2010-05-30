@@ -70,7 +70,7 @@ UNDEFINED WORD hello
 
 Cog6 ok
 
-= Saving the Forth Image =
+  = Saving the Forth Image =
 
  * create a new word definition, save the forth image, verify the new definition is present 
 
