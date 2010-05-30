@@ -127,7 +127,7 @@ reboot
 Upload spinmakerPart1.f to the prop by copy and pasting the entire file into the teraterm window.
 Upload spinmakerPart2.f to the prop by copy and pasting the entire file into the teraterm window.
 
-execute spimaker at the forth prompt:
+  * execute spimaker at the forth prompt: *
 
 spinmaker
 
