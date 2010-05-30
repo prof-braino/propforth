@@ -37,6 +37,8 @@ Cog6 ok
 
 Cog6 ok
 
+This confirms the forth kernel is running
+
   = Defining New words (Extending the FORTH dictionary) =
 
   * Type an undefined token, create a definition using that token execute the definition; discard the definition  
@@ -114,6 +116,8 @@ Cog6 ok
 
    NOTICE above that the digit after the version string incremented after executing the saveforth word.  The saveforth word has written the RAM image into eeprom.  
 
+This confirms that the dictionary in RAM can be extended, the RAM definitions discarded, and the RAM definitions saved to eeprom.
+
   = rebuilding the entire forth dictionary = 
 
 NOTE this section is to be revised or moved to a separate page with better explanation.  
@@ -156,9 +160,7 @@ Use Propeller Tool to open propforthxxx.spin and load it into the Prop eeprom.
 
 Open teraterm and verify that the prop now displays the new version string and the dictionary contains the new or modified definitions. 
 
-
-
-
+This confirms that the propforth kernel can generate new version of the forth definitions portion of the propforth.spin file, and the file can be loaded into the prop and executed.
 
 = The above results indicate that the  main functions of PropForth are working  =
 
