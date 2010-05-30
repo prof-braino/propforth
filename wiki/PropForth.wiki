@@ -3,7 +3,6 @@
 = The main page forth PropForth =
 
   * PropForthStatus
-  * PropForthUtilities
 
 PropForth was written specifically for the Propeller from Parallax. A really cool architecture but different enough that a forth tuned to the Propeller was necessary.
 
