@@ -1,8 +1,10 @@
 #summary Status of PropForth
 
-=== 2010 May 26 ===
+=== Planned PropForth 3.0 ===
 
-PropForth 2.7 
+Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. 
+
+=== 2010 May 30 PropForth 2.7 ===
 
 fix bug in saveforth for 64k page eeProm write
 
