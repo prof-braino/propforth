@@ -15,11 +15,12 @@ Main functions are
 
 Cog6 ok
 
-1 2 3
+* 1 2 3
 
 Cog6 
 
-st?
+* st?
+
 ST: 00000001 00000002 00000003
 
 Cog6 ok
@@ -28,7 +29,7 @@ Cog6 ok
 
 Cog6 ok
 
-+ . st?
+* + . st?
 
 Cog6 ok
 
@@ -42,29 +43,29 @@ Cog6 ok
 
 Cog6 ok
 
-hello
+* hello
 
 UNDEFINED WORD hello
 
 Cog6 ok
 
-: hello ." Hello Welcome to PropForth" ;
+* : hello ." Hello Welcome to PropForth" ;
 
 Cog6 ok
 
-hello 
+* hello 
 
 Hello Welcome to PropForth
 
 Cog6 ok
 
-reboot
+* reboot
 
 PropForth 2.7 2010May26 14:50 0
 
 Cog6 ok
 
-hello
+* hello
 
 UNDEFINED WORD hello
 
@@ -77,35 +78,35 @@ Cog6 ok
 Cog6 ok 
 Cog6 ok
 
-hello
+* hello
 
 UNDEFINED WORD hello
 
 Cog6 ok
 
-: hello ." Hello Welcome back to PropForth" ;
+* : hello ." Hello Welcome back to PropForth" ;
 
 Cog6 ok
 
-hello 
+* hello 
 
 Hello Welcome back to PropForth
 
 Cog6 ok
 
-saveforth
+* saveforth
 
 ...............................................................................................................................................
 
 Cog6 ok
 
-reboot
+* reboot
 
 PropForth 2.7 2010May26 14:50 1
 
 Cog6 ok
 
-hello 
+* hello 
 
 Hello Welcome back to PropForth
 
@@ -119,17 +120,18 @@ NOTE this section is to be revised or moved to a separate page with better expla
 
 Reboot:
 
-reboot
+* reboot
 
 
- * add new forth definitions as desired *
+ * add new forth definitions as desired 
 
 Upload spinmakerPart1.f to the prop by copy and pasting the entire file into the teraterm window.
+
 Upload spinmakerPart2.f to the prop by copy and pasting the entire file into the teraterm window.
 
-  * execute spimaker at the forth prompt: *
+  * execute spimaker at the forth prompt: 
 
-spinmaker
+* spinmaker
 
 wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm window
 
@@ -141,8 +143,8 @@ Cog6 ok
 
 is displayed and the text stops scrolling, copy the output of spinmaker.  This is all the text from ForthDictStart to ForthMemoryEnd.
 
-Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".
-Update the version string, and save the file.  For Example PropForthToday.spin.
+Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".  Update the version string, and save the file with an appropriate name.  
+For Example PropForthToday.spin.
 
 Use Propeller Tool to open PropForthToday.spin and load it into the Prop eeprom.
 
