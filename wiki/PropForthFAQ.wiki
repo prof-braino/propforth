@@ -50,13 +50,13 @@
 
   * aslice is an assembly level time slicer.  The assembly time slicing happens between forth words rather than between tasks.  This is the "me-first" time slicer.
 
-= What is does the "_fslice" word do? =
+= What is does the "fslice" word do? =
 
-  * _fslice is forth level time slicer.  It works in the forth round robin software multitasker with pause and next.  This is the "wait for my turn / cooperative" time slicer 
+  * fslice (it is actually "underscore-fslice" but this wiki interprets underscope as a command to make everything italics) is forth level time slicer.  It works in the forth round robin software multitasker with pause and next.  This is the "wait for my turn / cooperative" time slicer 
 
-= What is the difference between _fslice and aslice? =
+= What is the difference between fslice and aslice? =
 
-  * The round robin multitasker "_fslice" happens between tasks.  The assembly multitasker "aslice" happens between forth words.   The result is that the assembler multitasker executed a LOT more often than the round robin.  The engineer has to know whats what about all this in order  to decide what to use.  
+  * The round robin multitasker "fslice" happens between tasks.  The assembly multitasker "aslice" happens between forth words.   The result is that the assembler multitasker executed a LOT more often than the round robin.  The engineer has to know whats what about all this in order  to decide what to use.  
 
 = What is "serialdriver.f"? =
 
