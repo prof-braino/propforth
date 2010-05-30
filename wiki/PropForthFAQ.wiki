@@ -1,0 +1,58 @@
+#summary Frequently Asked Questions
+
+= How Do I Submit a Question? =
+
+  * Sign in to your gmail account enter comments at the bottom of the page in question
+
+= what is the long term direction for PropForth? =
+
+ * The goal is a "standard forth".  
+
+ * The basic kernel will be a "hardware abstraction layer" to support the basic standard forth words.  
+
+ * A "developer environment" to aid with typical development tasks, tailored for this hardware:  source code maintenance, debugging, interface to common external functions.  Possibly as extensions, possibly included in the kernel.  
+
+  * Compatibility with existing standard forth code where possible 
+
+= What does the "saveforth" word do? =
+ 
+ * saveforth writes the current dictionary image that is running on the chip to eeprom. Each dot (period)  displayed represents one 64 byte page write to eeprom.  There are a maximum of 1024 pages of 64 bytes each.  If a word is redefined, the new definition is visible and covers up the old definition. Eventually the space this uses will be noticeable.  See the comments in PropForth.spin if you are interested in 128 byte page writes, but be aware that the prop demo board eeprom won't like it.  This was the bug in version 2.5
+
+= What does the "spinmaker" word do? = 
+
+  * The spinmaker word generates the forth portion of the propforth.spin source file.  This gets rid of any old definitions and allows the propeller tool to resolve any forward references without the need for defered words.  
+
+= Can words be defined in the Cog memory rather than the Hub memory? =
+
+  * Yes.  The original model included the ability to define high level forth words exclusive to the Cog that would use them.  Turns out, however, to be too dificult and complex; also, cog specific words tend to be the ones optimized into assembly.   Presnetly, the model is high level definitions in the common hub memory, and cog specific words in assembly. An example is the Logic Analyzer module. See LogicAnalyzer.f
+
+= What is the Logic Analyzer? =
+
+  * LogicAnalyzer.f or la.f is the source code for the software logic analyzer.  It uses 1 to 4 cogs to provide logic analyzer functionality.  The file contains assembly definitions for fucntions that reside in the cogs, not the main dictionary.  The following are the names used in the current la.f file; these are to be renamed to more descriptive names with the release of LogicAnalizer.f
+
+  * ds0 - samples every clock, no trigger;  runs on cogs 0, 1 , 2, and 3.
+
+  * dspin - ( pronounced "ds - pin" ) defines the trigger pin, default is pin 10 
+
+  * ds1 - samples every 4 clocks, triggers on dspin
+
+  * ds2 - sample every 40 clocks, triggers on dspin
+
+  * ds - sample every 40 clocks, no trigger
+
+  * hza - toggle a pin at a frequency, for testing.  Starts propcounter (in the cog)  to oscilate dspin 
+
+  * hzb - toggle a pin at a frequency, for testing.  Starts propcounter (in the cog)  to oscilate dspin
+
+= What is does the "aslice" word do? =
+
+  * 
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
