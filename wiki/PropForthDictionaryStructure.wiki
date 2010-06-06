@@ -41,4 +41,5 @@ The following forth code walks the dictionary structure prints out the parameter
   mswHere w@ mswlastnfa w@ 
   begin 2dup dictEntryDump nip nfa>lfa dup w@ dup 0= until
   2drop ;
+
 }}}
