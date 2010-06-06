@@ -29,10 +29,8 @@ There is no code pointer which points to the ParameterField, it is inherent. The
 
 The following forth code walks the dictionary structure prints out the parameter field.
 {{{
-\ dictEntryDump( addr1 addr2 -- ) addr1 is the LinkField of the next entry, addr2 is the NameField of the word to dump
+\ dictEntryDump ( addr1 addr2 -- ) addr1 is the LinkField of the next entry, addr2 is the NameField of the word to dump
 : dictEntryDump dup .word 3a emit space dup .strname space nfa>pfa dup .word 3a emit space do i w@ .word space 2 +loop cr ;
-
+\ dictDump ( -- ) dumps the PropForth dictionary
 : dictDump mswHere w@ mswlastnfa w@ begin 2dup dictEntryDump nip nfa>lfa dup w@ dup 0= until 2drop ;
-
-
 }}}}
