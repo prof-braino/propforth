@@ -2,4 +2,4 @@
 
 = A detailed technical description of the PropForth Interpreter =
 
-The PropForth interpreter is 
+The PropForth interpreter is implemented in Propeller assembler. Before proceeding with details of the interpreter review the PropForthDictionaryStructure.
