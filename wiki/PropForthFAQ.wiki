@@ -64,4 +64,4 @@
 
 = What is "serialmonitor.f" =
 
-  * This is a monitor which is meant to run on cog 7 along with the serial driver. It provides interpretation of CTL-A(connect terminal to the next cog) CTL-B(connect terminal to the previous cog) and CTL-C(reset the propeller chip). In addition it also monitors debugging in the other forth cogs to report stack overflows and underflows. This functionality is time-sliced by the forth time slicer, so cog 7 can also be used as a forth cog.
+  * This is a monitor which is meant to run on cog 7 along with the serial driver. It provides interpretation of CTL-A(connect terminal to the next cog) CTL-B(connect terminal to the previous cog) and CTL-C(reset the propeller chip). In addition it also monitors debugging in the other forth cogs to report stack overflows and underflows. This functionality is time-sliced by the forth time slicer, so cog 7 can also be used as a forth cog, albeit one that will run more slowly as it is time sliced at both by the assembler slicer and the forth slicer.
