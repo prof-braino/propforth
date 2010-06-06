@@ -60,4 +60,8 @@
 
 = What is "serialdriver.f"? =
 
-  * The serial driver contains the same code as in the default senetry routine that run on cog7 at boot time.  Since serial communications is not very demanding, it is possible to use cog seven for something else, and have cog 6 run the serial port, and run a serial monitor and a terminal and other useful functions.  
+  * The serial driver contains the same code as in the default senetry routine that run on cog 7 at boot time.  Since serial communications is not very demanding, it is possible to restart cog seven as a forth cog, and have cog 7 run the serial port, and run a serial monitor and a terminal and other useful functions.  
+
+= What is "serialmonitor.f" =
+
+  * This is a monitor which is meant to run on cog 7 along with the serial driver. It provides interpretation of CTL-A(connect terminal to the next cog) CTL-B(connect terminal to the previous cog) and CTL-C(reset the propeller chip). In addition it also monitors debugging in the other forth cogs to report stack overflows and underflows. This functionality is time-sliced by the forth time slicer, so cog 7 can also be used as a forth cog.
