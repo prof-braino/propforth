@@ -33,4 +33,4 @@ The following forth code walks the dictionary structure prints out the parameter
 : dictEntryDump dup .word 3a emit space dup .strname space nfa>pfa dup .word 3a emit space do i w@ .word space 2 +loop cr ;
 \ dictDump ( -- ) dumps the PropForth dictionary
 : dictDump mswHere w@ mswlastnfa w@ begin 2dup dictEntryDump nip nfa>lfa dup w@ dup 0= until 2drop ;
-}}}}
+}}}
