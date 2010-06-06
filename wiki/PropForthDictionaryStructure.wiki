@@ -2,8 +2,7 @@
 
 = PropForth Dictionary Structure =
 
-The PropForth Dictionary is located in hub memory. When PropForth starts, and it is assumed spin stops, PropForth uses all of hub memory for the dictionary. Before a cog is started with the interpreter, the forth 16 bit word variables mswDictend and and mswMemend should be set to the top of memory which should be used by PropForth. This is done by the following spin code:
-
+The PropForth Dictionary is located in hub memory. Before a cog is started with the PropForth interpreter, the forth 16 bit word variables mswDictend and and mswMemend should be set to the top of memory which should be used by PropForth. This is done by the following spin code:
 {{{
   WORD[ @mswDictendPFA + 2] := @ForthDictEnd
   WORD[ @mswMemendPFA + 2] := @ForthMemoryEnd
@@ -28,3 +27,12 @@ There is no code pointer which points to the ParameterField, it is inherent. The
   * if it is a forth word one of the hi bit ($FE00) will be set
   * assembler addresses are always < 512, this of course means that the ForthDictStart must have at least 512 bytes used before it, since this is only 128 longs, and the assembler code, and forth stacks are before this, this is not an issue. If it is an assembler word there is only 1 word and it is the assembler address.
 
+The following forth code walks the dictionary structure prints out the parameter field.
+{{{
+\ dictEntryDump( addr1 addr2 -- ) addr1 is the LinkField of the next entry, addr2 is the NameField of the word to dump
+: dictEntryDump dup .word 3a emit space dup .strname space nfa>pfa dup .word 3a emit space do i w@ .word space 2 +loop cr ;
+
+: dictDump mswHere w@ mswlastnfa w@ begin 2dup dictEntryDump nip nfa>lfa dup w@ dup 0= until 2drop ;
+
+
+}}}}
