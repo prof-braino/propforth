@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary 16-bit token threaded assembler.
 
 = PropForth Dictionary Structure =
 
