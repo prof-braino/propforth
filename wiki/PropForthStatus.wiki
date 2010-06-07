@@ -4,6 +4,12 @@
 
 Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. No date has been targeted for this release.
 
+=== Planned PropForth 2.8 ===
+
+Plan to add words to support calling forth from spin, and spin from forth. 
+Plan to post the disassembler and documentation
+Plan to post the ethernet interface
+
 === 2010 May 30 PropForth 2.7 ===
 
 fix bug in saveforth for 64k page eeProm write
@@ -13,6 +19,9 @@ Fix key input time out
 Some documentation changes
 
 Decided to start including a downloadable file PropForthX.X.zip to contain all releases files in a single archive.  This will be added when all updates are complete.
+
+NOTE: Documentation changes are in progress
+PLEASE send questions, this will help drive the documentation updates
 
 === 2010 May 9 ===
 
