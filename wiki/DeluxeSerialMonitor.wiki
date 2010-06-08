@@ -101,18 +101,18 @@ _260_
 
    Meaning: The longest timeslice is 260 HEX clocks.  This is critical to assembler timing.  This time indicates we can do 57.6k Baud
 
-<[ Doing the math is left as an exercise to the experimenter ]>
+< Doing the math is left as an exercise to the experimenter >
 
  
 = SerialMonitorTechnicalNotes =
 
 T1)  Top Stack Item
 
-NOTE:  Access to the top stack item is buffered (the top stack item is done in registers). Words that access ONLY the top stack item are NOT detected for stack over/under-flow.
+   NOTE:  Access to the top stack item is buffered (the top stack item is done in registers). Words that access ONLY the top stack item are NOT detected for stack over/under-flow.
 
-Example1:  underflow detected
+   Example1:  underflow detected
 
-Start: stack is empty 
+   Start: stack is empty 
 
 *st?*
 
@@ -120,85 +120,87 @@ _ST:_
 
 *.* <return>  
 
-dot to print top of stack value when stack is empty
+   dot to print top of stack value when stack is empty
 
-UNDERFLOW
+_UNDERFLOW_
 
-cog5-6
+_cog5-6_
 
-Eample2: underflow not detected
+   Eample2: underflow not detected
 
-[stack empty]
+   stack empty 
 
-st?
+*st?*
 
-ST:
+_ST:_
 
-1- 
+*1-*
 
-cog6 ok
+_cog6 ok_
 
-Explanation: dot prints the current value, then does a drop; the drop causes the underflow to detect
+   Explanation: dot prints the current value, then does a drop; the drop causes the underflow to detect
 
-1- decriments the top of stack, it not detected
+   1- decriments the top of stack, it not detected
 
 T2) Auto-Reconnect default - Cog6 automatically reconnects to the serial driver upon reset, the other cogs do not (by default)
  
-NOTICE: Only cog 6 automatically restarts after over/underflow reset
+   NOTICE: Only cog 6 automatically restarts after over/underflow reset
 
-Example: Cog 6 auto reconnect
+   Example: Cog 6 auto reconnect
 
-CTL^A
+*CTL^A*
 
-Cog 6
+_Cog 6_
 
-.
+*.*
 
-UNDERFLOW
+_UNDERFLOW_
 
-cog 5 ok
+_cog 5 ok_
 
-Example:  
+   Example:  
 
-CTL^A
+*CTL^A*
 
-Cog 5
+_Cog 5_
 
-.
+*.*
 
-UNDERFLOW
+_UNDERFLOW_
 
- <no response to key presses; cog 5 appears dead >
+    <no response to key presses; cog 5 appears dead >
 
-CTL^A a few times
+    CTL^A a few times
 
->6
+_>6_
 
->5
+_>5_
 
-Explanation:  Cog7 is still running and handling the serial communication as evidenced by the  responses.  The CTL^A functions to cycle through the running forth cogs.  When cog7 initiates the connection to each cog, it begins responding. When we get back to cog5 it "connects"  
+   Explanation:  Cog7 is still running and handling the serial communication as evidenced by the  responses.  The CTL^A functions to cycle through the running forth cogs.  When cog7 initiates the connection to each cog, it begins responding. When we get back to cog5 it "connects"  
 
 Summary: Only cog 6 auto - reconnects, cogs 0 to 5 do not auto reconnect
 
 
 T3) Auto-Reconnect Exercise:  Change the default so all cogs auto-reconnect to the serial driver on restart.
 
-To define an auto reconnect word:   redefine the boot word for the cog 
+   To define an auto reconnect word:   redefine the boot word for the cog 
 
-Example: redefine boot5 to auto connect on start 
+   Example: redefine boot5 to auto connect on start 
 
-: boot5 cogid >cog ;  cogid is the number of the running cog; >cog starts cog7 communication with the cog
+*: boot5 cogid >cog ;  cogid is the number of the running cog;*
+
+   >cog starts cog7 communication with the cog
 
 T4) Resources used by propforth in the Hub and in Each COG
 
 Tech Note:
 
-To determine the amount of resources consumed by propforth in the hub and in each cog, execute the word free.
+   To determine the amount of resources consumed by propforth in the hub and in each cog, execute the word free.
 
-free
+*free*
 
-39e4 bytes free a1 cog longs free
+_39e4 bytes free a1 cog longs free_
 
-This means of the 7fff byte in the HUB, 39e4 are free.   Cog has 384 longs, 161 are free.
+   This means of the 7fff byte in the HUB, 39e4 are free.   Cog has 384 longs, 161 are free.
 
-Therefore about 50% of Hub is used by forth, and about 50% of the cog resoures are used by forth.  In light of this, the desision was made NOT to include any extra words in the default propforth image, as dictions space is a limiting factor.
+   Therefore about 50% of Hub is used by forth, and about 50% of the cog resoures are used by forth.  In light of this, the desision was made NOT to include any extra words in the default propforth image, as dictions space is a limiting factor.
