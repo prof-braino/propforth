@@ -1,5 +1,27 @@
 #summary this page is underconstruction.
 
-= A detailed technical description of the PropForth Interpreter =
+= A detailed technical description of the !PropForth Interpreter =
 
-The PropForth interpreter is implemented in Propeller assembler. Before proceeding with details of the interpreter review the PropForthDictionaryStructure.
+The !PropForth interpreter is implemented in Propeller assembler. Before proceeding with details of the interpreter review the PropForthDictionaryStructure.
+
+There are 2 stacks used by the interpreter. The main data stack is 32 longs of cog memory, and the return stack which is also 32 longs of cog memory.
+
+The top of the return stack is pointed to by the cog long variable rsPtr.
+
+The top of the data stack is actually buffered by the cog long variable stTOS. The cog long variable stPtr thus points to the 2nd element on the main data stack.
+
+Both stacks are checked for over/underflow every time data is pushed or popped.
+
+There is an additional cog long variable IP. This variable points to the current forth word that is currently being executed.
+
+=== Example Dictionary Entry ===
+{{{
+\ u/mod ( u1 u2 -- remainder quotient ) \ unsigned divide & mod  u1 divided by u2
+: u/mod 0 swap um/mod ;
+
+14C0: u/mod 14C6: 1194 00B1 00C7 0073
+1192: 0 1194: 001F 0000
+14A2: swap 14A8: 00B1
+14B4: um/mod 14BC: 00C7
+13B0: exit 13B6: 0073
+}}}
