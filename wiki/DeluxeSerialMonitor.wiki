@@ -13,11 +13,11 @@ The Delux Serial Monitor adds a bit of functionality to the default.  The Assemb
 
 The Serial Monitor checks the running forth cogs for underflow and overflow conditions. If the stack points points outside the valid range of stack values (stack locations 0-31 are valid) the serail monitor issues an underflow or overfolw message and restarts the cog, and starts up another cog. (Starting another cog at under/over-flow detection is an artifact from development and may be changed if we get reason to do so). Also, the Serial Monitor checks the input stream from the user coming in over the serial put and looks for CTL^A, CTL^B, and CTL^C.
 
-CTL^A tend the serial monitor to direct serial communications to the NEXT forth cog.
+*CTL^A* send the serial monitor to direct serial communications to the NEXT forth cog.
 
-CTL^B tend the serial monitor to direct serial communications to the PREVIOUS forth cog.
+*CTL^B* send the serial monitor to direct serial communications to the PREVIOUS forth cog.
 
-CTL^C tend the serial monitor to reset the propeller chip.
+*CTL^C* send the serial monitor to reset the propeller chip.
 
 
 = SerialMonitorInstructions =
@@ -30,25 +30,29 @@ These are instructs to load and run the Delux Serial Monitor in PropForth
 
    Paste the contents of AssemblerTimeSlicing.f into teraterm
 
+_FL_
+
    The FL command will be diplayed and the RED led on the DemoBoard will flash indicating text character recieve  is in progress.
 
    The The BLUE LED will begin flashing indicating charater transmit is in progress and teraterminal dispaly will begin displaying the forth source text definitions from AssemblerTimeSlicing.f.  After the last definition, propforth will dispay 
 
-Cog6 ok
+_Cog6 ok_
 
-after success
+   after success
 
 2) load SerialDriver.f to the Propeller
 
    Paste the contents of SerialDriver.f into teraterm
 
+_FL_
+
    The FL command will be diplayed and the RED led on the DemoBoard will flash indicating text character recieve  is in progress.
 
    The The BLUE LED will begin flashing indicating charater transmit is in progress and teraterminal dispaly will begin displaying the forth source text definitions from SerialDriver.f.  After the last definition, propforth will dispay 
 
-Cog6 ok
+_Cog6 ok_
 
-after success
+   after success
 
 
 3) load SerialMonitor.f on to the Propeller 
@@ -56,43 +60,50 @@ after success
 
    Paste the contents of SerialMonitor.f into teraterm
 
+_FL_
+
    The FL command will be diplayed and the RED led on the DemoBoard will flash indicating text character recieve  is in progress.
 
    The The BLUE LED will begin flashing indicating charater transmit is in progress and teraterminal dispaly will begin displaying the forth source text definitions from SerialDriver.f.  After the last definition, propforth will dispay 
 
-Cog6 ok
+_Cog6 ok_
 
-after success
+  after success
+
  
 4) saveforth
 
-Execute the word saveforth
+   Execute the word saveforth
 
-saveforth
+*saveforth*
 
-A series of dots (periods)  will be displayed indicating each 32byte page of eeprom that is written.  There are a maximum of 1024 pages, but only the pages that are used are written.
+   A series of dots (periods)  will be displayed indicating each 32byte page of eeprom that is written.  There are a maximum of 1024 pages, but only the pages that are used are written.
 
 5) reboot
 
-execute the word reboot
+   execute the word reboot
 
-reboot
+*reboot*
 
-The prop version string is displayed with the final integer incremented.   The propforth now has the DeluxSerialMonitor running, and will respnd to CTL^A, CTL^B and CTL^C.
+   The prop version string is displayed with the final integer incremented.   The propforth now has the DeluxSerialMonitor running, and will respnd to CTL^A, CTL^B and CTL^C.
 
-The propforth will also display a message in the event of stack under/over-flow on the running forth cogs. 
+   The propforth will also display a message in the event of stack under/over-flow on the running forth cogs. 
 
 6) Verify Assembler Time Slicer is running
 
-Type in "aslice?"   [rename aslice? to LongestTimeSlice? ]
+   Type in "aslice?"   [rename aslice? to LongestTimeSlice? ]
 
-returns 260
+*LongestTimeSlice*
 
-Meaning: The longest timeslice is 260 HEX clocks.  This is critical to assembler timing.  
-This time indicates we can do 57.6k Baud
+   returns 260
 
-[ Doing the math is left as an exercise to the experimenter ] 
+_260_
 
+   Meaning: The longest timeslice is 260 HEX clocks.  This is critical to assembler timing.  This time indicates we can do 57.6k Baud
+
+<[ Doing the math is left as an exercise to the experimenter ]>
+
+ 
 = SerialMonitorTechnicalNotes =
 
 T1)  Top Stack Item
@@ -101,13 +112,15 @@ NOTE:  Access to the top stack item is buffered (the top stack item is done in r
 
 Example1:  underflow detected
 
-[stack is empty]
+Start: stack is empty 
 
-st? 
+*st?*
 
-ST:
+_ST:_
 
-. <return>  / dot to print top of stack value when stack is empty
+*.* <return>  
+
+dot to print top of stack value when stack is empty
 
 UNDERFLOW
 
