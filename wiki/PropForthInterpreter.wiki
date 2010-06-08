@@ -17,9 +17,7 @@ There is an additional cog long variable IP. This variable points to the current
 === Example Code and Trace ===
 {{{
 : 10+ 10 + ;
-
 : 12+ 2+ 10+ ;
-
 : test 20 12+ . ;
 
 ST:
