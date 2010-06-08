@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Enhanced Cog7 Serial Driver with development functions.
 #labels Featured
 
 === SerialMonitorDocumentation ===
