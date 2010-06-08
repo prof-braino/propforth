@@ -1,6 +1,6 @@
 #summary 16-bit token threaded assembler for prop architecture.
 
-= PropForth Dictionary Structure =
+= !PropForth Dictionary Structure =
 
 The !PropForth Dictionary is located in hub memory. Before a cog is started with the !PropForth interpreter, the forth 16 bit word variables mswDictend and and mswMemend should be set to the top of memory which should be used by !PropForth. This is done by the following spin code:
 {{{
