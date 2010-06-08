@@ -11,7 +11,7 @@ By default, Spin starts the default serial driver on cog7 and starts propforth o
 
 The Delux Serial Monitor adds a bit of functionality to the default.  The Assembler Time Slicer runs between the forth words executing on cog7 (and not words executing on cogs 0-6 by default). This slows down the forth execution on cog7, but the cog is fast enough that this does not effect serial communications at 57.6k baud (tested). The assembler time slicer therefore is running VERY often.  This allows the cog7 task to monitor certain aspects of the other running forth cogs.  
 
-The Serial Monitor checks the running forth cogs for underflow and overflow conditions. If the stack points points outside the valid range of stack values (stack locations 0-31 are valid) the serail monitor issues an underflow or overfolw message and restarts the cog, and starts up another cog. (Starting another cog at under/over-flow detection is an artifact from development and may be changed if we get reason to do so). Also, the Serial Monitor checks the input stream from the user coming in over the serial put and looks for CTL A, CTL B, and CTL C.
+The Serial Monitor checks the running forth cogs for underflow and overflow conditions. If the stack points points outside the valid range of stack values (stack locations 0-31 are valid) the serail monitor issues an underflow or overfolw message and restarts the cog, and starts up another cog. (Starting another cog at under/over-flow detection is an artifact from development and may be changed if we get reason to do so). Also, the Serial Monitor checks the input stream from the user coming in over the serial put and looks for CTL+A, CTL+B, and CTL+C.
 
 *CTL^A* send the serial monitor to direct serial communications to the NEXT forth cog.
 
