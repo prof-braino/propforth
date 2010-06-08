@@ -13,11 +13,11 @@ The Delux Serial Monitor adds a bit of functionality to the default.  The Assemb
 
 The Serial Monitor checks the running forth cogs for underflow and overflow conditions. If the stack points points outside the valid range of stack values (stack locations 0-31 are valid) the serail monitor issues an underflow or overfolw message and restarts the cog, and starts up another cog. (Starting another cog at under/over-flow detection is an artifact from development and may be changed if we get reason to do so). Also, the Serial Monitor checks the input stream from the user coming in over the serial put and looks for CTL+A, CTL+B, and CTL+C.
 
-*CTL^A* send the serial monitor to direct serial communications to the NEXT forth cog.
+*CTL+A* send the serial monitor to direct serial communications to the NEXT forth cog.
 
-*CTL^B* send the serial monitor to direct serial communications to the PREVIOUS forth cog.
+*CTL+B* send the serial monitor to direct serial communications to the PREVIOUS forth cog.
 
-*CTL^C* send the serial monitor to reset the propeller chip.
+*CTL+C* send the serial monitor to reset the propeller chip.
 
 
 = SerialMonitorInstructions =
@@ -85,7 +85,7 @@ _Cog6 ok_
 
 *reboot*
 
-   The prop version string is displayed with the final integer incremented.   The propforth now has the DeluxSerialMonitor running, and will respnd to CTL^A, CTL^B and CTL^C.
+   The prop version string is displayed with the final integer incremented.   The propforth now has the DeluxSerialMonitor running, and will respond to CTL+A, CTL+B and CTL+C.
 
    The propforth will also display a message in the event of stack under/over-flow on the running forth cogs. 
 
@@ -140,7 +140,7 @@ _cog6 ok_
 
    Explanation: dot prints the current value, then does a drop; the drop causes the underflow to detect
 
-   1- decriments the top of stack, it not detected
+   1- decrements the top of stack, it not detected
 
 T2) Auto-Reconnect default - Cog6 automatically reconnects to the serial driver upon reset, the other cogs do not (by default)
  
@@ -148,7 +148,7 @@ T2) Auto-Reconnect default - Cog6 automatically reconnects to the serial driver 
 
    Example: Cog 6 auto reconnect
 
-*CTL^A*
+*CTL+A*
 
 _Cog 6_
 
@@ -160,7 +160,7 @@ _cog 5 ok_
 
    Example:  
 
-*CTL^A*
+*CTL+A*
 
 _Cog 5_
 
@@ -170,7 +170,7 @@ _UNDERFLOW_
 
     <no response to key presses; cog 5 appears dead >
 
-    CTL^A a few times
+    CTL+A a few times
 
 _>6_
 
@@ -187,13 +187,11 @@ T3) Auto-Reconnect Exercise:  Change the default so all cogs auto-reconnect to t
 
    Example: redefine boot5 to auto connect on start 
 
-*: boot5 cogid >cog ;  cogid is the number of the running cog;*
+*: boot5 cogid >cog ;*  \  cogid is the number of the running cog
 
-   >cog starts cog7 communication with the cog
+   >cog starts the cog communication with the cog7 serial driver
 
 T4) Resources used by propforth in the Hub and in Each COG
-
-Tech Note:
 
    To determine the amount of resources consumed by propforth in the hub and in each cog, execute the word free.
 
