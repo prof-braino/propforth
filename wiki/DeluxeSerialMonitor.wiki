@@ -91,7 +91,7 @@ _Cog6 ok_
 
 6) Verify Assembler Time Slicer is running
 
-   Type in "aslice?"   [rename aslice? to LongestTimeSlice? ]
+   Type in "aslice?"  note to editor: rename aslice? to LongestTimeSlice? 
 
 *LongestTimeSlice*
 
