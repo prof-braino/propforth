@@ -44,7 +44,7 @@ The following forth code walks the dictionary structure prints out the parameter
 
 }}}
 
-=== Example Dictionary Entries ===
+=== Example Dictionary Entry ===
 {{{
 \ u/mod ( u1 u2 -- remainder quotient ) \ unsigned divide & mod  u1 divided by u2
 : u/mod 0 swap um/mod ;
