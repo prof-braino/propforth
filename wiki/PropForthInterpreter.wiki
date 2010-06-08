@@ -14,14 +14,68 @@ Both stacks are checked for over/underflow every time data is pushed or popped.
 
 There is an additional cog long variable IP. This variable points to the current forth word that is currently being executed.
 
-=== Example Dictionary Entry ===
+=== Example Code and Trace ===
 {{{
-\ u/mod ( u1 u2 -- remainder quotient ) \ unsigned divide & mod  u1 divided by u2
-: u/mod 0 swap um/mod ;
+: 10+ 10 + ;
 
-14C0: u/mod 14C6: 1194 00B1 00C7 0073
-1192: 0 1194: 001F 0000
-14A2: swap 14A8: 00B1
-14B4: um/mod 14BC: 00C7
-13B0: exit 13B6: 0073
+: 12+ 2+ 10+ ;
+
+: test 20 12+ . ;
+
+ST:
+RS: 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+> {4B70 006A 13C0} 0020
+  {4B74 4B62 4B5E} 12+
+  {4B76 24EA 24E8} .
+  {4B78 0073 13B0} ;
+
+ST: 00000020
+RS: 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+  {4B70 006A 13C0} 0020
+> {4B74 4B62 4B5E} 12+
+  {4B76 24EA 24E8} .
+  {4B78 0073 13B0} ;
+
+ST: 00000020
+RS: 4B74:4B62 12+ 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+> {4B62 1B44 1B40} 2+
+  {4B64 4B54 4B50} 10+
+  {4B66 0073 13B0} ;
+
+ST: 00000022
+RS: 4B74:4B62 12+ 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+  {4B62 1B44 1B40} 2+
+> {4B64 4B54 4B50} 10+
+  {4B66 0073 13B0} ;
+
+ST: 00000022
+RS: 4B64:4B54 10+ 4B74:4B62 12+ 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+> {4B54 006A 13C0} 0010
+  {4B58 1426 1424} +
+  {4B5A 0073 13B0} ;
+
+ST: 00000010 00000022
+RS: 4B64:4B54 10+ 4B74:4B62 12+ 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+  {4B54 006A 13C0} 0010
+> {4B58 1426 1424} +
+  {4B5A 0073 13B0} ;
+
+ST: 00000032
+RS: 4B64:4B54 10+ 4B74:4B62 12+ 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+  {4B54 006A 13C0} 0010
+  {4B58 1426 1424} +
+> {4B5A 0073 13B0} ;
+
+ST: 00000032
+RS: 4B74:4B62 12+ 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+  {4B62 1B44 1B40} 2+
+  {4B64 4B54 4B50} 10+
+> {4B66 0073 13B0} ;
+
+ST: 00000032
+RS: 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3878:2BBE interpret
+  {4B70 006A 13C0} 0020
+  {4B74 4B62 4B5E} 12+
+> {4B76 24EA 24E8} .
+  {4B78 0073 13B0} ;
 }}}
