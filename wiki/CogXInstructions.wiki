@@ -1,9 +1,9 @@
-#summary cogX ( TextString Cog# - ) Command a forth cog to execute a forth word
+#summary cogX ( TextString Cog# - ) Command a different forth cog to execute a forth word
 #labels v2.7
 
 = Cogx =
 
-cogX ( TextString Cog# - ) Command a forth cog to execute a forth word
+cogX ( TextString Cog# - ) Command a different forth cog to execute a forth word
 
 The word "cogX" takes the STRING defined by 
 
