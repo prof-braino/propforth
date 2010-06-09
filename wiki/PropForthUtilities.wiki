@@ -1,4 +1,5 @@
 #summary PropForthUtilities - a collection of useful utilities
+#labels v2.4
 
 = PropForthUtilities - a collection of useful utilities =
 
