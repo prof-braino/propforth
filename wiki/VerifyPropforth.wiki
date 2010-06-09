@@ -32,6 +32,8 @@ _Cog6 ok_
 
 *+ . st?*
 
+   Notice: there is a SPACE between *+* and *.* and between *.* and *st?*
+
 _Cog6 ok_
 
 *5 ST: 00000001*
