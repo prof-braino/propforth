@@ -22,121 +22,120 @@ _Cog6_
 
 *st?*
 
-ST: 00000001 00000002 00000003
+_ST: 00000001 00000002 00000003_
 
-Cog6 ok
+_Cog6 ok_
 
   * Add the top two numbers together, print the result, and re-display the remaining stack 
 
-Cog6 ok
+_Cog6 ok_
 
-* + . st?
+** + . st?*
 
-Cog6 ok
+_Cog6 ok_
 
-5 ST: 00000001
+*5 ST: 00000001*
 
-Cog6 ok
+_Cog6 ok_
 
-This confirms the forth kernel is running
+   This confirms the forth kernel is running
 
-  = Defining New words (Extending the FORTH dictionary) =
+= Defining New words (Extending the FORTH dictionary) =
 
   * Type an undefined token, create a definition using that token execute the definition; discard the definition  
 
-Cog6 ok
+_Cog6 ok_
 
-* hello
+*hello*
 
-UNDEFINED WORD hello
+_UNDEFINED WORD hello_
 
-Cog6 ok
+_Cog6 ok_
 
-* : hello ." Hello Welcome to PropForth" ;
+*: hello ." Hello Welcome to PropForth" ;*
 
-Cog6 ok
+_Cog6 ok_
 
-* hello 
+*hello* 
 
-Hello Welcome to PropForth
+_Hello Welcome to PropForth_
 
-Cog6 ok
+_Cog6 ok_
 
-* reboot
+*reboot*
 
-PropForth 2.7 2010May26 14:50 0
+_PropForth 2.7 2010May26 14:50 0_
 
-Cog6 ok
+_Cog6 ok_
 
-* hello
+*hello*
 
-UNDEFINED WORD hello
+_UNDEFINED WORD hello_
 
-Cog6 ok
+_Cog6 ok_
 
-  = Saving the Forth Image =
+= Saving the Forth Image =
 
  * create a new word definition, save the forth image, verify the new definition is present 
 
-Cog6 ok 
-Cog6 ok
+_Cog6 ok_ 
+_Cog6 ok_
 
-* hello
+*hello*
 
-UNDEFINED WORD hello
+_UNDEFINED WORD hello_
 
-Cog6 ok
+_Cog6 ok_
 
-* : hello ." Hello Welcome back to PropForth" ;
+*: hello ." Hello Welcome back to PropForth" ;*
 
-Cog6 ok
+_Cog6 ok_
 
-* hello 
+*hello* 
 
-Hello Welcome back to PropForth
+_Hello Welcome back to PropForth_
 
-Cog6 ok
+_Cog6 ok_
 
-* saveforth
+*saveforth_
 
 ...............................................................................................................................................
 
-Cog6 ok
+_Cog6 ok_
 
-* reboot
+*reboot*
 
-PropForth 2.7 2010May26 14:50 1
+_PropForth 2.7 2010May26 14:50 1_
 
-Cog6 ok
+_Cog6 ok_
 
-* hello 
+*hello* 
 
-Hello Welcome back to PropForth
+_Hello Welcome back to PropForth_
 
-Cog6 ok  
+_Cog6 ok_  
 
-   NOTICE above that the digit after the version string incremented after executing the saveforth word.  The saveforth word has written the RAM image into eeprom.  
+   NOTICE above that the digit after the version string incremented after executing the saveforth word.  _PropForth 2.7 2010May26 14:50 *1*_  The saveforth word has written the RAM image into eeprom.  
 
-This confirms that the dictionary in RAM can be extended, the RAM definitions discarded, and the RAM definitions saved to eeprom.
+   This confirms that the dictionary in RAM can be extended, the RAM definitions discarded, and the RAM definitions saved to eeprom.
 
-  = rebuilding the entire forth dictionary = 
+= rebuilding the entire forth dictionary = 
 
 NOTE this section is to be revised or moved to a separate page with better explanation.  
 
 Reboot:
 
-* reboot
-
+*reboot*
 
  * add new forth definitions as desired 
 
-Upload spinmakerPart1.f to the prop by copy and pasting the entire file into the teraterm window.
+   Upload spinmakerPart1.f to the prop by copy and pasting the entire file into the teraterm window.
 
-Upload spinmakerPart2.f to the prop by copy and pasting the entire file into the teraterm window.
+   Upload spinmakerPart2.f to the prop by copy and pasting the entire file into the teraterm window.
 
   * execute spimaker at the forth prompt: 
 
-* spinmaker
+*spinmaker*
 
 wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm window
 
@@ -144,24 +143,24 @@ wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm w
 
 In the teraterm window, after 
 
-ForthMemoryEnd 
+_ForthMemoryEnd_ 
 
-Cog6 ok
+_Cog6 ok_
 
-is displayed and the text stops scrolling, copy the output of spinmaker. (I.E Ctl^A to "Select All" and Ctil^C to copy the highlighted text).  Include all the text from ForthDictStart to ForthMemoryEnd. (About 26,000 characters)
+   is displayed and the text stops scrolling, copy the output of spinmaker. (I.E Ctl^A to "Select All" and Ctil^C to copy the highlighted text).  Include all the text from ForthDictStart to ForthMemoryEnd. (About 26,000 characters)
 
-Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".  Update the version string, and save the file with an appropriate name.  
+   Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".  Update the version string, and save the file with an appropriate name.  
 For Example propforthxxx.spin.
 
   * Load the new propforthxxx.spin into the prop using Propeller Tool
 
-Use Propeller Tool to open propforthxxx.spin and load it into the Prop eeprom.
+   Use Propeller Tool to open propforthxxx.spin and load it into the Prop eeprom.
 
   * confirm the version string 
 
-Open teraterm and verify that the prop now displays the new version string and the dictionary contains the new or modified definitions. 
+   Open teraterm and verify that the prop now displays the new version string and the dictionary contains the new or modified definitions. 
 
-This confirms that the propforth kernel can generate new version of the forth definitions portion of the propforth.spin file, and the file can be loaded into the prop and executed.
+   This confirms that the propforth kernel can generate new version of the forth definitions portion of the propforth.spin file, and the file can be loaded into the prop and executed.
 
 = The above results indicate that the  main functions of PropForth are working  =
 
