@@ -1,4 +1,5 @@
 #summary cogX ( TextString Cog# - ) Command a forth cog to execute a forth word
+#labels v2.7
 
 = Cogx =
 
