@@ -156,7 +156,7 @@ _ForthMemoryEnd_
 
 _Cog6 ok_
 
-   is displayed and the text stops scrolling, copy the output of spinmaker. (I.E Ctl^A to "Select All" and Ctil^C to copy the highlighted text).  Include all the text from ForthDictStart to ForthMemoryEnd. (About 26,000 characters)
+   is displayed and the text stops scrolling, copy the output of spinmaker. (I.E Ctl+A to "Select All" and CTL+C to copy the highlighted text).  Include all the text from ForthDictStart to ForthMemoryEnd. (About 26,000 characters)
 
    Paste the output of spinmaker into PropForth-template.spin.  Search for the text "version".  Update the version string, and save the file with an appropriate name.  
 For Example propforthxxx.spin.
