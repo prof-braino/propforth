@@ -1,4 +1,5 @@
 #summary Download and compile the source for the propforth kernel
+#labels v2.7
 
 = Use Propforth to generate new propforth.spin from source code =
 
@@ -12,46 +13,46 @@ space from changed or superseded definitions is reclaimed.
 
 The propforth soruce code for the kernel is not loaded by default.  To rebuild the kernel, download the propforth source text to the prop using the steps described in:
 
-DownloadSourceText   
+   DownloadSourceText 
 
 ** NOTICE ** Per the instruction, reboot or power cycle the prop before starting this process, but do not reboot or power cycle between files, or the previous definitions loaded will be lost. 
 
 Step 1 Load the Propforth source text, which is presently in two parts:
-
   
-Step 1a Load PRopForthPart1.f
+    Step 1a Load PRopForthPart1.f
 
-Step 1b Load PropforthPart2.f
+    Step 1b Load PropforthPart2.f
 
 = The spinmaker word = 
 
 The word spinmaker is not in the default propforth kernel but may be loaded from the source text using the steps described in 
 
-DownloadSourceText   
+   DownloadSourceText   
 
 Step 2 Load spnmaker source text, which is in two parts:
 
-Step 2a load spinmakerpart1.f
-Step 2b load spinmakerpart2.f
+   Step 2a load spinmakerpart1.f
+
+   Step 2b load spinmakerpart2.f
 
 After all four files have been down loaded successfully, preform step 3.
 
 Step 3 Execute the word spinmaker
 
-Cog6 ok
+_Cog6 ok_
 
-spinmaker
+*spinmaker*
 
-ForthDictStart
+_ForthDictStart_
 
 ....  wait several seconds....
 
 ...loads of text ....
 
-ForthDictEnd
+_ForthDictEnd_
 
 
-Cog6
+_Cog6_
 
 six or eight lines will dispaly showing four or six definitions, for a couple seconds, but right when you start to count them, a whole bunch of text starts scrolling by.  This is normal.
 
@@ -65,24 +66,27 @@ Now is the slightly tricky part: (you didn't think its been tricky so far did yo
 
 In Windows, make a copy of propforth_template.spin. This example will use the name NewPropForth.spin for the file name.
 
-propforth_template.spin is the same as propforth.spin, except there is no forth code between the words ForthDictStart and ForthMemoryEnd
+     propforth_template.spin is the same as propforth.spin, except there is no forth code between the words ForthDictStart and ForthMemoryEnd.  Make a copy of PRopForth-template.spin and name it NewPropForth.spin
 
-Open NewPropForth.spin
+Open NewPropForth.spin in an editor (i.e. Propeller Tool)
 
 Scroll down past the initial comments, the sections for CON, VAR, OBJ, PUB, and find the DAT section.
+
 In the DAT section  find 
 
-ForthDictStart
+_ForthDictStart_
 
-Highlight from this text to the end of the file (ForthMemoryEnd) and delete it all.
+Highlight from this text to the end of the file (_ForthMemoryEnd_) and delete it all.
 
-Go back to the teraterm window and scroll way up to ForthDictStart and highlight this word.
+Go back to the teraterm window and scroll way up to _ForthDictStart_ and highlight this word.
 
-Highlight to the end (ForthMemoryEnd).  If ForthDictStart is highlighted, and you scroll to the end, hold down the SHIFT key, and mouse click on ForthMemoryEnd, the whole block of text will be highlighted.
+Highlight to the end (_ForthMemoryEnd_).  If _ForthDictStart_ is highlighted, and you scroll to the end, hold down the SHIFT key, and mouse click on _ForthMemoryEnd_, the whole block of text will be highlighted.
 
 Copy and paste this into the end of the file NewPropForth.spin.
 
-Scroll up to around line 5632 and find the version string, something like  "Propforth v2.7 2010May22 17:00 0"
+Scroll up to around line 5632 and find the version string, something like  
+
+   _Propforth v2.7 2010May22 17:00 0_
 
 Change this to the current date and time, or whatever will helps you keep you project organized.  Notice that this string is 32 characters long and stringlength is controled by the byte preceding it being $20.  It is useful to edit this string each time the spin source is edited and recompiled. For example, if the version string is the same as the filename, its easier to figure out which version is in which file, as opposed to always naming the file "propforth.spin"
 
