@@ -1,5 +1,5 @@
 #summary Frequently Asked Questions
-#labels Featured
+#labels Featured,v2.7
 
 
 
@@ -30,6 +30,16 @@
 = What does the "spinmaker" word do? = 
 
   * The spinmaker word generates the forth portion of the propforth.spin source file.  This gets rid of any old definitions and allows the propeller tool to resolve any forward references without the need for defered words.  
+
+= Do I need the files PropForthPart1 and 2? =
+
+  * No. PropForthPart1.f and PropForthPart2.f will generate the original Propforth 2.7 kernel definitions as found in PropForth.spin.   You only need these if you want to see that the definitions generated are the same as those posted, without the comments
+
+= Do I need the files spinmakerPart1 and 2? =
+
+  * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image. 
+
+= 
 
 = Can words be defined in the Cog memory rather than the Hub memory? =
 
