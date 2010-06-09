@@ -1,4 +1,5 @@
 #summary Saving a copy of modifications to eeprom.
+#labels v2.4
 
 = Saving a copy of modifications to eeprom =
 
