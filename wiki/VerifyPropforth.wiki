@@ -54,6 +54,8 @@ _Cog6 ok_
 
 *: hello ." Hello Welcome to PropForth" ;*
 
+   * NOTICE that there is a SPACE after the colon, after the quote, and before the semi-colon
+
 _Cog6 ok_
 
 *hello* 
@@ -79,6 +81,7 @@ _Cog6 ok_
  * create a new word definition, save the forth image, verify the new definition is present 
 
 _Cog6 ok_ 
+
 _Cog6 ok_
 
 *hello*
@@ -115,15 +118,19 @@ _Hello Welcome back to PropForth_
 
 _Cog6 ok_  
 
-   NOTICE above that the digit after the version string incremented after executing the saveforth word.  _PropForth 2.7 2010May26 14:50 *1*_  The saveforth word has written the RAM image into eeprom.  
+   NOTICE above that the digit after the version string incremented after executing the saveforth word.  
+
+    _PropForth 2.7 2010May26 14:50 *1*_  
+
+    * The saveforth word has written the RAM image into eeprom.  
 
    This confirms that the dictionary in RAM can be extended, the RAM definitions discarded, and the RAM definitions saved to eeprom.
 
 = rebuilding the entire forth dictionary = 
 
-NOTE this section is to be revised or moved to a separate page with better explanation.  
+   NOTE this section is to be revised or moved to a separate page with better explanation.  
 
-Reboot:
+   Reboot:
 
 *reboot*
 
@@ -137,11 +144,11 @@ Reboot:
 
 *spinmaker*
 
-wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm window
+   wait approximately 2 minutes 30 seconds for the text to scroll on the teraterm window
 
   * copy the output of spinmaker from the TeraTerm window and paste it into PropForth-Template.spin, save the resulting new file
 
-In the teraterm window, after 
+   In the teraterm window, after 
 
 _ForthMemoryEnd_ 
 
