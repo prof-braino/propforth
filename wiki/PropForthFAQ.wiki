@@ -10,7 +10,8 @@
 = What files do I want? =
 
  * The files tagged with Version 2.7 are the ones that most folks will want to see.
-   The earlier versions might not agree with the current documentation, so avoid these unless something is broken. 
+
+ * The earlier versions might not agree with the current documentation, so avoid these unless something is broken. 
 
 = what is the long term direction for PropForth? =
 
