@@ -1,5 +1,5 @@
 #summary Enhanced Cog7 Serial Driver with development functions.
-#labels Featured
+#labels Featured,v2.7
 
 === SerialMonitorDocumentation ===
 
