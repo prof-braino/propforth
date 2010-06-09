@@ -1,4 +1,5 @@
 #summary The main page forth PropForth
+#labels v2.7
 
 = The main page forth PropForth =
 
