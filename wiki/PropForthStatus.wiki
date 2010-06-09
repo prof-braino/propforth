@@ -1,4 +1,5 @@
 #summary Status of PropForth
+#labels v2.7
 
 === Planned PropForth 3.0 ===
 
