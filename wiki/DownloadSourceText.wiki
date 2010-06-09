@@ -1,24 +1,31 @@
 #summary Download Text files containing FORTH source code
+#labels v2.7
 
 = Introduction =
 
-The FORTH dictionary can be extended by adding new definitions.
+The FORTH dictionary can be extended by adding new definitions.  The entire system, including the new definitions, can be saved to eeprom.  The extended system is thus available after reboot. 
+
+= Extending the Forth Dictionary =
+
 Definitions can be entered using the command line for example
 
-: test 7 0 do i . loop ;
+*: test 7 0 do i . loop ;*
 
 The word test has been defined and can be executed by typing the word at the command line:
 
-test
+*test*
 
-0 1 2 3 4 5 6 Cog6 ok
+_0 1 2 3 4 5 6 Cog6 ok_
 
 Propforth is configured by default to use 57.6 baud no parity no stop bits, no flow control.   This is suitable for much interactive mode activity, as most folks will not type fast enough to choke the serial line.  (let us know if you find exceptions to this generalization). The user may type in forth words for execution including compilation words, allowing new forth colon definitions to be entered into the dictionary. 
-
 
 However, there is a compilation delay as definition is committed to the dictionary. 
 
 The result is that if one pastes an entire page of definitions into the teraterm window, after a bit the interpreter starts missing characters. This, of course results in various problems. 
+
+= The FL word (FileLoad) =
+
+The FL word should be renamed FileLoad (Note to Self - do this next version)
 
 The FL word provides the method for loading entire files of source text definitions into propforth.
 
@@ -38,45 +45,38 @@ NOTE: If the capacity of the eeProm is exceeded, the message "Out of memory" dis
 
 Steps for use:
 
-1) power cycle or execute the reboot word to ensure no residual errors are present.
+   1) power cycle or execute the reboot word to ensure no residual errors are present.
 
-2)
-Place the FL word at the begining of the source text file to be loaded.  FL has a couple blank line before and after it for formatiing, so it is easier to spot in the file. 
+   2) Place the FL word at the begining of the source text file to be loaded.  FL has a couple blank line before and after it for formatiing, so it is easier to spot in the file. 
 
-
-FL
+*FL*
 
 < many line of forth source code in text format >
 
+   highlight the entire source text file contents including the FL at the begining (i.e ctl+A), copy and paste it into the teraterm window.
 
+   The FL will display for several seconds, and the blue LED  on the Demo board USB/COM port will flicker, indicating that the transfer is underway. After a bit the FL word will display the HEX number of character recieved as in: 
 
+*FL*
 
+_C3F chars_
 
-highlight the entire source text file contents including the FL at the begining (i.e ctl^A), copy and paste it into the teraterm window.
-
-The FL will display for several seconds, and the blue LED  on the Demo board USB/COM port will flicker, indicating that the transfer is underway. After a bit the FL word will display the HEX number of character recieved as in: 
-
-FL
-
-C3F chars
-
-Cog6 Ok
-
+_Cog6 Ok_
 
 The tera termininal display will begin displaying the source text pasted in interspersed with 
 
-Cog6 OK 
+_Cog6 OK_
 
-between each successful definition.  
+   between each successful definition.  
 
-Visually verify that the final line displayed on the tera term screen is the final line of the source text file, and is followed by 
+   Visually verify that the final line displayed on the tera term screen is the final line of the source text file, and is followed by 
 
-Cog6 Ok
+_Cog6 Ok_
 
-Cog6 Ok
+_Cog6 Ok_
 
-At this point, the file was successfully loaded and compiled.
+   At this point, the file was successfully loaded and compiled.
 
-See the example for downloading the textfile Propforth.f to propforth via teraterm:
+   See the example for downloading the textfile Propforth.f to propforth via teraterm:
 
 DownloadPropforth.f
