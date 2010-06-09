@@ -29,7 +29,7 @@
 
 = Can words be defined in the Cog memory rather than the Hub memory? =
 
-  * Yes.  The original model included the ability to define high level forth words exclusive to the Cog that would use them.  Turns out, however, to be too difficult and complex; also, cog specific words tend to be the ones optimized into assembly.   Presently, the model is high level definitions in the common hub memory, and cog specific words in assembly. An example is the Logic Analyzer module. See LogicAnalyzer.f
+  * Yes.  The original model included the ability to define high level forth words exclusive to the Cog that would use them.  Turns out, however, to be too difficult and complex; also, cog specific words tend to be the ones optimized into assembly.   Presently, the model is high level definitions in the common hub memory, and cog specific words in assembly. An example of assembly definitions that exist only in the cog that uses them is the Logic Analyzer module. See LogicAnalyzer.f
 
 = What is the Logic Analyzer? =
 
