@@ -33,7 +33,7 @@
 
 = What is the Logic Analyzer? =
 
-  * LogicAnalyzer.f is a reorganization of la.f.  Some of the cryptic names are being changed to descriptive names.  If you can't find the find, its due to trouble sorting out the names. If you do find the file, it still might not be sorted out.  If you need a logic analyzer, maybe you can figure out la.f; otherwise pleas wait a little longer.  This message will be updated once LogicAnalyzer.f is tested.
+  * LogicAnalyzer.f is a reorganization of la.f.  Some of the cryptic names are being changed to descriptive names.  If you can't find the file, its due to trouble sorting out the names. If you do find the file, it still might not be sorted out.  If your the type of person that needs a logic analyzer, your probably the type that can figure out la.f; If your just fiddling (what I do) please wait a little longer for LogicAnalyzer.f to be completed.  This message will be updated once LogicAnalyzer.f is tested.
 
   * LogicAnalyzer.f or la.f is the source code for the software logic analyzer.  It uses 1 to 4 cogs to provide logic analyzer functionality.  The file contains assembly definitions for fucntions that reside in the cogs, not the main dictionary.  The following are the names used in the current la.f file; these are to be renamed to more descriptive names with the release of LogicAnalizer.f
 
