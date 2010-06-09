@@ -31,13 +31,13 @@ The FL word provides the method for loading entire files of source text definiti
 
 FL loads a file of forth source text to propforth.
 
-The FL word reads the input stream and page-writes it into unused ram as a buffer. 
+The FL word reads the input stream and page-writes it into unused eeprom as a buffer. 
 
-It uses the ram starting at 256 bytes past the current end of the dictionary, and ending at 32k.
+It uses the eepromstarting at 256 bytes past the current end of the dictionary, and ending at 32k.
  
-When the input stream is exhausted, propforth interprets the input stream as buffered in ram, and the text is echoed on the serial terminal display.  
+When the input stream is exhausted, propforth interprets the input stream as buffered in eeprom, and the text is echoed on the serial terminal display.  
 
-As each section of the buffer is interpreted (for example, as it is echoed on the screen), the ram is released from the buffer duty.
+As each section of the buffer is interpreted (for example, as it is echoed on the screen), the eeprom is released from the buffer duty.
 
 The demo board was tested to accept over 15,000 characters, and the proto board slightly less.
 
