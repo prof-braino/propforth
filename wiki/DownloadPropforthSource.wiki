@@ -1,8 +1,13 @@
 #summary Download the PropForth source code text files to the propeller chip
+#labels v2.7
 
 = Introduction =
 
-The PropForth kernel source code in is two text files, PropForthPart1.f and PropForthPart2.f
+The page discusses how to create the PropForth 2.7 spin file (Propforth.spin) from the high level forth source definitions.  This is the method used when the forth system is to be redesigned and redefined in forth.  This is normally not required unless extensive changes to the forth system are needed.  
+
+The PropForth kernel source code in is two text files, PropForthPart1.f and PropForthPart2.f.  These files contain the forth source code that was used to create PropForth.spin.
+
+The forth source code is loaded into the propeller chip running forth.
 
 Once the kernel source code is loaded into the propeller chip,  an additional forth word, spinmaker, generates spin code from these definitions.  The definitions for the spinmaker word and its supporting words are in spinmakerPart1.f and spinmakerPart2.f
 
