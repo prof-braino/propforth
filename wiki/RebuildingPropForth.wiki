@@ -1,4 +1,5 @@
 #summary Rebuilding PropForth - generating the spin code for the currently running image
+#labels v2.4
 
 = Rebuilding PropForth - generating the spin code for the currently running image =
 
