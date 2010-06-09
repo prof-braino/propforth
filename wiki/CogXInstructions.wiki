@@ -1,0 +1,33 @@
+#summary cogX ( TextString Cog# - ) Command a forth cog to execute a forth word
+
+= Cogx =
+
+cogX ( TextString Cog# - ) Command a forth cog to execute a forth word
+
+The word "cogX" takes the STRING defined by 
+
+c" ThisIsTheString" 
+
+and sends it to the input buffer of a cog.  The cog then starts to interpret the string, in this case the word "ThisIsTheString"
+
+Example:  make a different cog do something
+
+cog 4 will put a bunch of values on the stack of cog1
+
+_cog4 ok_
+
+*c" 1 2 3 " 1 cogX*
+
+_ok_
+
+CTL+A to cog1
+
+_cog1 ok_
+
+*st?*
+
+_ST: 00000001 00000002 00000003_
+
+_ok_
+
+cogX does "send the string to the cog"; the cog then interprets the string 
