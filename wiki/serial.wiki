@@ -1,3 +1,3 @@
 #summary serial.f - an assembler serial driver
-#labels v2.6
+#labels v2.4
 http://code.google.com/p/propforth/downloads/list
