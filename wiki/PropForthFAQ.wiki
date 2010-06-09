@@ -1,8 +1,6 @@
 #summary Frequently Asked Questions
 #labels Featured,v2.7
 
-
-
 = How Do I Submit a Question? =
 
   * Sign in to your gmail account enter comments at the bottom of the page in question
@@ -13,15 +11,9 @@
 
  * The earlier versions might not agree with the current documentation, so avoid these unless something is broken. 
 
-= what is the long term direction for PropForth? =
+= Do I need the files spinmakerPart1 and 2 to create kernel source code? =
 
- * The goal is a "standard forth".  
-
- * The basic kernel will be a "hardware abstraction layer" to support the basic standard forth words.  
-
- * A "developer environment" to aid with typical development tasks, tailored for this hardware:  source code maintenance, debugging, interface to common external functions.  Possibly as extensions, possibly included in the kernel.  
-
-  * Compatibility with existing standard forth code where possible 
+  * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image, which will include any definitions you added. 
 
 = What does the "saveforth" word do? =
  
@@ -34,12 +26,6 @@
 = Do I need the files PropForthPart1 and 2? =
 
   * No. PropForthPart1.f and PropForthPart2.f will generate the original Propforth 2.7 kernel definitions as found in PropForth.spin.   You only need these if you want to see that the definitions generated are the same as those posted, without the comments
-
-= Do I need the files spinmakerPart1 and 2? =
-
-  * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image. 
-
-= 
 
 = Can words be defined in the Cog memory rather than the Hub memory? =
 
@@ -85,7 +71,21 @@
 
 NOTE: serialmonitor.f NEEDS to have aslicer.f and serialdriver.f loaded before it.
 
+= What is the difference between the SerialMonitor and the DeluxeSerialMonitor? =
+
+  * The DeluxeSerialMonitor has all three files in a single archive, and the files are numbered in the order that they are to be loaded.  Otherwise the files are pretty much the same as the SerialMonitor files.  I just needed a different name for the zip-packaged version. 
+
 = How to start an arbitrary cog executing an arbitrary word? =
 
   *the cogX word start a cog executing a word
   See [http://code.google.com/p/propforth/wiki/CogXInstructions CogXInstructions]
+
+= what is the long term direction for PropForth? =
+
+ * The goal is a "standard forth".  
+
+ * The basic kernel will be a "hardware abstraction layer" to support the basic standard forth words.  
+
+ * A "developer environment" to aid with typical development tasks, tailored for this hardware:  source code maintenance, debugging, interface to common external functions.  Possibly as extensions, possibly included in the kernel.  
+
+  * Compatibility with existing standard forth code where possible 
