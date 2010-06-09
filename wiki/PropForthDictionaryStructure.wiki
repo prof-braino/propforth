@@ -1,4 +1,5 @@
 #summary 16-bit token threaded assembler for prop architecture.
+#labels v2.7
 
 = !PropForth Dictionary Structure =
 
