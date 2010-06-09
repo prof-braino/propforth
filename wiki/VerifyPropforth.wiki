@@ -10,17 +10,17 @@ Main functions are
  * rebuilding the entire forth dictionary
 
 
-  = Using the stack =
+= Using the stack =
   
   * Type in 1 2 3, and type in the st? word to display the stack: 
 
-Cog6 ok
+_Cog6 ok_
 
-* 1 2 3
+*1 2 3*
 
-Cog6 
+_Cog6_
 
-* st?
+*st?*
 
 ST: 00000001 00000002 00000003
 
