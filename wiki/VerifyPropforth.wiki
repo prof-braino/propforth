@@ -30,7 +30,7 @@ _Cog6 ok_
 
 _Cog6 ok_
 
-** + . st?*
+*+ . st?*
 
 _Cog6 ok_
 
