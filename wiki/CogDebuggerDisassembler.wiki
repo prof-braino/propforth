@@ -296,7 +296,7 @@ The decompiler displays from the dictionary entry to the terminating semi colon:
   _{55E4 0073 13B0} ;_
 
 
-Notice in the above the 0branch assembler instruction FFF8 is at location 147E and its parameter field is at 00D8.  Remember, assembler addresses below 512 (decimal) are  COG LOCAL Assembler routines.
+Notice in the above the 0branch assembler instruction FFF8 is at location 147E and its parameter field is at 00D8.  Remember, assembler addresses below 512 (decimal) are  COG LOCAL Assembler routines as explaining in [http://code.google.com/p/propforth/wiki/PropForthDictionaryStructure PropForthDictionaryStructure].  
 
    * Do a memory dump of the 16 bytes at location 147E:
 
