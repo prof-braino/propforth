@@ -57,7 +57,7 @@ The debugger is now loaded
 
 = test verify the debugger =
 
-* Load the example routine to be debugged
+   * Load the example routine to be debugged
 
 From the top of the comments section of cogdbg.f / CogDebuggerDisassembler.f, copy the definitions for "underscore"t and fib into teraterm
 
@@ -417,6 +417,4 @@ _Cog6 ok_
 _0110 00000000 IF_NEVER    WRBYTE 0 , 0_
 
 _Cog6 ok_
-
-
 
