@@ -197,7 +197,7 @@ Type CTL+o to execute to the end of the calling word
 
   _{55D6 1B36 1B32} 1-_
 
-  _{55D8 55BC 55B8} _t_
+  _{55D8 55BC 55B8} "underscore"t_
 
   _{55DA 0032 13A2} dup_
 
@@ -245,7 +245,155 @@ _> 0060 00004660 IF_NEVER    WRBYTE 23 , 60_
 
 _Cog5 ok_
 
+_Cog5 ok_
+
+*st?
+
+_ST: 00000A94 00000078_
+
+To exit the disassembler, use CTL+D
+
+_Cog5 ok_
+
+_Cog6 ok_
 
 
+= decompile fib =
 
-decompile fib
+To run the decompiler on the word "fib":
+
+_Cog5 ok_
+
+*decompile fib
+
+The decompiler displays from the dictionary entry to the terminating semi colon:
+
+  _{addr pfa  nfa }_
+
+  _{     55CE 55CA} fib_
+
+  _{55CE 006A 13C0} 0002_
+
+  _{55D2 13F0 13EC} max_
+
+  _{55D4 0032 13A2} dup_
+
+  _{55D6 1B36 1B32} 1-_
+
+  _{55D8 55BC 55B8} "underscore"t_
+
+  _{55DA 0032 13A2} dup_
+
+  _{55DC 1AEC 1AE8} 0=_
+
+  _{55DE 00D8 147E} 0branch FFF8 {55D8}_
+
+  _{55E2 0011 1398} drop_
+
+  _{55E4 0073 13B0} ;_
+
+
+Notice in the above the 0branch assembler instruction FFF8 is at location 147E and its parameter field is at 00D8.  Remember, assembler addresses below 512 (decimal) are  COG LOCAL Assembler routines.
+
+Do a memory dump of the 16 bytes at location 147E:
+
+*147E 10 dump
+
+_147E 0010:_
+
+_147E: 07 30 62 72 61 6E 63 68 D8 00 7E 14 06 28 6C 6F    0branch ~  (lo_
+
+_Cog6 ok_
+
+Disassemble COG address D8 to see the cog-local machine code disassembled:
+
+*d8 dis
+
+_00D8 5CFDF0F0 IF_ALWAYS   JMP F8 , # F0 wr_
+
+_Cog6 ok_
+
+Typing dis again steps through the routine each time:
+
+*dis
+
+_00D9 867E1200 IF_ALWAYS   SUB 109 , # 0 wz_
+
+_Cog6 ok_
+
+*dis
+
+_00DA 5C68001B IF_Z        JMP 0 , # 1B_
+
+_Cog6 ok_
+
+*dis
+
+_00DB 5C7C006C IF_ALWAYS   JMP 0 , # 6C
+
+_Cog6 ok_
+
+*dis
+
+_00DC 5CC1F0F8 IF_NEVER    JMP F8 , # F8 wr
+
+_Cog6 ok
+
+
+*dis
+
+_00DD 083E07F0 IF_ALWAYS   WRLONG 103 , 1F0
+
+_Cog6 ok
+
+Disassemble starting at address 0 (in this cog's memory space):
+
+*0 dis
+
+_0000 5C7C0075 IF_ALWAYS   JMP 0 , # 75_
+
+_Cog6 ok_
+
+Notice that this code is a jump to location 75(H)
+
+Disassemble from 75:
+
+*75 dis
+
+_0075 5CC1F0F8 IF_NEVER    JMP F8 , # F8 wr_
+
+_Cog6 ok_
+
+Notice that this instruction is a jump to location F8
+
+This is where the ASSEMBLY TIMESLICED routines get hooked in
+
+*dis
+
+_0076 5CC200FF IF_NEVER    JMP 100 , # FF wr_
+
+_Cog6 ok_
+
+dis
+0077 04BE1305 IF_ALWAYS   RDWORD 109 , 105 wr
+Cog6 ok
+
+d7 dis
+00D7 5C7C0075 IF_ALWAYS   JMP 0 , # 75
+Cog6 ok
+
+
+stBOT
+UNDEFINED WORD stBOT
+Cog6 ok
+stBOT
+UNDEFINED WORD stBOT
+Cog6 ok
+stBot
+Cog6 ok
+st?
+ST: 000000DE 00000001 00000078 000000D8 0000010F
+Cog6 ok
+dis
+010F 00000000 IF_NEVER    WRBYTE 0 , 0
+Cog6 ok
