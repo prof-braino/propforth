@@ -15,11 +15,28 @@ The disassembler does not care if the machine code was generated from forth, spi
 
 The cryptic names are scheduled to be revised in future release.  
 
+= Prepare Deluxe Serial Monitor =
+
+These instructions assume that Deluxe Serial Monitor has been loaded as described in
+
+DeluxeSerialMonitor
+
+and the image habeen save to eeprom
+
+_Cog5 ok_
+
+*reboot
+
+_Cog7 ok_
+
+_PropForth v2.7 2010MAY26 14:50 2_
+
+_Cog5 ok_
 
 
 = Loading the debugger and disassembler into propforth =
 
- * use CTL+A to communicate with Cog5
+ * use CTL+A to communicate with Cog5 if not already
 
 _Cog5 ok_
 
@@ -36,21 +53,29 @@ _
 
 *Cog5 ok
 
-NOTICE the above oputput representation has "underscore" in it where the character underscore shoulbe due to the formatting method of code.google.com.
-
 The debugger is now loaded
 
 = test verify the debugger =
 
-* Load routine to debug
+* Load the example routine to be debugged
 
 From the top of the comments section of cogdbg.f / CogDebuggerDisassembler.f, copy the definitions for "underscore"t and fib into teraterm
+
+NOTICE the above word identifier has "underscore" in it where the character underscore should be due to the formatting method of code.google.com.
 
 {{{
 : _t dup rot u* swap 1- ;
 
 : fib 2 max dup 1- begin _t dup 0= until drop ;
 }}}
+
+Verify forth is running in some cogs, Cog 5 and Cog 6 are used in this example
+
+*cog?
+
+_Forth cogs: 5 - 6_
+
+_Cog5 ok_
 
 CTL+A to Cog 6
 
@@ -82,6 +107,8 @@ _Cog5 ok_
 
 NOTICE: The propforth interface (the serial driver on cog7) is STILL talking to cog6, and cog6 is looking at Cog5.  
 
+_CTL-d exit CTL-n forth single step CTL-o forth/asm continue_
+
 Type in:
 
 *cogdbg
@@ -92,6 +119,30 @@ This put the number 5 on the cog 5 stack, starts the debugger on the word fib, r
 
 NOTICE: the stack display for the debugger is backwards in v2.7 (New values are displayed on the left instead of the right).  This a bug is to be fixed in v3.0 or later.
 
+  _tregs: 00000017 000055CA 000055CA 00000062 000017BE 00000A9A
+
+  _ST: 00000005 00000A94_
+
+  _RS: 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3C4A:2BBE interpret_
+
+ _>{55CE 006A 13C0} 0002_
+
+  _{55D2 13F0 13EC} max_
+
+  _{55D4 0032 13A2} dup_
+
+  _{55D6 1B36 1B32} 1-_
+
+  _{55D8 55BC 55B8} "underscore"t _
+
+  _{55DA 0032 13A2} dup_
+
+  _{55DC 1AEC 1AE8} 0=_
+
+  _{55DE 00D8 147E} 0branch FFF8 {55D8}_
+
+  _{55E2 0011 1398} drop_
+
 
 CTL+n steps through the word (assebler tokens) or into the word (forth tokens)
 
@@ -101,9 +152,10 @@ CTL+d leave the debugger and go back to the original cog (cog 6 in this case)
 
 NOTICE: [STEP OVER WORD] [STEP OUT OF WORD] have not been implemented at this time.
 
+
+
+
 decompile fib
-
-
 
 
 
