@@ -59,7 +59,7 @@ The debugger is now loaded
 
    * Load the example routine to be debugged
 
-From the top of the comments section of cogdbg.f / CogDebuggerDisassembler.f, copy the definitions for "underscore"t and fib into teraterm
+   * From the top of the comments section of cogdbg.f / CogDebuggerDisassembler.f, copy the definitions for "underscore"t and fib into teraterm
 
 NOTICE the above word identifier has "underscore" in it where the character underscore should be due to the formatting method of code.google.com.
 
@@ -69,7 +69,7 @@ NOTICE the above word identifier has "underscore" in it where the character unde
 : fib 2 max dup 1- begin _t dup 0= until drop ;
 }}}
 
-Verify forth is running in some cogs, Cog 5 and Cog 6 are used in this example
+   * Verify forth is running in some cogs, Cog 5 and Cog 6 are used in this example
 
 *cog?
 
@@ -77,24 +77,24 @@ _Forth cogs: 5 - 6_
 
 _Cog5 ok_
 
-CTL+A to Cog 6
+   * CTL+A to Cog 6
 
 _>6_
 
-< hit a return here to display the prompt >
+   < hit a return here to display the prompt >
 
 
 _Cog6 ok_
 
-Type in 
+   * Type in 
 
 *10 fib .
 
-And verify the output:
+   *And verify the output:
 
 _77758000_
 
-Type in 
+   * Type in 
 
 {{{
 ' dterm 5 dterm
@@ -109,7 +109,7 @@ NOTICE: The propforth interface (the serial driver on cog7) is STILL talking to 
 
 _CTL-d exit CTL-n forth single step CTL-o forth/asm continue_
 
-Type in:
+   * Type in:
 
 *cogdbg
 
@@ -152,7 +152,7 @@ CTL+d leave the debugger and go back to the original cog (cog 6 in this case)
 
 NOTICE: Commands STEP-OVER-WORD and STEP-OUT-OF-WORD have not been implemented at this time.
 
-Type CTL+n to step to the next token:
+   * Type CTL+n to step to the next token:
 
    _tregs: 0000006A 000055CA 000055CA 00000062 000017BE 00000A9A_
 
@@ -180,7 +180,7 @@ _> {55D2 13F0 13EC} max_
 
    _{55E4 0073 13B0} ;_
 
-Type CTL+o to execute to the end of the calling word
+   * Type CTL+o to execute to the end of the calling word
 
 
    _tregs: 00000011 00000001 00000000 00000078 000055DE 00000A9A_
@@ -251,16 +251,19 @@ _Cog5 ok_
 
 _ST: 00000A94 00000078_
 
-To exit the disassembler, use CTL+D
+= To exit the disassembler, use CTL+D =
 
 _Cog5 ok_
+ 
+   * Type in CTL+D
 
 _Cog6 ok_
 
+NOTICE the disassembler exits imediately and dispalys no message;  Cog6 displays _ok_ at the normal termination of the word "dterm". 
 
 = decompile fib =
 
-To run the decompiler on the word "fib":
+   * To run the decompiler on the word "fib":
 
 _Cog5 ok_
 
@@ -295,7 +298,7 @@ The decompiler displays from the dictionary entry to the terminating semi colon:
 
 Notice in the above the 0branch assembler instruction FFF8 is at location 147E and its parameter field is at 00D8.  Remember, assembler addresses below 512 (decimal) are  COG LOCAL Assembler routines.
 
-Do a memory dump of the 16 bytes at location 147E:
+   * Do a memory dump of the 16 bytes at location 147E:
 
 *147E 10 dump
 
@@ -305,7 +308,7 @@ _147E: 07 30 62 72 61 6E 63 68 D8 00 7E 14 06 28 6C 6F    0branch ~  (lo_
 
 _Cog6 ok_
 
-Disassemble COG address D8 to see the cog-local machine code disassembled:
+   * Disassemble COG address D8 to see the cog-local machine code disassembled:
 
 *d8 dis
 
@@ -313,7 +316,7 @@ _00D8 5CFDF0F0 IF_ALWAYS   JMP F8 , # F0 wr_
 
 _Cog6 ok_
 
-Typing dis again steps through the routine each time:
+   * Typing dis again steps through the routine each time:
 
 *dis
 
@@ -346,7 +349,7 @@ _00DD 083E07F0 IF_ALWAYS   WRLONG 103 , 1F0
 
 _Cog6 ok
 
-Disassemble starting at address 0 (in this cog's memory space):
+   * Disassemble starting at address 0 (in this cog's memory space):
 
 *0 dis
 
@@ -356,7 +359,7 @@ _Cog6 ok_
 
 Notice that this code is a jump to location 75(H)
 
-Disassemble from 75:
+   * Disassemble from 75:
 
 *75 dis
 
@@ -366,7 +369,7 @@ _Cog6 ok_
 
 Notice that this instruction is a jump to location F8
 
-This is where the ASSEMBLY TIMESLICED routines get hooked in
+This is where ASSEMBLY TIMESLICED routines get hooked in
 
 *dis
 
@@ -374,19 +377,23 @@ _0076 5CC200FF IF_NEVER    JMP 100 , # FF wr_
 
 _Cog6 ok_
 
-dis
-0077 04BE1305 IF_ALWAYS   RDWORD 109 , 105 wr
-Cog6 ok
+*dis
 
-d7 dis
-00D7 5C7C0075 IF_ALWAYS   JMP 0 , # 75
-Cog6 ok
+_0077 04BE1305 IF_ALWAYS   RDWORD 109 , 105 wr_
+
+_Cog6 ok_
+
+*d7 dis
+
+_00D7 5C7C0075 IF_ALWAYS   JMP 0 , # 75_
+
+_Cog6 ok_
 
 = Example of disassembling memory that is not machine code =
 
-Clear the stack:
+   * Clear the stack:
 
-st?
+*st?
 
 _ST:_
 
@@ -404,7 +411,7 @@ _ST: 0000010F_
 
 _Cog6 ok_
 
-Begin disassembling at the address of stBot:
+   * Begin disassembling at the address of stBot:
 
 *dis
 
@@ -417,4 +424,3 @@ _Cog6 ok_
 _0110 00000000 IF_NEVER    WRBYTE 0 , 0_
 
 _Cog6 ok_
-
