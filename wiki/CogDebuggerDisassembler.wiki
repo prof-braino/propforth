@@ -349,6 +349,8 @@ _00DD 083E07F0 IF_ALWAYS   WRLONG 103 , 1F0
 
 _Cog6 ok
 
+= Cog Memory Location 0 =
+
    * Disassemble starting at address 0 (in this cog's memory space):
 
 *0 dis
@@ -371,6 +373,8 @@ Notice that this instruction is a jump to location F8
 
 This is where ASSEMBLY TIMESLICED routines get hooked in
 
+= Assembly TIMESLICED Routines are hooked in by this method = 
+
 *dis
 
 _0076 5CC200FF IF_NEVER    JMP 100 , # FF wr_
@@ -388,6 +392,8 @@ _Cog6 ok_
 _00D7 5C7C0075 IF_ALWAYS   JMP 0 , # 75_
 
 _Cog6 ok_
+
+NOTICE: If you have trouble with this and need to do it, please submit a question.  I  will learn how to state it more clearly after I get to explain it a couple times. 
 
 = Example of disassembling memory that is not machine code =
 
