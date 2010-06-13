@@ -100,7 +100,7 @@ Type in
 ' dterm 5 dterm
 }}}
 
-The preceding means: Begin debugging for definitions above dterm; do it on COG 5
+The preceding means: Begin debugging for definitions above the address of dterm; do it on COG 5
 
 _Cog5 ok_
 
@@ -115,7 +115,7 @@ Type in:
 
 *5 don fib doff
 
-This put the number 5 on the cog 5 stack, starts the debugger on the word fib, runs the word fib, and turns the debugger off again.
+This puts the number 5 on the cog 5 stack, starts the debugger on the word fib, runs the word fib, and turns the debugger off again.
 
 NOTICE: the stack display for the debugger is backwards in v2.7 (New values are displayed on the left instead of the right).  This a bug is to be fixed in v3.0 or later.
 
@@ -382,18 +382,41 @@ d7 dis
 00D7 5C7C0075 IF_ALWAYS   JMP 0 , # 75
 Cog6 ok
 
+= Example of disassembling memory that is not machine code =
 
-stBOT
-UNDEFINED WORD stBOT
-Cog6 ok
-stBOT
-UNDEFINED WORD stBOT
-Cog6 ok
-stBot
-Cog6 ok
+Clear the stack:
+
 st?
-ST: 000000DE 00000001 00000078 000000D8 0000010F
-Cog6 ok
-dis
-010F 00000000 IF_NEVER    WRBYTE 0 , 0
-Cog6 ok
+
+_ST:_
+
+_Cog6 ok_
+
+In Propforth 2.7, the word stBot is a memory location that holds an address which is a pointer to the bottom of the stack.  
+
+*stBot
+
+_Cog6 ok_
+
+*st?
+
+_ST: 0000010F_
+
+_Cog6 ok_
+
+Begin disassembling at the address of stBot:
+
+*dis
+
+_010F 00000000 IF_NEVER    WRBYTE 0 , 0_
+
+_Cog6 ok_
+
+*dis
+
+_0110 00000000 IF_NEVER    WRBYTE 0 , 0_
+
+_Cog6 ok_
+
+
+
