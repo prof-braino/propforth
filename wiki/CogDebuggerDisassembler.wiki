@@ -1,0 +1,109 @@
+#summary Debugger and Disassembler for Propeller
+#labels debugger,disassembler,v2.7
+
+= cogdbg =
+
+NOTE: this needs the assemler timeslicer to be loaded first!
+
+The debugger and disassembler is an extension to propforth.
+
+The debugger steps through forth definitions above a specified memory address.
+
+The disassembler converts (machine code) bytes at a given address into assembler opcodes.  If the address given is NOT valid machine code, the disassembler will function regardless, and display what those bytes represent when considered as machine code.  
+
+The disassembler does not care if the machine code was generated from forth, spin, or manually constructed by a programmer.
+
+The cryptic names are scheduled to be revised in future release.  
+
+
+
+= Loading the debugger and disassembler into propforth =
+
+ * use CTL+A to communicate with Cog5
+
+_Cog5 ok_
+
+ * Open cogdbg.f / CogDebuggerDisassembler.f using a text editor
+
+ * Paste the entire contents, including the blank lines and  FL at the begining to the blank lines at the end, into Teraterm
+
+The last definition to compile should be dterm, which spans several lines
+
+_
+: dterm   . . .
+        then drop ;
+_
+
+*Cog5 ok
+
+NOTICE the above oputput representation has "underscore" in it where the character underscore shoulbe due to the formatting method of code.google.com.
+
+The debugger is now loaded
+
+= test verify the debugger =
+
+* Load routine to debug
+
+From the top of the comments section of cogdbg.f / CogDebuggerDisassembler.f, copy the definitions for "underscore"t and fib into teraterm
+
+{{{
+: _t dup rot u* swap 1- ;
+
+: fib 2 max dup 1- begin _t dup 0= until drop ;
+}}}
+
+CTL+A to Cog 6
+
+_>6_
+
+< hit a return here to display the prompt >
+
+
+_Cog6 ok_
+
+Type in 
+
+*10 fib .
+
+And verify the output:
+
+_77758000_
+
+Type in 
+
+{{{
+' dterm 5 dterm
+}}}
+
+The preceding means: Begin debugging for definitions above dterm; do it on COG 5
+
+_Cog5 ok_
+
+
+NOTICE: The propforth interface (the serial driver on cog7) is STILL talking to cog6, and cog6 is looking at Cog5.  
+
+Type in:
+
+*cogdbg
+
+*5 don fib doff
+
+This put the number 5 on the cog 5 stack, starts the debugger on the word fib, runs the word fib, and turns the debugger off again.
+
+NOTICE: the stack display for the debugger is backwards in v2.7 (New values are displayed on the left instead of the right).  This a bug is to be fixed in v3.0 or later.
+
+
+CTL+n steps through the word (assebler tokens) or into the word (forth tokens)
+
+CTL+o executes to the end (of the word highest level word).
+
+CTL+d leave the debugger and go back to the original cog (cog 6 in this case)
+
+NOTICE: [STEP OVER WORD] [STEP OUT OF WORD] have not been implemented at this time.
+
+decompile fib
+
+
+
+
+
