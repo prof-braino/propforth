@@ -156,30 +156,29 @@ Type CTL+n to step to the next token:
 
 _tregs: 0000006A 000055CA 000055CA 00000062 000017BE 00000A9A
 
-ST: 00000002 00000005 00000A94
+_ST: 00000002 00000005 00000A94
 
-RS: 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3C4A:2BBE interpret
+      _RS: 2B0A:17B0 execute 2BFC:2AD8 interpretpad 3C4A:2BBE interpret
 
-  {55CE 006A 13C0} 0002
+    _{55CE 006A 13C0} 0002
 
-> {55D2 13F0 13EC} max
+   > {55D2 13F0 13EC} max
 
-  {55D4 0032 13A2} dup
+     {55D4 0032 13A2} dup
 
-  {55D6 1B36 1B32} 1-
+     {55D6 1B36 1B32} 1-
 
-  {55D8 55BC 55B8} _t
+     {55D8 55BC 55B8} "underscore"t
 
-  {55DA 0032 13A2} dup
+     {55DA 0032 13A2} dup
 
-  {55DC 1AEC 1AE8} 0=
+     {55DC 1AEC 1AE8} 0=
 
-  {55DE 00D8 147E} 0branch FFF8 {55D8}
+     {55DE 00D8 147E} 0branch FFF8 {55D8}
 
-  {55E2 0011 1398} drop
+     {55E2 0011 1398} drop
 
-  {55E4 0073 13B0} ;
+     {55E4 0073 13B0} ;_
 
 
 decompile fib
-
