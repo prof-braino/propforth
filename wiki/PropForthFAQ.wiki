@@ -11,6 +11,10 @@
 
  * The earlier versions might not agree with the current documentation, so avoid these unless something is broken. 
 
+= In what version will PropForth use standard forth names for standard forth words?  When will this version come out? =
+
+Standard forth names will be used for all implemented standard forth functions beginning in version 3.0.  This version is planned to be completed in two weeks. 
+
 = Do I need the files spinmakerPart1 and 2 to create kernel source code? =
 
   * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image, which will include any definitions you added. 
@@ -26,6 +30,14 @@
 = Do I need the files PropForthPart1 and 2? =
 
   * No. PropForthPart1.f and PropForthPart2.f will generate the original Propforth 2.7 kernel definitions as found in PropForth.spin.   You only need these if you want to see that the definitions generated are the same as those posted, without the comments
+
+= What is the "Display Data Stack" word?  Why doesn't ".S" work? =
+
+The standard 'display data stack' word will be implemented in version 3.0 (planned). The word "st?" displays the stack in hex formatted to 8 hex digits.
+
+= What is the number base word? Why doesn't "BASE" work? =
+
+In version 2.7 and earlier, the variable that holds the number base is mcwBase. The standard forth name "BASE" will be used in version 3.0 (planned)
 
 = Can words be defined in the Cog memory rather than the Hub memory? =
 
