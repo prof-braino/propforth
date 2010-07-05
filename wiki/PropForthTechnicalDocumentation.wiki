@@ -47,7 +47,7 @@ The forth definitions of the forth words is all the code between ForthDictStart 
 
 The author of PropForth developed the assembler implementation of the forth dictionary and inner interpreter based on previous knowledge of forth and of the propeller architecture and the propeller assembly.   This section generally does not change much.  If you wish to make changes you are free to do so, but understand that this can affect the design of the kernel. 
 
-Routines that are used in the infrastructure of the dictionary and inner interpreter include routines that are not called from user applications.  The words that are internal to infrastructure contain an underscore character. {{{  a_ v_ c_ $C_  }}}
+Routines that are used in the infrastructure of the dictionary and inner interpreter include routines that are not called from user applications.  The words that are internal to infrastructure contain an underscore character. {{{  a_ v_ c_ $C_ $H_ }}}
 
 {{{ 
 c_ a_ v_ prefixes are ONLY used by the assembler. These reside in COG MEMORY.
@@ -56,11 +56,11 @@ c_cogResidentCode (subroutine?)
 a_cogResidentAssebler
 v_cogResidentVariable
 
-cm_ and ca_ are a special class -  these designate a constant that is an address of a spin label.
+$C_ and $H_ are a special class -  these designate a constant that is an address of a spin label.
 
-cm_ is a hub memory address - the spin label occurred in the HUB
+$C_ is a hub memory address - the spin label occurred in the HUB
 
-ca_  is cog memory address - the spin label occurred in the COG
+$H_ is cog memory address - the spin label occurred in the COG
 
 }}}
 
