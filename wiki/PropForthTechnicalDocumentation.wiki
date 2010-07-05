@@ -161,14 +161,31 @@ The cog memory or cog RAM is actually 512 registers of 32 bits.  The last 16 loc
 
 The words !source !instruction and !destination store a value (bit pattern) to the appropriate bits in the specified register. 
 
+{{{
+!source 
 
+!instruction 
 
+!destination
+}}}
 
 = Naming Convention Summary =
  
+lowercase - all standard forth words implemented
 
+lowercase - all spin words implemented in propforth
 
+lowercase - all prop assembler labels implemented in propforth
 
+_underscore prefix - HAL words, prop specific words used internally by propforth to implement user - callable words.  (Don't call any underscore prefixed words unless you know what you are doing).
+
+c_ prefix acts as a directive to the prop assembler indicating this is cog resident assembler code, NOT callable by forth
+
+a_ prefix acts as a directive to the prop assembler indicating this is cog resident assembler code (that IS callable by forth?)
+
+v_ prefix acts as a directive to the prop assembler indicating this is cog resident variable (that IS callable by forth?)
+
+[or are these all only used internally by the assembler and not usable by forth?]
 
 = WORK IN PROGRESS 20100705 =
 = CONTINUE HERE =
