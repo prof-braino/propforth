@@ -35,18 +35,33 @@ To the user, it appears that the terminal application is talking directly to cog
 * Inside the PropForth.spin File
 
 The PropForth.spin file can be approached as  having two sections:
+
 1) the Propeller Assembly implementation of the Forth Dictionary and inner interpreter;
+
 2) the forth definitions of the forth words.
 
-The Propeller Assembly implementation of the Forth Dictionary and inner interpreter is all the spin and assembly code before ForthDictStart in the PRopForth.spin file.
+The Propeller Assembly implementation of the Forth Dictionary and inner interpreter is all the spin and assembly code before ForthDictStart in the PropForth.spin file.
 
 The forth definitions of the forth words is all the code between ForthDictStart and ForthMemEnd, which is the remainder of the file. 
 
 * Propeller Assembly implementation of the Forth Dictionary and inner interpreter
 
-The author of PropForth developed the assembler implementation of the forth dictionary and inner interpreter based on previous knowledge of forth and of the propeller architecture and the propeller assembly.   This section generally does not change much.  If you wish to make changes  
+The author of PropForth developed the assembler implementation of the forth dictionary and inner interpreter based on previous knowledge of forth and of the propeller architecture and the propeller assembly.   This section generally does not change much.  If you wish to make changes you are free to do so, but understand that this can affect the design of the kernel. 
+
+Routines that are used in the infrastructure of the dictionary and inner interpreter include routines that are not called from user applications.  The words that are internal to infrastructure contain an underscore character.   a_ v_ c_ $C_ 
+ 
+c_ a_ v_ prefixes are ONLY used by the assembler. These reside in COG MEMORY.
+
+c_cogResidentCode (subroutine?)
+a_cogResidentAssebler
+v_cogResidentVariable
+
+$C_ These words are entries in the forth dictionary to access the assembler labels.  An example using the assembler VGA driver will be presented at a later date.  A simple example using the serial driver is also planned but is not ready to be posted as of this writing. 
+
 
 * The forth definitions of the forth words
+
+The second section of PropForth.spin is the section between ForthDictStart and ForthMemEnd.  
 
 = WORK IN PROGRESS 20100705 =
 = CONTINUE HERE =
