@@ -143,6 +143,13 @@ It has been determined that while this looks inconsistent, in practice one only 
 
 == Register Memory ==
 
+Cog Registers and HUB registers (am I saying this correctly?)
+
+The cog memory or cog RAM is actually 512 registers of 32 bits.  The last 16 locations $1F0 to $1FF are special purpose registers par, cnt, ina, outa, dira ctra, ctrb, frqa, frqb, phsa, phsb, vcfg, vscl and are documented in the propeller manual. PropForth uses the these same names as do the spin and propeller assembler. 
+
+The words !source !instruction and !destination store a value (bit pattern) to the appropriate bits in the specified register. 
+
+
 
 
 = Naming Convention Summary =
