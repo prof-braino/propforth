@@ -95,6 +95,7 @@ From the propeller manual, we know that there are several differnet ways to acce
 
 HUB (main) Memeory is accessed with the following words:
 
+{{{
 C@ - character (1 byte) fetch
 
 C! - character (1 byte) store
@@ -106,6 +107,7 @@ W! - word (2 byte) store
 L@ - long (4 byte) fetch
 
 L! - long (4 byte) store
+}}}
 
 These words use capital letters for readability due to confusion between the lowercase "L" and the number "1".
 
@@ -113,9 +115,11 @@ These words use capital letters for readability due to confusion between the low
 
 COG memory is always addressed as LONG.  Since cog is a special case, the COG LONG meory access was given special names
 
+{{{
 COG@ - long (4 byte) fetch to cog memory
 
 COG! - long (4 byte) store to cog memory
+}}}
 
 == EEPROM Memory ==
 
@@ -123,6 +127,7 @@ The EEPROM is addressable by byte, words, long, or page.  Depending on the part,
  
 The words to access EEPROM meory are:
 
+{{{
 EC@ - fetch EEPROM byte
 
 EW@ - fetch EEPROM word
@@ -132,6 +137,7 @@ EW! - store EEPROM word
 eewritepage - write a 32 byte page to EEPROM
 
 eereadpage  - read a 32 byte page from EEPROM
+}}}
 
 Notice that a word to STORE a BYTE to EEPROM has NOT been implemented
 
