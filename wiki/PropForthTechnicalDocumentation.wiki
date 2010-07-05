@@ -111,7 +111,7 @@ These words use capital letters for readability due to confusion between the low
 
 == Cog Memory ==
 
-COG memory is always addressed as LONG.  Since cog is a special case, the COG LONG 
+COG memory is always addressed as LONG.  Since cog is a special case, the COG LONG meory access was given special names
 
 COG@ - long (4 byte) fetch to cog memory
 
@@ -119,9 +119,30 @@ COG! - long (4 byte) store to cog memory
 
 == EEPROM Memory ==
 
+The EEPROM is addressable by byte, words, long, or page.  Depending on the part, the page access can be 32 bytes or 64 bytes.  The 32k parts on the stock demo board support 32 byte pages, the 64k parts on the proto board support 64 byte pages AND 32 byte pages. PropForth uses 32 byte page writes for consistency, although it is possible modify the kernel to allow 64 byte access or auto detection.  Auto detection of EEPROM capability is not implemented in the kernel at this time in PropForth version 3.2.
+ 
+The words to access EEPROM meory are:
 
+EC@ - fetch EEPROM byte
+
+EW@ - fetch EEPROM word
+
+EW! - store EEPROM word
+
+eewritepage - write a 32 byte page to EEPROM
+
+eereadpage  - read a 32 byte page from EEPROM
+
+Notice that a word to STORE a BYTE to EEPROM has NOT been implemented
+
+Notice that a word to STORE a LONG to EEPROM has NOT been implemented
+
+Notice that a word to FETCH a LONG to EEPROM has NOT been implemented
+
+It has been determined that while this looks inconsistent, in practice one only wants to read a byte, read or store a word, or build and write an entire 32 byte page, or read an entire 32 byte page.  Of course, the user is free to implement words to store a byte, store a long, fetch a long, read a 64 byte page, and write a 64 byte page to EEPROM, if needed. 
 
 == Register Memory ==
+
 
 
 = Naming Convention Summary =
