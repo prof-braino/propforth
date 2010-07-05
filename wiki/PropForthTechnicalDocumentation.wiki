@@ -56,6 +56,12 @@ c_cogResidentCode (subroutine?)
 a_cogResidentAssebler
 v_cogResidentVariable
 
+cm_ and ca_ are a special class -  these designate a constant that is an address of a spin label.
+
+cm_ is a hub memory address - the spin label occurred in the HUB
+
+ca_  is cog memory address - the spin label occurred in the COG
+
 }}}
 
 {{{ $C_ }}} These words are entries in the forth dictionary to access the assembler labels.  An example using the assembler VGA driver will be presented at a later date.  A simple example using the serial driver is also planned but is not ready to be posted as of this writing. 
