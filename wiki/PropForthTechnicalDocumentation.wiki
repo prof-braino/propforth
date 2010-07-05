@@ -7,7 +7,6 @@ PropForth provides an interactive development environment for the Parallax Prope
 
 PropForth consists of a Forth Kernel and a set of utilities that are optional extensions to the kernel.
 
-
 = The PropForth Kernel =
 
 * The PropForth.spin source code file
@@ -76,12 +75,57 @@ When spinmaker is executed, code is generated that will produce whatever forth e
 
 Once the inner interpreter and dictionary are established in assembler, the remainder of the kernel can be defined using forth source code.  The forth source code is in two parts, PropForthPart1.f and PropForthPart2.f.  This is done due to the size of the forth source code text; there is more text than the propeller can handle in a single text file.
 
-When the two files PropForthPart1.f and PropForthPart2.f are loaded into the propeller, those definitions are added to the forth dictionary.  The most recent definition for a given word is the only definition visible to the forth interpreter, so old definitions are hidden.  When spinmaker is executed, only the most recent definiiopn is used. 
+When the two files PropForthPart1.f and PropForthPart2.f are loaded into the propeller, those definitions are added to the forth dictionary.  The most recent definition for a given word is the only definition visible to the forth interpreter, so old definitions are hidden.  When spinmaker is executed, only the most recent definition is used. 
+
+* Propeller specific HAL words
+
+The Hardware Abstraction Layer (HAL) words are prefixed with an underscore. The implementation of the forth kernel for the propeller involves issues due to the unique nature of the propeller hardware.   The {{{ _HALword }}} words are propeller - specific words that support the user - callable standard forth words. 
+
+Propeller - specific issues were addressed using 
+
+{{{ _aWord }}}  dictionary entries that are prefixed with an underscore are regular forth words, but are HAL words implemented in support of standard forth words.  These words are not expected to be called by a user application. For example, the word {{{ _sttop }}} is a storage location that holds the address of the top of the data stack.  The word {{{ _stbot }}} is a storage location that holds the address of the bottom of the data stack.  The word {{{_rstop }}} is a storage location that holds the address of the top of the return stack. The word {{{ _rsbot }}} is a storage location that holds the address of the bottom of the return stack.
+
+= Memory Access words =
+
+The basic memory access words in FORTH are fetch, designated with an "at" sign "@" and store, designated by the exclamation point "!".  
+
+From the propeller manual, we know that there are several differnet ways to access the various memory types used in the propeller.  The propeller has 32k bytes of RAM, 32k bytes of ROM, and registers.  These memory types can be accessed in in some combination of character (1 byte), word (2 byte), and long (4 byte).  Additionally, the default hardware usually includes 32k or 64k of EEPROM, which can be accessed as character (1 byte), word (2 byte), and long (4 byte), or 32 or 64 byte pages.  
+
+== HUB Memory ==
+
+HUB (main) Memeory is accessed with the following words:
+
+C@ - character (1 byte) fetch
+
+C! - character (1 byte) store
+
+W@ - word (2 byte) fetch
+
+W! - word (2 byte) store
+
+L@ - long (4 byte) fetch
+
+L! - long (4 byte) store
+
+These words use capital letters for readability due to confusion between the lowercase "L" and the number "1".
+
+== Cog Memory ==
+
+COG memory is always addressed as LONG.  Since cog is a special case, the COG LONG 
+
+COG@ - long (4 byte) fetch to cog memory
+
+COG! - long (4 byte) store to cog memory
+
+== EEPROM Memory ==
 
 
 
+== Register Memory ==
 
-{{{ _aWord }}}  dictionary entries that are prefixed with an underscore are regular forth words, but are implemented in support of forth words.  These words are not expected to be called by a user application. For example, the word _sttop is a storage location that holds the address of the top of the data stack.  The word _stbot is a storage location that holds the address of the bottom of the data stack.  The word _rstop is a storage location that holds the address of the top of the return stack. The word _rsbot is a storage location that holds the address of the bottom of the return stack.
+
+= Naming Convention Summary =
+ 
 
 
 
