@@ -64,7 +64,7 @@ $H_ is cog memory address - the spin label occurred in the COG
 
 }}}
 
-{{{ $C_ }}} These words are entries in the forth dictionary to access the assembler labels.  An example using the assembler VGA driver will be presented at a later date.  A simple example using the serial driver is also planned but is not ready to be posted as of this writing. 
+{{{ $C_ $H_ }}} These words are entries in the forth dictionary to access the assembler labels.  An example using the assembler VGA driver will be presented at a later date.  A simple example using the serial driver is also planned but is not ready to be posted as of this writing. 
 
 * The spin definitions of the forth words
 
