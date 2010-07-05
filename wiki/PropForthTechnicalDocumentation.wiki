@@ -1,0 +1,58 @@
+#summary Technical Documentation for the PropForth kernel and utilities.
+#labels Phase-Design,In-progress20100705
+
+= Introduction =
+
+PropForth provides an interactive development environment for the Parallax Propeller micro controller.
+
+PropForth consists of a Forth Kernel and a set of utilities that are optional extensions to the kernel.
+
+
+= The PropForth Kernel =
+
+* The PropForth.spin source code file
+
+PropForth Kernel source code is found in the file PropForth.spin. 
+PropForth.spin is loaded into the Propeller chip EEPROM using the Parallax Propeller Tool software.  When the Propeller is power cycled or rebooted, the spin interpreter (an assembler program) running in cog0 launches the PropForth environment (another assembler program).  
+
+* the PropForth development environment
+
+The PropForth environment consists of a Serial driver running in cog7 and the forth kernel running on other cogs.  
+
+* The PropForth serial driver
+
+The serial driver is an instance of the forth kernel running a serial driver application.  The function of the serial driver application is to manage communications between forth kernel instances running in the other cogs and the users terminal program (teraterm4.65 is used throughout this documentation).  
+
+* PropForth command prompt
+
+The users terminal (teraterm) displays the command prompt of the cog running the users forth development environment, which is usually cog 6 by default.
+
+* Nitty Gritty:  Serial Communication Mechanism 
+
+To the user, it appears that the terminal application is talking directly to cog 6.  In fact, the terminal application is talking to the cog 7 serial driver, and the cog7 serial driver is talking to the forth kernel running in cog6.  This communication is transparent to the user, but is an important distinction further on.  
+
+
+* Inside the PropForth.spin File
+
+The PropForth.spin file can be approached as  having two sections:
+1) the Propeller Assembly implementation of the Forth Dictionary and inner interpreter;
+2) the forth definitions of the forth words.
+
+The Propeller Assembly implementation of the Forth Dictionary and inner interpreter is all the spin and assembly code before ForthDictStart in the PRopForth.spin file.
+
+The forth definitions of the forth words is all the code between ForthDictStart and ForthMemEnd, which is the remainder of the file. 
+
+* Propeller Assembly implementation of the Forth Dictionary and inner interpreter
+
+The author of PropForth developed the assembler implementation of the forth dictionary and inner interpreter based on previous knowledge of forth and of the propeller architecture and the propeller assembly.   This section generally does not change much.  If you wish to make changes  
+
+* The forth definitions of the forth words
+
+= WORK IN PROGRESS 20100705 =
+= CONTINUE HERE =
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
