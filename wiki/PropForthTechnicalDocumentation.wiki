@@ -119,9 +119,15 @@ These words use capital letters for readability due to confusion between the low
 
 == HUB Register memory? ==
 
-Cog Registers and HUB registers (am I saying this correctly?)
+NOTE:  This is where I get a little hazy, this section on HUB registers might not be anywhere near correct.  
+
+Cog Registers vs HUB registers (am I saying this correctly?)
 
 Configuration register - softres, pllena, oscena, oscmode, clksel
+
+CLK register IS the system clock configuration register.  Its bits are reset, pplena, oscena, oscmod1, oscmod0, clksel2, clksel1, clksel0 as described in Table 1-5 of the propeller manual page 28. 
+
+Ok, but what are the propforth word that control this, and and do they automagically take care of byte[4] of main memory, and long[0] of main memory?  Question is:  Are propforth words implemented to handle HUB register functions, or is this done in the Propeller tool at compile time?  
 
 == Cog Memory ==
 
