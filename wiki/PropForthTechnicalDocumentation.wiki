@@ -31,15 +31,15 @@ The users terminal [http://code.google.com/p/propforth/wiki/TeraTerm (teraterm)]
 To the user, it appears that the terminal application is talking directly to cog 6.  In fact, the terminal application is talking to the cog 7 serial driver, and the cog7 serial driver is talking to the forth kernel running in cog6.  This communication is transparent to the user, but is an important distinction further on.  
 
 
-* Inside the PropForth.spin File
+* Inside the [http://code.google.com/p/propforth/downloads/detail?name=PropForth.spin&can=2&q=#makechanges PropForth.spin] File
 
-The PropForth.spin file can be approached as  having two sections:
+The [http://code.google.com/p/propforth/downloads/detail?name=PropForth.spin&can=2&q=#makechanges PropForth.spin] file can be approached as  having two sections:
 
 1) the Propeller Assembly implementation of the Forth Dictionary and inner interpreter;
 
 2) the forth definitions of the forth words.
 
-The Propeller Assembly implementation of the Forth Dictionary and inner interpreter is all the spin and assembly code before ForthDictStart in the PropForth.spin file.
+The Propeller Assembly implementation of the Forth Dictionary and inner interpreter is all the spin and assembly code before ForthDictStart in the [http://code.google.com/p/propforth/downloads/detail?name=PropForth.spin&can=2&q=#makechanges PropForth.spin] file.
 
 The forth definitions of the forth words is all the code between ForthDictStart and ForthMemEnd, which is the remainder of the file. 
 
