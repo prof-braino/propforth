@@ -133,7 +133,7 @@ Ok, but what are the propforth word that control this, and and do they automagic
 
 The cog memory or cog RAM is actually 512 registers of 32 bits. 
 
-COG memory is always addressed as LONG.  Since cog is a special case, the COG LONG meory access was given special names
+COG memory is always addressed as LONG.  Since cog memory access is a special case, the COG LONG memory access was given special names
 
 {{{
 COG@ - long (4 byte) fetch to cog memory
@@ -154,6 +154,8 @@ The words !source !instruction and !destination store a value (bit pattern) to t
 
 !destination
 }}}
+
+see  {{{ _execasm2>0 _execasm2>1 _execasm1>1 }}}
 
 Alternately, if the entire bit pattern has been constructed into a 32 bit value, the 32 bit value can be stored into a special purpose register using !COG.
 
@@ -205,6 +207,10 @@ v_ prefix acts as a directive to the prop assembler indicating this is cog resid
 $C_ is a hub memory address - the spin label occurred in the HUB
 
 $H_ is cog memory address - the spin label occurred in the COG
+
+(word) - when a word like *forget* call some internal word that does the prop-specific actions that implement the word on the prop, the "internal" part of the definition is in parenthesis.   Thus the word *forget* calls the word *(forget)*.   
+
+
 
 }}}
 
