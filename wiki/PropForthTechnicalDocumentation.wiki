@@ -18,7 +18,7 @@ PropForth Kernel source code is found in the file [http://code.google.com/p/prop
 
 The PropForth environment consists of a Serial driver running in cog7 and the forth kernel running on other cogs.  
 
-* The PropForth serial driver
+* The [http://code.google.com/p/propforth/downloads/detail?name=DeluxeSerialMonitor.f&can=2&q=#makechanges PropForth serial driver]
 
 The serial driver is an instance of the forth kernel running a serial driver application.  The function of the serial driver application is to manage communications between forth kernel instances running in the other cogs and the users terminal program (teraterm4.65 is used throughout this documentation).  
 
