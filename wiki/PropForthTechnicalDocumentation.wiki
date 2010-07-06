@@ -212,7 +212,8 @@ $H_ is cog memory address - the spin label occurred in the COG
 
 }}}
 
-(word) - when a word like *forget* call some internal word that does the prop-specific actions that implement the word on the prop, the "internal" part of the definition is in parenthesis.   Thus the word *forget* calls the word *(forget)*.   
+Example: 
+(forget) - when a word like *forget* call some internal word that does the prop-specific actions that implement the word on the prop, the "internal" part of the definition is in parenthesis.   Thus the word *forget* calls the word *(forget)*.   
 
 
 
