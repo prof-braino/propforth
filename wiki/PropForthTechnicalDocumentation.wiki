@@ -117,7 +117,15 @@ L! - long (4 byte) store
 
 These words use capital letters for readability due to confusion between the lowercase "L" and the number "1".
 
+== HUB Register memory? ==
+
+Cog Registers and HUB registers (am I saying this correctly?)
+
+Configuration register - softres, pllena, oscena, oscmode, clksel
+
 == Cog Memory ==
+
+The cog memory or cog RAM is actually 512 registers of 32 bits. 
 
 COG memory is always addressed as LONG.  Since cog is a special case, the COG LONG meory access was given special names
 
@@ -126,6 +134,22 @@ COG@ - long (4 byte) fetch to cog memory
 
 COG! - long (4 byte) store to cog memory
 }}}
+
+== Cog Register Memory ==
+
+ The last 16 locations of Cog Memory $1F0 to $1FF are special purpose registers par, cnt, ina, outa, dira ctra, ctrb, frqa, frqb, phsa, phsb, vcfg, vscl and are documented in the propeller manual. PropForth uses the these same names as do the spin and propeller assembler. 
+
+The words !source !instruction and !destination store a value (bit pattern) to the appropriate bits in the specified register. 
+
+{{{
+!source 
+
+!instruction 
+
+!destination
+}}}
+
+Alternately, if the entire bit pattern has been constructed into a 32 bit value, the 32 bit value can be stored into a special purpose register using !COG.
 
 == EEPROM Memory ==
 
@@ -152,22 +176,6 @@ Notice that a word to STORE a LONG to EEPROM has NOT been implemented
 Notice that a word to FETCH a LONG to EEPROM has NOT been implemented
 
 It has been determined that while this looks inconsistent, in practice one only wants to read a byte, read or store a word, or build and write an entire 32 byte page, or read an entire 32 byte page.  Of course, the user is free to implement words to store a byte, store a long, fetch a long, read a 64 byte page, and write a 64 byte page to EEPROM, if needed. 
-
-== Register Memory ==
-
-Cog Registers and HUB registers (am I saying this correctly?)
-
-The cog memory or cog RAM is actually 512 registers of 32 bits.  The last 16 locations $1F0 to $1FF are special purpose registers par, cnt, ina, outa, dira ctra, ctrb, frqa, frqb, phsa, phsb, vcfg, vscl and are documented in the propeller manual. PropForth uses the these same names as do the spin and propeller assembler. 
-
-The words !source !instruction and !destination store a value (bit pattern) to the appropriate bits in the specified register. 
-
-{{{
-!source 
-
-!instruction 
-
-!destination
-}}}
 
 = Naming Convention Summary =
 
