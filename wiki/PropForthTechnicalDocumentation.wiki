@@ -213,6 +213,7 @@ $H_ is cog memory address - the spin label occurred in the COG
 }}}
 
 Examples: 
+
 (forget) - when a word like *forget* call some internal word that does the prop-specific actions that implement the word on the prop, the "internal" part of the definition is in parenthesis.   Thus the word *forget* calls the word *(forget)*.   
 
 (find) - the word *find* is the standard forth word that searches the dictionary for the string that follows.  *find* calls the word *(find)* which does something internal which is the bulk of the work of *find*. 
