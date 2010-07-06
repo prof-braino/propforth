@@ -11,8 +11,8 @@ PropForth consists of a Forth Kernel and a set of utilities that are optional ex
 
 * The [http://code.google.com/p/propforth/downloads/detail?name=PropForth.spin&can=2&q=#makechanges PropForth.spin] source code file
 
-PropForth Kernel source code is found in the file PropForth.spin. 
-PropForth.spin is loaded into the Propeller chip EEPROM using the Parallax Propeller Tool software.  When the Propeller is power cycled or rebooted, the spin interpreter (an assembler program) running in cog0 launches the PropForth environment (another assembler program).  
+PropForth Kernel source code is found in the file [http://code.google.com/p/propforth/downloads/detail?name=PropForth.spin&can=2&q=#makechanges PropForth.spin]. 
+[http://code.google.com/p/propforth/downloads/detail?name=PropForth.spin&can=2&q=#makechanges PropForth.spin] is loaded into the Propeller chip EEPROM using the Parallax Propeller Tool software.  When the Propeller is power cycled or rebooted, the spin interpreter (an assembler program) running in cog0 launches the PropForth environment (another assembler program).  
 
 * the PropForth development environment
 
