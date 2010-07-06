@@ -34,6 +34,8 @@ The terminal used is TeraTerm, but just about terminal should work.
 
   * CogDebuggerDisassembler 
 
+  * PropForthTechnicalDocumentation
+
 The following pages are under review:
   * SavingPropForth
   * RebuildingPropForth
