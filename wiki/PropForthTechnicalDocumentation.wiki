@@ -187,15 +187,12 @@ a_ prefix acts as a directive to the prop assembler indicating this is cog resid
 v_ prefix acts as a directive to the prop assembler indicating this is cog resident variable (that IS callable by forth?)
 
 [or are these all only used internally by the assembler and not usable by forth?]
+
+$C_ is a hub memory address - the spin label occurred in the HUB
+
+$H_ is cog memory address - the spin label occurred in the COG
+
 }}}
 
 = WORK IN PROGRESS 20100705 =
-= CONTINUE HERE =
-
-
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= This page has not been reviewed and may contain errors =
