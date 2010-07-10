@@ -1,14 +1,24 @@
 #summary Status of PropForth
-#labels v2.7
+#labels v3.2
 
-=== Planned PropForth 3.0 ===
+=== 2010 July 09 PropForth 3.2 ===
+
+PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the READMEv3.2.txt file should help in updating existing code. 
+
+As of this writing, only PropForth.spin, PRopForthPart1.f, PropForthPart2.f, and spinmaker.f have been brought to version 3.2.   The remaining files (DisAssemblerDebugger.f, SerialMonitor.f, LogicAnayzer.f, IEEE.f, etc) are been updated to version 3.2 as time permits.  If you are in a hurry, you can apply the changes as described in READMEv3.2.txt and you should be fine, although there may be additional changes applied during the rewrite/review. 
+
+The additional changes listed in version 2.8 will be added at a later date as time permits. 
+
+=== Not Released PropForth 3.0 ===
 
 Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. No date has been targeted for this release.
 
-=== Planned PropForth 2.8 ===
+=== Not Released PropForth 2.8 ===
 
 Plan to add words to support calling forth from spin, and spin from forth. 
+
 Plan to post the disassembler and documentation
+
 Plan to post the ethernet interface
 
 === 2010 May 30 PropForth 2.7 ===
