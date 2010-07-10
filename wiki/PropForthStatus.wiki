@@ -3,7 +3,11 @@
 
 === 2010 July 09 PropForth 3.2 ===
 
-PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the READMEv3.2.txt file should help in updating existing code. 
+PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the README.txt file in the archive
+
+[http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
+
+should help in updating existing code. 
 
 Some of the files names have changed BACK to old names due to organizational issues.  Therefore the entire version 3.2 file set is posted as a single zip archive.  Please submit questions and requests based on the v 3.2 file set. 
 
