@@ -58,9 +58,9 @@ v_cogResidentVariable
 
 $C_ and $H_ are a special class -  these designate a constant that is an address of a spin label.
 
-$C_ is a hub memory address - the spin label occurred in the HUB
+$C_ is a cog memory address - the spin label occurred in the COG
 
-$H_ is cog memory address - the spin label occurred in the COG
+$H_ is hub memory address - the spin label occurred in the HUB
 
 }}}
 
