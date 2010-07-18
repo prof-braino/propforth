@@ -25,13 +25,15 @@ The result is that if one pastes an entire page of definitions into the teraterm
 
 = The FL word (FileLoad) =
 
+The FL word is actually lower case up to and including version 3.2, it is in uppercase in the title so the lowercase 'L' is not confused with the number '1'.  In the code it appears thus:
+
 {{{
 fl
 }}}
 
-The FL word should be renamed FileLoad 
+This word appears in most of the "forthsourcefile.f" files as the first executable word. 
 
-(Note to Self - do this next version)
+(Note to Self - The FL word should be renamed FileLoad,  do this next version)
 
 (Note back to self - sorry bucko, missed this one in v3.2. Add a change request and try for next release)
 
@@ -57,7 +59,7 @@ Steps for use:
 
    2) Place the FL word at the begining of the source text file to be loaded.  FL has a couple blank line before and after it for formatiing, so it is easier to spot in the file. 
 
-*FL*
+*fl*
 
 < many line of forth source code in text format >
 
