@@ -16,7 +16,52 @@ Version 2.4 of propforth used 64 byte EEPROM page writes, but this was found to 
 
 Propfroth 2.5 onward uses 32 byte EEPROM page writes, which is supported on all EEPROM parts seen so far. The only impact is that the EEPROM write routine does twice as many page writes. 
 
-If an application requires 64 byte page writes to EEPROM, change line
+If an application requires 64 byte page writes to EEPROM, this is controls in (about) line 5849 in the saveforth word definition
+
+                        word    @freeNFA + $10
+saveforthNFA            byte    $89,"saveforth"
+saveforthPFA            word    @cqPFA + $10
+                        byte    $04,"here"
+                        word    @findPFA + $10
+                        word    (@a_zbranch - @a_base)/4
+                        word    $0060
+                        word    @versionPFA + $10
+                        word    (@a_dup - @a_base)/4
+                        word    @CatPFA + $10
+                        word    @plusPFA + $10
+                        word    (@a_dup - @a_base)/4
+                        word    @CatPFA + $10
+                        word    @oneplusPFA + $10
+                        word    (@a_swap - @a_base)/4
+                        word    @CbangPFA + $10
+                        word    @pfagtnfaPFA + $10
+                        word    @herePFA + $10
+                        word    @WatPFA + $10
+                        word    (@a_swap - @a_base)/4
+                        word    (@a_dup - @a_base)/4
+                        word    @WatPFA + $10
+                        word    (@a_over - @a_base)/4
+                        word    @EWbangPFA + $10
+                        word    @twoplusPFA + $10
+                        word    (@a_dup - @a_base)/4
+                        word    (@a_litw - @a_base)/4
+                       * word    $003F *
+                        word    @andPFA + $10
+                        word    @zeqPFA + $10
+                        word    (@a_zbranch - @a_base)/4
+                        word    $FFEA
+                        word    (@a_twogtr - @a_base)/4
+                        word    @iboundPFA + $10
+                        word    @iPFA + $10
+                        word    @minusPFA + $10
+                        word    (@a_litw - @a_base)/4
+                       * word    $0040 *
+                        word    @minPFA + $10
+                        word    (@a_dup - @a_base)/4
+   
+
+
+change line
 
 from 
 
