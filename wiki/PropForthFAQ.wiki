@@ -15,6 +15,8 @@
 
 Standard-ish forth names are used for all implemented standard forth functions beginning in version 3.2.  If you feel a particular name is still counter-intuitive or misleading please send a comment here or on the [http://forums.parallax.com/forums/default.aspx?f=25&m=468264 Parallax Propeller forum thread ]
 
+We are sure there are several (one stops seeing when one looks at it too long) so please bring them to our attention. 
+
 = Do I need the files spinmakerPart1 and 2 to create kernel source code? =
 
   * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image, which will include any definitions you added. 
