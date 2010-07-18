@@ -56,7 +56,7 @@ Once you understand what is going on, the strange construct starts to look reaso
 
 This is the same as with the variable names above, except this is for assembler labels. 
 
-'_AnAssemblerLabel is the 
+__AnAssemblerLabel is the 
 
 = What does the underscore mean in the label names? =
 
