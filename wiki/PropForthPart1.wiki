@@ -2,9 +2,9 @@
 
 = Introduction =
 
-The file [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f] contains the first part of PropForth kernel, written in forth.
+The file [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropFrothPart1.f] contains the first part of PropForth kernel, written in forth.
 
-The second and final part is contained in [http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f]. 
+The second and final part is contained in http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart2. 
 
 = why parts 1 & 2?  Why not one big file? =
 
