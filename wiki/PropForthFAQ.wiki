@@ -72,10 +72,11 @@ The word "st?" displays the stack in hex formatted to 8 hex digits.
 UPDATED: mcwBase has been renamed to base in version 3.2
 
 NOTE 
-
+{{{
 10 base w! / in hex, sets the base to 16 (decimal)
 
 10 base w! / in decimal, sets the base to 16 (decimal)
+}}}
 
 set the base to decimal or hex using the kernekl words
 {{{
