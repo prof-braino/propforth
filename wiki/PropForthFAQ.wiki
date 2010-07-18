@@ -25,7 +25,7 @@ http://code.google.com/p/propforth/w/list
 
 and start with the files tagged for the current version.
 
-Please send suggestions as to ways to better organize the material. 
+Please send suggestions as to ways to better organize the material, and we will do what we can. 
 
 = What files do I want? =
 
