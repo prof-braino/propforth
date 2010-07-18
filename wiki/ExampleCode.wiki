@@ -1,4 +1,5 @@
 #summary Example of PropForth source code
+#labels v3.2
 
 = Using the examples =
 
