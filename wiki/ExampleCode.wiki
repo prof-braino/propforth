@@ -1,0 +1,73 @@
+#summary Example of PropForth source code
+
+= Using the examples =
+
+The example(s) below are added in response to user questions.  The version of PropForth for which the version was submitted should be stated in the comments.  If something does not work, it may be caused by an incompatibility due to version changes.  Please submit a question and it will be addressed. 
+
+= Usage =
+
+NOTE that the example code is n
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+= BLINK AN LED Example =
+{{{
+fl  \ file load command, include this line if pasting the entire example into teraterm
+    \ If you are typing the text by hand at the command prompt, do NOT include the 'fl' command
+
+\ FLASH AN LED by Professor Braino - updated from PropForth 2.5 by BrianBR
+\ using PROPFORTH 3.2 
+\ load PropForth.spin into eeprom and use a terminal program too 'send textile' at 1 ms per char / 1ms per line 
+\   PC/Win "teraterm"   Mac OSX "ZTerm" set to 57600 8n1  baud worked best for me
+\ 
+\ will run on an unmodified 'Demo' board
+\ each unit of functionality is implemented as a single word
+\ when each word is functioning correctly, string them together
+
+variable w-delay \ ( uses w@ w! time delay in milliseconds )
+: !DELAY w-delay W! ; \ ( ms - ) ( store the milliseconds to wait )
+: .DELAY w-delay W@ delms ; \ ( - ) ( wait for milliseconds in delay )
+
+: pin16-output 10000 dira COG! ; \ ( - ) ( make pin16 output )
+: pin16-hi 10000 outa COG! ; \ ( - ) ( make pin16 high LED ON )
+: pin16-lo 0 outa COG! ; \ ( - ) ( make pin16 low LED OFF )
+
+\ ... string them together...
+
+: flash16 pin16-hi .DELAY pin16-lo .DELAY ; \ ( - ) ( flash LED using DELAY )
+
+\ ... and put it in a loop
+
+: FLASHES pin16-output 0 do flash16 loop ; \ ( number of flashes desired - )
+
+\ After one has determined what code is needed, it is possible to
+\ cram everything into a single word
+\ doing everything all in one word is sometimes referred to as
+\ write only code (write once - edit never again )
+\ this takes slightly less space but can be confusing on larger applications
+\ after the code has been left alone for a few days
+
+: ALL-ONE-WORD \ ( flashes - )
+10000 dira COG! \ ( make pin16 output )
+0 do \ flashes to 0 DO ...
+10000 outa COG! \ ( make pin16 high LED ON )
+100 delms \ ( delay for 100 ms)
+0 outa COG! \ ( make pin16 low LED OFF )
+100 delms
+loop ;
+
+\ chose one of the commented line to execute the blink led route
+\ remove the \ at the beginning of of the line to execute on load
+
+\ 10 ALL-ONE-WORD \ this will run the ALL-ONE-WORD routine 10 times    
+      
+\ next use the other method
+
+\ 50 !DELAY   \ set the deloay to 50 milliseconds
+\ 20 FLASHES  \ do 20 flashes
+}}}
