@@ -3,7 +3,7 @@
 
 = Introduction =
 
-The FORTH dictionary can be extended by adding new definitions.  The entire system, including the new definitions, can be saved to eeprom.  The extended system is thus available after reboot. 
+The FORTH dictionary can be extended by adding new definitions.  The entire system, including the new definitions, can be saved to EEPROM.  The extended system is thus available after reboot. 
 
 = Extending the Forth Dictionary =
 
@@ -26,22 +26,23 @@ The result is that if one pastes an entire page of definitions into the teraterm
 = The FL word (FileLoad) =
 
 The FL word should be renamed FileLoad (Note to Self - do this next version)
+(Note back to self - sorry bucko, missed this one in v3.2. Add a change request and try for next release)
 
 The FL word provides the method for loading entire files of source text definitions into propforth.
 
 FL loads a file of forth source text to propforth.
 
-The FL word reads the input stream and page-writes it into unused eeprom as a buffer. 
+The FL word reads the input stream and page-writes it into unused EEPROM as a buffer. 
 
-It uses the eepromstarting at 256 bytes past the current end of the dictionary, and ending at 32k.
+It uses the EEPROM starting at 256 bytes past the current end of the dictionary, and ending at 32k.
  
-When the input stream is exhausted, propforth interprets the input stream as buffered in eeprom, and the text is echoed on the serial terminal display.  
+When the input stream is exhausted, propforth interprets the input stream as buffered in EEPROM, and the text is echoed on the serial terminal display.  
 
-As each section of the buffer is interpreted (for example, as it is echoed on the screen), the eeprom is released from the buffer duty.
+As each section of the buffer is interpreted (for example, as it is echoed on the screen), the EEPROM is released from the buffer duty.
 
 The demo board was tested to accept over 15,000 characters, and the proto board slightly less.
 
-NOTE: If the capacity of the eeProm is exceeded, the message "Out of memory" displayed, and the board must be rebooted or re-flashed.  
+NOTE: If the capacity of the EEPROM is exceeded, the message "Out of memory" displayed, and the board must be rebooted or re-flashed.  
 
 Steps for use:
 
