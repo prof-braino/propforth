@@ -5,6 +5,28 @@
 
   * Sign in to your gmail account enter comments at the bottom of the page in question
 
+= Is there a simple Archive that contains all of the PropForth documentation? =
+
+Yes and no.  This website that you are viewing is the archive of propforth documentation.
+
+http://code.google.com/p/propforth/wiki/PropForth
+
+This question was asked with the intent of requesting a single download of a zip-file archive of all these pages.  However, there does not yet exist a full, complete set of documentation, because of resource limitations.  The documentation is being added as specific requests come in, and as time allows.  That's the best we can do at the moment. 
+
+= How do I navigate the documentation on this site? =
+
+Start with 
+
+http://code.google.com/p/propforth/wiki/PropForth
+
+and follow the links in the order presented.  If the information does not address your question, please leave a comment or post your question on the forum.  Also look through the wiki list
+
+http://code.google.com/p/propforth/w/list
+
+and start with the files tagged for the current version.
+
+Please send suggestions as to ways to better organize the material. 
+
 = What files do I want? =
 
  * The archive [http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip] contains the current source code file set. This is the one that most folks will want to see.
