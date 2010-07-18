@@ -16,8 +16,9 @@ Version 2.4 of propforth used 64 byte EEPROM page writes, but this was found to 
 
 Propfroth 2.5 onward uses 32 byte EEPROM page writes, which is supported on all EEPROM parts seen so far. The only impact is that the EEPROM write routine does twice as many page writes. 
 
-If an application requires 64 byte page writes to EEPROM, this is controls in (about) line 5849 in the saveforth word definition
+If an application requires 64 byte page writes to EEPROM, this is controls in (about) line 5329 and 5339 in the saveforth word definition
 
+{{{
                         word    @freeNFA + $10
 saveforthNFA            byte    $89,"saveforth"
 saveforthPFA            word    @cqPFA + $10
@@ -58,14 +59,23 @@ saveforthPFA            word    @cqPFA + $10
                        * word    $0040 *
                         word    @minPFA + $10
                         word    (@a_dup - @a_base)/4
-   
+}}}   
 
 
-change line
+change line  5239 
 
 from 
-
+{{{ word    $003F ' page size for 64k EEPROM  }}}
 to
+{{{ word    $007F ' page size for 128k EEPROM  }}}
+
+change line  5339 
+
+from 
+{{{ word    $0040 ' page size for 64k EEPROM  }}}
+to
+{{{ word    $0080 ' page size for 128k EEPROM  }}}
+
 
 
 = Version String =
