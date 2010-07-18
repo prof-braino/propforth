@@ -29,7 +29,7 @@ which is the last line of the file.
 
 NOTICE that spinmaker only makes spincode, and does NOT preserve the comments in the previous version of the [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] file.
 
-This is because the comments are discarded when the source code is compiled and are not present in the dictionary for the spinmaker word to be aware of.
+This is because the comments are discarded when the source code is compiled into forth, and are not present in the dictionary for the spinmaker word to be aware of.
 
 = 64k  EEPROM vs 32K EEPROM =
 
