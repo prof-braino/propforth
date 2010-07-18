@@ -34,7 +34,7 @@ This is because the comments are discarded when the source code is compiled and 
 = 64k  EEPROM vs 32K EEPROM =
 
 The stock demo board has a 32k EEPROM while the stock proto board has 64k EEPROM.
-Version 2.4 of propforth used 64 byte EEPROM page writes, but this was found to be unsupported on the 32k EEPROM parts.  This was the cause of the 'saveforth' word failing on the demo boards.
+Version 2.4 of propforth used 64 byte EEPROM page writes, but this was found to be unsupported on the 32k EEPROM parts.  This was the cause of the 'saveforth' word failing on the demo boards in version 2.4.
 
 Propfroth 2.5 onward uses 32 byte EEPROM page writes, which is supported on all EEPROM parts seen so far. The only impact is that the EEPROM write routine does twice as many page writes. 
 
