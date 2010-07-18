@@ -1,5 +1,5 @@
 #summary Download the PropForth source code text files to the propeller chip
-#labels v2.7
+#labels v3.2
 
 = Introduction =
 
@@ -17,9 +17,7 @@ The files must be loaded in proper sequence.  This is
 
 [http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f]
 
-spinmakerPart1.f
-
-spinmakerPart2.f
+spinmaker.f
 
 = Load the four source files into the prop =
 
