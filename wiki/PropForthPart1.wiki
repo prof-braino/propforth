@@ -16,7 +16,11 @@ fl
 
 This command buffers source text in pasted into the tera term window into unused EEPROM.  There is too much text to fit into the unused EEPROM available, splitting it in two parts and processing the the source text in two passes solves this issue. 
 
-= SomeName W@ wvariable SomeName SomeName W! =
+= Strange looking Construct appears frequently =
+
+{{{
+SomeName W@ wvariable SomeName SomeName W!
+}}}
 
 What is this weird construct?  This appears frequently in the propforth source definition files. 
 
@@ -40,11 +44,7 @@ wvariable SomeName /define the variable we need in the kernel
 SomeName W!        /set the variable to the same value that it had in the previous kernel
 }}}
 
-
-  
-}}}
-
-
+Again, the purpose is so that high level forth source code exists for the variable, and the variable gets set to the correct (current) value. 
 
 
 = Details =
