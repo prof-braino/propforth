@@ -9,8 +9,8 @@ There were no issues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/
 
 
   * Download the current [http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip&can=2&q= ProForth archive ] 
-  * unzip the archive and locate PropForth.spin 
-  * Compile PropForth.spin with the Propeller Tool
+  * unzip the archive and locate [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] 
+  * Compile [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] with the Propeller Tool
   * Load into eeprom 
 
   * Start up TeraTerm or any other serial driver 
