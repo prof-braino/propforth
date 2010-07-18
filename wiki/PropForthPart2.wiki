@@ -3,13 +3,13 @@
 
 = Introduction =
 
-The file [http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f] contains the remainder of the PropForth kernel, written in forth.
+The file [http://code.google.com/p/propforth/wiki/PropForthPart2 PropforthPart2.f] contains the remainder of the PropForth kernel, written in forth.
 
-The first part is contained in [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f]. 
+The first part is contained in [http://code.google.com/p/propforth/wiki/PropForthPart1 PropforthPart1.f]. 
 
 = EEPROM memory access words =
 
-The EEPROM page read and write words are defined at  are at the end of [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f]
+The EEPROM page read and write words are defined at  are at the end of [http://code.google.com/p/propforth/wiki/PropForthPart1 PropforthPart1.f]
 
 EW@ - fetch a 16 bit word from eeprom
 
