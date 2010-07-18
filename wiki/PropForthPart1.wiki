@@ -1,10 +1,11 @@
 #summary Additional explanation for PropforthPart1.f
+#labels v3.2
 
 = Introduction =
 
-The file [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropFrothPart1.f] contains the first part of PropForth kernel, written in forth.
+The file [http://code.google.com/p/propforth/wiki/PropForthPart1 PropFrothPart1.f] contains the first part of PropForth kernel, written in forth.
 
-The second and final part is contained in http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart2. 
+The second and final part is contained in [http://code.google.com/p/propforth/wiki/PropForthPart2 PropFrothPart2.f]. 
 
 = why parts 1 & 2?  Why not one big file? =
 
@@ -24,7 +25,7 @@ SomeName W@ wvariable SomeName SomeName W!
 
 What is this weird construct?  This appears frequently in the propforth source definition files. 
 
-[http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f] is the source code of the RUNNING forth.  So the definition for an existing variable SomeName must appear in the source.  (otherwise, the spinmaker word would still build it into the spin file, but we wouldn't see any source code for it.)
+[http://code.google.com/p/propforth/wiki/PropForthPart1 PropFrothPart1.f] is the source code of the RUNNING forth.  So the definition for an existing variable SomeName must appear in the source.  (otherwise, the spinmaker word would still build it into the spin file, but we wouldn't see any source code for it.)
 
 But in the running kernel, SomeName already has a value, and we don't necessarily know what that value is supposed to be.  But we DO know that the current vaule is correct, so we use that.
 
