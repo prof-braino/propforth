@@ -5,7 +5,7 @@
 
 The page discusses how to create the [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] file from the high level forth source definitions.  This is the method used when the forth system is to be redesigned and redefined in forth.  This is normally not required unless extensive changes to the forth system are needed.  
 
-The PropForth kernel source code in is two text files, [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f] and PropForthPart2.f.  These files contain the forth source code that was used to create [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin].
+The PropForth kernel source code in is two text files, [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f] and [http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f].  These files contain the forth source code that was used to create [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin].
 
 The forth source code is loaded into the propeller chip running forth.
 
@@ -15,7 +15,7 @@ The files must be loaded in proper sequence.  This is
 
 [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f] 
 
-PropForthPart2.f
+[http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f]
 
 spinmakerPart1.f
 
@@ -50,7 +50,7 @@ ForthMemoryEnd
 Copy the text from the teraterm window or from the teraterm logfile and paste it into the PropForth-template.spin file.  Be sure to search for and update the version string in resultant file. Name the file as appropriate, the suggestion is to name the file similar to the version string to ease identification.  
 
   
-= Load the new version of PropForth.spin into eeProm =
+= Load the new version of [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] into eeProm =
 
 Use the Propeller Tool to load the new [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] file into the propeller's eeProm.
 
