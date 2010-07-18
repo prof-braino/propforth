@@ -7,7 +7,7 @@
 
 = What files do I want? =
 
- * The files tagged with Version 2.7 are the ones that most folks will want to see.
+ * The archive [http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip] contains the current source code file set. This is the one that most folks will want to see.
 
  * The earlier versions might not agree with the current documentation, so avoid these unless something is broken. 
 
