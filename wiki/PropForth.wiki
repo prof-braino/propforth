@@ -12,7 +12,7 @@ PropForth is very useful for interactive hardware and software development. It i
 
 The stacks are in the cogs, and there is stack checking. The dictionary is in main memory.
 
-There are 2 main assembler routines in [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin]. serentryPFA and entryPFA.
+There are 2 main assembler routines in [http://code.google.com/p/propforth/wiki/PropForthspin PropForth.spin]. serentryPFA and entryPFA.
 
 serentryPFA is a serial port driver. This serial driver is started in cog 7.
 
@@ -20,7 +20,7 @@ entryPFA is the forth interpreter. This is the code which runs the forth words i
 
 PropForth is fast enough for many tasks, it is not fast enough for all. So there is an assembler available. Easy to mix PropForth and assembler and get fast development and fast execution speed. You are pretty close to metal in this paradigm. It is easy to assume you have a high level language, but you can modify running code, and with the Propeller architecture this is a common pattern.
 
-PropForth was developed on a Propeller demo board, 80Mhz, 512k bit (64k 8 bit eeprom). Should be easily ported to just about any other Propeller setup.
+PropForth was developed on a Propeller demo board, 80Mhz, 512k bit (64k 8 bit EEPROM). Should be easily ported to just about any other Propeller setup.
 
 The terminal used is TeraTerm, but just about terminal should work. 
 
