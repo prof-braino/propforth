@@ -56,7 +56,10 @@ Once you understand what is going on, the strange construct starts to look reaso
 
 This is the same as with the variable names above, except this is for assembler labels. 
 
-__AnAssemblerLabel is the 
+{{{
+' _AnAssemblerLabel         \ get the address of _AnAssemblerLabel and leave it on the stack
+asmlabel _AnAssemblerLabel  \ create a definition for an assembler label named  _AnAssemblerLabel and assign it the value on the stack
+}}}
 
 = What does the underscore mean in the label names? =
 
