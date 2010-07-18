@@ -1,5 +1,5 @@
 #summary Download Text files containing FORTH source code
-#labels v2.7
+#labels v3.2
 
 = Introduction =
 
@@ -25,7 +25,14 @@ The result is that if one pastes an entire page of definitions into the teraterm
 
 = The FL word (FileLoad) =
 
-The FL word should be renamed FileLoad (Note to Self - do this next version)
+{{{
+fl
+}}}
+
+The FL word should be renamed FileLoad 
+
+(Note to Self - do this next version)
+
 (Note back to self - sorry bucko, missed this one in v3.2. Add a change request and try for next release)
 
 The FL word provides the method for loading entire files of source text definitions into propforth.
