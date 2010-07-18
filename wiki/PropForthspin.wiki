@@ -5,11 +5,13 @@
 As of version 3.2, the entire PropForth file set is packaged into a single zip file download
 Propforth.spin is contained in that archive. 
 
-This page exists to have a place for Google Code to auto link the 'PropForth.spin' text. 
+This page exists to have a place for Google Code to auto link the '[http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin]' text. 
 
 This page contains more detailed explanations for user questions raised on the code. 
 
 = 64k  EEPROM vs 32K EEPROM =
+
+= Version String =
 
 = Details =
 
