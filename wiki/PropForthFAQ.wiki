@@ -47,23 +47,23 @@ These are included in the v3.2 archive
 
 = What does the "saveforth" word do? =
  
- * saveforth writes the current dictionary image that is running on the chip to eeprom. Each dot (period)  displayed represents one 64 byte page write to eeprom.  There are a maximum of 1024 pages of 64 bytes each.  If a word is redefined, the new definition is visible and covers up the old definition. Eventually the space this uses will be noticeable.  See the comments in PropForth.spin if you are interested in 128 byte page writes, but be aware that the prop demo board eeprom won't like it.  This was the bug in version 2.5
+ * saveforth writes the current dictionary image that is running on the chip to eeprom. Each dot (period)  displayed represents one 64 byte page write to eeprom.  There are a maximum of 1024 pages of 64 bytes each.  If a word is redefined, the new definition is visible and covers up the old definition. Eventually the space this uses will be noticeable.  See the comments in [http://code.google.com/p/propforth/wiki/PropForthspin PropForth.spin] if you are interested in 128 byte page writes, but be aware that the prop demo board eeprom won't like it.  This was the bug in version 2.5
 
 = What does the "spinmaker" word do? = 
 
-  * The spinmaker word generates the forth portion of the [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] source file.  This gets rid of any old definitions and allows the propeller tool to resolve any forward references without the need for defered words.  
+  * The spinmaker word generates the forth portion of the [http://code.google.com/p/propforth/wiki/PropForthspin PropForth.spin] source file.  This gets rid of any old definitions and allows the propeller tool to resolve any forward references without the need for defered words.  
 
-= Do I need the files [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart2.f]? =
+= Do I need the files [http://code.google.com/p/propforth/wiki/PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart2 PropForthPart2.f]? =
 
-  * Not necessarily. [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart2 PropForthPart2.f] will generate the original PropForth kernel definitions as found in [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin].   
+  * Not necessarily. [http://code.google.com/p/propforth/wiki/PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart2 PropForthPart2.f] will generate the original PropForth kernel definitions as found in [http://code.google.com/p/propforth/wiki/PropForthspin PropForth.spin].   
 
 You only need these if you want to see that the definitions generated are the same as those posted, without the comments
 
-However, if you wish to modify propforth itself, [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart2 PropForthPart2.f] contain the source code in forth.  If you wish to modify the propforth kernel using forth, these are the files to modify.
+However, if you wish to modify propforth itself, [http://code.google.com/p/propforth/wiki/PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart2 PropForthPart2.f] contain the source code in forth.  If you wish to modify the propforth kernel using forth, these are the files to modify.
 
 = What is the "Display Data Stack" word?  Why doesn't ".S" work? =
 
-The standard 'display data stack' word .S is not implemented in the default kernel.  There is a plan for a 'development extensions' that will include the .s word, but it is not avaiable at this time. 
+The standard 'display data stack' word .S is not implemented in the default kernel.  There is a plan for a 'development extensions' that will include the .s word, but it is not available at this time. 
 
 The word "st?" displays the stack in hex formatted to 8 hex digits. 
 
