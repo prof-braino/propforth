@@ -89,4 +89,4 @@ _Cog6 Ok_
 
    See the example for downloading the textfile Propforth.f to propforth via teraterm:
 
-DownloadPropforth.f
+[http://code.google.com/p/propforth/wiki/DownloadPropforthSource DownloadPropforth.f]
