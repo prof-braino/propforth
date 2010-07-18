@@ -62,22 +62,29 @@ saveforthPFA            word    @cqPFA + $10
 }}}   
 
 
-change line  5239 
+change line  5239  from 
 
-from 
+{{{ 
+word    $003F ' page size for 64k EEPROM  
+}}}
 
-{{{ word    $003F ' page size for 64k EEPROM  }}}
+ to 
 
-to
+{{{    
+word    $007F ' page size for 128k EEPROM  
+}}}
 
-{{{ word    $007F ' page size for 128k EEPROM  }}}
+change line  5339  from  
 
-change line  5339 
+{{{ 
+word    $0040 ' page size for 64k EEPROM  
+}}}
 
- from 
- {{{ word    $0040 ' page size for 64k EEPROM  }}}
- to
- {{{ word    $0080 ' page size for 128k EEPROM  }}}
+ to  
+
+{{{    
+word    $0080 ' page size for 128k EEPROM  
+}}}
 
 
 
