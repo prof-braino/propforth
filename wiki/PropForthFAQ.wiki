@@ -55,11 +55,11 @@ These are included in the v3.2 archive
 
 = Do I need the files [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart2.f]? =
 
-  * Not necessarily. [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and PropForthPart2.f will generate the original Propforth kernel definitions as found in [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin].   
+  * Not necessarily. [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart2 PropForthPart2.f] will generate the original PropForth kernel definitions as found in [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin].   
 
 You only need these if you want to see that the definitions generated are the same as those posted, without the comments
 
-However, if you wish to modify propforth itself, PropForthPart1.f and PropForthPart2.f contain the source code in forth.  If you wish to modify the propforth kernel using forth, these are the files to modify.
+However, if you wish to modify propforth itself, [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart1 PropForthPart1.f] and [http://code.google.com/p/propforth/wiki/PropForthPart1?ts=1279473906&updated=PropForthPart2 PropForthPart2.f] contain the source code in forth.  If you wish to modify the propforth kernel using forth, these are the files to modify.
 
 = What is the "Display Data Stack" word?  Why doesn't ".S" work? =
 
