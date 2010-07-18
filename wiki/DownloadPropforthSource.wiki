@@ -45,7 +45,7 @@ Copy the text from the teraterm window or from the teraterm logfile and paste it
   
 = Load the new version of PropForth.spin into eeProm =
 
-Use the Propeller Tool to load the new PropForth.spin file into the propeller's eeProm.
+Use the Propeller Tool to load the new [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] file into the propeller's eeProm.
 
 Start TeraTerm and verify the forth prompt is present.
 
