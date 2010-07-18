@@ -43,23 +43,48 @@ We are sure there are several (one stops seeing when one looks at it too long) s
 
   * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image, which will include any definitions you added. 
 
+These are included in the v3.2 archive
+
 = What does the "saveforth" word do? =
  
  * saveforth writes the current dictionary image that is running on the chip to eeprom. Each dot (period)  displayed represents one 64 byte page write to eeprom.  There are a maximum of 1024 pages of 64 bytes each.  If a word is redefined, the new definition is visible and covers up the old definition. Eventually the space this uses will be noticeable.  See the comments in PropForth.spin if you are interested in 128 byte page writes, but be aware that the prop demo board eeprom won't like it.  This was the bug in version 2.5
 
 = What does the "spinmaker" word do? = 
 
-  * The spinmaker word generates the forth portion of the propforth.spin source file.  This gets rid of any old definitions and allows the propeller tool to resolve any forward references without the need for defered words.  
+  * The spinmaker word generates the forth portion of the [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] source file.  This gets rid of any old definitions and allows the propeller tool to resolve any forward references without the need for defered words.  
 
 = Do I need the files PropForthPart1 and 2? =
 
-  * No. PropForthPart1.f and PropForthPart2.f will generate the original Propforth 2.7 kernel definitions as found in PropForth.spin.   You only need these if you want to see that the definitions generated are the same as those posted, without the comments
+  * Not necessarily. PropForthPart1.f and PropForthPart2.f will generate the original Propforth kernel definitions as found in [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin].   
+
+You only need these if you want to see that the definitions generated are the same as those posted, without the comments
+
+However, if you wish to modify propforth itself, PropForthPart1.f and PropForthPart2.f contain the source code in forth.  If you wish to modify the propforth kernel using forth, these are the files to modify.
 
 = What is the "Display Data Stack" word?  Why doesn't ".S" work? =
 
-The standard 'display data stack' word will be implemented in version 3.0 (planned). The word "st?" displays the stack in hex formatted to 8 hex digits.
+The standard 'display data stack' word .S is not implemented in the default kernel.  There is a plan for a 'development extensions' that will include the .s word, but it is not avaiable at this time. 
+
+The word "st?" displays the stack in hex formatted to 8 hex digits. 
 
 = What is the number base word? Why doesn't "BASE" work? =
+
+UPDATED: mcwBase has been renamed to base in version 3.2
+
+NOTE 
+10 base w! / in hex, sets the base to 16 (decimal)
+10 base w! / in decimal, sets the base to 16 (decimal)
+
+set the base to decimal or hex using the kernekl words
+{{{
+hex
+}}}
+
+and 
+
+{{{
+decimal
+}}}
 
 In version 2.7 and earlier, the variable that holds the number base is mcwBase. The standard forth name "BASE" will be used in version 3.0 (planned)
 
