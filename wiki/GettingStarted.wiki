@@ -8,8 +8,9 @@ There were no issues with a Propeller proto board, Propeller demo board Rev (F),
 There were no issues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/ttssh2/downloads/46035/teraterm-4.65.exe/ with 57.6 kb with 8 bits, no parity, 1 stop bit, no flow control, no delays.
 
 
-  * Download PropForth.spin
-  * Compile with the Propeller Tool
+  * Download the current [http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip&can=2&q= ProForth archive ] 
+  * unzip the archive and locate PropForth.spin 
+  * Compile PropForth.spin with the Propeller Tool
   * Load into eeprom 
 
   * Start up TeraTerm or any other serial driver 
