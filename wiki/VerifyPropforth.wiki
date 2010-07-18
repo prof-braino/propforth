@@ -1,7 +1,9 @@
 #summary Verify that Propforth functions as defined
-#labels v2.7
+#labels v3.2
 
 = Introduction =
+
+This page was created for version 2.7 but is believed to be valid for PropForth v3.2
 
 Main functions are 
  * using the stack
