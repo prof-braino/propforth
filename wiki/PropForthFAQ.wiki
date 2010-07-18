@@ -39,9 +39,9 @@ Standard-ish forth names are used for all implemented standard forth functions b
 
 We are sure there are several (one stops seeing when one looks at it too long) so please bring them to our attention. 
 
-= Do I need the files spinmakerPart1 and 2 to create kernel source code? =
+= Do I need the files spinmaker.f to create kernel source code? =
 
-  * Yes.  spinmakerPart1.f and spinmakerPart2.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image, which will include any definitions you added. 
+  * Yes.  spinmaker.f generate Propforth kernel definitions from the _currently running forth image_.  After running saveforth, the spinmaker word will create the source definitions for that image, which will include any definitions you added. 
 
 These are included in the v3.2 archive
 
