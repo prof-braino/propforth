@@ -16,8 +16,11 @@ Version 2.4 of propforth used 64 byte EEPROM page writes, but this was found to 
 
 Propfroth 2.5 onward uses 32 byte EEPROM page writes, which is supported on all EEPROM parts seen so far. The only impact is that the EEPROM write routine does twice as many page writes. 
 
-If an application requires 64 byte page writes to EEPROM,
+If an application requires 64 byte page writes to EEPROM, change line
 
+from 
+
+to
 
 
 = Version String =
@@ -28,6 +31,7 @@ If changes are made to the file it is recommended that this string be updated to
 {{{
      byte    $20,"PropForth v3.2 2010JUL09 15:30 0"
 }}}
+
  The $20 reserves 32 byte for the string.  This can be changed to accomodate any size string required.  
 
 The FINAL CHARACTER should be a zero.  This final character is AUTO INCREMENTED by the 'saveforth' word. 
