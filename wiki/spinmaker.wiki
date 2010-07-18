@@ -1,4 +1,10 @@
-#summary spimaker.f - forth code which generates spin from the current image, see the downloads
-#labels v2.7
+#summary Additional explanation for spimaker.f
+#labels v3.2
 
-http://code.google.com/p/propforth/downloads/list
+= Introduction =
+
+The file [http://code.google.com/p/propforth/w/edit/spimaker.f spimaker.f] contains an extension to the forth kernel that creates spin code from the currently running forth dictionary. 
+
+Words that have been redefined only keep the newest definition.  This recovers space previously occupied by old versions of a definition. 
+
+ 
