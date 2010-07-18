@@ -6,14 +6,11 @@ The example(s) below are added in response to user questions.  The version of Pr
 
 = Usage =
 
-NOTE that the example code is n
+NOTE that the example code has the fl command at the first line
+The code can be pasted to the tera term prompt if the fl command is the first line.
+The code can be typed by hand, if so do not include the fl command 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+can be typed 
 
 = BLINK AN LED Example =
 {{{
