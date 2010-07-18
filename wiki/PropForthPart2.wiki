@@ -1,4 +1,28 @@
-#summary PropForthPart2.f - Part 2 of the PropForth source, see the downloads
-#labels v2.7
+#summary Additional explanation for PropforthPart2.f
+#labels v3.2
 
-http://code.google.com/p/propforth/downloads/list
+= Introduction =
+
+The file [http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f] contains the remainder of the PropForth kernel, written in forth.
+
+The first part is contained in [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f]. 
+
+= EEPROM memory access words =
+
+The EEPROM page read and write words are defined at  are at the end of [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f]
+
+EW@ - fetch a 16 bit word from eeprom
+
+EW! - store a 16 bit words to EEPROM
+
+EC@ - fetch an 8 bit byte from EEPROM
+
+Notice that are are no words defined for 
+
+EC! - no word to store a byte to EEPROM
+
+EL@ - no word to Fetch a long from EEPROM
+
+EL! - no word to store a long to EEPROM
+
+It was found that all these functions are not needed for the purposes of the kernel, and have not been implemented in order to save space.  If needed the user is free to implement them as extensions, or add them to the kernel.
