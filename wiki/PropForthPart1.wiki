@@ -46,6 +46,23 @@ SomeName W!        /set the variable to the same value that it had in the previo
 
 Again, the purpose is so that high level forth source code exists for the variable, and the variable gets set to the correct (current) value. 
 
+Once you understand what is going on, the strange construct starts to look reasonable after a while.
+
+= another strange construct that appears frequently =
+
+{{{
+' _AnAssemblerLabel  asmlabel _AnAssemblerLabel
+}}}
+
+This is the same as with the variable names above, except this is for assembler labels. 
+
+'_AnAssemblerLabel is the 
+
+= What does the underscore mean in the label names? =
+
+Please see the explanation for the naming convention in ....where did I put that?
+
+
 
 = Details =
 
