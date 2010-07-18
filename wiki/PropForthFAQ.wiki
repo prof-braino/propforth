@@ -13,7 +13,7 @@
 
 = In what version will PropForth use standard forth names for standard forth words?  When will this version come out? =
 
-Standard-ish forth names are used for all implemented standard forth functions beginning in version 3.2.  If you feel a particular name is still counter-intuitive or misleading please send a comment here or on the [ http://forums.parallax.com/forums/default.aspx?f=25&m=468264 Parallax Propeller forum thread ]
+Standard-ish forth names are used for all implemented standard forth functions beginning in version 3.2.  If you feel a particular name is still counter-intuitive or misleading please send a comment here or on the [http://forums.parallax.com/forums/default.aspx?f=25&m=468264 Parallax Propeller forum thread ]
 
 = Do I need the files spinmakerPart1 and 2 to create kernel source code? =
 
