@@ -65,7 +65,26 @@ asmlabel _AnAssemblerLabel  \ create a definition for an assembler label named  
 
 Please see the explanation for the naming convention in ....where did I put that?
 
+= Some prop - specific words =
 
+\ _execasm2>1 ( n1 n2 -- n ) \ the assembler operation is specified by the literal which follows (replaces the i field)
+
+' _execasm2>1 asmlabel _execasm2>1
+
+\ _execasm1>1 ( n -- n ) \ the assembler operation is specified by the literal which follows (replaces the i field)
+
+{{{
+' _execasm1>1 asmlabel _execasm1>1
+
+\ _execasm2>0 ( n1 n2 -- ) \ the assembler operation is specified by the literal which follows (replaces the i field)
+
+' _execasm2>0 asmlabel _execasm2>0
+
+}}}
+
+These three words are not standard forth words, that are HAL (hardware abstraction layer) words specific to the prop. 
+
+These words handle the three cases for constructing assembly code in the cog. 
 
 = Details =
 
