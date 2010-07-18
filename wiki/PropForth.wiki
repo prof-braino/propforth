@@ -12,7 +12,7 @@ PropForth is very useful for interactive hardware and software development. It i
 
 The stacks are in the cogs, and there is stack checking. The dictionary is in main memory.
 
-There are 2 main assembler routines in PropForth.spin. serentryPFA and entryPFA.
+There are 2 main assembler routines in [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin]. serentryPFA and entryPFA.
 
 serentryPFA is a serial port driver. This serial driver is started in cog 7.
 
