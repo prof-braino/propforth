@@ -35,11 +35,11 @@ This is because the comments are discarded when the source code is compiled into
 = 64k  EEPROM vs 32K EEPROM =
 
 The stock demo board has a 32k EEPROM while the stock proto board has 64k EEPROM.
-Version 2.4 of propforth used 64 byte EEPROM page writes, but this was found to be unsupported on the 32k EEPROM parts.  This was the cause of the 'saveforth' word failing on the demo boards in version 2.4.
+Version 2.4 of propforth used 128 byte EEPROM page writes, but this was found to be unsupported on the 32k EEPROM parts.  This was the cause of the 'saveforth' word failing on the demo boards in version 2.4.
 
-Propfroth 2.5 onward uses 32 byte EEPROM page writes, which is supported on all EEPROM parts seen so far. The only impact is that the EEPROM write routine does twice as many page writes. 
+Propfroth 2.5 onward uses 64 byte EEPROM page writes, which is supported on all EEPROM parts seen so far. The only impact is that the EEPROM write routine does twice as many page writes. 
 
-If an application requires 64 byte page writes to EEPROM, this is controls in (about) line 5329 and 5339 in the saveforth word definition
+If an application requires 128 byte page writes to EEPROM, this is controls in (about) line 5329 and 5339 in the saveforth word definition
 
 {{{
                         word    @freeNFA + $10
@@ -88,25 +88,25 @@ saveforthPFA            word    @cqPFA + $10
 change line  5239  from 
 
 {{{ 
-word    $003F ' page size 32 bytes for 32k EEPROM  
+word    $003F ' page size 64 bytes for 32k EEPROM  
 }}}
 
  to 
 
 {{{    
-word    $007F ' page size 64 bytes for 64k EEPROM  
+word    $007F ' page size 128 bytes for 64k EEPROM  
 }}}
 
 change line  5339  from  
 
 {{{ 
-word    $0040 ' page size 32 bytes for 32k EEPROM  
+word    $0040 ' page size 64 bytes for 32k EEPROM  
 }}}
 
  to  
 
 {{{    
-word    $0080 ' page size 64 bytes for 64k EEPROM  
+word    $0080 ' page size 128 bytes for 64k EEPROM  
 }}}
 
 = Version String =
