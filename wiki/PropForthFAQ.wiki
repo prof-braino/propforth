@@ -60,7 +60,7 @@ The way serial communication is implemented there is no flow control.  Normally 
 
 If you see the message 'UNDEFINED WORD' for a definition in a section of pasted text that previously compiled with no error, this is a likely cause. 
 
-See ... for more information
+See [http://code.google.com/p/propforth/wiki/DownloadSourceText DownloadSourceText] for more information
 
 = Do I need the files spinmaker.f to create kernel source code? =
 
