@@ -33,12 +33,6 @@ Please send suggestions as to ways to better organize the material, and we will 
 
  * The earlier versions might not agree with the current documentation, so avoid these unless something is broken. 
 
-= In what version will PropForth use standard forth names for standard forth words?  When will this version come out? =
-
-Standard-ish forth names are used for all implemented standard forth functions beginning in version 3.2.  If you feel a particular name is still counter-intuitive or misleading please send a comment here or on the [http://forums.parallax.com/forums/default.aspx?f=25&m=468264 Parallax Propeller forum thread ]
-
-We are sure there are several (one stops seeing when one looks at it too long) so please bring them to our attention. 
-
 = How do I load an entire file of source definition text into propforth? =
 
 To load source text into the propforth command line rather than retyping everything manually each time, use the fl command.
@@ -62,6 +56,12 @@ The way serial communication is implemented there is no flow control.  Normally 
 If you see the message 'UNDEFINED WORD' for a definition in a section of pasted text that previously compiled with no error, this is a likely cause. 
 
 See [http://code.google.com/p/propforth/wiki/DownloadSourceText DownloadSourceText] for more information
+
+= In what version will PropForth use standard forth names for standard forth words?  When will this version come out? =
+
+Standard-ish forth names are used for all implemented standard forth functions beginning in version 3.2.  If you feel a particular name is still counter-intuitive or misleading please send a comment here or on the [http://forums.parallax.com/forums/default.aspx?f=25&m=468264 Parallax Propeller forum thread ]
+
+We are sure there are several (one stops seeing when one looks at it too long) so please bring them to our attention. 
 
 = Do I need the files spinmaker.f to create kernel source code? =
 
