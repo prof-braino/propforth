@@ -45,7 +45,8 @@ To load source text into the propforth command line rather than retyping everyth
 
 Put fl at the beginning of each chunk pasted.
 
-{{{fl 
+{{{
+fl 
 
 : my definitions .... ;
 }}}
