@@ -13,7 +13,7 @@ There were no issues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/
   * Compile [http://code.google.com/p/propforth/wiki/PropForthspin?ts=1279464157&updated=PropForthspin PropForth.spin] with the Propeller Tool
   * Load into eeprom 
 
-  * Start up TeraTerm or any other serial driver 
+  * Start up TeraTerm (tested, any other serial terminal program should work)
   * Set to 57.6 ks 8 bits, no parity, 1 stop bit, no flow control, no delays.
   * Hit enter
 
