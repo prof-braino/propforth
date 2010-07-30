@@ -22,22 +22,27 @@ Cog6 ok
 ~~*: boot6 cogid >cog lockdict 7FFF dup mswMemend w! mswDictend w! freedict ;*
 
 ~~Cog6 ok
-}}}
+
 *saveforth*
 {{{
 ................................................................................................
 Cog6 ok
 }}}
+
 *reboot*
+
 {{{
 PropForth v2.0 2009APR19 11:00 1
 Cog6 ok
 }}}
+
 *free*
+
 {{{
 4319 bytes free - A3 cog longs free
 Cog6 ok
 }}}
 
 Let us assume this is not adequate for our purposes and we want to generate spin code which incorporates this change.
+
   * RebuildingPropForth
