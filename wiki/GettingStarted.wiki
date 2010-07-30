@@ -19,6 +19,8 @@ There were no issues with TeraTerm 4.63 and 4.65 http://sourceforge.jp/projects/
 
 Start playing with PropForth. PropForth starts up in hex mode. 
 
+NEW NOTE: If you wish to paste text definitions into the teratem window rather than re-type them manually each time, please be sure that the fl (file load) command is present at the beginning of the each chuck of text pasted.  Please see the entry in the FAQ, or see page ... for more information
+
 NOTE: Propeller Tool releases the serial port after the load is complete, so TeraTerm can be start without closing Propeller Tool.  However, TeraTerm will keep control of the serial port until the File>Disconnect (Alt-I) command is issued, or TeraTerm is shut down. The Propeller Tool issues the message "Communications Error - No propeller Chip found on serial port" when Propeller Tool attempts communication with the Prop chip while  TeraTerm still has the serial port. 
 
 * VerifyPropforth on your hardware
