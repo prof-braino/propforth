@@ -26,7 +26,7 @@ NOTE: Propeller Tool releases the serial port after the load is complete, so Ter
 * VerifyPropforth on your hardware
 * Generating a new Propforth image
 
-  * PropForthFAQ
+  * [http://code.google.com/p/propforth/wiki/PropForthFAQ PropForthFAQ]
 
 Documentation for the words in PropForth are in [http://code.google.com/p/propforth/w/edit/PropForthPart1 PropforthPart1.f] and [http://code.google.com/p/propforth/w/edit/PropForthPart2 PropforthPart2.f].
 
