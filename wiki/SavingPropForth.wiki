@@ -15,6 +15,9 @@ Cog6 ok
 417C bytes free - A3 cog longs free
 Cog6 ok
 }}}
+
+The strike through lines are not used after version 2.4
+
 ~~* 0 wconstant build0*
 
 ~~Cog6 ok
