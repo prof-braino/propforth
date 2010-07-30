@@ -45,17 +45,22 @@ To load source text into the propforth command line rather than retyping everyth
 
 Put fl at the beginning of each chunk pasted.
 
-{{{fl }}}
+{{{fl 
+
+: my definitions .... ;
+}}}
 
 = What is the fl (file load) command? =
 
-The fl (file load) command buffers a seection of text into eeprom.  The interpreter than can compile all the definitions at its own best speed.
+The fl (file load) command buffers a section of text into eeprom.  The interpreter than can compile all the definitions at its own best speed.
 
 = Why do I need to use the fl (file load) command? =
 
-The way serial communication is implemented there is no flow control.  Normally the interpreter is faster than the serial communications.  However, when a semi colon is encountered and a definition is comminted to the dictionary, the write is slower than the serial communications. If a stream of text coming over the serial line contains more than three semicolons, the serial buffer can get over run. 
+The way serial communication is implemented there is no flow control.  Normally the interpreter is faster than the serial communications.  However, when a semi colon is encountered and a definition is committed to the dictionary, the write is slower than the serial communications. If a stream of text coming over the serial line contains more than three semicolons, the serial buffer can get over run. 
 
 If you see the message 'UNDEFINED WORD' for a definition in a section of pasted text that previously compiled with no error, this is a likely cause. 
+
+See ... for more information
 
 = Do I need the files spinmaker.f to create kernel source code? =
 
