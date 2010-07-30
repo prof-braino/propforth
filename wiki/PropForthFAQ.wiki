@@ -39,7 +39,7 @@ Standard-ish forth names are used for all implemented standard forth functions b
 
 We are sure there are several (one stops seeing when one looks at it too long) so please bring them to our attention. 
 
-= How do I load file of source definition text into propforth? =
+= How do I load an entire file of source definition text into propforth? =
 
 To load source text into the propforth command line rather than retyping everything manually each time, use the fl command.
 
