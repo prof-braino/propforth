@@ -41,17 +41,17 @@ The FL word provides the method for loading entire files of source text definiti
 
 FL loads a file of forth source text to propforth.
 
-The FL word reads the input stream and page-writes it into unused EEPROM as a buffer. 
+The FL word reads the input stream and page-writes it into unused ~~eeprom~~ HUB RAM as a buffer. 
 
-It uses the EEPROM starting at 256 bytes past the current end of the dictionary, and ending at 32k.
+It uses the ~~eeprom~~ HUB RAM starting at 256 bytes past the current end of the dictionary, and ending at 32k.
  
-When the input stream is exhausted, propforth interprets the input stream as buffered in EEPROM, and the text is echoed on the serial terminal display.  
+When the input stream is exhausted, propforth interprets the input stream as buffered in ~~eeprom~~ HUB RAM, and the text is echoed on the serial terminal display.  
 
-As each section of the buffer is interpreted (for example, as it is echoed on the screen), the EEPROM is released from the buffer duty.
+As each section of the buffer is interpreted (for example, as it is echoed on the screen), the ~~eeprom~~ HUB RAM is released from the buffer duty.
 
 The demo board was tested to accept over 15,000 characters, and the proto board slightly less.
 
-NOTE: If the capacity of the EEPROM is exceeded, the message "Out of memory" displayed, and the board must be rebooted or re-flashed.  
+NOTE: If the capacity of the ~~eeprom~~ HUB RAM buffer is exceeded (if you put in enough text to overfill the unused 32k hub ram), the message "Out of memory" displayed, and the board must be rebooted or re-flashed.  
 
 Steps for use:
 
