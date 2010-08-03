@@ -47,7 +47,7 @@ fl
 
 = What is the fl (file load) command? =
 
-The fl (file load) command buffers a section of text into eeprom.  The interpreter than can compile all the definitions at its own best speed.
+The fl (file load) command buffers a section of text into ~~eeprom~~ HUB RAM.  The interpreter than can compile all the definitions at its own best speed.
 
 = Why do I need to use the fl (file load) command? =
 
