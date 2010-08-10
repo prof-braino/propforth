@@ -1,9 +1,27 @@
 #summary Status of PropForth
 #labels v3.2
 
+=== Planned PropForth 3.3 Around September 2010 ===
+
+1. Add patches for definition of {{{ * ( : * u* ; ) }}} and other math functions
+
+2. Add keyboard support
+
+3. Add 32x15 VGA text support as extension' LowResVGA.f
+
+4. Add 128x64 Hi Res VGA as commented option in PropForth.spin
+
+5. Close outstanding issues that have been fixed, comment on  issue that has not been fixed.
+
+6.  Begin support for multi-prop system (C3, Hive)
+
+7. ethernet kernel support is NOT planned for 3.3; rescheduled to 3.4
+
 === 2010 July 09 PropForth 3.2 ===
 
 PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the README.txt file in the archive
+
+NOTE: The UNDEFINED WORD error can also occur due to a serial overrun.  If you paste in a chunk of code to teraterm and see this error, you should paste smaller sections of text or use the {{{fl}}} (fileload) word
 
 [http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
 
