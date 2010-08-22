@@ -1,0 +1,35 @@
+#Most of the differences from DPANS94 forth standard
+
+= Why there are differences =
+
+The Propeller chip is sufficiently different from other hardware.
+
+In cases where the DPANS94 standard could not be followed, propforth will deviate from the standard.
+
+The design decisions made attempt to achieve a compromise on execution speed, code size, and simplicity.  
+
+= CREATE =
+
+The PropForth CREATE word behaves differently from the standard.   
+
+< under construction >
+
+CARE must be taken when making ARRAYS in propforth. 
+
+Dictionary entries made using CREATE *do not* return a PFA on the stack; .
+
+
+= \ comments = 
+
+Comments delimited using the \ character behave differently in PropForth.
+
+The user must exercise care in the use of \ comments.
+
+< under construction >
+
+= next entry goes here =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
