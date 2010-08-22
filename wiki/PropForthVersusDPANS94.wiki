@@ -12,11 +12,22 @@ The design decisions made attempt to achieve a compromise on execution speed, co
 
 The PropForth CREATE word behaves differently from the standard.   
 
-< under construction >
+In dpans94, the create word is defined as "create a dictionary entry for the text immediately following create "
 
-CARE must be taken when making ARRAYS in propforth. 
+{{{ create MyNewDefinition }}}
 
-Dictionary entries made using CREATE *do not* return a PFA on the stack; .
+and executing the created word returns the PFA of 'MyNewDefinition'
+
+In PropForth, however, dictionary entries made using CREATE *do not* return a PFA on the stack; .
+
+In PropForth, the is no explicit PFA. Therefore, there is nothing to return.  This is the result of the design decision to not use explicit PFA in the interest of code size and execution speed. The main effect of this is in attempting to use CREATE to define an array. 
+
+CARE must be taken when defining ARRAYS in propforth. The create word does in fact make a dictionary entry, but calling the create'd word does NOT leave any PFA on the stack. 
+
+The desision was made NOT to have create make a 0 length variable by default.  The desicion was to advise users to define a variable or wvariable and allot (size -4 bytes)  longs for long or (size -2 bytes) words for word arrays. 
+
+
+
 
 
 = \ comments = 
