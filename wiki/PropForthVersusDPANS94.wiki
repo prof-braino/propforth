@@ -20,7 +20,7 @@ and executing the created word returns the PFA of 'MyNewDefinition'
 
 In PropForth, however, dictionary entries made using CREATE *do not* return a PFA on the stack; .
 
-In PropForth, the is no explicit PFA. Therefore, there is nothing to return.  This is the result of the design decision to not use explicit PFA in the interest of code size and execution speed. The main effect of this is in attempting to use CREATE to define an array. 
+In PropForth, the is no explicit PFA. Therefore, there is nothing to return.  This is the result of the design decision to not use explicit PFA in the interest of maximum execution speed and minimal kernel code size. The main impact of this decision is in attempting to use CREATE to define an array. 
 
 CARE must be taken when defining ARRAYS in propforth. The create word does in fact make a dictionary entry, but calling the create'd word does NOT leave any PFA on the stack. 
 
