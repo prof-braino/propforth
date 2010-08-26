@@ -36,6 +36,12 @@ For the time being, the CREATE word behavior will remain as is.
 
 The design decision to use an inherent PFA instead of an explicit PFA was made in the interest of decreased code size and to a lesser extent faster execution speed.  Since cog RAM in the most limiting resource, the savings of the extra words per each definition was deemed worth the trade-off.  Please express your opinion if this should remain as is (inherent PFA) or change (explicit PFA at the cost of cog memory) if you have a preference one way or the other.  
 
+= How does the WAITCNT word work? =
+
+The WAITCNT word takes two parameters on the stack and leaves one value on the stack.
+{{{ : waitcnt ( SysCnt1 Offset - SysCnt2 )  ... ; }}}
+
+
 
 = How do I navigate the documentation on this site? =
 
