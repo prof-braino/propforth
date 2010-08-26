@@ -13,7 +13,7 @@ http://code.google.com/p/propforth/wiki/PropForth
 
 This question was asked with the intent of requesting a single download of a zip-file archive of all these pages.  However, there does not yet exist a full, complete set of documentation, because of resource limitations.  The documentation is being added as specific requests come in, and as time allows.  That's the best we can do at the moment. 
 
-= What is going on with the CREATE word? =
+= What is going on with the CREATE word? V3.3 and earlier =
 
 The propforth CREATE word does NOT return any value on the stack.  Per DPANS94, CREATE is defined as creating a dictionary entry for the following label at compile time; and returning the PFA (parameter field address) for that label at execution time. Propforth does not have an explicit PFA; therefore, there is no PFA to be returned.  
 
