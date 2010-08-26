@@ -58,6 +58,14 @@ As long as the loop processing time does not exceed the Delay, the cog will resu
 
 (thanks caskas and kuroneko) 
 
+= How to use the SPEED.f utility? =
+
+The speed.f utility is an example of a diagnostic to count the clock cycles for a bit of code. 
+ctra COG@ puts the value of the system counter on the stack BEFORE the code in question is executed; ctra COG@ is called again AFTER the code is executed.  The difference between these two values is the number of clock cycles the that occurred between.
+
+NOTICE that if you use this method to time the waitcnt word you can get funky results due to the minimum and maximum values that can be measured.  (Which I should post here, but I haven't gotten around to doing the experiments yet.)
+
+
 = How do I navigate the documentation on this site? =
 
 Start with 
