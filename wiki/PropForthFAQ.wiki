@@ -50,7 +50,7 @@ The first time loop executes, we start with the seed value of ctra on the stack.
 
 As long as the loop processing time does not exceed the Delay, the cog will resume operation Delay cycles after the previous waitcnt.
 
-*However*  if the loop execution time is greater than the delay interval the SysCnt2 value will be too small; the system counter will have already passed the value passed in thas the next SysCnt1, and the waitcnt word will delay ~until the system counter rolls over~ again.  IF  you experience and unusually LONG DELAY which is a multiple of about 53.6 seconds (using a 80MHz clock) consider this as a possible cause.  One solution is to increase the Delay until it is longer than the loop execution time. 
+*However*  if the loop execution time is greater than the delay interval the SysCnt2 value will be too small; the system counter will have already passed the value passed in as the next SysCnt1, and the waitcnt word will delay _until the system counter rolls over_ again.  IF  you experience and unusually LONG DELAY which is a multiple of about 53.6 seconds (using a 80MHz clock) consider this as a possible cause.  One solution is to increase the Delay until it is longer than the loop execution time. 
 
 (thanks caskas and kuroneko) 
 
