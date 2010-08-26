@@ -46,7 +46,11 @@ SysCnt1 is the value of the system counter (ctra) when the cog resumes execution
 
 Delay is the number (representing clock cycles) to add to this number.  For example, if we know the loop needs to wait 500 clock cycles between executions, the delay would be 1F4 (h).
 
-The first time loop executes, we start with the seed value of ctra on the stack.  Each time the wait is encountered, the delay value is automatically added to the seed value, and the number on the stack is the next value of the system counter to wait for.
+The first time loop executes, we start with the seed value of ctra on the stack.  Each time the wait is encountered, the delay value is automatically added to the seed value, and the number on the stack is the next value of the system counter to wait for.  If this result is on the top of the stack the next time through the loop when the 
+
+{{{1F4 waitcnt}}}
+
+line is encountered, the loop delay 500 cycles between executions.
 
 As long as the loop processing time does not exceed the Delay, the cog will resume operation Delay cycles after the previous waitcnt.
 
