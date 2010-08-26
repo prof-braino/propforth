@@ -39,9 +39,20 @@ The design decision to use an inherent PFA instead of an explicit PFA was made i
 = How does the WAITCNT word work? =
 
 The WAITCNT word takes two parameters on the stack and leaves one value on the stack.
-{{{ : waitcnt ( SysCnt1 Offset - SysCnt2 )  ... ; }}}
 
+{{{ : waitcnt ( SysCnt1 Delay - SysCnt2 )  ... ; }}}
 
+SysCnt1 is the value of the system counter (ctra) when the cog resumes execution; ie wait until system counter reaches SysCnt1.  
+
+Delay is the number (representing clock cycles) to add to this number.  For example, if we know the loop is to occur every 500 clock cycles, the delay would be 1F4 (h).
+
+The first time loop executes, we start with the seed value of ctra on the stack.  Each time the wait is encountered, the delay value is automatically added to the seed value, and the number on the stack is the next value of the system counter to wait for.
+
+As long as the loop processing time does not exceed the Delay, the cog will resume operation Delay cycles after the previous waitcnt.
+
+*However*  if the loop execution time is greater than the delay interval the SysCnt2 value will be too small; the system counter will have already passed the value passed in thas the next SysCnt1, and the waitcnt word will delay ~until the system counter rolls over~ again.  IF  you experience and unusually LONG DELAY which is a multiple of about 53.6 seconds (using a 80MHz clock) consider this as a possible cause.  One solution is to increase the Delay until it is longer than the loop execution time. 
+
+(thanks caskas and kuroneko) 
 
 = How do I navigate the documentation on this site? =
 
