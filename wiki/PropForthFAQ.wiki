@@ -1,5 +1,5 @@
 #summary Frequently Asked Questions
-#labels Featured,v3.2
+#labels Featured,v3.3
 
 = How Do I Submit a Question? =
 
@@ -12,6 +12,30 @@ Yes and no.  This website that you are viewing is the archive of propforth docum
 http://code.google.com/p/propforth/wiki/PropForth
 
 This question was asked with the intent of requesting a single download of a zip-file archive of all these pages.  However, there does not yet exist a full, complete set of documentation, because of resource limitations.  The documentation is being added as specific requests come in, and as time allows.  That's the best we can do at the moment. 
+
+= What is going on with the CREATE word? =
+
+The propforth CREATE word does NOT return any value on the stack.  Per DPANS94, CREATE is defined as creating a dictionary entry for the following label at compile time; and returning the PFA (parameter field address) for that label at execution time. Propforth does not have an explicit PFA; therefore, there is no PFA to be returned.  
+
+This is awkward for defining arrays. Usually we want to do something like
+{{{
+CREATE MyLongArray 8 ALLOT
+
+CREATE MyWordArray 6 WALLOT
+}}}
+to make MyLongArray contain 8 longs, and MyWordArray to contain 6 words.  Since CREATE doesn't work that way in propforth, it is recommended to use
+{{{
+Variable MyLongArray 8 4-  ALLOT
+
+Variable MyWordArray 6 2- WALLOT
+}}}
+
+If other situations arise where the CREATE word is causing problems, please post the usage and workarounds.  We can determine if a change has to be made or if the workaround is livable.
+
+For the time being, the CREATE word behavior will remain as is.
+
+The design decision to use an inherent PFA instead of an explicit PFA was made in the interest of decreased code size and to a lesser extent faster execution speed.  Since cog RAM in the most limiting resource, the savings of the extra words per each definition was deemed worth the trade-off.  Please express your opinion if this should remain as is (inherent PFA) or change (explicit PFA at the cost of cog memory) if you have a preference one way or the other.  
+
 
 = How do I navigate the documentation on this site? =
 
