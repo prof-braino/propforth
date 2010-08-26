@@ -117,6 +117,49 @@ If you see the message 'UNDEFINED WORD' for a definition in a section of pasted 
 
 See [http://code.google.com/p/propforth/wiki/DownloadSourceText DownloadSourceText] for more information
 
+= How to / comments behave?  =
+
+In the context of the fl word (FILELOAD) the slash comments require some attention.
+
+The \ causes everything up to and including the end of line to be ignored.
+
+When using the fl command, care must be taken when using \ comments.
+
+When a \ is used AFTER a line of CODE, the following line gets APPENDED. 
+
+If there are multiple lines of code that end in \ comment (which is usually the case), all the lines get appended into one big line and the input buffer is eventually overrun. This results in UNDEFINED WORD error message for code that previously compiled with no error.
+
+The solution is to put a BLANK LINE after all lines that have code followed by \ comment
+
+EXAMPLE - ERROR
+
+\ comments
+\ on what the
+\ code does
+: MyWord ( - )
+         word1 \ does this
+         longerwordname2 anotherlongwordname3 wordname4 \ does more
+         morelongwordnames \ does other things
+...
+
+get sent to the fl command as one big long line, which overruns the input buffer after 126 characters (pad -2, in v3.2)  
+
+EXAMPLE - CORRECTED BY ADDING BLANK LINES after midline \ comments
+
+\ comments
+\ on what the
+\ code does
+: MyWord ( - )
+         word1 \ does this
+
+         longerwordname2 anotherlongwordname3 wordname4 \ does more
+
+         morelongwordnames \ does other things
+
+...
+
+
+
 = In what version will PropForth use standard forth names for standard forth words?  When will this version come out? =
 
 Standard-ish forth names are used for all implemented standard forth functions beginning in version 3.2.  If you feel a particular name is still counter-intuitive or misleading please send a comment here or on the [http://forums.parallax.com/forums/default.aspx?f=25&m=468264 Parallax Propeller forum thread ]
