@@ -1,0 +1,54 @@
+#labels v3.4
+#Propfroth HiResVGA.spin implements Jupiter ACE type functionality on the Prop
+
+= Introduction =
+
+[ http://en.wikipedia.org/wiki/Jupiter_AceSee Wikipedia article on Jupiter ACE ]
+
+Propforth 3.4 includes the file PropForth_hiresvga.spin
+
+When loaded into the prop, it provides the propforth kernel and VGA support for the prop demo board or similar.  This allows a standalone Jupiter ACE - type forth based PC. 
+
+= LOADING Jupiter ACE to the prop =
+
+Using a Prop Demo Board or similar, 
+  1. Load HiResVGA.spin 
+  2. Load HiResVGA.f
+  3. execute saveforth
+
+Loading HiResVGA leaves about 4k availble 
+
+= serial Monitor =
+
+The default propforth serial monitor runs on cog5 instead of cog 6. 
+
+ADVANCED - The propforth word "fastload" uses next highest cog, or wraps around.  This is why cog 6 is unoccupied at startup
+
+= VGA =
+
+VGA is 128 characters by 64 lines
+
+Screen is divided into two sections, by default top half and bottom half.
+
+Each section allows interaction with an independent cog
+
+Color is controlled per line (not per character)
+
+= Keyboard =
+
+Keyboard interface can be switched to the other cog using ALT-TAB
+
+= Mouse =
+
+Mouse is not implemented at this time
+
+= Audio =
+
+Audio is not implemented at this time
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
