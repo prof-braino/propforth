@@ -13,11 +13,15 @@ When loaded into the prop, it provides the propforth kernel and VGA support for 
 
 Using a Prop Demo Board or similar, 
 
-  1. Load HiResVGA.spin
-  2. Load HiResVGA.f
-  3. execute saveforth
+ # Load HiResVGA.spin
+ # Load HiResVGA.f
+ # Execute saveforth
+
+The prop now has the High Resolution VGA support added to propforth, saved to eeprom.
 
 Loading HiResVGA leaves about 4k availble 
+
+NOTE: After loading HiResVGA.spin, a connected VGA terminal will display a blue background with left arrows and a bunch of arbitrary character at the bottom of the screen.  HiResVGA.f must be loaded via the serial terminal to complete the VGA installation.  The saveforth word must be executed to store the final image to eeprom; otherwise, the VGA functionality will be lost after power cycle.
 
 = serial Monitor =
 
@@ -46,10 +50,3 @@ Mouse is not implemented at this time
 = Audio =
 
 Audio is not implemented at this time
-
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
