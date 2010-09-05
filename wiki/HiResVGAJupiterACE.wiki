@@ -49,7 +49,9 @@ Printing "c" followed by a color value will change the line to that color.
 
 Example
 
-{{{  c emit 1 emit }}}
+{{{  
+c emit 1 emit 
+}}}
 
 changes the line to RED
 
@@ -57,19 +59,13 @@ Printing a "0" to the screen will clear the screen and set the cursor to the hom
 
 Example
 
-{{{ 0 emit }}}
+{{{ 
+0 emit 
+}}}
 
 = Keyboard =
 
 Keyboard interface can be switched to the other cog using ALT-TAB
-
-= Mouse =
-
-Mouse is not implemented at this time
-
-= Audio =
-
-Audio is not implemented at this time
 
 = Diagnostics =
 
@@ -79,6 +75,19 @@ Copy the text between the curly brackets (including the fl) and paste this into 
 
 Type vt at the prop keyboard to see the first VGA cog perform the test suite.
 
+{{{
+vt  
+}}}
+
 ALT-TAB to the other cog and type VT again; both cogs will perform the tests simultaneously.
 
-AT the serial terminal, also type VT. 
+The VGA terminal and Serial terminal operate differently in some cases. 
+AT the serial terminal, also type VT. When a VGA-specific instruction is encountered (versus a serial terminal instruction) the terminal will beep or exhibit some other non-defined behavior.   
+
+= Mouse =
+
+Mouse is not implemented at this time
+
+= Audio =
+
+Audio is not implemented at this time
