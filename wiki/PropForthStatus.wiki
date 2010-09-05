@@ -1,28 +1,33 @@
 #summary Status of PropForth
-#labels v3.2
+#labels v3.4
 
 
-=== Planned PropForth 3.4 Mid September 2010 ===
+=== 2010 Sept 05 PropForth 3.4  ===
 
-1. HiRes VGA Option:
+1. HiRes VGA Option - Jupiter ACE prototype - ALPHA Release:
 
-a. Uses Demoboard VGA pinout
+   a. Uses Demoboard VGA pinout
 
-b. 128 characters (columns) wide by 64 lines (rows) 
+   b. 128 characters (columns) wide by 64 lines (rows) 
 
-c. screen is divided into two sections, top half and bottom half.
-Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt
-(possibly useful as a 'software in-circuit debugger')
+   c. VGA screen is divided into two sections, top half and bottom half.
+Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial terminal is now cog 5, all 
 
-d. Serial communications from cog6 to PC terminal program is also active 
+   d. Serial communications from ~~cog6~~ cog5 to PC terminal program is also active 
 
-e. uses standard PS/2 keyboard for communication with VGA terminal
+   e. uses standard PS/2 keyboard for communication with VGA terminal
 
-f. mouse support is not planned for this release
+   f. mouse support is not planned for this release
 
-2. FORTH Output will NOT be in a different color, due to differences in color settings for serial terminal versus VGA terminal
+   g. see FAQ and JUPITER ACE 
 
-3. Ethernet support to be documented for initial hardware
+   h. user testing and comments requested. Please play with it and send me any comments   
+
+2. FORTH Output will NOT be in a different color from user input, due to differences in color settings for serial terminal versus VGA terminal
+
+3. Ethernet support NOT added to this release
+
+4. LOW RES VGA NOT included in this release 
 
 === Planned PropForth 3.3 Around September 2010 ===
 
