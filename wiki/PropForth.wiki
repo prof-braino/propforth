@@ -1,5 +1,5 @@
 #summary The main page forth PropForth
-#labels v3.2
+#labels v3.4
 
 = The main page forth PropForth =
 
@@ -37,6 +37,8 @@ The terminal used is TeraTerm, but just about terminal should work.
   * PropForthTechnicalDocumentation
 
   * ExampleCode
+
+  * HiResVGAJupiterACE
 
 The following pages are under review:
   * SavingPropForth
