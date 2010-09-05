@@ -12,6 +12,7 @@ When loaded into the prop, it provides the propforth kernel and VGA support for 
 = LOADING Jupiter ACE to the prop =
 
 Using a Prop Demo Board or similar, 
+
   1. Load HiResVGA.spin
   2. Load HiResVGA.f
   3. execute saveforth
