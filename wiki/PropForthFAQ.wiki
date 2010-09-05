@@ -1,9 +1,15 @@
 #summary Frequently Asked Questions
 #labels Featured,v3.3
 
+= What's "JUPITER ACE" about? =
+
+Jupiter ACE was a forth based PC from the olden days which stopped production in 1983. It was simply too far ahead of its time. See Jupiter ACE on Wikipedia for information.   Since one can no longer obtain a commercial product Jupiter ACE, it was easier to make one.  The PropforthHiResVGA.spin file is a Jupiter ACE - type implementation for the prop. 
+
+Please see the Propforth HiResVGA Jupiter ACE page
+
 = How Do I Submit a Question? =
 
-  * Sign in to your gmail account enter comments at the bottom of the page in question
+Sign in to your gmail account enter comments at the bottom of the page in question.  Please submit questions.  I don't know what to fix if you don't point out what's broken.
 
 = Is there a simple Archive that contains all of the PropForth documentation? =
 
