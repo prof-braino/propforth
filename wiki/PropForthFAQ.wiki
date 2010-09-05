@@ -3,9 +3,11 @@
 
 = What's "JUPITER ACE" about? =
 
+The Hi Res VGA / Prop Jupiter ACE sub-project is an extension to the default propforth kernel.  The idea is to provide a standalone forth based development system for the prop. 
+
 Jupiter ACE was a forth based PC from the olden days which stopped production in 1983. It was simply too far ahead of its time. See Jupiter ACE on Wikipedia for information.   Since one can no longer obtain a commercial product Jupiter ACE, it was easier to make one.  The PropforthHiResVGA.spin file is a Jupiter ACE - type implementation for the prop. 
 
-Please see the Propforth HiResVGA Jupiter ACE page
+Please see the [http://code.google.com/p/propforth/wiki/HiResVGAJupiterACE Propforth HiResVGA Jupiter ACE ] page
 
 = How Do I Submit a Question? =
 
