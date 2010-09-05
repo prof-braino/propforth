@@ -49,7 +49,7 @@ Printing "c" followed by a color value will change the line to that color.
 
 Example
 
-{{  c emit 1 emit }}
+{{{  c emit 1 emit }}}
 
 changes the line to RED
 
@@ -57,7 +57,7 @@ Printing a "0" to the screen will clear the screen and set the cursor to the hom
 
 Example
 
-{{{ 0 emit}}
+{{{ 0 emit }}}
 
 = Keyboard =
 
