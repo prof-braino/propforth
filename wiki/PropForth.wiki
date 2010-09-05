@@ -38,7 +38,7 @@ The terminal used is TeraTerm, but just about terminal should work.
 
   * ExampleCode
 
-  * HiResVGAJupiterACE
+  * [http://code.google.com/p/propforth/wiki/HiResVGAJupiterACE HiResVGAJupiterACE]- A stand alone forth based development system using a VGA monitor and a keyboard connected to a Prop Demo Board
 
 The following pages are under review:
   * SavingPropForth
