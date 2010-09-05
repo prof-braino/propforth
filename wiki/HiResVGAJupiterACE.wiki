@@ -9,6 +9,8 @@ Propforth 3.4 includes the file HiResVGA.spin
 
 When loaded into the prop, it provides the propforth kernel and VGA support for the prop demo board or similar.  This allows a standalone Jupiter ACE - type forth based PC. 
 
+Propforth v3.4 includes the first PROTOTYPE for the Prop Jupiter ACE code. This is an ALPHA VERSION, meaning is functionally complete but needs testing. Due to the nature of the project, the team does not have the resources to properly conduct formal testing.  Therefore, we ask that interested users experiment and submit any issues to the team.  
+
 = LOADING Jupiter ACE to the prop =
 
 Using a Prop Demo Board or similar, 
