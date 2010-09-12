@@ -16,14 +16,31 @@ After a definition is complete, it is useful to save the definition in a text fi
  # highlite the desired text (control - A does this for the whole file)
  # paste the highlighted text into the teraterm window
 
-= Linit to directly entering text in TeraTerm window with simple 'paste' =
+= Limit to directly entering text in TeraTerm window with simple 'paste' =
 
 WHEN THE TEXT EXCEEDS A CERTAIN NUMBER OF LINES/CHARACTERS, ERRORS OCCUR DUE TO BUFFER OVERRUN.
 
 Definitions that loaded properly when typed individually begin to display syntax errors when entered in a large enough group.  Also, if you can type REALLY fast, it is conceivable the definitions could be typed correctly but faster then propforth can accept them (this has not been observed as of this writing). 
 
+This is due to the size of the input buffer, the baud rate, and the time it takes to compile the definition into the dictionary when the semi colon ; is encountered,  and the way comments are handled. 
+
+= Entering very Large amounts of text in a single operation with fl =
+
+The 'fl' stands for FAST-LOAD according to the author Sal Sanci, but in various places I have incorrectly indicated fl means file-load.  Sorry if this causes a problem, flag any instances and I will correct them. 
 
 
+The *fl* command is used to enter large chinks of text in a single operation. The operation is nearly identical to the simple copy and paste, the difference being that the fl word is executed as part of the text input process:
+
+ # open forth source code text file using your favorite editor on the PC
+ # ensure that the fl command is at the begining of the text to be pasted
+ # highlite the desired text (control - A does this for the whole file)
+ # paste the highlighted text into the teraterm window
+
+= What you see =
+
+= what happens =
+
+= Limits to fl command
 
 Add your content here.
 
