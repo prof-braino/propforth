@@ -113,9 +113,11 @@ fl
 : my definitions .... ;
 }}}
 
-= What is the fl (file load) command? =
+= What is the fl (fast load or file load) command? =
 
 The fl (file load) command buffers a section of text into ~~eeprom~~ HUB RAM.  The interpreter than can compile all the definitions at its own best speed.
+
+Please see the fl-fastload-Word page in the wiki
 
 = Why do I need to use the fl (file load) command? =
 
