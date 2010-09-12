@@ -54,14 +54,35 @@ The user is advised to reset the system (hit the reset button or type reboot), f
 
 NOTICE:  Sometimes folks that are not used to forth do not reset after error, and try to continue working.  One advantage of forth is the shorter development iteration. Other environments, such as SPIN, reset the system when the SPIN TOOL sends an image to the prop. The equivalent is reloading Propforth.spin every time you make an edit.  You can do this, but then the development iteration gets just as long as in Spin, etc.  To use this advantage of forth, simply reset the prop between errors.  See the SAVEFORTH word for how to save all you working definition, so when you hit reset, you don't have to load your whole development from scratch.
 
-= Limits to fl command
+= Limits to fl command =
 
-Add your content here.
+== max characters ==
 
+The maximum number of character that the fl word can accept is determined by the available ram which is dependent on the size of the forth dictionary.  The basic kernel can accept the number of characters in PropforthPart1.f  
 
-= Details =
+Sal re-adjusts the size of propforthpart1.f for each release by moving some definitions to propforthpart2.f, since the dictioary tends to grow with each release. 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Last time I counted is was around 26000 character.
+
+For text larger than this, break the text into multiple chunks, and enter each in sequence. 
+
+== The ALLOT word ==
+
+The fl word uses RAM starting at 128 bytes past the end of the dictionary.  This means if something is defined greater than about 100 bytes (due to overhead, etc) the dictionary will overwrite the RAM that fl is using as its buffer. This will likely cause a failure or error.  
+
+There are two suggestions from Sal how to work with this:
+
+1. From the ethernet driver (which is not posted as of v3.4 but should be out in v3.6)
+
+{{{
+lockdict wvariable myarray 10 allot freedict
+}}}
+
+The lockdict and freedict keep the code contiguous.  (I have not tried this, place provide feedback with your results)
+
+2. don't allocate at the beginning, at the end use a word to allocate the buffers.
+Example to follow - sorry I didn't get the example code yet
+
+Since the issue is with trying to allocte within the fl word, consider arranging the code so the ALLOT is performed in a separate step, and the rest of the code is loaded with the fl word as a separate step. 
+
+= END of fl word instructions 20100912 =
