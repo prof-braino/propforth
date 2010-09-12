@@ -105,7 +105,7 @@ Please send suggestions as to ways to better organize the material, and we will 
 
 To load source text into the propforth command line rather than retyping everything manually each time, use the fl command.
 
-Put [http://code.google.com/p/propforth/wiki/flfastloadword fl] at the beginning of each chunk pasted.
+Put *fl* at the beginning of each chunk pasted.
 
 {{{
 fl 
@@ -120,6 +120,8 @@ The fl (file load) command buffers a section of text into ~~eeprom~~ HUB RAM.  T
 Please see the [http://code.google.com/p/propforth/wiki/flfastloadword flfastloadword] page in the wiki
 
 = Why do I need to use the fl (file load) command? =
+
+[http://code.google.com/p/propforth/wiki/flfastloadword flfastloadword]
 
 The way serial communication is implemented there is no flow control.  Normally the interpreter is faster than the serial communications.  However, when a semi colon is encountered and a definition is committed to the dictionary, the write is slower than the serial communications. If a stream of text coming over the serial line contains more than three semicolons, the serial buffer can get over run. 
 
