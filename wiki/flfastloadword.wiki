@@ -38,7 +38,21 @@ The *fl* command is used to enter large chinks of text in a single operation. Th
 
 = What you see =
 
+When the highlighted text is pasted into the teraterm window, the fl word is encountered in the input stream and begins execution. The display sit at the fl word while it executes. The Blue LED on the Prop Demo Board flashes as the text stream is sent to the prop. After the transmission is complete, the Propforth echos the text stream to TeraTerm as each word is interpreted. The RED LED flashes as each character is echoed. If na errp is encountered in the text stream, the error message is displayed if possible and execution terminates, just as done with manually type definitions. 
+
 = what happens =
+
+When the highlighted text is pasted into the teraterm window, the fl word  begins execution when it is encountered by the interpreter.  The fl word takes the input stream and buffers the text into unused RAM. This is the process when the first LED is flashing. After the text has been buffered to RAM, fl gives the buffered text to the interpreter.  The interpreter processes the text, execution words and creating definitions just as it would if the text were typed manually.  The text is echoed to the tera terminal screen, and this is what causes the other LED to flash. 
+
+As the text is processed, the ram used as buffer is released back to "unused ram". 
+
+= errors =
+
+If an error is encountered, the pointers are not guaranteed to be correct. (Makes sense, there was an error, something is not right, very likely this will affect execution). 
+
+The user is advised to reset the system (hit the reset button or type reboot), fix the code and try again.  
+
+NOTICE:  Sometimes folks that are not used to forth do not reset after error, and try to continue working.  One advantage of forth is the shorter development iteration. Other environments, such as SPIN, reset the system when the SPIN TOOL sends an image to the prop. The equivalent is reloading Propforth.spin every time you make an edit.  You can do this, but then the development iteration gets just as long as in Spin, etc.  To use this advantage of forth, simply reset the prop between errors.  See the SAVEFORTH word for how to save all you working definition, so when you hit reset, you don't have to load your whole development from scratch.
 
 = Limits to fl command
 
