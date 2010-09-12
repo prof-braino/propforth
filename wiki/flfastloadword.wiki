@@ -1,6 +1,29 @@
-#summary One-sentence summary of this page.
+#summary fl is the FAST-LOAD word
 
-= Introduction =
+= Method to load FORTH source to Propforth =
+
+FORTH source code can be added interactively to PropForth by typing at the user terminal.  Colon definitions for new words extend the forth dictionary.
+
+{{{
+: MyWord ." This is my new word MyWord in the dictionary" ;
+}}}
+
+The system is restarted between variations of each word, as any failed definition or incorrect execution can potentially corrupt the system.  (This is the case in any development environment, in FORTH we type reboot or hit the reset button.  In other environments such as SPIN, the processor is reloaded and this re-initializes everything.) 
+
+After a definition is complete, it is useful to save the definition in a text file. Rather than re-type each definition at the command line, it is handy to simple paste the contents of the text file into the PropForth terminal window.  This allows completed definitions and new experimental definitions to be enters in a simple operation. 
+
+ # open forth source code text file using your favorite editor on the PC
+ # highlite the desired text (control - A does this for the whole file)
+ # paste the highlighted text into the teraterm window
+
+= Linit to directly entering text in TeraTerm window with simple 'paste' =
+
+WHEN THE TEXT EXCEEDS A CERTAIN NUMBER OF LINES/CHARACTERS, ERRORS OCCUR DUE TO BUFFER OVERRUN.
+
+Definitions that loaded properly when typed individually begin to display syntax errors when entered in a large enough group.  Also, if you can type REALLY fast, it is conceivable the definitions could be typed correctly but faster then propforth can accept them (this has not been observed as of this writing). 
+
+
+
 
 Add your content here.
 
