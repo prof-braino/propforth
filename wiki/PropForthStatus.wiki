@@ -1,6 +1,15 @@
 #summary Status of PropForth
 #labels v3.4
 
+=== Planned PropForth 3.5 November 2010 ===
+
+Final Hi Res VGA
+
+Low Res VGA option
+
+Ethernet 
+
+TV option
 
 === 2010 Sept 05 PropForth 3.4  ===
 
