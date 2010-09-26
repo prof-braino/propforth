@@ -21,6 +21,16 @@ Final Hi Res VGA
 
 Low Res VGA option
 
+PinoutConfiguration.spin file to select hardware
+
+ - Demoboard pinout
+
+ - Hive pinout (Hive-Prokject.de)
+
+ - C3 (when available)
+
+ - Protoboard (user configuration of all I/O portd)
+
 TV option(time permitting)
 
 === 2010 Sept 05 PropForth 3.4  ===
@@ -32,7 +42,7 @@ TV option(time permitting)
    b. 128 characters (columns) wide by 64 lines (rows) 
 
    c. VGA screen is divided into two sections, top half and bottom half.
-Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial terminal is now cog 5, all 
+Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial terminal is now cog 5 
 
    d. Serial communications from ~~cog6~~ cog5 to PC terminal program is also active 
 
