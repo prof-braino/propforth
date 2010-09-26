@@ -25,7 +25,7 @@ PinoutConfiguration.spin file to select hardware
 
  - Demoboard pinout
 
- - Hive pinout (Hive-Prokject.de)
+ - Hive pinout ([http://hive-project.de/ Hive-Prokject.de])
 
  - C3 (when available)
 
