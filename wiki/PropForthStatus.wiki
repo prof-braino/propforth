@@ -13,6 +13,8 @@ Ethernet
 
  - Wiznet (probably) W3150a/W3150a+ http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Line.asp?cate1=5&cate2=7 
 
+Multiple Propeller serial communications 
+
 TV option(time permitting)
 
 === Planned PropForth 3.5 October 2010 ===
