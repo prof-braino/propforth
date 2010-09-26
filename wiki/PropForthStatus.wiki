@@ -1,9 +1,17 @@
 #summary Status of PropForth
 #labels v3.4
 
+=== Planned PropForth 3.7 December 2010/January 2022 ===
+
+SD Slot for Cards up to 2 Gig
+
 === Planned PropForth 3.6 November 2010 ===
 
 Ethernet 
+
+ - Hive ENC28J60 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en022889
+
+ - Wiznet (probably) W3150a/W3150a+ http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Line.asp?cate1=5&cate2=7 
 
 TV option(time permitting)
 
