@@ -15,7 +15,7 @@ Ethernet
 
 Multiple Propeller serial communications 
 
-TV option(time permitting)
+TV option (time permitting)
 
 === Planned PropForth 3.5 October 2010 ===
 
@@ -33,7 +33,7 @@ PinoutConfiguration.spin file to select hardware
 
  - Protoboard (user configuration of all I/O portd)
 
-TV option(time permitting)
+TV option (time permitting)
 
 === 2010 Sept 05 PropForth 3.4  ===
 
