@@ -3,7 +3,7 @@
 
 = What's "JUPITER ACE" about? =
 
-The Hi Res VGA / Prop Jupiter ACE sub-project is an extension to the default propforth kernel.  The idea is to provide a standalone forth based development system for the prop. As of version 3.4 it is compatipatible with the Prop Demoboard pin-out for VGA and keyboard.
+The High Resolution VGA / Prop Jupiter ACE sub-project is an extension to the default propforth kernel.  The idea is to provide a standalone forth based development system for the prop. As of version 3.4 it is compatible with the Prop Demo board pin-out for VGA and keyboard.
 
 Jupiter ACE was a forth based PC from the olden days which stopped production in 1983. It was simply too far ahead of its time. See Jupiter ACE on Wikipedia for information.   Since one can no longer obtain a commercial product Jupiter ACE, it was easier to make one.  The PropforthHiResVGA.spin file is a Jupiter ACE - type implementation for the prop. 
 
@@ -13,9 +13,9 @@ Please see the [http://code.google.com/p/propforth/wiki/HiResVGAJupiterACE Propf
 
 The German Language site  http://hive-project.de/ provides complete instructions for constructing a multi-prop PC, from parts, for less than the cost of a video game.  Maybe we can't ever know what all those parts in the desktop PC are doing, but you CAN know what every single part in the Hive is doing because YOU BUILT IT YOURSELF.  Probably the single coolest thing you will do all week.
 
-See  http://translate.googleusercontent.com/translate_c?hl=en&ie=UTF-8&sl=de&tl=en&u=http://hive-project.de/&prev=_t&rurl=translate.google.com&twu=1&usg=ALkJrhgW2ktyNMTtGgTFdWxthrSiuoAoFA  for the German language impaired.
+See Google Translate http://translate.googleusercontent.com/translate_c?hl=en&ie=UTF-8&sl=de&tl=en&u=http://hive-project.de/&prev=_t&rurl=translate.google.com&twu=1&usg=ALkJrhgW2ktyNMTtGgTFdWxthrSiuoAoFA  for the German language impaired.
 
-8 cores per prop times 3 props = 24 cores.  Sounds like a tiny supercomputer to me.  Parallel distributed processing, anyone?
+Look Here: => 8 cores per prop times 3 props = 24 cores.  Sounds like a tiny supercomputer to me.  Parallel distributed processing, anyone?
 
 = How Do I Submit a Question? =
 
