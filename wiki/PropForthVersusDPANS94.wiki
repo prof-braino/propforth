@@ -1,4 +1,5 @@
-#Most of the differences from DPANS94 forth standard
+#summary Most of the differences from DPANS94 forth standard
+#labels 3.4
 
 = Why there are differences =
 
