@@ -15,7 +15,7 @@ Ethernet
 
 Multiple Propeller serial communications 
 
-TV option (time permitting)
+removed from plan [TV option]
 
 === Planned PropForth 3.5 October 2010 ===
 
@@ -33,7 +33,21 @@ PinoutConfiguration.spin file to select hardware
 
  - Protoboard (user configuration of all I/O portd)
 
-TV option (time permitting)
+removed from plan [TV option]
+
+=== 2010 Sept 29 PropForth 3.4 Hive version ===
+
+ = unplanned release, braino finished the Hive build early =
+
+Modified PropForth 3.4 to use Hive hardware pinout
+
+ - Hive-PropforthHiResVGA.spin
+
+ - Hive-HiResVGA.f
+
+VGA and Keyboard have a different pin assignment than Demo Board.
+
+We will try to re-factor the code to prevent parallel branches, target is 3.5 release
 
 === 2010 Sept 05 PropForth 3.4  ===
 
