@@ -16,7 +16,7 @@ COG6 RESET -- last status OK
 Cog6 OK
 }}}
 
-Propforth 3.5 HiResVGA (before HiResVGA.f is loaded)
+Propforth 3.5 HiResVGA (BEFORE HiResVGA.f is loaded)
 
 {{{
 PROPELLER REBOOT Propforth v3.5 2010Oct09 20:00 0
@@ -26,6 +26,25 @@ Cog6 OK
 
 COG0 RESET -- last status OK
 Cog6 OK
+}}}
+
+Propforth 3.5 HiResVGA (AFTER HiResVGA.f is loaded)
+
+{{{
+PROPELLER REBOOT Propforth v3.5 2010Oct09 20:00 0
+COG5 RESET -- last status OK
+
+COG0 RESET -- last status OK
+
+COG6 RESET -- last status OK
+
+COG3 RESET -- last status OK
+
+COG5 RESET -- last status OK
+
+COG4 RESET -- last status OK
+Cog6 OK
+
 }}}
 
 
