@@ -8,10 +8,13 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 On power cycle or executing the "reboot" command, prop gives a message:
 
 Propforth 3.5 standard kernel (serial driver only)
+Propforth 3.5 HiResVGA (before HiResVGA.f is loaded)
+
 {{{
 PROPELLER REBOOT Propforth v3.5 2010Oct09 20:00 0
 COG5 RESET -- last status OK
 COG6 RESET -- last status OK
+Cog6 OK
 }}}
 
 Propforth 3.5 HiResVGA
