@@ -5,6 +5,8 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 
 = What does the BOOT message mean? =
 
+It displays the version string and the status of the active running cogs
+
 On power cycle or executing the "reboot" command, prop gives a message:
 
 Propforth 3.5 standard kernel (serial driver only)
@@ -73,7 +75,14 @@ Cog6 OK
 
 }}}
 
+PROPELLER REBOOT Propforth v3.5 2010Oct09 20:00 1
 
+The version string contains the release date, time and a counter.
+The counter is increamented each time "
+{{{
+saveforth
+}}}
+is executed.  If you are trying to run any VGA and this is not incremented, you didn't correctly saveforth after you loaded xxxVGA.f
 
 
 
