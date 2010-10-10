@@ -25,6 +25,7 @@ COG6 RESET -- last status OK
 Cog6 OK
 
 COG0 RESET -- last status OK
+Cog6 OK
 }}}
 
 
