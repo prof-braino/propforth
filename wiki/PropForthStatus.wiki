@@ -7,21 +7,7 @@ SD Slot for Cards up to 2 Gig
 
 === Planned PropForth 3.6 November 2010 ===
 
-Ethernet 
-
- - Hive ENC28J60 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en022889
-
- - Wiznet (probably) W3150a/W3150a+ http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Line.asp?cate1=5&cate2=7 
-
 Multiple Propeller serial communications 
-
-removed from plan [TV option]
-
-=== Planned PropForth 3.5 October 2010 ===
-
-Final Hi Res VGA
-
-Low Res VGA option
 
 PinoutConfiguration.spin file to select hardware
 
@@ -32,6 +18,19 @@ PinoutConfiguration.spin file to select hardware
  - C3 (when available)
 
  - Protoboard (user configuration of all I/O portd)
+
+Ethernet 
+
+ - Hive ENC28J60 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en022889
+
+ - Wiznet [WIZ811MJ] W5100 http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Detail.asp?cate1=&cate2=&cate3=&pid=1035 
+
+=== 2010 October 10 PropForth 3.5 ===
+
+Final Hi Res VGA
+
+Low Res VGA option
+
 
 removed from plan [TV option]
 
