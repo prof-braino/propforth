@@ -49,7 +49,7 @@ to
 line 222 \   vgatext.start( 8 , $6000, @cogdataPFA+_cogDataSize,@cogdataPFA+_cogDataSize+$86,@cogdataPFA+_cogDataSize+$80,@font)
 }}}
 
-_I.E. change the 16 to 8_
+   _That is, change the 16 to 8_
 
 To Create HiveHiResVGA.f from Hiresvga.f, change
 {{{
@@ -66,4 +66,18 @@ line 219 \ 00020000 constant kbdata
 = code changes LowResVGA.f
 
 
-= in progress =
+= Low ResVGA.f =
+
+Load Propforth.spin on Bellatrix the same way as loading to Administra and Regnatix. 
+
+The only difference is, on Bellatrix, also load LoResVGA.f 
+
+After the source has been loaded into the dictionary, execute the saveforth words
+
+{{{
+saveforth
+}}}
+
+Reboot, and the low res vga text will be displayed on teh VGA screen
+
+Use (CTL + ALT) to toggle between the VGA pages vga0 and vga1
