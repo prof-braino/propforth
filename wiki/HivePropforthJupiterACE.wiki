@@ -33,7 +33,7 @@ Hive Unit
 VGA Pins 8, 9, 10, 11, 12, 13, 14, 15, 
 KBD Pins 16, 17 
 Mouse Pins 18, 19 
-{{{
+}}}
 
 = code changes HiResVGA.spin and HiResVGA.f =
 
