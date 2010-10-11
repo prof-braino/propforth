@@ -25,13 +25,13 @@ The standard propforth kernel can run on all three Hive props.  The only differe
 {{{
 Demo Board
 VGA Pins 16, 17, 18, 19, 20, 21, 22,23 
-KBD pins 24, 25
-mouse pins 26, 27
+KBD Pins 24, 25
+Mouse Pins 26, 27
 }}}
 {{{
 Hive Unit
 VGA Pins 8, 9, 10, 11, 12, 13, 14, 15, 
-KBD pins 16, 17 
-mouse pins 18, 19 
+KBD Pins 16, 17 
+Mouse Pins 18, 19 
 {{{
 = in progress =
