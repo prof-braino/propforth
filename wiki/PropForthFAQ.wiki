@@ -186,6 +186,8 @@ The German Language site  http://hive-project.de/ provides complete instructions
 
 See Google Translate http://translate.googleusercontent.com/translate_c?hl=en&ie=UTF-8&sl=de&tl=en&u=http://hive-project.de/&prev=_t&rurl=translate.google.com&twu=1&usg=ALkJrhgW2ktyNMTtGgTFdWxthrSiuoAoFA  for the German language impaired.
 
+SEE http://code.google.com/p/propforth/wiki/HivePropforthJupiterACE
+
 *Look Here:*  8 cores per prop times 3 props = 24 cores.  Sounds like a tiny supercomputer to me.  Parallel distributed processing, anyone?
 
 = How Do I Submit a Question? =
