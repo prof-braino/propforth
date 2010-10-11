@@ -10,7 +10,16 @@ Put a counted string in the target cog's input buffer using cogx, like this:
 From a terminal running cog5 to cog4 (which could be a VGA display cog)
 
 {{{
+Cog5 OK
 c" 1 2 3 4 st? " 4 cogx
+
+Cog5 OK
+}}}
+
+results in the cog4 display showing
+{{{
+ST: 00001 00002 00003 00004 
+Cog4 OK
 }}}
 
 This is also the mechanism planned for use with the interprop high speed interface in future releases.
