@@ -21,7 +21,7 @@ The Hive crew has a wonderful Tri-Os and a bunch of applications for the Hive un
 
 = Propforth on the Hive unit = 
 
-The standard propforth kernel can run on all three Hive props.  The only difference is the pinouts.  In particular, the Hive VGA display prop (Bellatrix) uses different pins than the Prop Demo board, and the Keyboard and mous are also on different pins.  Its very easy to edit the spin files and change the pinouts to match the Hive
+The standard propforth kernel can run on all three Hive props.  The only difference is the pinouts.  In particular, the Hive VGA display prop (Bellatrix) uses different pins than the Prop Demo board, and the Keyboard and mouse are also on different pins.  Its very easy to edit the spin files and change the pinouts to match the Hive
 {{{
 Demo Board
 VGA Pins 16, 17, 18, 19, 20, 21, 22,23 
@@ -78,6 +78,8 @@ After the source has been loaded into the dictionary, execute the saveforth word
 saveforth
 }}}
 
-Reboot, and the low res vga text will be displayed on teh VGA screen
+Reboot, and the low res vga text will be displayed on the VGA screen
 
 Use (CTL + ALT) to toggle between the VGA pages vga0 and vga1
+
+Mouse support, command line history, and forth word stepping will be added in a later release.
