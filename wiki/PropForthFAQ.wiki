@@ -19,8 +19,12 @@ This is also the mechanism planned for use with the interprop high speed interfa
 
 This is little trickier, and it depend on what needs to be done.  Here are a couple methods. 
 
+ - responses: make a word to update shared memory.  _com.f has examples
 
+ - route output using the emit routine and emit pointer.  This is what is done in fast load, see code for 'fl' word for examples.
 
+ - cogxo - don't even try this one yet.  Wait for the tutorial (when debugging is finished) 
+ 
 = How to connect to a different cog in the serial terminal, the vga0 display, and the vga1 display? =
 
 {{{
