@@ -92,7 +92,7 @@ line 760 \ : onboot _onboot begin 1 cogreset 10 100 qHzb 37 41 between until 0 c
 to
 
 {{{
-: onboot _onboot begin 1 cogreset 8 100 qHzb 37 41 between until 0 cogreset
+line 760 \ : onboot _onboot begin 1 cogreset 8 100 qHzb 37 41 between until 0 cogreset
 	lockdict 2 _scog W! (cog+) (cog+) (cog+) 5 cogreset 2 >vga0 3 >vga1 5 >con freedict ;
 }}}
 
