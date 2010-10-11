@@ -3,6 +3,10 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= The reboot and other (system diagnostic) messages only show up on the serial terminal, how to send them to VGA? =
+
+The output of system diagnostic messages is controlled by (emit pointer ... check).  By chaning this the messages can be sent to any or all cog display.  Originally thes came up on all cog displays, but this was a nuisance.
+
 = How to send a command to another cog? =
 
 Put a counted string in the target cog's input buffer using cogx, like this:
