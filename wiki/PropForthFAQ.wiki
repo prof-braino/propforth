@@ -78,13 +78,21 @@ Cog6 OK
 PROPELLER REBOOT Propforth v3.5 2010Oct09 20:00 1
 
 The version string contains the release date, time and a counter.
-The counter is increamented each time "
+The counter is incremented each time 
 {{{
 saveforth
 }}}
-is executed.  If you are trying to run any VGA and this is not incremented, you didn't correctly saveforth after you loaded xxxVGA.f
+is executed.  
 
+** If you are trying to run any VGA and this is not incremented, you didn't correctly saveforth after you loaded xxxVGA.f
 
+= What are the Active Cogs and what are they running? =
+
+Cog0 starts running spin, and spin launches Propforth.  
+
+Propforth runs the serial driver in COG7.  COG7 actually does all the talking between the user and the cogs.  Cog7 DISPLAYS the Cog6 or Cog4 prompt, so the user gets the impression that they are interacting directly with a cog.  The user is in fact interacting directly with the serial driver on cog7 , and indirectly with the cog displayed in the prompt. When the serial monitor is used, it replaces the serial driver, and re-uses cog7. 
+
+After Cog0 launches propforth, spin goes to sleep. Cog0 is unused by the standard kernel, and is available for user functions.  One user function is VGA.  If the VGA option is used, cogs starting with cog0 preform the vga activity.  HiResVGA uses cogs 0, 1, and 2.  LowResVGA uses cogs 0 and 1.  VGA cogs show up as SPIN cogs, as the VGA drivers are spin assembly routines. 
 
 
 = What's "JUPITER ACE" about? =
