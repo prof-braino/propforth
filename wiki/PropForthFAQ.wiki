@@ -15,6 +15,12 @@ c" 1 2 3 4 st? " 4 cogx
 
 This is also the mechanism planned for use with the interprop high speed interface in future releases.
 
+= how to give output from one cog to another cog? = 
+
+This is little trickier, and it depend on what needs to be done.  Here are a couple methods. 
+
+
+
 = How to connect to a different cog in the serial terminal, the vga0 display, and the vga1 display? =
 
 {{{
