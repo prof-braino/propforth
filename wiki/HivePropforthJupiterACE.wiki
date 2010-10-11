@@ -9,9 +9,11 @@ You will be assimilated.
 
 Resistance is futile.
 
-= Details =
+= In der deutschen =
 
-[http://translate.google.com/translate?js=n&prev=_t&hl=en&ie=UTF-8&layout=2&eotf=1&sl=en&tl=de&u=http%3A%2F%2Fcode.google.com%2Fp%2Fpropforth%2Fwiki%2FHivePropforthJupiterACE&act=url Deusche ]
+[http://translate.google.com/translate?js=n&prev=_t&hl=en&ie=UTF-8&layout=2&eotf=1&sl=en&tl=de&u=http%3A%2F%2Fcode.google.com%2Fp%2Fpropforth%2Fwiki%2FHivePropforthJupiterACE&act=url Deutsch ]
+
+= Details =
 
 Before you can be assimilated, try running the above link through Google Translate if you are not fluent in German
 
