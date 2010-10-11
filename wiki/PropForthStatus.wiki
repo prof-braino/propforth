@@ -1,5 +1,5 @@
 #summary Status of PropForth
-#labels v3.4
+#labels v3.5
 
 === Planned PropForth 3.7 December 2010/January 2022 ===
 
@@ -32,7 +32,7 @@ Final Hi Res VGA
 Low Res VGA option
 
 
-removed from plan [TV option]
+removed from plan - TV option
 
 === 2010 Sept 29 PropForth 3.4 Hive version ===
 
