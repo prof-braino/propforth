@@ -3,6 +3,32 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= How to connect to a different cog in the serial terminal, the vga0 display, and the vga1 display? =
+
+{{{
+<cog#> >con
+<cog#> >vga0
+<cog#> >vga1
+}}}
+
+Example:  To display cog6 in vga0, cog5 in vga1, and cog4 in console, use:
+
+{{{
+6 >con
+5 >vga0
+4 >vga1
+}}}
+
+= How to start another FORTH cog? =
+ 
+The word +cog 
+
+{{{
++cog
+}}}
+
+starts the next available cog as a forth cog.  If there are no more available cogs, the +cog word has no affect.
+
 = What does the BOOT message mean? =
 
 It displays the version string and the status of the active running cogs
@@ -96,9 +122,9 @@ After Cog0 launches propforth, spin goes to sleep. Cog0 is unused by the standar
 
 The standard propforth kernel launches cogs 5 and 6 as forth cogs as seen in the boot message.  Cog0 is inactive. Cog7 runs the forth serial driver 
 
-HiResVGA additionally launches cogs 0, 1, and 2 to run the VGA display.  Cogs3 and 4 are the cogs displayed on the VGA terminal.  
+HiResVGA additionally launches cogs 0, 1, and 2 to run the VGA display. Cogs 0, 1 , and 2 show up as spin cogs. Cogs3 and 4 are the cogs displayed on the VGA terminal.  USe (CTL+ALT) to switch between the top half of the VGA display and the bottom of the VGA display. 
 
-LowResVGA lauches cog 0 and 1 to diplay VGA. Cogs 2 and 3 are the cogs displayed on the VGA screen page (CTL + ALT) to switch between pages.   
+LowResVGA lauches cogs 0 and 1 to display VGA. Cogs 0 and 1 show up as spin cogs. Cogs 2 and 3 are the cogs displayed on the VGA screen page.  Use (CTL + ALT) to switch between pages.   
 
 Note:  I don't know why HiResVGA displays cog0 and not cogs 2 and 3.  I do not know why LowResVGA displays cog4.  Possibly, its because this is new.  When the new spin files are created, they take a snapshot of the currently running forth system, and Sal may have been running diagnostics in the other cogs at the time. This explanation will be update and/or the extra cogs will be put away properly in future releases. 
 
