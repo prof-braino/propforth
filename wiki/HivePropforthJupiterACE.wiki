@@ -40,14 +40,16 @@ Mouse Pins 18, 19
 To Create HiveHiResVGA.spein from HiResVGA.spin change
 
 {{{
-line 222 \   vgatext.start(*16*, $6000, @cogdataPFA+_cogDataSize,@cogdataPFA+_cogDataSize+$86,@cogdataPFA+_cogDataSize+$80,@font)
+line 222 \   vgatext.start(16, $6000, @cogdataPFA+_cogDataSize,@cogdataPFA+_cogDataSize+$86,@cogdataPFA+_cogDataSize+$80,@font)
 }}}
  
 to 
 
 {{{
-line 222 \   vgatext.start( *8* , $6000, @cogdataPFA+_cogDataSize,@cogdataPFA+_cogDataSize+$86,@cogdataPFA+_cogDataSize+$80,@font)
+line 222 \   vgatext.start( 8 , $6000, @cogdataPFA+_cogDataSize,@cogdataPFA+_cogDataSize+$86,@cogdataPFA+_cogDataSize+$80,@font)
 }}}
+
+_I.E. change the 16 to 8_
 
 To Create HiveHiResVGA.f from Hiresvga.f, change
 {{{
