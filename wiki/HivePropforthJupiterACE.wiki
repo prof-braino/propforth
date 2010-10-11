@@ -67,10 +67,20 @@ line 218 \ 00010000 constant kbclock
 line 219 \ 00020000 constant kbdata
 }}}
 
-= code changes LowResVGA.f
+= code changes LowResVGA.f =
 
+To Create HiveLoResVGA.f from loresvga.f, change
+{{{
+line 466 \ 08000000 constant kbclock
+line 467 \ 04000000 constant kbdata
+}}}
 
-= Low ResVGA.f =
+to
+{{{
+line 466 \ 00010000 constant kbclock
+line 467 \ 00020000 constant kbdata
+}}}
+
 
 Load Propforth.spin on Bellatrix the same way as loading to Administra and Regnatix. 
 
