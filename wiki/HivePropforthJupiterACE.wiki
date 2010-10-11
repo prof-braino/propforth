@@ -70,6 +70,10 @@ line 219 \ 00020000 constant kbdata
 
 = code changes LowResVGA.f =
 
+** === NOTE LOWRES VGA Does NOT work on Hive Unit YET === **
+** === Method describe has an error - Braino -  === **
+
+
 To Create HiveLoResVGA.f from loresvga.f, change
 {{{
 line 466 \ 08000000 constant kbclock
