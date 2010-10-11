@@ -3,6 +3,18 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= How to send a command to another cog? =
+
+Put a counted string in the target cog's input buffer using cogx, like this:
+
+From a terminal running cog5 to cog4 (which could be a VGA display cog)
+
+{{{
+c" 1 2 3 4 st? " 4 cogx
+}}}
+
+This is also the mechanism planned for use with the interprop high speed interface in future releases.
+
 = How to connect to a different cog in the serial terminal, the vga0 display, and the vga1 display? =
 
 {{{
