@@ -1,0 +1,34 @@
+#summary Propforth for HIVE pinout
+#labels Hive,JupiterACE
+
+= What is the Hive? =
+
+This is the Hive.  http://hive-project.de/
+
+You will be assimilated. 
+
+Resistance is futile.
+
+= Details =
+
+Before you can be assimilated, try running the above link through Google Translate if you are not fluent in German
+
+http://translate.google.com/translate?js=y&prev=_t&hl=en&ie=UTF-8&layout=1&eotf=1&u=hive-project.de%2F&sl=de&tl=en
+
+Hive is a 3 prop chip configuration.  It is ideal for drohne235's purposes, but way over-kill for what PropForth needs.  We immediately obtained Hive boards, ordered parts, built the kits, and ported propforth to the Hive.  Over-kill is way cool.
+
+The Hive crew has a wonderful Tri-Os and a bunch of applications for the Hive unit.  The unit becomes a fast powerful "retro-style" computer, except it is not under-powered and lacking in modern resources as many retro computers were/are.  It's actually powerful and can do most anything you might want it to do (and want to write code for).
+
+= Propforth on the Hive unit = 
+
+The standard propforth kernel can run on all three Hive props.  The only difference is the pinouts.  In particular, the Hive VGA display prop (Bellatrix) uses different pins than the Prop Demo board, and the Keyboard and mous are also on different pins.  Its very easy to edit the spin files and change the pinouts to match the Hive
+
+Demo Board
+VGA Pins
+KBD pins
+mouse pins
+
+Hive Unit
+VGA Pins
+KBD pins
+mouse pins
