@@ -22,15 +22,16 @@ The Hive crew has a wonderful Tri-Os and a bunch of applications for the Hive un
 = Propforth on the Hive unit = 
 
 The standard propforth kernel can run on all three Hive props.  The only difference is the pinouts.  In particular, the Hive VGA display prop (Bellatrix) uses different pins than the Prop Demo board, and the Keyboard and mous are also on different pins.  Its very easy to edit the spin files and change the pinouts to match the Hive
-
+{{{
 Demo Board
-VGA Pins
-KBD pins
-mouse pins
-
+VGA Pins 16, 17, 18, 19, 20, 21, 22,23 
+KBD pins 24, 25
+mouse pins 26, 27
+}}}
+{{{
 Hive Unit
-VGA Pins
-KBD pins
-mouse pins
-
+VGA Pins 8, 9, 10, 11, 12, 13, 14, 15, 
+KBD pins 16, 17 
+mouse pins 18, 19 
+{{{
 = in progress =
