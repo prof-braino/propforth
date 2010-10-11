@@ -7,7 +7,7 @@ SD Slot for Cards up to 2 Gig
 
 === Planned PropForth 3.6 November 2010 ===
 
-Multiple Propeller serial communications 
+Inter chip serial communication for multiple Propeller configuration
 
 PinoutConfiguration.spin file to select hardware
 
