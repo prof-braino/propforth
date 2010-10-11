@@ -94,6 +94,13 @@ Propforth runs the serial driver in COG7.  COG7 actually does all the talking be
 
 After Cog0 launches propforth, spin goes to sleep. Cog0 is unused by the standard kernel, and is available for user functions.  One user function is VGA.  If the VGA option is used, cogs starting with cog0 preform the vga activity.  HiResVGA uses cogs 0, 1, and 2.  LowResVGA uses cogs 0 and 1.  VGA cogs show up as SPIN cogs, as the VGA drivers are spin assembly routines. 
 
+The standard propforth kernel launches cogs 5 and 6 as forth cogs as seen in the boot message.  Cog0 is inactive. Cog7 runs the forth serial driver 
+
+HiResVGA additionally launches cogs 0, 1, and 2 to run the VGA display.  Cogs3 and 4 are the cogs displayed on the VGA terminal.  
+
+LowResVGA lauches cog 0 and 1 to diplay VGA. Cogs 2 and 3 are the cogs displayed on the VGA screen page (CTL + ALT) to switch between pages.   
+
+Note:  I don't know why HiResVGA displays cog0 and not cogs 2 and 3.  I do not know why LowResVGA displays cog4.  Possibly, its because this is new.  When the new spin files are created, they take a snapshot of the currently running forth system, and Sal may have been running diagnostics in the other cogs at the time. This explanation will be update and/or the extra cogs will be put away properly in future releases. 
 
 = What's "JUPITER ACE" about? =
 
