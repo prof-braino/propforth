@@ -47,16 +47,16 @@ line 222 \   vgatext.start( *8* , $6000, @cogdataPFA+_cogDataSize,@cogdataPFA+_c
 
 
 To Create HiveHiResVGA.f from Hiresvga.f, change
-
+{{{
 line 218 \ 08000000 constant kbclock
 line 219 \ 04000000 constant kbdata
+}}}
 
 to
-
+{{{
 line 218 \ 00010000 constant kbclock
 line 219 \ 00020000 constant kbdata
-
-
+}}}
 
 = code changes LowResVGA.f
 
