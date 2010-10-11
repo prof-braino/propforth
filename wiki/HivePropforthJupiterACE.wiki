@@ -67,6 +67,7 @@ line 218 \ 00010000 constant kbclock
 line 219 \ 00020000 constant kbdata
 }}}
 
+
 = code changes LowResVGA.f =
 
 To Create HiveLoResVGA.f from loresvga.f, change
@@ -81,6 +82,21 @@ line 466 \ 00010000 constant kbclock
 line 467 \ 00020000 constant kbdata
 }}}
 
+and change
+
+{{{
+line 760 \ : onboot _onboot begin 1 cogreset 10 100 qHzb 37 41 between until 0 cogreset
+    lockdict 2 _scog W! (cog+) (cog+) (cog+) 5 cogreset 2 >vga0 3 >vga1 5 >con freedict ;
+}}}
+
+to
+
+{{{
+: onboot _onboot begin 1 cogreset 8 100 qHzb 37 41 between until 0 cogreset
+	lockdict 2 _scog W! (cog+) (cog+) (cog+) 5 cogreset 2 >vga0 3 >vga1 5 >con freedict ;
+}}}
+
+  That is, change 10 (which is 16 in HEX) to 8 (which is still 8 in HEX)
 
 Load Propforth.spin on Bellatrix the same way as loading to Administra and Regnatix. 
 
