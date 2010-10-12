@@ -23,7 +23,7 @@ _cog4 ok_
 
 _ok_
 
-   CTL+A to cog1
+   CTL+ALT to cog1
 
 _cog1 ok_
 
