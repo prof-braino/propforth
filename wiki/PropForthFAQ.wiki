@@ -145,7 +145,7 @@ saveforth
 }}}
 is executed.  
 
-** If you are trying to run any VGA and this is not incremented, you didn't correctly saveforth after you loaded xxxVGA.f
+** If you are trying to run any VGA and the counter at the end has not incremented from 0 to 1, you didn't correctly saveforth after you loaded xxxVGA.f
 
 = What are the Active Cogs and what are they running? =
 
