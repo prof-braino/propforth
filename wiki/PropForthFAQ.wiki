@@ -49,9 +49,9 @@ This is little trickier, and it depend on what needs to be done.  Here are a cou
 Example:  To display cog6 in vga0, cog5 in vga1, and cog4 in console, use:
 
 {{{
-6 >con
-5 >vga0
-4 >vga1
+4 >con
+6 >vga0
+5 >vga1
 }}}
 
 = How to start another FORTH cog? =
