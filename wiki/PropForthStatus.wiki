@@ -35,7 +35,7 @@ Ethernet
 
   ~~2010 October 10 PropForth 3.5~~ 
 
- ~~Yes, its sadly comical the way I do configuration management~~
+ ~~Yes, its sadly comical the way I do configuration management.  The code works the same in all version, I messed up the version strings and made tons of typos~~
 
 ALPHA Example speed optimization:  converting forth into assembly - tutorial to follow
 
