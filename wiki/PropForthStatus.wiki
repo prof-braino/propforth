@@ -25,11 +25,25 @@ Ethernet
 
  - Wiznet [WIZ811MJ] W5100 http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Detail.asp?cate1=&cate2=&cate3=&pid=1035 
 
-=== 2010 October 10 PropForth 3.5 ===
+=== 2010 October 19 PropForth 3.5e ===
 
-Final Hi Res VGA
+  ~~2010 October 17 PropForth 3.5c~~ 
 
-Low Res VGA option
+  ~~2010 October 17 PropForth 3.5b~~ 
+
+  ~~2010 October 17 PropForth 3.5a~~ 
+
+  ~~2010 October 10 PropForth 3.5~~ 
+
+ ~~Yes, its sadly comical the way I do configuration management~~
+
+ALPHA Example speed optimization:  converting forth into assembly - tutorial to follow
+
+HIVE and Demoboard configurations selectable by moving comment marks in:
+
+ - Final Hi Res VGA
+
+ - Low Res VGA option
 
 
 removed from plan - TV option
