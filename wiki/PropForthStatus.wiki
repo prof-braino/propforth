@@ -37,6 +37,8 @@ Ethernet
 
  ~~Yes, its sadly comical the way I do configuration management.  The code works the same in all version, I messed up the version strings and made tons of typos~~
 
+The Standard kernel (Non VGA version) is 3.5c.  The VGA versions are have version string updates and are at version E.  Thanks to all the users that pointed this out. 
+
 ALPHA Example speed optimization:  converting forth into assembly - tutorial to follow
 
 HIVE and Demoboard configurations selectable by moving comment marks in:
