@@ -4,6 +4,8 @@
 
 SD Slot for Cards up to 2 Gig
 
+SRAM and Latch support for Hive
+
 === Planned PropForth 3.6 November 2010 ===
 
 Inter chip serial communication for multiple Propeller configuration
