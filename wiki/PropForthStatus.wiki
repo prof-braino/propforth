@@ -1,6 +1,6 @@
 #summary Status of PropForth
 
-=== Planned PropForth 3.7 December 2010/January 2022 ===
+=== Planned PropForth 3.7 December 2010/January 2011 ===
 
 SD Slot for Cards up to 2 Gig
 
