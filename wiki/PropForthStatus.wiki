@@ -20,11 +20,11 @@ PinoutConfiguration.spin file to select hardware
 
  - Demoboard pinout
 
- - Hive pinout ([http://hive-project.de/ Hive-Prokject.de])
+ - Hive pinout ([http://hive-project.de/ Hive-Project.de])
 
  - C3 (when available)
 
- - Protoboard (user configuration of all I/O portd)
+ - Protoboard (user configuration of all I/O ports)
 
 Ethernet 
 
