@@ -3,6 +3,35 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= Where is HERE defined? = 
+
+Question: Where does word "here" define? I cannot find out it in  PropForthPart1/PropForthPart2.
+
+There are three words that are defined and set in propforth.spin instead of PropForthpart1.f and propforthpart2.f
+
+These are 
+{{{
+here
+dictend
+memend
+}}}
+
+These can't be easily re-defined while forth is running, it is very dangerous and things tend to go crazy.  Sal had to do it several times and had problems, so these ended up like this.  
+
+These three words are the absolute beginning of the forth kernel.  Once the kernel began, memory access was added, the variables, then colon definitions, eventually it got to the point where ther was enough defined that the preliminary stuff could be removed, and there was enough to make a working forth kernel from forth.   
+
+The spin tool is used to create the forth kernel from spin code.  Normally in a native forth, the forth system is used to create itself from scratch without the use of external tools (a pc and non forth compiler for example).   The decision was made NOT to do this at this time for propforth.  
+
+Using the SPIN tool as the starting point for propforth has two main advantages:
+1)  it is relatively easy to bring in or interface to spin and assembly objects
+2) the spin tool takes care of any forward references (which usually require special handling during forth kernel build).
+
+So, the definitions for here, dictend, and memend are first in the forth dictionsary.  Do "words" whcih prints out the dictionary reverse order, and these are the very last to print. 
+
+These words are defined and values assigned in Propforth.spin at around line 165.
+
+here is pretty much always 0D72 to start with, although it does automatically adjust itself as shown in the HiResVGA versions.
+
 = The reboot and other (system diagnostic) messages only show up on the serial terminal, how to send them to VGA? =
 
 The output of system diagnostic messages is controlled by (emit pointer ... check).  By chaning this the messages can be sent to any or all cog display.  Originally thes came up on all cog displays, but this was a nuisance.
