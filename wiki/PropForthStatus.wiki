@@ -8,7 +8,7 @@ SD Slot for Cards up to 2 Gig
 
 Inter chip serial communication for multiple Propeller configuration
 
-preliminary estimate indicates:
+preliminary estimate (20101024) indicates:
 
  - 8 channel 
 
