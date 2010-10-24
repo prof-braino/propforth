@@ -1,5 +1,4 @@
 #summary Status of PropForth
-#labels v3.5
 
 === Planned PropForth 3.7 December 2010/January 2022 ===
 
@@ -8,6 +7,14 @@ SD Slot for Cards up to 2 Gig
 === Planned PropForth 3.6 November 2010 ===
 
 Inter chip serial communication for multiple Propeller configuration
+
+preliminary estimate indicates:
+
+ - 8 channel 
+
+ - full duplux 
+
+ - 5.5 k characters per second application to application (not wire speed)
 
 PinoutConfiguration.spin file to select hardware
 
