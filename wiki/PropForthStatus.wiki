@@ -12,7 +12,7 @@ preliminary estimate (20101024) indicates:
 
  - 8 channel 
 
- - full duplux 
+ - full duplex 
 
  - 5.5 k characters per second application to application (not wire speed)
 
