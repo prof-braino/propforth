@@ -3,6 +3,17 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= Does PropForth support ANSI escape codes on the serial terminal? =
+
+There is a file of forth source code that adds ANSI Escape Sequence support for the serial terminal connection. 
+
+ANSI Escape Sequences.f 
+
+[http://code.google.com/p/propforth/downloads/detail?name=ANSI%20Escape%20Sequences.f&can=2&q= ANSI Escape Sequences.f ]
+
+This is not included in the default kernel, but can be loaded as an extension. The system can then be saved using saveforth, if these are needed at power up. 
+
+
 = Where is HERE defined? = 
 
 Question: Where does word "here" define? I cannot find out it in  PropForthPart1/PropForthPart2.
