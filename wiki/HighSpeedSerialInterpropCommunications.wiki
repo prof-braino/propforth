@@ -33,7 +33,7 @@ This experiment used 360 ohm becasue the were handy in the box.
 
 = comnorom.f =
 
-Forth source code file comnorom.f contains interprop communications for the slave portion of the setup.
+Forth source code file comnorom.f contains interprop communications for the slave portion of the setup.  This add support to the com functions so that ROM-less slave may be loaded from the master.
 
 First load com.f, them load comnorom.f, them saveforth.
 
@@ -148,5 +148,3 @@ detect noise errors
      Start 2 cogs.
      
   End of notes 
-
-
