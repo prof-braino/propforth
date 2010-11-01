@@ -1,0 +1,17 @@
+#summary Low Level Support for Prop Arrays
+#labels v3.6,Phase-Design,parallel
+
+= Introduction =
+
+As of PropForth 3.6 Beta, there exists support for high speed serial communications between props. This permits the eight cogs in a single prop to communicate with cogs in up to eight slave cogs.  Each slave may also be a sub-master to up to seven sub-slaves. Sub-masters and sub-slaves may be continued as needed.
+
+This capability may provide the basis for a micro-controller "supercomputer array".
+
+= Details =
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
