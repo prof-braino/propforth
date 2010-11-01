@@ -5,15 +5,17 @@
 
 As of PropForth 3.6 Beta, there exists support for high speed serial communications between props. This permits the eight cogs in a single prop to communicate with cogs in up to eight slave cogs.  Each slave may also be a sub-master to up to seven sub-slaves. Sub-masters and sub-slaves may be continued as needed.
 
-This capability may provide the basis for a micro-controller array "supercomputer". If you have avery braod idea of "supercomputer", maybe super-controller is more accurate.
+This capability may provide the basis for a micro-controller array "supercomputer". If you have a very broad idea of "supercomputer", maybe super-controller is more accurate.
 
 = Draft =
 
-PropForth 3.6 Beta Inter Prop High Speed Serial Communications
+== PropForth 3.6 Beta Inter Prop High Speed Serial Communications ==
 
 Notes from conference call only - documentation DRAFT
 
 As of ProForth 3.6 the inter prop highspeed serial communications seems to be working
+
+Notice this is a draft, code has not been posted until the tutorial makes sense
 
 = com.f =
 
