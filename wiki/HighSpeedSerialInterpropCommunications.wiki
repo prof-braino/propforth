@@ -5,17 +5,148 @@
 
 As of PropForth 3.6 Beta, there exists support for high speed serial communications between props. This permits the eight cogs in a single prop to communicate with cogs in up to eight slave cogs.  Each slave may also be a sub-master to up to seven sub-slaves. Sub-masters and sub-slaves may be continued as needed.
 
-This capability may provide the basis for a micro-controller "supercomputer array".
+This capability may provide the basis for a micro-controller array "supercomputer". If you have avery braod idea of "supercomputer", maybe super-controller is more accurate.
 
-= Details =
+= Draft =
+
+PropForth 3.6 Beta Inter Prop High Speed Serial Communications
+
+Notes from conference call only - documentation DRAFT
+
+As of ProForth 3.6 the inter prop highspeed serial communications seems to be working
+
+= com.f =
+
+Forth source code file com.f contains the core for interprop communications
+
+It doesn't actually start anything.
+
+This file contain examples for experiements
+
+Set up 2 props using pins 14 and 15 
+
+Put a 200 to 400 ohm resistor between each of the two pin to pin connections between props
+
+Use a low ohm value to keeps the singal edges sharp. 
+
+This experiment used 360 ohm becasue the were handy in the box. 
+
+= comnorom.f =
+
+Forth source code file comnorom.f contains interprop communications for the slave portion of the setup.
+
+First load com.f, them load comnorom.f, them saveforth.
+
+Following connections are required for these experiments:
+
+MASTER    Slave   Reset
+Pin 28    Pin 29  12-12
+
+[check this]
+
+Master's master channel (output) connects to slave's master (input) 
+
+Slave's slave channel (output) connect to master's slave (input) 
+
+[check this]
+
+10k pull up (goe where? notes are incomplete)
+
+search for definition of word ree
+
+ree - Assembler and pins; 2 strings Master and Slave
+    - variable for Master
+
+onboot - redefined to stop other cogs.  
+
+       - Sets cog 6 (and cog 7 for serial)
+
+       - look for a master for master
+
+Here's the magic:
+
+Master sends a frequency on master's channel pin 
+
+Slave sends a different frequency on slave's channel pin
+
+master-init cog4 last (?)
+
+slave-init (?)
+
+on reset5 - master or slave cog5
+
+  - master on remote rom, reset, 
+
+  - a_ree an assembler routine,  does rom emulation
+
+  - shadow master 
+  
+NOTE: fl (fastload) is on MASTER only.  always need to manually load this definition of fl for the time being
+
+[the code for the verions of fast load fl that must be manually loaded is at the bottom of the file]
+
+[ or is it the code of curly backets?]
+
+{ - curly backet means commented out in the context of fastload 
+
+MUST BE LOADED ON MASTER
+
+do a saveforth
+
+= com.f again =
+
+== Line 641 ==
+
+Test com channel ahead- 
+
+cmd>ch   "command to channel"
+fl>ch  "fastload to channel"
+
+cmd>ch
+
+C" xxxx" N1 cstr
+
+channel address cha   N1=0, 1, 2, 3, 4, chanel1    cstr is c" xxxxx"
+
+cha 0 fl>ch to remote
+
+a_mastercom
+
+==line 194 == structure master
+
+214
+
+04-14 same as inbyte
+
+14-24 buffer
+
+24-34 cog emit pointer
+
+      set to 0 just throw the data away (when no terminal)
+      
+      Channels send (one side) and receive (other side) constant 96 bit packets always
+
+      watches checksum to notice errors
+
+      chnoiser line 839 for injecting noise during test to verify the mechanism can 
+detect noise errors
+      
+  Channel reciev speed
+
+    about 4megabits persecond
+
+    protocol comsumes about 1/3 of bandwidth? 
+
+    (((clock speed)/2)/8) = ??? no , the math is not correct
+    
+  This method can be used on a single chip
+
+     define Master on Channel A
+
+     and Slave on Channel B
+     
+     Start 2 cogs.
+     
+  End of notes 
 
 
-
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
-Page under construction 2010-10-31
