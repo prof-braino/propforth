@@ -10,6 +10,8 @@ SRAM and Latch support for Hive
 
 Inter chip serial communication for multiple Propeller configuration
 
+new estimate (20101031) indicates
+
 preliminary estimate (20101024) indicates:
 
  - 8 channel 
@@ -17,6 +19,8 @@ preliminary estimate (20101024) indicates:
  - full duplex 
 
  - 5.5 k characters per second application to application (not wire speed)
+
+ - ROM-less slaves: Master load image into slave automagically, slaves come up talking and ready to go
 
 PinoutConfiguration.spin file to select hardware
 
