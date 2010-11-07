@@ -18,13 +18,15 @@ All communications options (serial, VGA, Ethernet, high speed inter-prop serial 
 
 High Speed serial from non released V3.6 will be cleaned up in the transition to 4.0.  Documentation and examples. 
 
-=== Planned PropForth 3.7 December 2010/January 2011  ===
+=== PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
 
 SD Slot for Cards up to 2 Gig
 
 SRAM and Latch support for Hive
 
-=== Planned PropForth 3.6 November 2010 ===
+=== Not Released PropForth 3.6 November 2010  ===
+
+Sorry, this turned out to be an ALPHA, not to be released to the general public. 
 
 Inter chip serial communication for multiple Propeller configuration
 
