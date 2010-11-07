@@ -1,6 +1,24 @@
 #summary Status of PropForth
 
-=== Planned PropForth 3.7 December 2010/January 2011 ===
+=== Planned PropForth 4.0 ===
+
+Reorganized Kernel:
+
+ - PropForthCoreV4.0.spin - the simplest kernel that can compile forth source code
+
+ - PropForthV4.0.f - all necessary Kernel function beyond the core
+
+It was determined that the kernel too big again.  During re-organization, the above method was selected.  All kernel functions will be available in high level forth source code. 
+
+  - Standardize communication interfaces. 
+
+All communications options (serial, VGA, Ethernet, high speed inter-prop serial channels) will have the same structure:  One long, first word is input, second word is output. The method to plug into a channel will be the same for all options.  There will be a single general documentation for communications, and a subsection for the details that differentiate each option.  Should be a little easier.
+
+ - final high speed inter-prop serial channels
+
+High Speed serial from non released V3.6 will be cleaned up in the transition to 4.0.  Documentation and examples. 
+
+=== Planned PropForth 3.7 December 2010/January 2011  ===
 
 SD Slot for Cards up to 2 Gig
 
