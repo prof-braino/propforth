@@ -1,0 +1,22 @@
+#summary Example of HiSpeed serial inter-prop channels using a single prop
+#labels HighSpeedSerialInter-Prop,communcationchannel,multi-prop
+
+This is an example of high speed serial communications on a single prop.
+
+It is a little easier to set it up on multiple props after you see it work on a single prop.
+
+While you could use this in an single prop application, it is much slower that just exchanging data through main memory.  
+
+This is just to illustrate how its done.
+
+
+= Under construction 20101107 =
+
+Add your notes here.  OK OK give a guy a minute already
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
