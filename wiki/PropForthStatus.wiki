@@ -1,6 +1,6 @@
 #summary Status of PropForth
 
-=== Planned PropForth 4.0 ===
+=== Planned PropForth 4.0 November/December 2010 ===
 
 Reorganized Kernel:
 
@@ -17,6 +17,10 @@ All communications options (serial, VGA, Ethernet, high speed inter-prop serial 
  - final high speed inter-prop serial channels
 
 High Speed serial from non released V3.6 will be cleaned up in the transition to 4.0.  Documentation and examples. 
+
+ - fl: fixes to FASTLOAD
+
+Change current behavior of loading the source into memory in one pass as a single chunk, and interpreting all the source in a second pass as one chunk.  After months of research, it was determined that the prop has multiple cogs, so a cog could start loading the source, and another cog could start interpreting the source.  Took a while, but we finally noticed.  Consider change in  handling of in-line comments so the input buffer does not overrun when code is followed by a comment on the same line. 
 
 === PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
 
