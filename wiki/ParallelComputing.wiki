@@ -1,0 +1,30 @@
+#summary There's more to this than having a bunch of cores running
+
+= What is parallel computing? =
+
+Parallel computing refers to having multiple actions or responses to events ocuring at the same time.  
+
+= What is Sequential computing?  = 
+
+Contrast parallel computing to sequential computing, where there is really only a single sequence of instructions.  The sequence can branch in response to conditions, and a special event can interupt a normal event sequence, and this gives the impression that its all happening at the same time. 
+
+The difference is that the overhead in switching the sequence, and the time spent on interuptions, take significant time.  The impact of adding more events to the sequence eventually begins to slow the overall sequnce. 
+
+Example:  DOS on a 12Mhz PC AT versus Windows on 1.0Ghz Pentium system.  The Pentium is 100 times faster than the PC AT, but the response is slower due to the amount of activities windows is attemping to preform, versus DOC, shich only responds to the command line.
+
+= The Prop is already Parallel. What's the big deal? = 
+
+The prop hardware is parallel, so eight separate sequential programs can run at the same time.   But the eight programs don't necessarily work together in an specific way, aside from all executing at the same time. This is one form of parallelism. There are other forms of parallelism that can provide additional benefit beyond simply having more cores sitting on the part. 
+
+= What are the types forms of parallelism? =
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
