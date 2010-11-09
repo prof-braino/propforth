@@ -13,7 +13,7 @@ hit the hardware reset whenever you get an error
 
 Look at these documentation pages
 
-Ask questions, the documentation evolves according to user participation. I try to answer questions within 24 hours, unless they are hard, then I ask Sal on the Sunday call, and post Sunday afternoon.
+Ask questions, the documentation evolves according to user participation. I try to answer questions within 24 hours, unless they are hard, then I ask Sal on the Sunday call, and post answers Sunday afternoon.
 
 = Aren't there any real books I can read? =
 
