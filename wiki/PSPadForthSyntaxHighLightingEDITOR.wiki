@@ -60,6 +60,28 @@ hex=
 
 == PSPad Settings ==
 
+===Program Settings===
+
 Under Settings -> Register File Types -> add .f
 
 Under Settings -> Multihighlighter -> For <%...%> use: PropForth
+
+===Highlighterr Settings ===
+
+CHECK PropForth (at the bottom of the left panel list by the <NOT ASSIGNED>)
+
+On the COLORS tab select colors sufficiently different to make the keywords stand out
+
+On the specification tab adjust the name oand the file extensions to be associated with this color scheme. 
+
+===User Hightlighter===
+
+select PropForrth.ini to open
+
+CHECK {...} for fastload comments
+CHECK (....) for stack comments (To be supported in a next release)
+CHECK (...) \ for end of line comments
+
+In the TAB 1, 2, 3, 4 
+
+Add your application's defined words to TAB 4;  or move the default kernel words to re-organize the coloring as needed
