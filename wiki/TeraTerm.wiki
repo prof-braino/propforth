@@ -9,7 +9,7 @@ Versions of teraterm used in testing:
 
 Install using all defaults
 
-Change the following parameters: 
+Change the following parameters to use TeraTerm to access the standard PropForth interactive command prompt over the serial (comport) connection: 
 
   Setup - > Terminal -> New-Line receive CR+LF (PropForth 3.6 and later should use default CR)
 
@@ -42,6 +42,8 @@ Change the following parameters:
  Setup - > General Setup  -> Default Port -> COMx (what ever PropTool says when it finds your prop)
 
  Setup - > Serial Port Setup  -> Additional Settings -> Visual (TAB) -> Enable ANSI color CHECKED (if you wish to use the ANSI.f for colorful text on the serial port)
+
+To use TeraTerm to access a Telnet Session over Ethernet:
 
 
 
