@@ -1,3 +1,19 @@
 #summary Terminal program used to develop and debug PropForth
 
 http://ttssh2.sourceforge.jp/
+
+Versions of teraterm used in testing:
+4.67
+4.65
+4.63
+
+Install using all defaults
+
+Change the following parameters: 
+Setup - > Terminal -> New-Line receive CR+LF (PropForth 3.6 and later should use default CR)
+Setup - > Terminal -> New-Line Transmit CR 
+Setup - > Terminal -> Terminal ID VT100
+Setup - > Terminal -> Local Echo UNCHECKED
+Setup - > Terminal -> Auto Switch Checked 
+Setup - > Terminal -> Answerback - blank
+
