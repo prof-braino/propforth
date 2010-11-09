@@ -85,3 +85,8 @@ CHECK (...) \ for end of line comments
 In the TAB 1, 2, 3, 4 
 
 Add your application's defined words to TAB 4;  or move the default kernel words to re-organize the coloring as needed
+
+
+= using PSPad =
+
+Forth text should now appear with appropriate highlighting
