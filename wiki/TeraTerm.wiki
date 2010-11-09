@@ -43,9 +43,10 @@ Change the following parameters to use TeraTerm to access the standard PropForth
 
  Setup - > Serial Port Setup  -> Additional Settings -> Visual (TAB) -> Enable ANSI color CHECKED (if you wish to use the ANSI.f for colorful text on the serial port)
 
+ Setup - > Save Setup  -> TERATERM.INI -> SAVE (this will cause the above to be applied each time you start teraterm)
+
+
 To use TeraTerm to access a Telnet Session over Ethernet:
-
-
 
 
 
