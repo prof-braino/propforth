@@ -57,3 +57,9 @@ decimal=
 fl=
 hex=
 }}}
+
+== PSPad Settings ==
+
+Under Settings -> Register File Types -> add .f
+
+Under Settings -> Multihighlighter -> For <%...%> use: PropForth
