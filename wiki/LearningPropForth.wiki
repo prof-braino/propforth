@@ -1,0 +1,42 @@
+#summary Hints on Learning PropForth
+
+= Get Started =
+
+Load propforth into EEPROM
+
+Try to make it crash
+
+hit the hardware reset whenever you get an error
+
+= There's no help command! =
+
+Look at these documentation pages
+
+Ask questions, the documentation evolves according to user participation. I try to answer questions within 24 hours, unless they are hard, then I ask Sal on the Sunday call, and post Sunday afternoon.
+
+= Aren't there any real books I can read? =
+
+Yes, the most recommended forth books are
+
+STARTING FORTH by Leo Brodie
+
+THINKING FORTH by Leo Brodie
+
+These are available online as PDF and/or HTML (I will add links later but I'm trying to post this for somebody right NOW)
+
+= I want to try FORTH on my other machine = 
+
+PYGMY FORTH from Frank Sargent is my favorite on a PC type machine.  It is just like FORTH Inc's polyFORTH from the old days.  It runs crazy fast on the slowest machine you can find. 
+
+TOM ZIMMER has great forth for the pc but it is the opposite of forth in that that team tried to prebuild a library of every pssoible function that anybody could ever want, which is cool, but very confusing due to the huge volume of material to learn.
+
+= under construction =
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
