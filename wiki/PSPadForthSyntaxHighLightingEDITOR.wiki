@@ -12,6 +12,8 @@ Assumes an installation to default location
 
 = Configuring for forth syntax =
 
+== CONTEXT ==
+
 in 
 
 .\PSPad editor\Context
@@ -58,6 +60,73 @@ if §| then
 ;-------------------------------------------------
 ;---------------------------------------------
 [Keywords]
+
+
+}}}
+
+== SYNTAX==
+
+.\PSPad editor\Syntax
+
+create a file 
+
+FORTH.INI
+
+containing:
+
+{{{
+;PSPad user HighLighter definition file
+[Settings]
+Name=FORTH
+HTMLGroup=0
+Label=1
+FileType=*.f
+CommentString=
+PasComment=1
+ForthComment=1
+OkumaComment=1
+Preprocessors=1
+IndentChar=
+UnIndentChar=
+TabWidth=0
+SingleQuote=1
+DoubleQuote=1
+KeyWordChars=
+CodeExplorer=ftUnknown
+[KeyWords]
+begin=
+do=
+else=
+for=
+if=
+loop=
+next=
+repeat=
+then=
+until=
+while=
+[ReservedWords]
+and=
+constant=
+drop=
+dup=
+hex=
+m!=
+m@=
+nor=
+or=
+variable=
+xand=
+xor=
+[KeyWords2]
+andn=
+FL=
+not=
+W!=
+W@=
+wconstant=
+wvariable=
+[KeyWords3]
 
 
 }}}
