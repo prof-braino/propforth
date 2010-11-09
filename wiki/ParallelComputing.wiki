@@ -32,7 +32,9 @@ These are free PDF downloads
 
 = What are the types of parallelism? =
 
-[ to be added as I read and summarize the references above ] 
+ _to be added as I read and summarize the references above_  
+
+ _gimme a break, I got a day job too, you know!_
 
 
 = What are the Key concepts = 
