@@ -2,33 +2,43 @@
 
 = What is parallel computing? =
 
-Parallel computing refers to having multiple actions or responses to events ocuring at the same time.  
+ Parallel computing refers to having multiple actions or responses to events ocuring at the same time.  
 
 = What is Sequential computing?  = 
 
-Contrast parallel computing to sequential computing, where there is really only a single sequence of instructions.  The sequence can branch in response to conditions, and a special event can interupt a normal event sequence, and this gives the impression that its all happening at the same time. 
+ Contrast parallel computing to sequential computing, where there is really only a single sequence of instructions.  The sequence can branch in response to conditions, and a special event can interupt a normal event sequence, and this gives the impression that its all happening at the same time. 
 
-The difference is that the overhead in switching the sequence, and the time spent on interuptions, take significant time.  The impact of adding more events to the sequence eventually begins to slow the overall sequnce. 
+ The difference is that the overhead in switching the sequence, and the time spent on interuptions, take significant time.  The impact of adding more events to the sequence eventually begins to slow the overall sequnce. 
 
-Example:  DOS on a 12Mhz PC AT versus Windows on 1.0Ghz Pentium system.  The Pentium is 100 times faster than the PC AT, but the response is slower due to the amount of activities windows is attemping to preform, versus DOC, shich only responds to the command line.
+ Example:  DOS on a 12Mhz PC AT versus Windows on 1.0Ghz Pentium system.  The Pentium is 100 times faster than the PC AT, but the response is slower due to the amount of activities windows is attemping to preform, versus DOC, shich only responds to the command line.
+
+= why isn't parallel computing used now? =
+
+ It is to varying degrees.  But coordinating multiple processor is not always straightforward, depending on the task at hand.  Many modern PC's have 2 or four cores, each capable of running two or more threads, allowing up to eight separate threads in a single PC.  But these cores/threads tend to be used for separate activities, and rarely are all used together to address a single problem. It's difficult to determine the organization and management of these resources, and more difficult to automate.
+
+ The cost of the overhead for management of the resources can be more than the resources deliver, to the extent that a parallel system turns out slower than multiple (or even a single) sequential system.  This is more noticeable on less powerful systems
+
+= Why bother with parallel computing =
+
+ Eventually, the cost of managing the resources becomes less than the benefit gained from cooperative execution.  The system can appear to perform better than the sum of the parts
 
 = The Prop is already Parallel. What's the big deal? = 
 
-The prop hardware is parallel, so eight separate sequential programs can run at the same time.   But the eight programs don't necessarily work together in an specific way, aside from all executing at the same time. This is one form of parallelism. There are other forms of parallelism that can provide additional benefit beyond simply having more cores sitting on the part. 
+ The prop hardware is parallel, so eight separate sequential programs can run at the same time.   But the eight programs don't necessarily work together in an specific way, aside from all executing at the same time. This is one form of parallelism. There are other forms of parallelism that can provide additional benefit beyond simply having more cores sitting on the part. 
 
 = What literature exists on parallel computing? = 
 
-There's probably tons, but the works that have been recommended to me are:
+ There's probably tons, but the works that have been recommended to me are:
 
-Communicating Sequential Processes, or CSP
+ Communicating Sequential Processes, or CSP
 
-http://www.usingcsp.com/cspbook.pdf
+ http://www.usingcsp.com/cspbook.pdf
 
-How to write Parallel Programs
+ How to write Parallel Programs
 
-http://www.matematicas.unam.mx/jloa/Articulos/carriero.pdf
+ http://www.matematicas.unam.mx/jloa/Articulos/carriero.pdf
 
-These are free PDF downloads
+ These are free PDF downloads
 
 = What are the types of parallelism? =
 
