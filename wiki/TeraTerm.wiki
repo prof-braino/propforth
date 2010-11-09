@@ -39,11 +39,9 @@ Change the following parameters:
 
  Setup - > Serial Port Setup  -> Transmit Dely -> 0 msec/line 
 
- Setup - > Serial Port Setup  -> Transmit Dely -> 
+ Setup - > General Setup  -> Default Port -> COMx (what ever PropTool says when it finds your prop)
 
- Setup - > Serial Port Setup  -> Transmit Dely -> 
-
-
+ Setup - > Serial Port Setup  -> Additional Settings -> Visual (TAB) -> Enable ANSI color CHECKED (if you wish to use the ANSI.f for colorful text on the serial port)
 
 
 
