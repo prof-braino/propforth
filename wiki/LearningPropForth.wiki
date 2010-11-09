@@ -1,4 +1,5 @@
 #summary Hints on Learning PropForth
+#labels LearningPropforth,LearningForth
 
 = Get Started =
 
@@ -26,11 +27,27 @@ These are available online as PDF and/or HTML (I will add links later but I'm tr
 
 = I want to try FORTH on my other machine = 
 
-PYGMY FORTH from Frank Sargent is my favorite on a PC type machine.  It is just like FORTH Inc's polyFORTH from the old days.  It runs crazy fast on the slowest machine you can find. 
+PYGMY FORTH from Frank Sargent is my favorite on a PC type machine.  It is just like FORTH Inc's polyFORTH from the old days.  It runs crazy fast on the slowest machine you can find.  Lots of functions but still compact.  My idea of "classic" forth.
 
-TOM ZIMMER has great forth for the pc but it is the opposite of forth in that that team tried to prebuild a library of every pssoible function that anybody could ever want, which is cool, but very confusing due to the huge volume of material to learn.
+http://pygmy.utoh.org/pygmyforth.html
+
+TOM ZIMMER has great forth for the pc but it is the opposite of (my idea of)forth in that that team tried to prebuild a library of every possible function that anybody could ever want, which is cool, but very confusing due to the huge volume of material to learn.  Runs under windows, so needs a machine capable of functioning with windows on it.  My idea of the other extreme of forth.
 
 ftp://ftp.taygeta.com/pub/Forth/Compilers/native/dos/FPC/fpc36.zip
+
+Chuck Moore newest colorFORTH is is the other other extreme of forth.  This runs way too fast on the slowest laptop I could find.  Needs no hard disk.  Has a weird keyboard, and a weird file system.  The future, but too far ahead of its time.  PropForth may move in this direction eventually. 
+
+= I want a stand alone forth development environment and ditch my slow commercial OS machine =
+
+See JupiterACE and convert your Prop Demo Board into a stand alone forth development platform
+
+= I want PropForth on my Atmega micro controller = 
+
+Thanks, but better try AMFORTH instead.  Matthias Trute and friends are continuously refining this work.  Not so much for beginners, unless you are an experienced hardware person. Good documentation, inexpensive parts, active user community. 
+
+http://sourceforge.net/projects/amforth/
+
+
 
 = under construction =
 
