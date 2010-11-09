@@ -4,12 +4,60 @@
 
 PSPad is a free syntax highlighting editor that supports custom configurations. PSPad can easily be configurated for FORTH, and for PropForth
 
+http://www.pspad.com/
+
+Assumes an installation to default location 
+
+.\PSPad editor
+
+= Configuring for forth syntax =
+
+in 
+
+.\PSPad editor\Context
+
+create a file 
+
+FORTH.DEF
+
+containing something like this.  I copied another file and modified it: 
+
+{{{
+; PSPad code template for General
+; Created by PSPad   24.01.2008  11:57
+; Author:  braino
+;
+Comment=
+;------------------------------------------------
+[for .. to .. do | cycle with defined step count]
+for %prom% := %prom1% to %prom2% do
+   begin
+    |
+   end;
+;------------------------------------------------
+[setrange | set range(what, from, to) ]
+%recordset%.setrange(%recordset%."|" , , );
+;-------------------------------------------------
+[get | get(variable)]
+if %recordset%.get(|) then
+;-------------------------------------------------
+[begin | (begin ... repeat) ]
+begin
+ §|
+repeat
+;------------------------------------------------
+[do | (do while)]
+do
+ |
+while 
+ |
+repeat ;
+;-----------------------------------------------
+[if | (condition)]
+if §| then
+;-------------------------------------------------
+;---------------------------------------------
+[Keywords]
 
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+}}}
