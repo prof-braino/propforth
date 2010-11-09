@@ -12,121 +12,48 @@ Assumes an installation to default location
 
 = Configuring for forth syntax =
 
-== CONTEXT ==
-
-in 
-
-.\PSPad editor\Context
-
-create a file 
-
-FORTH.DEF
-
-containing something like this.  I copied another file and modified it: 
-
-{{{
-; PSPad code template for General
-; Created by PSPad   24.01.2008  11:57
-; Author:  braino
-;
-Comment=
-;------------------------------------------------
-[for .. to .. do | cycle with defined step count]
-for %prom% := %prom1% to %prom2% do
-   begin
-    |
-   end;
-;------------------------------------------------
-[setrange | set range(what, from, to) ]
-%recordset%.setrange(%recordset%."|" , , );
-;-------------------------------------------------
-[get | get(variable)]
-if %recordset%.get(|) then
-;-------------------------------------------------
-[begin | (begin ... repeat) ]
-begin
- §|
-repeat
-;------------------------------------------------
-[do | (do while)]
-do
- |
-while 
- |
-repeat ;
-;-----------------------------------------------
-[if | (condition)]
-if §| then
-;-------------------------------------------------
-;---------------------------------------------
-[Keywords]
-
-
-}}}
-
 == SYNTAX==
 
 .\PSPad editor\Syntax
 
 create a file 
 
-FORTH.INI
+PROPFORTH.INI
 
 containing:
 
 {{{
 ;PSPad user HighLighter definition file
 [Settings]
-Name=FORTH
+Name=PROPFORTH
 HTMLGroup=0
 Label=1
-FileType=*.f
-CommentString=
+FileType=f
+CommentString=\
 PasComment=1
 ForthComment=1
-OkumaComment=1
-Preprocessors=1
 IndentChar=
 UnIndentChar=
-TabWidth=0
-SingleQuote=1
+TabWidth=4
 DoubleQuote=1
 KeyWordChars=
 CodeExplorer=ftUnknown
 [KeyWords]
++loop=
 begin=
 do=
-else=
-for=
 if=
 loop=
-next=
-repeat=
 then=
+thens=
 until=
-while=
 [ReservedWords]
-and=
-constant=
-drop=
-dup=
-hex=
-m!=
-m@=
-nor=
-or=
-variable=
-xand=
-xor=
-[KeyWords2]
-andn=
-FL=
-not=
-W!=
-W@=
-wconstant=
 wvariable=
+[KeyWords2]
+wconstant=
 [KeyWords3]
-
-
+cr=
+decimal=
+fl=
+hex=
 }}}
