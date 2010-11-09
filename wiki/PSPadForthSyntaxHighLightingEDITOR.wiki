@@ -76,7 +76,7 @@ On the specification tab adjust the name oand the file extensions to be associat
 
 ===User Hightlighter===
 
-select PropForrth.ini to open
+select PropForth.ini to open
 
 CHECK {...} for fastload comments
 CHECK (....) for stack comments (To be supported in a next release)
@@ -93,7 +93,7 @@ Forth text should now appear with appropriate highlighting
 
 = NOTE= 
 
-I could not get small worrds 
+I could not get small words 
 
 {{{
 W! W@
