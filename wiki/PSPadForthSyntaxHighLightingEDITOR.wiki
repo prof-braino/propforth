@@ -2,7 +2,9 @@
 
 = PSPad  =
 
-PSPad is a free syntax highlighting editor tha can be easily conf
+PSPad is a free syntax highlighting editor that supports custom configurations. PSPad can easily be configurated for FORTH, and for PropForth
+
+
 
 
 = Details =
