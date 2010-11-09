@@ -30,13 +30,9 @@
 
  There's probably tons, but the works that have been recommended to me are:
 
- Communicating Sequential Processes, or CSP
+ Communicating Sequential Processes, or CSP  http://www.usingcsp.com/cspbook.pdf
 
- http://www.usingcsp.com/cspbook.pdf
-
- How to write Parallel Programs
-
- http://www.matematicas.unam.mx/jloa/Articulos/carriero.pdf
+ How to write Parallel Programs   http://www.matematicas.unam.mx/jloa/Articulos/carriero.pdf
 
  These are free PDF downloads
 
