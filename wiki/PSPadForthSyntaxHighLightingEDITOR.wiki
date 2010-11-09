@@ -90,3 +90,16 @@ Add your application's defined words to TAB 4;  or move the default kernel words
 = using PSPad =
 
 Forth text should now appear with appropriate highlighting
+
+= NOTE= 
+
+I could not get small worrds 
+
+{{{
+W! W@
+L! L@
+C! C@
+EE! EE@
+}}}
+
+To color properly.  If anybody figures this out pleas post or PM me so I can update this (and fix my rig)
