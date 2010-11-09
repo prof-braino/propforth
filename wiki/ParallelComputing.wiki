@@ -49,8 +49,8 @@
 
 = What are the Key concepts = 
 
-Keep all the processors occupied as much as possible
+ Keep all the processors occupied as much as possible
 
-The communications between the parallel elements tends to be a significant bottleneck
+ The communications between the parallel elements tends to be a significant bottleneck
 
 = end of material = 
