@@ -10,10 +10,15 @@ Versions of teraterm used in testing:
 Install using all defaults
 
 Change the following parameters: 
-Setup - > Terminal -> New-Line receive CR+LF (PropForth 3.6 and later should use default CR)
-Setup - > Terminal -> New-Line Transmit CR 
-Setup - > Terminal -> Terminal ID VT100
-Setup - > Terminal -> Local Echo UNCHECKED
-Setup - > Terminal -> Auto Switch Checked 
-Setup - > Terminal -> Answerback - blank
 
+Setup - > Terminal -> New-Line receive CR+LF (PropForth 3.6 and later should use default CR)
+
+Setup - > Terminal -> New-Line Transmit CR 
+
+Setup - > Terminal -> Terminal ID VT100
+
+Setup - > Terminal -> Local Echo UNCHECKED
+
+Setup - > Terminal -> Auto Switch Checked 
+
+Setup - > Terminal -> Answer back - blank
