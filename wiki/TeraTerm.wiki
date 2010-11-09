@@ -17,8 +17,50 @@ Change the following parameters:
 
   Setup - > Terminal -> Terminal ID VT100
 
-   Setup - > Terminal -> Local Echo UNCHECKED
+ Setup - > Terminal -> Local Echo UNCHECKED
 
-   Setup - > Terminal -> Auto Switch Checked 
+ Setup - > Terminal -> Auto Switch Checked 
 
-   Setup - > Terminal -> Answer back - blank
+ Setup - > Terminal -> Answer back - blank 
+
+ Setup - > Serial Port Setup  -> Port COMx (what ever PropTool says when it finds your prop)
+
+ Setup - > Serial Port Setup  -> Baud Rate 57600
+
+ Setup - > Serial Port Setup  -> Data - 8 BIT
+
+ Setup - > Serial Port Setup  -> PArity - none 
+
+ Setup - > Serial Port Setup  -> Stop - 1 bit
+
+ Setup - > Serial Port Setup  -> Flow Control -none 
+
+ Setup - > Serial Port Setup  -> Transmit Dely -> 0 msec/char
+
+ Setup - > Serial Port Setup  -> Transmit Dely -> 0 msec/line 
+
+ Setup - > Serial Port Setup  -> Transmit Dely -> 
+
+ Setup - > Serial Port Setup  -> Transmit Dely -> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
