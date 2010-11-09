@@ -16,15 +16,29 @@ Example:  DOS on a 12Mhz PC AT versus Windows on 1.0Ghz Pentium system.  The Pen
 
 The prop hardware is parallel, so eight separate sequential programs can run at the same time.   But the eight programs don't necessarily work together in an specific way, aside from all executing at the same time. This is one form of parallelism. There are other forms of parallelism that can provide additional benefit beyond simply having more cores sitting on the part. 
 
-= What are the types forms of parallelism? =
+= What literature exists on parallel computing? = 
+
+There's probably tons, but the works that have been recommended to me are:
+
+Communicating Sequential Processes, or CSP
+
+http://www.usingcsp.com/cspbook.pdf
+
+How to write Parallel Programs
+
+http://www.matematicas.unam.mx/jloa/Articulos/carriero.pdf
+
+These are free PDF downloads
+
+= What are the types of parallelism? =
+
+[ to be added as I read and summarize the references above ] 
 
 
+= What are the Key concepts = 
 
+Keep all the processors occupied as much as possible
 
+The communications between the parallel elements tends to be a significant bottleneck
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= end of material = 
