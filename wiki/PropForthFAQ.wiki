@@ -3,6 +3,14 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= How does one go about Learning PropForth? =
+
+Read this wiki documentation, and submit comments and question son the numerous errors so I can correct them. 
+
+Maybe start with reading the Learning PropForth page
+
+http://code.google.com/p/propforth/wiki/LearningPropForth
+
 = Does PropForth support ANSI escape codes on the serial terminal? =
 
 There is a file of forth source code that adds ANSI Escape Sequence support for the serial terminal connection. ANSI Escape Sequences.f 
