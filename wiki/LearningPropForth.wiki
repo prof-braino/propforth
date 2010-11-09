@@ -30,6 +30,8 @@ PYGMY FORTH from Frank Sargent is my favorite on a PC type machine.  It is just 
 
 TOM ZIMMER has great forth for the pc but it is the opposite of forth in that that team tried to prebuild a library of every pssoible function that anybody could ever want, which is cool, but very confusing due to the huge volume of material to learn.
 
+ftp://ftp.taygeta.com/pub/Forth/Compilers/native/dos/FPC/fpc36.zip
+
 = under construction =
 
 
