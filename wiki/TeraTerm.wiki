@@ -48,11 +48,19 @@ Change the following parameters to use TeraTerm to access the standard PropForth
 
 To use TeraTerm to access a Telnet Session over Ethernet:
 
+ Setup - > TCP/IP -> Host List -> enter the target IP address -> ADD
 
+ Setup - > TCP/IP -> Telnet CHECKED
 
+ Setup - > TCP/IP -> Port 23
 
+ Setup - > TCP/IP -> Term type xterm
 
+ Setup - > General -> Default Port -> TCP/IP 
+ 
+ Setup - > Save Setup  -> TERATERM.INI -> SAVE (teraterm starts a telnet session)
 
+I tend to switch between telnet and serial, its not hard to do an keep track of after a while.
 
 
 
