@@ -1,0 +1,34 @@
+#summary How to use float or stick with integer
+
+= Float or Integer? =
+
+I think in decimal float.  My code thinks in integer hex. 
+I let it do what it does how it wants to, and it lets me do what I want how I can.
+
+Sometimes we trade, by only when necessary.
+
+Integer hex can be more accurate than float because fewer rounding errors.  Using a calculator, I usually don't notice or don't care, because the errors are very small disappear each time I hit the clear key. 
+
+In computer algorithms, calculations can run for millions of iterations. Tiny errors can built up quickly, or slowly, and cost somebody millions of dollars.
+
+Integer hex also tend to be faster than float.  Integer hex uses a few FAST assembly instructions, float uses long SLOW software routines. 
+
+Despite the apparent difficulties using integer hex, it often turns out to be much easier than float. 
+
+= integer scaled math =
+
+Scaled Integer math requires only slightly more care than regular math.  Just decide how many thing you care about and scale the integers accordingly.  Ok, there's a little more to it than that, maybe we better go ask somebody smart....
+
+_make examples for this_
+
+= float math =
+
+PropForth includes float.f which provide floating point math support.
+
+The prop include tables in ROM which can be used for floating point math calculations. 
+
+= examples using float =
+
+Nobody has asked for any examples, so I haven't done this yet. 
+
+_make examples for this_
