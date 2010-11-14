@@ -19,29 +19,29 @@ EDIT - The team have decided that using "high speed inter-prop communications us
 
 Notes from conference call only - documentation DRAFT
 
-As of ProForth 3.6 the inter prop highspeed serial communications seems to be working
+As of ProForth 3.6 the inter prop high-speed serial communications (COMMS) seems to be working
 
 Notice this is a draft, code has not been posted until the tutorial makes sense
 
 = com.f =
 
-Forth source code file com.f contains the core for interprop communications
+Forth source code file com.f contains the core for inter-prop communications
 
 It doesn't actually start anything.
 
-This file contain examples for experiements
+This file contain examples for experiments
 
 Set up 2 props using pins 14 and 15 
 
 Put a 200 to 400 ohm resistor between each of the two pin to pin connections between props
 
-Use a low ohm value to keeps the singal edges sharp. 
+Use a low ohm value to keeps the signal edges sharp. 
 
-This experiment used 360 ohm becasue the were handy in the box. 
+This experiment used 360 ohm because the were handy in the box. 
 
 = comnorom.f =
 
-Forth source code file comnorom.f contains interprop communications for the slave portion of the setup.  This add support to the com functions so that ROM-less slave may be loaded from the master.
+Forth source code file comnorom.f contains inter-prop communications for the slave portion of the setup.  This add support to the com functions so that ROM-less slave may be loaded from the master.
 
 First load com.f, them load comnorom.f, them saveforth.
 
@@ -52,17 +52,23 @@ Pin 28    Pin 29  12-12
 
 [check this]
 
-Master's master channel (output) connects to slave's master (input) 
+MASTER transmit - SLAVE receive  - pin 29 - via a 220 ohm resistor
+MASTER receive  - SLAVE transmit - pin 28 - via a 220 ohm resistor
 
-Slave's slave channel (output) connect to master's slave (input) 
+Master's master channel (output) connects to slave's master (input).  Needs 200-300 ohm resister in line 
 
-[check this]
+Slave's slave channel (output) connect to master's slave (input).  Needs 200-300 ohm resister in line 
 
-10k pull up (goe where? notes are incomplete)
+10k pull up on port 29 decimal [SLAVE receive]
 
-search for definition of word ree
+(per Page 17 of the printed prop manual.  Master is emulating slave's eeprom; then using this line for COMMS channel)
 
-ree - Assembler and pins; 2 strings Master and Slave
+
+------
+
+search for definition of word {{{ree}}}
+
+{{{ree}}} - Assembler and pins; 2 strings Master and Slave
     - variable for Master
 
 onboot - redefined to stop other cogs.  
