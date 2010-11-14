@@ -48,9 +48,8 @@ First load com.f, them load comnorom.f, them saveforth.
 Following connections are required for these experiments:
 
 MASTER    Slave   Reset
-Pin 28    Pin 29  12-12
 
-[check this]
+Pin 28    Pin 29  12-12
 
 MASTER transmit - SLAVE receive  - pin 29 - via a 220 ohm resistor
 MASTER receive  - SLAVE transmit - pin 28 - via a 220 ohm resistor
@@ -69,6 +68,7 @@ Slave's slave channel (output) connect to master's slave (input).  Needs 200-300
 search for definition of word {{{ree}}}
 
 {{{ree}}} - Assembler and pins; 2 strings Master and Slave
+
     - variable for Master
 
 onboot - redefined to stop other cogs.  
@@ -79,13 +79,13 @@ onboot - redefined to stop other cogs.
 
 Here's the magic:
 
-Master sends a frequency on master's channel pin 
+ Master sends a frequency on master's channel pin 
 
-Slave sends a different frequency on slave's channel pin
+ Slave sends a different frequency on slave's channel pin
 
-master-init cog4 last (?)
+ master-init cog4 last (?)
 
-slave-init (?)
+ slave-init (?)
 
 on reset5 - master or slave cog5
 
@@ -105,7 +105,7 @@ NOTE: fl (fastload) is on MASTER only.  always need to manually load this defini
 
 MUST BE LOADED ON MASTER
 
-do a saveforth
+ do a saveforth
 
 = com.f again =
 
@@ -114,6 +114,7 @@ do a saveforth
 Test com channel ahead- 
 
 cmd>ch   "command to channel"
+
 fl>ch  "fastload to channel"
 
 cmd>ch
