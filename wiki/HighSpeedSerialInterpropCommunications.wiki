@@ -1,15 +1,17 @@
-#summary Low Level Support for Prop Arrays
-#labels v3.6,Phase-Design,parallel,draft
+#summary Low Level Support for Prop Arrays - COMMS
+#labels v3.6,Phase-Design,parallel,draft,V4.0ALPHA
 
 Also see the single prop example:
 
 http://code.google.com/p/propforth/wiki/HiSpeedSerialOneProp
 
-= Introduction =
+= Introduction - COMMS =
 
 As of PropForth 3.6 Beta, there exists support for high speed serial communications between props. This permits the eight cogs in a single prop to communicate with cogs in up to eight slave cogs.  Each slave may also be a sub-master to up to seven sub-slaves. Sub-masters and sub-slaves may be continued as needed.
 
 This capability may provide the basis for a micro-controller array "supercomputer". If you have a very broad idea of "supercomputer", maybe super-controller is more accurate.
+
+EDIT - The team have decided that using "high speed inter-prop communications using Beau's method and adding a application protocol layer" in reference to this topic makes discussions cumbersome.  That's still what it is about, but we are going to use COMMS to refer to this topic. 
 
 = Draft =
 
