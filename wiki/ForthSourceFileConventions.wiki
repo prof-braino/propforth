@@ -1,0 +1,37 @@
+#summary A stab at conventions for forth source code files
+
+= A Method to Keep Organized =
+
+Source code can quickly get out of control.
+
+Here are some guidelines for keeping control of forth source code
+
+= What we need to know =
+
+For a given set of source code definitions
+
+We need to keep track of:
+
+ # What the code does
+
+ # What order to load the source definitions
+ 
+ # What order to execute the definitions
+
+== the version of the source ==
+
+== What the code does ==
+
+== What order to load the source definitions ==
+ 
+== What order to execute the definitions ==
+
+== the version of the source ==
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
