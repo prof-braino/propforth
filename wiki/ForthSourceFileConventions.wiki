@@ -48,7 +48,9 @@ We need to keep track of:
  What circumstances will be left after the word is finish executiong
 
  STACK NOTES 
+
 - all words MUST define what they expect on the stack in order to function.  
+
 - all words MUST define what they leave  on the stack after they function.  
 
  INITIALIZE VARIABLE
