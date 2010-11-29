@@ -34,6 +34,29 @@ We need to keep track of:
 
 == What the code does ==
 
+ The name of the function should be descriptive enough to convey what the code is intended to accomplish 
+
+ names prefixed with an underscore designate a function used internally by the kernel; these can have side affects that may not be obvious.  These words should not be called from other location aside from those intended by the author.
+
+== entry / exit criterion ==
+
+ all code must iinclude clear documentation for entry and exit criterion.
+
+ We need to know:
+
+ what circumstances must be present before the code is called.  
+ What circumstances will be left after the word is finish executiong
+
+ STACK NOTES 
+- all words MUST define what they expect on the stack in order to function.  
+- all words MUST define what they leave  on the stack after they function.  
+
+ INITIALIZE VARIABLE
+
+In cases where variables are used, all variables must be identified.
+The set of Valid values for each variable must be identified
+The set of invalid values for each variable must be identified
+
 == What order to load the source definitions ==
  
 == What order to execute the definitions ==
