@@ -2,23 +2,27 @@
 
 = To share/exchange/review code in the project,  please consider these guidelines =
 
-RULE OF THUMB: Make is work using FORTH, Optimize using Assembler
+RULE OF THUMB: Make it work using FORTH, Optimize using Assembler
 
 RULE OF THUMB: Always develop using FORTH, never modify the assembler
 
 RULE OF THUMB: Always document the FORTH
 
+RULE OF THUMB: Always document stack notes
+
+RULE OF THUMB: Always document with inline comments
+
 RULE OF THUMB: Always optimize from the FORTH source, never re-optimize the assembler
 
-RULE OF THUMB: It does ONE or TWO things. It NEVER does more than seven things.
+RULE OF THUMB: It Does ONE or TWO things. It NEVER does more than seven things.
 
-RULE OF THUMB: It takes zero, one, two, or three items off the stack. 
+RULE OF THUMB: It CONSUMES zero, one, two, or three items off the STACK. 
 
-RULE OF THUMB: It always takes the same number of items off the stack. 
+RULE OF THUMB: It always CONSUMES the same number of items off the STACK. 
  
-RULE OF THUMB: It leaves zero, one, or two items on the stack.  
+RULE OF THUMB: It LEAVES zero, one, or two items on the STACK.  
 
-RULE OF THUMB: It always leaves  the same number of items on the stack.  
+RULE OF THUMB: It always LEAVES the same number of items on the STACK.  
 
 RULE OF THUMB: If its more than a page, its probably wrong. 
 
@@ -30,7 +34,7 @@ RULE OF THUMB: If the needed stack item is more than three items deep, refactor,
 
 RULE OF THUMB: If you don't know where it is on the stack, use a variable
 
-RULE OF THUMB: 
+RULE OF THUMB: If the stack is too deep, expect problems 
 
 RULE OF THUMB: 
 
