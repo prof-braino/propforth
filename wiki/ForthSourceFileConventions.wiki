@@ -32,13 +32,13 @@ We need to keep track of:
  Date-time 2010 year 11 month (November) 28 day - 17 (5 PM) 09 minutes after the hour.  If you have a case where you need seconds, go ahead, but that usually is too much resolution. 
  
 
- == What the code does ==
+== What the code does ==
 
  The name of the function should be descriptive enough to convey what the code is intended to accomplish 
 
  names prefixed with an underscore designate a function used internally by the kernel; these can have side affects that may not be obvious.  These words should not be called from other location aside from those intended by the author.
 
- == entry / exit criterion ==
+== entry / exit criterion ==
 
  all code must iinclude clear documentation for entry and exit criterion.
 
@@ -61,7 +61,7 @@ We need to keep track of:
     The state of the variable AFTER execution must be defined (i.e result, unchanged, etc)
   
 
- == What order to load the source definitions ==
+== What order to load the source definitions ==
 
  If the definition are present in a single file, it will be assumed that the definitions are to be loaded in the order presented. 
 
@@ -73,7 +73,7 @@ We need to keep track of:
 
  {{{03-ThisIsLoadedLast.f}}}
 
- == What order to execute the definitions ==
+== What order to execute the definitions ==
 
  Lastly, we need to know what order to execute the definitions
 
