@@ -17,7 +17,7 @@ We need to keep track of:
  # What order to load the source definitions
  # What order to execute the definitions
 
- == the version of the source ==
+== the version of the source ==
 
  Tag the version using an arbitrary sequence number, and a date time stamp.
 
