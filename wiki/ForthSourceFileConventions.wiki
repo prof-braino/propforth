@@ -45,6 +45,7 @@ all code must include clear documentation for entry and exit criterion.
 We need to know:
 
  what circumstances must be present before the code is called.  
+
  What circumstances will be left after the word is finish executiong
 
  === STACK NOTES ===
