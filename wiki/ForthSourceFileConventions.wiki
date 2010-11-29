@@ -68,8 +68,12 @@ We need to keep track of:
   If multiple files are included, the order in which the files are to be loaded must be stated.  Typically, the files will be expected to be loaded in the order presented in the directory listing,  fo  numbers are PRE-PENDED to the files names as in:
 
    01-LoadMeFirst.f
+
    02-ThisOneIsNext.f
+
    03-ThisIsLoadedLast.f
+
+
 
  
 == What order to execute the definitions ==
