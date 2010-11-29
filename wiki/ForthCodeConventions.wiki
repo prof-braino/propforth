@@ -1,0 +1,47 @@
+#summary Attempt at Standardized Forth Code
+
+= To share/exchange/review code in the project,  please consider these guidelines =
+
+RULE OF THUMB: Make is work using FORTH, Optimize using Assembler
+
+RULE OF THUMB: Always develop using FORTH, never modify the assembler
+
+RULE OF THUMB: Always document the FORTH
+
+RULE OF THUMB: Always optimize from the FORTH source, never re-optimize the assembler
+
+RULE OF THUMB: It does ONE or TWO things. It NEVER does more than seven things.
+
+RULE OF THUMB: It takes zero, one, two, or three items off the stack. 
+
+RULE OF THUMB: It always takes the same number of items off the stack. 
+ 
+RULE OF THUMB: It leaves zero, one, or two items on the stack.  
+
+RULE OF THUMB: It always leaves  the same number of items on the stack.  
+
+RULE OF THUMB: It always take and leaves the SAME number of ite
+
+RULE OF THUMB: 
+
+RULE OF THUMB: If its more than a page, its probably wrong. 
+
+RULE OF THUMB: If it doesn't have comments, don't send it
+
+RULE OF THUMB: If the same code appears more than once, make it a function.
+
+RULE OF THUMB: If the needed stack item is more than three items deep, refactor, or use a variable
+
+RULE OF THUMB: If you don't know where it is on the stack, use a variable
+
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
