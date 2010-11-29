@@ -20,10 +20,6 @@ RULE OF THUMB: It leaves zero, one, or two items on the stack.
 
 RULE OF THUMB: It always leaves  the same number of items on the stack.  
 
-RULE OF THUMB: It always take and leaves the SAME number of ite
-
-RULE OF THUMB: 
-
 RULE OF THUMB: If its more than a page, its probably wrong. 
 
 RULE OF THUMB: If it doesn't have comments, don't send it
@@ -33,6 +29,10 @@ RULE OF THUMB: If the same code appears more than once, make it a function.
 RULE OF THUMB: If the needed stack item is more than three items deep, refactor, or use a variable
 
 RULE OF THUMB: If you don't know where it is on the stack, use a variable
+
+RULE OF THUMB: 
+
+RULE OF THUMB: 
 
 
 
