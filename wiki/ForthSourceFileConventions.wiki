@@ -78,7 +78,19 @@ We need to keep track of:
  
 == What order to execute the definitions ==
 
+  Lastly, we need to know what order to execute the definitions
 
+Run_initialisations}}}
+
+{{{Clear_counters}}}
+
+{{{Run_garbage_collection}}}
+
+{{{Run_processing}}}
+
+{{{Run_garbage_collection}}}
+
+{{{Save_Results}}}
 
 
 = Details =
