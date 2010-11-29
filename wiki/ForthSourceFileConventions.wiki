@@ -6,6 +6,24 @@ Source code can quickly get out of control.
 
 Here are some guidelines for keeping control of forth source code
 
+
+{{{
+
+EXAMPLE20101128-1750.zip
+  
+  contains files:
+           01-ExampleFunctionPart1v2.3-201011228-1745.f
+           02-ExampleFunctionPart2v2.3-201011228-1747.f
+ 
+ after loading, execute
+       Run_initializations
+       Clear_counters
+       Run_garbage_collection
+       Run_processing
+       Run_garbage_collection
+       Save_Results
+}}}
+
 = What we need to know =
 
 For a given set of source code definitions
