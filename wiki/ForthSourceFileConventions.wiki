@@ -47,18 +47,18 @@ We need to keep track of:
  what circumstances must be present before the code is called.  
  What circumstances will be left after the word is finish executiong
 
- STACK NOTES 
+ === STACK NOTES ===
 
-  - all words MUST define what they expect on the stack in order to function.  
+    - all words MUST define what they expect on the stack in order to function.  
 
-  - all words MUST define what they leave  on the stack after they function.  
+    - all words MUST define what they leave  on the stack after they function.  
 
- INITIALIZE VARIABLE
+ === INITIALIZE VARIABLE ===
 
-  In cases where variables are used, all variables must be identified.
-  The set of Valid values for each variable must be identified
-  The set of invalid values for each variable must be identified
-  The state of the variable AFTER execution must be defined (i.e result, unchanged, etc)
+    In cases where variables are used, all variables must be identified.
+    The set of Valid values for each variable must be identified
+    The set of invalid values for each variable must be identified
+    The state of the variable AFTER execution must be defined (i.e result, unchanged, etc)
   
 
  == What order to load the source definitions ==
@@ -77,17 +77,17 @@ We need to keep track of:
 
  Lastly, we need to know what order to execute the definitions
 
-Run_initialisations}}}
+ Run_initialisations}}}
 
- {{{Clear_counters}}}
+   {{{Clear_counters}}}
 
- {{{Run_garbage_collection}}}
+   {{{Run_garbage_collection}}}
 
- {{{Run_processing}}}
+   {{{Run_processing}}}
 
- {{{Run_garbage_collection}}}
+   {{{Run_garbage_collection}}}
 
- {{{Save_Results}}}
+   {{{Save_Results}}}
 
 
 = Details =
