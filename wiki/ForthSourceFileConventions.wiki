@@ -49,17 +49,28 @@ We need to keep track of:
 
  STACK NOTES 
 
-- all words MUST define what they expect on the stack in order to function.  
+   - all words MUST define what they expect on the stack in order to function.  
 
-- all words MUST define what they leave  on the stack after they function.  
+   - all words MUST define what they leave  on the stack after they function.  
 
  INITIALIZE VARIABLE
 
-In cases where variables are used, all variables must be identified.
-The set of Valid values for each variable must be identified
-The set of invalid values for each variable must be identified
+   In cases where variables are used, all variables must be identified.
+   The set of Valid values for each variable must be identified
+   The set of invalid values for each variable must be identified
+   The state of the variable AFTER execution must be defined (i.e result, unchanged, etc)
+  
 
 == What order to load the source definitions ==
+
+  If the definition are present in a single file, it will be assumed that the definitions are to be loaded in the order presented. 
+
+  If multiple files are included, the order in which the files are to be loaded must be stated.  Typically, the files will be expected to be loaded in the order presented in the directory listing,  fo  numbers are PRE-PENDED to the files names as in:
+
+   01-LoadMeFirst.f
+   02-ThisOneIsNext.f
+   03-ThisIsLoadedLast.f
+
  
 == What order to execute the definitions ==
 
