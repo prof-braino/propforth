@@ -19,7 +19,7 @@ RULE OF THUMB: It Does ONE or TWO things. It NEVER does more than seven things.
 RULE OF THUMB: It CONSUMES zero, one, two, or three items off the STACK. 
 
 RULE OF THUMB: It always CONSUMES the same number of items off the STACK. 
- 
+
 RULE OF THUMB: It LEAVES zero, one, or two items on the STACK.  
 
 RULE OF THUMB: It always LEAVES the same number of items on the STACK.  
