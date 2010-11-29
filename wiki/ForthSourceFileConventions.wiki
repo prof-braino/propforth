@@ -21,11 +21,11 @@ We need to keep track of:
 
  Tag the version using an arbitrary sequence number, and a date time stamp.
 
- MyFunction-2.2-20101128-1709.f
+ {{{MyFunction-2.2-20101128-1709.f}}}
 
  Would be Forth source code file ({{{*.f}}} )
 
- For a function called MyFunction (as assigned by the author)
+ For a function called {{{MyFunction}}} (as assigned by the author)
 
  version 2.2 (arbitrarily assigned by the author, where the previous version was 2.1 or lower)
 
