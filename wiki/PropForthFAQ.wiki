@@ -3,6 +3,10 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= does propforth work on the hydra? =
+
+Yes, propforth will run on ANY propeller chip.  However, we don't have that board so we never tested it.  An hydra - specific hardware does not have specific support.  But, it should be pretty easy to implement.  If you need help with an specific hardware, please open a discussion thread at the parallax forums.  
+
 = How does one go about Learning PropForth? =
 
 Read this wiki documentation, and submit comments and question son the numerous errors so I can correct them. 
