@@ -290,7 +290,7 @@ The OTHER difference is that a whole bunch of this stuff is in assemble and is c
 BE CAREFUL.  You can see the labels from ANY cog (they are in the main dictionary) BUT only the target cog can run LogicAnalyzer because she's the only one with the assemble routines.  The other guys may try, but they will probably crash or go crazy.  So be aware of this.
 
 
-=== set up the High Speed Synchronous Serial channels ===
+=== Check the High Speed Synchronous Serial clock with software logic analyzer ===
 
 This is the cool part.  The High Speed Synchronous Serial channels are similar to Beau Schwabe's High Speed Serial from 
 
@@ -298,6 +298,7 @@ http://forums.parallax.com/showthread.php?99222-Propeller-DEMO-(14.5-Meg-Baud)-H
 
 It worked in the 3.6 development release.  I don't think I got "broken" during the clean up, but something is at lest "different".   
 
+We are now going to start up the clock for this, and check them using the propforth software logic analyzer. 
 
 Here goes:
 
@@ -430,9 +431,9 @@ Prop0 Cog6 ok
 
 }}}
 
+=== 
 
-
-
+=== set up the High Speed Synchronous Serial channels ===
 
 
 
