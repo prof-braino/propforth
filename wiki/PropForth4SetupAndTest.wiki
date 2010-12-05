@@ -254,8 +254,23 @@ rename {{{comnorom.f}}} to {{{16-comnorom.f}}}
 rename {{{snet.f}}} to {{{17-snet.f}}}
 
 
+Line 146 -12. fsls - file system listing
 
+{{{
+fsls
 
+008000 002272 propforth.f
+00A280 000E77 LogicAnalyzer.f
+00B140 0020CE asm.f
+00D240 000D0F norom.f
+00DF80 001426 com.f
+00F3C0 000221 comnorom.f
+00F600 000112 snet.f
+
+8C0  bytes free in files system
+}}}
+
+Get a listing of the file EEPROM system.  I got the exact results that Sal did, if you do the same steps, you should too. 
 
 
 
