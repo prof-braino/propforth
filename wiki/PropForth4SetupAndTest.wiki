@@ -457,12 +457,31 @@ fl
 : comstat 4 cogio dup comcnt L@ . comerr L@ . 5 cogio dup comcnt L@ . comerr L@ . cr ;
 }}}
 
+cominit make cog 4 (on both master and slave) handle master transmissions; and makes cog 5 (on both master and slave) handle slave transmissions
+
+comstat displays the number of packet s sent out over the channel, followed by the number of errors on the channel. 
+
 Line 273 - step 16 execute the following at the prompt
 
 {{{
 cominit comstat
 4 0 term 
 }}}
+
+You should have seen this sequence displayed:
+
+{{{
+Prop0 Cog6 ok
+cominit comstat
+CE 0 EC 0
+Prop0 Cog6 ok
+4 0 term
+Hit CTL-F to exit term
+
+Prop0 Cog0 ok
+}}}
+
+This should mean that you are now running on the cog 0 of the slave prop? 
 
 
 
