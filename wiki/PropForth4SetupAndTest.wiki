@@ -152,6 +152,13 @@ Line 124 - Paste the content of {{{spinmaker.f}}} into {{{teraterm}}
 
 Rename {{{spinmaker.f}}} to {{{03-spinmaker.f}}} so it moves to its proper sequence in the list
 
+Execute the word {{{spinmaker}} at the forth prompt
+
+{{{
+
+
+}}}
+
 = under construction =
 
 Still adding text 2010-12-05
