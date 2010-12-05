@@ -413,7 +413,7 @@ Did it work?  YES! You see! It WORKS! HA HA HA HA HA!  And they said I was mad! 
 But I digress.  Be sure to hit a carriage return after each command:  sometimes it says UNDEFINED WORD after execution.  I don't know why it says this, I have to ask Sal.  I THINK there can be junk in the buffer when something switches, but I have not arrowed it down any further as I am writing this. 
 
 
-
+ALSO- I got different logic diagrams than Sal posted in the README.TXT.  Sal's 0C, 0D, 0E  were hi, mine were low.  I don't know If I skipped a step or if he skipped a step or performed and extra (unrecorded) step.  In any case, I seem to get the same thing every time, please post to the parallax forum if you see the same of different. 
 
 
 
