@@ -272,7 +272,7 @@ fsls
 
 Get a listing of the file EEPROM system.  I got the exact results that Sal did, if you do the same steps, you should too. 
 
-
+Line 162  step 13 - reboot.  IF you did all the steps correctly, the kernel should be loaded with the proper disctionary and the proper source files are in EEPROM.  You can do a reset or reboot to return to this point if you make a mistake or get an error. 
 
 = under construction =
 
