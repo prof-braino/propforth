@@ -220,8 +220,16 @@ line 134 - {{{fsclear}}}
 
 === load new 4.0 functions' source code into the EEPROM filesystem ===
 
+{{{
+propforth.f
+LogicAnalyzer.f
+asm.f
+norom.f
+com.f
+comnorom.f
+snet.f
 
-
+}}}
 
 
 
