@@ -181,7 +181,7 @@ ForthMemoryEnd
 Prop0 Cog6 ok
 }}}
 
-Sal used WinDiff, Prof_Braino used PSPad.  From {{{ForthDictStart}}} to {{{ForthMemoryEnd}}} the dictionary matches correctly.  
+Sal used {{{WinDiff}}}, {{{Prof_Braino}}} used {{{PSPad}}}.  From {{{ForthDictStart}}} to {{{ForthMemoryEnd}}} the dictionary matches correctly.  
 
 Therefore, {{{PropForth.spin}}} can load {{{PropForthCore.f}}} and use {{{spinmaker.f}}} to re-create {{{Propforth.spin's}}} forth definitions.
 
