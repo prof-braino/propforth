@@ -24,6 +24,32 @@ Lines 37-80  - HARDWARE configuration.
 SLAVE prop and SPINERET are optinal, I don't have my spineret yet, so I'm only adding SLAVE
 
                line 43 - safety resistors install these if using optional hardware       
+
+= TEST HARDWARE = 
+
+== MASTER ==
+
+Line 49  - Use any prop chip with a 5Mhz crystal and a 64K or greater EEPROM.  This specifically used a stock protoboard.  This is the chip that we load the spin image into eemrom, a will be talking to via PC serial port termial program
+
+== SLAVE ==
+
+Line 52 - This can be any prop chip. It does NOT need and EEPROM, in fact, for this experiement, it probably should NOT have any EEPROM, as we wnat to emulate the salve's eeprom.  This test configuration specifically uses a 40 pin dip P8X32A-D40. 
+
+Line 53 - The SLAVE NEEDS a .1 uF capacitor between power and ground RIGHT NEXT to the chip.  Don't ask me why, I don't know, I just follow instructions. 
+
+Line 55 - connect a 10K resistor between SLAVE PIN 38 ( I/O port P29 ) and Vdd +3.3 volts.  This pin will ALSO connect to the master in the next step
+
+Line 58 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 37 ( I/O Prot P28) 
+
+Line 59 - Protoboard MASTER P9 connects thru a 220 ohm resistor to DIP40 Pin 38 ( I/O Prot P29) This pin also has the 10K pull up to Vdd
+
+Line 60 - Protoboard MASTER P10 connects directly (no resistor) to DIP40 Pin 11 ( RESn RESET) This is just a straight wire.   OK, it probably bends a little, mine did.
+
+
+
+ 
+
+
                  
 
 = under construction =
