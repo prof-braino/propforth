@@ -483,6 +483,23 @@ Prop0 Cog0 ok
 
 The output indicates that cog 4 saw CE hex (206 decimal) packets and zero errors, and cog 5 saw EC hex (236 decimal) packets and 0 errors.  They did not display the same value because we check cog 5 a couple milliseconds later.  Is it 30packets/96packets per second = 0.3125 seconds? That seems a little long, but maybe I don't have it right. 
 
+Also, NOTICE that we are CONNECTED to the SLAVE prop at this point.  The instruction should include a step to change the SLAVE's PROP-id, but that it done later, so we can take this on faith for the time being. 
+
+BE SURE TO DO THE CTL+F here to exit from the SLAVE CONNECTION.  I forgot to do this one and could not figure out why i got stuck.  I was asking the slave to connect to HIS slave, and there isn't one, so it appeared to lock up. Sorry , these are just demos, when we get the real applications running this will be clearer. 
+
+When you do the CT:+F, the propmt changes from cog0 (on slave) to cog6 (on master)
+
+
+
+
+  
+
+
+
+line 273 step 16 -  start a terminal
+
+
+
 
 
 
