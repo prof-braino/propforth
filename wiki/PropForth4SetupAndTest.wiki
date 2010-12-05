@@ -26,12 +26,8 @@ SLAVE prop and SPINERET are optinal, I don't have my spineret yet, so I'm only a
                line 43 - safety resistors install these if using optional hardware       
                  
 
-Add your content here.
+= under construction =
 
+Still adding text 2010-12-05
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= End of page =
