@@ -47,6 +47,11 @@ Line 52 - This can be any prop chip. It does NOT need and EEPROM, in fact, for t
 
 == Physical Connections ==
 
+See Brian Riley's wiring diagram.  It looks ok to me, remember, this instruction discusses protoboard as MASTER, but the result is the same.
+
+http://forums.parallax.com/attachment.php?attachmentid=76056&d=1291441338
+
+
 === MASTER to SLAVE ===
 
 ==== EEPROM Emulations and Synchronous serial connection =====
