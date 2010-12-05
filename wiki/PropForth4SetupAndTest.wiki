@@ -183,7 +183,7 @@ Prop0 Cog6 ok
 
 Line 129 - Sal used {{{WinDiff}}}, {{{Prof_Braino}}} used {{{PSPad}}}.  From {{{ForthDictStart}}} to {{{ForthMemoryEnd}}} the dictionary matches correctly.  
 
-Therefore, {{{PropForth.spin}}} can load {{{PropForthCore.f}}} and use {{{spinmaker.f}}} to re-create {{{Propforth.spin's}}} forth definitions.
+Therefore, {{{PropForth.spin}}} can load {{{PropForthCore.f}}} and use {{{spinmaker.f}}} to re-create {{{PropForth.spin's}}} forth definitions.
 
 Test successful. 
 
@@ -200,7 +200,7 @@ line 132 - EEPROM file system
 
 reboot
 
-paste fs.f into termterm
+paste fs.f into teraterm
 
 saveforth
 
@@ -208,19 +208,19 @@ Please rename {{{fs.f}}} to {{{10-fs.f}}}
 
 _NOTICE:  This might look little weird here, this is how I think.
 
-_So far we have {{{00-README.TXT}}} which is the over view and general instructions. We keep refering back to {{{00-README.TXT}}}
+_So far we have {{{00-README.TXT}}} which is the over view and general instructions. We keep referring back to {{{00-README.TXT}}}
 
 _We have the regression test material, {{{01-PropForth.spin}}} {{{02-PropForthCore.f}}} {{{03-spinmaker.f}}} 
 
 _Now that we are into the actual new functions of Propforth version 4.0, the file name prefixes jump to {{{10-xxx.f}}}.
 
-_If this doesn't make sense, plese suggest another way to organize it.  his is not my strongest point._
+_If this doesn't make sense, please suggest another way to organize it.  This is not my strongest point._
 
-=== initalize the  EEPROM mini-filesystem ===
+=== initialize the EEPROM mini-filesystem ===
 
 line 134 - {{{fsclear}}}
 
-_NOTICE: This is where folks started to have trouble.  Must remember to load each file, do the saveforth, and execute the intialization words.   If you get and error, somethings gone wrong, start again._
+_NOTICE: This is where folks started to have trouble.  Must remember to load each file, do the saveforth, and execute the initialization words.   If you get and error, somethings gone wrong, start again._
 
 
 
