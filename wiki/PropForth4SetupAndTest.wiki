@@ -100,9 +100,17 @@ It will move to the top of the directory listing in windows, and we can see that
 
 == section 01 - Regression test == 
 
+The ultimate regression test of propforth is to have it re-create its own source.  It uses every function in this process.  (any function it does NOT use are in other files and tested separately.) This is optional, you can skip this and trust us that we did this already.  Wise people NEVER trust that this was done; personally I end up having to skip this all the time, and stuff blows up as a result. 
+
+=== Kernel ===
+
 Line 82 Propforth.spin - the tiniest kernel that Sal could make that is still what he call "propforth".  Load this into the protoboard EEPROM to make the protoboard "MASTER". It doesn't say MASTER anywhere yet, because he has no slaves yet.
 
 Please rename Propforth.spin to 01-Propforth.spin
+
+Using PropTool on the PC, load 01-Propforth.spin into MASTER's EEPROM
+
+
 
 Line          
 
