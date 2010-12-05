@@ -110,13 +110,15 @@ Load the kernel, load spinmaker, recreate the spin source, check that it came ou
 
 Line 82 Propforth.spin - the tiniest kernel that Sal could make that is still what he call "propforth".  Load this into the protoboard EEPROM to make the protoboard "MASTER". It doesn't say MASTER anywhere yet, because he has no slaves yet.
 
+Line 83 - 110 Descriptions of the files that will be used
+
 Please rename Propforth.spin to 01-Propforth.spin
 
-Using PropTool on the PC, load 01-Propforth.spin into MASTER's EEPROM
+Line 113 - Using PropTool on the PC, load 01-Propforth.spin into MASTER's EEPROM
 
-Using teraterm, verify the forth prompt appears.
+line 119 - Using teraterm, verify the forth prompt appears.
 
-execute the word 'words' to show that the dictionary is populated
+Line 121  (step 4) - execute the word 'words' to show that the dictionary is populated
 
 {{{
 words
@@ -139,7 +141,12 @@ Prop0 Cog6 ok
 
 .... goes on for many lines
 
-Line          
+== Recreate the kernel from its source ==
+
+
+Line 123 - Paste the content of PropForthCore.f into teraterm
+
+Rename PropForthCore.f to 02-PropForthCore.f so it moves to its proper sequence in the list
 
 = under construction =
 
