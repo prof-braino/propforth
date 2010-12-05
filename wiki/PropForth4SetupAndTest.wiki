@@ -1,4 +1,5 @@
 #summary Tutorial on Getting  Propforth 4.0 running
+#labels v4.0
 
 = On this version, Instructions are in the README file =
 
@@ -6,7 +7,7 @@ However, the instructions were Sal's "notes"  during development
 
 You mission, should decide to accept it, is to help re-write the notes in a form the regular people can use.  However, if you do not accept this mission, you will self destruct in five seconds. Good luck.
 
-=  What's in the Reeadme file =
+=  What's in the Readme file =
 
 This is a set of Sal's regression testing the he performs each time he updates propforth. 
 
@@ -16,9 +17,14 @@ README.TXT - analysis
 Lines  1-36  - description of release.  Useful to read.  
 Lines 37-80  - HARDWARE configuration.  
                Optional, kernel runs on all prop chips
+               line 39 descriptin for testbed MASTER - proptoboard
+               line 40 description of testbed SLAVE  - P8X32A-D40
+               line 41 description of spineret ETHERNET - 
 
-        
+SLAVE prop and SPINERET are optinal, I don't have my spineret yet, so I'm only adding SLAVE
 
+               line 43 - safety resistors install these if using optional hardware       
+                 
 
 Add your content here.
 
