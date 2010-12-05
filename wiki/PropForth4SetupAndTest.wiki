@@ -187,7 +187,7 @@ Therefore, {{{PropForth.spin}}} can load {{{PropForthCore.f}}} and use {{{spinma
 
 Test successful. 
 
-== section 02 - the new {{{PropForth 4.0 }}} material == 
+== PART C - the new {{{PropForth 4.0 }}} material == 
 
 mini EEPROM File system
 
@@ -200,6 +200,19 @@ reboot
 paste fs.f into termterm
 
 saveforth
+
+Please rename {{{fs.f}}} to {{{10-fs.f}}} 
+
+_NOTICE:  This might look little weird here, this is how I think.
+
+So far we have {{{00-README.TXT}}} which is the over view and general instructions. We keep refering back to {{{00-README.TXT}}}
+
+We have the regression test material, {{{01-PropForth.spin}}} {{{02-PropForthCore.f}}} {{{03-spinmaker.f}}} 
+
+Now that we are into the actual new functions of Propforth version 4.0, the file name prefixes jump to {{{10-xxx.f}}}.
+
+If this doesn't make sense, plese suggest another way to organize it.  his is not my strongest point._
+
 
 
 
