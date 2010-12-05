@@ -487,22 +487,49 @@ Also, NOTICE that we are CONNECTED to the SLAVE prop at this point.  The instruc
 
 BE SURE TO DO THE CTL+F here to exit from the SLAVE CONNECTION.  I forgot to do this one and could not figure out why i got stuck.  I was asking the slave to connect to HIS slave, and there isn't one, so it appeared to lock up. Sorry , these are just demos, when we get the real applications running this will be clearer. 
 
-When you do the CT:+F, the propmt changes from cog0 (on slave) to cog6 (on master)
+lines 308 and 309 show that you can put items on the slave cog0 stack, and pop them off. 
+
+When you do the CTL+F, the prompt changes from cog0 (on slave) to cog6 (on master)
 
 
+=== SLAVE no ROM
+
+line 314, 316 step 17 -  slave no ROM tests
+
+AFter reboot, the dictionary is cleared, load norom.f from EEPROM:
+
+{{{
+fsload norom.f
+}}}
+
+Be sure the text scrolls down the screen, or the load was not successfull
+
+Define the words:
+
+{{{
+fl
+: bootslave 8 9 A B rambootnx ;
+: demo bootslave 1 0 e100 4 startserialcog 10 delms 4 0 term ;
+
+\ 4 0 term - will connect again after demo is run
+}}}
+
+lines 320 to 325 show what you paste into the terminal, lines 327 to 334 show what is echoed back.
+
+Line 335 - execute the demo:
+
+{{{
+demo
+}}}
+
+And this is where it locked up for me.
 
 
-  
+Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
 
+Cheers! 
 
-
-line 273 step 16 -  start a terminal
-
-
-
-
-
-
+Braino
 
 = under construction =
 
