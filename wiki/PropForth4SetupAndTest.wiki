@@ -35,6 +35,16 @@ Line 49  - Use any prop chip with a 5Mhz crystal and a 64K or greater EEPROM.  T
 
 Line 52 - This can be any prop chip. It does NOT need and EEPROM, in fact, for this experiement, it probably should NOT have any EEPROM, as we wnat to emulate the salve's eeprom.  This test configuration specifically uses a 40 pin dip P8X32A-D40. 
 
+== Physical Connections ==
+
+=== MASTER to SLAVE ===
+
+==== EEPROM Emulations and Synchronous serial connection =====
+
+Initally, this connection is use for the MASTER to emulates the EEPROM for the SLAVE, so the MASTER can send over a copy of his code when the slave boots.  
+
+AFTER the slave is booted, this same connection is used as the high speed synchronous serial connection.  
+
 Line 53 - The SLAVE NEEDS a .1 uF capacitor between power and ground RIGHT NEXT to the chip.  Don't ask me why, I don't know, I just follow instructions. 
 
 Line 55 - connect a 10K resistor between SLAVE PIN 38 ( I/O port P29 ) and Vdd +3.3 volts.  This pin will ALSO connect to the master in the next step
@@ -45,12 +55,17 @@ Line 59 - Protoboard MASTER P9 connects thru a 220 ohm resistor to DIP40 Pin 38 
 
 Line 60 - Protoboard MASTER P10 connects directly (no resistor) to DIP40 Pin 11 ( RESn RESET) This is just a straight wire.   OK, it probably bends a little, mine did.
 
+Line 61 - Protoboard MASTER P11 connects directly (no resistor) to DIP40 Pin 30 ( XI Crystal input) This is just a straight wire.   OK, it also bends a little, mine did.
 
+==== secondary asynchornous serail connections ====
 
- 
+Line 63 - This is a secondary serial connection.  
 
+=== MASTER to SPINERET ===
 
-                 
+I don't have my spineret yet.  I skipped this for now 20101205 
+
+          
 
 = under construction =
 
