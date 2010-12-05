@@ -61,7 +61,7 @@ Line 60 - Protoboard MASTER P10 connects directly (no resistor) to DIP40 Pin 11 
 
 Line 61 - Protoboard MASTER P11 connects directly (no resistor) to DIP40 Pin 30 ( XI Crystal input) This is just a straight wire.   OK, it also bends a little, mine did.
 
-==== secondary asynchornous serail connections ====
+==== secondary asynchronous serial connections ====
 
 Line 63 - This is a secondary serial connection.  Some of the tests use it?  I skipped this the first time through and the tests froze.  Trying is out now....  
 
