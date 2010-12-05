@@ -23,15 +23,15 @@ README.TXT - analysis
 
 Lines  1-36  - description of release.  Useful to read.  
 
-Lines 37-80  - HARDWARE configuration.  Optional,  if you do not want to try the multi-prop AND spineret material
+Lines 37-80  - HARDWARE configuration.  Optional,  if you do not want to try the multi-prop AND spinneret material
 
- line 39 descriptin for testbed MASTER - proptoboard
+ line 39 description for testbed MASTER - protoboard
  
  line 40 description of testbed SLAVE  - P8X32A-D40
 
- line 41 description of spineret ETHERNET - 
+ line 41 description of spinneret ETHERNET - 
 
-SLAVE prop and SPINERET are optinal, I don't have my spineret yet, so I'm only adding SLAVE
+SLAVE prop and SPINNERET are optional, I don't have my spinneret yet, so I'm only adding SLAVE
 
                line 43 - safety resistors install these if using optional hardware       
 
@@ -39,11 +39,11 @@ SLAVE prop and SPINERET are optinal, I don't have my spineret yet, so I'm only a
 
 == MASTER ==
 
-Line 49  - Use any prop chip with a 5Mhz crystal and a 64K or greater EEPROM.  This specifically used a stock protoboard.  This is the chip that we load the spin image into eemrom, a will be talking to via PC serial port termial program
+Line 49  - Use any prop chip with a 5Mhz crystal and a 64K or greater EEPROM.  This specifically used a stock protoboard.  This is the chip that we load the spin image into EEPROM, a will be talking to via PC serial port terminal program
 
 == SLAVE ==
 
-Line 52 - This can be any prop chip. It does NOT need and EEPROM, in fact, for this experiement, it probably should NOT have any EEPROM, as we wnat to emulate the salve's eeprom.  This test configuration specifically uses a 40 pin dip P8X32A-D40. 
+Line 52 - This can be any prop chip. It does NOT need and EEPROM, in fact, for this experiment, it probably should NOT have any EEPROM, as we want to emulate the salve's EEPROM.  This test configuration specifically uses a 40 pin dip P8X32A-D40. 
 
 == Physical Connections ==
 
@@ -56,7 +56,7 @@ http://forums.parallax.com/attachment.php?attachmentid=76056&d=1291441338
 
 ==== EEPROM Emulations and Synchronous serial connection =====
 
-Initally, this connection is use for the MASTER to emulates the EEPROM for the SLAVE, so the MASTER can send over a copy of his code when the slave boots.  
+Initially, this connection is use for the MASTER to emulates the EEPROM for the SLAVE, so the MASTER can send over a copy of his code when the slave boots.  
 
 AFTER the slave is booted, this same connection is used as the high speed synchronous serial connection.  
 
@@ -64,9 +64,9 @@ Line 53 - The SLAVE NEEDS a .1 uF capacitor between power and ground RIGHT NEXT 
 
 Line 55 - connect a 10K resistor between SLAVE PIN 38 ( I/O port P29 ) and Vdd +3.3 volts.  This pin will ALSO connect to the master in the next step
 
-Line 58 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 37 ( I/O Prot P28) 
+Line 58 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 37 ( I/O Port P28) 
 
-Line 59 - Protoboard MASTER P9 connects thru a 220 ohm resistor to DIP40 Pin 38 ( I/O Prot P29) This pin also has the 10K pull up to Vdd
+Line 59 - Protoboard MASTER P9 connects thru a 220 ohm resistor to DIP40 Pin 38 ( I/O Port P29) This pin also has the 10K pull up to Vdd
 
 Line 60 - Protoboard MASTER P10 connects directly (no resistor) to DIP40 Pin 11 ( RESn RESET) This is just a straight wire.   OK, it probably bends a little, mine did.
 
@@ -78,19 +78,19 @@ Line 63 - This is a secondary serial connection.  Some of the tests use it?  I s
 
 Connect the MASTER's I/O ports P0 and P1 to the slaves default serial lines p30 and P31 using 220 ohm resistors as before:
 
-Line 65 - Protoboard MASTER P0 connects thru a 220 ohm resistor to DIP40 Pin 39 ( I/O Prot P30) 
+Line 65 - Protoboard MASTER P0 connects thru a 220 ohm resistor to DIP40 Pin 39 ( I/O Port P30) 
 
-Line 66 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 40 ( I/O Prot P31) 
+Line 66 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 40 ( I/O Port P31) 
 
 The MASTER will be able to talk to the SLAVES serial port just like any terminal program would.  If you want additional serial ports on the MASTER like walimu does, this is the example of how to set it up using MASTER P0 and P1. 
 
-=== MASTER to SPINERET ===
+=== MASTER to SPINNERET ===
 
 I don't have my spinneret yet.  I skipped this for now 20101205 
 
 = PropForth 4.0 Source Files =
 
-Ok. Now for some BRANIO re-organization.  Many (most?) of the issues folks have been reporting are due to confusion in the source files.   There are a bunch of source files, and they are handled differently, and are used for different purposed and they are all bunched together.  So I made progress after I re-organized them like so:  This instruction ask you to RE-NAME the files with a NUMBER infront so you can tell what order they are used in.  That way, are less like to forget one. (Which is why you had problems earlier in the week). 
+Ok. Now for some BRANIO re-organization.  Many (most?) of the issues folks have been reporting are due to confusion in the source files.   There are a bunch of source files, and they are handled differently, and are used for different purposed and they are all bunched together.  So I made progress after I re-organized them like so:  This instruction ask you to RE-NAME the files with a NUMBER in front so you can tell what order they are used in.  That way, are less like to forget one. (Which is why you had problems earlier in the week). 
 
 == section 00 - The README.TXT file ==
 
@@ -101,6 +101,8 @@ It will move to the top of the directory listing in windows, and we can see that
 == section 01 - Regression test == 
 
 Line 82 Propforth.spin - the tiniest kernel that Sal could make that is still what he call "propforth".  Load this into the protoboard EEPROM to make the protoboard "MASTER". It doesn't say MASTER anywhere yet, because he has no slaves yet.
+
+Please rename Propforth.spin to 01-Propforth.spin
 
 Line          
 
