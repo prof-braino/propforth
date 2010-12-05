@@ -299,6 +299,27 @@ http://forums.parallax.com/showthread.php?99222-Propeller-DEMO-(14.5-Meg-Baud)-H
 It worked in the 3.6 development release.  I don't think I got "broken" during the clean up, but something is at lest "different".   
 
 
+Here goes:
+
+Line 164 - execute the following at the forth prompt- starts up 2 clocks on IO pins A & B
+
+{{{c" hex a aae60 setHza b 6ACFC0 setHzb" 5 cogx}}}
+
+_NOTE:  on the parallax forum thread,
+
+http://forums.parallax.com/showthread.php?127549-PropForth-4.0-is-available-for-download
+
+starting at post #&
+
+this is the point at which caskaz had an error.  I had the exact same error until I went thru and started renaming all the files to make sure I did everything in the right order.  After I did it a second (ok fifth) time and made sure I did everything in the right order and didn't skip any steps, it worked.  So the instructions in the readme aren't wrong, per se, that are just a little complicated and hard to follow.  Maybe Brian can get them right the first time, but I sure couldn't.  Hang in there it will work._ 
+
+Execute the following words:
+
+
+
+
+
+
 
 
 
