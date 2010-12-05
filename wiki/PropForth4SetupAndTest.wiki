@@ -77,6 +77,10 @@ The MASTER will be able to talk to the SLAVES serial port just like any terminal
 
 I don't have my spineret yet.  I skipped this for now 20101205 
 
+= PropForth 4.0 Source Files =
+
+Ok. Now for some BRANIO re-organization.  Many (most?) of the issues folks have been reporting are due to confusion in the source files.   There are a bunch of source files, and they are handled differently, and are used for different purposed and they are all bunched together.  So I made progress after I re-organized them like so:  This instruction ask you to RE-NAME the files with a NUMBER infront so you can tell what order they are used in.  That way, are less like to forget one. (Which is why you had problems earlier in the week). 
+
           
 
 = under construction =
