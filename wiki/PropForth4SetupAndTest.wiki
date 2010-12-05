@@ -231,10 +231,21 @@ snet.f
 
 }}}
 
+If it helps to keep organized, they this- rename the files after loading as you go: 
 
+rename {{{propforth.f}}} to {{{11-propforth.f}}}
 
+rename {{{LogicAnalyzer.f}}} to {{{12-LogicAnalyzer.f}}}
 
+rename {{{asm.f}}} to {{{13-asm.f}}}
 
+rename {{{norom.f}}} to {{{14-norom.f}}}
+
+rename {{{com.f}}} to {{{15-com.f}}}
+
+rename {{{comnorom.f}}} to {{{16-comnorom.f}}}
+
+rename {{{snet.f}}} to {{{17-snet.f}}}
 
 
 
