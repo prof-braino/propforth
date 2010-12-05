@@ -104,7 +104,7 @@ The ultimate regression test of propforth is to have it re-create its own source
 
 The recommended method is to run the regression test at least once when you get a new release to confirm I didn't miss anything.  
 
-Load the kernel, load spinmaker, recrreate the spin source, check that it came out the same as it went in; as described below:
+Load the kernel, load spinmaker, recreate the spin source, check that it came out the same as it went in; as described below:
 
 === Kernel ===
 
@@ -113,6 +113,16 @@ Line 82 Propforth.spin - the tiniest kernel that Sal could make that is still wh
 Please rename Propforth.spin to 01-Propforth.spin
 
 Using PropTool on the PC, load 01-Propforth.spin into MASTER's EEPROM
+
+Using teraterm, verify the forth prompt appears.
+
+execute the word 'words' to show that the dictionary is populated
+
+{{{
+words
+
+
+}}}
 
 
 
