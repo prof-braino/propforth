@@ -191,7 +191,7 @@ Test successful.
 
 mini EEPROM File system
 
-=== load EEPROM mini-filesystem ===
+=== load EEPROM mini-filesystem source code ===
 
 line 132 - EEPROM file system
 
@@ -213,6 +213,12 @@ _Now that we are into the actual new functions of Propforth version 4.0, the fil
 
 _If this doesn't make sense, plese suggest another way to organize it.  his is not my strongest point._
 
+=== initalize the  EEPROM mini-filesystem ===
+
+line 134 - {{{fsclear}}}
+
+
+=== load new 4.0 functions' source code into the EEPROM filesystem ===
 
 
 
