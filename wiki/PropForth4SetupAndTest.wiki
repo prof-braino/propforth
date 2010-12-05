@@ -431,13 +431,15 @@ Prop0 Cog6 ok
 
 }}}
 
-=== 
-
 === set up the High Speed Synchronous Serial channels ===
 
+Line 257 - set up com.f
 
+reboot
 
+fsload com.f
 
+You should see the source code scroll across the screen. the last definition inthe dictionary (check with words) should be comslave
 
 
 
