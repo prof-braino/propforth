@@ -59,7 +59,15 @@ Line 61 - Protoboard MASTER P11 connects directly (no resistor) to DIP40 Pin 30 
 
 ==== secondary asynchornous serail connections ====
 
-Line 63 - This is a secondary serial connection.  
+Line 63 - This is a secondary serial connection.  Some of the tests use it?  I skipped this the first time through and the tests froze.  Trying is out now....  
+
+Connect the MASTER's I/O ports P0 and P1 to the slaves default serial lines p30 and P31 using 220 ohm resistors as before:
+
+Line 65 - Protoboard MASTER P0 connects thru a 220 ohm resistor to DIP40 Pin 39 ( I/O Prot P30) 
+
+Line 66 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 40 ( I/O Prot P31) 
+
+The MASTER will be able to talk to the SLAVES serial port just like any terminal program would.  If you want additional serial ports on the MASTER like walimu does, this is the example of how to set it up using MASTER P0 and P1. 
 
 === MASTER to SPINERET ===
 
