@@ -187,7 +187,11 @@ Therefore, {{{PropForth.spin}}} can load {{{PropForthCore.f}}} and use {{{spinma
 
 Test successful. 
 
-== load the new (((PropForth 4.0 }}} EEPROM mini-filesystem ==
+== section 02 - the new (((PropForth 4.0 }}} material == 
+
+mini EEPROM File system
+
+=== load EEPROM mini-filesystem ===
 
 line 132 - EEPROM file system
 
