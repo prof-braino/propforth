@@ -120,11 +120,24 @@ execute the word 'words' to show that the dictionary is populated
 
 {{{
 words
+NFA (Forth/Asm Immediate eXecute) Name
+00397A F   fsdrop               003866 F   fswrite              003852 F   (fsk)                003836 F   fsload
+003810 F   (fsload)             0037F4 F   fsread               00377A F   (fsread)             003708 F   fsls
+0036CC F   fsfree               0036BA F   fsclear              003688 F   fsclr                00364C F   (fslast)
+0035FE F   (fsfind)             0035C2 F   (fsfree)             00358C F   (fsrd)               003556 F   (fswr)
+003530 F   (fsnext)             003518 F   (fspa)               003508 F   EC@                  0034EA F   EW@
+00342C F   _eeread              003398 F   eereadpage           003350 F   _eeread              00333E F   padbl
+
+....
+
+000CF6 F   prop                 000CC4 F   (version)            000CB0 F   (prop)               000CA2 F   propid
+000C94 F   memend               000C86 F   dictend              000C7A F   here
+Prop0 Cog6 ok
 
 
 }}}
 
-
+.... goes on for many lines
 
 Line          
 
