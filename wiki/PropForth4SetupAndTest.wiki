@@ -14,12 +14,16 @@ This is a set of Sal's regression testing the he performs each time he updates p
 Please notice, these are the critical "Highlights" that show the final results.  He does a LOT more during development.   So, some of the steps that are "obvious" are left out.  Unfortunately for you and me, these steps are not so obvious.   So lets re examine this to see what we can see.
 
 README.TXT - analysis
+
 Lines  1-36  - description of release.  Useful to read.  
-Lines 37-80  - HARDWARE configuration.  
-               Optional, kernel runs on all prop chips
-               line 39 descriptin for testbed MASTER - proptoboard
-               line 40 description of testbed SLAVE  - P8X32A-D40
-               line 41 description of spineret ETHERNET - 
+
+Lines 37-80  - HARDWARE configuration.  Optional,  if you do not want to try the multi-prop AND spineret material
+
+ line 39 descriptin for testbed MASTER - proptoboard
+ 
+ line 40 description of testbed SLAVE  - P8X32A-D40
+
+ line 41 description of spineret ETHERNET - 
 
 SLAVE prop and SPINERET are optinal, I don't have my spineret yet, so I'm only adding SLAVE
 
