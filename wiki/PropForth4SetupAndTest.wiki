@@ -309,7 +309,7 @@ _NOTE:  on the parallax forum thread,
 
 http://forums.parallax.com/showthread.php?127549-PropForth-4.0-is-available-for-download
 
-starting at post #&
+starting at post #7
 
 this is the point at which caskaz had an error.  I had the exact same error until I went thru and started renaming all the files to make sure I did everything in the right order.  After I did it a second (ok fifth) time and made sure I did everything in the right order and didn't skip any steps, it worked.  So the instructions in the readme aren't wrong, per se, that are just a little complicated and hard to follow.  Maybe Brian can get them right the first time, but I sure couldn't.  Hang in there it will work._ 
 
@@ -414,6 +414,21 @@ But I digress.  Be sure to hit a carriage return after each command:  sometimes 
 
 
 ALSO- I got different logic diagrams than Sal posted in the README.TXT.  Sal's 0C, 0D, 0E  were hi, mine were low.  I don't know If I skipped a step or if he skipped a step or performed and extra (unrecorded) step.  In any case, I seem to get the same thing every time, please post to the parallax forum if you see the same of different. 
+
+ALSO - I got two different results for the displayTriggerFrequency and I don't know why.
+
+{{{
+Prop0 Cog6 ok
+decimal displayTriggerFrequency hex
+695652.173
+Prop0 Cog6 ok
+
+Prop0 Cog6 ok
+decimal displayTriggerFrequency hex
+701754.385
+Prop0 Cog6 ok
+
+}}}
 
 
 
