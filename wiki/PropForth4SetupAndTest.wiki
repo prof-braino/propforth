@@ -274,6 +274,21 @@ Get a listing of the file EEPROM system.  I got the exact results that Sal did, 
 
 Line 162  step 13 - reboot.  IF you did all the steps correctly, the kernel should be loaded with the proper disctionary and the proper source files are in EEPROM.  You can do a reset or reboot to return to this point if you make a mistake or get an error. 
 
+=== set up the High Speed Synchronous Serial channels ===
+
+This is the cool part.  The High Speed Synchronous Serial channels are similar to Beau Schwabe's High Speed Serial from 
+
+http://forums.parallax.com/showthread.php?99222-Propeller-DEMO-(14.5-Meg-Baud)-High-Speed-Prop-to-Prop-Serial-Communication
+
+It worked in the 3.6 development release.  I don't think I got "broken" during the clean up, but something is at lest "different".   
+
+
+
+
+
+
+
+
 = under construction =
 
 Still adding text 2010-12-05
