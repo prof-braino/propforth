@@ -102,6 +102,10 @@ It will move to the top of the directory listing in windows, and we can see that
 
 The ultimate regression test of propforth is to have it re-create its own source.  It uses every function in this process.  (any function it does NOT use are in other files and tested separately.) This is optional, you can skip this and trust us that we did this already.  Wise people NEVER trust that this was done; personally I end up having to skip this all the time, and stuff blows up as a result. 
 
+The recommended method is to run the regression test at least once when you get a new release to confirm I didn't miss anything.  
+
+Load the kernel, load spinmaker, recrreate the spin source, check that it came out the same as it went in; as described below:
+
 === Kernel ===
 
 Line 82 Propforth.spin - the tiniest kernel that Sal could make that is still what he call "propforth".  Load this into the protoboard EEPROM to make the protoboard "MASTER". It doesn't say MASTER anywhere yet, because he has no slaves yet.
