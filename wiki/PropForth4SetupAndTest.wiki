@@ -193,6 +193,9 @@ mini EEPROM File system
 
 === load EEPROM mini-filesystem source code ===
 
+_NOTICE: before performing this step, edit fs.f it has an error.  fs.f line 30 (in the comments section) should also be a comment.  Add a slash to the beginning of this line or you will get an error.  It's probably a small thing, but since we are having trouble we will remove ALL errors until it works._
+
+
 line 132 - EEPROM file system
 
 reboot
