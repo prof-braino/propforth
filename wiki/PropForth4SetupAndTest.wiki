@@ -481,9 +481,7 @@ Hit CTL-F to exit term
 Prop0 Cog0 ok
 }}}
 
-This should mean that you are now running on the cog 0 of the slave prop? 
-
-
+The output indicates that cog 4 saw CE hex (206 decimal) packets and zero errors, and cog 5 saw EC hex (236 decimal) packets and 0 errors.  They did not display the same value because we check cog 5 a couple milliseconds later.  Is it 30packets/96packets per second = 0.3125 seconds? That seems a little long, but maybe I don't have it right. 
 
 
 
