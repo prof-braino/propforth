@@ -272,7 +272,23 @@ fsls
 
 Get a listing of the file EEPROM system.  I got the exact results that Sal did, if you do the same steps, you should too. 
 
-Line 162  step 13 - reboot.  IF you did all the steps correctly, the kernel should be loaded with the proper disctionary and the proper source files are in EEPROM.  You can do a reset or reboot to return to this point if you make a mistake or get an error. 
+Line 162  step 13 - reboot.  IF you did all the steps correctly, the kernel should be loaded with the proper dictionary and the proper source files are in EEPROM.  You can do a reset or reboot to return to this point if you make a mistake or get an error. 
+
+
+=== Load LogicAnalyser ===
+
+The Software  logic analyzer is one of the cooler things in propforth.  If you don't know how to use a logic analyszer or even what it is (I sure don't) just do these steps anyway.  The logic analyszer is NOT required.  BUT it is part of this test, and since we have an example that works, it will serve at an intro to LogicAnalyzers to all the users.
+
+type in 
+
+{{{ fsload LogicAnalyzer.f}}}
+
+You will the source code scrolling across the screen just as before when we did the load to EEPROM.  The difference is that it is now compiled into the dictionary.  
+
+The OTHER difference is that a whole bunch of this stuff is in assemble and is compile only to the cog in which it is running.  There are labels in the main hub dictionary, but the executable assebler is only in the targeted cog.  
+
+BE CAREFUL.  You can see the labels from ANY cog (they are in the main dictionary) BUT only the target cog can run LogicAnalyzer because she's the only one with the assemble routines.  The other guys may try, but they will probably crash or go crazy.  So be aware of this.
+
 
 === set up the High Speed Synchronous Serial channels ===
 
