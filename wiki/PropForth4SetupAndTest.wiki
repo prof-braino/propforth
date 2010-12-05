@@ -3,6 +3,12 @@
 
 = On this version, Instructions are in the README file =
 
+Download the release archive and unpack it to your work area.
+
+http://code.google.com/p/propforth/downloads/detail?name=2010NOV29%20V4.0%20RELEASE.zip
+
+Find the README.txt file.  These are the instruction straight from the author himself. 
+
 However, the instructions were Sal's "notes"  during development
 
 You mission, should decide to accept it, is to help re-write the notes in a form the regular people can use.  However, if you do not accept this mission, you will self destruct in five seconds. Good luck.
