@@ -315,6 +315,23 @@ this is the point at which caskaz had an error.  I had the exact same error unti
 
 Execute the following words:
 
+{{{
+sampleNoTrigger
+sampleTrigger
+sampleFourTrigger
+sampleOneNoTrigger
+
+decimal displayTriggerFrequency hex
+}}}
+
+After each you should see the logic diagrams for hi and low on the control pins:
+
+{{{
+
+}}}
+
+
+
 
 
 
