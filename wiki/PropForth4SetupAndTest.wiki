@@ -220,6 +220,9 @@ _If this doesn't make sense, plese suggest another way to organize it.  his is n
 
 line 134 - {{{fsclear}}}
 
+_NOTICE: This is where folks started to have trouble.  Must remember to load each file, do the saveforth, and execute the intialization words.   If you get and error, somethings gone wrong, start again._
+
+
 
 === load new 4.0 functions' source code into the EEPROM filesystem ===
 
