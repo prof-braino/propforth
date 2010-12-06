@@ -1,10 +1,11 @@
 #summary The main page forth PropForth
-#labels v3.4
+#labels v3.4,v4.0
 
 = The main page forth PropForth =
 
   * PropForthStatus
   * [http://code.google.com/p/propforth/wiki/PropForthFAQ PropForthFAQ]
+  * [http://code.google.com/p/propforth/wiki/PropForth4SetupAndTest PropForth 4]
 
 PropForth was written specifically for the Propeller from Parallax. A really cool architecture but different enough that a forth tuned to the Propeller was necessary.
 
