@@ -9,7 +9,26 @@ The support is there, but we didn't write the examples yet. At least, we didn't 
 
 http://code.google.com/p/propforth/wiki/PropForth4SetupAndTest
 
-Since the clean-up for 4.0 some things are a little different and my example4s don't work the same.  So at least the documentation is a little rougher around the edges than usual. I'm up to the ROM-less demo {{{(NOROM.F)}}}  where the examples stop working for me. The docs should improve through December. 
+Since the clean-up for 4.0 some things are a little different and my examples don't work the same.  So at least the documentation is a little rougher around the edges than usual. I'm up to the ROM-less demo {{{(NOROM.F)}}}  where the examples stop working for me. The docs should improve through December. 
+
+= How does this MASTER / SLAVE arrangement work? =
+
+The MASTER is the prop with the EERROM image for PropForth. 
+The EEPROM image contains code for establishing synchronous serial channels to other props.
+One cog is consumed in establishing a synchronous serial channel. 
+The MASTER has 5 cogs available.  
+The MASTER can establish communication to up to 5 SLAVES.
+Each SLAVE establishes a communications channel to its master, leaving seven cogs available. 
+After the master boots, it tries to reset and boot any slaves that might be out there. 
+If any slave responds, the master emulates EEPROM for the slave, sending the same ROM image as in the master. 
+Each slave executes that same code as the master did, and can have sub-slaves.
+
+A lone Prop has 5 cogs available (due to overhead for user I/O).  
+A MASTER with 5 slaves has 5 * 7 = 35 cogs available, 5 * 28 = 140 pins available.  
+A master with 5 slaves (sub-masters) and 35 sub-slave has 25 * 7 = 245 cogs available.
+
+NOTE:  We haven't built any of these yet, we plan to post if we find any success.
+
 
 = Why don't all your examples work with the current version? =
 
