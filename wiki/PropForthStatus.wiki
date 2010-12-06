@@ -1,12 +1,14 @@
 #summary Status of PropForth
 
-=== Planned PropForth 4.0 November/December 2010 ===
+=== PropForth 4.0 Released December 05 2010 ===
 
 Reorganized Kernel:
 
- - PropForthCoreV4.0.spin - the simplest kernel that can compile forth source code
+ - {{{PropForth.spin}}}  - the simplest kernel that can compile forth source code in SPIN
 
- - PropForthV4.0.f - all necessary Kernel function beyond the core
+ - {{{PropForthCore.f}}} - the simplest kernel that can compile forth source code FORTH SOURCE
+
+ - {{{PropForth.f}}} - all necessary Kernel function beyond the core
 
 It was determined that the kernel too big again.  During re-organization, the above method was selected.  All kernel functions will be available in high level forth source code. 
 
@@ -21,6 +23,8 @@ High Speed serial from non released V3.6 will be cleaned up in the transition to
  - fl: fixes to FASTLOAD
 
 Change current behavior of loading the source into memory in one pass as a single chunk, and interpreting all the source in a second pass as one chunk.  After months of research, it was determined that the prop has multiple cogs, so a cog could start loading the source, and another cog could start interpreting the source.  Took a while, but we finally noticed.  Consider change in  handling of in-line comments so the input buffer does not overrun when code is followed by a comment on the same line. 
+
+
 
 === PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
 
