@@ -285,19 +285,19 @@ type in
 
 You will the source code scrolling across the screen just as before when we did the load to EEPROM.  The difference is that it is now compiled into the dictionary.  
 
-NOTICE - IF you did NOT see the code scrolling across the screen, the source code did not load into the dictionary.  type in "words" and you should:
+_NOTICE - IF you did NOT see the code scrolling across the screen, the source code did not load into the dictionary.  type in "words" and you should:_
 
-{{{{
+{{{
 words
 NFA (Forth/Asm Immediate eXecute) name
 displayTriggerFrequency004....
 }}}
 
-If the last definition in the dictionary (the frist word printed) is NOT displayTriggerFrequency, then something went wrong.  Stop amd try again.
+_If the last definition in the dictionary (the frist word printed) is NOT displayTriggerFrequency, then something went wrong.  Stop amd try again._
 
-NOTICE - IF you COPY and PASTE the text {{{ fsload LogicAnalyzer.f}}} from the readme.txt file, the source might not scroll.  There could be a bug in fs.f, or someplace else.  Watch out for this so you don't get stuck.
+_NOTICE - IF you COPY and PASTE the text {{{ fsload LogicAnalyzer.f}}} from the readme.txt file, the source might not scroll.  There could be a bug in fs.f, or someplace else.  Watch out for this so you don't get stuck._
 
-The OTHER difference is that a whole bunch of this stuff is in assemble and is compile only to the cog in which it is running.  There are labels in the main hub dictionary, but the executable assebler is only in the targeted cog.  
+An interesting aspect of the logic analyzer is that a whole bunch of this stuff is in assembler and is compiled only to the cog in which it is running.  There are labels in the main hub dictionary, but the executable assebler is only in the targeted cog.  
 
 BE CAREFUL.  You can see the labels from ANY cog (they are in the main dictionary) BUT only the target cog can run LogicAnalyzer because she's the only one with the assemble routines.  The other guys may try, but they will probably crash or go crazy.  So be aware of this.
 
