@@ -110,3 +110,38 @@ saveforth
 ..............................................................................................................................
 Prop0 Cog6 ok
 }}}
+
+== Erasing the file system ==
+
+The first time you use the file system, tyoe, *fsclear* to erase everything.   If you ever suspect the file system get corrupted, or you accidentally wrtoe to the wrong area of EEPROM, or you want to get rid of all the files in the file system and start clear, use *fsclear*.
+
+== Using the EEPROM file system ==
+
+Using the EEPROM  file system is very simple, but does require two additional steps.
+
+The first step is to add the line *fswrite ThisFileName* after the _fl_ line in each file to be put in the EEPROM. 
+
+
+EXAMPLE:
+{{{
+\  propforth.f 
+fl
+
+fswrite propforth.f
+
+....  <rest of file>
+}}}
+
+You can see the contents of the file system with the word *fsls* (file system listing).  This command displays the file name, the start address, the files size in bytes for each file. It also displays the total byte free.
+
+Now the file is in EEPROM, and will persist between resets. Whee! don't t have to reload it any more!
+
+The second step is LOAD the file into memory.  This has the same effect as copy paste a text file into the terminal window, except it reads from EEPROM so its slightly faster, and youdon't have to do that actual copy / paste again.
+
+{{{
+fsload propforth.f
+}}}
+
+The text will scroll down the screen just as if copy /paste'd.
+
+NOTE:  If the fsload filename.f command does NOT scroll the text, there was an error. Hit enter a couple times and try it again.  We know about this situation and are trying to nail down the cause and how to fix it. 
