@@ -145,3 +145,11 @@ fsload propforth.f
 The text will scroll down the screen just as if copy /paste'd.
 
 NOTE:  If the fsload filename.f command does NOT scroll the text, there was an error. Hit enter a couple times and try it again.  We know about this situation and are trying to nail down the cause and how to fix it. 
+
+== summary ==
+
+You can have code in EEPROM, and it will persist between resets.  During development, you should reset often.  At least after analyzing each error. 
+
+Reload your already tested and working source from EEPROM
+
+CHEERS!
