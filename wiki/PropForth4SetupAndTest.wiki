@@ -99,7 +99,7 @@ I don't know if my connections are wrong (likely) or if there is an error in the
 
 `snet.f` - loads, but does not execute.  Does not return to the master using ctl+f
 
-'spineret_eth.f` - does not load completely.  UNDEFINED WORD 'lasti?' 
+`spineret_eth.f` - does not load completely.  UNDEFINED WORD 'lasti?' 
 
 ----
 
