@@ -50,9 +50,9 @@ It may have occurred to you to wonder about how PF4 handles comments. Basically 
 \ -----
 }}}
 
-  - inline comments - as soon as PF4 sees the backslash and a space, it ignores everything until the CR at the end of the line. PF4 resumes processing Forth with the next line.  _EDITOR'S NOTE: The backslash MUST be followed by a space, or the interpreter looks for a word that STARTS with a backslash plus whatever character(s) follow(s) it.  Try it and see_
+  - inline comments - as soon as PF4 sees the backslash (and a space), it ignores everything until the CR at the end of the line. PF4 resumes processing Forth with the next line.  _EDITOR'S NOTE: The backslash MUST be followed by a space, or the interpreter looks for a word that STARTS with a backslash plus whatever character(s) follow(s) it.  Try it and see_
  
-  - block comment - is similar. PF4 upon encountering a left curly brace reads and ignores whole lines testing only for a right curly brace. PF4 resumes processing Forth with the next line.
+  - block comment - is similar. PF4 upon encountering a left curly brace (and a space) reads and ignores whole lines testing only for a right curly brace. PF4 resumes processing Forth with the next line.
  
   - an LF is treated like a CR and usually produces an empty PF4 prompt. It is harmless.
   
@@ -62,7 +62,8 @@ It may have occurred to you to wonder about how PF4 handles comments. Basically 
   
   - lines of code with inline comments will have finite pauses while PF4 strips the comment.
 
-  - some of the core code written for PF4 has huge segments of block comments including huge chunks of assembler code. These can take MINUTEs for PF4 to process and giving no visible indication of progress. IT WORKS!!! Honest! If you must, LEARN HOW TO SIT ON YOUR HANDS and away from the KB and mouse! Let it finish!
+  - some of the core code written for PF4 has huge segments of block comments including huge chunks of assembler code. These can take MINUTEs for PF4 to process and giving no visible indication of progress. IT WORKS!!! Honest! If you must, LEARN HOW TO SIT ON YOUR HANDS and away from the KB and mouse! Let it finish!  
+_EDITOR'S NOTE:  If you use a prop-plug you generally we a blue LED flashing for each character SENT TO the Prop, and a red LED flash for each byte FROM the prop.  Using a Hive board or other custom rig that does not have the LEDs for transmit and receive is a exercise in patience the first time._   
 
 
 == EEPROM File System ==
