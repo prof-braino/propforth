@@ -9,8 +9,7 @@ Brian wrote this intro to Propforth 4 in response to the confusion from the incl
 = Brian Riley's intro to Propforth4.0 =
 
     Brian Riley  <brianbr `[at]` wulfden . org>  2010 Dec 17 @ 2030 EST
-*--------------------------------------------------------------------
-
+----
 
       Setting Up PropForth v4.0
 
