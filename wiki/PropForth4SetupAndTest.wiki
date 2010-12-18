@@ -87,16 +87,21 @@ Line 66 - Protoboard MASTER P8 connects thru a 220 ohm resistor to DIP40 Pin 40 
 
 The MASTER will be able to talk to the SLAVES serial port just like any terminal program would.  If you want additional serial ports on the MASTER like walimu does, this is the example of how to set it up using MASTER P0 and P1. 
 
+----
+
 === MASTER to SPINNERET ===
 
 I don't have my spinneret yet.  I skipped this for now 20101205 
-20101218 - I have my speineret, but could not get this to work. 
+
+*20101218 - I have my spineret, but could not get this to work.*
 
 I don't know if my connections are wrong (likely) or if there is an error in the code (less likely but still possible)
 
 `snet.f` - loads, but does not execute.  Does not return to the master using ctl+f
 
 'spineret_eth.f` - does not load completely.  UNDEFINED WORD 'lasti?' 
+
+----
 
 = PropForth 4.0 Source Files =
 
