@@ -90,6 +90,13 @@ The MASTER will be able to talk to the SLAVES serial port just like any terminal
 === MASTER to SPINNERET ===
 
 I don't have my spinneret yet.  I skipped this for now 20101205 
+20101218 - I have my speineret, but could not get this to work. 
+
+I don't know if my connections are wrong (likely) or if there is an error in the code (less likely but still possible)
+
+`snet.f` - loads, but does not execute.  Does not return to the master using ctl+f
+
+'spineret_eth.f` - does not load completely.  UNDEFINED WORD 'lasti?' 
 
 = PropForth 4.0 Source Files =
 
