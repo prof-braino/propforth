@@ -513,17 +513,17 @@ lines 308 and 309 show that you can put items on the slave cog0 stack, and pop t
 When you do the CTL+F, the prompt changes from cog0 (on slave) to cog6 (on master)
 
 
-=== SLAVE no ROM
+=== SLAVE no ROM ===
 
 line 314, 316 step 17 -  slave no ROM tests
 
-AFter reboot, the dictionary is cleared, load norom.f from EEPROM:
+After reboot, the dictionary is cleared, load norom.f from EEPROM:
 
 {{{
 fsload norom.f
 }}}
 
-Be sure the text scrolls down the screen, or the load was not successfull
+Be sure the text scrolls down the screen, or the load was not successful
 
 Define the words:
 
