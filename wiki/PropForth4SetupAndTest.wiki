@@ -1,5 +1,5 @@
 #summary Tutorial on Getting  Propforth 4.0 running
-#labels v4.0
+#labels v4.0a
 
 = On this version, Instructions are in the README file =
 
@@ -543,11 +543,11 @@ Line 335 - execute the demo:
 demo
 }}}
 
-And this is where it locked up for me.  _EDIT: FIXED!  I had to run the whole deal with out the EEPROM files system.   After I figured out what was what, the EEPROM file system works too._ 
+And this is where it locked up for me.  Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
 
-Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
+_EDIT: FIXED!  I had to run the whole deal with out the EEPROM files system.   After I figured out what was what, the EEPROM file system works too._ 
 
-_EDIT 20101218 - continuing notes.... but not just yet, must play with the kids.  
+_EDIT 20101218 - continuing notes.... but not just yet, must play with the kids._  
 
 = under construction =
 
