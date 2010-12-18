@@ -27,7 +27,7 @@ Now either reset your board or power cycle it and in your terminal window you sh
 
 }}}
 
-Entering code into PropForth
+== Entering code into PropForth ==
 
 Our window into the PropForth v4.0 (for brevity's sake this will be called PF4 for the remainder of the document) is a modestly fast serial line and a terminal program. Using this you can type in code and run it ... this gets old really fast! There are two ways to get a file of forth code into PF4. The first is "copy and paste" into the terminal window and the second is "send paced text." Without getting bogged down extraneous details let me say simply "copy/paste" works and "send paced text" is unreliable.
 
