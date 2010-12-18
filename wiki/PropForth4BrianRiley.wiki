@@ -33,10 +33,12 @@ Now either reset your board or power cycle it and in your terminal window you sh
 
 Our window into the PropForth v4.0 (for brevity's sake this will be called PF4 for the remainder of the document) is a modestly fast serial line and a terminal program. Using this you can type in code and run it ... this gets old really fast! There are two ways to get a file of forth code into PF4. The first is "copy and paste" into the terminal window and the second is "send paced text." Without getting bogged down extraneous details let me say simply "copy/paste" works and "send paced text" is unreliable.
 
+== comments in code ==
+
 It may have occurred to you to wonder about how PF4 handles comments. Basically there are two kinds of comments in Forth, inline and block
 
 {{{
-*-----
+\ -----
 	1 2 3 . . .      \ this is an inline comment
 	4 5 6 drop . .   \ it only goes to the end of the line 
 {
@@ -45,10 +47,10 @@ It may have occurred to you to wonder about how PF4 handles comments. Basically 
     long as you want.
 }
 	
-*-----
+\ -----
 }}}
 
-  - inline comments - as soon as PF4 sees the backslash it ignores everything until the CR at the end of the line. PF4 resumes processing Forth with the next line.
+  - inline comments - as soon as PF4 sees the backslash and a space, it ignores everything until the CR at the end of the line. PF4 resumes processing Forth with the next line.  _EDITOR'S NOTE: The backslash MUST be followed by a space, or the interpreter looks for a word that STARTS with a backslash plus whatever character(s) follow(s) it.  Try it and see_
  
   - block comment - is similar. PF4 upon encountering a left curly brace reads and ignores whole lines testing only for a right curly brace. PF4 resumes processing Forth with the next line.
  
