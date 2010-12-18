@@ -547,7 +547,7 @@ And this is where it locked up for me.  _EDIT: FIXED!  I had to run the whole de
 
 Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
 
-_EDIT 20101218 - continuing notes....
+_EDIT 20101218 - continuing notes.... but not just yet, must play with the kids.  
 
 = under construction =
 
