@@ -11,7 +11,7 @@ Brian wrote this intro to Propforth 4 in response to the confusion from the incl
     Brian Riley  <brianbr `[at]` wulfden . org>  2010 Dec 17 @ 2030 EST
 ----
 
-=     Setting Up PropForth v4.0  =
+ =     Setting Up PropForth v4.0  =
 
 == Load the Basic Prop Forth Kernel ==
 
@@ -33,6 +33,7 @@ Our window into the PropForth v4.0 (for brevity's sake this will be called PF4 f
 
 It may have occurred to you to wonder about how PF4 handles comments. Basically there are two kinds of comments in Forth, inline and block
 
+{{{
 *-----
 	1 2 3 . . .      \ this is an inline comment
 	4 5 6 drop . .   \ it only goes to the end of the line 
@@ -43,6 +44,7 @@ It may have occurred to you to wonder about how PF4 handles comments. Basically 
 }
 	
 *-----
+}}}
 
   - inline comments - as soon as PF4 sees the backslash it ignores everything until the CR at the end of the line. PF4 resumes processing Forth with the next line.
  
