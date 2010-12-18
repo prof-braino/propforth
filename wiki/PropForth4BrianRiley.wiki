@@ -78,7 +78,10 @@ The file system will start at the 32K boundary of EEPROM0 and extend up as high 
 
 Most boards have a single 64KB EEPROM and nothing needs to be done to the default code in "fs.f"  to configure it. If your board has more than one EEPROM you need to open file "fs.f" in a plain text editor. Line 94 defines a constant called "fstop." Its value for 1 EEPROM is 10000, for 2 it's 20000, 3 is 30000, and so on. (this number is hexadecimal)
 
+----
 >--- from file "fs.f" ---
+----
+
 {{{
 \
 \ CONFIG PARAMETERS BEGIN
@@ -91,7 +94,7 @@ Most boards have a single 64KB EEPROM and nothing needs to be done to the defaul
 \ CONFIG PARAMETERS END
 \
 }}}
->------------------------
+------
 
 Load EEPROM File System
 
