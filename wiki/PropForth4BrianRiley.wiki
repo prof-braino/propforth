@@ -98,6 +98,10 @@ Most boards have a single 64KB EEPROM and nothing needs to be done to the defaul
 
 Load EEPROM File System
 
-If you haven't already, from the prior step. find and open file "fs.f" in a plain text editor. do a "select all" and "copy." Now go to your terminal program and hit "ENTER" and see that you get another PF4 prompt. Next we are going to "paste" the contents of the file into the terminal input buffer.
+If you haven't already, from the prior step, find and open file "fs.f" in a plain text editor. 
+
+Do a "select all" and "copy." 
+Now go to your terminal program and hit "ENTER" and see that you get another PF4 prompt. 
+Next we are going to "paste" the contents of the file into the terminal input buffer.
 
 Now the "copy/paste" routine will be your primary method for entering Forth code (usually from files with names ending in ".f")
