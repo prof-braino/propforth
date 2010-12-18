@@ -288,7 +288,7 @@ type in
 
 You will the source code scrolling across the screen just as before when we did the load to EEPROM.  The difference is that it is now compiled into the dictionary.  
 
- _NOTICE - IF you did NOT see the code scrolling across the screen, the source code did not load into the dictionary._  
+ _NOTICE - IF you did NOT see the code scrolling across the screen, the source code did not load into the dictionary.  The original readme file had a typo, LogicAnalyzer was spelt incorrectly_  
 
  _type in "words" and you should see:_
 
@@ -300,7 +300,7 @@ displayTriggerFrequency004....
 
 _If the last definition in the dictionary (the first word printed) is NOT `displayTriggerFrequency`, then something went wrong.  Stop amd try again._
 
-_NOTICE - IF you COPY and PASTE the text {{{ fsload LogicAnalyzer.f}}} from the `readme.txt` file, the source might not scroll.  There could be a bug in `fs.f`, or someplace else.  Watch out for this so you don't get stuck._
+_NOTICE - IF you COPY and PASTE the text {{{ fsload LogicAnalyzer.f}}} from the `readme.txt` file, the source might not scroll.  There could be a bug in `fs.f`, or someplace else.  Watch out for this so you don't get stuck.  EDIT: it was a typo in the file name in the readme._
 
 An interesting aspect of the logic analyzer is that a whole bunch of this stuff is in assembler and is compiled only to the cog in which it is running.  There are labels in the main hub dictionary, but the executable assembler is only in the targeted cog.  
 
