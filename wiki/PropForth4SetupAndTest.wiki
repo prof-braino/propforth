@@ -543,14 +543,11 @@ Line 335 - execute the demo:
 demo
 }}}
 
-And this is where it locked up for me.
-
+And this is where it locked up for me.  _EDIT: FIXED!  I had to run the whole deal with out the EEPROM files system.   After I figured out what was what, the EEPROM file system works too._ 
 
 Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
 
-Cheers! 
-
-Braino
+_EDIT 20101218 - continuing notes....
 
 = under construction =
 
