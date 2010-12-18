@@ -8,7 +8,7 @@ Brian wrote this intro to Propforth 4 in response to the confusion from the incl
 
 = Details =
 
-    Brian Riley  <brianbr [at] wulfden . org>  2010 Dec 17 @ 2030 EST
+    Brian Riley  <brianbr `[at]` wulfden . org>  2010 Dec 17 @ 2030 EST
 *--------------------------------------------------------------------
 
 
