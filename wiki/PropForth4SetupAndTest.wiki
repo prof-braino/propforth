@@ -543,9 +543,23 @@ Line 335 - execute the demo:
 demo
 }}}
 
-And this is where it locked up for me.  Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
+And this is where it locked up for me 20101205.  Well, I got pretty far.  I probably left something off.  In fact I think I left off the second asynchronous serial connection.  I'll put that in and try once more. Probably won't post till later, I'm getting worn out. 
 
 _EDIT: FIXED!  I had to run the whole deal with out the EEPROM files system.   After I figured out what was what, the EEPROM file system works too._ 
+
+
+I have the `comnorom.f` working 
+
+MASTERProp0 Cog6
+
+and 
+
+ SLAVEProp8 Cog0
+
+
+
+
+
 
 _EDIT 20101218 - continuing notes.... but not just yet, must play with the kids._  
 
@@ -553,7 +567,7 @@ _EDIT 20101218 - continuing notes.... but not just yet, must play with the kids.
 
 Still adding text 2010-12-18
 
-The master/slave config on the spineret does not work. 
+The master/slave config on the spineret did not work for me yet. 
 
 I don't know if my connections are wrong (likely) or if there is an error in the code (less likely but still possible)
 
