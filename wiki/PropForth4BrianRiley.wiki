@@ -33,6 +33,8 @@ Now either reset your board or power cycle it and in your terminal window you sh
 
 Our window into the PropForth v4.0 (for brevity's sake this will be called PF4 for the remainder of the document) is a modestly fast serial line and a terminal program. Using this you can type in code and run it ... this gets old really fast! There are two ways to get a file of forth code into PF4. The first is "copy and paste" into the terminal window and the second is "send paced text." Without getting bogged down extraneous details let me say simply "copy/paste" works and "send paced text" is unreliable.
 
+_EDITOR'S NOTE: There is a third method, or more like a "two and a half-th" method, which is to use FAST LOAD. The fastload command is *fl*. 
+
 == comments in code ==
 
 It may have occurred to you to wonder about how PF4 handles comments. Basically there are two kinds of comments in Forth, inline and block
