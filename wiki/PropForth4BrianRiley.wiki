@@ -11,21 +11,21 @@ Brian wrote this intro to Propforth 4 in response to the confusion from the incl
     Brian Riley  <brianbr `[at]` wulfden . org>  2010 Dec 17 @ 2030 EST
 ----
 
-=      Setting Up PropForth v4.0  =
+=     Setting Up PropForth v4.0  =
 
-== Load the Basic Prop Forth Kernal ==
+== Load the Basic Prop Forth Kernel ==
 
-The first part of the setup will be quite familiar to Prop people. Using your favorite IDE, Parallax's Propeller Tool (Windows only) or Brad Chamber's BST (Windows, Mac OSX, and Linux) you will load the file "PropForth.spin." And that's it for Spin. Until a new version of the kernal comes out you never need to use an IDE again for this board.
+The first part of the setup will be quite familiar to Prop people. Using your favorite IDE (integrated development environment), Parallax's Propeller Tool (Windows only) or Brad Chamber's BST (Windows, Mac OSX, and Linux) you will load the file "PropForth.spin." And that's it for Spin. Until a new version of the kernel comes out you never need to use an IDE again for this board.
 
 A quick sanity check is in order. Bring up a terminal program (suggested TeraTerm for Windows,   ZTerm for Mac OSX, ????? for Linux) Set up the program for 57600 baud. 8n1 (8 bits no parity, 1 stop bit)
 
 Now either reset your board or power cycle it and in your terminal window you should see ...
 
-*-----
+{{{
 
  RESET Prop0 Cog6 ok
 
-*-----
+}}}
 
 Entering code into PropForth
 
