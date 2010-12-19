@@ -99,7 +99,7 @@ removed from plan - TV option
 
 === 2010 Sept 29 PropForth 3.4 Hive version ===
 
- = unplanned release, braino finished the Hive build early =
+ ===== unplanned release, braino finished the Hive build early =====
 
 Modified PropForth 3.4 to use Hive hardware pinout
 
