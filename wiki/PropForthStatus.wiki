@@ -1,5 +1,33 @@
 #summary Status of PropForth
 
+=== PropForth 4.1 Released February 2010 ===
+
+Revert to non-printable characters (invisible characters) echoed as spaces
+
+
+
+=== Planned PropForth 4.0b Released December  2010 ===
+
+
+
+
+
+=== PropForth 4.0a Released December 18 2010 ===
+
+Corrected Typos in LogicAnalyzer.f, fs.f, README.txt
+
+Re-organized files names such that they appear in the directory in the order used  
+
+Added sub-directory with an example that does NOT reqire 64k EEPROM
+
+Note:  Demoboard pin out example for MASTER/SLAVE is not included in this example
+
+Note:  Spineret code is NOT final version, this is current state of development,
+
+Note: snet.f is a regular serial connection to spineret hardware, where MASTER opens a terminal to spineret's prop chip, but spineret wiznet support is not complete, this is current state of development, 
+
+Note:  Watch out for invisible characters,  these are not echoed as spaces in this version
+
 === PropForth 4.0 Released December 05 2010 ===
 
 Reorganized Kernel:
