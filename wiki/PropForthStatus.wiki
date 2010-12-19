@@ -24,13 +24,15 @@ High Speed serial from non released V3.6 will be cleaned up in the transition to
 
 Change current behavior of loading the source into memory in one pass as a single chunk, and interpreting all the source in a second pass as one chunk.  After months of research, it was determined that the prop has multiple cogs, so a cog could start loading the source, and another cog could start interpreting the source.  Took a while, but we finally noticed.  Consider change in  handling of in-line comments so the input buffer does not overrun when code is followed by a comment on the same line. 
 
-
+----
 
 === PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
 
 SD Slot for Cards up to 2 Gig
 
 SRAM and Latch support for Hive
+
+----
 
 === Not Released PropForth 3.6 November 2010  ===
 
@@ -66,6 +68,8 @@ Ethernet
 
  - Wiznet [WIZ811MJ] W5100 http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Detail.asp?cate1=&cate2=&cate3=&pid=1035 
 
+----
+
 === 2010 October 19 PropForth 3.5e ===
 
   ~~2010 October 17 PropForth 3.5c~~ 
@@ -91,6 +95,8 @@ HIVE and Demoboard configurations selectable by moving comment marks in:
 
 removed from plan - TV option
 
+----
+
 === 2010 Sept 29 PropForth 3.4 Hive version ===
 
  = unplanned release, braino finished the Hive build early =
@@ -104,6 +110,8 @@ Modified PropForth 3.4 to use Hive hardware pinout
 VGA and Keyboard have a different pin assignment than Demo Board.
 
 We will try to re-factor the code to prevent parallel branches, target is 3.5 release
+
+----
 
 === 2010 Sept 05 PropForth 3.4  ===
 
@@ -132,6 +140,8 @@ Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial t
 
 4. LOW RES VGA NOT included in this release 
 
+----
+
 === Planned PropForth 3.3 Around September 2010 ===
 
 *UPDATE:  Completed 2010-08-22
@@ -156,6 +166,8 @@ NOTE: lines commented using \  behave different in propforth - see FAQ
 
 7. ethernet kernel support is NOT planned for 3.3; rescheduled to 3.4
 
+----
+
 === 2010 July 09 PropForth 3.2 ===
 
 PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the README.txt file in the archive
@@ -170,9 +182,13 @@ Some of the files names have changed BACK to old names due to organizational iss
 
 The additional changes listed in version 2.8 will be added at a later date as time permits. 
 
+----
+
 === Not Released PropForth 3.0 ===
 
 Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. No date has been targeted for this release.
+
+----
 
 === Not Released PropForth 2.8 ===
 
@@ -181,6 +197,8 @@ Plan to add words to support calling forth from spin, and spin from forth.
 Plan to post the disassembler and documentation
 
 Plan to post the ethernet interface
+
+----
 
 === 2010 May 30 PropForth 2.7 ===
 
@@ -195,9 +213,13 @@ Decided to start including a downloadable file PropForthX.X.zip to contain all r
 NOTE: Documentation changes are in progress
 PLEASE send questions, this will help drive the documentation updates
 
+----
+
 === 2010 May 9 ===
 
 Releasing PropForth 2.6. A number of bug fixes.
+
+----
 
 === 2009 October 24 ===
 
@@ -207,6 +229,7 @@ La.f - a lighter version of La, missing the gui but more power and easily usable
 
 float.f - ieee754 floating point routines added, very useful in development, still need to use fixed point math where speed is essential.
 
+----
 
 === 2009 October 2 ===
 
@@ -214,9 +237,13 @@ Releasing PropForth 2.4. A few bug fixes, and a number of enhancements. Stack ov
 
 La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle.
 
+----
+
 === 2009 April 20 ===
 
 Added doc for AddingSerialMonitor and a page for the logic analyzer [La], which is early code (V0.8)
+
+----
 
 === 2009 April 19 ===
 
