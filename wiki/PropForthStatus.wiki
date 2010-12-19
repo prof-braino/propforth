@@ -4,13 +4,13 @@
 
 Revert to non-printable characters (invisible characters) echoed as spaces
 
-
+----
 
 === Planned PropForth 4.0b Released December  2010 ===
 
 
 
-
+----
 
 === PropForth 4.0a Released December 18 2010 ===
 
