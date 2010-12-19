@@ -2,13 +2,19 @@
 
 === PropForth 4.1 Released February 2010 ===
 
+reference configuration for multiple romless leaf slaves
+
+reference configuration for multiple romless sub-masters (intermediate slaves) 
+
 Revert to non-printable characters (invisible characters) echoed as spaces
 
 ----
 
 === Planned PropForth 4.0b Released December  2010 ===
 
+Demoboard pinout examples for MASTER/SLAVE support
 
+any minor bug fixes 
 
 ----
 
