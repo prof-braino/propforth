@@ -1,4 +1,4 @@
-#summary Status of PropForth
+#summary Status of PropForth kernel development
 
 === Planned PropForth 4.1 Release February 2010 ===
 
