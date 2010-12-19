@@ -1,6 +1,6 @@
 #summary Status of PropForth
 
-=== PropForth 4.1 Released February 2010 ===
+=== Planned PropForth 4.1 Release February 2010 ===
 
 reference configuration for multiple romless leaf slaves
 
@@ -10,9 +10,9 @@ Revert to non-printable characters (invisible characters) echoed as spaces
 
 ----
 
-=== Planned PropForth 4.0b Released December  2010 ===
+=== Planned PropForth 4.0b Release December 2010 ===
 
-Demoboard pinout examples for MASTER/SLAVE support
+Demoboard pin-out examples for MASTER/SLAVE support
 
 any minor bug fixes 
 
