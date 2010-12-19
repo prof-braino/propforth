@@ -34,6 +34,8 @@
 
    Note:  Watch out for invisible characters,  these are not echoed as spaces in this version
 
+----
+
 === PropForth 4.0 Released December 05 2010 ===
 
 Reorganized Kernel:
