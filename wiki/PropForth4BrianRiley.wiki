@@ -172,9 +172,9 @@ First, let us summarize the commands
  * *fsdrop* - removes the file most recently entered
   
 
-*Nota Bene* - the "*fswrite*" and "*fsload*" filename specifications are case-sensitive. A mistype in "*fsload*" is a no-find which simply returns an empty PF4 prompt and no error message
+*- the "*fswrite*" and "*fsload*" filename specifications are case-sensitive. A mistype in "*fsload*" is a no-find which simply returns an empty PF4 prompt and no error message
  
-"*fsload*" commands may be embedded within source files. I suggest you examine "comnorom.f"
+*- "*fsload*" commands may be embedded within source files. I suggest you examine "comnorom.f"
  
  {{{
  \--- from file "conoroom.f" ---
