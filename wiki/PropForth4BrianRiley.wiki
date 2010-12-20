@@ -172,9 +172,9 @@ First, let us summarize the commands
  * *fsdrop* - removes the file most recently entered
   
 
-*- the "*fswrite*" and "*fsload*" filename specifications are case-sensitive. A mistype in "*fsload*" is a no-find which simply returns an empty PF4 prompt and no error message
+ - the "*fswrite*" and "*fsload*" filename specifications are case-sensitive. A mistype in "*fsload*" is a no-find which simply returns an empty PF4 prompt and no error message
  
-*- "*fsload*" commands may be embedded within source files. I suggest you examine "comnorom.f"
+ - "*fsload*" commands may be embedded within source files. I suggest you examine "comnorom.f"
  
  {{{
  \--- from file "conoroom.f" ---
@@ -206,7 +206,7 @@ fsload norom.f
  }}}
  
  
-For example in the file system below you decided that you needed to replace "comnorom.f" . You could issue an "*fsclear*" and start completely over, OR, issue "*fsdrop*" twice, removing, first "snet.f", then "comnorom.f". Then you redo "*fswrite*" for the new copy of "comnorom.f" and then "*fswrite*" for "snet.f" .
+ - For example, in the file system below you decided that you needed to replace "comnorom.f" . You could issue an "*fsclear*" and start completely over, OR, issue "*fsdrop*" twice, removing, first "snet.f", then "comnorom.f". Then you redo "*fswrite*" for the new copy of "comnorom.f" and then "*fswrite*" for "snet.f" .
   
 {{{
   Prop0 Cog6 ok
