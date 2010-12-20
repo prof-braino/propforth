@@ -1,6 +1,8 @@
 #summary Terminal program used to develop and debug PropForth
 #labels Serialcommunications,serialterminal,PCterminal
 
+Operating System: *Windows*
+
 http://ttssh2.sourceforge.jp/
 
 Versions of teraterm used in testing:
@@ -65,8 +67,6 @@ To use TeraTerm to access a Telnet Session over Ethernet:
  Setup - > Save Setup  -> TERATERM.INI -> SAVE (teraterm starts a telnet session)
 
 I tend to switch between telnet and serial, its not hard to do an keep track of after a while.
-
-
 
 
 
