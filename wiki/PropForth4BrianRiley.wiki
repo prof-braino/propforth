@@ -160,19 +160,21 @@ Prop0 Cog0 ok
 
 First, let us summarize the commands
 
-  *fsclear* - used to startup or wipe and reinitialize the FS
 
-  *fsls* - lists the contents of the FS and displays the number of bytes remaining
+ * *fsclear* - used to startup or wipe and reinitialize the FS
+
+ * *fsls* - lists the contents of the FS and displays the number of bytes remaining
   
-  *fswrite* - reads in and writes file to the FS
+ * *fswrite* - reads in and writes file to the FS
   
-  *fsload* - reads file from the FS and puts it into PF4 in RAM
+ * *fsload* - reads file from the FS and puts it into PF4 in RAM
   
-  *fsdrop* - removes the file most recently entered
+ * *fsdrop* - removes the file most recently entered
   
- *Nota Bene* - the "*fswrite*" and "*fsload*" filename specifications are case-sensitive. A mistype in "*fsload*" is a no-find which simply returns an empty PF4 prompt and no error message
+
+*Nota Bene* - the "*fswrite*" and "*fsload*" filename specifications are case-sensitive. A mistype in "*fsload*" is a no-find which simply returns an empty PF4 prompt and no error message
  
- "*fsload*" commands may be embedded within source files. I suggest you examine "comnorom.f"
+"*fsload*" commands may be embedded within source files. I suggest you examine "comnorom.f"
  
  {{{
  \--- from file "conoroom.f" ---
