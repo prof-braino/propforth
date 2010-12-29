@@ -270,6 +270,16 @@ Prop0 Cog6 ok
  
 }}}
 
+==EEPROM File System - Caveats and Gotchas==
+
+ * there is very little error checking
+
+ * as stated earlier "*fsload filename.ext*", if file does not exist, PF4 simply returns doing nothing
+
+ * if you have $0840 bytes available and you do an "*fswrite filename.ext*" and the file is going to occupy more than $0840 bytes, _bad things will happen_ , usually requiring at the very least a "*reboot*" or a hard-reset. The damage to the file system can usually be fixed by one or two "*fsdrop*"s.
+
+ * a bug in "*fsload*" (issue #22) has that if a file has been written across a 64K EEPROM boundary a "*fsload*"of that file will fail. *Workaround* - carefully place files into the EEPROM FS such that you have just less than $100 bytes free. Then write a $100 byte file and name it something like "no_use.f" and then go on and add files beyond the boundary as you please
+
 
 ==Exploring the Reference Setup==
 
