@@ -178,7 +178,7 @@ Example: Review Responses for Code Review of ANSI.f
 *Code Review QUESTIONS for ANSI.f*
 
 
-*Reviewer (A)*
+===Reviewer (A)*===
 
 Question 1) line 18 - What is "esc"? 
 Answer to 1) 27 decimal 1B hex is that ascii character code for "escape".   As defined in the references.  Sending this byte to the terminal cuases the terminal to prepare for a ANSI escape code sequence.   Should this explanation be added to the code as a comment? (author says "yes")
@@ -193,11 +193,11 @@ Answer to 3) These were the original comments in the code that author borrowed f
 Question 4)  <not submitted yet> 
 
 
-*Reviewer (B) 
+===Reviewer (B) 
 
 Question 1)   <not submitted yet> 
 
-*Reviewer (C) 
+===Reviewer (C) 
 
 Question 1)   <not submitted yet> 
 
