@@ -5,7 +5,7 @@
 
 Code Review is the technique to get "another set of eyes" to look at the code. 
 
-There are various studies freely available on the web that show the use and benefits of code review. 
+There are various studies freely available on the web that show the use and benefits of "Software Code Review". 
 
 The goal is to ensure that the code is clear and concise, and does "what is supposed to do".
 
@@ -13,6 +13,7 @@ This ensures that the code is maintainable and usable.
 
 The code review is potentially the documentation and educational material for each piece of software.
 
+This discussion uses the example of ANSI.f as the subject of the first example code review.  The most recent author is prof_braino (real name withheld due to previous issues with identity theft)
 
 = Guidelines and Rules =
 
@@ -59,7 +60,11 @@ Guidelines for the code review process:
 
 Any reviews that do not adhere to these guidelines should be noted,  and the guidelines should be updated to describe what actually needs to happen.   
 
+= Code Review Preparation =
 
+The Leader/Author prepares the review package.
+
+The Review package contains the items needed for the review as determined by the team.  
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
