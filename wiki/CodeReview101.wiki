@@ -174,12 +174,12 @@ Example: Review Responses for Code Review of ANSI.f
 
 *Code Review for ANSI.f invitation*
 
-'Requested participants            RESPONSE` 
+'Requested participants -------- RESPONSE` 
 
- * *Required*  `prof_braino`:  Will participate 2010-Dec-30
- * *Required*  `caskaz`:       <tentative agreement via email>
- * *Required*  `BrianRiley`:   <tentative agreement via email>
- * _Optional_  `salsanci`:     Sorry, out of town
+ * *Required*  `prof_braino`: -- Will participate 2010-Dec-30
+ * *Required*  `caskaz`: ------- <tentative agreement via email>
+ * *Required*  `BrianRiley`: --- <tentative agreement via email>
+ * _Optional_  `salsanci`: ----- Sorry, out of town
  * _optional_  `any other interested parties`:  
 
 
