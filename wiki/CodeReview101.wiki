@@ -70,7 +70,7 @@ Typically the review package consists of:
 
 The code under review
 
-A statment of the function of the code
+A statement of the function of the code
 
  Prerequisites
 
@@ -86,7 +86,7 @@ A statment of the function of the code
 
 
 -----
- Example: Review Package for Code Review of ANSI.f 
+Example: Review Package for Code Review of ANSI.f 
 
  Prerequisites: Hardware and software
 
