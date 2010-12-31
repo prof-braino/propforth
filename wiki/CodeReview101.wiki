@@ -44,6 +44,8 @@ Guidelines for the code review process:
 
  Leader decides code is ready for review
 
+ Leader prepares a review package (described below)
+
  Leader calls the review
 
  Leader invites participants 
@@ -104,8 +106,6 @@ Supporting References: ANSI Escape sequences
 
  http://isthe.com/chongo/tech/comp/ansi_escapes.html
 
-
-
 Code: 
 
  http://code.google.com/p/propforth/downloads/detail?name=ANSI%20Escape%20Sequences20101227-1535.f
@@ -129,8 +129,24 @@ Results/Side affects:
 
  *User text is displayed on the terminal display
  *ANSI Escape sequences affect the display according to ANSI Escape sequences referenced above.
+
  - text color and screen background are controled
+
  - font and other attributes are control as supported by terminal 
+
+-----
+Example: Review Schedule for Code Review of ANSI.f 
+
+*Code Review for ANSI.f invitation*
+
+Requested participants
+ *Required* prof_braino
+ *Required* caskaz
+ *Required* BrianRiley
+ *Optional* salsanci
+ *optional* any other interested parties
+
+
 
  
 
