@@ -57,7 +57,8 @@ Guidelines for the code review process:
 
  Participants prepare by sending list of questions to Leader/Author in advance of the agreed upon deadline.  (i.e. "We'll get questions back to you by Tuesday")
 
- 
+Any reviews that do not adhere to these guidelines should be noted,  and the guidelines should be updated to describe what actually needs to happen.   
+
 
 
 Add your content here.  Format your content with:
