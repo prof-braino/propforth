@@ -11,7 +11,7 @@ The goal is to ensure that the code is clear and concise, and does "what is supp
 
 This ensures that the code is maintainable and usable.
 
-The code review is potentially the documentation and educational material for each piece of software.
+The code review is potentially the documentation and educational material for each piece of software.  The previous reviewers started out at the same point you are now, and likely they had exactly the same questions you have.  If you have additional questions, ask them here and the answers can be added. 
 
 This discussion uses the example of ANSI.f as the subject of the first example code review.  The most recent author is prof_braino (real name withheld due to previous issues with identity theft)
 
