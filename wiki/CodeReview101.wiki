@@ -17,7 +17,7 @@ This discussion uses the example of ANSI.f as the subject of the first example c
 
 = Guidelines and Rules =
 
-== Rules =  
+ == Rules =  
 
 Can:
 
@@ -65,6 +65,54 @@ Any reviews that do not adhere to these guidelines should be noted,  and the gui
 The Leader/Author prepares the review package.
 
 The Review package contains the items needed for the review as determined by the team.  
+
+Typically the review package consists of:
+
+The code under review
+
+A statment of the function of the code
+
+ Prerequisites
+
+ Supporting references
+
+ Inputs
+
+ Processing
+
+ Outputs
+ 
+ Results/Side affects
+
+
+-----
+ Example: Review Package for Code Review of ANSI.f 
+
+ Prerequisites: Hardware and software
+
+ * ANSI terminal or ANSI terminal emulation program (teraterm or equivalent)
+ * Propchip with RS232 or equivalent
+ * Propforth v4.0x (in this case Propforth.spin is identical in Propforth4.0 and Propforth4.0a so either can be used)
+
+  No addition hardware or software is identified
+
+ Supporting References: ANSI Escape sequences
+
+http://en.wikipedia.org/wiki/ANSI_escape_code 
+
+http://ascii-table.com/ansi-escape-sequences.php
+
+http://isthe.com/chongo/tech/comp/ansi_escapes.html
+
+
+
+ Code: http://code.google.com/p/propforth/downloads/detail?name=ANSI%20Escape%20Sequences20101227-1535.f
+
+  
+
+ Inputs:  User 
+
+ 
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
