@@ -1,5 +1,5 @@
 #summary The Code Review experiments for Propforth
-#labels Phase-Design
+#labels CodeReview,Phase-Implementation
 
 = Introduction =
 
@@ -158,7 +158,6 @@ Please prepare by reading the review materials by [1 week from last response]. I
 
 Please prepare by submitting review questions to the Review Lead No Later than the Deadline date.   It encouraged to respond earlier than the deadline.  The default time period is adjusted according to the experience, availability and timeliness of the participants.
 
-----
 -----
 Example: Review Responses for Code Review of ANSI.f 
 
@@ -181,13 +180,13 @@ Example: Review Responses for Code Review of ANSI.f
 ===Reviewer (A)===
 
  Question 1) line 18 - What is "esc"? 
-Answer to 1) 27 decimal 1B hex is that ascii character code for "escape".   As defined in the references.  Sending this byte to the terminal cuases the terminal to prepare for a ANSI escape code sequence.   Should this explanation be added to the code as a comment? (author says "yes")
+ Answer to 1) 27 decimal 1B hex is that ascii character code for "escape".   As defined in the references.  Sending this byte to the terminal cuases the terminal to prepare for a ANSI escape code sequence.   Should this explanation be added to the code as a comment? (author says "yes")
 
  Question 2) Line 19 - What is "csi"?
-Answer to 2) 5B hex "[" is the second byte when there are more than two characters in the control sequence. Since this sequence is quite common in the words that follow, this was made as its own word.   Should this (or some other) explanation be added to the code as a comment? 
+ Answer to 2) 5B hex "[" is the second byte when there are more than two characters in the control sequence. Since this sequence is quite common in the words that follow, this was made as its own word.   Should this (or some other) explanation be added to the code as a comment? 
 
  Question 3) What are these terse comments in lines 6 through 16?  
-Answer to 3) These were the original comments in the code that author borrowed from salsanci as a starting point.  The section for ANSI support was commented out and not fully developed for desired purpose, so prof_braino took it out and made a separate extension (ANSI.f).  Should these be removed/changed? Please make suggestions. 
+ Answer to 3) These were the original comments in the code that author borrowed from salsanci as a starting point.  The section for ANSI support was commented out and not fully developed for desired purpose, so prof_braino took it out and made a separate extension (ANSI.f).  Should these be removed/changed? Please make suggestions. 
 
 
 Question 4)  <not submitted yet> 
@@ -204,7 +203,18 @@ Question 1)   <not submitted yet>
 
 ---- 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Example: Review Responses for Code Review of ANSI.f 
+
+*Code Review for ANSI.f - Review Results
+
+<none entered Review still open> 
+
+----
+
+Please use this review as the reference on the material under review. 
+
+Questions about this material may be submitted after review is complete. If you have a question, ask it. Other folks have the same question, and everybody can benefit from the answer if it gets posted.  
+
+
+
+End of page
