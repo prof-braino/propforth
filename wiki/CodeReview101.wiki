@@ -1,0 +1,66 @@
+#summary The Code Review experiments for Propforth
+#labels Phase-Design
+
+= Introduction =
+
+Code Review is the technique to get "another set of eyes" to look at the code. 
+
+There are various studies freely available on the web that show the use and benefits of code review. 
+
+The goal is to ensure that the code is clear and concise, and does "what is supposed to do".
+
+This ensures that the code is maintainable and usable.
+
+The code review is potentially the documentation and educational material for each piece of software.
+
+
+= Guidelines and Rules =
+
+== Rules =  
+
+Can:
+
+ Reviewers can ask for clarification on intent of any peice of code under review
+ 
+ Reviewers can identify issues for other peices of code (and trigger an new review on that code)
+
+ Reviewers can state "I don't understand" or "I don't get it"  for any peice of code
+
+Cannot:
+
+ Participants cannot make derogatory statements about another participant's work 
+
+ Participants cannot make a personal attack on participants.
+
+ I.E. Any person that says "this code is stupid", or "you're stupid" will not be invited to participate. 
+
+
+ == Guidelines ==
+
+Guidelines for the code review process:
+
+ Leader is usually the author
+
+ Leader decides code is ready for review
+
+ Leader calls the review
+
+ Leader invites participants 
+ 
+ Leader negotiates and arranges times, dead lines so there is sufficient time to prepare.
+
+ Participants commit to participate by accepting the review invitation 
+
+ Participants prepare by reading the materials in advance of the review
+ 
+ Participants prepare by writing questions about the materials in advance of the review
+
+ Participants prepare by sending list of questions to Leader/Author in advance of the agreed upon deadline.  (i.e. "We'll get questions back to you by Tuesday")
+
+ 
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
