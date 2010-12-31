@@ -88,7 +88,7 @@ A statement of the function of the code
 -----
 Example: Review Package for Code Review of ANSI.f 
 
- Prerequisites: Hardware and software
+Prerequisites: Hardware and software
 
  * ANSI terminal or ANSI terminal emulation program (teraterm or equivalent)
  * Propchip with RS232 or equivalent
@@ -96,21 +96,41 @@ Example: Review Package for Code Review of ANSI.f
 
   No addition hardware or software is identified
 
- Supporting References: ANSI Escape sequences
+Supporting References: ANSI Escape sequences
 
-http://en.wikipedia.org/wiki/ANSI_escape_code 
+ http://en.wikipedia.org/wiki/ANSI_escape_code 
 
-http://ascii-table.com/ansi-escape-sequences.php
+ http://ascii-table.com/ansi-escape-sequences.php
 
-http://isthe.com/chongo/tech/comp/ansi_escapes.html
+ http://isthe.com/chongo/tech/comp/ansi_escapes.html
 
 
 
- Code: http://code.google.com/p/propforth/downloads/detail?name=ANSI%20Escape%20Sequences20101227-1535.f
+Code: 
 
-  
+ http://code.google.com/p/propforth/downloads/detail?name=ANSI%20Escape%20Sequences20101227-1535.f
 
- Inputs:  User 
+Inputs:  
+
+  *User character stream is entered via terminal program
+  *Character steam contains text and ANSI escape sequences
+
+Processing:
+
+ *User text characters are interpreted as normal characters
+ *ANSI Escape sequences are interpreted as control codes to the terminal
+
+Outputs:
+
+ *User Text is output to the terminal display screen
+ *ANSI Escape sequences are used by the terminal display
+
+Results/Side affects:
+
+ *User text is displayed on the terminal display
+ *ANSI Escape sequences affect the display according to ANSI Escape sequences referenced above.
+ - text color and screen background are controled
+ - font and other attributes are control as supported by terminal 
 
  
 
