@@ -140,11 +140,11 @@ Example: Review Schedule for Code Review of ANSI.f
 *Code Review for ANSI.f invitation*
 
 Requested participants
- * Required * prof_braino
- * Required * caskaz
- * Required * BrianRiley
- * Optional * salsanci
- * optional * any other interested parties
+ * _Required_  `prof_braino`
+ * _Required_  `caskaz`
+ * _Required_  `BrianRiley`
+ * _Optional_  `salsanci`
+ * _optional_  `any other interested parties`
 
 
 
