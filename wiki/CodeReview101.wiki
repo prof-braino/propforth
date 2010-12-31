@@ -117,18 +117,18 @@ Inputs:
 
 Processing:
 
- *User text characters are interpreted as normal characters
- *ANSI Escape sequences are interpreted as control codes to the terminal
+ * User text characters are interpreted as normal characters
+ * ANSI Escape sequences are interpreted as control codes to the terminal
 
 Outputs:
 
- *User Text is output to the terminal display screen
- *ANSI Escape sequences are used by the terminal display
+ * User Text is output to the terminal display screen
+ * ANSI Escape sequences are used by the terminal display
 
 Results/Side affects:
 
- *User text is displayed on the terminal display
- *ANSI Escape sequences affect the display according to ANSI Escape sequences referenced above.
+ * User text is displayed on the terminal display
+ * ANSI Escape sequences affect the display according to ANSI Escape sequences referenced above.
 
  - text color and screen background are controled
 
@@ -140,9 +140,9 @@ Example: Review Schedule for Code Review of ANSI.f
 *Code Review for ANSI.f invitation*
 
 Requested participants
- * _Required_  `prof_braino`
- * _Required_  `caskaz`
- * _Required_  `BrianRiley`
+ * *Required*  `prof_braino`
+ * *Required*  `caskaz`
+ * *Required*  `BrianRiley`
  * _Optional_  `salsanci`
  * _optional_  `any other interested parties`
 
