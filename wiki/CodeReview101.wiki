@@ -17,15 +17,27 @@ This discussion uses the example of ANSI.f as the subject of the first example c
 
 = Guidelines and Rules =
 
+Please follow these guidelines and rules for code review.  If any guidelines or rules should be added, changed, or removed, please inform the team.  These rules and guidelines are intended to reflect the consensus of the team.
+
  == Rules =  
 
 Can:
 
- Reviewers can ask for clarification on intent of any peice of code under review
+ Reviewers can ask for clarification on intent of any piece of code under review
  
- Reviewers can identify issues for other peices of code (and trigger an new review on that code)
+ Reviewers can identify issues for other pieces of code (and trigger an new review on that code)
 
- Reviewers can state "I don't understand" or "I don't get it"  for any peice of code
+ Reviewers can state "I don't understand" or "I don't get it"  for any piece of code
+
+ Reviewers can submit constructive criticism on any topic. "I do that differently, have you considered ...."
+
+ Reviewers can disagree with the author implementation of the work.  "I don't think this will work, there will be a divde by zero in this case"
+
+ Reviewers can disagree with the author documentation of the work.  "These comments are too much/too little for the complexity of this function,  please consider...."
+
+ Author can accept or reject groups input at author's discretion.  Typically, the author makes the changes suggested by the groups (if this person asks for this, others probably will have a similar request). 
+
+ Reviewers that have additional changes not implemented by the author are free to make any changes in their own private branch of the code.  These will not necessarily be included in the main Propforth packages.  (Examples are Hive and C3 branches).
 
 Cannot:
 
@@ -33,8 +45,7 @@ Cannot:
 
  Participants cannot make a personal attack on participants.
 
- I.E. Any person that says "this code is stupid", or "you're stupid" will not be invited to participate. 
-
+ I.E. Any troll that makes intentionally hurtful statements such as "this code is stupid", or "you're stupid" will not be invited to participate.  
 
  == Guidelines ==
 
