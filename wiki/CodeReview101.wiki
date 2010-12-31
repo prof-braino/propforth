@@ -144,9 +144,15 @@ Requested participants
  * *Required*  `caskaz`
  * *Required*  `BrianRiley`
  * _Optional_  `salsanci`
- * _optional_  `any other interested parties`
+ * _optional_  `any other interested parties`  
+
+Note: I specifically asked Brian and caskaz to participate in this experiment, and they both agreed.  In general, the review is open to any interested party, just send a message or comment if you wish to be listed on the invite list. 
+
+ALSO NOTE: After the initial review,  any person can continue to ask questions on the code under review and receive answers.  This is how new participants can be brought up to speed on the various sections of code.
 
 Please respond to accept or decline this invitation
+
+Please respond indicating if 1 week is too little or too much to perform you part of the review.
 
 Please prepare by reading the review materials by [1 week from last response]. It encouraged to respond earlier than the deadline.  The default time period is adjusted according to the experience, availability and timeliness of the participants.
 
