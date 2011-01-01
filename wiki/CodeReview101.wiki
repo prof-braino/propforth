@@ -31,7 +31,7 @@ Can:
 
  Reviewers can submit constructive criticism on any topic. "I do that differently, have you considered ...."
 
- Reviewers can disagree with the author implementation of the work.  "I don't think this will work, there will be a divde by zero in this case"
+ Reviewers can disagree with the author implementation of the work.  "I don't think this will work, there will be a divide by zero in this case"
 
  Reviewers can disagree with the author documentation of the work.  "These comments are too much/too little for the complexity of this function,  please consider...."
 
@@ -123,8 +123,8 @@ Code:
 
 Inputs:  
 
-  *User character stream is entered via terminal program
-  *Character steam contains text and ANSI escape sequences
+  * User character stream is entered via terminal program
+  * Character steam contains text and ANSI escape sequences
 
 Processing:
 
@@ -141,7 +141,7 @@ Results/Side affects:
  * User text is displayed on the terminal display
  * ANSI Escape sequences affect the display according to ANSI Escape sequences referenced above.
 
- - text color and screen background are controled
+ - text color and screen background are controlled
 
  - font and other attributes are control as supported by terminal 
 
