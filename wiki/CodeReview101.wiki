@@ -108,7 +108,7 @@ There are several "deadlines"  mentioned above.  These are not scary. Each task 
  # Results/Side affects
 
 -----
-Example: Review Package for Code Review of ANSI.f 
+ === Example: Review Package for Code Review of ANSI.f ===
 
 Prerequisites: Hardware and software
 
@@ -155,9 +155,11 @@ Results/Side affects:
  - font and other attributes are control as supported by terminal 
 
 -----
-Example: Review Schedule for Code Review of ANSI.f 
+ === Example: Review Schedule for Code Review of ANSI.f ===
 
 *Code Review for ANSI.f invitation*
+
+EDIT per comment by rligocki: In a corporate environment, there is usually a group scheduler like MS Outlook or Google Calendar where member can see each others availability. This project is less formal, so this was not done at this time.  If the group feels scheduling the meetings and deadlines in Google Calendar would be a benefit, we can try to set this up.
 
 Requested participants
  * *Required*  `prof_braino`
