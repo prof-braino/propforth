@@ -214,18 +214,11 @@ Please prepare by submitting review questions to the Review Lead No Later than t
 
  Answer to 3) These were the original comments in the code that author borrowed from salsanci as a starting point.  The section for ANSI support was commented out and not fully developed for desired purpose, so prof_braino took it out and made a separate extension (ANSI.f).  Should these be removed/changed? Please make suggestions. 
 
-
-Question 4)  <not submitted yet> 
-
+ Question 4)  <not submitted yet> 
 
  ==== Reviewer (B)==== 
 
-Question 1)   <not submitted yet> 
-
- ==== Reviewer (C)====
-
-Question 1)   <not submitted yet> 
-
+ Question 1)   <not submitted yet> 
 
 ---- 
 
