@@ -75,10 +75,9 @@ Any reviews that do not adhere to these guidelines should be noted,  and the gui
 
 = Code Review Preparation =
 
-The difference between a code review and "just looking at another person's code" is that there are specific steps that we try to do.  We don't always have to do all of them, but this list should reflect what we actually do; so point out things that are should be changed (review this review instruction).
+The difference between a code review and "just looking at another person's code" is that there are specific steps that we try to do.  We don't always have to do all of these steps, but this list should reflect what we actually do; so point out things that are should be changed (review this review instruction).
 
  # To prepare for code review, the leader make a package that includes all materials needed for the review. 
-
  # The leader invites reviewer and schedules the start and end of the review (by getting agreement from the attendees).  
  # The attendees read the materials, and ask questions and make comments.  
  # The attendees return their questions and comments to the author.  
