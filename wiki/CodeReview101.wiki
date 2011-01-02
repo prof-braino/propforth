@@ -180,7 +180,7 @@ Please prepare by reading the review materials by [1 week from last response]. I
 Please prepare by submitting review questions to the Review Lead No Later than the Deadline date.   It encouraged to respond earlier than the deadline.  The default time period is adjusted according to the experience, availability and timeliness of the participants.
 
 -----
-=== Example: Review Responses for Code Review of ANSI.f ===
+ === Example: Review Responses for Code Review of ANSI.f ===
 
 *Code Review for ANSI.f invitation*
 
@@ -195,7 +195,7 @@ Please prepare by submitting review questions to the Review Lead No Later than t
 
 -----
 
-=== Example: Review Responses for Code Review of ANSI.f ===
+ === Example: Review Responses for Code Review of ANSI.f ===
 
 *Code Review QUESTIONS for ANSI.f*
 
