@@ -75,6 +75,25 @@ Any reviews that do not adhere to these guidelines should be noted,  and the gui
 
 = Code Review Preparation =
 
+The difference between a code review and "just looking at another person's code" is that there are specific steps that we try to do.  We don't always have to do all of them, but this list should reflect what we actually do; so point out things that are should be changed (review this review instruction).
+
+ # To prepare for code review, the leader make a package that includes all materials needed for the review. 
+
+ # The leader invites reviewer and schedules the start and end of the review (by getting agreement from the attendees).  
+ # The attendees read the materials, and ask questions and make comments.  
+ # The attendees return their questions and comments to the author.  
+ # The team discusses the questions and comments.  
+ # The team determines whether or not each given questions or comment requires a change to be made to the materials (the reviewers do NOT hash out the actual fix to a given issue, the meeting would take too long. All issues are sorted out off-line, after the meeting). 
+ # After the meeting the author arranges for the changes to be made (does them or gets someone else to do them).  This is done by a specific deadline, usually two days or whatever we decide, to make sure we don't have unresolved reviews hanging around.
+ # When the changes are complete, the author notified the team to check the changes
+ # The team checks that the changes address the intent of the original question/comment, to ensure no issues are unresolved
+ # The team notified the author that the changes are all complete
+ # The author posts the new version that includes all changes and works to all members expectations.
+ 
+There are several "deadlines"  mentioned above.  These are not scary. Each task only task a short amount of time, but there are several tasks that must happen in sequence. It is important that participants agree to do there part in the allotted time, or the review will never end.  All tasks and deadlines are agree to by consensus of the team members; it something inconvenient simply mention it to the leader/author and a change will be made. 
+
+= The Code Review Package = 
+
  * The Leader/Author prepares the review package.
  * The Review package contains the items needed for the review as determined by the team.  
  * Typically the review package consists of:
