@@ -93,6 +93,8 @@ There are several "deadlines"  mentioned above.  These are not scary. Each task 
 
 = The Code Review Package = 
 
+The code review package defines the complete set of items needed to perform the review.  In this case, we assume that each participant has the following or equivalent: a PC, an internet connection, a propeller chip, propeller tool Rx.x, PropforthV4.x.zip, and some understanding or willingness to learn FORTH. 
+
  * The Leader/Author prepares the review package.
  * The Review package contains the items needed for the review as determined by the team.  
  * Typically the review package consists of:
