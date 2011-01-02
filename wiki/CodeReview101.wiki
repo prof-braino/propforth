@@ -75,9 +75,10 @@ Any reviews that do not adhere to these guidelines should be noted,  and the gui
 
 = Code Review Preparation =
 
- # The Leader/Author prepares the review package.
- # The Review package contains the items needed for the review as determined by the team.  
- # Typically the review package consists of:
+ * The Leader/Author prepares the review package.
+ * The Review package contains the items needed for the review as determined by the team.  
+ * Typically the review package consists of:
+
  # The code under review
  # A statement of the function of the code
  # Prerequisites
