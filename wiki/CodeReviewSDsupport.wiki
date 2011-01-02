@@ -6,7 +6,7 @@
 Contributor caskaz considered the most capable regular contributor to propforth. He began working with forth around release 2.6, less than a year ago.  After implementing drivers for his NEC LCD screen, he decided to implement SD support for propforth. 
 This is a non-trivial task. Depending on how far it is taken, it can lead to full FAT32 support.  Kye worked his SD driver in PASM and SPIN for a year before posting http://forums.parallax.com/showthread.php?122991-SD2.0-Full-FAT32-16-File-Sytem-Driver-You-there!-Yes-you-viewing-this-forum. So SD support in forth may take a bit of work, but doing it is the best way to learn what is going on.
 
-Prof_Braino copies the body of CodeReview101 and editied it for SD.  This will be the standard method for setting up a code reveiw until a better option is available.   Let me know if I should add or remove anything.  
+`Prof_Braino` copied the body of CodeReview101 and edited it for SD.  This will be the standard method for setting up a code review until a better option is available.   Let me know if I should add or remove anything.  
 
 = Guidelines and Rules =
 
@@ -40,9 +40,9 @@ Cannot:
 
 Guidelines for the code review process:
 
- Leader is prof_braino, caskaz the author prefers to Japanese, and we don't have the translator working yet. 
+ Leader is `prof_braino`, `caskaz` the author prefers conduct the discussion in Japanese, and we don't have the translator working yet. 
 
- Leader has requested code review abnd author has agreed.
+ Leader has requested code review and author has agreed.
 
  Leader is preparing a review package with author (described below)
 
@@ -116,17 +116,17 @@ Supporting References: SD functional definition
 
 Code: 
 
-  <TBD - caskaz is creating a zip arrchive that will be posted>
+  <TBD - caskaz is creating a zip archive that will be posted>
 
 Setup:
 
   * User sets up test configuration of Prop, SD slot, and SD card
-  * User load the SD supoort code in the order specificed 
+  * User load the SD support code in the order specified 
 
 Inputs:  
 
-  * User configures SD card tio contain the various arrangements of directories and files as indicated 
-  * User issues varrious commands as indicated
+  * User configures SD card to contain the various arrangements of directories and files as indicated 
+  * User issues various commands as indicated
 
 Processing:
 
@@ -135,7 +135,7 @@ Processing:
 
 Outputs:
 
- * Prop presents SD card outputs to the user dispaly screen
+ * Prop presents SD card outputs to the user display screen
 
 Results/Side affects:
 
@@ -147,14 +147,14 @@ Results/Side affects:
 
  * Code Review for SD Support invitation *
 
-Invitation will be by email.  Reply to email (within the alloted time?  How about 1 day from the invitation notification email?) to accept. 
+Invitation will be by email.  Reply to email (within the allotted time?  How about 1 day from the invitation notification email?) to accept. 
 
 Requested participants
  * *Required*  `prof_braino`
  * *Required*  `caskaz`
  * *Required*  `BrianRiley`
  * _Optional_  `salsanci`
- * _Optional_  `Ron Suttcliffe` (if Ron is interested I would like to make him a required participant)
+ * _Optional_  `Ron Sutcliffe` (if Ron is interested I would like to make him a required participant)
  * _optional_  `any other interested parties`  
 
 
@@ -205,7 +205,7 @@ Please provide comments:
 
 == Final Phase: Post Review == 
 
-   Review comments recieved:  <not yet>
+   Review comments received:  <not yet>
    Review comments actioned:  <not yet>
    Review actions  complete:  <not yet>
    Review actions  accepted:  <not yet>
