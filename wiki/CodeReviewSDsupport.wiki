@@ -1,6 +1,11 @@
 #summary The Code Review experiments for Propforth - 20110102 SD support
 #labels SD,v4.0,Phase-Implementation
 
+ == This review has not been started 20110102 ==
+ == The review invitation has not been sent 20110102 ==
+ == Review Package is being prepared 20110102 ==
+
+
 = SD support =
 
 Contributor caskaz considered the most capable regular contributor to propforth. He began working with forth around release 2.6, less than a year ago.  After implementing drivers for his NEC LCD screen, he decided to implement SD support for propforth. 
