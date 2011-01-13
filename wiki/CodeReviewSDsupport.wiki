@@ -23,7 +23,7 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
  === Review Package for Code Review of SD Support ===
 
-Prerequisites: Hardware and software
+===Prerequisites: Hardware and software===
 
  * SDSC card - 1 Gig
  * SDHC card - 4 Gig
