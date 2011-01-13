@@ -13,96 +13,15 @@ This is a non-trivial task. Depending on how far it is taken, it can lead to ful
 
 `Prof_Braino` copied the body of CodeReview101 and edited it for SD.  This will be the standard method for setting up a code review until a better option is available.   Let me know if I should add or remove anything.  
 
-= Guidelines and Rules =
 
-Please follow these guidelines and rules for code review.  If any guidelines or rules should be added, changed, or removed, please inform the team.  These rules and guidelines are intended to reflect the consensus of the team.
+= Please Read =
 
- == Rules =  
+For Guidelines, Rules, and Code Review Preparation, Please see
 
-Can:  
-
- Reviewers can ask for clarification on intent of any piece of code under review
- 
- Reviewers can identify issues for other pieces of code (and trigger an new review on that code)
-
- Reviewers can state "I don't understand" or "I don't get it"  for any piece of code
-
- Reviewers can submit constructive criticism on any topic. "I do that differently, have you considered ...."
-
- Reviewers can disagree with the author implementation of the work.  "I don't think this will work, there will be a divide by zero in this case"
-
- Reviewers can disagree with the author documentation of the work.  "These comments are too much/too little for the complexity of this function,  please consider...."
-
- Author can accept or reject groups input at author's discretion.  Typically, the author makes the changes suggested by the groups (if this person asks for this, others probably will have a similar request). 
-
- Reviewers that have additional changes not implemented by the author are free to make any changes in their own private branch of the code.  These will not necessarily be included in the main Propforth packages.  (Examples are Hive and C3 branches).
-
-Cannot:
-
- Participants cannot behave inappropriately
-
- == Guidelines ==
-
-Guidelines for the code review process:
-
- Leader is `prof_braino`, `caskaz` the author prefers conduct the discussion in Japanese, and we don't have the translator working yet. 
-
- Leader has requested code review and author has agreed.
-
- Leader is preparing a review package with author (described below)
-
- Leader will call the review when package is ready
-
- Leader will invite participants 
- 
- Leader will negotiate and arrange times, dead lines so there is sufficient time to prepare.
-
- Participants commit to participate by accepting the review invitation 
-
- Participants prepare by reading the materials in advance of the review
- 
- Participants prepare by writing questions about the materials in advance of the review
-
- Participants prepare by sending list of questions to Leader/Author in advance of the agreed upon deadline.  (i.e. "We'll get questions back to you by Tuesday")
-
-Any reviews that do not adhere to these guidelines should be noted,  and the guidelines should be updated to describe what actually needs to happen.   
-
-= Code Review Preparation =
-
-The difference between a code review and "just looking at another person's code" is that there are specific steps that we try to do.  We don't always have to do all of these steps, but this list should reflect what we actually do; so point out things that are should be changed (review this review instruction).
-
- # To prepare for code review, the leader make a package that includes all materials needed for the review. 
- # The leader invites reviewer and schedules the start and end of the review (by getting agreement from the attendees).  
- # The attendees read the materials, and ask questions and make comments.  
- # The attendees return their questions and comments to the author.  
- # The team discusses the questions and comments.  
- # The team determines whether or not each given questions or comment requires a change to be made to the materials (the reviewers do NOT hash out the actual fix to a given issue, the meeting would take too long. All issues are sorted out off-line, after the meeting). 
- # After the meeting the author arranges for the changes to be made (does them or gets someone else to do them).  This is done by a specific deadline, usually two days or whatever we decide, to make sure we don't have unresolved reviews hanging around.
- # When the changes are complete, the author notified the team to check the changes
- # The team checks that the changes address the intent of the original question/comment, to ensure no issues are unresolved
- # The team notified the author that the changes are all complete
- # The author posts the new version that includes all changes and works to all members expectations.
- 
-There are several "deadlines"  mentioned above.  These are not scary. Each task only task a short amount of time, but there are several tasks that must happen in sequence. It is important that participants agree to do there part in the allotted time, or the review will never end.  All tasks and deadlines are agree to by consensus of the team members; it something inconvenient simply mention it to the leader/author and a change will be made. 
-
-= The Code Review Package = 
-
-The code review package defines the complete set of items needed to perform the review.  In this case, we assume that each participant has the following or equivalent: a PC, an internet connection, a propeller chip, propeller tool Rx.x, PropforthV4.x.zip, and some understanding or willingness to learn FORTH. 
-
- * The Leader/Author prepares the review package.
- * The Review package contains the items needed for the review as determined by the team.  
- * Typically the review package consists of:
-
- # The code under review
- # A statement of the function of the code
- # Prerequisites
- # Supporting references
- # Inputs
- # Processing
- # Outputs
- # Results/Side affects
+http://code.google.com/p/propforth/wiki/CodeReview101
 
 -----
+
  === Review Package for Code Review of SD Support ===
 
 Prerequisites: Hardware and software
@@ -116,8 +35,6 @@ Prerequisites: Hardware and software
   No addition hardware or software is identified
 
 Supporting References: SD functional definition
-
-  <TBD>
 
    Comment by project member caskazsan, Jan 02, 2011: I recommend to read document about FAT & SD.  You don't need to understand all. Of course,I can't understand all too.
 
@@ -137,8 +54,6 @@ Supporting References: SD functional definition
 
 
 Code: 
-
-  <TBD - caskaz is creating a zip archive that will be posted>
 
   == http://propforth.googlecode.com/files/sd_loader_1.0a_20101225-2127.zip ==
 
