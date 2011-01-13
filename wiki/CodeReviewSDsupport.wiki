@@ -140,6 +140,10 @@ Code:
 
   <TBD - caskaz is creating a zip archive that will be posted>
 
+  == http://propforth.googlecode.com/files/sd_loader_1.0a_20101225-2127.zip ==
+
+  This is the code from the parallax forums post http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-download&p=963390&viewfull=1#post963390
+
 Setup:
 
   * User sets up test configuration of Prop, SD slot, and SD card
