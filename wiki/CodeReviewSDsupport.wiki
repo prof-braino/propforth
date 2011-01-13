@@ -21,7 +21,7 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
 -----
 
- === Review Package for Code Review of SD Support ===
+ == Review Package for Code Review of SD Support ==
 
 ===Prerequisites: Hardware and software===
 
@@ -33,7 +33,7 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
   No addition hardware or software is identified
 
-Supporting References: SD functional definition
+===Supporting References: SD functional definition===
 
    Comment by project member caskazsan, Jan 02, 2011: I recommend to read document about FAT & SD.  You don't need to understand all. Of course,I can't understand all too.
 
@@ -52,38 +52,39 @@ Supporting References: SD functional definition
  This pdf is big. Understanding everything is hard. Please read "chapter5 Card Registers" and "chapter7 SPI Mode". 
 
 
-Code: 
+===Code: ===
 
   == http://propforth.googlecode.com/files/sd_loader_1.0a_20101225-2127.zip ==
 
   This is the code from the parallax forums post http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-download&p=963390&viewfull=1#post963390
 
-Setup:
+===Setup:===
 
   * User sets up test configuration of Prop, SD slot, and SD card
   * User load the SD support code in the order specified 
 
-Inputs:  
+===Inputs:  ===
 
   * User configures SD card to contain the various arrangements of directories and files as indicated 
   * User issues various commands as indicated
 
-Processing:
+===Processing:===
 
  * Prop requests SD card information, SD card reads the information and presents it to the prop 
  * Prop requests SD card to save information, SD card writes the information and presents results to the prop 
 
-Outputs:
+===Outputs:===
 
  * Prop presents SD card outputs to the user display screen
 
-Results/Side affects:
+===Results/Side affects:===
 
  * SD data is displayed on the terminal display
  * User data is stored on the SD card
 
 -----
- === Review Schedule for Code Review of SD Support ===
+
+ == Review Schedule for Code Review of SD Support ==
 
  * Code Review for SD Support invitation *
 
@@ -107,7 +108,8 @@ Please prepare by reading the review materials by [1 week from last response]. I
 Please prepare by submitting review questions to the Review Lead No Later than the Deadline date.   It encouraged to respond earlier than the deadline.  The default time period is adjusted according to the experience, availability and timeliness of the participants.
 
 -----
- === Review Responses for Code Review of SD support ===
+
+ == Review Responses for Code Review of SD support ==
 
 *Code Review for SD Support invitation*
 
