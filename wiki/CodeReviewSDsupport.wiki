@@ -119,15 +119,15 @@ Supporting References: SD functional definition
 
   <TBD>
 
-Comment by project member caskazsan, Jan 02, 2011: I recommend to read document about FAT & SD.  You don't need to understand all. Of course,I can't understand all too.
+ Comment by project member caskazsan, Jan 02, 2011: I recommend to read document about FAT & SD.  You don't need to understand all. Of course,I can't understand all too.
 
-AT32 File System Specification http://www.microsoft.com/whdc/system/platform/firmware/fatgen.mspx
+ AT32 File System Specification http://www.microsoft.com/whdc/system/platform/firmware/fatgen.mspx
 
-SD System Specification http://www.sdcard.org/home/
+ SD System Specification http://www.sdcard.org/home/
 
-How to use MMC/SDC http://elm-chan.org/docs/mmc/mmc_e.html
+ How to use MMC/SDC http://elm-chan.org/docs/mmc/mmc_e.html
 
-If you don't understand, ask them please. I reply within areas I understand.
+ If you don't understand, ask them please. I reply within areas I understand.
 
 
 Code: 
