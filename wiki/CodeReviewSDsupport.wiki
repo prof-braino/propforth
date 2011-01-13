@@ -129,6 +129,12 @@ Supporting References: SD functional definition
 
  If you don't understand, ask them please. I reply within areas I understand.
 
+ You might be hard to find out SD-specification document.  Please do "I accept" on http://www.sdcard.org/developers/tech/sdcard/pls/
+
+ Please download "Part 1 Physical Layer Simplified Specification Ver3.01".
+
+ This pdf is big. Understanding everything is hard. Please read "chapter5 Card Registers" and "chapter7 SPI Mode". 
+
 
 Code: 
 
