@@ -87,6 +87,23 @@ Not Used -  should not be included in review package:
   * User sets up test configuration of Prop, SD slot, and SD card
   * User load the SD support code in the order specified 
 
+  UPDATE: Per README sd_loader.txt:
+
+ * Hardware
+   # SD Card size 256M/512M/1G/2G/4G/16G formatted by manufacturer's utility; Cards formatted by Windows are not supported and might not work 
+   # SD adapter wired per curcuit0010.JPG.  NOTE: 10k resistors and 0.1uF capacitor must be as close as possible to SD card.
+
+ * Software
+   # the software under test may be modified to match your hardware. See lines 11, 12, 13, 14 in sd_loader_1.0a.f
+   # Propforth.spin is loaded into EEPROM on prop board.
+   # fs.f (EEPROM filesystem) is loaded into propforth and saveforth is executed
+   # forth source files sd_viewer_2.4a.f, LogicAnalizer.f, Dump.f are loaded on to SD card
+
+NOTE: Files reside in a single cluster.  No file may be larger than the size of a cluster.  Since the largest file used is 22kb, the cluster size must be at least 32kb. 
+
+
+
+
 ===Inputs:  ===
 
   * User configures SD card to contain the various arrangements of directories and files as indicated 
