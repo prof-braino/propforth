@@ -1,4 +1,4 @@
-#summary The Code Review experiments for Propforth - 20110102 SD support
+#summary The Code Review experiments for Propforth - 20110102 SD support -- why does this wrap during edit?
 #labels SD,v4.0,Phase-Implementation
 
  == This review has not been started 20110102 ==
