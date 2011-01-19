@@ -67,19 +67,19 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
 The source code being reviewed is found in the above zip file which contains eleven (11) files. Each will be reviewed separately as in the list below.   Moderator will attempt to order the list so that the files apear in the order they are used, initially the list contains the file in the order they appear in the zip archive.
 
- #  About_sd_viewer.pdf
- #  DSCN8043.JPG
- #  curcuit0010.JPG
- # Readme sd_loader_1.0a.txt
- #  sd_viewer_2.4a.f
- #  LogicAnalyzer.f
- #  sd_loader_1.0a.f
- #  Dump.f
- #  debug_tool.f
+ #  'About_sd_viewer.pdf'
+ #  'DSCN8043.JPG'
+ #  'curcuit0010.JPG'
+ # 'Readme sd_loader_1.0a.txt'
+ #  'sd_viewer_2.4a.f'
+ #  'LogicAnalyzer.f'
+ #  'sd_loader_1.0a.f'
+ #  'Dump.f'
+ #  'debug_tool.f'
 
 Not Used -  should not be included in review package:
- #  sd_loader_1.0a_1.f
- #  sd_loader_1.0a_2.f
+ #  'sd_loader_1.0a_1.f'
+ #  'sd_loader_1.0a_2.f'
 
 
 ===Setup:===
@@ -94,10 +94,10 @@ UPDATE: Per README sd_loader.txt:
    # SD adapter wired per curcuit0010.JPG.  NOTE: 10k resistors and 0.1uF capacitor must be as close as possible to SD card.
 
  * Software
-   # the software under test may be modified to match your hardware. See lines 11, 12, 13, 14 in sd_loader_1.0a.f
+   # the software under test may be modified to match your hardware. See lines 11, 12, 13, 14 in 'sd_loader_1.0a.f'
    # Propforth.spin is loaded into EEPROM on prop board.
-   # fs.f (EEPROM filesystem) is loaded into propforth and saveforth is executed
-   # forth source files sd_viewer_2.4a.f, LogicAnalizer.f, Dump.f are loaded on to SD card
+   # 'fs.f' (EEPROM file  system) is loaded into propforth and saveforth is executed
+   # forth source files 'sd_viewer_2.4a.f', 'LogicAnalizer.f', 'Dump.f' are loaded on to SD card
 
 NOTE: Files reside in a single cluster.  No file may be larger than the size of a cluster.  Since the largest file used is 22kb, the cluster size must be at least 32kb. 
 
