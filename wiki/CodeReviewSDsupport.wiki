@@ -31,9 +31,14 @@ http://code.google.com/p/propforth/wiki/CodeReview101
  * Propchip with 4 I/O pins free,  preferably 0, 1, 2, 3 so anyone with a demoboard may participate
  * Propforth v4.0x (in this case Propforth.spin is identical in Propforth4.0 and Propforth4.0a so either can be used)
 
+ * MMC card is not supported
+
+
   No addition hardware or software is identified
 
- * MMC card is not supported
+  UPDATE: 
+ * the SD review package may need fs.s loaded into the prop board's EEPROM.
+ * the SD review package may need additional forth source files from the Propforth 4.0a parchive loaded into the fs.f EEPROM files system.
 
 ===Supporting References: SD functional definition===
 
