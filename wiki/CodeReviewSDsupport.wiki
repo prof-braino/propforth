@@ -87,7 +87,7 @@ Not Used -  should not be included in review package:
   * User sets up test configuration of Prop, SD slot, and SD card
   * User load the SD support code in the order specified 
 
-  UPDATE: Per README sd_loader.txt:
+UPDATE: Per README sd_loader.txt:
 
  * Hardware
    # SD Card size 256M/512M/1G/2G/4G/16G formatted by manufacturer's utility; Cards formatted by Windows are not supported and might not work 
