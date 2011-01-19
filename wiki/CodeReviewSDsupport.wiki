@@ -9,7 +9,7 @@
 = SD support =
 
 Contributor caskaz considered the most capable regular contributor to propforth. He began working with forth around release 2.6, less than a year ago.  After implementing drivers for his NEC LCD screen, he decided to implement SD support for propforth. 
-This is a non-trivial task. Depending on how far it is taken, it can lead to full FAT32 support.  Kye worked his SD driver in PASM and SPIN for a year before posting http://forums.parallax.com/showthread.php?122991-SD2.0-Full-FAT32-16-File-Sytem-Driver-You-there!-Yes-you-viewing-this-forum. So SD support in forth may take a bit of work, but doing it is the best way to learn what is going on.
+This is a non-trivial task. Depending on how far it is taken, it can lead to full FAT32 support.  Kye worked his SD driver in PASM and SPIN for a year before posting it.  So SD support in forth may take a bit of work, but doing it is the best way to learn what is going on.
 
 ----
 
