@@ -60,29 +60,29 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
   This is the code from the parallax forums post http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-download&p=963390&viewfull=1#post963390
 
-The source code being reviewed is found in the above zip file which contains eleven (11) files. Each will be reviewed separately as in the list below.   Moderator will attempt to order the list so that the files apear in the order they are used, initially the list contains the file in the order they appear in the zip archive. 
+The source code being reviewed is found in the above zip file which contains eleven (11) files. Each will be reviewed separately as in the list below.   Moderator will attempt to order the list so that the files apear in the order they are used, initially the list contains the file in the order they appear in the zip archive.
 
-Readme sd_loader_1.0a.txt
+ # Readme sd_loader_1.0a.txt
 
-sd_loader_1.0a_1.f
+ #  sd_loader_1.0a_1.f
 
-LogicAnalyzer.f
+ #  LogicAnalyzer.f
 
-sd_loader_1.0a.f
+ #  sd_loader_1.0a.f
 
-sd_viewer_2.4a.f
+ #  sd_viewer_2.4a.f
 
-curcuit0010.JPG
+ #  curcuit0010.JPG
 
-DSCN8043.JPG
+ #  DSCN8043.JPG
 
-About_sd_viewer.pdf
+ #  About_sd_viewer.pdf
 
-Dump.f
+ #  Dump.f
 
-sd_loader_1.0a_2.f
+ #  sd_loader_1.0a_2.f
 
-debug_tool.f
+ #  debug_tool.f
 
 
 ===Setup:===
