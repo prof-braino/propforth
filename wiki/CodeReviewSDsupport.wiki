@@ -33,6 +33,8 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
   No addition hardware or software is identified
 
+ * MMC card is not supported
+
 ===Supporting References: SD functional definition===
 
    Comment by project member caskazsan, Jan 02, 2011: I recommend to read document about FAT & SD.  You don't need to understand all. Of course,I can't understand all too.
