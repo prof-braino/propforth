@@ -63,7 +63,7 @@ http://code.google.com/p/propforth/wiki/CodeReview101
 
   == ~~ http://propforth.googlecode.com/files/sd_loader_1.0a_20101225-2127.zip ~~ ==
 
-  == http://code.google.com/p/propforth/downloads/detail?name=sd_loader_3.0_20110103-1437.zip ==
+  == http://code.google.com/p/propforth/files/sd_loader_3.0_20110103-1437.zip ==
 
   This is the code from the parallax forums post http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-download&p=963390&viewfull=1#post963390
 
