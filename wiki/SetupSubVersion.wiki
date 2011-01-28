@@ -19,6 +19,12 @@ Anyway...
 http://subversion.apache.org/packages.html
 http://sourceforge.net/projects/win32svn/
 
+Man-o-man this was a bear.  Maybe I think different than other folks, but I could NOT find the documentation to set this up.  Possibly the docs assume the user has already done this successfully on another system, which is kind of useless, because a person that already knows how would not read the instructions anyway.
+
+Lets see if I can write the steps to set up the repository and connect.
+
+ # locate the Google Code Repository instructions: 
+
 
 == ... continue here tomorrow after install.... ==
 
