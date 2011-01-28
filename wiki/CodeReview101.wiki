@@ -32,9 +32,9 @@ Please follow these guidelines and rules for code review.  If any guidelines or 
 
 Can:
 
- Reviewers can ask for clarification on intent of any piece of code under review
+ * Reviewers can ask for clarification on intent of any piece of code under review
  
- Reviewers can identify issues for other pieces of code (and trigger an new review on that code)
+ * Reviewers can identify issues for other pieces of code (and trigger an new review on that code)
 
  Reviewers can state "I don't understand" or "I don't get it"  for any piece of code
 
