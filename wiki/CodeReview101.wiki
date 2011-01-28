@@ -17,8 +17,8 @@ This discussion uses the example of ANSI.f as the subject of the first example c
 
 = Code Reviews (newest first) =
 
-20110128 http://code.google.com/p/propforth/wiki/CodeReviewSDsupport 
-20101227 Example review for ANSI at bottom of this page
+* 20110128 http://code.google.com/p/propforth/wiki/CodeReviewSDsupport 
+* 20101227 Example review for ANSI at bottom of this page
 
 == set up source code repository =
 
