@@ -10,12 +10,10 @@ SubVersion (SVN) is one of the most common open source version control systems. 
 
 = Details =
 
-This is going to use SVN for windows.  More advanced users will probably prefer a linux based solution, there will be a separate linux page when somebody decides to write it; of course advanced users may not need instructions, so there you go. 
+This is going to use SVN for windows and TortoiseSVN as the windows GUI interface.  More advanced users will probably prefer a linux based solution, there will be a separate linux page when somebody decides to write it; of course advanced users may not need instructions, so there you go. 
 
 http://subversion.apache.org/packages.html
 http://sourceforge.net/projects/win32svn/
-
-Man-o-man this was a bear.  Maybe I think different than other folks, but I could NOT find the documentation to set this up.  Possibly the docs assume the user has already done this successfully on another system, which is kind of useless, because a person that already knows how would not read the instructions anyway.
 
 I hade some troubles with the inital setup.  If the result has problems I can redo it if someone can identify the correct set up method. 
 
