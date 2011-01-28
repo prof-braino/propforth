@@ -28,7 +28,15 @@ Lets see if I can write the steps to set up the repository and connect.
  # Create the directory you want to use as the local SVN directory on your PC (this is where you will see the files you get from the repository when you work on them. I used G:\Propforth-SVN)
  # ringht click on the directory (G:\Propforth-SVN) and select TortiseSVN > Create Repository Here 
  # Open a Commnd Line in XP using Start > Run > cmd 
- # cd to
+ # In XP's command line window,cd to your local repository window: 
+   * cd G:
+   * cd \Propforth-SVN
+ # Checkout the current repository
+{{{
+    G:\Propforth-SVN>svn checkout https://propforth.googlecode.com/svn/trunk/ propforth --username prof.braino@gmail.com
+Checked out revision 711.
+}}}
+
 
  # find the repository location on Google Code: http://code.google.com/p/propforth/source/browse/
  # locate the Google Code Repository instructions: http://code.google.com/p/propforth/source/checkout
