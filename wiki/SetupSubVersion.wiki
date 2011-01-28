@@ -2,19 +2,15 @@
 
 = Introduction =
 
-UNDER CONSTRUCTION 20110121 -  not ready for use 
-
 In order to perform code review, we need a method to track changes to version of the source code. After the author's initial version, each reviewer will suggest changes, which could result in a new version. After several simultaneous reviews, there could be several conflicting versions.   We need a way to manage which changes from which version are to be kept, and which are to be discarded.  There are many ways to do this, and usually each person does it a different way.  Confusion quickly sets in UNLESS....
 
 The experiment is to attempt to implement SVN as a version control system.  We''ll see if anybody can install it, and if anybody uses it.  IF everybody decides they can't or won't use it, we will try a different alternative.  But we must start someplace, this is as good as any. 
 
-SubVersion (SVN) is the most common open source version control system.  There is another choice which supports off-line check-in, but since I have no idea what that means, I think we don;t need it at this point.  If we find that we do we can switch later. 
+SubVersion (SVN) is one of the most common open source version control systems.  There is another choice which supports off-line check-in, but since I have no idea what that means, I think we don't need it at this point.  If we find otherwise, we can switch later. 
 
 = Details =
 
-I downloaded SVN for windows.  I play a lot of video games, and windows is good for video games (if nothing else) and I have a very fast machine with a nice graphics and huge video.   Smarter people will probably use linux, there will be a separate linux page when somebody decides to write it; of course smarter people may not need instructions so there you go. 
-
-Anyway...
+This is going to use SVN for windows.  More advanced users will probably prefer a linux based solution, there will be a separate linux page when somebody decides to write it; of course advanced users may not need instructions, so there you go. 
 
 http://subversion.apache.org/packages.html
 http://sourceforge.net/projects/win32svn/
