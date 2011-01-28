@@ -34,24 +34,17 @@ Can:
 
  * Reviewers can ask for clarification on intent of any piece of code under review
  * Reviewers can identify issues for other pieces of code (and trigger an new review on that code)
-
- Reviewers can state "I don't understand" or "I don't get it"  for any piece of code
-
- Reviewers can submit constructive criticism on any topic. "I do that differently, have you considered ...."
-
- Reviewers can disagree with the author implementation of the work.  "I don't think this will work, there will be a divide by zero in this case"
-
- Reviewers can disagree with the author documentation of the work.  "These comments are too much/too little for the complexity of this function,  please consider...."
-
- Author can accept or reject groups input at author's discretion.  Typically, the author makes the changes suggested by the groups (if this person asks for this, others probably will have a similar request). 
-
- Reviewers that have additional changes not implemented by the author are free to make any changes in their own private branch of the code.  These will not necessarily be included in the main Propforth packages.  (Examples are Hive and C3 branches).
+ * Reviewers can state "I don't understand" or "I don't get it"  for any piece of code
+ * Reviewers can submit constructive criticism on any topic. "I do that differently, have you considered ...."
+ * Reviewers can disagree with the author implementation of the work.  "I don't think this will work, there will be a divide by zero in this case"
+ * Reviewers can disagree with the author documentation of the work.  "These comments are too much/too little for the complexity of this function,  please consider...."
+ * Author can accept or reject groups input at author's discretion.  Typically, the author makes the changes suggested by the groups (if this person asks for this, others probably will have a similar request). 
+ * Reviewers that have additional changes not implemented by the author are free to make any changes in their own private branch of the code.  These will not necessarily be included in the main Propforth packages.  (Examples are Hive and C3 branches).
 
 Cannot:
 
- Participants cannot make derogatory statements about another participant's work 
-
- Participants cannot make a personal attack on participants.
+ * Participants cannot make derogatory statements about another participant's work 
+ * Participants cannot make a personal attack on participants.
 
  I.E. Any troll that makes intentionally hurtful statements such as "this code is stupid", or "you're stupid" will not be invited to participate.  
 
@@ -59,25 +52,16 @@ Cannot:
 
 Guidelines for the code review process:
 
- Leader is usually the author
-
- Leader decides code is ready for review
-
- Leader prepares a review package (described below)
-
- Leader calls the review
-
- Leader invites participants 
- 
- Leader negotiates and arranges times, dead lines so there is sufficient time to prepare.
-
- Participants commit to participate by accepting the review invitation 
-
- Participants prepare by reading the materials in advance of the review
- 
- Participants prepare by writing questions about the materials in advance of the review
-
- Participants prepare by sending list of questions to Leader/Author in advance of the agreed upon deadline.  (i.e. "We'll get questions back to you by Tuesday")
+ * Leader is usually the author
+ * Leader decides code is ready for review
+ * Leader prepares a review package (described below)
+ * Leader calls the review
+ * Leader invites participants 
+ * Leader negotiates and arranges times, dead lines so there is sufficient time to prepare.
+ * Participants commit to participate by accepting the review invitation 
+ * Participants prepare by reading the materials in advance of the review
+ * Participants prepare by writing questions about the materials in advance of the review
+ * Participants prepare by sending list of questions to Leader/Author in advance of the agreed upon deadline.  (i.e. "We'll get questions back to you by Tuesday")
 
 Any reviews that do not adhere to these guidelines should be noted,  and the guidelines should be updated to describe what actually needs to happen.   
 
