@@ -113,11 +113,9 @@ Prerequisites: Hardware and software
 
 Supporting References: ANSI Escape sequences
 
- http://en.wikipedia.org/wiki/ANSI_escape_code 
-
- http://ascii-table.com/ansi-escape-sequences.php
-
- http://isthe.com/chongo/tech/comp/ansi_escapes.html
+ * http://en.wikipedia.org/wiki/ANSI_escape_code 
+ * http://ascii-table.com/ansi-escape-sequences.php
+ * http://isthe.com/chongo/tech/comp/ansi_escapes.html
 
 Code: 
 
