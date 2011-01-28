@@ -33,7 +33,7 @@ Lets see if I can write the steps to set up the repository and connect.
    * cd \Propforth-SVN
  # Checkout the current repository
 {{{
-    G:\Propforth-SVN>svn checkout https://propforth.googlecode.com/svn/trunk/ propforth --username prof.braino@gmail.com
+G:\Propforth-SVN>svn checkout https://propforth.googlecode.com/svn/trunk/ propforth --username your.username@gmail.com
 Checked out revision 711.
 }}}
 
