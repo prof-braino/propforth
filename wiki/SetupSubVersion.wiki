@@ -17,7 +17,9 @@ http://sourceforge.net/projects/win32svn/
 
 Man-o-man this was a bear.  Maybe I think different than other folks, but I could NOT find the documentation to set this up.  Possibly the docs assume the user has already done this successfully on another system, which is kind of useless, because a person that already knows how would not read the instructions anyway.
 
-Lets see if I can write the steps to set up the repository and connect.
+I hade some troubles with the inital setup.  If the result has problems I can redo it if someone can identify the correct set up method. 
+
+== Steps to set up the repository and connect ==
 
  # Download and install the newest subversion (I used Setup-Subversion-1.6.15.msi)
  # Download and install the newest TortiseSVN (I used XP Explorer  TortoiseSVN-1.6.9.19725-win32-svn-1.6.12.msi)
