@@ -15,6 +15,14 @@ The code review is potentially the documentation and educational material for ea
 
 This discussion uses the example of ANSI.f as the subject of the first example code review.  The most recent author is prof_braino (real name withheld due to previous issues with identity theft)
 
+= Code Reviews (newest first) =
+
+20110128 http://code.google.com/p/propforth/wiki/CodeReviewSDsupport 
+
+== set up source code repository =
+
+http://code.google.com/p/propforth/wiki/SetupSubVersion
+
 = Guidelines and Rules =
 
 Please follow these guidelines and rules for code review.  If any guidelines or rules should be added, changed, or removed, please inform the team.  These rules and guidelines are intended to reflect the consensus of the team.
