@@ -47,3 +47,43 @@ You should now have a local associated with the SVN Google code repository throu
 At this point, the instructions are general.  You can ADD files to the archive for new development; you can chck out files to modify them; you can check in files after modification is complete.
 
 PLEASE send comments if you see errors.  I tried to take notes as I went through this, but I know I missed some steps.  20110128
+
+= Add, Check out, Commit =
+
+*Add* - Add a new file (unversioned) file to svn for version tracking
+
+*Check-Out - Get a copy of a specific version of a file from the repository for editing
+
+*Commit - a previously "checked-out" version of a file that has been modified is checked back in; and is now the new version.   
+
+== ADD a file ==
+
+Using Windows, Add the file {{{G:\Propforth-SVN\propforth\NEWTest.txt}}} to the Google Code svn repository.
+
+In Winodws directory G:\Propforth-SVN\propforth\
+The file {{{NEWTest.txt}}} a "?" icon.
+
+ * My Computer > G:\Propforth-SVN\propforth > NEWTest.txt > Right Click
+ * TortoiseSVN > ADD 
+
+In windows, Icon has changed from "?" to a blue "+".
+
+In Googlle Code, the file is now visible in the SVN repository
+
+
+== COMMIT a file == 
+
+  * My Computer > G:\Propforth-SVN\propforth > NEWTest.txt > Right Click
+  * SVN Commit > Commit
+
+== UPDATE a file ==
+
+  * My Computer > G:\Propforth-SVN\propforth > NEWTest.txt > Right Click
+  * SVN Update > Commit
+
+In Windows, Icon has changed from blue "+" to a checkmark with a green background.
+
+= Edit on PC, or through Google Code =
+
+Files can be edited locally on the pc using your prefered editor
+Files may also be editied via the web browser using built in edit function in google code.
