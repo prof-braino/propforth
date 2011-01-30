@@ -24,6 +24,8 @@ This discussion uses the example of ANSI.f as the subject of the first example c
 
 http://code.google.com/p/propforth/wiki/SetupSubVersion
 
+To track and control changes from several sources, subversion will be used as the interface to the Google Code repository.  Since Prof_Braino used a windows box, the instructions discuss setting up subversion and TortoiseSVN (SVN GUI for windows).  If you wish to use linux based or other alternatives, please post set-up instructions so we can be consistent. 
+
 = Guidelines and Rules =
 
 Please follow these guidelines and rules for code review.  If any guidelines or rules should be added, changed, or removed, please inform the team.  These rules and guidelines are intended to reflect the consensus of the team.
