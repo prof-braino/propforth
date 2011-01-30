@@ -1,4 +1,4 @@
-This is NewTest.f to test subversion
+This is NewTest.f to test subversion 20110130-1704
 
-20110130-1704
+Now editing file from within Google Code 20110130-1721
 
