@@ -3,14 +3,15 @@ sd_loader_3.0 on PropForth4.0a
 
 Inside files
 About_sd_viewer.pdf    Simplified explanation about FAT
-debug_tool_3.0         debug tool for SD's troubles
-curcuit0010.jpg        curcuit diagram of SD I/F 
+debug_tool_3.0         debug tool for SD's troubles      (can name be SD-debug-tool?)
+curcuit0010.jpg        curcuit diagram of SD I/F (does I/F mean "interface"? If so, please replace with "interface") (reference for this? What source told you how to hook up the circuit?)
 DSCN8043               Photo of SD I/F
-Dump_3.0.f             Dump code for ram/eeprom  (commented out "fl" becuse of saving on SD)
-LogicAnalyzer_3.0.f    LogicAnalyzer  (commented out "fl fswrite LogicAnalyzer.f ..." becuse of saving on SD)
+Dump_3.0.f             Dump code for ram/eeprom  (commented out "fl" because of saving on SD)
+LogicAnalyzer_3.0.f    LogicAnalyzer  (commented out "fl fswrite LogicAnalyzer.f ..." becuse of saving on SD)  (need more explanaition on why things were commented out)
+
 Readme_sd_loader_3.0   this file
 sd_loader.txt          Source code for sd_loader_3.0.f
-                           This file Cannot load because of overflow input-buffer. Contents is same as sd_loader_3.0.f except for extra spaces.
+                           This file Cannot load because of overflow input-buffer. Contents is same as sd_loader_3.0.f except for extra spaces. (Pleas explain why this is here if it cannot load)
 sd_loader_3.0.f        sd_loader(Loadable file)
 sd_viewer_3.0.f 
 
@@ -27,7 +28,7 @@ SD-CARD(SDSC,SDHC, not MMC)
   sd_viewer may works finely or not at all.
   I don't know it.
   
-SD-CARD adaptor (attached my SD-CARD-I/F's photo and curcuit diagram as sample)
+SD-CARD adaptor (attached my SD-CARD-I/F's photo and curcuit diagram as sample)  (please inidcate reference)
   I think better that resistor(10kohm) and capacitor(0.1uF) connect near by SD-CARD adaptor as possible
   Connecting wires between [cs,di,do,clk] and Propeller's pin.   Wires is better to be short. ( 10cm on my I/F)
 
@@ -38,7 +39,7 @@ SD-CARD    Propeller
    DI  ---  P1
    CLK ---  P2
    DO  ---  P3
-Please change wire-connection to fit your hardware.
+Please change wire-connection to fit your hardware. (please indicate location of r pins definitions in code in case pins 0-3 are not available)
 
 ====================================================================================================================
 
