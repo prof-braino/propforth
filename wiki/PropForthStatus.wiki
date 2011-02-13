@@ -8,13 +8,16 @@ Refinement on 4.0:
   * PropForth Kernel - a subset of ANSI standard kernel words tailored to the prop.  These are extensions typically used in development. 
   * EEPROM file systems is not assumed present by default, due to 32k EEPROM on the demoboard.  Source code files in the distribution package now have "fswrite" and "..." commented out. Remove the comments on these words is you wish to use the EEPROM file system on your 64K or larger hardware
 
-  Source to be re-organized:
+Source to be re-organized:
   * PropForth.spin
   * PropForthboot.spin
 
+Functional Change:
+ * PropForth to come up as DECIMAL by default
+ * Number Base to be controled by HEX and DECIMAL words
+ * Existing source may be loaded by including the HEX word at the start of source file, base will return to decimal after load is complete
+
 Sal to draft article 1 "intro to using PropForth"
-
-
 
 === Planned PropForth 4.1 February 2010 ===
 
