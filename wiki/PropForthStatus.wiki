@@ -19,7 +19,7 @@ Functional Change:
 
 Sal to draft article 1 "intro to using PropForth"
 
-=== Planned PropForth 4.1 February 2010 ===
+=== Planned PropForth 4.1 February 2010 === 4.1 changes to be delayed to a later release
 
  reference configuration for multiple romless leaf slaves
 
