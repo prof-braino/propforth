@@ -8,6 +8,14 @@ Refinement on 4.0:
   * PropForth Kernel - a subset of ANSI standard kernel words tailored to the prop.  These are extensions typically used in development. 
   * EEPROM file systems is not assumed present by default, due to 32k EEPROM on the demoboard.  Source code files in the distribution package now have "fswrite" and "..." commented out. Remove the comments on these words is you wish to use the EEPROM file system on your 64K or larger hardware
 
+  Source to be re-organized:
+  * PropForth.spin
+  * PropForthboot.spin
+
+Sal to draft article 1 "intro to using PropForth"
+
+
+
 === Planned PropForth 4.1 February 2010 ===
 
  reference configuration for multiple romless leaf slaves
