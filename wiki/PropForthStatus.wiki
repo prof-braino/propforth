@@ -1,6 +1,14 @@
 #summary Status of PropForth kernel development
 
-=== Planned PropForth 4.1 Release February 2010 ===
+=== Planned PropForth 4.2 March 2011 ===
+
+Refinement on 4.0:
+ changes to package:
+  * PropForth Boot Kernel - contains minimum to be a forth system on the prop
+  * PropForth Kernel - a subset of ANSI standard kernel words tailored to the prop.  These are extensions typically used in development. 
+  * EEPROM file systems is not assumed present by default, due to 32k EEPROM on the demoboard.  Source code files in the distribution package now have "fswrite" and "..." commented out. Remove the comments on these words is you wish to use the EEPROM file system on your 64K or larger hardware
+
+=== Planned PropForth 4.1 February 2010 ===
 
  reference configuration for multiple romless leaf slaves
 
