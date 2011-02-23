@@ -470,8 +470,11 @@ The eereadpage and eewritePage words assume the eeprom are 64kx8 and will addres
                                  executed in the cog minus the freedict
 \\ locknew ( -- n2 )         allocate a lock, result is in n2, -1 if unsuccessful
 \\ lockret ( n1 -- )         deallocate a lock, previously allocated via locknew
+}}}
 
-propeller pins
+== propeller pins ==
+
+{{{
 \ pinin ( n1 -- )            set pin # n1 to an input
 \ pinout ( n1 -- )           set pin # n1 to an output
 \ pinlo ( n1 -- )            set pin # n1 to lo
@@ -480,16 +483,23 @@ propeller pins
 \\ px? ( n1 -- t/f)          true if pin n1 is hi
 
 
+
 \ reboot ( -- )                  reboot the propellor chip
 \ reset ( -- )                   reset this cog
-registers (wconstants) 
+
+}}}
+== registers (wconstants)  ==
+
+{{{
 \ par     \ ina       \ dira  \\ ctra  \\ frqa  \\ phsa  \\ vsfg
 \ cnt     \ outa              \\ ctrb  \\ frqb  \\ phsb  \\ vscl   
 
 \ parat ( offset -- addr )  the offset is added to the contents of the par register,
                                 giving an address references 
 
-clock related
+}}}
+== clock related ==
+{{{
 \ clkfreq ( -- u1 )         the system clock frequency
 \\ waitcnt ( n1 n2 -- n1 )  wait until n1, add n2 to n1
 \\ waitpeq ( n1 n2 -- )     wait until state n1 is equal to ina anded with n2
