@@ -389,7 +389,7 @@ The eereadpage and eewritePage words assume the eeprom are 64kx8 and will addres
 
 }}}
 
-== Propeller-Specific Words  (Not listed in other categories.) ==
+= Propeller-Specific Words  (Not listed in other categories.) =
 
 {{{
 
