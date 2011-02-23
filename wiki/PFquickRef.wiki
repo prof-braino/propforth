@@ -68,16 +68,20 @@ http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-dow
 \\ rnd ( -- n1 )                  n1 is a random number from 00 - FF
 \\ rndtf ( -- t/f)                true or false randomly
 \\ rndand ( n1 -- n2)             n2 is randomly n1 or 0
+}}}
 
-Number Type Conversions
-   
+== Number Type Conversions ==
+
+{{{   
 \ w>l ( n1 n2 -- n1n2 )           consider only lower 16 bits
 \ l>w ( n1n2 -- n1 n2)            break into 16 bits
 \ tochar ( n1 -- c1 )             convert n1 to a char
 
+}}}
 
+== Comparison Operators ==
 
-Comparison Operators
+{{{
 
 \ = ( n1 n2 -- t/f )              compare top 2 32 bit stack values, 
                                       true if they are equal
@@ -93,7 +97,11 @@ Comparison Operators
 \ 0> ( n1 -- t/f )                true if n1 > 0
 \ 0>= ( n1 -- t/f )               true if n1 >= 0
 
-Manipulating the Stack
+}}}
+
+== Manipulating the Stack ==
+
+{{{
 
 \ drop ( n1 -- )                  drop the value on the top of the stack
 \ dup ( n1 -- n1 n1 )
@@ -115,7 +123,11 @@ Manipulating the Stack
 
 \ bounds ( x n -- x+n x )
 
-Memory-Stack Transfer
+}}}
+
+== Memory-Stack Transfer ==
+
+{{{
 
 \ L@ ( addr -- n1 )              fetch 32 bit value at main memory addr
 \ C@ ( addr -- c1 )              fetch 8 bit value at main memory addr
@@ -131,7 +143,11 @@ Memory-Stack Transfer
 \ C@++ ( c-addr -- c-addr+1 c1 ) fetch the character and increment the address
 
 
-Definite Loops
+}}}
+
+== Definite Loops ==
+
+{{{
 
 \ do     ( n1 -- )              marks start of a block run 1 or more times (immediate)
 \ doloop                        used in loop & +loop
@@ -154,14 +170,22 @@ Definite Loops
 \\ setj ( n1 -- )               set the second most current loop counter
 
 
-Indefinite Loops
+}}}
+
+== Indefinite Loops ==
+
+{{{
 
 \ begin  ( -- )                 marks beginning of a group of words to be executed
 \ until  ( t/f -- )             iterates back to begin until true 
 
 
 
-String Operators
+}}}
+
+== String Operators ==
+
+{{{
 
 \ <# ( -- )                     initialize the output area
 \ #> ( -- caddr )               address of a counted string representing the output,
@@ -192,7 +216,11 @@ String Operators
                                      0 - not found, 2 eXecute word, 
                                      1 immediate word, -1 word NOT ANSI
 
-Input/Output Operations
+}}}
+
+== Input/Output Operations ==
+
+{{{
 
 \ cr ( -- )                     emits a carriage return
 \ space ( -- )                  emits a space
@@ -255,7 +283,11 @@ Input/Output Operations
                                  ip past it and word alignw it
 
 
-File Input/Output (eeprom)
+}}}
+
+== File Input/Output (eeprom) ==
+
+{{{
 
 \\ ee>image ( addr n1 -- )      addr - the address to start producing an image from, 
                                    n1 - count of bytes to produce, 
@@ -283,7 +315,11 @@ The eereadpage and eewritePage words assume the eeprom are 64kx8 and will addres
                                    u must be a multiple of 0x40 and should not overlap
 
 
-Inspect Memory, Debug & View Code
+}}}
+
+== Inspect Memory, Debug & View Code ==
+
+{{{
 
 \ words ( -- )                 prints the words in the forth dictionary, if the pad has
                                    another string following, with that prefix
@@ -321,7 +357,11 @@ Inspect Memory, Debug & View Code
 
 
 
-Define Data Structures
+}}}
+
+== Define Data Structures ==
+
+{{{
 
 \ doconw ( -- h1 )             push 16 bit constant which follows on the stack 
                                     - implicit a_exit
@@ -347,9 +387,17 @@ Define Data Structures
 
 
 
-Propeller-Specific Words  (Not listed in other categories.)
+}}}
 
-cog related words
+== Propeller-Specific Words  (Not listed in other categories.) ==
+
+{{{
+
+}}}
+
+== cog related words ==
+
+{{{
 \ cogstop ( n -- )
 \ cogreset ( n1 -- )          reset the forth cog
 \ cogio ( n -- addr)          the address of the data area for cog n
@@ -457,7 +505,11 @@ clock related
 
 
 
-Compiler & Interpreter System Extensions
+}}}
+
+== Compiler & Interpreter System Extensions ==
+
+{{{
 
 \ >out ( -- addr )          access as a word, the offset to the current output byte
 \ >in ( -- addr )           access as a word, addr is the var the offset in characters 
@@ -529,7 +581,11 @@ Pad with 1 space at start & end.
                                if not found it returns 0
 
 
-Defining Routines
+}}}
+
+== Defining Routines ==
+
+{{{
 
 \ exit     ( -- )          exit the current forth word, and back to the caller
 \ branch                   16 bit branch offset follows - 
@@ -556,7 +612,11 @@ Defining Routines
 : ." $H_dq _sp ;  immediate
 
 
-Other
+}}}
+
+== Other ==
+
+{{{
 
 Change Compilation & Interpretation Settings
 \ base ( -- addr )        access as a word, the address of the base variable
