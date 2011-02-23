@@ -1,4 +1,4 @@
-#Nick Lordi's Quick Reference
+#summary Nick Lordi's Quick Reference
 
 As posted in the Parallax Proper forums:
 
