@@ -455,8 +455,8 @@ The eereadpage and eewritePage words assume the eeprom are 64kx8 and will addres
 \ debugvalue  ( -- addr )   the address of the debugvalue as a long, 
                                  used in conjuction with debugcmd
 \ cogdebugvalue 
-                                 n3 is returned, t/f is the 'c' flag is set from the
- hubop locks
+                                 n3 is returned, t/f is the 'c' flag is set from the  hubop locks
+
 \ lockset ( n1 -- n2 )        set lock n1, result is in n2, -1 if the lock was set as per
                                 'c' flag, lock ( n1 ) must have been allocated via locknew
 \ lockclr ( n1 -- n2 )        clear lock n1, result is in n2, -1 if the lock was set as 
