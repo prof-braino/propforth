@@ -8,7 +8,7 @@ http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-dow
 
 = Details =
 
-= 'PropForth Core and Optional Words'  -   Quick Reference =
+= {{{PropForth Core and Optional Words - Quick Reference }}} =
 
 (Based on ANSI Standard Forth - Quick Reference Copyright 1994 Forth Interest Group)
 == Arithmetic and Logical Operations ==
