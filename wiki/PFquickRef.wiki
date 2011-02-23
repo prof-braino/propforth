@@ -628,12 +628,22 @@ Pad with 1 space at start & end.
 
 {{{
 
-Change Compilation & Interpretation Settings
+}}}
+
+== Change Compilation & Interpretation Settings ==
+
+{{{
+
 \ base ( -- addr )        access as a word, the address of the base variable
 \ hex ( -- )              set the base for hexadecimal
 \ decimal ( -- )          set the base for decimal
 
-Comment Introducing Operators
+}}}
+
+== Comment Introducing Operators ==
+
+{{{
+
 \ \ ( -- )                moves the parse pointer >in to the end of the line
 \ { ( -- )                discard all the characters between { and }
 Open brace MUST be the first and only character on a new line, the close brace must be on 
@@ -642,13 +652,24 @@ Open brace MUST be the first and only character on a new line, the close brace m
 \ [if xxx   ( -- )    if xxx is defined drop all characters until ], 
                       [if xxx not have any characters following it on the line
 
-word structure
+}}}
+
+== word structure ==
+
+{{{
+
 \ nfa>lfa ( addr -- addr ) 
                 go from the nfa (name field address) to the lfa (link field address)
 \ nfa>pfa ( addr -- addr )
                 go from the nfa (name field address) to the pfa (parameter field address)
 \ nfa>next ( addr -- addr )
-                go from the current nfa to the prev nfa in the dictionary
+                go from the current nfa to the prev nfa in the 
+}}}
+
+== dictionary ==
+
+{{{
+
 \ lastnfa ( -- addr )    gets the last NFA
 \ isnamechar ( c1 -- t/f ) 
                 true if c1 is a valif name char > $20 < $7F
@@ -660,12 +681,22 @@ word structure
                 gets the name field address (nfa) for a parameter field address (pfa)
 \\ pfa? ( addr -- t/f)   true if addr is a pfa 
 
-terminal
+}}}
+
+== terminal ==
+
+{{{
+
 \\ crcl ( -- )         cr and clear the line (for an ansi terminal)
  A simple terminal which interfaces to the a channel.
 \ term ( n1 n2 -- )    n1 - the cog, n2 - the channel number
 
-misc
+}}}
+
+== misc ==
+
+{{{
+
 \\ lasm ( addr -- )    expects an address pointing to a structure in the following form
                         empty long, long upper address of the assembler routine, long 
                         lower address of the assembler routine -
