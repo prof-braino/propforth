@@ -6,24 +6,15 @@ http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-dow
 
 http://forums.parallax.com/showthread.php?128055-Propforth4.0a-available-for-download&p=978817&viewfull=1#post978817
 
-= Details =
-
 = {{{PropForth Core and Optional Words - Quick Reference }}} =
 
 (Based on ANSI Standard Forth - Quick Reference Copyright 1994 Forth Interest Group)
+
+---
+
 == Arithmetic and Logical Operations ==
 
-PropForth Core(\) and Optional(\\) Words  -   Quick Reference
-*****************************************************************************************\
-
 {{{
-
-
-PropForth Core(\) and Optional(\\) Words  -   Quick Reference
-*****************************************************************************************\
-(Based on ANSI Standard Forth - Quick Reference Copyright 1994 Forth Interest Group)
-
-Arithmetic and Logical Operations
 
 \ and ( n1 n2 -- n1 )             bitwise and n1 n2
 \ andn ( n1 n2 -- n1 )            bitwise and n1 invert n2
