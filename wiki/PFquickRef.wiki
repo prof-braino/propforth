@@ -624,11 +624,7 @@ Pad with 1 space at start & end.
 
 }}}
 
-== Other ==
-
-{{{
-
-}}}
+= Other =
 
 == Change Compilation & Interpretation Settings ==
 
