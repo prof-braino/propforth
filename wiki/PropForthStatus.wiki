@@ -1,5 +1,19 @@
 #summary Status of PropForth kernel development
 
+=== Propforth 4.4 April 2011 ===
+
+SD support:
+
+Sal reviewed Caskas's SD code to find the bug that was giving problems.  It was noticed that because the clock is starting and stopping, some SD cards need a couple "stop bits" to get going.  Initially, most worked, some did not.  Sal added a stop bit, and more started working.  Sal added a second, and all his started working.  He added a third and has had no problems. 
+
+The initial SD support will be a low-level, traditional forth "block access".  The idea is access to the card with minimal code and maximum speed.  This is suitable for Sal's embedded project needs.  The initial version will NOT be windows compatible.  Windows compatible extensions can be added using the provided low-level support words, but Sal feels its too big for the benefit it provides, and therefore will not be included in the default kernel.
+
+We plan to review the code, and perhaps Caskaz will provide the extension with Windows FAT support. 
+
+=== Propforth 4.3 Beta March 2011 ===
+
+Spineret ethernet support
+
 === Planned PropForth 4.2 March 2011 ===
 
 Refinement on 4.0:
