@@ -28,7 +28,8 @@ Final SD support
  - Any Cog may access any partition it has MOUNTED
  - One Cog may access multiple files
  - Multiple Cogs man access the same file
- - NO BUFFERING FOR the FILE SYSTEM.  The overhead in code and speed penalty is not worth it at this time. This method is nearly as fast as the speed of the SD card data transfer. 
+ - NO BUFFERING FOR the FILE SYSTEM.  The overhead in code and speed penalty is not worth it at this time. 
+This method is nearly as fast as the speed of the SD card data transfer. 
  - The last file referenced is the current file, regardless of cog or partition.  
 
 While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
