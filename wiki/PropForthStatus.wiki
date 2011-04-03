@@ -10,18 +10,18 @@ Redesign Propforth kernel:
 }}}
 === Propforth 4.6 targeted Spring 2011 (public release) ===
 
-Bug fixes as needed 
+Bug fixes to 4.5 as needed 
 
 === Propforth 4.5 targeted March/April 2011 (public release) ===
-Final Spineret Code 
+Final Spinneret Code 
  * Ethernet support
- * telnet suport using character (byte) transfer
+ * telnet support using character (byte) transfer
  * HTTP server support
  * NIST support
  * remote development over Internet support
 
 Final SD support
- * micro SD slot support for Spineret, C3, etc
+ * micro SD slot support for Spinneret, C3, etc
  * Multiple partitions
  * Multiple files per partition
  * Any Cog may access any partition it has MOUNTED
@@ -49,7 +49,7 @@ PWM support:
  * examples in forth for stepper motor control
 
 Improved documentation:
- * improved "whitespace" handling
+ * improved "white-space" handling
  * consistent stack notes
  * more inline comments
  * inline notation of external references 
@@ -68,7 +68,7 @@ We plan to review the code, and perhaps Caskaz will provide the extension with W
 
 === Propforth 4.3 Beta March 2011 (development only, not for public release) ===
 
-Spineret ethernet support
+Spinneret Ethernet support
 
 === Planned PropForth 4.2 March 2011 ===
 
