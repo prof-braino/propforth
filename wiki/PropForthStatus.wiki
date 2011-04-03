@@ -1,6 +1,6 @@
 #summary Status of PropForth kernel development
 
-=== Propforth 4.5 March 2011 (public release) ===
+=== Propforth 4.5 March/April 2011 (public release) ===
 
 Final Spineret Code 
  - ethernet support
