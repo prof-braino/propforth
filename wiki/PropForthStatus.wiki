@@ -1,11 +1,25 @@
 #summary Status of PropForth kernel development
 
-=== Propforth 4.5 March/April 2011 (public release) ===
+=== Propforth 5.0 targeted Summer 2011 ===
+{{{
+Redesign Propforth kernel:
+ - minimal kernel, recover (most of?) hub memory
+ - dictionary resides on SD card
+ - SD resident definition loads itself from SD, executes, and removes itself from memory
+ - Maximize space available for user applications
+}}}
+=== Propforth 4.6 targeted Spring 2011 (public release) ===
 
+Bug fixes as needed 
+
+=== Propforth 4.5 targeted March/April 2011 (public release) ===
+{{{
 Final Spineret Code 
  - ethernet support
  - telnet suport using character (byte) transfer
  - http server support
+ - NIST support
+ - remote development over Internet support
 
 Final SD support
  - micro SD slot support for Spineret, C3, etc
@@ -22,7 +36,18 @@ While this is a different paradigm than currently popular, is it very easy, fast
 NOTE:
  - NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop".  CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
 
+PWM support:
+ - examples in forth for servo control
+ - examples in forth for ESC control  (electronic speed controller)
+ - examples in forth for stepper motor control
 
+Improved documentation:
+ - improved "whitespace" handling
+ - consistent stack notes
+ - more inline comments
+ - inline notation of external references 
+
+}}}
 === Propforth 4.4 April 2011 (development only, not for public release) ===
 
 SD support:
