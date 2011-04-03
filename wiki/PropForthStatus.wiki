@@ -32,6 +32,8 @@ Final SD support
 This method is nearly as fast as the speed of the SD card data transfer. 
  - The last file referenced is the current file, regardless of cog or partition.  
 
+Decision is to not worry about SPACE EFFICIENCY on SD card, instead concentrate on ALIGNMENT to SD card 512 byte blocks.  This gives maximum speed and efficiency on this system.  
+We expect some discussion on this point until it is understood by users.
 While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
 
 NOTE:
