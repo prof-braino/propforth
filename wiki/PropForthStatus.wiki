@@ -14,9 +14,9 @@ Bug fixes as needed
 
 === Propforth 4.5 targeted March/April 2011 (public release) ===
 Final Spineret Code 
- * ethernet support
+ * Ethernet support
  * telnet suport using character (byte) transfer
- * http server support
+ * HTTP server support
  * NIST support
  * remote development over Internet support
 
@@ -53,6 +53,8 @@ Improved documentation:
  * consistent stack notes
  * more inline comments
  * inline notation of external references 
+
+NOTE: There is a consequence of the support added this release that will be addressed in Propforth 5.0.  The Ethernet and SD support will take a larger amount of dictionary space.  This is estimated to leave only 2-4k of space for application development.  Propforth 5.0 will attempt to redesign the kernel to free up hub space.
 
 === Propforth 4.4 April 2011 (development only, not for public release) ===
 
