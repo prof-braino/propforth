@@ -34,7 +34,11 @@ Final SD support
 While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
 
 NOTE:
- - NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop".  CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
+ - NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  
+Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; 
+we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop". 
+ 
+CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
 
 PWM support:
  - examples in forth for servo control
