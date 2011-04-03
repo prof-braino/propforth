@@ -1,6 +1,29 @@
 #summary Status of PropForth kernel development
 
-=== Propforth 4.4 April 2011 ===
+=== Propforth 4.5 March 2011 (public release) ===
+
+Final Spineret Code 
+ - ethernet support
+ - telnet suport using character (byte) transfer
+ - http server support
+
+Final SD support
+ - micro SD slot support for Spineret, C3, etc
+ - Multiple partitions
+ - Multiple files per partition
+ - Any Cog may access any partition it has MOUNTED
+ - One Cog may access multiple files
+ - Multiple Cogs man access the same file
+ - NO BUFFERING FOR the FILE SYSTEM.  The overhead in code and speed penalty is not worth it at this time. This method is nearly as fast as the speed of the SD card data transfer. 
+ - The last file referenced is the current file, regardless of cog or partition.  
+
+While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
+
+NOTE:
+ - NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop".  CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
+
+
+=== Propforth 4.4 April 2011 (development only, not for public release) ===
 
 SD support:
 
@@ -10,7 +33,7 @@ The initial SD support will be a low-level, traditional forth "block access".  T
 
 We plan to review the code, and perhaps Caskaz will provide the extension with Windows FAT support. 
 
-=== Propforth 4.3 Beta March 2011 ===
+=== Propforth 4.3 Beta March 2011 (development only, not for public release) ===
 
 Spineret ethernet support
 
