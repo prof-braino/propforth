@@ -12,7 +12,14 @@ Redesign Propforth kernel:
 
 Bug fixes to 4.5 as needed 
 
+=== Propforth 4.5 [edit] targeted June 2011 (public release) ===
+
+[update]
+SD
+servers - HTTP telnet - running forth from a HTTP page
+
 === Propforth 4.5 targeted March/April 2011 (public release) ===
+
 Final Spinneret Code 
  * Ethernet support
  * telnet support using character (byte) transfer
