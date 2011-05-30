@@ -37,11 +37,41 @@ The development Kernel is the standard development environment.  This is used to
 
 Standalone embedded applications can be built on either kernel.  It is left to the user to decide if more memory space or inclusion of development functions is desirable.   The recommendation is use the development kernel until the application indicated using the boot kernel, I.E. the prop runs out of memory, etc.
 
-The 
-
 = The Propforth Kernel Regeneration Process =
 
-Load PropForthBootKernel.spin and add PropForthKernel.f, and doing a saveforth.  (This is equivalent to loading PropForthKernel.spin, but PropForthKernel.spin is not updated).
+Load PropForthBootKernel.spin; add PropForthKernel.f; do saveforth.  (This is equivalent to loading PropForthKernel.spin, but PropForthKernel.spin is not updated).
+
+Yhr command 
+[code] reboot [/code] 
+
+[code] 
+CON:Prop0 Cog0 RESET - last status: 0 ok
+
+CON:Prop0 Cog1 RESET - last status: 0 ok
+
+CON:Prop0 Cog2 RESET - last status: 0 ok
+
+CON:Prop0 Cog3 RESET - last status: 0 ok
+
+CON:Prop0 Cog4 RESET - last status: 0 ok
+
+CON:Prop0 PROP REBOOT PropForth v4.4 2011MAY27 13:00 1
+
+CON:Prop0 Cog5 RESET - last status: 0 ok
+
+CON:Prop0 Cog6 RESET - last status: 0 ok
+
+Prop0 Cog6 RESET - last status: 0 ok
+Prop0 Cog6 ok
+[/code] 
+
+[code]  free [/code] 
+[code] 
+16330 bytes free - 161 cog longs free
+Prop0 Cog6 ok
+[/code] 
+
+
 
 
 Add your content here.  Format your content with:
