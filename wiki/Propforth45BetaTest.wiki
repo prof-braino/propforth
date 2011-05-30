@@ -25,17 +25,17 @@ The Regression Suite can be divided into two catagories:
 # the Kernel Regeneration process
 # all other functions
 
-= The Propforth Kernel choices - Bare Kernel and Development Kernel =
+= The Propforth Kernel choices - Boot Kernel and Development Kernel =
 
 There are two primary configuration of the propforh kerenl at this time
-# the bare kernel, no development functions
-# the development kernel
+# the boot kernel, no development functions, just enough to boot propforth
+# the development kernel, everything needed in the dev environment
 
-The Bare kernel is the minimum to have a running propforth, a standalone, embedded application would be added to this and have the maximum memory space available to the application.
+The BOOT kernel is the minimum to have a running propforth, a standalone, embedded application would be added to this and have the maximum memory space available to the application.
 
 The development Kernel is the standard development environment.  This is used to create application.  
 
-Standalone embedded applications can be built on either kernel.  It is left to the user to decide if more memroy space or inclusion of development functions is more desireable.   The recommendation is use the development kernel until the application indicated using the bare kerenl, I.E. the prop runs out of memory, etc.
+Standalone embedded applications can be built on either kernel.  It is left to the user to decide if more memory space or inclusion of development functions is desirable.   The recommendation is use the development kernel until the application indicated using the boot kernel, I.E. the prop runs out of memory, etc.
 
 The 
 
