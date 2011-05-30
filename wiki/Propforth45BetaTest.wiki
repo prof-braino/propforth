@@ -15,11 +15,29 @@ In the case that the Beta passes all the regression tests and no changes are mad
 
 Each individual function and behavior in propforth needs to be tested. This is accomplished by executing each function.  Each function can have multiple inputs, and unique boundary cases, etc.  The number of possible tests quickly grows out of control due to combinatorial explosion. 
 
-To control this, Sal has come up with a simple scheme that addresses most issues.  It turns out that nearly all function of propforth are used in regenerating the propforth kernel.  Therefore, if a version of propforth can regenerate its own source code, and it is identical to the starting source code, we can assume that any bugs or errors that may be present do not affect the final result. 
+To control this, Sal has come up with a simple scheme that addresses most issues.  It turns out that nearly all function of the propforth kernel are used in regenerating the propforth kernel.  Therefore, if a version of propforth can regenerate its own source code, and it is identical to the starting source code, we can assume that any bugs or errors that may be present do not affect the final result. 
+
+Any function NOT invoked in the regeneration of the propforth kernel are tested separately as possible.
 
 = The Regression Suite =
 
- - - - in progress - - - 
+The Regression Suite can be divided into two catagories:
+# the Kernel Regeneration process
+# all other functions
+
+= The Propforth Kernel Regeneration Process =
+
+There are two primary configuration of the propforh kerenl at this time
+# the bare kernel, no development functions
+# the development kernel
+
+The Bare kernel is the minimum to have a running propforth, a standalone, embedded application would be added to this and have the maximum memory space available to the application.
+
+The development Kernel is the standard development environment.  This is used to create application.  
+
+Standalone embedded applications can be built on either kernel.  It is left to the user to decide if more memroy space or inclusion of development functions is more desireable.   The recommendation is use the development kernel until the application indicated using the bare kerenl, I.E. the prop runs out of memory, etc.
+
+The 
 
 
 Add your content here.  Format your content with:
