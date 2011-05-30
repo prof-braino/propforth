@@ -41,6 +41,8 @@ The
 
 = The Propforth Kernel Regeneration Process =
 
+Load PropForthBootKernel.spin and add PropForthKernel.f, and doing a saveforth.  (This is equivalent to loading PropForthKernel.spin, but PropForthKernel.spin is not updated).
+
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
