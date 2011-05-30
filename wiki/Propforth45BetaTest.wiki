@@ -1,0 +1,28 @@
+#summary The Beta version of Proforth 4.5 is undergoing regression test 20110528
+#labels Propforth4.5,regression,test
+
+= Introduction =
+
+Before release each version of PropForth undergoes regression test to ensure that no functions have changed in an unexpected way.
+
+All new functions undergo development testing; when a development test is passed, it is added to the regression suite. 
+
+Before release, the regression suite is re-executed by multiple parties (as possible) to ensure everything behaves as we predict. 
+
+In the case that the Beta passes all the regression tests and no changes are made, the Beta is "released" and made available to users.
+
+= The Regression Tests =
+
+Each individual function and behavior in propforth needs to be tested. This is accomplished by executing each function.  Each function can have multiple inputs, and unique boundary cases, etc.  The number of possible tests quickly grows out of control due to combinatorial explosion. 
+
+To control this, Sal has come up with a simple scheme that addresses most issues.  It turns out that nearly all function of propforth are used in regenerating the propforth kernel.  Therefore, if a version of propforth can regenerate its own source code, and it is identical to the starting source code, we can assume that any bugs or errors that may be present do not affect the final result. 
+
+= The Regression Suite =
+
+ - - - in progress - - - 
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
