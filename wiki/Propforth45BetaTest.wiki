@@ -41,8 +41,9 @@ Standalone embedded applications can be built on either kernel.  It is left to t
 
 Load PropForthBootKernel.spin; add PropForthKernel.f; do saveforth.  (This is equivalent to loading PropForthKernel.spin, but PropForthKernel.spin is not updated).
 
-Yhr command 
-`code` reboot `code` 
+The command  {{{ reboot }}}
+
+gives the result:
 
 {{{ 
 CON:Prop0 Cog0 RESET - last status: 0 ok
@@ -65,7 +66,10 @@ Prop0 Cog6 RESET - last status: 0 ok
 Prop0 Cog6 ok
 }}}
 
-`code`  free `code` 
+The command {{{ free }}}
+
+Gives the result:
+
 {{{
 16330 bytes free - 161 cog longs free
 Prop0 Cog6 ok
