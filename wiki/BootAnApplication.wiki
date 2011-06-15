@@ -12,9 +12,31 @@ prof_braino wants the button demo AND the forth prompt to run at power up
 
 Sal has provided guidance
 
-= Method 1 =
+= Method 1 - the original question =
 
-SO:
+Preserve the original boot activity, and add new functionality that runs the demo at boot time.
+
+Preserve the old "onboot" word by renaming it oldonboot, but trim the name down to "oldonb" so it fits in the same space.
+
+{{{
+c" onboot" find drop pfa>nfa 1+ c" oldonb" C@++ rot swap cmove
+}}}
+
+Make a word demo1 that calls demo and runs it on cog1
+
+{{{
+: .demo c" demo" 1 cogx   ;  / call caskaz demo via .demo on cog 1
+}}}
+
+At boot time, onboot is called. ONBOOT does the old onboot activity, then runs demo1, which starts the demo.
+
+{{{
+: onboot oldonb .demo  ;
+}}}
+
+= xxx =
+
+
 
 {{{
 : onboot oldonb 5 >con demo  ;   / calls caskz demo directly
@@ -40,7 +62,7 @@ a simpler way:
 
 The delay is necessary, because cog 1 starts before cog 4, and demo issues a command to cog4.
 
-= Method 4 =
+= Method 4 - Full Solution =
 
 
 or better yet, add this code to the source code.
