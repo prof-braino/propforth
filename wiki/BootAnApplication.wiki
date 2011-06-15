@@ -12,7 +12,7 @@ prof_braino wants the button demo AND the forth prompt to run at power up
 
 Sal has provided guidance
 
-= Option # =
+= Method 1 =
 
 SO:
 
@@ -22,11 +22,15 @@ SO:
 
 should work and bring up the console on cog 5
 
+= Method 2 =
+
 {{{
 : onboot oldonb c" demo" 1 cogx  ;
 }}}
 
 should be fine as well.
+
+= Method 3 =
 
 a simpler way:
 
@@ -36,29 +40,36 @@ a simpler way:
 
 The delay is necessary, because cog 1 starts before cog 4, and demo issues a command to cog4.
 
-or better yet:
+= Method 4 =
+
+
+or better yet, add this code to the source code.
+When the source code is loaded, the application is saved to EEPROM and ready at the next boot:
+
 
 {{{
-: demo1
+
+: quickstart-demo1  \ runs on cog1
+
 _LEDs 8 0 do dup pinout 1+ loop drop
 
 begin
-0
-32 0 do
-glovalPads L@ or dup _LEDs lshift outa COG@ ff00ffff and or outa COG!
-loop
-drop
+      0
+        32 0 do
+                glovalPads L@ or 
+                dup _LEDs lshift outa COG@ ff00ffff and 
+                or outa COG!
+        loop
+      drop
 0 until
 
 ;
 
-: demo4 clkfreq 100 u/ scan_pads ;
+: demo4 clkfreq 100 u/ scan_pads ; \ runs on cog4
 
+: onreset1 onreset demo1 ; \ when reset, start cog1 demo
+: onreset4 onreset demo4 ; \ when reset, start cog4 demo
 
-
-: onreset1 onreset demo1 ;
-: onreset4 onreset demo4 ;
-
-saveforth
+saveforth \ saves the current dictionary to EEPROM
 
 }}}
