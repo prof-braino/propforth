@@ -5,14 +5,14 @@
 
 Context: QuickStart Board Demo
 
-caskaz ported the Quickstart board touch sense button demo to propforth.  The application words is "demo"
+caskaz ported the Quickstart board touch sense button demo to propforth.  The application words is "demo" and is written to run on cog4
 
 prof_braino wants the button demo AND the forth prompt to run at power up
 
 
 Sal has provided guidance
 
-= Method 1 - the original question =
+= the original question =
 
 Preserve the original boot activity, and add new functionality that runs the demo at boot time.
 
@@ -34,15 +34,16 @@ At boot time, onboot is called. ONBOOT does the old onboot activity, then runs d
 : onboot oldonb run_demo  ;
 }}}
 
-= xxx =
+= Method 1 =
 
-
+This is a better way to call the demo at boot time.
+Boot runs on cog6, 
+calls the console on cog 5
+and (cog6) calls the demo which runs on cog4 
 
 {{{
 : onboot oldonb 5 >con demo  ;   / calls caskz demo directly
 }}}
-
-should work and bring up the console on cog 5
 
 = Method 2 =
 
@@ -50,7 +51,10 @@ should work and bring up the console on cog 5
 : onboot oldonb c" demo" 1 cogx  ;
 }}}
 
-should be fine as well.
+should be fine as well. 
+This runs on cog6,
+tells cog1 to start the demo (which runs on cog4),
+and returns the console on cog6
 
 = Method 3 =
 
@@ -60,6 +64,8 @@ a simpler way:
 : onreset1 onreset 100 delms demo ;
 }}}
 
+When cog1 is reset, it waits 100 milliseconds, then launches the demo (which runs on cog4)
+
 The delay is necessary, because cog 1 starts before cog 4, and demo issues a command to cog4.
 
 = Method 4 - Full Solution =
@@ -68,14 +74,12 @@ The delay is necessary, because cog 1 starts before cog 4, and demo issues a com
 or better yet, add this code to the source code.
 When the source code is loaded, the application is saved to EEPROM and ready at the next boot:
 
-
 {{{
+: demo1  
 
-: quickstart-demo1  \ runs on cog1
+  _LEDs 8 0 do dup pinout 1+ loop drop
 
-_LEDs 8 0 do dup pinout 1+ loop drop
-
-begin
+  begin
       0
         32 0 do
                 glovalPads L@ or 
@@ -83,14 +87,13 @@ begin
                 or outa COG!
         loop
       drop
-0 until
+  0 until
 
 ;
 
 : demo4 clkfreq 100 u/ scan_pads ; \ runs on cog4
-
-: onreset1 onreset demo1 ; \ when reset, start cog1 demo
-: onreset4 onreset demo4 ; \ when reset, start cog4 demo
+: onreset1 onreset demo1 ; \ when reset, cog1 runs demo1
+: onreset4 onreset demo4 ; \ when reset, cog4 demo4
 
 saveforth \ saves the current dictionary to EEPROM
 
