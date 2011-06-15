@@ -12,7 +12,8 @@ prof_braino wants the button demo AND the forth prompt to run at power up
 
 Sal has provided guidance
 
-=============
+= Option # =
+
 SO:
 
 {{{
