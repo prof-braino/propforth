@@ -1,0 +1,63 @@
+#summary Make Application Start at Boot
+#labels Phase-Implementation,Phase-QA,V4.5
+
+= Make and Application Start at Boot AND run FORTH prompt  =
+
+Context: QuickStart Board Demo
+
+caskaz ported the Quickstart board touch sense button demo to propforth.  The application words is "demo"
+
+prof_braino wants the button demo AND the forth prompt to run at power up
+
+
+Sal has provided guidance
+
+=============
+SO:
+
+{{{
+: onboot oldonb 5 >con demo  ;   / calls caskz demo directly
+}}}
+
+should work and bring up the console on cog 5
+
+{{{
+: onboot oldonb c" demo" 1 cogx  ;
+}}}
+
+should be fine as well.
+
+a simpler way:
+
+{{{
+: onreset1 onreset 100 delms demo ;
+}}}
+
+The delay is necessary, because cog 1 starts before cog 4, and demo issues a command to cog4.
+
+or better yet:
+
+{{{
+: demo1
+_LEDs 8 0 do dup pinout 1+ loop drop
+
+begin
+0
+32 0 do
+glovalPads L@ or dup _LEDs lshift outa COG@ ff00ffff and or outa COG!
+loop
+drop
+0 until
+
+;
+
+: demo4 clkfreq 100 u/ scan_pads ;
+
+
+
+: onreset1 onreset demo1 ;
+: onreset4 onreset demo4 ;
+
+saveforth
+
+}}}
