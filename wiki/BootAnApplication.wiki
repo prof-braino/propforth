@@ -22,10 +22,10 @@ Preserve the old "onboot" word by renaming it oldonboot, but trim the name down 
 c" onboot" find drop pfa>nfa 1+ c" oldonb" C@++ rot swap cmove
 }}}
 
-Make a word demo1 that calls demo and runs it on cog1
+Make a word run_demo that calls demo and runs it on cog1
 
 {{{
-: .demo c" demo" 1 cogx   ;  / call caskaz demo via .demo on cog 1
+: run_demo c" demo" 1 cogx   ;  / call caskaz demo via run_demo on cog 1
 }}}
 
 At boot time, onboot is called. ONBOOT does the old onboot activity, then runs demo1, which starts the demo.
