@@ -31,7 +31,7 @@ Make a word run_demo that calls demo and runs it on cog1
 At boot time, onboot is called. ONBOOT does the old onboot activity, then runs demo1, which starts the demo.
 
 {{{
-: onboot oldonb .demo  ;
+: onboot oldonb run_demo  ;
 }}}
 
 = xxx =
