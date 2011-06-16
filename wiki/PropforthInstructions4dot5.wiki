@@ -23,17 +23,11 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
 = Required Hardware =
 
   #. A PC or equivalent to load PRopforth.spin to the prop
-
   #. terminal program to communicate with the propforth command prompt
-
   #. Protoboard or equivalent
-
   #. Spinneret Board or equivalent (for ETHERNET connection)
-
   #. Bare propchip (40 pin DIP) or equivalent (for ROM-less Slave tests) 
-
   #. Breadboard or equivalent
-
   #. passive components
      a. Six pieces of 220 ohm resistor
      - 2 for high seed synchronous serial channel to slave
@@ -44,7 +38,6 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
      - there are two pairs of power and ground pins on the prop
      c. 1 peice 10k resistor (pull-up for EEPROM emulation line
      d. around 11 jumper wires depending on how you make your connections
-
   #. power supply (parallax 7.2 volt wall wart or equivalent)
 
 9. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
