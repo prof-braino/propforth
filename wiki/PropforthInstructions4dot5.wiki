@@ -25,10 +25,10 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
   #. Bare propchip (40 pin DIP) or equivalent (for ROM-less Slave tests) 
   #. Breadboard or equivalent
   #. power supply (parallax 7.2 volt wall wart or equivalent)
-  #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
-  #. passive commonents for Spinneret
-  * power connection - can run from protoboard power
-  * 2 @ 220 ohm resistors asynchronous serial channel to slave
+  #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get the cheapest one and you'll be fine
+  #. passive components for Spinneret
+  *. power connection - can run from protoboard power
+  *. 2 @ 220 ohm resistors asynchronous serial channel to slave
   #. passive components for ROMless Slave (MultiChannel High Speed Synchronous Serial)
   * four @ 220 ohm resistor
     * 2 for high seed synchronous serial channel to slave
