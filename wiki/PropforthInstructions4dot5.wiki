@@ -7,6 +7,15 @@ All information required to use Propforth 4.5 is included in the zip archive.  T
 
 The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work.  You will then be able to modify the examples or at least ask well formed questions.  The tests are EASY and take about an hour, at the end of which you will have seen every function in PropForth. 
 
+
+== LOAD means various thing based on context ==
+
+  * load file.f - this mean open the file in your editor, select the entire contents of the file (CTL-A), copy the entire contents of the file  (CTL-C), and paste it into the terminal program (CTL-V)
+  * fsload file.f - load the file from EEPROM - the file was previously copy-and-pasted into the terminal program, and was sent to EEPROM.  Now it can be loaded from EEPROM
+  * fload file.f - load the file from SD - the file was previously copy-and-pasted into the terminal program, and was sent to SD.  Now it can be loaded from SD
+
+We will work on making the load words clearer in the 5.x releases.  The current method is a little funny at first, but its livable for the time being. 
+
 == Instructions for using Propforth 4.5 == 
 
   #. download the zip archive from http://code.google.com/p/propforth/downloads/list  [add link when posted]
