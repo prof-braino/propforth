@@ -1,12 +1,13 @@
 #summary Propforth 4.5 Instructions.
+#labels Phase-Implementation,Phase-QA,Phase-Deploy,Phase-Support,v4.5
 
-= Introduction =
+= Introduction & Preparation =
 
 All information required to use Propforth 4.5 is included in the zip archive.  This page is a summary and further explanation for the more complex points.  Please join the discussion here or on the parallax forums in the propforth 4.5 thread.
 
 The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work.  You will then be able to modify the examples or at least ask well formed questions. 
 
-= Instructions for using Propforth 4.5 = 
+== Instructions for using Propforth 4.5 == 
 
   #. download the zip archive from http://code.google.com/p/propforth/downloads/list  [add link when posted]
   #. Read the Readme.txt to find what is in the archive
@@ -14,7 +15,7 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
   #. execute the tests to learn to use the functions in the release
   #. post questions and suggestion here
 
-= Required Hardware =
+== Required Hardware ==
 
   #. A PC or equivalent to load PRopforth.spin to the prop
   #. terminal program to communicate with the propforth command prompt
@@ -36,27 +37,25 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
 
   d. around 11 jumper wires depending on how you make your connections
 
-
-
-== BUILDING the Hardware Test Bed ==
+=== BUILDING the Hardware Test Bed ===
 
 It is recommended that you build the hardware test bed.   All the tests were deigned for the described hardware.  The alternative is to modify all the software to fit your arbitrary configuration.  This is fine, but your should do this AFTER you are familiar with the software, and know how everything works.  Using the test bed at least once (till you get to know whats going on) is the recommended method to learn propforth.
 
 [ Schematic goes here.  Brian Riley, please create? ]
 
-= Required Software =
+== Required Software ==
 
-  For Windows PC - Propeller Tool
-  For MAC - BST(?)  - [Brian, please correct?] 
-  For Linux - (?)  - [anybody using Linux?]
+  * For Windows PC - Propeller Tool
+  * For MAC - BST(?)  - [Brian, please correct?] 
+  * For Linux - (?)  - [anybody using Linux?]
 
 Telnet  Terminal - DIGITAL VT100 or Equivalent emulator E.G:
-  - On Windows: Teraterm 4.65 is fine
-  - On MAC:
-  - On Linux:
-  - On iPhone: Telnet Mocha Lite (Free)
+  * On Windows: Teraterm 4.65 is fine
+  * On MAC:
+  * On Linux:
+  * On iPhone: Telnet Mocha Lite (Free)
 
-= OTHER Configurations =
+== OTHER Configurations ==
 
 You don't have to do this yet, just start thinking about it.  These come into play at the final tests for the Spinneret.  The examples are defined as below so they conflict with the things that "normally" use those the default ports for telent, http
 
@@ -64,14 +63,16 @@ You don't have to do this yet, just start thinking about it.  These come into pl
   #. Internet Ports for your Spineret TELNET.  DECIDE a (range of) ports for your TELNET server EG 2023-2026
   #. Internet Ports for your HTTP.  DECIDE a (range of) ports for you HTTP server EG 8080
   #. Set up your router. DECIDE if your Spinneret can reach the internet
-Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet. .
+Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet. 
 
-Add your content here.
+= Running the Tests / Learning PropForth =
 
+At this point, you have downloaded the archive to your PC, read the README.TXT, found the tests directory, found the hardware instructions, and built the test bed (or as much as you are interested in at the moment). 
 
-= Details =
+Running the Tests takes about an hour.  ITS EASY.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+AFTER you initialize the SD, the behavior changes. The initialization test CANNOT be repeated unless you have an uninitialized SD card.  Un-initializing an SD card is beyond the scope of this discussion, but instructions are available all over the net. You won't need to anyway.  I had to run the tests multiple times to perfect the test, nobody else needs to. (But if you figure out how and wnat to help with the regression tests contact me).  
+
+= End of supplimental instructions =
+
+More instructions will be added as needed. 
