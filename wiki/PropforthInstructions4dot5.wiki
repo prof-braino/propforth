@@ -1,0 +1,64 @@
+#summary Propforth 4.5 Instruyctions.
+
+= Introduction =
+
+All information required to use Propforth 4.5 is included in the zip archive.  This page is a summary and further explanation for the more complex points.  Please join the discussion here or on the parallax forums in the propforth 4.5 thread.
+
+= Instructions for using Propforth 4.5 = 
+
+1. download the zip archive from http://code.google.com/p/propforth/downloads/list
+[add link when posted]
+
+2. Read the Readme.txt to find what is in the archive
+
+3. Build the example hardware test bed
+
+4. execute the tests to learn to use the functions in the release
+
+5. post questions and suggestion here
+
+= Required Hardware =
+
+1. A PC or equivalent to load PRopforth.spin to the prop
+
+2. terminal program to communicate with the propforth command prompt
+
+3. Protoboard or equivalent
+
+4. Spinneret Board or equivalent (for ETHERNET connection)
+
+5. Bare propchip (40 pin DIP) or equivalent (for ROM-less Slave tests) 
+
+6. Breadboard or equivalent
+
+7. passive components
+a. Six pieces of 220 ohm resistor
+   - 2 for high seed synchronous serial channel to slave
+   - 2 for ROM emulation channel to slave
+   - 2 for spare asynchronous serial channel to slave
+b. two ppieces of .1uF capacitor (non polar) 
+   - between power and ground pins on slave prop
+   - there are two pairs of power and ground pins on the prop
+c. 1 peice 10k resistor (pull-up for EEPROM emulation line
+d. around 11 jumper wires depending on how you make your connections
+
+8. power supply (parallax 7.2 volt wall wart or equivalent)
+
+
+
+BUILDING the 
+
+= Required Software =
+
+ 
+
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
