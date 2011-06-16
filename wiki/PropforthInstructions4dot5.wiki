@@ -24,14 +24,23 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
   #. Breadboard or equivalent
   #. passive components
      a. Six pieces of 220 ohm resistor
+
      - 2 for high seed synchronous serial channel to slave
+
      - 2 for ROM emulation channel to slave
+
      - 2 for spare asynchronous serial channel to slave
+
      b. two ppieces of .1uF capacitor (non polar) 
+
      - between power and ground pins on slave prop
+
      - there are two pairs of power and ground pins on the prop
+
      c. 1 peice 10k resistor (pull-up for EEPROM emulation line
+
      d. around 11 jumper wires depending on how you make your connections
+
   #. power supply (parallax 7.2 volt wall wart or equivalent)
   #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
 
@@ -55,19 +64,12 @@ Telnet  Terminal - DIGITAL VT100 or Equivalent emulator E.G:
 
 = OTHER Configurations =
 
-You don't have to do this yet, just start thinking about it.  These come into play at the final tests for the Spinneret
+You don't have to do this yet, just start thinking about it.  These come into play at the final tests for the Spinneret.  The examples are defined as below so they conflict with the things that "normally" use those the default ports for telent, http
 
-  #. IP Address for your Spinneret.
-DECIDE an IP ADDRESS for you Spinneret.  EG 192.168.1.17
-  #. Internet Ports for your Spineret TELNET
-DECIDE a (range of) ports for your TELNET server EG 2023-2026
-  #. Internet Ports for your HTTP 
-DECIDE a (range of) ports for you HTTP server EG 8080
-
-The examples use the above so they conflict with the things that "normally" use those the default ports for telent, http
-
-  #. Set up your router
-DECIDE if your Spinneret can reach the internet
+  #. IP Address for your Spinneret.  DECIDE an IP ADDRESS for you Spinneret.  EG 192.168.1.17
+  #. Internet Ports for your Spineret TELNET.  DECIDE a (range of) ports for your TELNET server EG 2023-2026
+  #. Internet Ports for your HTTP.  DECIDE a (range of) ports for you HTTP server EG 8080
+  #. Set up your router. DECIDE if your Spinneret can reach the internet
 Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet. .
 
 Add your content here.
