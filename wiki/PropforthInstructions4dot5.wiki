@@ -5,19 +5,19 @@
 
 All information required to use Propforth 4.5 is included in the zip archive.  This page is a summary and further explanation for the more complex points.  Please join the discussion here or on the parallax forums in the propforth 4.5 thread.
 
-The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work.  You will then be able to modify the examples or at least ask well formed questions. 
+The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work.  You will then be able to modify the examples or at least ask well formed questions.  The tests are EASY and take about an hour, at the end of which you will have seen every function in PropForth. 
 
 == Instructions for using Propforth 4.5 == 
 
   #. download the zip archive from http://code.google.com/p/propforth/downloads/list  [add link when posted]
-  #. Read the Readme.txt to find what is in the archive
+  #. Read the ReadMe.txt to find what is in the archive
   #. Build the example hardware test bed
   #. execute the tests to learn to use the functions in the release
   #. post questions and suggestion here
 
 == Required Hardware ==
 
-  #. A PC or equivalent to load PRopforth.spin to the prop
+  #. A PC or equivalent to load Propforth.spin to the prop
   #. terminal program to communicate with the propforth command prompt
   #. Protoboard or equivalent
   #. Spinneret Board or equivalent (for ETHERNET connection)
@@ -26,14 +26,14 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
   #. power supply (parallax 7.2 volt wall wart or equivalent)
   #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
   #. passive components
-  a. Six pieces of 220 ohm resistor
+  a. Six @ 220 ohm resistor
     * 2 for high seed synchronous serial channel to slave
     * 2 for ROM emulation channel to slave
     * 2 for spare asynchronous serial channel to slave
-  b. two ppieces of .1uF capacitor (non polar) 
+  b. two @ .1uF capacitor (non polar) 
     * between power and ground pins on slave prop
     * there are two pairs of power and ground pins on the prop
-  c. 1 peice 10k resistor (pull-up for EEPROM emulation line
+  c. 1 @ 10k resistor (pull-up for EEPROM emulation line
 
   d. around 11 jumper wires depending on how you make your connections
 
@@ -51,8 +51,8 @@ It is recommended that you build the hardware test bed.   All the tests were dei
 
 Telnet  Terminal - DIGITAL VT100 or Equivalent emulator E.G:
   * On Windows: Teraterm 4.65 is fine
-  * On MAC:
-  * On Linux:
+  * On MAC: (?)
+  * On Linux: (?)
   * On iPhone: Telnet Mocha Lite (Free)
 
 == OTHER Configurations ==
@@ -73,6 +73,6 @@ Running the Tests takes about an hour.  ITS EASY.
 
 AFTER you initialize the SD, the behavior changes. The initialization test CANNOT be repeated unless you have an uninitialized SD card.  Un-initializing an SD card is beyond the scope of this discussion, but instructions are available all over the net. You won't need to anyway.  I had to run the tests multiple times to perfect the test, nobody else needs to. (But if you figure out how and wnat to help with the regression tests contact me).  
 
-= End of supplimental instructions =
+= End of supplemental instructions =
 
 More instructions will be added as needed. 
