@@ -89,6 +89,17 @@ At this point, you have downloaded the archive to your PC, read the README.TXT, 
 
 Running the Tests takes about an hour.  ITS EASY.
 
+== Test 3.1.1 http ==
+
+Be careful - you must load the http material in  TELNET window.
+The http is TOO Big for the serial window, and will cause an overrun. 
+This is rarely a problem, except in http, where its allways a problem. 
+Telnet is packetized and runs as large as is needed.
+
+== test-4.1.2 SerialSpinneret.txt ==
+
+Be careful - you have to switch between the spinneret and the proto mid test.  If you run the steps on the wrong boar, you will get funny results and thing will look backwards.  If you find yourself scratching your head, restart the test.  
+
 
 = Additional Notes =
 
