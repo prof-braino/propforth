@@ -4,11 +4,12 @@
 
 All information required to use Propforth 4.5 is included in the zip archive.  This page is a summary and further explanation for the more complex points.  Please join the discussion here or on the parallax forums in the propforth 4.5 thread.
 
-The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work. 
+The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work.  You will then be able to modify the examples or at least ask well formed questions. 
 
 = Instructions for using Propforth 4.5 = 
 
 1. download the zip archive from http://code.google.com/p/propforth/downloads/list
+
 [add link when posted]
 
 2. Read the Readme.txt to find what is in the archive
@@ -21,19 +22,19 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
 
 = Required Hardware =
 
-1. A PC or equivalent to load PRopforth.spin to the prop
+#. A PC or equivalent to load PRopforth.spin to the prop
 
-2. terminal program to communicate with the propforth command prompt
+#. terminal program to communicate with the propforth command prompt
 
-3. Protoboard or equivalent
+#. Protoboard or equivalent
 
-4. Spinneret Board or equivalent (for ETHERNET connection)
+#. Spinneret Board or equivalent (for ETHERNET connection)
 
-5. Bare propchip (40 pin DIP) or equivalent (for ROM-less Slave tests) 
+#. Bare propchip (40 pin DIP) or equivalent (for ROM-less Slave tests) 
 
-6. Breadboard or equivalent
+#. Breadboard or equivalent
 
-7. passive components
+#. passive components
 a. Six pieces of 220 ohm resistor
    - 2 for high seed synchronous serial channel to slave
    - 2 for ROM emulation channel to slave
