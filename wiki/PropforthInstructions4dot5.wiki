@@ -85,6 +85,25 @@ Running the Tests takes about an hour.  ITS EASY.
 
 AFTER you initialize the SD, the behavior changes. The initialization test CANNOT be repeated unless you have an uninitialized SD card.  Un-initializing an SD card is beyond the scope of this discussion, but instructions are available all over the net. You won't need to anyway.  I had to run the tests multiple times to perfect the test, nobody else needs to. (But if you figure out how and wnat to help with the regression tests contact me).  
 
+= Additional Notes =
+
+The SD subdirectory contain support for Secure Digital cards.
+The tests are design for use with the Spinneret board; however, they will work on any SD card with an equivalent pinout. (pins 16-21)  
+
+If YOU WISH TO USE SD on a non-spinneret configuration, look for intructions on hacking an microSD Adaptor.  I have not documented my micro SD adaptor hack yet, but I used caskaz's posts, and the spinneret schematic, and various articles found on the net. The key is to determine:
+Adapter - Prop - Parallel / SPI
+  8     - P17  - DAT1    
+  7     - P16  - DAT0 / MISO / DO
+  6     - Vss  - Vss  / Vss
+  5     - P21  - SCLK
+  4     - Vdd  - Vdd  / Vdd
+  3     - Vss  - Vss  / Vss
+  2     - P20  - CMD  / MOSI / DI
+  1     - P19  - DAT3 / CS
+  9     - P18  - DAT2  
+
+[ caskaz SD schematic here? check spinneret pinout ]
+
 = End of supplemental instructions =
 
 More instructions will be added as needed. 
