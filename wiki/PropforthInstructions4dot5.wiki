@@ -1,8 +1,10 @@
-#summary Propforth 4.5 Instruyctions.
+#summary Propforth 4.5 Instructions.
 
 = Introduction =
 
 All information required to use Propforth 4.5 is included in the zip archive.  This page is a summary and further explanation for the more complex points.  Please join the discussion here or on the parallax forums in the propforth 4.5 thread.
+
+The TESTS are the TUTORIAL.  If you run the tests, you will see all the functions work. 
 
 = Instructions for using Propforth 4.5 = 
 
@@ -44,14 +46,44 @@ d. around 11 jumper wires depending on how you make your connections
 
 8. power supply (parallax 7.2 volt wall wart or equivalent)
 
+9. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
 
+== BUILDING the Hardware Test Bed ==
 
-BUILDING the 
+It is recommended that you build the hardware test bed.   All the tests were deigned for the described hardware.  The alternative is to modify all the software to fit your arbitrary configuration.  This is fine, but your should do this AFTER you are familiar with the software, and know how everything works.  Using the test bed at least once (till you get to know whats going on) is the recommended method to learn propforth.
+
+[ Schematic goes here.  Brian Riley, please create? ]
 
 = Required Software =
 
- 
+For Windows PC - Propeller Tool
+For MAC - BST(?)  - [Brian, please correct?] 
+For Linux - (?)  - [anybody using Linux?]
 
+Telnet  Terminal - DIGITAL VT100 or Equivalent emulator E.G:
+ - On Windows: Teraterm 4.65 is fine
+ - On MAC:
+ - On Linux:
+ - On iPhone: Telnet Mocha Lite (Free)
+
+= OTHER Configurations =
+
+You don't have to do this yet, just start thinking about it.  These come into play at the final tests for the Spinneret
+
+1. IP Address for your Spinneret.
+DECIDE an IP ADDRESS for you Spinneret.  EG 192.168.1.17
+
+2. Internet Ports for your Spineret TELNET
+DECIDE a (range of) ports for your TELNET server EG 2023-2026
+
+3. Internet Ports for your HTTP 
+DECIDE a (range of) ports for you HTTP server EG 8080
+
+The examples use the above so they conflict with the things that "normally" use those the default ports for telent, http
+
+4. Set up your router
+DECIDE if your Spinneret can reach the internet
+Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet. .
 
 Add your content here.
 
