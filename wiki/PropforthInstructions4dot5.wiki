@@ -27,17 +27,17 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
   #. power supply (parallax 7.2 volt wall wart or equivalent)
   #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
   #. passive commonents for Spinneret
-     * power connection - can run from protoboard power
-     * 2 @ 220 ohm resistors asynchronous serial channel to slave
+  * power connection - can run from protoboard power
+  * 2 @ 220 ohm resistors asynchronous serial channel to slave
   #. passive components for ROMless Slave (MultiChannel High Speed Synchronous Serial)
-    * four @ 220 ohm resistor
-      * 2 for high seed synchronous serial channel to slave
-      * 2 for ROM emulation channel to slave
-    *. two @ .1uF capacitor (non polar) 
-      * between power and ground pins on slave prop
-      * there are two pairs of power and ground pins on the prop
-    *. 1 @ 10k resistor (pull-up for EEPROM emulation line
-    *. around 11 jumper wires depending on how you make your connections
+  * four @ 220 ohm resistor
+    * 2 for high seed synchronous serial channel to slave
+    * 2 for ROM emulation channel to slave
+  *. two @ .1uF capacitor (non polar) 
+    * between power and ground pins on slave prop
+    * there are two pairs of power and ground pins on the prop
+  *. 1 @ 10k resistor (pull-up for EEPROM emulation line
+  *. around 11 jumper wires depending on how you make your connections
 
 === BUILDING the Hardware Test Bed ===
 
