@@ -80,7 +80,7 @@ All Ethernet configurations reside in
   #. Internet Ports for your Spineret TELNET.  DECIDE a (range of) ports for your TELNET server EG 2023-2026
   #. Internet Ports for your HTTP.  DECIDE a (range of) ports for you HTTP server EG 8080
   #. Set up your router. DECIDE if your Spinneret can reach the internet
-Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet. 
+Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet.  The Spinneret will be visible INTERNALLY at whatever address you statically assign in ipconfig.f.   The Spinneret will be EXTERNALLY at what ever you IP WAN address is, depending on how you configure your router.  So get it working internally first, then configure the router. 
 
 
 = Running the Tests / Learning PropForth =
@@ -95,7 +95,7 @@ Running the Tests takes about an hour.  ITS EASY.
 == test-2.1.1 SD.txt SD Initialization ==
 
 The SD initialization step requires an unintialized SD card.  AFTER you initialize the SD, the behavior changes. 
-IF YOU NEED to REPEAT THE SD INITIALIATION STEP,
+IF YOU NEED to REPEAT THE SD INITIALIZATION STEP,
 HOLD DOWN THE (ESC) KEY AFTER TYPING REBOOT on step Reboot2.
 
 If you hold the the ESC key, the SD autoboot stops.  This will allow you to re-run the sd_scripts.f test, and you can proceed with the tests as written.
