@@ -46,15 +46,15 @@ It is recommended that you build the hardware test bed.   All the tests were dei
 
 = Required Software =
 
-For Windows PC - Propeller Tool
-For MAC - BST(?)  - [Brian, please correct?] 
-For Linux - (?)  - [anybody using Linux?]
+  For Windows PC - Propeller Tool
+  For MAC - BST(?)  - [Brian, please correct?] 
+  For Linux - (?)  - [anybody using Linux?]
 
 Telnet  Terminal - DIGITAL VT100 or Equivalent emulator E.G:
- - On Windows: Teraterm 4.65 is fine
- - On MAC:
- - On Linux:
- - On iPhone: Telnet Mocha Lite (Free)
+  - On Windows: Teraterm 4.65 is fine
+  - On MAC:
+  - On Linux:
+  - On iPhone: Telnet Mocha Lite (Free)
 
 = OTHER Configurations =
 
