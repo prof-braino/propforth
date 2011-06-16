@@ -92,15 +92,15 @@ The tests are design for use with the Spinneret board; however, they will work o
 
 If YOU WISH TO USE SD on a non-spinneret configuration, look for intructions on hacking an microSD Adaptor.  I have not documented my micro SD adaptor hack yet, but I used caskaz's posts, and the spinneret schematic, and various articles found on the net. The key is to determine:
 Adapter - Prop - Parallel / SPI
-  8     - P17  - DAT1    
-  7     - P16  - DAT0 / MISO / DO
-  6     - Vss  - Vss  / Vss
-  5     - P21  - SCLK
-  4     - Vdd  - Vdd  / Vdd
-  3     - Vss  - Vss  / Vss
-  2     - P20  - CMD  / MOSI / DI
-  1     - P19  - DAT3 / CS
-  9     - P18  - DAT2  
+  * 8   - P17  - DAT1    
+  * 7   - P16  - DAT0 / MISO / DO
+  * 6   - Vss  - Vss  / Vss
+  * 5   - P21  - SCLK
+  * 4   - Vdd  - Vdd  / Vdd
+  * 3   - Vss  - Vss  / Vss
+  * 2   - P20  - CMD  / MOSI / DI
+  * 1   - P19  - DAT3 / CS
+  * 9   - P18  - DAT2  
 
 [ caskaz SD schematic here? check spinneret pinout ]
 
