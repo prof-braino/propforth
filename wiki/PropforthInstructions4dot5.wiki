@@ -71,11 +71,17 @@ Telnet  Terminal - DIGITAL VT100 or Equivalent emulator E.G:
 
 You don't have to do this yet, just start thinking about it.  These come into play at the final tests for the Spinneret.  The examples are defined as below so they conflict with the things that "normally" use those the default ports for telent, http
 
+All Ethernet configurations reside in 
+
+  ../sd/ipconfig.f
+
+
   #. IP Address for your Spinneret.  DECIDE an IP ADDRESS for you Spinneret.  EG 192.168.1.17
   #. Internet Ports for your Spineret TELNET.  DECIDE a (range of) ports for your TELNET server EG 2023-2026
   #. Internet Ports for your HTTP.  DECIDE a (range of) ports for you HTTP server EG 8080
   #. Set up your router. DECIDE if your Spinneret can reach the internet
 Configure your Router and FIREWALL to let your Telnet and HTTP visible on the internet, or not.  Configuring your router is beyond the scope of this discussion, but instructions are available all over the internet. 
+
 
 = Running the Tests / Learning PropForth =
 
