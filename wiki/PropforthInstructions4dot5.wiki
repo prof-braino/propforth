@@ -22,12 +22,15 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
   #. Spinneret Board or equivalent (for ETHERNET connection)
   #. Bare propchip (40 pin DIP) or equivalent (for ROM-less Slave tests) 
   #. Breadboard or equivalent
+  #. power supply (parallax 7.2 volt wall wart or equivalent)
+  #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
   #. passive components
+
      a. Six pieces of 220 ohm resistor
 
-     - 2 for high seed synchronous serial channel to slave
+    * 2 for high seed synchronous serial channel to slave
 
-     - 2 for ROM emulation channel to slave
+    * 2 for ROM emulation channel to slave
 
      - 2 for spare asynchronous serial channel to slave
 
@@ -41,8 +44,7 @@ The TESTS are the TUTORIAL.  If you run the tests, you will see all the function
 
      d. around 11 jumper wires depending on how you make your connections
 
-  #. power supply (parallax 7.2 volt wall wart or equivalent)
-  #. Micro SD card for the Spinneret slot.  This will be internal to propforth and is not intended to be FAT compatible.  SD cards are cheap, just get athe cheapest one and you'll be fine
+
 
 == BUILDING the Hardware Test Bed ==
 
