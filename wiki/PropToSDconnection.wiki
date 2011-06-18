@@ -1,35 +1,50 @@
 #summary Physical Connection for Prop to SD per Spinneret
 
-= Spinneret Configuration =
+= Spinneret SD Configuration =
 
-By Default, Propforth v4.5 uses the Spinneret Pinout.
+By Default, Propforth v4.5 uses the Spinneret Pinout for SD.
 
 Please note that all SD I/O pins MUST have a 10K pull up resistor.
 
 That is, one end of the resistor connects to the I/O pin, and the other end of the 10K resistor connects to Vdd.  I use 10-pin resistor packs, there are 9 resistors and one common, the resistor pack pins line up with the connectors on protobosard, the schmart board, and standard solder-less breadboard.
 
-{{{
+Options are:
+  # solder directly to your microSD card
+  # solder to a miniSD to microSD adapter (nothing seems to use mini anymore except the Zipit, I used these)
+  # solder to a regular SD to microSD adapter (used these, as I have several)
+  # solder directly to a regular SD card
+
+Using an adapter is more flexible and does not carry risk of destroying the SD card.
+
+
 = Pinout for the prop to various format SD cards =
 
-Prop - SDmode - SPImode - micorSD - miniSD - SD
-----   ------   -------   -------   ------   --
-P16  - Dat0   - MISO-Do - 7       - 7      - 7
-P17  - Dat1   - X       - 8       - 8      - 8
-P18  - Dat2   - X       - 1       - 9      - 9 
-P19  - Dat3   - CS      - 2       - 1      - 1
-P20  - CMD    - MOSI-DI - 3       - 2      - 2
-P21  - SCLK   - Clock   - 5       - 5      - 5
-Vdd  - Vdd    - Vdd     - 4       - 4      - 4 - Vdd
-Vss  - Vss    - Vss     - 6       - 3,6    - 3,6 Vss
+Using the Spinneret connections as the standard,  
+make to the following connection per the SD card or adapter you choose.  
+
+{{{
+
+Prop - SDmode - SPImode => microSD - miniSD - SD
+----   ------   -------   -------    ------   --
+P16  - Dat0   - MISO-Do  - 7       - 7      - 7
+P17  - Dat1   - X        - 8       - 8      - 8
+P18  - Dat2   - X        - 1       - 9      - 9 
+P19  - Dat3   - CS       - 2       - 1      - 1
+P20  - CMD    - MOSI-DI  - 3       - 2      - 2
+P21  - SCLK   - Clock    - 5       - 5      - 5
+Vdd  - Vdd    - Vdd      - 4       - 4      - 4   - Vdd
+Vss  - Vss    - Vss      - 6       - 3,6    - 3,6 - Vss
 }}}
 
+The following connections must also be present 
 
+{{{
+P16  - 10K - Vdd
+P17  - 10K - Vdd
+P18  - 10K - Vdd
+P19  - 10K - Vdd
+P20  - 10K - Vdd
+P21  - 10K - Vdd
+}}}
 
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The I/O pin must also go through the 10k resistor to Vdd
