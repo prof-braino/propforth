@@ -7,6 +7,21 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
+== Question 9 Where are the Requirements listed? ==
+
+== Question 8 Why are the Tests so hard to follow? ==
+
+-- interrupted by munchkins  --
+
+
+
+== Question 7 Version 5 schedule ==
+
+When will users get to see the version 5 optimizations? 
+
+With the paint not dry on on v4.5, its still a month before v5.x start regression testing. 
+
+
 == Question 6 issue 27 by salsanci: mcs.f - 32 + 1 bits in loop ==
 
 kuroneko (Marko) the clocks and timing guru, asked about the 32 + 1 bits in the mcs.f  (MultiChannel Synchronous Serial) ? 
@@ -61,9 +76,6 @@ Plus protocol (Did you get an error? No, I did not get an error, can you send th
 The real throughout is around (?) 50-60K (?) on each channel in both directions.  
 
 Analysis of the actual tests to follow when they are brought up to v4.5
-
--- interrupted by munchkins  --
-
 
 == Question 4 Additional functions from 3.6 missing ==
 
