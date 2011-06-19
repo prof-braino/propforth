@@ -44,7 +44,7 @@ P17  - 10K - Vdd
 P18  - 10K - Vdd
 P19  - 10K - Vdd
 P20  - 10K - Vdd
-P21  - 10K - Vdd
+P21  - NO PULL UP - P21 directly to clock only
 }}}
 
 The I/O pin must also go through the 10k resistor to Vdd
