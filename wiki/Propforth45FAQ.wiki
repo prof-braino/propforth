@@ -61,11 +61,11 @@ As states before, the performance increase is significant, and is noticeable to 
 
 = Question 1 - caskaz SD issues =
 
-caskaz was the original developer on the SD support, starting in v4.0. Now at release 4.5, he is the only one reporting problems.  Since there are already several reports of success by other beyond the development team, we thing the SD code and tests are working according to requirements.
+caskaz was the original developer on the SD support, starting in v4.0. Now at release 4.5, he is the only one reporting problems.  Since there are already several reports of success by other beyond the development team, we thing the SD code and tests are working according to requirements.  The question is whether there is something hardware related we can identify. 
 
 The error messages caskaz is getting are 167 (A7 not A6 as reported in the thread -check if something else is wrong), 172, and 163. 
 
-Sal interprets these as the CARD REPORTS it is not SD V2+.  Could these be old V1 standard, or MMC?  These are not supported, as these were hard to find, and so untestable. 
+Sal interprets these as "the CARD REPORTS it is not SD V2+".  Could these be old V1 standard, or MMC?  These are not supported, as these were hard to find, and so untestable. 
 
 During development, Sal could not find examples of non v2 cards, the V1 standard was weak and/or not adhered to by manufacturers.  Sal specifically order old parts off of Ebay to try to find examples of the older tech.  But since these were unreliable, apparently folks discarded them. 
 
