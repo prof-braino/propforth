@@ -7,6 +7,16 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
+== Question 3 SD_init regression test is not repeatable ==
+
+The sd_init.f regression test initializes the SD card for use by the forth system. The initialization function sets up the card to run autoboot scripts. But, it does not kill any existing scripts.  So the first time the init is run,  the following step, reboot, returns autoboot not found.  Running the init scrip on an initialized  card ALSO sets up the card to look for an autoboot script, but since the script already exists, the reboot finds the script.  So in reality it skips tfrom the start of the init step to reboot after creating the auotboot file.  
+
+This bring up a critical point.  There is NO DELETE FILE FROM SD function.  If you want to get rid of a file, re-initialize the file.  If a file is too small, rename the old version "backup1" and create a large file with the necessary size, or re-initialize the card and create it bigger.  The design decision was that the speed and compactness outweigh the value of dynamic file size allocation.  Its a micro controller for cryin' out loud, and the SD has 4 gig of space!  Use it!  Or not.  Users are free to implement dynamic file allocation if wanted, support is not targeted for inclusion in the default kernel at this time. 
+
+Anyway, so far only prof_braino and caskaz have had a need to run the regression tests multiple times on the same card.  But I can't leave it at that, the regression tests must be repeatable. 
+
+Prof_braino asked for a WIPE_SD word that specifically sets the card to an "uninitialized state" by wiping EVERYTHING.  Sal does not like this type of word, as it tends to get called by accident, and makes sad faces.  So the idea is to provide a WIPE_SD function, but not include it in default kerrnel support; in fact we will likely "hide" it in the extensions, with warnings like "DO NOT USE" or something. 
+
 == Question 2 Assembler =
 
 The assembler has been evolving later, in particular the usage model has been evolving.  Sal had a particular process in mind in the earlier releases, this turns out to not work as well as had wanted, and so much will be different in v5. Previously, the use was something like:
