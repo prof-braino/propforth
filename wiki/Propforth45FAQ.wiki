@@ -9,3 +9,9 @@ Newer Topics to be added to the top.
 = Question 1 - caskaz SD issues =
 
 caskaz was the original developer on the SD support, starting in v4.0. Now at release 4.5, he is the only one reporting problems.  Since there are already several reports of success by other beyond the development team, we thing the sd code and tests are working according to requirements.
+
+The error messages caskaz is getting are 167 (A7 not A6 as reported in the thread -check if something else is wrong), 172, and 163. 
+
+Sal interprets these as the CARD REPORTS it is not SD V2+.
+
+Sal could not find examples of non v2 cards, the V1 standard was weak and/or not adhered to by manufacturers. 
