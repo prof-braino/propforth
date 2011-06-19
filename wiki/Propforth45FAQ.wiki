@@ -70,7 +70,7 @@ Sal interprets these as the CARD REPORTS it is not SD V2+.  Could these be old V
 During development, Sal could not find examples of non v2 cards, the V1 standard was weak and/or not adhered to by manufacturers.  Sal specifically order old parts off of Ebay to try to find examples of the older tech.  But since these were unreliable, apparently folks discarded them. 
 
 After discussion, we have the following options:
-1) caskaz get new cards that report SD v2+ at initialization in SD init. Hopefully these work.
-2)  caskaz to turn on sd_debug (he did already, I think) and check the output of each word. Deterrmine if the cards are V1 or MMC, and develop support as required.  This is a lot of work for potentially small benefit.  (Is is cheaper to write new support for old card, or can you just buy new cards and be done with it)
-3) prof_braino to ship card successfully initialized and formatted with SD_SCRIPT.f to caskaz.  A known working card will verify that cakkaz's hardware is correct or not; but we have confidence in caskaz's ability, so we think this is not required
-4) caskaz to ship one or more cards to Sal, for debugging.  (last option)
+  #) caskaz get new cards that report SD v2+ at initialization in SD init. Hopefully these work.
+  #)  caskaz to turn on sd_debug (he did already, I think) and check the output of each word. Deterrmine if the cards are V1 or MMC, and develop support as required.  This is a lot of work for potentially small benefit.  (Is is cheaper to write new support for old card, or can you just buy new cards and be done with it)
+  #) prof_braino to ship card successfully initialized and formatted with SD_SCRIPT.f to caskaz.  A known working card will verify that cakkaz's hardware is correct or not; but we have confidence in caskaz's ability, so we think this is not required
+  #) caskaz to ship one or more cards to Sal, for debugging.  (last option)
