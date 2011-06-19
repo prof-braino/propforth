@@ -1,0 +1,11 @@
+#summary FAQ for Propforth 4.5 Release
+
+= Introduction =
+
+A bit different for this release, I'm going to post all the questions and answers from various locations in one place. This is actually not limited to "frequently" asked questions. 
+
+Newer Topics to be added to the top.
+
+= Question 1 - caskaz SD issues =
+
+caskaz was the original developer on the SD support, starting in v4.0. Now at release 4.5, he is the only one reporting problems.  Since there are already several reports of success by other beyond the development team, we thing the sd code and tests are working according to requirements.
