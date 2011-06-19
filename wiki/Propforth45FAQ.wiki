@@ -7,9 +7,32 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
+== Question 2 Assembler =
+
+The assembler has been evolving later, in particular the usage model has been evolving.  Sal had a particular process in mind in the earlier releases, this turns out to not work as well as had wanted, and so much will be different in v5. Previously, the use was something like:
+write a function in forth, extract the assembler (kind of a big process in itself), hard-code this sequence of bytes, load these into cog memory, and manage this process by hand (also an involved process). 
+
+In V5, the design pattern will be along the lines of:
+write in forth, translate into assembler (there are new tools but this is still the major task), use as if it were a regular forth word.
+
+As it turns out, we don't have to load the assembler into each cog as before.  Also, each assembler definition (re?)uses the same cog memory space(?).  
+
+Example: Multiply, divide, and dictionary search words.  To use a new word, it gets loaded into the same memory space. The reload slows it down.  BUT the speed gain due to assembler code is far greater, so the net result is significant speed BOOST. (Noticeable to the user).
+
+The impact is the rebuild process now has two steps instead of one. 
+There is still a BASE KERNEL, with no assembler definitions. 
+User can add the assembler optimization support.
+Rebuild the kernek, with optimizations on top. 
+
+So the choice is a) very tiny kernel, or b) boosted interpreter (wheeee!).  COG memory usage is already reduced by 30 longs, V5.x has about 190 longs free, v4.5 has 160 longs free.
+
+As states before, the performance increase is significant, and is noticeable to the user. Sal is hoping this boost will apply well to the multi-cog support.  For Cog to Cog communication, the delay is from accepting I/O into PAD. The new kernel is does this MUCH faster. 
+
+[interrupted by munchkins]
+
 = Question 1 - caskaz SD issues =
 
-caskaz was the original developer on the SD support, starting in v4.0. Now at release 4.5, he is the only one reporting problems.  Since there are already several reports of success by other beyond the development team, we thing the sd code and tests are working according to requirements.
+caskaz was the original developer on the SD support, starting in v4.0. Now at release 4.5, he is the only one reporting problems.  Since there are already several reports of success by other beyond the development team, we thing the SD code and tests are working according to requirements.
 
 The error messages caskaz is getting are 167 (A7 not A6 as reported in the thread -check if something else is wrong), 172, and 163. 
 
@@ -22,7 +45,3 @@ After discussion, we have the following options:
 2)  caskaz to turn on sd_debug (he did already, I think) and check the output of each word. Deterrmine if the cards are V1 or MMC, and develop support as required.  This is a lot of work for potentially small benefit.  (Is is cheaper to write new support for old card, or can you just buy new cards and be done with it)
 3) prof_braino to ship card successfully initialized and formatted with SD_SCRIPT.f to caskaz.  A known working card will verify that cakkaz's hardware is correct or not; but we have confidence in caskaz's ability, so we think this is not required
 4) caskaz to ship one or more cards to Sal, for debugging.  (last option)
-
-== Question 2 Assembler =
-
-[interrupted by munchkins]
