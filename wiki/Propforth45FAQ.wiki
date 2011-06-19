@@ -12,7 +12,8 @@ Newer Topics to be added to the top.
 kuroneko (Marko) the clocks and timing guru, asked can you be more clear? "20 instructions per bit at 80MHz" would be more precise.
 
 Sal said th
-[interrupted by munchkins]
+
+-- interrupted by munchkins  --
 
 
 == Question 4 Additional functions from 3.6 missing ==
