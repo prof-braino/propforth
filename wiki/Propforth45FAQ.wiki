@@ -7,6 +7,14 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
+== Question 5 Please Clarify "Multi-Channel Hi Speed Sync Comms" ==
+
+kuroneko (Marko) the clocks and timing guru, asked can you be more clear? "20 instructions per bit at 80MHz" would be more precise.
+
+Sal said th
+[interrupted by munchkins]
+
+
 == Question 4 Additional functions from 3.6 missing ==
 
 Several additional functions that were present up till v3.6 are no longer found in the release package.  for example VGA support, aslicer.f (assembler time slicer, the pause word), cogdbg.f (the debugger/disassembler), maybe some others.
@@ -49,8 +57,6 @@ Rebuild the kernek, with optimizations on top.
 So the choice is a) very tiny kernel, or b) boosted interpreter (wheeee!).  COG memory usage is already reduced by 30 longs, V5.x has about 190 longs free, v4.5 has 160 longs free.
 
 As states before, the performance increase is significant, and is noticeable to the user. Sal is hoping this boost will apply well to the multi-cog support.  For Cog to Cog communication, the delay is from accepting I/O into PAD. The new kernel is does this MUCH faster. 
-
-[interrupted by munchkins]
 
 = Question 1 - caskaz SD issues =
 
