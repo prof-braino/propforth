@@ -11,7 +11,7 @@ Newer Topics to be added to the top.
 
 kuroneko (Marko) the clocks and timing guru, asked about the 32 + 1 bits in the mcs.f  (MultiChannel Synchronous Serial) ? 
 
-I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into _treg3 and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
+I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into `_treg3` and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
 
 Sal's answer:
 
