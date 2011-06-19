@@ -4,7 +4,7 @@
 
 By Default, Propforth v4.5 uses the Spinneret Pinout for SD.
 
-Please note that all SD I/O pins MUST have a 10K pull up resistor.
+Please note that SD I/O pins 16, 17, 18, 19, 20 MUST have a 10K pull up resistor. Pin 21 (clock) does NOT have pull up.  Vdd goes to the other end of the pull up resistor, GND does not have a resistor.
 
 That is, one end of the resistor connects to the I/O pin, and the other end of the 10K resistor connects to Vdd.  I use 10-pin resistor packs, there are 9 resistors and one common, the resistor pack pins line up with the connectors on protobosard, the schmart board, and standard solder-less breadboard.
 
