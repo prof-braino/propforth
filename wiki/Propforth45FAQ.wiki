@@ -11,26 +11,40 @@ Newer Topics to be added to the top.
 
 kuroneko (Marko) the clocks and timing guru, asked about the 32 + 1 bits in the mcs.f  (MultiChannel Synchronous Serial) ? 
 
+I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into _treg3 and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
+
+Sal's answer:
+
+The way this code should function is:
+
 {{{
 \ _treg5 tx reg , _treg3 rx reg
 __7trreg
-		mov	_treg6 , # 20
+              mov   _treg6 , # 20
 __Flp
-			test	v_pinin , ina wc
--------------->         rcl	_treg3	, # 1     <---------
-			shl	_treg5	, # 1 wc
-			muxc	outa , v_pinout
-		djnz	_treg6	, # __Flp wz
-		test	v_pinin	, ina wc
------------->   rcl	_treg3	, # 1  <--------------------
+                test  v_pinin  , ina wc
+------>         rcl   _treg3   , # 1     <---------
+                shl   _treg5   , # 1 wc
+                muxc  outa     , v_pinout
+              djnz  _treg6     , # __Flp wz
+              test  v_pinin    , ina wc
+------->      rcl   _treg3     , # 1    <-------------
 __8trregret
-		ret
+              ret
 
 }}}
 
-I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into _treg3 and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
+But remember, we are transmitting and receiving at the same time, and both sides running in sync
 
+This puts the data valid time, to the data read time about 4 cycles apart, and any capacitance on the line could slow down the edge and make this a little tight as could and slight clock differences between props
 
+By sacrificing 2 longs, and 8 cycles / 32 bits we add another 4 cycles for the data to stabilize before it is read by the other prop chip, so in theory we have 8 cycles or about 100 ns on an 80Mhz clock
+
+This should be good enough for most applications.
+
+The raw bit speed is about 20 cycles / bit. However, the protocol stack must be factored.
+
+The goal of this code is not to send 32 bits, but to provide 8 synchronous full duplex channels between props.
 
 == Question 5 Please Clarify "Multi-Channel Hi Speed Sync Comms" ==
 
