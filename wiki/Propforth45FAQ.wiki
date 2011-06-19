@@ -7,6 +7,31 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
+== Question 6 issue 27 by salsanci: mcs.f - 32 + 1 bits in loop
+
+kuroneko (Marko) the clocks and timing guru, asked about the 32 + 1 bits in the mcs.f  (MultiChannel Synchronous Serial) ? 
+
+{{{
+\ _treg5 tx reg , _treg3 rx reg
+__7trreg
+		mov	_treg6 , # 20
+__Flp
+			test	v_pinin , ina wc
+-------------->         rcl	_treg3	, # 1     <---------
+			shl	_treg5	, # 1 wc
+			muxc	outa , v_pinout
+		djnz	_treg6	, # __Flp wz
+		test	v_pinin	, ina wc
+------------>   rcl	_treg3	, # 1  <--------------------
+__8trregret
+		ret
+
+}}}
+
+I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into _treg3 and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
+
+
+
 == Question 5 Please Clarify "Multi-Channel Hi Speed Sync Comms" ==
 
 kuroneko (Marko) the clocks and timing guru, asked can you be more clear? Something along the lines of "20 instructions per bit at 80MHz" would be more precise.
