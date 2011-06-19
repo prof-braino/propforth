@@ -9,7 +9,7 @@ Newer Topics to be added to the top.
 
 == Question 5 Please Clarify "Multi-Channel Hi Speed Sync Comms" ==
 
-kuroneko (Marko) the clocks and timing guru, asked can you be more clear? "20 instructions per bit at 80MHz" would be more precise.
+kuroneko (Marko) the clocks and timing guru, asked can you be more clear? Something along the lines of "20 instructions per bit at 80MHz" would be more precise.
 
 Sal said th
 
