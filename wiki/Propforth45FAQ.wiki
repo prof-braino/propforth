@@ -7,6 +7,18 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
+== Question 4 Additional functions from 3.6 missing ==
+
+Several additional functions that were present up till v3.6 are no longer found in the release package.  for example VGA support, aslicer.f (assembler time slicer, the pause word), cogdbg.f (the debugger/disassembler), maybe some others.
+
+VGA needs assembler support, this must wait till 5.0 (Sorry C3 and demoboard fans).  But it is on the list.
+
+aslicer.f - the assembler time slicer (the pause word) is not deeme worthwhile at this time (Awwww!).  There's already 8 cogs, and more if you add more props.  If a need arises, it can be revisited, or somebody can do it for fun.  Right now there are bigger fish to fry, and only Cliffe Biffle ever used it, and that was in a development test to see how many tasks could be running (doing nothing) at the same time.  The result was something wickedly awesome for a micro-controller,  180 tasks per cog I think,  but it hasn't found a real life application yet.  So its NOT on the list to be brought forward, at least not yet. 
+
+cogdbg.f - cog debugger.  This completely cool and very powerful.  But since the assembler use is being redesigned, this functionality must also conform to the redesign.    Sal will probably include at least some of this in 5.x, but it all depends on where that road takes us. 
+
+There are probably more functions from eariler releases that should be on this list.  They will be added and considered as we notice. 
+
 == Question 3 SD_init regression test is not repeatable ==
 
 The sd_init.f regression test initializes the SD card for use by the forth system. The initialization function sets up the card to run autoboot scripts. But, it does not kill any existing scripts.  So the first time the init is run,  the following step, reboot, returns autoboot not found.  Running the init scrip on an initialized  card ALSO sets up the card to look for an autoboot script, but since the script already exists, the reboot finds the script.  So in reality it skips tfrom the start of the init step to reboot after creating the auotboot file.  
