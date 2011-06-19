@@ -7,7 +7,7 @@ A bit different for this release, I'm going to post all the questions and answer
 
 Newer Topics to be added to the top.
 
-== Question 6 issue 27 by salsanci: mcs.f - 32 + 1 bits in loop
+== Question 6 issue 27 by salsanci: mcs.f - 32 + 1 bits in loop ==
 
 kuroneko (Marko) the clocks and timing guru, asked about the 32 + 1 bits in the mcs.f  (MultiChannel Synchronous Serial) ? 
 
