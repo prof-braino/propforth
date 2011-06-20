@@ -70,10 +70,10 @@ kuroneko (Marko) the clocks and timing guru, asked can you be more clear? Someth
 Sal said the "20 cycles per bit" doesn't really tell us what we need, as it does not include the overhead for the protocol.  (Although prof_braino uses 4Mb/s since its easy to remember and type).
 
 Sal will did up the original development tests, and bring them forward to 4.5.  He did not recall the exact details, so the follow me be incorrect, but is posted here as a ballpark estimate.
-  - Test covers 8 channels
-  - Full duplex frames / 1 character slot per frame
-  - Send an receive 1 character (simultaneously)over 8 channels
-  - Plus protocol 'Did you get an error? No, I did not get an error, can you send the next character? Sure, here's another character...`
+  * Test covers 8 channels
+  * Full duplex frames / 1 character slot per frame
+  * Send an receive 1 character (simultaneously)over 8 channels
+  * Plus protocol 'Did you get an error? No, I did not get an error, can you send the next character? Sure, here's another character...`
 
 The real throughout is around (?) 50-60K (?) on each channel in both directions.  
 
