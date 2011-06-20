@@ -65,15 +65,18 @@ The goal of this code is not to send 32 bits, but to provide 8 synchronous full 
 
 == Question 5 Please Clarify "Multi-Channel Hi Speed Sync Comms" ==
 
-kuroneko (Marko) the clocks and timing guru, asked can you be more clear? Something along the lines of "20 instructions per bit at 80MHz" would be more precise.
+kuroneko (Marko) the clocks and timing guru, asked can you be more clear? Something along the lines of "20 cycles/bit" would be more precise, which boils down to 4Mb/s @80MHz
 
-Sal said the "20 instructions per bit" doesn't really tell us anything either.
+Sal said the "20 cycles per bit" doesn't really tell us what we need, as it does not include the overhead for the protocol.  (Although prof_braino uses 4Mb/s since its easy to remember and type).
 
 Sal will did up the original development tests, and bring them forward to 4.5.  He did not recall the exact details, so the follow me be incorrect, but is posted here as a ballpark estimate.
 Test covers 8 channels
 Full duplex frames / 1 character slot per frame
 Send an receive 1 character (simultaneously)over 8 channels
-Plus protocol (Did you get an error? No, I did not get an error, can you send the next character? Sure, here's another character...)
+Plus protocol '
+(Did you get an error? 
+No, I did not get an error, can you send the next character? 
+Sure, here's another character...)`
 
 The real throughout is around (?) 50-60K (?) on each channel in both directions.  
 
