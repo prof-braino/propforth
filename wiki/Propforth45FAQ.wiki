@@ -17,12 +17,11 @@ The test are written with delimiters to allow automation.  Future development pr
 
 The tests aren't really so hard to follow after you get used to reading the delimiters.  This will be a non-issue after automation is complete. 
 
-
 == Question 7 Version 5 schedule ==
 
 When will users get to see the version 5 optimizations? 
 
-With the paint not dry on on v4.5, its still a month before v5.x start regression testing. 
+With the paint not dry on on v4.5, its still a month before v5.x start regression testing.  An actual release may be a month after that, give or take.
 
 
 == Question 6 issue 27 by salsanci: mcs.f - 32 + 1 bits in loop ==
