@@ -13,8 +13,6 @@ Traditional requirements are too expensive for our resources, and are typically 
 
 == Question 8 Why are the Tests so hard to follow? ==
 
--- interrupted by munchkins  --
-
 The test are written with delimiters to allow automation.  Future development process will include running the regression suite after each function is completed to ensure that nothing "broke" during development.
 
 The tests aren't really so hard to follow after you get used to reading the delimiters.  This will be a non-issue after automation is complete. 
