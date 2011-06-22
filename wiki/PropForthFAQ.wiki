@@ -3,7 +3,13 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
-= the description says "N-slave props", why can't I get it to work? =
+= v 4.5 =
+
+= V 4.0 =
+
+Version for was superseded by version 4.5 on 2011-06-14
+
+== the description says "N-slave props", why can't I get it to work? ==
 
 The support is there, but we didn't write the examples yet. At least, we didn't make the examples "plug and play" yet.  Its a little tricky.  But figuring out is half the fun.  If you don't think that half is all that much fun, please wait till the new tutorial gets posted.  If you think the "bleeding edge" experiments are fun, please join the parallax forums and join or start a thread.  There's LOTS of fun to be had.
 
@@ -11,7 +17,7 @@ http://code.google.com/p/propforth/wiki/PropForth4SetupAndTest
 
 Since the clean-up for 4.0 some things are a little different and my examples don't work the same.  So at least the documentation is a little rougher around the edges than usual. I'm up to the ROM-less demo {{{(NOROM.F)}}}  where the examples stop working for me. The docs should improve through December. 
 
-= How does this MASTER / SLAVE arrangement work? =
+== How does this MASTER / SLAVE arrangement work? ==
 
 The MASTER is the prop with the EERROM image for PropForth. 
 The EEPROM image contains code for establishing synchronous serial channels to other props.
@@ -30,13 +36,13 @@ A master with 5 slaves (sub-masters) and 35 sub-slave has 25 * 7 = 245 cogs avai
 NOTE:  We haven't built any of these yet, we plan to post if we find any success.
 
 
-= Why don't all your examples work with the current version? =
+== Why don't all your examples work with the current version? ==
 
 The examples are created using the current version, but don't always get updated to the next version. Usually the person that asked the question has already got an answer and can move to the new version with no further assistance.  This doesn't help you, the new person.  However, if you ask a question about a particular example, I will re-visit it, and make it work with the current version.  Changes and updates are driven by user requests; if nobody asks, it doesn't get done. This strategy helps us limit work to topics people actually care about. 
 
 Please ask any questions. If you are puzzles, other probably are too.
 
-= does propforth work on the hydra? =
+== does propforth work on the hydra? ==
 
 Yes, propforth will run on ANY propeller chip.  However, we don't have that board so we never tested it.  An hydra - specific hardware does not have specific support.  But, it should be pretty easy to implement.  If you need help with an specific hardware, please open a discussion thread at the parallax forums.  
 
