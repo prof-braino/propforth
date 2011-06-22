@@ -12,6 +12,9 @@ Redesign Propforth kernel:
 
 Bug fixes to 4.5 as needed 
 
+=== Propforth 4.5 Released June 14, 2011 (public release) ===
+
+
 === Propforth 4.5 (Update) targeted June 2011 (public release) ===
 
 (update)
