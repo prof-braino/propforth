@@ -1,4 +1,5 @@
 #summary Status of PropForth kernel development
+#labels Phase-Design,Phase-QA,Phase-Support
 
 === Propforth 5.0 targeted Summer 2011 ===
 {{{
@@ -7,6 +8,8 @@ Redesign Propforth kernel:
  - dictionary resides on SD card
  - SD resident definition loads itself from SD, executes, and removes itself from memory
  - Maximize space available for user applications
+ - Optimize assembler, disassembler, debugger
+ - trade-off: using assembler is easier (use assembler definition same way as forth definition), rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
 }}}
 === Propforth 4.6 targeted Spring 2011 (public release) ===
 
