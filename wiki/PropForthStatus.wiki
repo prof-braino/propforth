@@ -10,6 +10,7 @@ Redesign Propforth kernel:
  - Maximize space available for user applications
  - Optimize assembler, disassembler, debugger
  - trade-off: using assembler is easier (use assembler definition same way as forth definition), rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
+ - regression test automation, goal is to run entire regression suite from a single command
 }}}
 === Propforth 4.6 targeted Spring 2011 (public release) ===
 
@@ -17,6 +18,10 @@ Bug fixes to 4.5 as needed
 
 === Propforth 4.5 Released June 14, 2011 (public release) ===
 
+ - include regression tests
+ - design regression test to serve as tutorial
+ - design regression test to serve as functional definition
+ - design regression test for future automated execution
 
 ~~ Propforth 4.5 (Update) targeted June 2011 (public release) ~~
 
