@@ -5,6 +5,16 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 
 = v 4.5 =
 
+Version 4.5 was released on 2011-06-14
+
+== This FAQ is getting too long, when are you going to remover the old messages? ==
+
+As the propforth kernel matures, the old FAQ material becomes less relevant.  A separate has been opened specific to v4.5 as an experiment.  If this is more suitable, release specific FAQ will be created.
+
+The v4.5 FAQ is at: 
+
+http://code.google.com/p/propforth/wiki/Propforth45FAQ
+
 = V 4.0 =
 
 Version for was superseded by version 4.5 on 2011-06-14
