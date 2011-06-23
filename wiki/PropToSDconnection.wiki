@@ -8,6 +8,8 @@ Please note that SD I/O pins 16, 17, 18, 19, 20 MUST have a 10K pull up resistor
 
 That is, one end of the resistor connects to the I/O pin, and the other end of the 10K resistor connects to Vdd.  I use 10-pin resistor packs, there are 9 resistors and one common, the resistor pack pins line up with the connectors on protobosard, the schmart board, and standard solder-less breadboard.
 
+There should be a 0.1 uF (0.1 micro Farad) capacitor (non-polar) between Vdd and Vss (power and ground) as close to the card as possible.  I skipped this on all my builds for the first six months and it still worked fine. 
+
 Options are:
   # solder directly to your microSD card
   # solder to a miniSD to microSD adapter (nothing seems to use mini anymore except the Zipit, I used these)
@@ -16,6 +18,21 @@ Options are:
 
 Using an adapter is more flexible and does not carry risk of destroying the SD card.
 
+= Physical Pins on SD cards =
+
+The physical on various SD cards are in different sequence. This is so regular people cannot easily it out, and end up paying extra money to smart people like us.  Google "SD Pinout" for pictures, as I haven't figured out how to attach images to this page.
+
+== SD Card (standard full size card) ==
+
+Pin 9 is the offset one by the corner that is clipped. Pin 1 is the one next to it, and the remaining pins are in sequence.  Pin 3 and Pin 6 are BOTH GROUND (Vss). 
+
+== Mini SD (rarely used anymore, except for Zipit) ==
+
+Pin 8 is the offset one by the corner that is clipped. Pin 8 is the one next to it, and the remaining pins are in a strange sequence.  Refer to images found on the web. This one is the worst, maybe this is why its not so popular?
+
+== microSD (uSD) ==
+
+This is the most common these days. Since most come with a regular SD adaptor, 
 
 = Pinout for the prop to various format SD cards =
 
