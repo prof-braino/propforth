@@ -24,15 +24,15 @@ Using an adapter is more flexible and does not carry risk of destroying the SD c
 
 The physical on various SD cards are in different sequence. This is so regular people cannot easily figure it out, and end up paying extra money to smart people like us.  Google "SD Pinout" for pictures, as I haven't figured out how to attach images to this page.
 
-== SD Card (standard full size card) ==
+  == SD Card (standard full size card) ==
 
 Pin 9 is the offset one by the corner that is clipped. Pin 1 is the one next to it, and the remaining pins are in sequence.  Pin 3 and Pin 6 are BOTH GROUND (Vss). 
 
-== Mini SD (rarely used anymore, except for Zipit) ==
+  == Mini SD (rarely used anymore, except for Zipit) ==
 
 Pin 8 is the offset one by the corner that is clipped. Pin 8 is the one next to it, and the remaining pins are in a strange sequence.  Refer to images found on the web. This one is the worst, maybe this is why its not so popular?
 
-== microSD (uSD) ==
+  == microSD (uSD) ==
 
 This is the most common these days. Since most come with a regular SD adapter, you will use the Regular SD pinout for construction.  Another option is to solder directly to the microSD, but this is not usually recommended due to its flexibility. 
 
