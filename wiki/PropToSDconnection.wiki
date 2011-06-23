@@ -1,5 +1,7 @@
 #summary Physical Connection for Prop to SD per Spinneret
 
+Add this to the Hardware Configuration . txt in v5.0 documentation?
+
 = Spinneret SD Configuration =
 
 By Default, Propforth v4.5 uses the Spinneret Pinout for SD.
