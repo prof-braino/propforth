@@ -22,7 +22,7 @@ Using an adapter is more flexible and does not carry risk of destroying the SD c
 
 = Physical Pins on SD cards =
 
-The physical on various SD cards are in different sequence. This is so regular people cannot easily it out, and end up paying extra money to smart people like us.  Google "SD Pinout" for pictures, as I haven't figured out how to attach images to this page.
+The physical on various SD cards are in different sequence. This is so regular people cannot easily figure it out, and end up paying extra money to smart people like us.  Google "SD Pinout" for pictures, as I haven't figured out how to attach images to this page.
 
 == SD Card (standard full size card) ==
 
