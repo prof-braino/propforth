@@ -32,7 +32,7 @@ Pin 8 is the offset one by the corner that is clipped. Pin 8 is the one next to 
 
 == microSD (uSD) ==
 
-This is the most common these days. Since most come with a regular SD adaptor, 
+This is the most common these days. Since most come with a regular SD adapter, you will use the Regular SD pinout for construction.  Another option is to solder directly to the microSD, but this is not usually recommended due to its flexibility. 
 
 = Pinout for the prop to various format SD cards =
 
