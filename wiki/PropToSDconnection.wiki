@@ -66,4 +66,28 @@ P20  - 10K - Vdd
 P21  - NO PULL UP - P21 directly to clock only
 }}}
 
-The I/O pin must also go through the 10k resistor to Vdd
+= IF YOU  GET AN ERROR =
+
+If you get an error when you run the SD test, something is not right (go figure). 
+
+  == Error 166 (A6) ==
+
+This can mean propforth did not see responses from the hardware.  When I see this on my rig, it usually means I plugged the plug into the head the starts at pin 8 instead of the header that starts at pin 16.  
+
+  == Error 172 (AC) ==
+
+I sometimes see this when I swap the hardware around. I have not checked (caskaz?) but I think this means a glitch in the SD card.  Power cycle the hardware, and reseating the uSD usualy corrects this.
+
+  == Error 175 (AF) ==
+
+I sometimes see this when I swap the hardware around. I have not checked (caskaz?) but I think this means a glitch in the SD card.  Power cycle the hardware, and reseating the uSD usualy corrects this.
+
+  == Error 177 (B1) ==
+
+I sometimes see this when I swap the hardware around. I have not checked (caskaz?) but I think this means a glitch in the SD card.  Power cycle the hardware, and reseating the uSD usualy corrects this.
+
+  
+
+= Extra, unused Pins on the Resistor Pack =
+
+The I/O pin 29 for ROM-less slaves must also have a pull-up resistor to Vdd. This can go through an unused pin on the same the 10k resistor pack. 
