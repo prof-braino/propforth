@@ -76,8 +76,19 @@ This can mean propforth did not see responses from the hardware.  When I see thi
 
   == Error 172 (AC) ==
 
-I sometimes see this when I swap the hardware around. I have not checked (caskaz?) but I think this means a glitch in the SD card.  Power cycle the hardware, and reseating the uSD usualy corrects this.
+This error can occure when the cog has not mounted the card.  Remember, each cog that wants to access the card must mount it.  Try mounting the card using:
 
+{{{
+mountsys
+ls
+}}}
+
+or
+
+{{{
+mountusr
+ls
+}}}
   == Error 175 (AF) ==
 
 I sometimes see this when I swap the hardware around. I have not checked (caskaz?) but I think this means a glitch in the SD card.  Power cycle the hardware, and reseating the uSD usualy corrects this.
