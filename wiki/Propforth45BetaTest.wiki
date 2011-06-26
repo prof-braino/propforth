@@ -1,5 +1,5 @@
 #summary The Beta version of Proforth 4.5 is undergoing regression test 20110528
-#labels Propforth4.5,regression,test
+#labels Propforth4.5,regression,test,Deprecated
 
 = Introduction =
 
