@@ -1,5 +1,5 @@
 #summary Example of HiSpeed serial inter-prop channels using a single prop
-#labels HighSpeedSerialInter-Prop,communcationchannel,multi-prop
+#labels HighSpeedSerialInter-Prop,communcationchannel,multi-prop,v3.6,Deprecated
 
 This is an example of high speed serial communications on a single prop.
 
