@@ -16,7 +16,7 @@ trade-off:
  * rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
 
 }}}
-=== Propforth 4.6 targeted Spring 2011 (public release) ===
+=== Propforth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
 
 Bug fixes to 4.5 as needed 
 
