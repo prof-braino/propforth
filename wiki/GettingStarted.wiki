@@ -1,5 +1,5 @@
 #summary Getting PropForth going.
-#labels v3.2
+#labels v3.2,v4.5
 
 = Getting PropForth going =
 
