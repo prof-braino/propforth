@@ -4,31 +4,31 @@
 === Propforth 5.0 targeted ~~Summer~~  September 2011 ===
 {{{
 Redesign Propforth kernel:
- - minimal kernel, recover (most of?) hub memory
- - dictionary resides on SD card
- - SD resident definition loads itself from SD, executes, and removes itself from memory
- - Maximize space available for user applications
- - Optimize assembler, disassembler, debugger
- - regression test automation, goal is to run entire regression suite from a single command
+ * minimal kernel, recover (most of?) hub memory
+ * dictionary resides on SD card
+ * SD resident definition loads itself from SD, executes, and removes itself from memory
+ * Maximize space available for user applications
+ * Optimize assembler, disassembler, debugger
+ * regression test automation, goal is to run entire regression suite from a single command
 
 trade-off: 
-  - using assembler is easier (use assembler definition same way as forth definition), 
-  - rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
+ * using assembler is easier (use assembler definition same way as forth definition), 
+ * rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
 
 }}}
 === Propforth 4.6 targeted Spring 2011 (public release) ===
 
 Bug fixes to 4.5 as needed 
 
- - mcs.f:  Marco's changes for 12 cycles per but from 2o cycles per bit
- - LogicAnalyzer.f: Sample each 1 cycle bug fix
+ * mcs.f:  Marco's changes for 12 cycles per but from 2o cycles per bit
+ * LogicAnalyzer.f: Sample each 1 cycle bug fix
 
 === Propforth 4.5 Released June 14, 2011 (public release) ===
 
- - include regression tests
- - design regression test to serve as tutorial
- - design regression test to serve as functional definition
- - design regression test for future automated execution
+ * include regression tests
+ * design regression test to serve as tutorial
+ * design regression test to serve as functional definition
+ * design regression test for future automated execution
 
 ~~ Propforth 4.5 (Update) targeted June 2011 (public release) ~~
 
