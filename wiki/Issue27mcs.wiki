@@ -26,6 +26,8 @@ user kuroneko -  master of clocks and counters
 Thanks to Marco's questions: 
   * the MultiChannel Synchronous Serial Communications inow enjoys a 21% speed increase. 
   * LogicAnalyzer had a bug when sampling  every 1 cycles is now corrected.
+  * the raw bit rate is about 6.7 million bits per second total 
+  * the final byte rate is over 11,000 bytes per second for each of 8  channels
  
 
 
