@@ -63,6 +63,8 @@ If comparing this to rs232, factor the bit rates up by 25% for comparison, as a 
 
 The xmt/rec code is written in assembler, to simulate the fastest possible source/sink of bytes.
 
+Notice: The cog? output scrolls off the pages, the Google Code Wiki does not display the page any wider
+
 {{{
 Prop0 Cog6 ok
 test
