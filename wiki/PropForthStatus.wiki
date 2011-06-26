@@ -20,6 +20,9 @@ trade-off:
 
 Bug fixes to 4.5 as needed 
 
+ - mcs.f:  Marco's changes for 12 cycles per but from 2o cycles per bit
+ - LogicAnalyzer.f: Sample each 1 cycle bug fix
+
 === Propforth 4.5 Released June 14, 2011 (public release) ===
 
  - include regression tests
