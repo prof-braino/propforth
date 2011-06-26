@@ -21,6 +21,14 @@ Please provide any additional information below.
 
 user kuroneko -  master of clocks and counters
 
+== Summary ==
+
+Thanks to Marco's questions: 
+  * the MultiChannel Synchronous Serial Communications inow enjoys a 21% speed increase. 
+  * LogicAnalyzer had a bug when sampling  every 1 cycles is now corrected.
+ 
+
+
 == Investigation ==
 
 See the body of issue 27 for the analysis and investigation
