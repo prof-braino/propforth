@@ -23,6 +23,7 @@ When will users get to see the version 5 optimizations?
 
 With the paint not dry on on v4.5, its still a month before v5.x start regression testing.  An actual release may be a month after that, give or take.
 
+  * update 20110626 Possible September release
 
 == Question 6 issue 27 by salsanci: mcs.f - 32 + 1 bits in loop ==
 
