@@ -13,13 +13,15 @@ Changes are to be released in Propforth4.5-20110xxxRC1.zip
 
 I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into _treg3 and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
 
-What version of the product are you using? On what hardware?
+*What version of the product are you using? On what hardware?*
 
-mcs.f - code review
+  Propforth4.5-20110614RC0
 
-Please provide any additional information below.
+  mcs.f - code review
 
-user kuroneko -  master of clocks and counters
+*Please provide any additional information below.*
+
+  user kuroneko -  master of clocks and counters
 
 == Summary ==
 
