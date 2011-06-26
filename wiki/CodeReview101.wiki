@@ -1,5 +1,9 @@
 #summary The Code Review experiments for Propforth
-#labels CodeReview,Phase-Implementation
+#labels CodeReview,Phase-Implementation,Deprecated
+
+= UPDATE 20110626 = 
+
+Code Review did not work out as intended.  The code review experiment showed that the code review process does not occur as described, yet the work get done anyway.  The current experiment indicates that the code review process as described need not be applied ti the propforth development process.  
 
 = Introduction =
 
