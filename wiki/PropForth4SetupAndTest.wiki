@@ -1,5 +1,5 @@
 #summary Tutorial on Getting  Propforth 4.0 running
-#labels v4.0a
+#labels v4.0a,Deprecated
 
 = On this version, Instructions are in the README file =
 
