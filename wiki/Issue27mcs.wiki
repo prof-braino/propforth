@@ -1,0 +1,231 @@
+#summary Test for MultiChannel Synchronous Serial.
+
+= Introduction =
+
+Marco (kuroneko on the parallax forums) asked about the multichannel synchronous serial support, and how it was coded in assembler.  He and Sal did some analysis which resulted in a bug fix to LogicAnalyzer.f and MCS.f as posted in Propforth4.5-20110614RC0.zip
+
+Changes are to be released in Propforth4.5-20110xxxRC1.zip
+
+= Details =
+
+== [http://code.google.com/p/propforth/issues/detail?id=27 Issue 27] ==
+
+I'm a bit concerned about the way bits are collected. The loop itself rotates 32 bits into _treg3 and then one more after leaving the loop. This may be perfectly OK if the first sample is not part of the data (maybe start bit). Could you ask Sal(?) for clarification? Thanks.
+
+What version of the product are you using? On what hardware?
+
+mcs.f - code review
+
+Please provide any additional information below.
+
+user kuroneko -  master of clocks and counters
+
+== Investigation ==
+
+See the body of issue 27 for the analysis and investigation
+
+== Final result ==
+
+Comment #14 on issue 27 by salsanci: mcs.f - 32 + 1 bits in loop
+
+http://code.google.com/p/propforth/issues/detail?id=27
+
+All changes done, went very smoothly. 21% overall throughput improvement, sample is almost exactly in the middle of the bit time.
+
+2 files attached:
+
+mcs.f - changes + test program
+LogicAnalyzer.f - bug fix sampling at 1 cycle was failing
+
+results: (feel free to find errors)
+
+
+Under the Hood:
+
+Assuming a 80Mhz props, the raw wire transmission send and receives a bit every 12 cycles, so the full
+duplex raw bit rate is 6.7M bits/sec.
+
+
+Communication is packed into a 96 bit frame, which has 8 bytes, CRC, + flow control. So the
+theoretical maximum number of frames per second is 69,444. But since one cog is running both the
+flow control protocol and the wire protocol, the real maximum throughput is about 22,730 frames per second. So about twice the time is spent on the protocol as the wire.
+
+If we factor the code to run on 2 cogs, this should increase throughput.
+
+Some real world results from test, the throughput per channel goes down from 13298 bytes/sec/channel with only one channel running to 11364 bytes/sec/channel with 8 channels running. This is about half the frame rate, since each byte is synchronously acknowledged.
+- Show quoted text -
+
+
+
+This decline is due to the frame rate going down slightly as more time is spent on protocol.
+
+If comparing this to rs232, factor the bit rates up by 25% for comparison, as a minimum of one start bit and stop bit is required for each byte for rs232.
+
+"test" loops the channels on the slave cog, so that each byte received is transmitted. The display of cog? indicates the channels of the master cog are routed to cog 5 channel 1, this is really an artifact of test routing them to a dummy location for testing.
+
+The xmt/rec code is written in assembler, to simulate the fastest possible source/sink of bytes.
+
+
+Prop0 Cog6 ok
+test
+
+               a # # - set mcs pins
+               b # # - set mcs cogs
+               c #   - set xmt/rec cog
+               d     - start mcs
+               e #   - set number active channels
+               f     - stats
+               g     - cog?
+               q     - quit
+d
+
+CON:Prop0 Cog0 RESET - last status: 0 ok
+
+CON:Prop0 Cog1 RESET - last status: 0 ok
+
+CON:Prop0 Cog2 RESET - last status: 0 ok
+Cog:0  #io chan:8                              MCS  0(0)->5(1)  0(1)->5(1)  0(2)->5(1)  0(3)->5(1)  0(4)->5(1)  0(5)->5(1)  0(6)->5(1)  0(7)->5(1)
+Cog:1  #io chan:8                              MCS  1(0)->1(0)  1(1)->1(1)  1(2)->1(2)  1(3)->1(3)  1(4)->1(4)  1(5)->1(5)  1(6)->1(6)  1(7)->1(7)
+Cog:2  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
+Cog:3  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
+Cog:4  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
+Cog:5  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
+Cog:6  #io chan:1 PropForth v4.5 2011MAY31 17:30 0  6(0)->7(0)
+Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
+Master Pin:      0
+Slave Pin:       1
+Master Cog:      0
+Slave Cog:       1
+
+Xmt/Rec Cog:     2
+Master Errors:   0
+Slave Errors:    0
+
+Master frames/s: 26599
+Master bps:      2553504
+
+Slave  frames/s: 26597
+Slave  bps:      2553312
+
+Num Channels:    1
+
+XMT byte/sec:    13298
+XMT bits/sec:    106384
+
+XMT byte/sec/ch: 13298
+XMT bits/sec/ch: 106384
+
+REC byte/sec:    13298
+REC bits/sec:    106384
+
+REC byte/sec/ch: 13298
+REC bits/sec/ch: 106384
+
+
+e 8
+f
+Master Pin:      0
+Slave Pin:       1
+Master Cog:      0
+Slave Cog:       1
+
+Xmt/Rec Cog:     2
+Master Errors:   0
+Slave Errors:    0
+
+Master frames/s: 22730
+Master bps:      2182080
+
+Slave  frames/s: 22729
+Slave  bps:      2181984
+
+Num Channels:    8
+
+XMT byte/sec:    90912
+XMT bits/sec:    727296
+
+XMT byte/sec/ch: 11364
+XMT bits/sec/ch: 90912
+
+REC byte/sec:    90912
+REC bits/sec:    727296
+
+REC byte/sec/ch: 11364
+REC bits/sec/ch: 90912
+
+
+
+Low level timing:
+
+pin 21 is the slave pin
+pin 20 is the master pin
+
+LogicAnalyzer trace, sample every cycle
+
+
+
+                       test    v_pinin , ina wc
+                       rcl     phsa , # 1
+               djnz    _treg6  , # __Flp wz
+
+
+0 - Execute N-1 Fetch N                                 rcl phsa , # 1  / djnz
+1 -  Write Result N-1                                   rcl phsa , # 1  / djnz
+
+2 -   Fetch Source N                                    djnz    _treg6  , # __Flp wz
+3 -    Fetch Dest N                                     djnz    _treg6  , # __Flp wz
+4 -     Execute N Fetch N+1                             djnz    _treg6  , # __Flp wz / test
+5 -      Write Result N                                 djnz    _treg6  , # __Flp wz
+6 -       Fetch Source N+1                              test    v_pinin , ina wc
+7 -        Fetch Dest N+1                               test    v_pinin , ina wc
+8 -         Execute N+1 Fetch N+2 FetchLiveReg          test    v_pinin , ina wc
+
+9-           Write Result N+1
+10 -          Fetch Source N+2
+11 -           Fetch Dest N+2
+12 -            Execute N+2 Fetch N+3
+13 -             Write Result N+2
+
+                              11111
+                012345678901234
+                 |Master Sets Data on pin 20
+                 |
+                 ||Slave Sets Data on pin 21
+                 ||
+                 ||     |Master Reads Data on pin 21
+                 ||     |
+                 ||     ||Slave Reads Data on pin 20
+                 ||     ||
+21_________________------------____________------------____________------------20________________-------------___________-------------|               |               |               |               |               |
+        200.0 nS|       400.0 nS|       600.0 nS|       800.0 nS|       001.0
+
+
+Attachments:
+       mcs.f  31.8 KB
+       LogicAnalyzer.f  17.7 KB
+
+Comment #16 on issue 27 by salsanci: mcs.f - 32 + 1 bits in loop
+
+http://code.google.com/p/propforth/issues/detail?id=27
+
+                              11111
+                012345678901234
+                 |Master Sets Data on pin 20
+                 |
+                 ||Slave Sets Data on pin 21
+                 ||
+                 ||     |Master Reads Data on pin 21
+                 ||     |
+                 ||     ||Slave Reads Data on pin 20
+                 ||     ||
+21_________________------------____________------------____________-----
+20________________-------------___________-------------___________------
+                |               |               |               |
+        200.0 nS|       400.0 nS|       600.0 nS|       800.0 nS|
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
