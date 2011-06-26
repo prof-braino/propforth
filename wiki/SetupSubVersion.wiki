@@ -1,4 +1,9 @@
 #summary SubVersion (SVN) is an open source version change control system
+#labels Deprecated
+
+= UPDATE 20110626 =
+
+This turns out to be unused.  The subversion (SVN) repository was not used for code review or development.   The review process was not used as planned.  The SVN will not be used in the context of code review for  propforth software development.  
 
 = Introduction =
 
