@@ -24,6 +24,8 @@ user kuroneko -  master of clocks and counters
 
 See the body of issue 27 for the analysis and investigation
 
+----
+
 == Final result ==
 
 Comment #14 on issue 27 by salsanci: mcs.f - 32 + 1 bits in loop
@@ -32,30 +34,26 @@ http://code.google.com/p/propforth/issues/detail?id=27
 
 All changes done, went very smoothly. 21% overall throughput improvement, sample is almost exactly in the middle of the bit time.
 
-2 files attached:
+=== 2 files attached: ===
 
-mcs.f - changes + test program
-LogicAnalyzer.f - bug fix sampling at 1 cycle was failing
+  * mcs.f - changes + test program
+  * LogicAnalyzer.f - bug fix sampling at 1 cycle was failing
 
-results: (feel free to find errors)
+=== results: (feel free to find errors) ===
 
 
 Under the Hood:
 
-Assuming a 80Mhz props, the raw wire transmission send and receives a bit every 12 cycles, so the full
-duplex raw bit rate is 6.7M bits/sec.
+Assuming a 80Mhz props, the raw wire transmission send and receives a bit every 12 cycles, so the full duplex raw bit rate is 6.7M bits/sec.
 
 
-Communication is packed into a 96 bit frame, which has 8 bytes, CRC, + flow control. So the
-theoretical maximum number of frames per second is 69,444. But since one cog is running both the
-flow control protocol and the wire protocol, the real maximum throughput is about 22,730 frames per second. So about twice the time is spent on the protocol as the wire.
+Communication is packed into a 96 bit frame, which has 8 bytes, CRC, + flow control. So the theoretical maximum number of frames per second is 69,444. But since one cog is running both the flow control protocol and the wire protocol, the real maximum throughput is about 22,730 frames per second. So about twice the time is spent on the protocol as the wire.
 
 If we factor the code to run on 2 cogs, this should increase throughput.
 
 Some real world results from test, the throughput per channel goes down from 13298 bytes/sec/channel with only one channel running to 11364 bytes/sec/channel with 8 channels running. This is about half the frame rate, since each byte is synchronously acknowledged.
-- Show quoted text -
 
-
+ - Show quoted text -
 
 This decline is due to the frame rate going down slightly as more time is spent on protocol.
 
@@ -65,7 +63,7 @@ If comparing this to rs232, factor the bit rates up by 25% for comparison, as a 
 
 The xmt/rec code is written in assembler, to simulate the fastest possible source/sink of bytes.
 
-
+{{{
 Prop0 Cog6 ok
 test
 
@@ -199,6 +197,7 @@ LogicAnalyzer trace, sample every cycle
 21_________________------------____________------------____________------------20________________-------------___________-------------|               |               |               |               |               |
         200.0 nS|       400.0 nS|       600.0 nS|       800.0 nS|       001.0
 
+}}}
 
 Attachments:
        mcs.f  31.8 KB
@@ -208,6 +207,7 @@ Comment #16 on issue 27 by salsanci: mcs.f - 32 + 1 bits in loop
 
 http://code.google.com/p/propforth/issues/detail?id=27
 
+{{{
                               11111
                 012345678901234
                  |Master Sets Data on pin 20
@@ -223,6 +223,7 @@ http://code.google.com/p/propforth/issues/detail?id=27
                 |               |               |               |
         200.0 nS|       400.0 nS|       600.0 nS|       800.0 nS|
 
+}}}
 
 
 Add your content here.  Format your content with:
