@@ -1,6 +1,29 @@
 #summary The Code Review experiments for Propforth - 20110102 SD support
 #labels SD,v4.0,Phase-Implementation
 
+= Update 20110626 =
+
+Prof_Braino here.  The experiment to do a group code review are now considered final for this attempt.  The attempt involved 
+  - a developer sending code out to the group, asking for help with bugs
+  - a lead (prof_braino) calling for a review of this code
+  - a lead,  (prof_braino) asking for the members to respond whether or not they will participate in a review
+  - email response for one member, verbal response from one member, and no response from other members.  Total three reviewers (two responders plus lead)
+  - request for comments by deadline
+  - no comments by deadline. 
+  - no further action on review.
+
+Since the functionality was deemed essential functionality for further development, propforth primary architect and author Sal Sanci examined the code and did a re-write. 
+
+Conclusion:  The "traditional" code review format did not work well with this group's dynamic.  Only Sal had the ability to examine the code, the other users did not have to ability to interact in a meaningful way.  IE we could not ask enough questions to get started on a "proper review".  The work started in 3.6 and presented in 4.0 was re-worked and released in 4.5; it now will be field-tested to find further issues. 
+
+Status:  The original developer caskaz is the only user having difficulty with the SD support in 4.5.  There are several barriers to communication (caskaz is several time zones away, and speaks Japanese as primary language while other team members do not,and possible has different hardware sources that other member).   We are beginning to think that the nature of the issue is 
+  #) weak instructions in the v4.5 test-2.1.1 SD.txt
+  #) Support is for SD V2 hardware, caskaz may have SD v1 or MM
+
+Summary Finding:  This attempt indicates that team code review is not suitable for the propforth software development lifecycle process at this time. 
+
+----
+
  == This review has not been started 20110102 ==
  == The review invitation has not been sent ==
  == Review Package is being prepared ==
