@@ -53,7 +53,7 @@ If we factor the code to run on 2 cogs, this should increase throughput.
 
 Some real world results from test, the throughput per channel goes down from 13298 bytes/sec/channel with only one channel running to 11364 bytes/sec/channel with 8 channels running. This is about half the frame rate, since each byte is synchronously acknowledged.
 
- - Show quoted text -
+ -_quoted text_-
 
 This decline is due to the frame rate going down slightly as more time is spent on protocol.
 
@@ -98,6 +98,8 @@ Slave Cog:       1
 Xmt/Rec Cog:     2
 Master Errors:   0
 Slave Errors:    0
+
+ _-end of quoted text-_
 
 Master frames/s: 26599
 Master bps:      2553504
