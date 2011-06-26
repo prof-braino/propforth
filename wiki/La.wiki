@@ -1,5 +1,5 @@
 #summary La.f - A virtual logic analyzer for the propeller
-#labels v2.6
+#labels v2.6,Deprecated
 
 http://code.google.com/p/propforth/downloads/list
 
