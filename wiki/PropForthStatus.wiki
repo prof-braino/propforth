@@ -1,7 +1,7 @@
 #summary Status of PropForth kernel development
 #labels Phase-Design,Phase-QA,Phase-Support,v5.0
 
-=== Propforth 5.0 targeted Summer 2011 ===
+=== Propforth 5.0 targeted ~~Summer~~  September 2011 ===
 {{{
 Redesign Propforth kernel:
  - minimal kernel, recover (most of?) hub memory
