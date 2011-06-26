@@ -11,6 +11,8 @@ Newer Topics to be added to the top.
 
 Traditional requirements are too expensive for our resources, and are typically too expensive for professional outfits (outside of military and aviation etc where there is contractual/legal obligation).  We are examining taking "requirements based test" one step further to "design based tests".   That is, each design element will be "completed" by a test that verifies the system operates to that design.  (An interesting result of this is that the actual coding happens last, and takes only a small part of the development cycle, and it is difficult to introduce bugs into the result). In this manner, the _regression suite_ performs the roles of design document, requirements, test, requirements  to test traceability, user manual, and tutorial.  The result is descriptively simple, yet seems to be effective. 
 
+The directory ../docs/tests contains the regression test.  These are the high level statement of requirements, the use case description, the documentation, the tutorial, and the instructs; as well as the verification tests. 
+
 == Question 8 Why are the Tests so hard to follow? ==
 
 The test are written with delimiters to allow automation.  Future development process will include running the regression suite after each function is completed to ensure that nothing "broke" during development.
