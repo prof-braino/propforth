@@ -1,5 +1,5 @@
 #summary Download and compile the source for the propforth kernel
-#labels v2.7
+#labels v2.7,Deprecated
 
 = Use Propforth to generate new propforth.spin from source code =
 
