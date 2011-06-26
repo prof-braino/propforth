@@ -84,8 +84,8 @@ CON:Prop0 Cog0 RESET - last status: 0 ok
 CON:Prop0 Cog1 RESET - last status: 0 ok
 
 CON:Prop0 Cog2 RESET - last status: 0 ok                                             [edit:] scrolls off page -->
-Cog:0  #io chan:8                              MCS  0(0)->5(1)  0(1)->5(1)  0(2)->5(1)  0(3)->5(1)  0(4)->5(1)  0(5)->5(1)  0(6)->5(1)  0(7)->5(1)
-Cog:1  #io chan:8                              MCS  1(0)->1(0)  1(1)->1(1)  1(2)->1(2)  1(3)->1(3)  1(4)->1(4)  1(5)->1(5)  1(6)->1(6)  1(7)->1(7)
+Cog:0  #io chan:8 MCS  0(0)->5(1)  0(1)->5(1)  0(2)->5(1)  0(3)->5(1)  0(4)->5(1)  0(5)->5(1)  0(6)->5(1)  0(7)->5(1)
+Cog:1  #io chan:8 MCS  1(0)->1(0)  1(1)->1(1)  1(2)->1(2)  1(3)->1(3)  1(4)->1(4)  1(5)->1(5)  1(6)->1(6)  1(7)->1(7)
 Cog:2  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
 Cog:3  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
 Cog:4  #io chan:1 PropForth v4.5 2011MAY31 17:30 0
