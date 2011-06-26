@@ -1,5 +1,5 @@
 #summary Download Text files containing FORTH source code
-#labels v3.2
+#labels v3.2,Deprecated
 
 = Introduction =
 
