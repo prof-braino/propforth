@@ -14,9 +14,9 @@ Prof_Braino here.  The experiment to do a group code review are now considered f
 
 Since the functionality was deemed essential functionality for further development, propforth primary architect and author Sal Sanci examined the code and did a re-write. 
 
-Conclusion:  The "traditional" code review format did not work well with this group's dynamic.  Only Sal had the ability to examine the code, the other users did not have to ability to interact in a meaningful way.  IE we could not ask enough questions to get started on a "proper review".  The work started in 3.6 and presented in 4.0 was re-worked and released in 4.5; it now will be field-tested to find further issues. 
+Conclusion:  The "traditional" code review format did not work well with this group's dynamic.  Only Sal had the ability to examine the code, the other users did not have to ability to interact in a meaningful way.  IE we could not ask enough questions to get started on a "proper review".  The work started in 3.6 and presented in 4.0 was re-worked and released in 4.5.  It now will be field-tested to find further issues. 
 
-Status:  The original developer caskaz is the only user having difficulty with the SD support in 4.5.  There are several barriers to communication (caskaz is several time zones away, and speaks Japanese as primary language while other team members do not,and possible has different hardware sources that other member).   We are beginning to think that the nature of the issue is 
+Status:  The original developer caskaz is the only user having difficulty with the SD support in 4.5.  There are several barriers to communication (caskaz is several time zones away, and speaks Japanese as primary language while other team members do not, and possibly has different hardware sources that other member).   We are beginning to think that the nature of the issue is 
   #) weak instructions in the v4.5 test-2.1.1 SD.txt
   #) Support is for SD V2 hardware, caskaz may have SD v1 or MM
 
