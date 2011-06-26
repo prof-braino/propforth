@@ -4,12 +4,19 @@
 = Update 20110626 =
 
 Prof_Braino here.  The experiment to do a group code review are now considered final for this attempt.  The attempt involved 
+
   - a developer sending code out to the group, asking for help with bugs
+
   - a lead (prof_braino) calling for a review of this code
+
   - a lead,  (prof_braino) asking for the members to respond whether or not they will participate in a review
+
   - email response for one member, verbal response from one member, and no response from other members.  Total three reviewers (two responders plus lead)
+
   - request for comments by deadline
+
   - no comments by deadline. 
+
   - no further action on review.
 
 Since the functionality was deemed essential functionality for further development, propforth primary architect and author Sal Sanci examined the code and did a re-write. 
