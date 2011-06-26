@@ -1,4 +1,5 @@
 #summary Test for MultiChannel Synchronous Serial.
+#labels v4.5,Phase-Support
 
 = Introduction =
 
