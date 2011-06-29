@@ -27,6 +27,8 @@ Inside lcd_demo1/lcd_demo2, add "10 2 lcd_setup".
 
   == Braino post 44: ==
 
+http://forums.parallax.com/showthread.php?132332-PropForth-4.5-Available-for-download&p=1011762&viewfull=1#post1011762
+
 I found a HD44780 16x2 display, an OPTREX DMC16230. Should I build the 2-wire interface board exactly as you did, or would you make changes?
 So far I think the parts list is:
 
