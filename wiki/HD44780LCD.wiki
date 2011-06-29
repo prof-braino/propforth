@@ -1,0 +1,73 @@
+#summary Caskaz's HD44780 based two line LCD display driver
+
+= Introduction =
+
+User caskaz has posted several versions of his HD44780 based two line LCD display driver in the various threads.  
+
+This is an attempt to find the newest version and make an instruction on how to get it working using propforth 4.5.
+
+ = References =
+
+These are the posts I found the text and source.  Images are in the original posts on the parallax forum.
+
+  == caskaz post 38: ==
+
+http://forums.parallax.com/showthread.php?132332-PropForth-4.5-Available-for-download&p=1011490&viewfull=1#post1011490
+
+Hi.
+
+I re-make 2-wire_LCD for PF4.5.
+And I changed curcuit.
+I added level-shift(3.3V -> 5V) because LCD's D0-D7 and RS is pulled up to 5V inside LCD-controller(HD44780).
+
+Default is 16-Character4-Line LCD.
+If another LCD, use lcd-setup.
+Incase of 16-Character2-Line LCD
+Inside lcd_demo1/lcd_demo2, add "10 2 lcd_setup".
+
+  == Braino post 44: ==
+
+I found a HD44780 16x2 display, an OPTREX DMC16230. Should I build the 2-wire interface board exactly as you did, or would you make changes?
+So far I think the parts list is:
+
+ * TC4040
+ * TD62083
+ * (3) RN1210
+ * 47uH
+ * (2) 10K
+ * 10K variable
+ * 100uF
+ * .01uF
+ * 47uF Tantalum
+ * 22uF Tantalum
+ * 1N5817
+ * HT7750A 
+
+  ==  caskaz post 45: ==
+
+http://forums.parallax.com/showthread.php?132332-PropForth-4.5-Available-for-download&p=1011789&viewfull=1#post1011789
+
+Hi prof_braino.
+
+RN1210 is easy to get for me. How do you?
+If not RN1210, You can use NPN-Tr and base-resister.
+I use VR on contrast-adjustement.
+If you want to control contrast from propforth, use PWM(other cog).
+NCO same as brightness is not used on contrast-adjustment.
+So when you use only VR on contrast, you don't need to build contrast's curcuit(RN1210 10k 100uF).
+
+I recommend you test operation by connecting TC4040(counter IC) and TD62083 on breadboard at first.
+Please build I/F board after you test LCD's demo.
+If you find out code-bug and curcuit-bug, teach me.
+
+= INSTRUCTIONS = 
+
+ - - 20110629 in progress - - 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
