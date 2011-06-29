@@ -64,7 +64,24 @@ If you find out code-bug and curcuit-bug, teach me.
 
 = INSTRUCTIONS = 
 
+  == parts list (BOM) ==
+
+ * TC4040
+ * TD62083
+ * (3) RN1210
+ * 47uH
+ * (2) 10K
+ * 10K variable
+ * 100uF
+ * .01uF
+ * 47uF Tantalum
+ * 22uF Tantalum
+ * 1N5817
+ * HT7750A 
+
+
  - - 20110629 in progress - - 
+
 
 
 = Details =
