@@ -33,7 +33,7 @@ I found a HD44780 16x2 display, an OPTREX DMC16230. Should I build the 2-wire in
 So far I think the parts list is:
 
  * TC4040  data sheet http://www.toshiba.com/taec/components2/Datasheet_Sync//152/53.pdf
- * TD62083
+ * TD62083 digikay http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=TD62083APG5JS-ND datasheet http://www.toshiba.com/taec/components2/Datasheet_Sync//393/8886.pdf
  * (3) RN1210
  * 47uH
  * (2) 10K
