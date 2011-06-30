@@ -6,6 +6,8 @@ User caskaz has posted several versions of his HD44780 based two line LCD displa
 
 This is an attempt to find the newest version and make an instruction on how to get it working using propforth 4.5.
 
+----
+
  = References =
 
 These are the posts I found the text and source.  Images are in the original posts on the parallax forum.
@@ -61,6 +63,8 @@ So when you use only VR on contrast, you don't need to build contrast's curcuit(
 I recommend you test operation by connecting TC4040(counter IC) and TD62083 on breadboard at first.
 Please build I/F board after you test LCD's demo.
 If you find out code-bug and curcuit-bug, teach me.
+
+----
 
 = INSTRUCTIONS = 
 
