@@ -23,7 +23,26 @@ The minicom program http://wiki.laptop.org/go/OpenEC opens a terminal session to
 
 Using a standard USB cable, the XO can runthe propforth prompt to a Quickstart board or a C3 with no additional power.
 
+== loading minicon ==
+
+terminal
+
+su
+
+yum -y install minicom
+
+< wait .... >
+
+finished
+
 === editing forth source on the XO ===
+
+edit - activity cannot save files?
+
+write - activity - saves in journal?
+
+GNOME - uses directories etc, but is slow?
+
 
 === saving forth source onthe XO  ===
 
