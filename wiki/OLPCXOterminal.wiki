@@ -38,8 +38,10 @@ I did not crack open the case, or obtain a serial to USB converter for the inter
   * terminal
   * su
   * yum -y install minicom
-    < wait .... >
-    finished
+
+  < wait .... >
+
+  finished
 
 === editing forth source on the XO ===
 
