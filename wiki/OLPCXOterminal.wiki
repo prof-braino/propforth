@@ -31,6 +31,8 @@ The serial ports available for developer access directly on the OLPC motherboard
 
 http://wiki.laptop.org/index.php?title=OpenEC&section=9#Built-in_monitor_program
 
+I did not crack open the case, or obtain a serial to USB converter for the internal serial ports.
+
 == loading minicon ==
 
 terminal
