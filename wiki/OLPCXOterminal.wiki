@@ -35,25 +35,29 @@ I did not crack open the case, or obtain a serial to USB converter for the inter
 
 == loading minicon ==
 
-terminal
-
-su
-
-yum -y install minicom
-
-< wait .... >
-
-finished
+  * terminal
+  * su
+  * yum -y install minicom
+    < wait .... >
+    finished
 
 === editing forth source on the XO ===
 
-edit - activity cannot save files?
+There are several option,
 
-write - activity - saves in journal?
+Sugar:
+  * edit - activity cannot save files?
+  * write - activity - saves in journal?
 
+GNOME:
 GNOME - uses directories etc, but is slow?
 
-nano -text editor run in terminal, built in to 650
+Sugar and Gnome: 
+  * nano -text editor run in terminal, built in to 650
+
+FORTH: 
+
+The openfirmware forth impementation has a simple blocks based editor capable of accessing the NAND flash, etc.  I started down this route, but got lazy.   This still seems like the fastest method, but requires special knowledge of the forth of the openfirmware and the OLPC-XO hardware.
 
 
 === saving forth source onthe XO  ===
