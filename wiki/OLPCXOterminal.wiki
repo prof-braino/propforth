@@ -1,0 +1,42 @@
+#summary Using the OLPC-XO for Propforth development
+#labels Phase-Implementation,v4.5
+
+= Introduction =
+
+Originally I wanted a PC forth system to Host development for the PropForth.  The idea was that the same code and or technicques used on one would apply towards the other. 
+
+While most work has been done using a stand PC (Windows, Mac, and Linux), the majority of the time the PC is only providing telent and disk services to the prop. 
+
+Recently, the PC has been less necessary.
+
+= OLPC =
+
+The XO-1 from the One Laptop Per Child program (OLPC) has a forth boot firmware.  With a developer key, a user can quickly bboot to forth, and need not endure the slow wait for the SUGAR user interface to get going. 
+
+One has to know a bit about the XO in order to use it as forth only development terminal.  I don't, so I'm starting slow. 
+
+== Hosting Forth development from a standard XO ==
+
+By default, the XO has a terminal program which can access the USB ports. http://wiki.laptop.org/go/Terminal_Activity
+
+The minicom program http://wiki.laptop.org/go/OpenEC opens a terminal session to the USB port.
+
+Using a standard USB cable, the XO can runthe propforth prompt to a Quickstart board or a C3 with no additional power.
+
+=== editing forth source on the XO ===
+
+=== saving forth source onthe XO  ===
+
+=== loading forth source from the XO to the prop ===
+
+= Loading a binary image from the XO to the prop =
+
+= running proptool or BST on the XO =
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
