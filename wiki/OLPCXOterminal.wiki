@@ -15,6 +15,8 @@ The XO-1 from the One Laptop Per Child program (OLPC) has a forth boot firmware.
 
 One has to know a bit about the XO in order to use it as forth only development terminal.  I don't, so I'm starting slow. 
 
+
+
 == Hosting Forth development from a standard XO ==
 
 By default, the XO has a terminal program which can access the USB ports. http://wiki.laptop.org/go/Terminal_Activity
@@ -22,6 +24,12 @@ By default, the XO has a terminal program which can access the USB ports. http:/
 The minicom program http://wiki.laptop.org/go/OpenEC opens a terminal session to the USB port.
 
 Using a standard USB cable, the XO can runthe propforth prompt to a Quickstart board or a C3 with no additional power.
+
+  === Note on internal serial ports ===
+
+The serial ports available for developer access directly on the OLPC motherboard are the peripheral end of the connection, not the host?
+
+http://wiki.laptop.org/index.php?title=OpenEC&section=9#Built-in_monitor_program
 
 == loading minicon ==
 
@@ -42,6 +50,8 @@ edit - activity cannot save files?
 write - activity - saves in journal?
 
 GNOME - uses directories etc, but is slow?
+
+nano -text editor run in terminal, built in to 650
 
 
 === saving forth source onthe XO  ===
