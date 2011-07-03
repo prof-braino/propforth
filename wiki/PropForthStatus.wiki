@@ -17,7 +17,9 @@ trade-off:
 
 }}}
 
-20110703 present status of 5.0 effort
+==== 20110703 present status of 5.0 effort ====
+
+===== Assembler Optimizations =====
 
 Assembler optimization of the kernel are showing positive results. 
 
@@ -39,7 +41,7 @@ There is another branch at the EEPROM file system support.  On a system that has
 
 There is also a branch to include SD support.  The v5.0 SD is also faster, but Sal has not done the benchmarks yet.   Sal's target configuration is to have the EEPROM READONLY file system load the SD file system, to free up application space in the prop.  Since the SD slot is present on the Spinneret board, the SD will likely hold the Ethernet, RTC etc support.   This default of course can be changed for those with for example a wiz5100 and no need of SD, etc.
 
-
+MULTIPRP:
 
 
 
@@ -52,9 +54,36 @@ Bug fixes to 4.5 as needed
  * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit 
  * LogicAnalyzer.f: Sample each 1 cycle bug fix
 
-The changes are first posted in issue 27 comment 14 mcs.f and logicanalyzer.f
 
 20110703 this is to be released this week after Sal sends the package for final regression test. 
+
+The changes are first posted in issue 27 comment 14 mcs.f and logicanalyzer.f
+
+Result is 
+ * about 13,000 bytes per second for one channel
+ * about 11,500 bytes per second per channel for each of 8 channels, total 90,000 bytes per second total for all 8 channels simultaneously.
+
+Sal commented that the logic analyzer code didn't work well sampling at full speed 1 sample per clock, and wondered why nobody caught this.   Braino thinks that folks that need a logic analyzer have one already, and folks that don't have a logic analyzer don't know how to use one, so the software logic analyzer in propforth is under used.  
+
+  == *REQUEST* ==
+
+Could someone on the team come up with an example on how using the logic analyzer on something appropriate like VGA?  
+
+  == NOTE ON NUMBER BASE ==
+
+  * propforthbootkerenel.f set base to hex in fstart line 2487.  That is, the mininmal kerenl is hex by defaut. 
+  * propforthkerenel.f sets base to decimal in onreset.  That is, since people tend to think in decimal, the kernel switches to decimal when it is reset. 
+
+BUT REMEMBER that each cog has its own number base setting. 
+
+The fastload command (fl) fires off another cog to load the code and interpret it into the dictionary.  That is, you are working in cog6 and you do a fastload, cog6 make cog0 load the code. using the word *hex* in the source file affect cog0 not cog6.  
+
+Any reset will cause the number base to switch back to the default.  
+
+I got bit by this, it needs to be written up better. 
+
+So use  ` 22 pinout ` to set pin 22 to an output, and  ' 22 pinhi ' to set pin high.  Then do bit mask, then do assembler,; but pay attention to the number base for the cog doing the work. 
+
 
 === Propforth 4.5 Released June 14, 2011 (public release) ===
 
