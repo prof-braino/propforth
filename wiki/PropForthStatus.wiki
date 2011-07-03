@@ -16,12 +16,43 @@ trade-off:
  * rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
 
 }}}
+
+20110703 present status of 5.0 effort
+
+Assembler optimization of the kernel are showing positive results. 
+
+Already cog memory use has decreased by 16 longs.  This includes the space reserved for paging in assembler routines, Sal reports this method works well. 
+
+A big speed increase for lots of "small words" like 2+ 4* 1- has been noticed.  This is kind of a big deal.
+
+There is now a method to directly access specific stack positions: ` 0 st@ ` fetches the 0th (top) stack item, ` 7 st@ ` fetches the 8th (seventh below top) stack item.  ` 13 7 st! ` stores a 13 at the 7th stack location.  Similar words for the return stack are available. 
+
+Previously, assembler definitions would be loaded into memory before use, now the process is automatic.  When an assembler definition is called, if it is in memory it executes; if its not already in memory it is loaded into the paging area and executes.  This is kind of a big deal. 
+
+For kernel words, the process is to rewrite the function in assembler, run spinmaker to generate a new propforthkernel.spin; now the assembler function is used as "paged assembler".  This is a really big deal.
+
+The EEPROM access words are significantly faster.  Previously, loading from EEPROM took 17 seconds, now it takes 5 seconds.  This is a big deal. 
+
+There continues to be two kernel choices: a minimal forth kernel, and a an extended development kernel.  As before, the primary kernel for development is the development kernel, and the minimal kernel is intended for finished turnkey applications that no longer need the development support.  Of course you can still stick with the dev kernel in a final app if you choose. 
+
+There is another branch at the EEPROM file system support.  On a system that has greater than 32k EEPROM, the EEPROM file system kernel is available.  Al the development extensions reside in EEPROM to save application space on the prop.  The provisions for using dev extensions from EEPROM load at boot, it takes about 3 seconds to load (2 seconds to boot the prop, and 1 second to load from EEPROM). It turns out that the specs on individual EEPROMS are all over the place, but 400 kilohertz appears to be the lowest common denominator for maximum operational speed, 400 should work with any part.  If you have a faster EEPROM, the speed can be increased.  Right now there are two parameters that have to be adjusted to change the EEPROM speed, Sal is working to make this One parameter as prof_braino tends to forget the other one and screw things up.   
+
+There is also a branch to include SD support.  The v5.0 SD is also faster, but Sal has not done the benchmarks yet.   Sal's target configuration is to have the EEPROM READONLY file system load the SD file system, to free up application space in the prop.  Since the SD slot is present on the Spinneret board, the SD will likely hold the Ethernet, RTC etc support.   This default of course can be changed for those with for example a wiz5100 and no need of SD, etc.
+
+
+
+
+
+
+
 === Propforth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
 
 Bug fixes to 4.5 as needed 
 
- * mcs.f:  Marco's changes for 12 cycles per but from 2o cycles per bit
+ * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit
  * LogicAnalyzer.f: Sample each 1 cycle bug fix
+
+20110703 this is to be released this week after Sal sends the package for final regression test. 
 
 === Propforth 4.5 Released June 14, 2011 (public release) ===
 
