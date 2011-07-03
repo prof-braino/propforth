@@ -55,15 +55,15 @@ trade-off:
 
   ===== MULTIPROP =====
 
-  The MASTER Prop boots, then boots the SLAVE.  The MASTEER runs a boot script, and send forth to the individual SLAVE.  Sal is working in the word set to do this, is will be similar to the 
+  The MASTER Prop boots, then boots the SLAVE.  The MASTER runs a boot script, and send forth to the individual SLAVE.  Sal is working in the word set to do this, is will be similar to the 
 
   {{{
   c" 1 2 3 forth word "  4 cogx 
   }}}
 
-  construct used for the local cogs, but will provide parameters for accessing individual cogs on specific slaves.
+  construct used for the local cogs, but will provide parameters for accessing individual cogs on specific slaves. This is kind of a totally cool big deal.  The reason it is a big deal is that it eliminates some aspects of the "not enough memory" complaint against the prop.  Now we have unlimited 496 longs in cogs and 32K RAM in props.  
 
-  NOTICE:  Since the SD cog has the SD drivers, no other cog need them in memory.  The SD cog grabs data off the SD, and sends it as a byte stream to the slave cog. 
+  EXAMPLE:  Since the SD cog has the SD drivers, no other cog need them in memory.  The SD cog grabs data off the SD, and sends it as a byte stream to the slave cog for processing. 
 
   EXAMPLE:  Main cog gets an HTTP request for time sample and Fast Hartley.  Main cog sends FHT to the slave, sends the request to the slave, the slave does it and sends it back.  
 
