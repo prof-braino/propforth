@@ -49,8 +49,10 @@ There is also a branch to include SD support.  The v5.0 SD is also faster, but S
 
 Bug fixes to 4.5 as needed 
 
- * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit
+ * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit 
  * LogicAnalyzer.f: Sample each 1 cycle bug fix
+
+The changes are first posted in issue 27 comment 14 mcs.f and logicanalyzer.f
 
 20110703 this is to be released this week after Sal sends the package for final regression test. 
 
