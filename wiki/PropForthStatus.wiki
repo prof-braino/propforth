@@ -55,11 +55,35 @@ trade-off:
 
   ===== MULTIPROP =====
 
+  The MASTER Prop boots, then boots the SLAVE.  The MASTEER runs a boot script, and send forth to the individual SLAVE.  Sal is working in the word set to do this, is will be similar to the 
 
+  {{{
+  c" 1 2 3 forth word "  4 cogx 
+  }}}
 
+  construct used for the local cogs, but will provide parameters for accessing individual cogs on specific slaves.
 
+  NOTICE:  Since the SD cog has the SD drivers, no other cog need them in memory.  The SD cog grabs data off the SD, and sends it as a byte stream to the slave cog. 
 
+  EXAMPLE:  Main cog gets an HTTP request for time sample and Fast Hartley.  Main cog sends FHT to the slave, sends the request to the slave, the slave does it and sends it back.  
 
+  The opinion is that v4.5 was good enough to demo this functionality, but the 5.0 release should be fast enough for an actual production application.  v4.5 could send data at about 5k bytes per second max, v5.0 can send data about 13k bytes per second on one channel. 
+
+  ===== NEW TEST BED =====
+
+  Sal is working on a new standardized test bed consisting of one spinneret as a gateway, a second spinneret as Unit Under Test, and one or more bare prop chips as slaves.  The automated regression suite will be configured to use this test bed.  Once the regression automation is in place, we can add all regression tests we want, and run them batch, in parallel, repeatedly, for little or no additional effort.  Currently, it takes about an afternoon to run the full regression suite, with delays and interruptions.  It is estimated that the automated regression suite would run end to end in about 5 minutes.  This could possibly be made faster is the various section were run on separate cogs in parallel. 
+
+  The new standard test bed unit could be used for general applications as well.  This is potentially a big deal. 
+
+  For example, the unit is placed in a production environment to monitor/control process.  The device is connected to equipment, and to the internal Ethernet for control and monitoring. The device can be serviced remotely in real time without affecting the process under control.  Also, the external connections can be unplugged or powered down to eliminate any security issues.  
+
+  A pilot project to demonstrate this method is being planned.  "Tom's Automated Greenhouse" is in the planning stages.  Please suggest other applications if you have any on the books. 
+
+  ===== Neural Net =====
+
+  I spoke to Sal about the neural net threads on the forums.  Most of what he said was confidential, but here's the bottom line:  While a neural net is great for simple tasks like character recognition, complex tasks are almost impossible to QA.  
+
+  The Multiprop material will potentially make a very nice inexpensive net on your desk for experiments.  But you might want to consider carefully before putting it into production on a critical task.  On the other hand, if 100 users start experimenting, maybe one might get lucky and find something interesting.  More on this as it develops, time permitting.   
 
 === Propforth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
 
