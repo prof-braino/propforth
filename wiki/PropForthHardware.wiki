@@ -62,6 +62,12 @@ Mouse support has not been implemented at this time.  It is left to the user/dev
 
    SD support is according to the Spinneret Board micro SD card slot configuration.  Other pin configurations as needed are left to the user/developer.  One typical option is to use a micro SD to full size SD adapter, and turn it into a micro SD slot. 
 
+== Hardware not supported by the default kernel  ==
+
+The following hardware support is not included in the standard kernel.  These items are left to the user/developer to implement as needed.  Any implements provided by users/developer can be added to the download archive when completed.   All contributions are welcome. 
+
+   === audio support ===
+
    === SPI support ===
 
    === Expanded RAM support ===
