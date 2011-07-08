@@ -1,0 +1,51 @@
+#summary Hardware Requirements for Propfoth.
+#labels AllReleases,Phase-Design,Phase-Requirements
+
+= Introduction =
+
+This outlines the default design decisions for Propforth.
+
+= Propforth Kernel = 
+
+
+ The default propforth kernel will run on ANY Propeller chip.  No additonal hardware is required.  Any propellor chip that is capable of accepting a spin file will run propforth. 
+
+  == default hardware configuration ==
+
+The default hardware configuration for propforth is the default configuration per the Parallax Propeller data sheet.
+
+    === 32 K EEPROM ===
+
+    The minimum hardware required for a propellor chip to function usually includes a 32K EEPROM.  Therefore, the default kernel is designed to run using a 32K EEPROM. 
+
+    The EEPROM is attached to pins 28 and 29 per the default hardware specification. 
+
+    === Serial Terminal ===
+
+    The default serial terminal connection is on pins 30 and 31. 
+
+  == Extension Options for the basic hardware configuration ==
+
+  The basic hardware includes the bare prop chip, and one 32k EEPROM.  This configuration is expanded for most projects and applications. 
+
+    === 64K EEPROM and greater ===
+
+   The initial configuration for the propchip can be extended to use EERPROM larger than 32K.  Typically EEPROM is expanded to 64K.  The standard default kernel is compatible with 64K and larger EEPROM.  The EEPROM can be expanded to any size addressable by the prop chip.  If an address is given, the kernel will attempt to access it.  It is the responsibility of the user/developer to ensure the physical EEPROM is present, and handle any errors appropriately. 
+
+   === Alternate Serial Terminal ===
+
+   The default serial terminal on pin 30 and 31 is defined by the prop chip boot process.  After booting is complete, pin 30 and 31 may be used for other purposes, and a serial terminal may be configured on any available pins.   
+
+    Alternative serial terminals are NOT included in the default kernel. Alternative serial terminal configurations are the responsibility of the user/developer. 
+
+
+
+  
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
