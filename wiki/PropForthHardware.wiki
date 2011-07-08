@@ -10,7 +10,7 @@ This outlines the default design decisions for Propforth.
 
   The default propforth kernel will run on ANY Propeller chip.  No additonal hardware is required.  Any propellor chip that is capable of accepting a spin file will run propforth. 
 
-  == default hardware configuration ==
+== default hardware configuration ==
 
 The default hardware configuration for propforth is the default configuration per the Parallax Propeller data sheet.
 
@@ -24,7 +24,7 @@ The default hardware configuration for propforth is the default configuration pe
 
     The default serial terminal connection is on pins 30 and 31. 
 
-  == Extension Options for the basic hardware configuration ==
+== Extension Options for the basic hardware configuration ==
 
 The basic hardware includes the bare prop chip, and one 32k EEPROM.  This configuration is expanded for most projects and applications. 
 
@@ -38,14 +38,38 @@ The basic hardware includes the bare prop chip, and one 32k EEPROM.  This config
 
     Alternative serial terminals are NOT included in the default kernel. Alternative serial terminal configurations are the responsibility of the user/developer. 
 
+   === VGA ===
 
+   The VGA support extension follows the VGA configuration on the Parallax Demo Board by default.  This may be moved or modified by the user/developer by changing the pin assignment in the source code.  The last release of propforth that specifically contained VGA support was v3.6 JupiterACE HiResVGA and LowResVGA.   Support will be re-added to v5.0 when the assembler optimiztion work is complete. 
 
-  
+   === Keyboard support === 
 
+   The Keyboard support extension follows the  Keyboard configuration on the Parallax Demo Board by default.  This may be moved or modified by the user/developer by changing the pin assignment in the source code.  The last release of propforth that specifically contained  Keyboard support was v3.6 JupiterACE HiResVGA and LowResVGA.   Support will be re-added to v5.0 when the assembler optimiztion work is complete. 
 
-= Details =
+   === Mouse Support ===
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Mouse support has not been implemented at this time.  It is left to the user/developer to implement mouse support as needed. 
+
+   === TV ===
+
+   TV support has not been added to the default kernel or the default propforth package as this time.   As of version 4.5, work is underway by propforth users to implement TV support.  This may be added to the default propforth download archive upon completion. 
+
+   === Ethernet support ===
+
+   Ethernet support is according to the Spinneret Board configuration.  This is equivalent to a wiznet w5100 module connected to a prop protoboard according to the spinneret datasheet and schematic.   However, Prof_Braino has not gotten his w5100 and protoboard to behave like a spineret board; but this is large due to me not taking the time to check the wiring. 
+
+   === SD support ===
+
+   SD support is according to the Spinneret Board micro SD card slot configuration.  Other pin configurations as needed are left to the user/developer.  One typical option is to use a micro SD to full size SD adapter, and turn it into a micro SD slot. 
+
+   === SPI support ===
+
+   === Expanded RAM support ===
+
+   There are several options for expanded RAM on the prop chip and none has been accepted as "standard".   Therefore, propforth does not include any "standard" expanded RAM support.  It is left to the user/developer to implement this support as needed. 
+
+   === RC support ===
+
+= End =
+
+End of hardware requirements description 20110708
