@@ -29,6 +29,11 @@ Newer Topics to be added to the top.
 
  Pages words are paged in and out of memory as needed.  When a paged word is called, the optimized assembler definition is brought into memory (there is a buffer for these words). The word is executed like any other forth word (and is very fast, being assembler).   If the word is called again and is still in memory, it is executed.  If another word is called, the new definition is pulled into the buffer.  This means the dictionary does NOT need to be filled with assembler definitions.   While the transfer does take time and is relatively slow, the there is a significant net gain in speed and a significant net gain in available memory. 
 
+ === How big are pages words? ===
+  
+  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word.   MOST paged words so far are "small words" like + @ ! u* etc.  These only take a couple bytes each.
+
+  If any user encounters a case where the paged assembler buffer needs to be increased, post an issue and the size will be adjusted as needed. 
 
 = Question 2 What Optimization are planned? =
 
