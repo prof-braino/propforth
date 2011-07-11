@@ -7,7 +7,7 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
-= Question 12 Why do redefine ONBOOT so many times? =
+= Question 12 Why redefine ONBOOT so many times? =
 
   In v4.5, many of the regression test used the technique of redefining the onboot word to change or add to the boot process.  This is a valid technique, but gets confusing if several things are going on and an earlier one needs to get changed.  
 
