@@ -32,11 +32,11 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
 = Question 9 The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
 
-  The Multi-prop support (see test-4.3.2) did work, but automatic support for a slave was only implemented for the first level slave.  Slaves 2 through Slave N work, but you have to start them manually.  To this we say BLAH.  We did not include the manual steps for additional slaves in the regression tests; Sal was too busy and I could not make the time.   
+  The Multi-prop support (see test-4.3.2) did work, but automatic support for a slave was only implemented for the first level slave.  Slaves 2 through Slave N _can_ work, but you have to start them manually.  We did not include the manual steps for additional slaves in the regression tests; Sal was too busy and I could not make the time.   
 
   In v5.0, the configuration for the slaves is handled in boot scripts on the SD.  The slave boot scripts will be in a file named something like .sfboot.f on the SD card. 
 
-  We will try to have a regression test that can be used as a template for N-props.  
+  The current plans include a regression test that can be used as a template for N-props.  
 
 = Question 8 Version 4.x was fine, why are you messing with the kernel?  =
 
