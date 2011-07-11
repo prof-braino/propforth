@@ -21,7 +21,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   In Question 11, it was presented that forth is not an OS, but can be used like one.  That is, the kernel does not automatically do housekeeping, etc.  
 
-  The difference is the "self contained, forth style".  The kernel provides the ability for forth to reconfigure itself on the fly.  It is left to the user/developer to manage housekeeping as appropriate to the application.   If the user can determine the minimum necessary housekeeping, and appropriate sequence of configurations, the forth kernel and application can _appear_ as a real time operating system running on a micro controller.  At which point, it *is* a real time operating system, for intents and purposes.  Bear in mind that this is not built in or automatic, and requires careful engineering on the part of the user. 
+  The difference is the "self contained, forth style".  The kernel provides the ability for forth to reconfigure itself on the fly.  It is left to the user/developer to manage housekeeping as appropriate to the application.   If the user can determine the minimum necessary housekeeping, and appropriate sequence of configurations, the forth kernel and application can _appear_ as a real time operating system running on a micro controller.  At which point, it *is* a real time operating system, for intents and purposes.  Bear in mind that the full function of a "traditional OS" is is not built in or automatic, and requires careful engineering on the part of the user. 
 
 = Question 13 What's an example of the v5.0 optimization? =
 
