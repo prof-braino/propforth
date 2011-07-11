@@ -7,11 +7,11 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
-= Question 13 What's an example of the v5.0 optimization? =
+= Question What's an example of the v5.0 optimization? =
 
   The EEPROM support words were optimized for v5.0.  Previously, loading (a specific set of files) from the EEPROM took 18 seconds.  Optimizing the EEPROM words themselves resulted in the load time being reduced to 13 seconds (in v4.x).   After the kernel optimizations, the words that interface to the EEPROM words were also optimized; now the load time has been reduced to 5 seconds. See Question 2. 
 
-= Question 12 Why redefine ONBOOT so many times? =
+= Question Why redefine ONBOOT so many times? =
 
   In v4.5, many of the regression test used the technique of redefining the onboot word to change or add to the boot process.  This is a valid technique, but gets confusing if several things are going on and an earlier one needs to get changed.  
 
@@ -19,8 +19,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   Notice that configurations that do not have SD hardware and support cannot use the .sfboot.f words (as these live on the SD).  Non SD configurations will likely handle boot time initialization from EEPROM, or resort to modifying the onboot word.  Since a non-SD configuration will likely be less complex, it is anticipated that this should not be a problem.   
 
-
-=  Question 10 What is the purpose of Multi-prop / MCS? = 
+=  Question What is the purpose of Multi-prop / MCS? = 
 
   The Multi-Channel High Speed Serial Link(s) (MCS) provide a continuous, high speed channel between prop chips, and includes the transfer protocol.   The ideal is, if you need more resources for your application, you just add another prop.  Use is to be transparent to the user/application. 
 
@@ -30,7 +29,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
   
   The goal is simply to do experiments with multi-prop.  It may or may not work, we may or may not find it useful.  But its fun and keeps us busy. 
 
-= Question 9 The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
+= Question The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
 
   The Multi-prop support (see test-4.3.2) did work, but automatic support for a slave was only implemented for the first level slave.  Slaves 2 through Slave N _can_ work, but you have to start them manually.  We did not include the manual steps for additional slaves in the regression tests; Sal was too busy and I could not make the time.   
 
@@ -38,7 +37,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   The current plans include a regression test that can be used as a template for N-props.  
 
-= Question 8 Version 4.x was fine, why are you messing with the kernel?  =
+= Question Version 4.x was fine, why are you messing with the kernel?  =
 
   V3.6 was "good enough to use" as a forth kernel, but did not use enough things that are special about the prop. 
  
@@ -46,13 +45,13 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   V5.0 Shows what the prop can do, and leaves enough resource so we can do something.   It provides ways to work within the props constraints to overcome common "limitation" complaints.  The degree of success has not been determined, but it looks kind of interesting.  While previous versions 'seemed' fast, V5.0 'blows them away'.  
 
-= Question 7 What are these weird strings that are not hex values but seem like they should be?  =
+= Question What are these weird strings that are not hex values but seem like they should be?  =
 
   Oh, you noticed that.  OK, this is a bit neat, but doesn't affect anything.  Sort of.  FORTH supports any number base up to machine size.   Sal has decided the forth machine supports up to BASE 64.  This way, any value for a 'long' can be encoded in 6 characters (instead of 8 characters in HEX or 10 or more character in decimal etc).  Using BASE 64 to read in values for longs reduces the interpreter activity by 25% over hex (6 characters instead of 8 for each transfer).   This happens quite frequently with the paged assembler, so the savings is significant.  Also, this is internal to forth, at this point; so while it LOOKS weird, it should not affect anything we the user/developer has to deal with.  If this proves to be incorrect, or in some way flawed, it can be corrected as appropriate. 
 
   This is actually an old technique, and its use is well established.  (Google Base64 and find wiki entry.  UUencode is an example).  I still think it kind of a neat trick.
 
-=  Question 6 What's the deal with number base?  =
+=  Question What's the deal with number base?  =
 
   Each Cog has its own number base setting.  Since one cog is running the interpreter and another is running the interface, its easy to get confused and have the wrong cog set to decimal or hex.  This is how Sal sorted it out.
 
@@ -67,11 +66,11 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 But we frequently want to input number in HEX. SOOOOOOOOOO support has been added so we can input HEX values even when the number base is not hex.    That is any string prefixed with an 'x' and containing 0-9 and/or 'A-F' is interpreted as a HEX value.  The string x1000 is interpreted as value 4096 decimal. The string  xAF00 is interpreted as 
 44,800 decimal.  Nifty!
 
-=  Question 5 Can multiple "paged assembler" (see question 3) words be brought in at the same time? =
+=  Question Can multiple "paged assembler" (see question 3) words be brought in at the same time? =
 
    Yes, but you have to write them that way.   The current example is the SD support in v5.0.   All the assembler support words are in a single "unit" and the actual function called drives a switch statement.   So if you want to read, or write, or open a file, or close a file etc, the switch statement jumps around reading and writing until the SD access is finished.  When the SD access is complete, the paging buffer is free until the SD is called again.  If SD is still resident, it get called, or gets paged in again. 
 
-=  Question 4 What is "Scripting Optimization"? =
+=  Question What is "Scripting Optimization"? =
 
   What we are calling "Scripting" involves running forth code from the SD card.  A section of the SD card can contain a "script" of forth words.  When called, the script is interpreted, and executed as if it were a forth definition.  The script does whatever it does, and leaves whatever results where-ever it needs to, and its done. No additional dictionary space was consumed for this script.
 
@@ -79,7 +78,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
   Using this technique, one may achieve application of any size and any complexity.  There is no longer any need to worry about a "32K limit" in program size.   Just as an Intel processor has (or used to have) a 32k cache, the prop hub memory can be viewed as a "32k cache" with programs of any size.  Also, the SD card may be viewed as 2Gig, 4Gig, 8Gig etc of expanded RAM.  It is not, but we are going to pretend it is and see how far we get.   At present we think its cheaper and easier than adding actual RAM, and initial tests indicate it can be plenty fast if used appropriately. 
 
-= Question 3 How do the assembler optimizations work? =
+= Question How do the assembler optimizations work? =
 
   Previously, we had to do messy things to get the assembler optimizations into the dictionary.  This has been simplified.  (We have to ask caskaz, Brian, and Nick for details, I did not do any assembler work on the early releases).
 
@@ -99,7 +98,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
   If any user encounters a case where the paged assembler buffer needs to be increased, post an issue and the size will be adjusted as needed. 
 
-= Question 2 What Optimization are planned? =
+= Question What Optimization are planned? =
 
   Sal is optimizing the kernel with assembler to reduce memory foot-print and increase speed.  It turns out that using the v5.0 design, many (most?) kernel words can be optimized in assembler and can reside on external memory, to be paged into the kernel as needed.  The TRANSFER is slower, but the EXECUTION is faster, for a net gain in speed across the board.  Also, there is a significant net reduction in kernel memory footprint. 
 
@@ -111,13 +110,13 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
   Sal has done various analysis to confirm where the bottle necks are/were.  As is turns out, many of his assumptions were incorrect; the areas he thought were bottleneck were not, and areas that he didn't think would matter, made a big impact.  The result was he was able to determine that ACTUAL bottleneck and work on those, and ignore the "false bottle necks".   Good think he dd the profiling!  
 
-= Question 1 Where are the Requirements listed? =
+= Question Where are the Requirements listed? =
 
   (As in v4.5) In the Regression Test Suite.
 
   Traditional requirements are too expensive for our resources, and are typically too expensive for professional outfits (outside of military and aviation etc where there is contractual/legal obligation).  We are examining taking "requirements based test" one step further to "design based tests".   That is, each design element will be "completed" by a test that verifies the system operates to that design.  (An interesting result of this is that the actual coding happens last, and takes only a small part of the development cycle, and it is difficult to introduce bugs into the result). In this manner, the _regression suite_ performs the roles of design document, requirements, test, requirements  to test traceability, user manual, and tutorial.  The result is descriptively simple, yet seems to be effective. 
 
-= Question: Can we interface forth routines with Spin, C, BASIC, etc? =
+= Question Can we interface forth routines with Spin, C, BASIC, etc? =
 
   There was a discussion about developing drivers in forth, and using them in C, as in a C environment like Catalina, etc.  The answer is yes, if you want to, but just for fun. 
 
