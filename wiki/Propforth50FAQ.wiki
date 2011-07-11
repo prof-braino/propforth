@@ -95,7 +95,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
  === How big are pages words? ===
   
-  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (40 decimal) bytes.   MOST paged words so far are "small words" like + @ ! u* etc.  These only take a few bytes each.
+  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (40 decimal) bytes.   MOST paged words so far are "small words" like ` + @ ! u* ` etc.  These only take a few bytes each.
 
   If any user encounters a case where the paged assembler buffer needs to be increased, post an issue and the size will be adjusted as needed. 
 
@@ -109,7 +109,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
   == Profiling Execution for Bottlenecks ==
 
-  Sal has done various analysis to confirm where the bottle necks are/were.  As is turns out, many of his assumptions were incorrect; the areas he thought were bottleneck were not, and areas that he didn't think would matter, made a big impact.  The result was he was able to determine that ACTUAL bottleneck and work on those, and ingore the "false bottle necks".   Good think he dd the profiling!  
+  Sal has done various analysis to confirm where the bottle necks are/were.  As is turns out, many of his assumptions were incorrect; the areas he thought were bottleneck were not, and areas that he didn't think would matter, made a big impact.  The result was he was able to determine that ACTUAL bottleneck and work on those, and ignore the "false bottle necks".   Good think he dd the profiling!  
 
 = Question 1 Where are the Requirements listed? =
 
