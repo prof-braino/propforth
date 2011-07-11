@@ -7,12 +7,21 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.
 
-= The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
+=  Question 10 What is the purpose of Multi-prop / MCS? = 
+
+  The Multi-Channel High Speed Serial Link(s) (MCS) provide a continuous, high speed channel between prop chips, and includes the transfer protocol.   The ideal is, if you need more resources for your application, you just add another prop.  Use is to be transparent to the user/application. 
+
+  Why would one want to do this?  We think a useful application might need more than seven or eight things happening at once, or might need more than 32 pins.  We like the prop, and we have all this work in place, so we add more props.
+
+  For example, one cog can control 16 servos (eight on each counter), and two cogs can control 32 servos; but this configuration would not allow inputs, and leaves 6 cogs un-occupied.   With Multi-prop, once could have two cogs (or more) running 16 servos each , a cog (or multiple cogs) monitoring sensor inputs, a cog reading and writing to the SD card (or multiple cogs managing SD cards) , a cog talking to the FPU coprocessor (or mutiple cogs managing external coprocessors), a cog reading the GPS, a cog talking over ethernet, etc, etc; and cog acting as master sending request to the other cogs to get the datastreams processed.  
+
+= Question 9 The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
 
   The Multi-prop support (see test-4.3.2) did work, but automatic support for a slave was only implemented for the first level slave.  Slaves 2 through Slave N work, but you have to start them manually.  To this we say BLAH.  We did not include the manual steps for additional slaves in the regression tests; Sal was too busy and I could not make the time.   
 
   In v5.0, the configuration for the slaves is handled in boot scripts on the SD.  The slave boot scripts will be in a file named something like .sfboot.f on the SD card. 
 
+  We will try to have a regression test that can be used as a template for N-props.  
 
 = Question 8 Version 4.x was fine, why are you messing with the kernel?  =
 
