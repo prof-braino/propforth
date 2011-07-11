@@ -19,18 +19,6 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   Notice that configurations that do not have SD hardware and support cannot use the .sfboot.f words (as these live on the SD).  Non SD configurations will likely handle boot time initialization from EEPROM, or resort to modifying the onboot word.  Since a non-SD configuration will likely be less complex, it is anticipated that this should not be a problem.   
 
-= Question 11 Can you add "X" complex OS function to the OS? =
-
-  Forth is not really an OS, but you can use it as if it were an OS.  The kernel provides a bunch of low level function support that we can use as we want.  "OS" implies a lot of built in house keeping that is done automatically; automagic housekeeping adds a LOT of expensive overhead.  While you can implement that if you  want (I want sometimes, and so do), this is really asking a lot from a micro controller and begins to take its toll on performance and code size.   Rather than support automatic, general overhead, the kernel itself is limited to just the functions, and we as developers use them as the application dictates.   You can decide _your application_ is an _OS_, but we interpret that as beyond the scope of the kernel. 
-
-  So the short answer is yes, but you have to do it yourself.  The default kernel is to be kept simple, this is our design decision.
-
-  Now, the EXTENSIONS, on the other hand, are optional; and can include the kitchen sink.  Any EXTENSIONS can be added to the package as we have done organized in sub-directories of the distributions archive. Examples are support for: Ethernet, HTTP server, NTP, Telnet server, RTC, ANSI terminal, ROM-less operation, and so on.
-
-  We plan to include user extensions, such as caskaz's and Nick Lordi's works, as possible, in the release archive download (after we think we have the kernel stable).  We would love to include your contributions too.
-
-  But so far, the only non-prop extensions added to the kernel were EEPROM file system support,  the SD support from caskaz and the spinneret support; and these were as extensions to the development kernel.  
-
 
 =  Question 10 What is the purpose of Multi-prop / MCS? = 
 
@@ -138,6 +126,18 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
   In practical terms, C is a language and Forth is a package, and the techniques for each don't map well to the other.  That is, if a developer knows enough about one to interface it to the other, the developer tends to simply use one or the other, but not mix the two. 
 
   Interactively writing drivers in Forth to be used by C might be fun, but will probably not be the preferred development path. :)
+
+= Question Can you add "X" complex OS function to the OS? =
+
+  Forth is not really an OS, but you can use it as if it were an OS.  The kernel provides a bunch of low level function support that we can use as we want.  "OS" implies a lot of built in house keeping that is done automatically; automagic housekeeping adds a LOT of expensive overhead.  While you can implement that if you  want (I want sometimes, and so do), this is really asking a lot from a micro controller and begins to take its toll on performance and code size.   Rather than support automatic, general overhead, the kernel itself is limited to just the functions, and we as developers use them as the application dictates.   You can decide _your application_ is an _OS_, but we interpret that as beyond the scope of the kernel. 
+
+  So the short answer is yes, but you have to do it yourself.  The default kernel is to be kept simple, this is our design decision.
+
+  Now, the EXTENSIONS, on the other hand, are optional; and can include the kitchen sink.  Any EXTENSIONS can be added to the package as we have done organized in sub-directories of the distributions archive. Examples are support for: Ethernet, HTTP server, NTP, Telnet server, RTC, ANSI terminal, ROM-less operation, and so on.
+
+  We plan to include user extensions, such as caskaz's and Nick Lordi's works, as possible, in the release archive download (after we think we have the kernel stable).  We would love to include your contributions too.
+
+  But so far, the only non-prop extensions added to the kernel were EEPROM file system support,  the SD support from caskaz and the spinneret support; and these were as extensions to the development kernel.  
 
 = Question: How to take advantage of the new kernel? =
 
