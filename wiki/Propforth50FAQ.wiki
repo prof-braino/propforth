@@ -7,6 +7,14 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
+= Question 12 Why do redefine ONBOOT so many times? =
+
+  In v4.5, many of the regression test used the technique of redefining the onboot word to change or add to the boot process.  This is a valid technique, but gets confusing if several things are going on and an earlier one needs to get changed.  
+
+ In v5.0, the boot-time steps will will be handled in the .sfboot.f file. The onboot word (and other system housekeeping words) will be left as default where possible.  
+
+  Notice that configurations that do not have SD hardware and support cannot use the .sfboot.f words (as these live on the SD).  Non SD configurations will likely handle boot time initialization from EEPROM, or resort to modifying the onboot word.  Since a non-SD configuration will likely be less complex, it is anticipated that this should not be a problem.   
+
 = Question 11 Can you add "X" complex OS function to the OS? =
 
   Forth is not really an OS, but you can use it as if it were an OS.  The kernel provides a bunch of low level function support that we can use as we want.  "OS" implies a lot of built in house keeping that is done automatically; automagic housekeeping adds a LOT of expensive overhead.  While you can implement that if you  want (I want sometimes, and so do), this is really asking a lot from a micro controller and begins to take its toll on performance and code size.   Rather than support automatic, general overhead, the kernel itself is limited to just the functions, and we as developers use them as the application dictates.   You can decide _your application_ is an _OS_, but we interpret that as beyond the scope of the kernel. 
@@ -50,7 +58,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   Oh, you noticed that.  OK, this is a bit neat, but doesn't affect anything.  Sort of.  FORTH supports any number base up to machine size.   Sal has decided the forth machine supports up to BASE 64.  This way, any value for a 'long' can be encoded in 6 characters (instead of 8 characters in HEX or 10 or more character in decimal etc).  Using BASE 64 to read in values for longs reduces the interpreter activity by 25% over hex (6 characters instead of 8 for each transfer).   This happens quite frequently with the paged assembler, so the savings is significant.  Also, this is internal to forth, at this point; so while it LOOKS weird, it should not affect anything we the user/developer has to deal with.  If this proves to be incorrect, or in some way flawed, it can be corrected as appropriate. 
 
-This is actually an old technique, and its use is well established.  (Google Base64 and find wiki entry).  I still think it kind of a neat trick.
+  This is actually an old technique, and its use is well established.  (Google Base64 and find wiki entry.  UUencode is an example).  I still think it kind of a neat trick.
 
 =  Question 6 What's the deal with number base?  =
 
