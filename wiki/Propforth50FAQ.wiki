@@ -109,7 +109,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
 = Question 2 What Optimization are planned? =
 
-  Sal is optimizing the kernel with assembler to reduce memory foot-print and increase speed.  
+  Sal is optimizing the kernel with assembler to reduce memory foot-print and increase speed.  It turns out that using the v5.0 design, many (most?) kernel words can be optimized in assembler and can reside on external memory, to be paged into the kernel as needed.  The TRANSFER is slower, but the EXECUTION is faster, for a net gain in speed across the board.  Also, there is a significant net reduction in kernel memory footprint. 
 
   == Memory Foot Print ==
 
