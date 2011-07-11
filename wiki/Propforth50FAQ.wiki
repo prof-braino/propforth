@@ -17,8 +17,7 @@ Newer Topics to be added to the top.
 
   We plan to include user extensions, such as caskaz's LCD support, Nick Lordi's FPU and FHT in the release archive (after we think we have the kernel stable).  We would love to include your contributions too.
 
-  But so far, the only non-prop extensions added to the kernel were the 
-SD support from caskaz and the spinneret support, and these were as extensions to the development kernel.  
+  But so far, the only non-prop extensions added to the kernel were the SD support from caskaz and the spinneret support, and these were as extensions to the development kernel.  
 
 
 =  Question 10 What is the purpose of Multi-prop / MCS? = 
