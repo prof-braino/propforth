@@ -1,10 +1,52 @@
-#summary One-sentence summary of this page.
+#summary FAQ for Propforth 5.0 Release
 #labels v5.0
 
 = Introduction =
 
-Add your content here.
+Different from earlier releases, starting with Propforth V4.5 there will be a FAQ for each release in a separate page.  This page is the Frequently Asked Questions for v5.0
 
+Newer Topics to be added to the top.
+
+=  Question 4 What is "Scripting Optimization"? =
+
+  What we are calling "Scripting" involves running forth code from the SD card.  A section of the SD card can contain a "script" of forth words.  When called, the script is interpreted, and executed as if it were a forth definition.  The script does whatever it does, and leaves whatever results where-ever it needs to, and its done. No additional dictionary space was consumed for this script.
+
+  Optionally, the SD card may contain forth colon definitions.  These definition are added to the dictionary, and can be called as needed.  When these definitions are no longer needed, they can be "forgotten".  This allows the definitions to be called repeatedly, but ultimately do not consumer any dictionary space. 
+
+  Using this technique, one may achieve application of any size and any complexity.  There is no longer any need to worry about a "32K limit" in program size.   Just as an Intel processor has (or used to have) a 32k cache, the prop hub memory can be viewed as a "32k cache" with programs of any size.  Also, the SD card may be viewed as 2Gig, 4Gig, 8Gig etc of expanded RAM.  It is not, but we are going to pretend it is and see how far we get.   At present we think its cheaper and easier than adding actual RAM, and initial tests indicate it can be plenty fast if used appropriately. 
+
+= Question 3 How do the assembler optimizations work? =
+
+  Previously, we had to do messing things to get the assembler optimizations into the dictionary.  This has been simplified.  (We have to ask caskaz, Brian, and Nick for details, I did not do any assembler work on the early releases).
+
+  Now the assembler words are handled in two ways: pages words and persistent words.
+
+  == Persistent Words ==
+
+  What we are calling  "Persistent Words" are assembler definitions that are called once and intended to be left running.  An exampple is the SERIAL driver word.  This word handles communication between the serial connection (to the PC terminal) and the running Forth interpreter.  This word is optimized in assembler, called as boot time, and left running during development and is generally left running. 
+
+  == Paged Words ==
+
+ Pages words are paged in and out of memory as needed.  When a paged word is called, the optimized assembler definition is brought into memory (there is a buffer for these words). The word is executed like any other forth word (and is very fast, being assembler).   If the word is called again and is still in memory, it is executed.  If another word is called, the new definition is pulled into the buffer.  This means the dictionary does NOT need to be filled with assembler definitions.   While the transfer does take time and is relatively slow, the there is a significant net gain in speed and a significant net gain in available memory. 
+
+
+= Question 2 What Optimization are planned? =
+
+  Sal is optimizing the kernel with assembler to reduce memory foot-print and increase speed.  
+
+  == Memory Foot Print ==
+
+  Cog memory now has 170 longs free
+
+  == Profiling Execution for Bottlenecks ==
+
+  Sal has done various analysis to confirm where the bottle necks are/were.  As is turns out, many of his assumptions were incorrect; the areas he thought were bottleneck were not, and areas that he didn't think would matter, made a big impact.  The result was he was able to determine that ACTUAL bottleneck and work on those, and ingore the "false bottle necks".   Good think he dd the profiling!  
+
+= Question 1 Where are the Requirements listed? =
+
+  (As in v4.5) In the Regression Test Suite.
+
+  Traditional requirements are too expensive for our resources, and are typically too expensive for professional outfits (outside of military and aviation etc where there is contractual/legal obligation).  We are examining taking "requirements based test" one step further to "design based tests".   That is, each design element will be "completed" by a test that verifies the system operates to that design.  (An interesting result of this is that the actual coding happens last, and takes only a small part of the development cycle, and it is difficult to introduce bugs into the result). In this manner, the _regression suite_ performs the roles of design document, requirements, test, requirements  to test traceability, user manual, and tutorial.  The result is descriptively simple, yet seems to be effective. 
 
 = Details =
 
