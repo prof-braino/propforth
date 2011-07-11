@@ -66,7 +66,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 But we frequently want to input number in HEX. SOOOOOOOOOO support has been added so we can input HEX values even when the number base is not hex.    That is any string prefixed with an 'x' and containing 0-9 and/or 'A-F' is interpreted as a HEX value.  The string x1000 is interpreted as value 4096 decimal. The string  xAF00 is interpreted as 
 44,800 decimal.  Nifty!
 
-=  Question Can multiple "paged assembler" (see question 3) words be brought in at the same time? =
+=  Question Can multiple "paged assembler" words (see "assembler optimizations") be brought in at the same time? =
 
    Yes, but you have to write them that way.   The current example is the SD support in v5.0.   All the assembler support words are in a single "unit" and the actual function called drives a switch statement.   So if you want to read, or write, or open a file, or close a file etc, the switch statement jumps around reading and writing until the SD access is finished.  When the SD access is complete, the paging buffer is free until the SD is called again.  If SD is still resident, it get called, or gets paged in again. 
 
