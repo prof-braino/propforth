@@ -5,17 +5,17 @@
 
 Different from earlier releases, starting with Propforth V4.5 there will be a FAQ for each release in a separate page.  This page is the Frequently Asked Questions for v5.0
 
-Newer Topics to be added to the top.
+Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
 = Question 11 Can you add "X" complex OS function to the OS? =
 
-  Forth is not really an OS, but you can use it as if it were an OS.  The kernel provides a bunch of low level function support that we can use as we want.  "OS" implies a lot of built in house keeping that is done automatically that adds a LOT of expensive overhead.  While you can do that if you  want (I want sometimes , and so do), this is really asking a lot from a micro controller and begins to take its toll on performance and code size.   Rather than support automatic, general overhead, the kernel itself is limited to just the functions, and we as developers use them as the application dictates.   You can decide _your application_ is an _OS_, but thats beyond the scope of the kernel. 
+  Forth is not really an OS, but you can use it as if it were an OS.  The kernel provides a bunch of low level function support that we can use as we want.  "OS" implies a lot of built in house keeping that is done automatically that adds a LOT of expensive overhead.  While you can do that if you  want (I want sometimes , and so do), this is really asking a lot from a micro controller and begins to take its toll on performance and code size.   Rather than support automatic, general overhead, the kernel itself is limited to just the functions, and we as developers use them as the application dictates.   You can decide _your application_ is an _OS_, but we interpret that as beyond the scope of the kernel. 
 
   So the short answer is yes, but you have to do it yourself.  The default kernel is to be kept simple.
 
   Now, the EXTENSIONS, on the other hand, are optional, and can include the kitchen sink.  Any EXTENSIONS can be added to the package as we have done organized in sub-directories of the distributions archive. Examples are support for: Ethernet, HTTP server, NTP, Telnet server, RTC, ANSI terminal, ROM-less operation, and so on.
 
-  We plan to include user extensions, such as caskaz's LCD support, Nick Lordi's FPU and FHT in the release archive (after we think we have the kernel stable).  We would love to include your contributions too.
+  We plan to include user extensions, such as caskaz's and Nick Lordi's works, as possible, in the release archive download (after we think we have the kernel stable).  We would love to include your contributions too.
 
   But so far, the only non-prop extensions added to the kernel were the SD support from caskaz and the spinneret support, and these were as extensions to the development kernel.  
 
@@ -27,6 +27,8 @@ Newer Topics to be added to the top.
   Why would one want to do this?  We think a useful application might need more than seven or eight things happening at once, or might need more than 32 pins.  We like the prop, and we have all this work in place, so we add more props.
 
   For example, one cog can control 16 servos (eight on each counter), and two cogs can control 32 servos; but this configuration would not allow inputs, and leaves 6 cogs un-occupied.   With Multi-prop, once could have two cogs (or more) running 16 servos each , a cog (or multiple cogs) monitoring sensor inputs, a cog reading and writing to the SD card (or multiple cogs managing SD cards) , a cog talking to the FPU coprocessor (or mutiple cogs managing external coprocessors), a cog reading the GPS, a cog talking over ethernet, etc, etc; and cog acting as master sending request to the other cogs to get the datastreams processed.  
+  
+  The goal is simply to do experiments with multi-prop.  It may or may not work, we may or may not find it useful.  But its fun and keeps us busy. 
 
 = Question 9 The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
 
@@ -44,7 +46,7 @@ Newer Topics to be added to the top.
 
   V5.0 Shows what the prop can do, and leaves enough resource so we can do something.   It provides ways to work within the props constraints to overcome common "limitation" complaints.  The degree of success has not been determined, but it looks kind of interesting.  While previous versions 'seemed' fast, V5.0 'blows them away'.  
 
-= Question 7 What are these weird strings that are not hex values but should be?  =
+= Question 7 What are these weird strings that are not hex values but seem like they should be?  =
 
   Oh, you noticed that.  OK, this is a bit neat, but doesn't affect anything.  Sort of.  FORTH supports any number base up to machine size.   Sal has decided the forth machine supports up to BASE 64.  This way, any value for a 'long' can be encoded in 6 characters (instead of 8 characters in HEX or 10 or more character in decimal etc).  Using BASE 64 to read in values for longs reduces the interpreter activity by 25% over hex (6 characters instead of 8 for each transfer).   This happens quite frequently with the paged assembler, so the savings is significant.  Also, this is internal to forth, at this point; so while it LOOKS weird, it should not affect anything we the user/developer has to deal with.  If this proves to be incorrect, or in some way flawed, it can be corrected as appropriate. 
 
@@ -56,7 +58,7 @@ This is actually an old technique, and its use is well established.  (Google Bas
 
   == Boot Kernel ==
 
-  By default, the prop likes hexidecimal, so the BOOT KERNEL defaults to hex.  
+  By default, the prop likes hexadecimal, so the BOOT KERNEL defaults to hex.  
 
   == Development Kernel ==
 
@@ -64,8 +66,6 @@ This is actually an old technique, and its use is well established.  (Google Bas
 
 But we frequently want to input number in HEX. SOOOOOOOOOO support has been added so we can input HEX values even when the number base is not hex.    That is any string prefixed with an 'x' and containing 0-9 and/or 'A-F' is interpreted as a HEX value.  The string x1000 is interpreted as value 4096 decimal. The string  xAF00 is interpreted as 
 44,800 decimal.  Nifty!
-
- 
 
 =  Question 5 Can multiple "paged assembler" (see question 3) words be brought in at the same time? =
 
@@ -81,13 +81,13 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
 = Question 3 How do the assembler optimizations work? =
 
-  Previously, we had to do messing things to get the assembler optimizations into the dictionary.  This has been simplified.  (We have to ask caskaz, Brian, and Nick for details, I did not do any assembler work on the early releases).
+  Previously, we had to do messy things to get the assembler optimizations into the dictionary.  This has been simplified.  (We have to ask caskaz, Brian, and Nick for details, I did not do any assembler work on the early releases).
 
   Now the assembler words are handled in two ways: pages words and persistent words.
 
   == Persistent Words ==
 
-  What we are calling  "Persistent Words" are assembler definitions that are called once and intended to be left running.  An exampple is the SERIAL driver word.  This word handles communication between the serial connection (to the PC terminal) and the running Forth interpreter.  This word is optimized in assembler, called as boot time, and left running during development and is generally left running. 
+  What we are calling  "Persistent Words" are assembler definitions that are called once and intended to be left running.  An example is the SERIAL driver word.  This word handles communication between the serial connection (to the PC terminal) and the running Forth interpreter.  This word is optimized in assembler, called as boot time, and left running during development and is left running in the final application. 
 
   == Paged Words ==
 
@@ -95,7 +95,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
  === How big are pages words? ===
   
-  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (40 decimal) bytes.   MOST paged words so far are "small words" like + @ ! u* etc.  These only take a couple bytes each.
+  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (40 decimal) bytes.   MOST paged words so far are "small words" like + @ ! u* etc.  These only take a few bytes each.
 
   If any user encounters a case where the paged assembler buffer needs to be increased, post an issue and the size will be adjusted as needed. 
 
