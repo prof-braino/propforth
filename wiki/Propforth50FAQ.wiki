@@ -7,6 +7,15 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.
 
+=  Question 6 What's the deal with number base?  =
+
+  
+
+
+=  Question 5 Can multiple "paged assembler" (see question 3) words be brought in at the same time? =
+
+   Yes, but you have to write them that way.   The current example is the SD support in v5.0.   All the assembler support words are in a single "unit" and the actual function called drives a switch statement.   So if you want to read, or write, or open a file, or close a file etc, the switch statement jumps around reading and writing until the SD access is finished.  When the SD access is complete, the paging buffer is free until the SD is called again.  If SD is still resident, it get called, or gets paged in again. 
+
 =  Question 4 What is "Scripting Optimization"? =
 
   What we are calling "Scripting" involves running forth code from the SD card.  A section of the SD card can contain a "script" of forth words.  When called, the script is interpreted, and executed as if it were a forth definition.  The script does whatever it does, and leaves whatever results where-ever it needs to, and its done. No additional dictionary space was consumed for this script.
@@ -31,7 +40,7 @@ Newer Topics to be added to the top.
 
  === How big are pages words? ===
   
-  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word.   MOST paged words so far are "small words" like + @ ! u* etc.  These only take a couple bytes each.
+  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (40 decimal) bytes.   MOST paged words so far are "small words" like + @ ! u* etc.  These only take a couple bytes each.
 
   If any user encounters a case where the paged assembler buffer needs to be increased, post an issue and the size will be adjusted as needed. 
 
