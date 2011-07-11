@@ -15,7 +15,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
   In practical terms, C is a language and Forth is a package, and the techniques for each don't map well to the other.  That is, if a developer knows enough about one to interface it to the other, the developer tends to simply use one or the other, but not mix the two. 
 
-  Interactively writing drivers in Forth to be used by C might be fun, but will probably not be the preferred development path. 
+  Interactively writing drivers in Forth to be used by C might be fun, but will probably not be the preferred development path. :)
 
 = Question 14 How to take advantage of the new kernel? =
 
