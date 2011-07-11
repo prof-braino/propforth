@@ -9,7 +9,7 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
 = Question 13 What's an example of the v5.0 optimization? =
 
-  The EEPROM support words were optimized for v5.0.  Previously, loading (a specific set of files) from the EEPROM took 18 seconds.  Optimizing the EEPROM words themselves resulted in the load time being reduced to 15 seconds (in v4.x).   After the kernel optimizations, the words that interface to the EEPROM words were also optimized; now the load time has been reduced to 5 seconds. See Question 2. 
+  The EEPROM support words were optimized for v5.0.  Previously, loading (a specific set of files) from the EEPROM took 18 seconds.  Optimizing the EEPROM words themselves resulted in the load time being reduced to 13 seconds (in v4.x).   After the kernel optimizations, the words that interface to the EEPROM words were also optimized; now the load time has been reduced to 5 seconds. See Question 2. 
 
 = Question 12 Why redefine ONBOOT so many times? =
 
