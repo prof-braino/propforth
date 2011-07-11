@@ -7,10 +7,43 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.
 
+= The Multi-prop stuff in 4.5 did not go beyond 1 slave, is this fixed? =
+
+  The Multi-prop support (see test-4.3.2) did work, but automatic support for a slave was only implemented for the first level slave.  Slaves 2 through Slave N work, but you have to start them manually.  To this we say BLAH.  We did not include the manual steps for additional slaves in the regression tests; Sal was too busy and I could not make the time.   
+
+  In v5.0, the configuration for the slaves is handled in boot scripts on the SD.  The slave boot scripts will be in a file named something like .sfboot.f on the SD card. 
+
+
+= Question 8 Version 4.x was fine, why are you messing with the kernel?  =
+
+  V3.6 was "good enough to use" as a forth kernel, but did not use enough things that are special about the prop. 
+ 
+  V4.5 was "good enough to demo stuff" so we could get an idea of what could be done on the prop, but could not really be used in a final application. Too big memory foot print, not optimized; the optimizations were hindered by other bottlenecks. 
+
+  V5.0 Shows what the prop can do, and leaves enough resource so we can do something.   It provides ways to work within the props constraints to overcome common "limitation" complaints.  The degree of success has not been determined, but it looks kind of interesting.  While previous versions 'seemed' fast, V5.0 'blows them away'.  
+
+= Question 7 What are these weird strings that are not hex values but should be?  =
+
+  Oh, you noticed that.  OK, this is a bit neat, but doesn't affect anything.  Sort of.  FORTH supports any number base up to machine size.   Sal has decided the forth machine supports up to BASE 64.  This way, any value for a 'long' can be encoded in 6 characters (instead of 8 characters in HEX or 10 or more character in decimal etc).  Using BASE 64 to read in values for longs reduces the interpreter activity by 25% over hex (6 characters instead of 8 for each transfer).   This happens quite frequently with the paged assembler, so the savings is significant.  Also, this is internal to forth, at this point; so while it LOOKS weird, it should not affect anything we the user/developer has to deal with.  If this proves to be incorrect, or in some way flawed, it can be corrected as appropriate. 
+
+This is actually an old technique, and its use is well established.  (Google Base64 and find wiki entry).  I still think it kind of a neat trick.
+
 =  Question 6 What's the deal with number base?  =
 
-  
+  Each Cog has its own number base setting.  Since one cog is running the interpreter and another is running the interface, its easy to get confused and have the wrong cog set to decimal or hex.  This is how Sal sorted it out.
 
+  == Boot Kernel ==
+
+  By default, the prop likes hexidecimal, so the BOOT KERNEL defaults to hex.  
+
+  == Development Kernel ==
+
+  By default, humans work in decimal, so in the development kernel in the  onreset word, the number base  is set to decimal.   
+
+But we frequently want to input number in HEX. SOOOOOOOOOO support has been added so we can input HEX values even when the number base is not hex.    That is any string prefixed with an 'x' and containing 0-9 and/or 'A-F' is interpreted as a HEX value.  The string x1000 is interpreted as value 4096 decimal. The string  xAF00 is interpreted as 
+44,800 decimal.  Nifty!
+
+ 
 
 =  Question 5 Can multiple "paged assembler" (see question 3) words be brought in at the same time? =
 
