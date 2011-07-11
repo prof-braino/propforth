@@ -125,9 +125,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
   Traditional requirements are too expensive for our resources, and are typically too expensive for professional outfits (outside of military and aviation etc where there is contractual/legal obligation).  We are examining taking "requirements based test" one step further to "design based tests".   That is, each design element will be "completed" by a test that verifies the system operates to that design.  (An interesting result of this is that the actual coding happens last, and takes only a small part of the development cycle, and it is difficult to introduce bugs into the result). In this manner, the _regression suite_ performs the roles of design document, requirements, test, requirements  to test traceability, user manual, and tutorial.  The result is descriptively simple, yet seems to be effective. 
 
-= Details =
+= History =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * Page created 20110710
+  * Last updated 20110711
