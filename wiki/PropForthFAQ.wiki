@@ -1,7 +1,17 @@
 #summary Frequently Asked Questions
-#labels v4.0
+#labels v4.0,v4.5,v5.0
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
+
+= v5.0 (Planned September 2011) =
+
+When are going to start a separate FAQ for v5.0?
+
+The v5.0 FAQ is at: 
+
+http://code.google.com/p/propforth/wiki/Propforth50FAQ
+
+
 
 = v 4.5 =
 
