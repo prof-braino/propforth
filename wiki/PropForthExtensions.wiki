@@ -150,7 +150,7 @@ Full details will be supplied in version 5.0 when released.
 
 The servo extensions use to cog internal counters (ctra, ctrb) to generate servo control pulses.  Recall that hobby servos use a control pulse every 20 milliseconds of 0.5 to 2.5 milli seconds, with 1.5 ms pulse representing "center".  Using 2.5 ms pulse as maximum, a single ctr can control 8 servos.  One cog can control 18 servo (8 each on counters A and B), so two cogs could control 32 servos.  However, 32 servos would consume all 32 IO pins, so additional hardware would be needed.  Since this is a simple driver, support is left as 32 servos on 2 cogs, and the user can modify this as the application hardware requires. 
 
-Cheap hobby servos have been found to operate less than 180 degrees of swing, and generally cannot go all the way to 1.5 ms and 2.5 ms positions.  By default, the limits have been set back a bit.  At least one user "hit the stops" during the calibration routine (one time too many with too much voltage) and broke through the stops. (Thus modifying the servo into a continuous rotation servo by accident).
+Cheap hobby servos have been found to operate less than 180 degrees of swing, and generally cannot go all the way to 0.5 ms and 2.5 ms positions.  By default, the limits have been set back a bit.  At least one user "hit the stops" during the calibration routine (one time too many with too much voltage) and broke through the stops. (Thus modifying the servo into a continuous rotation servo by accident).
 
 Caution: Users are encourages to change the limits and defaults when calibrating servos, be aware you can command it to do thing is might not like.  You have been warned. (Queue mad scientist laugh: Muhoohahahaha!)
 
