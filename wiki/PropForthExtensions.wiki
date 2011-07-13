@@ -138,6 +138,26 @@ There are three main LAC configurations:
  * Sample every 4 clocks minimum to cog memory using 1 cog 
  * Sample every 40+ clocks to HUB memory using 1 cog 
 
+Sampling every clock at Prop frequency is full speed. Samples are saved to COG memory for speed (2k sample data absolute max).  4 cogs are used to capture the pins states every clock cycle
+
+Sampling every 4 clocks (minimum) using 1 cog to cog memory uses the least cog resources.  Maximum 20 megahertz sample rate;  small sample size. Sample data is limited to available cog memory (2k absolute max).
+
+Sampling every 40+ clocks to HUB memory using 1 cog allows the maximum sample data size, limited to available hub memory. Maximum sample rate is 2 megahertz. 
+
+Sampling to cog memory is faster, but only allows 2K max of data sampling.  Using 4 cogs, samples can be taken at clock speed, but the cog memory fills up quickly.
+
+Sampling to Hub memory is slower,  maximum 2 million sample per second;  but allows a maximum of 32K of sample data.
+
+Sampling may trigger on rising edge, falling edge, or middle of clock.
+
+LAC may be configured for sampling to trigger based on a pin state.
+
+LAC may be configured for sampling to trigger based on a complex set of pin states. 
+
+
+----
+
+
 Sampling to cog memory is faster, but only allows 2K max of data sampling.  Using 4 cogs, samples can be taken at clock speed, but the cog memory fills up quickly.
 
 Sampling to Hub memory is slower,  maximum 2 million sample per second;  but allows a maximum of 32K of sample data.
