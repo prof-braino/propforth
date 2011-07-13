@@ -5,7 +5,7 @@
 
 These are the !PropForth Extensions.  A section is to be added explaining  each extension listed.  Typically a given application will not need all extensions.  The user/developer chooses the extensions suitable for the application, and adds only those.  This saves on memory footprint, and program complexity.  This is roughly analogous to other environments where only the necessary functions are selected at compile time to be compiled into the application; the difference is that in FORTH the user plays a greater role in selecting the functions and at what point a given extension is added. 
 
- * [Kernel_Extensions]
+ * [PropForthExtensions#Kernel_Extensions Kernel Extensions]
  * EEPROM Extensions
     * EEPROM READ-WRITE File system
     * EERPOM READ-Only File System
