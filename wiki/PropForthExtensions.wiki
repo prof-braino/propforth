@@ -266,22 +266,72 @@ There has not been a complete analysis of available cog and hub memory as the ke
 * These extensions exist but have not been brought forward to the current release* 
  
 = VGA Extensions =
+
+  The VGA function require special treatment.  Due to special hardware (the VGA resistor network) and timing (and front porch lines, etc) the VGA support is handled differently than other extensions. 
+
+  The High Resolution VGA as found in the v3.6 Jupiter ACE High Resolution is added directly to the propforth.spin file.  This requires special porting to v5.0
+
+  The Low Resolution VGA (JupiterACE.f extension) also requires special porting but is not added to the propforth.spin file, it is handled as a forth code extension.  This is targeted for v5.0
+
 = aarez=
 
-These extensions exist but have not been added to the download archive (note please add more hours to the day)
+  Add other functions to be brought forward here. 
 
-= !Multi-Line Character LCD Panel Extension = (caskaz)
-= Floating Point Coprocessor (FPU) Extension] = (nglordi)
+----
+
+* These extensions exist but have not been added to the download archive (note please add more hours to the day) *
+
+= !Multi-Line Character LCD Panel Extension = 
+
+(caskaz)
+
+Caskaz has produced support for LCD modules based on the Hitachi xxxx.
+
+This requires additional hardware that I have not built yet, so I have not tested it or added it to the package yet.
+
+= Floating Point Coprocessor (FPU) Extension] = 
+
+(nglordi)
+
+Nick Lordi has produced support for the xxx Floating point hardware coprocessor.
+
+This requires additional hardware that I have not built yet, so I have not tested it or added it to the package yet.
+
 = Analog Computer Simulator = (nglordi)
 
-The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver.  User are encouraged to contribute to these when developed to their projects.  Contributed code will be added to the download archive. 
+Nick Lordi has produced support for an analog computer simulator.  This is a little beyond me at this time so I have not had a a chance to use it yet, and have not added it to the package yet. 
+
+----
+
+The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver (should be, we'll see).  Users are encouraged to contribute to these when developed to their projects.  Contributed code will be added to the download archive. 
 
 = Electronic Speed Controller (ESC) Extension =
+
+I have a hobby RC car ESC that I plan to use for RoboMagelan.
+
 = Stepper Motor Extension =
+
+Stepper motor is planned for a forth driver for CNC (mill, 3D printer, etc)
+
 = !RCTime Extension =
+
+Planned for a sensor glove project
+
 = GPS Extension =
+
+Forth support for GPS for the RoboMagelan
+GPS device is:
+
 = Accelerometer Extension =
+
+Forth support for Accelerometer
+Accelerometer device is:
+
 = Gas Sensor Extension =
+
+Forth support for Gas Sensor
+Gas Sensor device is:
+
 = Gyro Extension= 
 = Pressure Sensor Extension =
 = PING)) Extension =
