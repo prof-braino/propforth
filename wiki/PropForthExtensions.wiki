@@ -6,10 +6,10 @@
 These are the !PropForth Extensions.  A section is to be added explaining  each extension listed.  Typically a given application will not need all extensions.  The user/developer chooses the extensions suitable for the application, and adds only those.  This saves on memory footprint, and program complexity.  This is roughly analogous to other environments where only the necessary functions are selected at compile time to be compiled into the application; the difference is that in FORTH the user plays a greater role in selecting the functions and at what point a given extension is added. 
 
  * [PropForthExtensions#Kernel_Extensions Kernel Extensions]
- * [PropForthExtensions#EEPROM Extensions]
-    * [PropForthExtensions#EEPROM READ-WRITE File system]
-    * [PropForthExtensions#EERPOM READ-Only File System]
-    * [PropForthExtensions#Temporary Write Capability for Read Only File System]
+ * [PropForthExtensions#EEPROM_Extensions EEPROM Extensions]
+    * [PropForthExtensions#EEPROM_READ-WRITE_File_system EEPROM READ-WRITE File system]
+    * [PropForthExtensions#EERPOM_READ-Only_File_System EERPOM READ-Only File System]
+    * [PropForthExtensions#Temporary_Write_Capability_for_Read_Only_File_System Temporary Write Capability for Read Only File System]
  * [PropForthExtensions#Software Logic Analyzer Extension]
  * [PropForthExtensions#Prop Assembler Extension]
  * [PropForthExtensions#servo extension]
