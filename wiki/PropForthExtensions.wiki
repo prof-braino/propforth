@@ -1,5 +1,5 @@
 #summary Extensions to the PropForth Kernel
-#labels v4.5,v5.0
+#labels v4.5,v5.0,Featured
 
 = Introduction =
 
