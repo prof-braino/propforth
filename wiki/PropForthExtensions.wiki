@@ -15,6 +15,10 @@ These are the PropForth Extensions.  A section is to be added explaining  each e
  * servo extension
  * Auxiliary Serial Terminal Extension
  * buffered I/O extension
+ * case statement extensions
+ * Fast-Hartley Transform (FHT) extension
+ * OnBoot Extension (Change Boot-Time behavior)
+ * Optimizer Extension
  * Peep-hole Assembler Extension
  * Disassembler Extension
  * Secure Digital Card (SD) Extensions
@@ -24,10 +28,46 @@ These are the PropForth Extensions.  A section is to be added explaining  each e
    * NTP Client Extensions
    * HTTP Server Extension 
  * Real Time Clock (RTC) Extensions
-
  * ROM-Less Extension
  * MultiChannel High Speed Synchronous Serial Channel Extension
  * MultiProp Extension
+
+These extensions exist but have not been brought forward to the current release
+ 
+  * VGA Extensions
+  *  aarez
+
+These extensions exist but have not been added to the download archive (note please add more hours to the day)
+
+ * Multi-Line Character LCD Panel Extension (caskaz)
+ * Floating Point Coprocessor (FPU) Extension (nglordi)
+ * Analog Computer Simulator (nglordi)
+
+The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver.  
+
+  * Electronic Speed Controller (ESC) Extension
+  * Stepper Motor Extension
+  * RCTime Extension
+  * GPS Extension
+  * Accelerometer Extension
+  * Gas Sensor Extension
+  * Gyro Extension
+  * Pressure Sensor Extension
+  * PING)) Extension
+  * Xband Motion Extension
+  * Load Sensor Extension
+  * A/D Extensions
+  * D/A extension
+
+= Kernel Extensions =
+
+  == Boot Kernel ==
+
+  The Boot Kernel is the bare Forth Kernel.  Sometimes the bare kernel is defined as the smallest unit of Forth that can read an write memory.  In PropForth, the bare kernel is defined as the smallest unit that is able to re-generate the Propforth.spin file. 
+
+ The Boot Kernel is generally used AFTER development is complete (all the applications code works).  This is typically in stand alone turnkey applications that do NOT need the interactive forth command prompt included in the final aaplication. 
+  
+  == Development Kernel ==
 
 
 Add your content here.
