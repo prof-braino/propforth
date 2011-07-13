@@ -186,11 +186,39 @@ Consider using FHT where FFT is asked for in non-micro controller applications.
 ---- 
 
 = !OnBoot Extension (Change Boot-Time behavior) =
+
+Change the boot time behavior of the `onboot` function. 
+
+`onbold` is the "old definition of onboot" (Sal likes to to make short, easy to type but hard to remember labels; versus long names which are harder to type but easy to tell what it does). 
+
+This function causes an automatic boot script to run, and allow the user to hit the escape key to stop the boot script.  Very handy in developmetn with complex setup that sometimes need to be tweaked.
+
 = Optimizer Extension =
+
+Functions used in assembler optimization.  Needs to be re-examined in v5.0, possibly a new tutorial.
+
 = Peep-hole Assembler Extension =
+
+This is the name of the optimization method to be used in v5.0. It many be the same as Optimzer.f
+
 = Disassembler Extension =
+
+
+
 = Secure Digital Card (SD) Extensions =
+
+The SD extensions are the focus of the v5.0 development model.  The Secure Digital card provides a large chunk of solid state memory.  The memory is used as mass storage, like a hard disk.  It also is used as expanded memory, like a swap file.  
+
+To maximize speed, a traditional forth "blocks" file system is implemented for SD.  One SD card is accessed at a time.  One partition is accessed at a time.  One file is open at a time.  The last file accesses is the current file until explicitly set otherwise.  It is the user's responsibility to keep track of who is looking at what file.
+
+To reduce overhead of dictionary footprint and impact to execution speed, FAT support is not included by default.  The SD card is treated as "internal to forth".  An interaction with the SD card is done through the forth interface.  Full FAT support for SD may be added later (when implemented by a user) but is not in the kernel development path at this time. 
+
+At present, SPI is the transfer mode implemented. Users may opt to implement there own 1 bit or four bit transfers.  The current scheme is very fast.  The transfer rate is (....).  However, the transfer is serial and large transfer can take significant time.  It is the user's responsibility to structure the application to best use the memory and transfer abilities of the system, and adjust as needed.
+
 =  Spinneret Extensions =
+
+The Parallax Propeller Spinneret is the (planned) basis of the new regression test bed.  
+
   ==  IP Extension ==
   == Telnet Server Extension ==
   == NTP Client Extensions ==
