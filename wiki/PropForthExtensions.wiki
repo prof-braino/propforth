@@ -133,9 +133,11 @@ The sample rate is controlled by setting the LAC props sample frequency.
 
 There are three main LAC configurations:
 
- * Sample at every 1 clock (Prop frequency, full speed) to COG memory 
- * Sample every 4 clocks maximum to ...
- * sample every ... clocks to HUB memory 
+ * Sample at every 1 clock (Prop frequency, full speed) to COG memory using 2 cogs
+ * Sample every 4 clocks minimum to cog memory using 1 cog
+ * sample every 12 clocks to HUB memory using 1 cog
+
+(this isn't right, check source comments)
 
 Sampling to cog memory is faster, but only allows 2K max of data sampling
 
