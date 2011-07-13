@@ -323,7 +323,7 @@ I have a hobby RC car ESC that I plan to use for Robo Magelan.
 
 Stepper motor is planned for a forth driver for CNC (mill, 3D printer, etc)
 
-= !RCTime Extension =
+= RCTime Extension =
 
 Planned for a sensor glove project
 
