@@ -158,11 +158,19 @@ Caution: Users are encourages to change the limits and defaults when calibrating
 
 Any I/O pin can be configured as an asynchronous serial port.  See the snet.f extension.  The user is responsible for level shifting (MAX232 etc) if needed.  A 3.3 volt micro I/O pin can be connected to another 3.3 volt micro I/O pin via a 220 ohm resistor as shown in the examples.  The 220 ohm resistor is not needed in most cases but is included in case a software error causes one micro to drive it's end high when the other micro is driving it's end low. 
 
+= buffered I/O extension =
+
 ----
 
 
-= buffered I/O extension =
 = case statement extensions =
+
+The case extension demo compares the use of case 
+{{{ case ... of ... endof }}}
+
+versus 
+
+{{{ over ... if ... else  }}}
 
 ---- 
 
