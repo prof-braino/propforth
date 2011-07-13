@@ -6,31 +6,31 @@
 These are the !PropForth Extensions.  A section is to be added explaining  each extension listed.  Typically a given application will not need all extensions.  The user/developer chooses the extensions suitable for the application, and adds only those.  This saves on memory footprint, and program complexity.  This is roughly analogous to other environments where only the necessary functions are selected at compile time to be compiled into the application; the difference is that in FORTH the user plays a greater role in selecting the functions and at what point a given extension is added. 
 
  * [PropForthExtensions#Kernel_Extensions Kernel Extensions]
- * EEPROM Extensions
-    * EEPROM READ-WRITE File system
-    * EERPOM READ-Only File System
-    * Temporary Write Capability for Read Only File System
- * Software Logic Analyzer Extension
- * Prop Assembler Extension
- * servo extension
- * Auxiliary Serial Terminal Extension
- * buffered I/O extension
- * case statement extensions
- * Fast-Hartley Transform (FHT) extension
- * OnBoot Extension (Change Boot-Time behavior)
- * Optimizer Extension
- * Peep-hole Assembler Extension
- * Disassembler Extension
- * Secure Digital Card (SD) Extensions
- * Spinneret Extensions
-   * IP Extension
-   * Telnet Server Extension
-   * NTP Client Extensions
-   * HTTP Server Extension 
- * Real Time Clock (RTC) Extensions
- * ROM-Less Extension
- * MultiChannel High Speed Synchronous Serial Channel Extension
- * MultiProp Extension
+ * [PropForthExtensions#EEPROM Extensions]
+    * [PropForthExtensions#EEPROM READ-WRITE File system]
+    * [PropForthExtensions#EERPOM READ-Only File System]
+    * [PropForthExtensions#Temporary Write Capability for Read Only File System]
+ * [PropForthExtensions#Software Logic Analyzer Extension]
+ * [PropForthExtensions#Prop Assembler Extension]
+ * [PropForthExtensions#servo extension]
+ * [PropForthExtensions#Auxiliary Serial Terminal Extension]
+ * [PropForthExtensions#buffered I/O extension]
+ * [PropForthExtensions#case statement extensions]
+ * [PropForthExtensions#Fast-Hartley Transform (FHT) extension]
+ * [PropForthExtensions#OnBoot Extension (Change Boot-Time behavior)]
+ * [PropForthExtensions#Optimizer Extension]
+ * [PropForthExtensions#Peep-hole Assembler Extension]
+ * [PropForthExtensions#Disassembler Extension]
+ * [PropForthExtensions#Secure Digital Card (SD) Extensions]
+ * [PropForthExtensions#Spinneret Extensions]
+   * [PropForthExtensions#IP Extension]
+   * [PropForthExtensions#Telnet Server Extension]
+   * [PropForthExtensions#NTP Client Extensions]
+   * [PropForthExtensions#HTTP Server Extension ]
+ * [PropForthExtensions#Real Time Clock (RTC) Extensions]
+ * [PropForthExtensions#ROM-Less Extension]
+ * [PropForthExtensions#MultiChannel High Speed Synchronous Serial Channel Extension]
+ * [PropForthExtensions#MultiProp Extension]
 
 These extensions exist but have not been brought forward to the current release
  
