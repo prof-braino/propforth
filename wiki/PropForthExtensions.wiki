@@ -61,6 +61,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
  * [PropForthExtensions#D/A_extension D/A extension]
 
 ----
+----
 
 * The documentation is to include a section for each heading above.  New Sections will be added as they are completed and/or available. *
 
@@ -203,7 +204,6 @@ Consider using FHT where FFT is asked for in non-micro controller applications.
 
 ----
 
-
 = !OnBoot Extension (Change Boot-Time behavior) =
 
 Change the boot time behavior of the `onboot` function. 
@@ -278,7 +278,6 @@ There has not been a complete analysis of available cog and hub memory as the ke
 
 ----
 
-
 * These extensions exist but have not been brought forward to the current release* 
  
 = VGA Extensions =
@@ -315,7 +314,7 @@ Nick Lordi has produced support for an analog computer simulator.  This is a lit
 
 ----
 
-The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver (should be, we'll see).  Users are encouraged to contribute to these when developed to their projects.  Contributed code will be added to the download archive. 
+The extensions are on the list but have not been coded.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver (should be, we'll see).  Users are encouraged to contribute to these when developed to their projects.  Contributed code will be added to the download archive. 
 
 = Electronic Speed Controller (ESC) Extension =
 
