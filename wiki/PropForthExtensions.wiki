@@ -290,13 +290,9 @@ There has not been a complete analysis of available cog and hub memory as the ke
 
   The Low Resolution VGA (!JupiterACE.f extension) also requires special porting but is not added to the propforth.spin file, it is handled as a forth code extension.  This is targeted for v5.0
 
-= aarez=
-
-  Add other functions to be brought forward here. 
-
 ----
 
-* These extensions exist but have not been added to the download archive (note please add more hours to the day) *
+* These extensions exist but have not been added to the download archive *
 
 = !Multi-Line Character LCD Panel Extension = 
 
