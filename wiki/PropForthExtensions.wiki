@@ -10,54 +10,54 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
     * [PropForthExtensions#EEPROM_READ-WRITE_File_system EEPROM READ-WRITE File system]
     * [PropForthExtensions#EERPOM_READ-Only_File_System EERPOM READ-Only File System]
     * [PropForthExtensions#Temporary_Write_Capability_for_Read_Only_File_System Temporary Write Capability for Read Only File System]
- * [PropForthExtensions#Software Logic Analyzer Extension]
- * [PropForthExtensions#Prop Assembler Extension]
- * [PropForthExtensions#servo extension]
- * [PropForthExtensions#Auxiliary Serial Terminal Extension]
- * [PropForthExtensions#buffered I/O extension]
- * [PropForthExtensions#case statement extensions]
- * [PropForthExtensions#Fast-Hartley Transform (FHT) extension]
- * [PropForthExtensions#OnBoot Extension (Change Boot-Time behavior)]
- * [PropForthExtensions#Optimizer Extension]
- * [PropForthExtensions#Peep-hole Assembler Extension]
- * [PropForthExtensions#Disassembler Extension]
- * [PropForthExtensions#Secure Digital Card (SD) Extensions]
- * [PropForthExtensions#Spinneret Extensions]
-   * [PropForthExtensions#IP Extension]
-   * [PropForthExtensions#Telnet Server Extension]
-   * [PropForthExtensions#NTP Client Extensions]
-   * [PropForthExtensions#HTTP Server Extension ]
- * [PropForthExtensions#Real Time Clock (RTC) Extensions]
- * [PropForthExtensions#ROM-Less Extension]
- * [PropForthExtensions#MultiChannel High Speed Synchronous Serial Channel Extension]
- * [PropForthExtensions#MultiProp Extension]
+ * [PropForthExtensions#Software_Logic_Analyzer_Extension Software Logic Analyzer Extension]
+ * [PropForthExtensions#Prop Assembler ExtensionProp Assembler Extension]
+ * [PropForthExtensions#servo extensionservo extension]
+ * [PropForthExtensions#Auxiliary Serial Terminal ExtensionAuxiliary Serial Terminal Extension]
+ * [PropForthExtensions#buffered I/O extensionbuffered I/O extension]
+ * [PropForthExtensions#case statement extensionscase statement extensions]
+ * [PropForthExtensions#Fast-Hartley Transform (FHT) extensionFast-Hartley Transform (FHT) extension]
+ * [PropForthExtensions#OnBoot Extension (Change Boot-Time behavior)OnBoot Extension (Change Boot-Time behavior)]
+ * [PropForthExtensions#Optimizer ExtensionOptimizer Extension]
+ * [PropForthExtensions#Peep-hole Assembler ExtensionPeep-hole Assembler Extension]
+ * [PropForthExtensions#Disassembler ExtensionDisassembler Extension]
+ * [PropForthExtensions#Secure Digital Card (SD) ExtensionsSecure Digital Card (SD) Extensions]
+ * [PropForthExtensions#Spinneret ExtensionsSpinneret Extensions]
+   * [PropForthExtensions#IP ExtensionIP Extension]
+   * [PropForthExtensions#Telnet Server ExtensionTelnet Server Extension]
+   * [PropForthExtensions#NTP Client ExtensionsNTP Client Extensions]
+   * [PropForthExtensions#HTTP Server ExtensionHTTP Server Extension]
+ * [PropForthExtensions#Real Time Clock (RTC) ExtensionsReal Time Clock (RTC) Extensions]
+ * [PropForthExtensions#ROM-Less ExtensionROM-Less Extension]
+ * [PropForthExtensions#MultiChannel High Speed Synchronous Serial Channel ExtensionMultiChannel High Speed Synchronous Serial Channel Extension]
+ * [PropForthExtensions#MultiProp ExtensionMultiProp Extension]
 
 These extensions exist but have not been brought forward to the current release
  
- * [PropForthExtensions#VGA Extensions]
- * [PropForthExtensions#aarez]
+ * [PropForthExtensions#VGA ExtensionsVGA Extensions]
+ * [PropForthExtensions#aarez aarez]
 
 These extensions exist but have not been added to the download archive (note please add more hours to the day)
 
- * [PropForthExtensions#Multi-Line Character LCD Panel Extension] (caskaz)
- * [PropForthExtensions#Floating Point Coprocessor (FPU) Extension] (nglordi)
- * [PropForthExtensions#Analog Computer Simulator] (nglordi)
+ * [PropForthExtensions#Multi-Line Character LCD Panel ExtensionMulti-Line Character LCD Panel Extension] (caskaz)
+ * [PropForthExtensions#Floating Point Coprocessor (FPU) ExtensionFloating Point Coprocessor (FPU) Extension] (nglordi)
+ * [PropForthExtensions#Analog Computer SimulatorAnalog Computer Simulator] (nglordi)
 
 The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver.  
 
- * [PropForthExtensions#Electronic Speed Controller (ESC) Extension]
- * [PropForthExtensions#Stepper Motor Extension]
- * [PropForthExtensions#RCTime Extension]
- * [PropForthExtensions#GPS Extension]
- * [PropForthExtensions#Accelerometer Extension]
- * [PropForthExtensions#Gas Sensor Extension]
- * [PropForthExtensions#Gyro Extension]
- * [PropForthExtensions#Pressure Sensor Extension]
- * [PropForthExtensions#PING)) Extension]
- * [PropForthExtensions#Xband Motion Extension]
- * [PropForthExtensions#Load Sensor Extension]
- * [PropForthExtensions#A/D Extensions]
- * [PropForthExtensions#D/A extension]
+ * [PropForthExtensions#Electronic Speed Controller (ESC) ExtensionElectronic Speed Controller (ESC) Extension]
+ * [PropForthExtensions#Stepper Motor ExtensionStepper Motor Extension]
+ * [PropForthExtensions#RCTime ExtensionRCTime Extension]
+ * [PropForthExtensions#GPS ExtensionGPS Extension]
+ * [PropForthExtensions#Accelerometer ExtensionAccelerometer Extension]
+ * [PropForthExtensions#Gas Sensor ExtensionGas Sensor Extension]
+ * [PropForthExtensions#Gyro ExtensionGyro Extension]
+ * [PropForthExtensions#Pressure Sensor ExtensionPressure Sensor Extension]
+ * [PropForthExtensions#PING)) ExtensionPING)) Extension]
+ * [PropForthExtensions#Xband Motion ExtensionXband Motion Extension]
+ * [PropForthExtensions#Load Sensor ExtensionLoad Sensor Extension]
+ * [PropForthExtensions#A/D ExtensionsA/D Extensions]
+ * [PropForthExtensions#D/A extensionD/A extension]
 
 = Kernel Extensions =
 
