@@ -64,6 +64,8 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
  * [PropForthExtensions#A/D_Extensions A/D Extensions]
  * [PropForthExtensions#D/A_extension D/A extension]
 
+====
+
 * The documentation is to include a section for each heading above.  New Sections will be added as they are completed and/or available. *
 
 = Kernel Extensions =
