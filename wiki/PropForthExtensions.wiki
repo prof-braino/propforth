@@ -45,7 +45,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
  * [PropForthExtensions#Floating_Point_Coprocessor_(FPU)_Extension Floating Point Coprocessor (FPU) Extension] (nglordi)
  * [PropForthExtensions#Analog_Computer_Simulator Analog Computer Simulator] (nglordi)
 
-* The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver. *
+* The extensions are on the list but have not been coded.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver. *
 
  * [PropForthExtensions#Electronic_Speed_Controller_(ESC)_Extension Electronic Speed Controller (ESC) Extension]
  * [PropForthExtensions#Stepper_Motor_Extension Stepper Motor Extension]
