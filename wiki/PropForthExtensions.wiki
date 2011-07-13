@@ -65,6 +65,8 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 
 * The documentation is to include a section for each heading above.  New Sections will be added as they are completed and/or available. *
 
+For each section, add archive directory, file name, regression test ID.
+
 = Kernel Extensions =
 
   == Boot Kernel ==
