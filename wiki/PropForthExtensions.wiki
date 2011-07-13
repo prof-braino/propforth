@@ -217,10 +217,15 @@ At present, SPI is the transfer mode implemented. Users may opt to implement the
 
 =  Spinneret Extensions =
 
-The Parallax Propeller Spinneret is the (planned) basis of the new regression test bed.  
+The Parallax Propeller Spinneret is the (planned) basis of the new regression test bed.  The spineret allow up to four concurrent Telnet sessions each running a forth interpreter, in addition to the serial terminal interface.  This means the Spineret can allow a deveopment window into a running system _withoput affectiong the running system_. This is kind of a cool thing, which could potentially find some use.   
 
   ==  IP Extension ==
+
+  The IP extesnions allow the Spinneret to exist on a Ethernet network.  The user is responsible for configuring the network parameters as described in ip_config.f
+
   == Telnet Server Extension ==
+
+
   == NTP Client Extensions ==
   == HTTP Server Extension ==
   == Real Time Clock (RTC) Extensions ==
