@@ -165,16 +165,26 @@ Any I/O pin can be configured as an asynchronous serial port.  See the snet.f ex
 
 = case statement extensions =
 
-The case extension demo compares the use of case 
-{{{ case ... of ... endof }}}
+The case extension demo compares the use defining new immediate words for case: 
 
-versus 
+   {{{ case ... of ... endof }}}
 
-{{{ over ... if ... else  }}}
+versus using a construct that does the same thing with existing words:
+
+   {{{ over ... if ... else  }}}
+
+= Fast-Hartley Transform (FHT) extension =
+
+Nick Lordi shares his Fast Hartley Transform with us.   This is like the Fast Fourier Transform (FFT) difference being it does not use complex numbers (real+imaginary).  Also it uses scaled integer (very usual in forth) instead of float.  
+
+Fast Hartley Transform is a nice fit with forth on a micro controller.
+
+Consider using FHT where FFT is asked for in non-micro controller applications.
+
+(check with Nick if this is stated properly)
 
 ---- 
 
-= Fast-Hartley Transform (FHT) extension =
 = !OnBoot Extension (Change Boot-Time behavior) =
 = Optimizer Extension =
 = Peep-hole Assembler Extension =
