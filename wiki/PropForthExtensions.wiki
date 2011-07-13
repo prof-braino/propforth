@@ -107,20 +107,42 @@ Currently the Demo Board comes stock with a 32k EEPROM, which is entirely used t
 
     == EEPROM READ-WRITE File system ==
 
-The Read-Write File system allows the developer to put files into EEPROM memory and access them.      The EEPROM file system allow read, write, delete of text files and data.
+  The Read-Write File system allows the developer to put files into EEPROM memory and access them.      The EEPROM file system allow read, write, delete of text files and data.
 
     ==  EEPROM READ-Only File System ==
 
-After the EEPROM memory is loaded, often it is desirable to "protect" the files in EEPROM memory. Loading the lower 32k with a kernel and READ-ONLY EEPROM file system gives a degree of confidence that the EEPROM image will not be affected by inadvertent file operations.  HOWEVER, since the default kernel does have support to modify individual byte/pages of EEPROM, the possibility remains (which usually means you have a bug in your code). 
+  After the EEPROM memory is loaded, often it is desirable to "protect" the files in EEPROM memory. Loading the lower 32k with a kernel and READ-ONLY EEPROM file system gives a degree of confidence that the EEPROM image will not be affected by inadvertent file operations.  HOWEVER, since the default kernel does have support to modify individual byte/pages of EEPROM, the possibility remains (which usually means you have a bug in your code). 
 
     == Temporary Write Capability for Read Only File System ==
 
-During development, it is often necessary to modify the contents of the READ ONLY files system until it becomes stable.  In this case, usually the READ-Only files extensions are added to the kernel, and the kernel image is saved to prop lower 32k (saveforth).  The temporary write extensional are added to the dictionary, the files are written, and the prop is rebooted.  This allow changes to the READ Only file system contents in a more controlled manner.  
+  During development, it is often necessary to modify the contents of the READ ONLY files system until it becomes stable.  In this case, usually the READ-Only files extensions are added to the kernel, and the kernel image is saved to prop lower 32k (saveforth).  The temporary write extensional are added to the dictionary, the files are written, and the prop is rebooted.  This allow changes to the READ Only file system contents in a more controlled manner.  
+
+= Software Logic Analyzer Extension =
+
+The software Logic Analyzer (LAC) is is a tool for sampling and displaying the state of the Propeller chips 32 I/O pins.  
+
+The sample rate is controlled by setting the LAC props sample frequency. 
+
+There are three main LAC configurations:
+
+ * Sample at every 1 clock (Prop frequency, full speed) to COG memory 
+ * Sample every 4 clocks maximum to ...
+ * sample every ... clocks to HUB memory 
+
+Sampling to cog memory is faster, but only allows 2K max of data sampling
+
+Sampling to Hub memory is slower, but allows a maximum of 32K of samples.
+
+Sampling may trigger on rising edge, falling edge, or middle of transition.
+
+LAC may be configured for sampling to trigger based on a pin state.
+
+LAC may be configured for sampling to trigger based on a complex set of pin states. 
+
+= Prop Assembler Extension =
 
 ----
 
-= Software Logic Analyzer Extension =
-= Prop Assembler Extension=
 = servo extension =
 = Auxiliary Serial Terminal Extension =
 = buffered I/O extension =
