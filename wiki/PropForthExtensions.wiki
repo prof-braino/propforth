@@ -101,8 +101,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 
 The EEPROM is one of the few pieces of external hardware required by a forth system.  The default kernels provide support for reading and writing EEPROM as individual bytes, and as pages (see datasheet).  
 
-Currently the Demo Board comes stock with a 32k EEPROM, which is entirely used to hold the prop boot image.  This minimum 32KEEPROM cannot be used to store additional data on a prop application that is to be rebooted (writing to EEPROM will step on the boot image and that causes problems).  The prop protoboard and most other include stock or upgradeable 64k EEPROM.  The additional storage can be used to store additional data beyond the boot image.  Propforth includes extensions to tuse the additional EEPROM as a rundimentary "file storage system". 
-
+Currently the Demo Board comes stock with a 32k EEPROM, which is entirely used to hold the prop boot image.  This minimum 32KEEPROM cannot be used to store additional data on a prop application that is to be rebooted (writing to EEPROM will step on the boot image and that causes problems).  The prop protoboard and most other include stock or upgradeable 64k EEPROM.  The additional storage can be used to store additional data beyond the boot image.  Propforth includes extensions to use the additional EEPROM as a rundimentary "file storage system". 
 
     == EEPROM READ-WRITE File system ==
 
@@ -160,7 +159,7 @@ Any I/O pin can be configured as an asynchronous serial port.  See the snet.f ex
 
 = buffered I/O extension =
 
-----
+  (from the file comments) iobuf buffers up to 128 characters in an io channel, very useful when you want to run a series of synchronous commands asynchronously
 
 
 = case statement extensions =
@@ -181,9 +180,10 @@ Fast Hartley Transform is a nice fit with forth on a micro controller.
 
 Consider using FHT where FFT is asked for in non-micro controller applications.
 
-(check with Nick if this is stated properly)
+  (check with Nick if this is stated properly)
 
----- 
+----
+
 
 = !OnBoot Extension (Change Boot-Time behavior) =
 
