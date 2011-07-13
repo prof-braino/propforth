@@ -78,16 +78,16 @@ The documentyation is to include a section for each heading above.  New Sections
 
 ----
 
- =  EEPROM Extensions =
-    * [PropForthExtensions#EEPROM_READ-WRITE_File_system EEPROM READ-WRITE File system]
-    * [PropForthExtensions#EERPOM_READ-Only_File_System EERPOM READ-Only File System]
-    * [PropForthExtensions#Temporary_Write_Capability_for_Read_Only_File_System Temporary Write Capability for Read Only File System]
- * [PropForthExtensions#Software_Logic_Analyzer_Extension Software Logic Analyzer Extension]
- * [PropForthExtensions#Prop_Assembler_Extension Prop Assembler Extension]
- * [PropForthExtensions#servo_extension servo extension]
- * [PropForthExtensions#Auxiliary_Serial_Terminal_Extension Auxiliary Serial Terminal Extension]
- * [PropForthExtensions#buffered_I/O_extension buffered I/O extension]
- * [PropForthExtensions#case_statement_extensions case statement extensions]
+=  EEPROM Extensions =
+    == EEPROM READ-WRITE File system ==
+    ==  EERPOM READ-Only File System ==
+ == Temporary Write Capability for Read Only File System ==
+= Software Logic Analyzer Extension =
+= Prop Assembler Extension=
+= servo extension =
+= Auxiliary Serial Terminal Extension =
+= buffered I/O extension =
+= case statement extensions =
  * [PropForthExtensions#Fast-Hartley_Transform_(FHT)_extension Fast-Hartley Transform (FHT) extension]
  * [PropForthExtensions#OnBoot_Extension_(Change_Boot-Time behavior) OnBoot Extension (Change Boot-Time behavior)]
  * [PropForthExtensions#Optimizer_Extension Optimizer Extension]
