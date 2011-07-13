@@ -37,18 +37,18 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
  * [PropForthExtensions#MultiChannel_High_Speed_Synchronous_Serial_Channel_(MCS)_Extension MultiChannel High Speed Synchronous Serial Channel (MCS) Extension]
  * [PropForthExtensions#MultiProp_Extension MultiProp Extension]
 
-These extensions exist but have not been brought forward to the current release
+* These extensions exist but have not been brought forward to the current release *
  
  * [PropForthExtensions#VGA_Extensions VGA Extensions]
  * [PropForthExtensions#aarez aarez]
 
-These extensions exist but have not been added to the download archive (note please add more hours to the day)
+* These extensions exist but have not been added to the download archive (note please add more hours to the day) *
 
  * [PropForthExtensions#Multi-Line Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
  * [PropForthExtensions#Floating_Point_Coprocessor_(FPU)_Extension Floating Point Coprocessor (FPU) Extension] (nglordi)
  * [PropForthExtensions#Analog_Computer_Simulator Analog Computer Simulator] (nglordi)
 
-The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver.  
+* The extensions are on the list but have not seen any code presented to the public.  As you can see, most extensions beyond the kernel are only plans at this point (20110710).  When the kernel is complete, adding support for a given hardware should be a simple matter of reading the datasheet and writing the driver. *
 
  * [PropForthExtensions#Electronic_Speed_Controller_(ESC)_Extension Electronic Speed Controller (ESC) Extension]
  * [PropForthExtensions#Stepper_Motor_Extension Stepper Motor Extension]
@@ -64,7 +64,7 @@ The extensions are on the list but have not seen any code presented to the publi
  * [PropForthExtensions#A/D_Extensions A/D Extensions]
  * [PropForthExtensions#D/A_extension D/A extension]
 
-The documentyation is to include a section for each heading above.  New Sections will be added as they are completed and/or available. 
+* The documentation is to include a section for each heading above.  New Sections will be added as they are completed and/or available. *
 
 = Kernel Extensions =
 
