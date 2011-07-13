@@ -92,17 +92,17 @@ The documentyation is to include a section for each heading above.  New Sections
 ---- 
 
 = Fast-Hartley Transform (FHT) extension =
-= OnBoot Extension (Change Boot-Time behavior) =
+= !OnBoot Extension (Change Boot-Time behavior) =
 = Optimizer Extension =
 = Peep-hole Assembler Extension =
 = Disassembler Extension =
 = Secure Digital Card (SD) Extensions =
-= Spinneret_Extensions Spinneret Extensions =
-  == IP_Extension IP Extension ==
+=  Spinneret Extensions =
+  ==  IP Extension ==
   == Telnet Server Extension ==
   == NTP Client Extensions ==
-   == HTTP Server Extension ==
- == Real Time Clock (RTC) Extensions ==
+  == HTTP Server Extension ==
+  == Real Time Clock (RTC) Extensions ==
 = ROM-Less Extension =
 = MultiChannel High Speed Synchronous Serial Channel (MCS) Extension =
 = MultiProp Extension =
