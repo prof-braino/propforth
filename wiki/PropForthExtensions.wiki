@@ -69,15 +69,23 @@ For each section, add archive directory, file name, regression test ID.
 
 = Kernel Extensions =
 
+The user/developer is encouraged to alter/modify the forth kernel according to application/project needs.  While any alternation are permitted (you can do whatever you want), the further you go from the release, the more difficult it becomes to diagnose issues and provide support.  
+
+Usually, the kernel is left intact, a set of extensions are selected, and an application built on top of that.  
+
+The other extreme is the basic kernel is reworked and compile from scratch, and everything on top of it is custom.  
+
+The former case is easier to support, the latter case is usually less than easy to even get handle on what's what. 
+
   == Boot Kernel ==
 
-  The Boot Kernel is the bare Forth Kernel.  Sometimes the bare kernel is defined as the smallest unit of Forth that can read an write memory.  In PropForth, the bare kernel is defined as the smallest unit that is able to re-generate the Propforth.spin file. 
+  The Boot Kernel is the bare Forth Kernel.  Sometimes the bare kernel is defined as the smallest unit of Forth that can read an write memory.  In PropForth, the bare kernel is defined as the smallest unit that is able to re-generate the !Propforth.spin file. 
 
- The Boot Kernel is generally used AFTER development is complete (all the applications code is finalized).  This is typically in stand alone turnkey applications that do NOT need the interactive forth command prompt included in the final aaplication. 
+ The Boot Kernel is generally used AFTER development is complete (all the applications code is finalized).  This is typically in stand alone turnkey applications that do NOT need the interactive forth command prompt included in the final application. 
   
   == Development Kernel ==
 
-  The development kernel is an interactive command line interface to the propforth kernel.  It contains developmer extensions that are most commonly used in experiments and application development.  For example, the following words (forth routines) are included by default to aid in development:
+  The development kernel is an interactive command line interface to the !PropForth kernel.  It contains developer extensions that are most commonly used in experiments and application development.  For example, the following words (forth routines) are included by default to aid in development:
 
   * words - display all the words (forth routines) currently in the forth dictionary
   * st? - displays the contents of the stack, 32bit longs in hex
@@ -103,7 +111,7 @@ For each section, add archive directory, file name, regression test ID.
 
 The EEPROM is one of the few pieces of external hardware required by a forth system.  The default kernels provide support for reading and writing EEPROM as individual bytes, and as pages (see datasheet).  
 
-Currently the Demo Board comes stock with a 32k EEPROM, which is entirely used to hold the prop boot image.  This minimum 32KEEPROM cannot be used to store additional data on a prop application that is to be rebooted (writing to EEPROM will step on the boot image and that causes problems).  The prop protoboard and most other include stock or upgradeable 64k EEPROM.  The additional storage can be used to store additional data beyond the boot image.  Propforth includes extensions to use the additional EEPROM as a rundimentary "file storage system". 
+Currently the Demo Board comes stock with a 32k EEPROM, which is entirely used to hold the prop boot image.  This minimum 32KEEPROM cannot be used to store additional data on a prop application that is to be rebooted (writing to EEPROM will step on the boot image and that causes problems).  The prop protoboard and most other include stock or upgradeable 64k EEPROM.  The additional storage can be used to store additional data beyond the boot image.  !PropForth includes extensions to use the additional EEPROM as a rudimentary "file storage system". 
 
     == EEPROM READ-WRITE File system ==
 
@@ -149,7 +157,7 @@ Full details will be supplied in version 5.0 when released.
 
 = servo extension =
 
-The servo extensions use to cog internal counters (ctra, ctrb) to generate servo control pulses.  Recall that hobby servos use a control pulse every 20 milliseconds of 0.5 to 2.5 milli seconds, with 1.5 ms pulse representing "center".  Using 2.5 ms pulse as maximum, a single ctr can control 8 servos.  One cog can control 18 servo (8 each on counters A and B), so two cogs could control 32 servos.  However, 32 servos would consume all 32 IO pins, so additional hardware would be needed.  Since this is a simple driver, support is left as 32 servos on 2 cogs, and the user can modify this as the application hardware requires. 
+The servo extensions use to cog internal counters (ctra, ctrb) to generate servo control pulses.  Recall that hobby servos use a control pulse every 20 milliseconds of 0.5 to 2.5 milliseconds, with 1.5 ms pulse representing "center".  Using 2.5 ms pulse as maximum, a single ctr can control 8 servos.  One cog can control 18 servo (8 each on counters A and B), so two cogs could control 32 servos.  However, 32 servos would consume all 32 IO pins, so additional hardware would be needed.  Since this is a simple driver, support is left as 32 servos on 2 cogs, and the user can modify this as the application hardware requires. 
 
 Cheap hobby servos have been found to operate less than 180 degrees of swing, and generally cannot go all the way to 0.5 ms and 2.5 ms positions.  By default, the limits have been set back a bit.  At least one user "hit the stops" during the calibration routine (one time too many with too much voltage) and broke through the stops. (Thus modifying the servo into a continuous rotation servo by accident).
 
@@ -196,7 +204,7 @@ Change the boot time behavior of the `onboot` function.
 
 `onbold` is the "old definition of onboot" (Sal likes to to make short, easy to type but hard to remember labels; versus long names which are harder to type but easy to tell what it does). 
 
-This function causes an automatic boot script to run, and allow the user to hit the escape key to stop the boot script.  Very handy in developmetn with complex setup that sometimes need to be tweaked.
+This function causes an automatic boot script to run, and allow the user to hit the escape key to stop the boot script.  Very handy in development with complex setup that sometimes need to be tweaked.
 
 = Optimizer Extension =
 
@@ -204,11 +212,11 @@ Functions used in assembler optimization.  Needs to be re-examined in v5.0, poss
 
 = Peep-hole Assembler Extension =
 
-This is the name of the optimization method to be used in v5.0. It many be the same as Optimzer.f
+This is the name of the optimization method to be used in v5.0. It many be the same as Optimizer.f
 
 = Disassembler Extension =
 
-
+(what goes here?)
 
 = Secure Digital Card (SD) Extensions =
 
@@ -222,19 +230,19 @@ At present, SPI is the transfer mode implemented. Users may opt to implement the
 
 =  Spinneret Extensions =
 
-The Parallax Propeller Spinneret is the (planned) basis of the new regression test bed.  The spineret allow up to four concurrent Telnet sessions each running a forth interpreter, in addition to the serial terminal interface.  This means the Spineret can allow a deveopment window into a running system _withoput affectiong the running system_. This is kind of a cool thing, which could potentially find some use.   
+The Parallax Propeller Spinneret is the (planned) basis of the new regression test bed.  The Spinneret allow up to four concurrent Telnet sessions each running a forth interpreter, in addition to the serial terminal interface.  This means the Spinneret can allow a development window into a running system _without affecting the running system_. This is kind of a cool thing, which could potentially find some use.   
 
   ==  IP Extension ==
 
-  The IP extesnions allow the Spinneret to exist on a Ethernet network.  The user is responsible for configuring the network parameters as described in ip_config.f
+  The IP extensions allow the Spinneret to exist on a Ethernet network.  The user is responsible for configuring the network parameters as described in ip_config.f
 
   == Telnet Server Extension ==
 
-  The telnet server extension allows the spineret run up to four concurrent Telnet sessions each running a forth interpreter, in addition to the serial terminal interface. 
+  The telnet server extension allows the Spinneret run up to four concurrent Telnet sessions each running a forth interpreter, in addition to the serial terminal interface. 
 
   == NTP Client Extensions ==
 
-  The NTP client premits time synchronization with an NTP server over internet.  The local timezone must be specified by the user, or else you end up in Vancouver.  Time may be specified in local time or UTC. 
+  The NTP client permits time synchronization with an NTP server over internet.  The local timezone must be specified by the user, or else you end up in Vancouver.  Time may be specified in local time or UTC. 
 
   == HTTP Server Extension ==
 
@@ -256,7 +264,7 @@ The Parallax Propeller Spinneret is the (planned) basis of the new regression te
 
   The !MultiProp extension combine the ROM-less slave and the MCS.  Additional props added to a MASTER become resources available to the MASTER.  Three resistors and one capacitor are required on the seven connections between the master and each slave.  The user must account for additional time needed for transfer on the MCS.  
 
-The MASTER has cog7 reserved for erial communications, and cog6 reserved for the forth command line interface, leaving six cogs (cogs 0-5) available for applications.  MCS consumes 1 cog and 2 I/O pins.  
+The MASTER has cog7 reserved for serial communications, and cog6 reserved for the forth command line interface, leaving six cogs (cogs 0-5) available for applications.  MCS consumes 1 cog and 2 I/O pins.  
 This leaves 5 free cogs on the master, and 7 free cogs on the slave.
 Master + 1 Slave yields 12 free cogs (in addition to the forth propmt on copg6).  Adding another slave gives 18 (11+7) free cogs. Pins are 28 (master) + 30 (slave1) + 30 (slave 2)for a total of 88. 
 
@@ -273,7 +281,7 @@ There has not been a complete analysis of available cog and hub memory as the ke
 
   The High Resolution VGA as found in the v3.6 Jupiter ACE High Resolution is added directly to the propforth.spin file.  This requires special porting to v5.0
 
-  The Low Resolution VGA (JupiterACE.f extension) also requires special porting but is not added to the propforth.spin file, it is handled as a forth code extension.  This is targeted for v5.0
+  The Low Resolution VGA (!JupiterACE.f extension) also requires special porting but is not added to the propforth.spin file, it is handled as a forth code extension.  This is targeted for v5.0
 
 = aarez=
 
@@ -309,7 +317,7 @@ The extensions are on the list but have not seen any code presented to the publi
 
 = Electronic Speed Controller (ESC) Extension =
 
-I have a hobby RC car ESC that I plan to use for RoboMagelan.
+I have a hobby RC car ESC that I plan to use for Robo Magelan.
 
 = Stepper Motor Extension =
 
@@ -321,7 +329,7 @@ Planned for a sensor glove project
 
 = GPS Extension =
 
-Forth support for GPS for the RoboMagelan
+Forth support for GPS for the Robo Magelan
 GPS device is:
 
 = Accelerometer Extension =
