@@ -65,7 +65,7 @@ The extensions are on the list but have not seen any code presented to the publi
 
   The Boot Kernel is the bare Forth Kernel.  Sometimes the bare kernel is defined as the smallest unit of Forth that can read an write memory.  In PropForth, the bare kernel is defined as the smallest unit that is able to re-generate the Propforth.spin file. 
 
- The Boot Kernel is generally used AFTER development is complete (all the applications code works).  This is typically in stand alone turnkey applications that do NOT need the interactive forth command prompt included in the final aaplication. 
+ The Boot Kernel is generally used AFTER development is complete (all the applications code is finalized).  This is typically in stand alone turnkey applications that do NOT need the interactive forth command prompt included in the final aaplication. 
   
   == Development Kernel ==
 
