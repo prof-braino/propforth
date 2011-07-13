@@ -161,6 +161,9 @@ Any I/O pin can be configured as an asynchronous serial port.  See the snet.f ex
 
   (from the file comments) iobuf buffers up to 128 characters in an io channel, very useful when you want to run a series of synchronous commands asynchronously
 
+  Normally, the PAD character input buffer is 80 characters.  Greater than 80 character in a single line causes a buffer overrun and characters are lost.  
+
+  (Does this need a tutorial or example?)
 
 = case statement extensions =
 
