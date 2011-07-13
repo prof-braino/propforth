@@ -225,15 +225,42 @@ The Parallax Propeller Spinneret is the (planned) basis of the new regression te
 
   == Telnet Server Extension ==
 
+  The telnet server extension allows the spineret run up to four concurrent Telnet sessions each running a forth interpreter, in addition to the serial terminal interface. 
 
   == NTP Client Extensions ==
+
+  The NTP client premits time synchronization with an NTP server over internet.  The local timezone must be specified by the user, or else you end up in Vancouver.  Time may be specified in local time or UTC. 
+
   == HTTP Server Extension ==
+
+  The HTTP serve extensions allow the Spinneret to host web pages.  The HTTP pages can execute forth scripts. This allows functionality perhaps in some ways similar to java without a full java implementation. 
+
   == Real Time Clock (RTC) Extensions ==
+
+  The default RTC driver is for the real time clock on the Spinneret.  Support includes setting the clock, and displaying the clock in human readable form.
+
 = ROM-Less Extension =
+
+  The ROM-less extension allow one prop to emulate ROM for another (slave) prop.  This way, a single master can boot additional props without needing additional hardware beyond the props themselves.
+
 = !MultiChannel High Speed Synchronous Serial Channel (MCS) Extension =
+
+  The High Speed Multi Channel Synchronous Serial includes the transfer protocol.  One cog is used for bi-directional communication with a cog on another prop chip.  (Can be on the same prop chip for loop back tests).   Each cog can support eight channels.  MCS transmits and receives continuous stream of 96 bit packets.   The user/application drops a string of text onto the channel, and the protocol sends it, transparent tot he user/applications.  Very nice!
+
 = !MultiProp Extension =
 
-These extensions exist but have not been brought forward to the current release
+  The !MultiProp extension combine the ROM-less slave and the MCS.  Additional props added to a MASTER become resources available to the MASTER.  Three resistors and one capacitor are required on the seven connections between the master and each slave.  The user must account for additional time needed for transfer on the MCS.  
+
+The MASTER has cog7 reserved for erial communications, and cog6 reserved for the forth command line interface, leaving six cogs (cogs 0-5) available for applications.  MCS consumes 1 cog and 2 I/O pins.  
+This leaves 5 free cogs on the master, and 7 free cogs on the slave.
+Master + 1 Slave yields 12 free cogs (in addition to the forth propmt on copg6).  Adding another slave gives 18 (11+7) free cogs. Pins are 28 (master) + 30 (slave1) + 30 (slave 2)for a total of 88. 
+
+There has not been a complete analysis of available cog and hub memory as the kernel optimization has not be completed yet.  To date there are 179 cog long free after the development kernel is loaded.
+
+----
+
+
+* These extensions exist but have not been brought forward to the current release* 
  
 = VGA Extensions =
 = aarez=
