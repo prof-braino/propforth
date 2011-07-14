@@ -40,7 +40,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 
 * These extensions exist but have not been added to the download archive *
 
- * [PropForthExtensions#Multi-Line Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
+ * [PropForthExtensions#Multi-Line_Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
  * [PropForthExtensions#Floating_Point_Coprocessor_(FPU)_Extension Floating Point Coprocessor (FPU) Extension] (nglordi)
  * [PropForthExtensions#Analog_Computer_Simulator Analog Computer Simulator] (nglordi)
 
