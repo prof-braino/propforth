@@ -296,7 +296,7 @@ There has not been a complete analysis of available cog and hub memory as the ke
 
 (caskaz)
 
-Caskaz has produced support for LCD modules based on the Hitachi xxxx.
+[HD44780LCD#Caskaz has produced support for LCD modules based on the Hitachi HD44780].
 
 This requires additional hardware that I have not built yet, so I have not tested it or added it to the package yet.
 
