@@ -40,9 +40,15 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 
 * These extensions exist but have not been added to the download archive *
 
+ == caskaz ==
+
  * [PropForthExtensions#Multi-Line_Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
  * [PropForthExtensions#RCTime_Extension RCTime Extension]
  * [PropForthExtensions#DS1337_RTC_Extension DS1337 RTC Extension]
+ * [PropForthExtensions#24LC1025_128K_EEPROM_Extension 24LC1025 128K EEPROM Extension]
+
+  == Nick Lordi ==
+
  * [PropForthExtensions#Floating_Point_Coprocessor_(FPU)_Extension Floating Point Coprocessor (FPU) Extension] (nglordi)
  * [PropForthExtensions#Analog_Computer_Simulator Analog Computer Simulator] (nglordi)
 
