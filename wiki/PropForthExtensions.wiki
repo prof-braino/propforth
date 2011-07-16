@@ -326,7 +326,11 @@ Stepper motor is planned for a forth driver for CNC (mill, 3D printer, etc)
 
 = RCTime Extension =
 
-Planned for a sensor glove project
+caskaz has added RC-decay to his Quickstart Demo 
+
+Also uses 2-wire LCD, and displays in a graph
+
+http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1013694&viewfull=1#post1013694
 
 = GPS Extension =
 
