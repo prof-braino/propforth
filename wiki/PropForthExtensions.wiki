@@ -321,7 +321,7 @@ caskaz has started support for DS1337 RTC
 
 http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1016669&viewfull=1#post1016669
 
-= 24LC1025 128K EEPROM =
+= 24LC1025 128K EEPROM Extension =
 
 caskaz has started support for 24LC1025 128K EEPROM
 
@@ -329,7 +329,7 @@ http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-For
 
 This needs a different driver than the 32l and 64k "stock" EEPROMs, as it uses 2 address lines instead of 3. 
 
-= Floating Point Coprocessor (FPU) Extension] = 
+= Floating Point Coprocessor (FPU) Extension = 
 
 (nglordi)
 
