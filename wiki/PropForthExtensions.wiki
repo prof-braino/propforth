@@ -42,6 +42,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 
  * [PropForthExtensions#Multi-Line_Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
  * [PropForthExtensions#RCTime_Extension RCTime Extension]
+ * [PropForthExtensions#DS1337_RTC_Extension DS1337 RTC Extension]
  * [PropForthExtensions#Floating_Point_Coprocessor_(FPU)_Extension Floating Point Coprocessor (FPU) Extension] (nglordi)
  * [PropForthExtensions#Analog_Computer_Simulator Analog Computer Simulator] (nglordi)
 
@@ -308,7 +309,19 @@ Also uses 2-wire LCD, and displays in a graph
 
 http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1013694&viewfull=1#post1013694
 
+= DS1337 RTC Extension =
 
+caskaz has started support for DS1337 RTC
+
+http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1016669&viewfull=1#post1016669
+
+= 24LC1025 128K EEPROM =
+
+caskaz has started support for 24LC1025 128K EEPROM
+
+http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1017218&viewfull=1#post1017218
+
+This needs a different driver than the 32l and 64k "stock" EEPROMs, as it uses 2 address lines instead of 3. 
 
 = Floating Point Coprocessor (FPU) Extension] = 
 
