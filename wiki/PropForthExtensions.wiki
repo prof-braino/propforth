@@ -300,6 +300,16 @@ There has not been a complete analysis of available cog and hub memory as the ke
 
 This requires additional hardware that I have not built yet, so I have not tested it or added it to the package yet.
 
+= RCTime Extension =
+
+caskaz has added RC-decay to his Quickstart Demo 
+
+Also uses 2-wire LCD, and displays in a graph
+
+http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1013694&viewfull=1#post1013694
+
+
+
 = Floating Point Coprocessor (FPU) Extension] = 
 
 (nglordi)
@@ -323,14 +333,6 @@ I have a hobby RC car ESC that I plan to use for Robo Magelan.
 = Stepper Motor Extension =
 
 Stepper motor is planned for a forth driver for CNC (mill, 3D printer, etc)
-
-= RCTime Extension =
-
-caskaz has added RC-decay to his Quickstart Demo 
-
-Also uses 2-wire LCD, and displays in a graph
-
-http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1013694&viewfull=1#post1013694
 
 = GPS Extension =
 
