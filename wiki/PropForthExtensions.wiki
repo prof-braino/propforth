@@ -43,7 +43,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
  == caskaz ==
 
  * [PropForthExtensions#Multi-Line_Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
- * [PropForthExtensions#RCTime_Extension RCTime Extension]
+ * [PropForthExtensions#RCTime_RC-Decay_Extension RCTime RC-Decay Extension]
  * [PropForthExtensions#DS1337_RTC_Extension DS1337 RTC Extension]
  * [PropForthExtensions#24LC1025_128K_EEPROM_Extension 24LC1025 128K EEPROM Extension]
 
@@ -307,13 +307,17 @@ There has not been a complete analysis of available cog and hub memory as the ke
 
 This requires additional hardware that I have not built yet, so I have not tested it or added it to the package yet.
 
-= RCTime Extension =
+= RCTime RC-Decay Extension =
 
 caskaz has added RC-decay to his Quickstart Demo 
 
 Also uses 2-wire LCD, and displays in a graph
 
 http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1013694&viewfull=1#post1013694
+
+Also using LED as a light sensor
+
+http://forums.parallax.com/showthread.php?132515-Quick-Start-Touch-Demo-plus-Forth&p=1017752&viewfull=1#post1017752
 
 = DS1337 RTC Extension =
 
