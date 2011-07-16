@@ -41,6 +41,7 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 * These extensions exist but have not been added to the download archive *
 
  * [PropForthExtensions#Multi-Line_Character_LCD_Panel_Extension Multi-Line Character LCD Panel Extension] (caskaz)
+ * [PropForthExtensions#RCTime_Extension RCTime Extension]
  * [PropForthExtensions#Floating_Point_Coprocessor_(FPU)_Extension Floating Point Coprocessor (FPU) Extension] (nglordi)
  * [PropForthExtensions#Analog_Computer_Simulator Analog Computer Simulator] (nglordi)
 
@@ -48,7 +49,6 @@ These are the !PropForth Extensions.  A section is to be added explaining  each 
 
  * [PropForthExtensions#Electronic_Speed_Controller_(ESC)_Extension Electronic Speed Controller (ESC) Extension]
  * [PropForthExtensions#Stepper_Motor_Extension Stepper Motor Extension]
- * [PropForthExtensions#RCTime_Extension RCTime Extension]
  * [PropForthExtensions#GPS_Extension GPS Extension]
  * [PropForthExtensions#Accelerometer_Extension Accelerometer Extension]
  * [PropForthExtensions#Gas_Sensor_Extension Gas Sensor Extension]
