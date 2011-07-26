@@ -11,7 +11,13 @@ The v5.0 FAQ is at:
 
 http://code.google.com/p/propforth/wiki/Propforth50FAQ
 
+= v 4.6 = 
 
+Version 4.6 was released on 2011-07-25
+
+The v4.6 FAQ is at: 
+
+http://code.google.com/p/propforth/wiki/Propforth46FAQ
 
 = v 4.5 =
 
