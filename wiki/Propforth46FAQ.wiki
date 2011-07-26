@@ -3,9 +3,9 @@
 
 = Introduction =
 
-Continuing with the precedent set in v4.5, this is the FAQ for v.6
+Continuing with the precedent set in v4.5, this is the FAQ for v4.6
 
-= Whats with the version string? =
+== Whats with the version string? ==
 
 The PropForth.spin file in the archive posted 20110726 reports the version as 4.5, instead of 4.6.
 
