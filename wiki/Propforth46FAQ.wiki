@@ -3,7 +3,22 @@
 
 = Introduction =
 
-Add your content here.
+Continuing with the precedent set in v4.5, this is the FAQ for v.6
+
+= Whats with the version string? =
+
+The PropForth.spin file in the archive posted 20110726 reports the version as 4.5, instead of 4.6.
+
+This is an interesting issue.  
+
+In general, regression testing checks to make sure that "nothing changed".  That's, executing the code produces the same result as last time, regardless of what was changed.  
+
+In the case of development testing, the goal is to predict what the code will produce. When it functions the same as we think it should function, the test can be added to the regression suite. 
+
+The transition from "manual" development tests to "automated" regression tests is where there is a tendency for errors.  We "know" its working, as we just ran the test.  In the case of spinning a new version, the correct version WAS version "N", but this changes to version "N+1".  This gets missed often.  We have a "mental checklist" to look at the version string, but it still gets missed.  In a profession environment, there would be a physical checklist that would be followed and added to the project record to ensure the process step to "check the version string" was performed.  The propforth team doesnot have the budget or staff to require this process. 
+
+This may be addressed in v5.0 when the regression automation is implemented.  Right now we don't have good solution, so we simply have to watch out for little mistakes. 
+
 
 
 = Details =
