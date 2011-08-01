@@ -1,8 +1,24 @@
-#summary Recommendations for an Enginnering Notebook for the BSA Robotic Merit Badge
+#summary Recommendations for an Engineering Notebook for the BSA Robotic Merit Badge
 
 = Introduction =
 
-Add your content here.
+"Engineering Notebook" is simply any notebook and engineer uses to record information during the course of a project.  While there is no "Official definition" of what constitutes an engineering notebook, there are certain guideline we can try to follow. 
+
+= USES =
+
+The Engineering Notebook is used as a record of the engineer's involvement in a project.  Write Down Everything.  YOU WILL FORGET EVERYTHING YOU DON'T WRITE DOWN.  Trust me on this, I don't even remember all the stuff I've forgot due to not writing it down.  But seriously, write it down.
+ 
+ == Immediate uses ==
+
+Write down the date each time you start to work.  Write down the start time, and later, write down when you finish.  Write down all the stuff that happens in between. 
+
+NEVER go back and change stuff.  If you make a mistake, draw ONE neat line through it, and write the correct information next to it.  The reason for this is, if it looks like you tend to go back and change stuff at a later date (that is, try to "re-write history", then we don't know what we can trust as an accurate record.  This is important later. 
+
+ == Long Term uses ==
+
+    === Remember stuff ===
+
+    === show your work to other folks ===
 
 
 = Details =
