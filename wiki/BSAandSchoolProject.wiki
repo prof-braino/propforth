@@ -23,9 +23,9 @@ Definitions:
   * subsystem - any piece of the entire system that can be wroked one separately be combining with the entire system.  Examples:
     * drive subsystem - motors and wheels
     * sensor subsystem - IR (line) detector, ultrasonic (distance) sensor, tactile (touch switch) sensor
-  * sensor feedback - the signal from the sensor
-  * programming - designing, writing, testing, refining the source code for the micro processor
-  * Document - keeping notes so you can remember and show your project(s)
+  * sensor feedback - the signal from the sensor.  The robot reacts to sensor inputs to perform its task.
+  * programming - designing, writing, testing, refining the source code for the micro processor.  This involves listening to the sensors, and controlling the robots actuators (motors, etc).
+  * Document - keeping notes so you can remember and show your project(s).  Also Document can be the book or collection of notes.
   * engineering notebook - the book you use to record your efforts and thoughts. You write all your notes in one place, and this becomes your project book.   
 
 = School Robotics project =
