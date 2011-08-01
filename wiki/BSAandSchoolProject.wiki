@@ -13,7 +13,11 @@ http://meritbadge.org/wiki/index.php/Robotics
 
   == Part 4 requirement: “a”, “c” and “e”. ==
 
-Section “a” says, in part, to choose a task for a robotic subsystem that you plan to build.  Include sensor feedback and programming in the task.  Document this information in your robot engineering notebook.  
+Section “a” says, in part, to choose a task for a robotic subsystem that you plan to build.  Include sensor feedback and programming in the task.  Document this information in your robot engineering notebook. 
+
+Section “c” says, in part, to build a robot subsystem of your original design to accomplish the task you choose for requirement 4a.  
+
+Definitions:  
 
   * robotic - anything that has to do with "robot"
   * subsystem - any piece of the entire system that can be wroked one separately be combining with the entire system.  Examples:
