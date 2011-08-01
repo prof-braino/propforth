@@ -57,11 +57,9 @@ Avoid trying to jam a zillion thing onto one page "to save space".  The books ar
 
 Each page and/or entry should have date, start time, task, people present, equipment used, and note any changes from last time.  Record any unusual things you notice. Record all questions. Record all investigation. record all results. record all findings.  Record and interpretations of results and findings.  Record that end time of the task or session. 
 
+= Summary =
+
+Write everything down, neatly in black ink not pencil. Include name, date, time, task, and questions, finding, and results.  Don't go back and change stuff.  DO go back and check that you are still doing what you think you want to be doing.  Record a note if you decide to change what you think you want to be doing.  Write everything down. 
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= END 20110801 =
