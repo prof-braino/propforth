@@ -60,6 +60,9 @@ The kit from parts uses the software provided free from Parallax, the Prop Tool.
 
  == * 12blocks+TBot * ==
 
+http://hannoware.com/
+http://onerobot.org/
+
 The "polished option" is a bundle that consists of the TBot mobile robotic platform and the 12blocks software development environment.  This bundle costs approximately $150
 
 The TBot contains a Parallax propeller micro controller.  It used the Prop Tool Software. 
@@ -69,6 +72,8 @@ The TBot can also use Propforth.
 ----
 
 = 12Blocks software =
+
+http://hannoware.com/
 
 12Blocks is a PC based graphical programming interface designed for used by kids.  There is a plan for development of a propforth interface for 12blocks.
 
@@ -87,6 +92,8 @@ http://forums.hannoware.com/viewforum.php?f=11
 
 = TBot mobile robotic platform =
 
+http://onerobot.org/
+
 A TBot being born  http://www.youtube.com/watch?v=HmbfY9smrQg
 
 
@@ -98,6 +105,8 @@ http://blog.hannoware.com/?cat=10
 ----
 
 = Hanno Sanders links =
+
+http://hannoware.com/
 
 Hanno Sanders is an amazing person.  (links to bio, articles, etc)
 
