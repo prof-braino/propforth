@@ -1,0 +1,46 @@
+#summary Notes for Robotics project for BSA merit badge and School in general
+#labels robotics,BSA,meritbadge,12blocks,school
+
+= Introduction =
+
+The primary motivation behind the propforth project is training in micro controllers for absolute beginners and above. While the majority of this site documents the development of the propforth core, this page begins examination of a possible application of the propforth core in a "training environment".  
+
+Notes for the BSA Merit badge effort are combined with the School Robotics effort in this page.  
+
+= BSA Merit Badge Requirements =
+
+http://meritbadge.org/wiki/index.php/Robotics
+
+  == Part 4 requirement: “a”, “c” and “e”. ==
+
+Section “a” says, in part, to choose a task for a robotic subsystem that you plan to build.  Include sensor feedback and programming in the task.  Document this information in your robot engineering notebook.  
+
+  * robotic subsystem 
+  * sensor feedback
+  * programming
+  * Document 
+  * engineering notebook.  
+
+= School Robotics project =
+
+  The Merit badge work is intended for re-use in non-merit badge situations, such as a general school environment. 
+
+= Robot kits Hardware Options = 
+
+  * kit from parts
+  * 12blocks+TBot
+
+ == kit from parts ==
+ == * 12blocks+TBot * ==
+
+= 12Blocks software =
+
+= Hanno Sanders links =
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
