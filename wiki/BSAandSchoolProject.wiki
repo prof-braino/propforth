@@ -17,6 +17,9 @@ Section “a” says, in part, to choose a task for a robotic subsystem that you
 
 Section “c” says, in part, to build a robot subsystem of your original design to accomplish the task you choose for requirement 4a.  
 
+4e, as it has been written, which says in part, Test your robot… (this is not specific enough to tell us howto qualify for a merit badge).  Do not despair.  We are interpreting requirement 4e to instead be, Test your robot or robotic subsystem and record the results in your robot engineering notebook.  Include suggestions on how you could improve your robot or robotic subsystem, as well as pictures or sketches of your finished work. ALSO ADD - Apply the improvements to your robot subsystems until the entire system performs its intended task as desired. 
+
+
 Definitions:  
 
   * robotic - anything that has to do with "robot"
