@@ -53,19 +53,30 @@ The least possible expense for a solution that fits all the minimum needs has be
   * the programming interface to the micro processor
   * a prototyping board (breadboard) for assembling and experimenting
 
+The kit from parts uses the software provided free from Parallax, the Prop Tool. It also can use PropForth.
 
  == * 12blocks+TBot * ==
 
 The "polished option" is a bundle that consists of the TBot mobile robotic platform and the 12blocks software development environment.  This bundle costs approximately $150
 
+The TBot contains a Parallax propeller micro controller.  It used the Prop Tool Software. 
+
+The TBot can also use Propforth.
+
 = 12Blocks software =
 
-The 
+12Blocks is a PC based graphical programming interface designed for used by kids. 
+
+http://12blocks.com/
+http://12blocks.com/manual.pdf
 
 12Blocks: A Simple Block Language that lets Kids Program Sophisticated Multi-core Robots
 
 http://www.youtube.com/watch?v=RwQwFI1vGuE
 
+http://www.youtube.com/watch?v=duqeRK0OzdQ
+
+http://forums.hannoware.com/viewforum.php?f=11
 
 = TBot mobile robotic platform =
 
