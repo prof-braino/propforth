@@ -1,4 +1,5 @@
 #summary Recommendations for an Engineering Notebook for the BSA Robotic Merit Badge
+#labels BSA,EngineeringNotbook
 
 = Introduction =
 
@@ -18,7 +19,44 @@ NEVER go back and change stuff.  If you make a mistake, draw ONE neat line throu
 
     === Remember stuff ===
 
+Even smart people forget stuff after a while.  REALLY smart people know this, and write stuff down.  This way, they appear to remember every detail.  In fact, they can forget everything and just go back and check their notes. If one has established that one's notes are a trust-able record of what happened as it happened, life gets easier.  This makes smart people even smarter.  
+
+Let me repeat: You WILL eventually forget everything, and its a problem to have to re-do a complex piece of work after the fact, especially when you really need it RIGHT NOW. 
+
     === show your work to other folks ===
+
+When you write down your notes correctly, you can go back and repeat the work relatively quickly  without having to re-think the work from scratch.  The result is you can easily should the final work to somebody else.  
+
+Real companies sometimes need to use engineering notes to prove they invented or had access to certain technology as a certain date.  In this case, engineering notes can become a legal document, and can keep save you from trouble.   But the engineering notes MUST reliable as a record of what happened for this to happen. 
+
+= Format and Content of Engineering Notebook =
+
+An engineering notebook can be any cheap book with bank pages to write on, as long as the pages don't fall out. 
+
+  == GENERAL ==
+
+These are general guidelines that are a good idea to follow. Folks came up with these after having problems from NOT doing this. 
+
+Use non-smear ink.  Use blue or black ink to record your notes.  Use red ink to cross out mistakes, with a single neat line. 
+
+Use color fro drawings and charts as needed.
+
+DO NOT USE PENCIL.  Pencil is graphite, graphite is carbon; carbon oxidizes and turns into gasses carbon dioxide and carbon monoxide.  While these probably won't be in high enough concentrations to hurt you, the pages fade and eventually become unreadable.  This will cause problems when you need to check your notes from the beginning of the project just before the end of the project.  If you have a pencil that is not graphite and therefore should not oxidize and fade, remember: DO NOT USE PENCIL.
+
+  == Cover and first page ==
+
+The cover and first page should say the start date, the project and the engineer's name.  If one book fills up, the engineer start a new book, and include Book 2, and so on. 
+
+  == Individual entry format and content == 
+
+Each day should have its own page. 
+Each session should have its own page.
+Each Task should have its own page.
+
+Avoid trying to jam a zillion thing onto one page "to save space".  The books are cheap, the point is to record everything CLEARLY. 
+
+Each page and/or entry should have date, start time, task, people present, equipment used, and note any changes from last time.  Record any unusual things you notice. Record all questions. Record all investigation. record all results. record all findings.  Record and interpretations of results and findings.  Record that end time of the task or session. 
+
 
 
 = Details =
