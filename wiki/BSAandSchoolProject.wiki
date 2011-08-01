@@ -65,7 +65,7 @@ The TBot can also use Propforth.
 
 = 12Blocks software =
 
-12Blocks is a PC based graphical programming interface designed for used by kids. 
+12Blocks is a PC based graphical programming interface designed for used by kids.  There is a plan for development of a propforth interface for 12blocks.
 
 http://12blocks.com/
 http://12blocks.com/manual.pdf
