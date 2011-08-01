@@ -36,6 +36,8 @@ Definitions:
 
   The Merit badge work is intended for re-use in non-merit badge situations, such as a general school environment. 
 
+----
+
 = Robot kits Hardware Options = 
 
 There are two options under consideration at the moment.  First is a cheap option, which is perceived as "easier to accept" for an untried effort.  After some success is shown with the "cheap option", it should be easier to demonstrate the desirability of the more expensive "refined option". 
