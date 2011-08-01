@@ -3,9 +3,11 @@
 
 = Introduction =
 
-The primary motivation behind the propforth project is training in micro controllers for absolute beginners and above. While the majority of this site documents the development of the propforth core, this page begins examination of a possible application of the propforth core in a "training environment".  
+The primary motivation behind the propforth project is training in micro controllers, beginning with absolute beginners. While the majority of this site documents the development of the propforth kernel, this page begins examination of a possible application of the propforth core in a "training environment".  
 
 Notes for the BSA Merit badge effort are combined with the School Robotics effort in this page.  
+
+----
 
 = BSA Merit Badge Requirements =
 
@@ -17,8 +19,7 @@ Section “a” says, in part, to choose a task for a robotic subsystem that you
 
 Section “c” says, in part, to build a robot subsystem of your original design to accomplish the task you choose for requirement 4a.  
 
-4e, as it has been written, which says in part, Test your robot… (this is not specific enough to tell us howto qualify for a merit badge).  Do not despair.  We are interpreting requirement 4e to instead be, Test your robot or robotic subsystem and record the results in your robot engineering notebook.  Include suggestions on how you could improve your robot or robotic subsystem, as well as pictures or sketches of your finished work. ALSO ADD - Apply the improvements to your robot subsystems until the entire system performs its intended task as desired. 
-
+4e, as it has been written, which says in part, Test your robot… (this is not specific enough to tell us how to qualify for a merit badge).  Do not despair.  We are interpreting requirement 4e to instead be, Test your robot or robotic subsystem and record the results in your robot engineering notebook.  Include suggestions on how you could improve your robot or robotic subsystem, as well as pictures or sketches of your finished work. ALSO ADD - Apply the improvements to your robot subsystems until the entire system performs its intended task as desired. 
 
 Definitions:  
 
@@ -63,6 +64,8 @@ The TBot contains a Parallax propeller micro controller.  It used the Prop Tool 
 
 The TBot can also use Propforth.
 
+----
+
 = 12Blocks software =
 
 12Blocks is a PC based graphical programming interface designed for used by kids.  There is a plan for development of a propforth interface for 12blocks.
@@ -79,6 +82,8 @@ http://www.youtube.com/watch?v=duqeRK0OzdQ
 http://forums.hannoware.com/viewforum.php?f=11
 
 = TBot mobile robotic platform =
+
+----
 
 = Hanno Sanders links =
 
