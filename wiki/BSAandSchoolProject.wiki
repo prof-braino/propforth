@@ -15,11 +15,14 @@ http://meritbadge.org/wiki/index.php/Robotics
 
 Section “a” says, in part, to choose a task for a robotic subsystem that you plan to build.  Include sensor feedback and programming in the task.  Document this information in your robot engineering notebook.  
 
-  * robotic subsystem 
-  * sensor feedback
-  * programming
-  * Document 
-  * engineering notebook.  
+  * robotic - anything that has to do with "robot"
+  * subsystem - any piece of the entire system that can be wroked one separately be combining with the entire system.  Examples:
+    * drive subsystem - motors and wheels
+    * sensor subsystem - IR (line) detector, ultrasonic (distance) sensor, tactile (touch switch) sensor
+  * sensor feedback - the signal from the sensor
+  * programming - designing, writing, testing, refining the source code for the micro processor
+  * Document - keeping notes so you can remember and show your project(s)
+  * engineering notebook - the book you use to record your efforts and thoughts. You write all your notes in one place, and this becomes your project book.   
 
 = School Robotics project =
 
@@ -27,15 +30,41 @@ Section “a” says, in part, to choose a task for a robotic subsystem that you
 
 = Robot kits Hardware Options = 
 
-  * kit from parts
-  * 12blocks+TBot
+There are two options under consideration at the moment.  First is a cheap option, which is perceived as "easier to accept" for an untried effort.  After some success is shown with the "cheap option", it should be easier to demonstrate the desirability of the more expensive "refined option". 
 
- == kit from parts ==
+The first option is primarily focused on cost, since the project is new and has no prior evidence of success. The initial cost target is under $35 per student.  The first option is based on kits, inexpensive bags of parts that the participants assemble. This option also uses free software exclusively.  The initial option is also intended to be re-used in later projects.  
+
+Any student that demonstrates interest and progress with the initial option would be candidate for the "polished" option. 
+
+The polished option consists of a professionally designed and manufactured mobile robotic platform, bundled with professional software.  This option is no more expensive than a typical children's activity such as soccer, ballet, or band.  This is the obvious choice in terms of cost benefit, flexibility, and ease of use.  This is to be demonstrated and evaluated separately at a later date (as of 20110731). 
+
+  == kit from parts ==
+
+The least possible expense for a solution that fits all the minimum needs has been found based on the Parallax Propeller chip.  This solution consists of 
+  * the propeller micro processor
+  * power regulation for the processor (batteries are a consumable and are not considered in the cost)
+  * the programming interface to the micro processor
+  * a prototyping board (breadboard) for assembling and experimenting
+
+
  == * 12blocks+TBot * ==
+
+The "polished option" is a bundle that consists of the TBot mobile robotic platform and the 12blocks software development environment.  This bundle costs approximately $150
 
 = 12Blocks software =
 
+The 
+
+12Blocks: A Simple Block Language that lets Kids Program Sophisticated Multi-core Robots
+
+http://www.youtube.com/watch?v=RwQwFI1vGuE
+
+
+= TBot mobile robotic platform =
+
 = Hanno Sanders links =
+
+Hanno Sanders is an amazing person.  (links to bio, articles, etc)
 
 
 = Details =
