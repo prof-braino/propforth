@@ -112,7 +112,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
   == Profiling Execution for Bottlenecks ==
 
-  Sal has done various analysis to confirm where the bottle necks are/were.  As is turns out, many of his assumptions were incorrect; the areas he thought were bottleneck were not, and areas that he didn't think would matter, made a big impact.  The result was he was able to determine that ACTUAL bottleneck and work on those, and ignore the "false bottle necks".   Good think he dd the profiling!  
+  Sal has done various analysis to confirm where the bottle necks are/were.  As is turns out, many of his assumptions were incorrect; the areas he thought were bottleneck were not, and areas that he didn't think would matter, made a big impact.  The result was he was able to determine that ACTUAL bottleneck and work on those, and ignore the "false bottle necks".   Good thing he did the profiling!  
 
 = Question Where are the Requirements listed? =
 
