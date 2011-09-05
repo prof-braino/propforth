@@ -30,7 +30,7 @@ The basic hardware includes the bare prop chip, and one 32k EEPROM.  This config
 
     === 64K EEPROM and greater ===
 
-   The initial configuration for the propchip can be extended to use EERPROM larger than 32K.  Typically EEPROM is expanded to 64K.  The standard default kernel is compatible with 64K and larger EEPROM.  The EEPROM can be expanded to any size addressable by the prop chip.  If an address is given, the kernel will attempt to access it.  It is the responsibility of the user/developer to ensure the physical EEPROM is present, and handle any errors appropriately. 
+   The initial configuration for the propchip can be extended to use EEPROM larger than 32K.  Typically EEPROM is expanded to 64K.  The standard default kernel is compatible with 64K and larger EEPROM.  The EEPROM can be expanded to any size addressable by the prop chip.  If an address is given, the kernel will attempt to access it.  It is the responsibility of the user/developer to ensure the physical EEPROM is present, and handle any errors appropriately. 
 
    === Alternate Serial Terminal ===
 
