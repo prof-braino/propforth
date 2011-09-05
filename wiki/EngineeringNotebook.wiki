@@ -37,7 +37,7 @@ Use the engineering notebook to go back and check that you did all the things yo
 
     === show your work to other folks ===
 
-    When you write down your notes correctly, you can go back and repeat the work relatively quickly  without having to re-think the work from scratch.  The result is you can easily should the final work to somebody else.  
+    When you write down your notes correctly, you can go back and repeat the work relatively quickly  without having to re-think the work from scratch.  The result is you can easily show the final work to somebody else.  
 
     Real companies sometimes need to use engineering notes to prove they invented or had access to certain technology as a certain date.  In this case, engineering notes can become a legal document, and can keep save you from trouble.   But the engineering notes MUST reliable as a record of what happened for this to happen. 
 
