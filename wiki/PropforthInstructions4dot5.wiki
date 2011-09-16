@@ -41,7 +41,7 @@ We will work on making the load words clearer in the 5.x releases.  The current 
     *. 2 @ 220 ohm resistors asynchronous serial channel to slave
   * for ROMless Slave (MultiChannel High Speed Synchronous Serial)
     * four @ 220 ohm resistor
-      * 2 for high seed synchronous serial channel to slave
+      * 2 for high speed synchronous serial channel to slave
       * 2 for ROM emulation channel to slave
     *. two @ .1uF capacitor (non polar) 
       * between power and ground pins on slave prop
