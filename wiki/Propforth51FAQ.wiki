@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary FAQ for Propforth 5.1 Release
 #labels v5.1,Phase-Requirements
 
 = Introduction =
