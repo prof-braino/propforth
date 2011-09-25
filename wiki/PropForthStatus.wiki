@@ -4,11 +4,17 @@
 === Propforth 5.1 targeted November - December 2011 ===
 
  * New Regression Testbed hardware configuration
+
  - To support automated regression testing
+
  - Two Spinneret boards + 4 propchips
+
  - each spinneret board will connect to 2 prop chips via MCS (Multichannel Highspeed Serial)
+
  - Each spinneret will communicate to (the other) spinneret via MCS
+
  - Each spinneret will have regular serial (RS232) connection to the propchips and the other spinneret.
+
  - The result is all the props can function as a single giant model using MCS, or as many independant props via RS232
 
  After the 5.0 functionality is debugged and working using the 4.5 hardware set up, the working code will be used to get the new hardware configuration nailed down for 5.1.  This is to reduce the number of unknowns and variables in debugging at each phase. 
