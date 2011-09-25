@@ -7,7 +7,13 @@ Different from earlier releases, starting with Propforth V4.5 there will be a FA
 
 Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
+= Will the Testbed hardware configuration change? =
+
+  The Regression Test hardware configuration for 5.0 will be the same as 4.5.  There will be no specific test automation implemented in 5.0 to reduce the number of changes to the release.  After the kernel functionality is implemented, automation will be implemented in 5.1 using a new hardware conflagration.  
+
 = Question When can we expect v5.0? = 
+
+  Estimated arrival is now October (moved from September). The pieces of 5.0 are "ready" (20110925) to be packaged up into a release.  regression test. This couple be a couple weeks.
 
   Estimated arrival is now September (moved from August). Sal is in development (20110710) and has not moved to internal final regression test. FAQ to be updated when development final regression is started, and when software is released to QA regression test.
 
