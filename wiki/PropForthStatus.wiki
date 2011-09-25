@@ -1,7 +1,7 @@
 #summary Status of PropForth kernel development
 #labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1
 
-=== Propforth 5.1 targeted November - December 2011 ===
+=== PropForth 5.1 targeted November - December 2011 ===
 
  * New Regression Testbed hardware configuration
 
@@ -15,13 +15,13 @@
 
  - Each spinneret will have regular serial (RS232) connection to the propchips and the other spinneret.
 
- - The result is all the props can function as a single giant model using MCS, or as many independant props via RS232
+ - The result is all the props can function as a single giant model using MCS, or as many independent props via RS232
 
  After the 5.0 functionality is debugged and working using the 4.5 hardware set up, the working code will be used to get the new hardware configuration nailed down for 5.1.  This is to reduce the number of unknowns and variables in debugging at each phase. 
 
-=== Propforth 5.0 targeted ~~Summer September ~~ October 2011 ===
+=== PropForth 5.0 targeted ~~Summer September ~~ October 2011 ===
 {{{
-Redesign Propforth kernel:
+Redesign PropForth kernel:
 
  * NEW - Use Test Bed Hardware Configuration from 4.5
  * minimal kernel, recover (most of?) hub memory
@@ -41,7 +41,7 @@ trade-off:
 
   Sal has returned from his many weeks of hiking through the national parks of North America.  
 
-  The "pieces" of propforth 5.0 are working, they just need to be packaged up and made into a release.  This could be ready in a couple weeks. 
+  The "pieces" of PropForth 5.0 are working, they just need to be packaged up and made into a release.  This could be ready in a couple weeks. 
 
 ==== 20110703 present status of 5.0 effort ====
 
@@ -58,7 +58,7 @@ trade-off:
 
   Previously, assembler definitions would be loaded into memory before use, now the process is automatic.  When an assembler definition is called, if it is in memory it executes; if its not already in memory it is loaded into the paging area and executes.  This is kind of a big deal. 
 
-  For kernel words, the process is to rewrite the function in assembler, run spinmaker to generate a new propforthkernel.spin; now the assembler function is used as "paged assembler".  This is a really big deal.
+  For kernel words, the process is to rewrite the function in assembler, run spinmaker to generate a new PropForthkernel.spin; now the assembler function is used as "paged assembler".  This is a really big deal.
 
   ===== Direct Access to Stack =====
 
@@ -74,7 +74,7 @@ trade-off:
 
    ===== EEPROM Branch ======
 
-  There is another branch at the EEPROM file system support.  On a system that has greater than 32k EEPROM, the EEPROM file system kernel is available.  Al the development extensions reside in EEPROM to save application space on the prop.  The provisions for using dev extensions from EEPROM load at boot, it takes about 3 seconds to load (2 seconds to boot the prop, and 1 second to load from EEPROM). It turns out that the specs on individual EEPROMS are all over the place, but 400 kilohertz appears to be the lowest common denominator for maximum operational speed, 400 should work with any part.  If you have a faster EEPROM, the speed can be increased.  Right now there are two parameters that have to be adjusted to change the EEPROM speed, Sal is working to make this One parameter as prof_braino tends to forget the other one and screw things up.   
+  There is another branch at the EEPROM file system support.  On a system that has greater than 32k EEPROM, the EEPROM file system kernel is available.  All the development extensions reside in EEPROM to save application space on the prop.  The provisions for using dev extensions from EEPROM load at boot, it takes about 3 seconds to load (2 seconds to boot the prop, and 1 second to load from EEPROM). It turns out that the specs on individual EEPROMS are all over the place, but 400 kilohertz appears to be the lowest common denominator for maximum operational speed, 400 should work with any part.  If you have a faster EEPROM, the speed can be increased.  Right now there are two parameters that have to be adjusted to change the EEPROM speed, Sal is working to make this One parameter as prof_braino tends to forget the other one and screw things up.   
 
  ===== SD Branch ======
 
@@ -112,7 +112,7 @@ trade-off:
 
   The Multiprop material will potentially make a very nice inexpensive net on your desk for experiments.  But you might want to consider carefully before putting it into production on a critical task.  On the other hand, if 100 users start experimenting, maybe one might get lucky and find something interesting.  More on this as it develops, time permitting.   
 
-=== Propforth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
+=== PropForth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
 
 Bug fixes to 4.5 as needed 
 
@@ -128,7 +128,7 @@ Result is
  * about 13,000 bytes per second for one channel
  * about 11,500 bytes per second per channel for each of 8 channels, total 90,000 bytes per second total for all 8 channels simultaneously.
 
-Sal commented that the logic analyzer code didn't work well sampling at full speed 1 sample per clock, and wondered why nobody caught this.   Braino thinks that folks that need a logic analyzer have one already, and folks that don't have a logic analyzer don't know how to use one, so the software logic analyzer in propforth is under used.  
+Sal commented that the logic analyzer code didn't work well sampling at full speed 1 sample per clock, and wondered why nobody caught this.   Braino thinks that folks that need a logic analyzer have one already, and folks that don't have a logic analyzer don't know how to use one, so the software logic analyzer in PropForth is under used.  
 
   == *REQUEST* ==
 
@@ -136,8 +136,8 @@ Could someone on the team come up with an example on how using the logic analyze
 
   == NOTE ON NUMBER BASE ==
 
-  * propforthbootkerenel.f set base to hex in fstart line 2487.  That is, the mininmal kerenl is hex by defaut. 
-  * propforthkerenel.f sets base to decimal in onreset.  That is, since people tend to think in decimal, the kernel switches to decimal when it is reset. 
+  * PropForthbootkerenel.f set base to hex in fstart line 2487.  That is, the mininmal kerenl is hex by defaut. 
+  * PropForthkerenel.f sets base to decimal in onreset.  That is, since people tend to think in decimal, the kernel switches to decimal when it is reset. 
 
 BUT REMEMBER that each cog has its own number base setting. 
 
@@ -150,14 +150,14 @@ I got bit by this, it needs to be written up better.
 So use  ` 22 pinout ` to set pin 22 to an output, and  ' 22 pinhi ' to set pin high.  Then do bit mask, then do assembler,; but pay attention to the number base for the cog doing the work. 
 
 
-=== Propforth 4.5 Released June 14, 2011 (public release) ===
+=== PropForth 4.5 Released June 14, 2011 (public release) ===
 
  * include regression tests
  * design regression test to serve as tutorial
  * design regression test to serve as functional definition
  * design regression test for future automated execution
 
-~~ Propforth 4.5 (Update) targeted June 2011 (public release) ~~
+~~ PropForth 4.5 (Update) targeted June 2011 (public release) ~~
 
 (update)
 
@@ -168,7 +168,7 @@ servers
  * telnet 
  * running forth from a HTTP page
 
-=== Propforth 4.5 targeted March/April 2011 (public release) ===
+=== PropForth 4.5 targeted March/April 2011 (public release) ===
 
 Final Spinneret Code 
  * Ethernet support
@@ -211,9 +211,9 @@ Improved documentation:
  * more inline comments
  * inline notation of external references 
 
-NOTE: There is a consequence of the support added this release that will be addressed in Propforth 5.0.  The Ethernet and SD support will take a larger amount of dictionary space.  This is estimated to leave only 2-4k of space for application development.  Propforth 5.0 will attempt to redesign the kernel to free up hub space.
+NOTE: There is a consequence of the support added this release that will be addressed in PropForth 5.0.  The Ethernet and SD support will take a larger amount of dictionary space.  This is estimated to leave only 2-4k of space for application development.  PropForth 5.0 will attempt to redesign the kernel to free up hub space.
 
-=== Propforth 4.4 April 2011 (development only, not for public release) ===
+=== PropForth 4.4 April 2011 (development only, not for public release) ===
 
 SD support:
 
@@ -223,7 +223,7 @@ The initial SD support will be a low-level, traditional forth "block access".  T
 
 We plan to review the code, and perhaps Caskaz will provide the extension with Windows FAT support. 
 
-=== Propforth 4.3 Beta March 2011 (development only, not for public release) ===
+=== PropForth 4.3 Beta March 2011 (development only, not for public release) ===
 
 Spinneret Ethernet support
 
@@ -385,7 +385,7 @@ removed from plan - TV option
 
 Modified PropForth 3.4 to use Hive hardware pinout
 
- - Hive-PropforthHiResVGA.spin
+ - Hive-PropForthHiResVGA.spin
 
  - Hive-HiResVGA.f
 
@@ -430,9 +430,9 @@ Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial t
 
 *Development release only, needs testing; not for public release
 
-NOTE: CREATE word behaves differently in propforth - see FAQ
+NOTE: CREATE word behaves differently in PropForth - see FAQ
 
-NOTE: lines commented using \  behave different in propforth - see FAQ
+NOTE: lines commented using \  behave different in PropForth - see FAQ
 
 1. Add patches for definition of {{{ * ( : * u* ; ) }}} and other math functions
 
@@ -456,7 +456,7 @@ PropForth 3.2 uses descriptive names and a simplified naming convention and achi
 
 NOTE: The UNDEFINED WORD error can also occur due to a serial overrun.  If you paste in a chunk of code to teraterm and see this error, you should paste smaller sections of text or use the {{{fl}}} (fileload) word
 
-[http://code.google.com/p/propforth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
+[http://code.google.com/p/PropForth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
 
 should help in updating existing code. 
 
@@ -517,7 +517,1600 @@ float.f - ieee754 floating point routines added, very useful in development, sti
 
 Releasing PropForth 2.4. A few bug fixes, and a number of enhancements. Stack over/underflow reporting, the divide is now a mixed divide, 64 bits divided by 32 bits to give a 32 bit remainder and result. This is very useful when scaling prop counters.
 
-La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle.
+La.f - a lighter version of La, missing the GUI but more power and easily usable in other forth words. Can also sample every clock cycle.
+
+----
+
+=== 2009 April 20 ===
+
+Added doc for AddingSerialMonitor and a page for the logic analyzer [La], which is early code (V0.8)
+
+----
+
+=== 2009 April 19 ===
+
+Files uploaded, basics documented, fair bit more documentation required.
+#summary Status of PropForth kernel development
+
+=== PropForth 5.1 targeted November - December 2011 ===
+
+ * New Regression Testbed hardware configuration
+
+ - To support automated regression testing
+
+ - Two Spinneret boards + 4 propchips
+
+ - each spinneret board will connect to 2 prop chips via MCS (Multichannel Highspeed Serial)
+
+ - Each spinneret will communicate to (the other) spinneret via MCS
+
+ - Each spinneret will have regular serial (RS232) connection to the propchips and the other spinneret.
+
+ - The result is all the props can function as a single giant model using MCS, or as many independent props via RS232
+
+ After the 5.0 functionality is debugged and working using the 4.5 hardware set up, the working code will be used to get the new hardware configuration nailed down for 5.1.  This is to reduce the number of unknowns and variables in debugging at each phase. 
+
+=== PropForth 5.0 targeted ~~Summer September ~~ October 2011 ===
+{{{
+Redesign PropForth kernel:
+
+ * NEW - Use Test Bed Hardware Configuration from 4.5
+ * minimal kernel, recover (most of?) hub memory
+ * dictionary resides on SD card
+ * SD resident definition loads itself from SD, executes, and removes itself from memory
+ * Maximize space available for user applications
+ * Optimize assembler, disassembler, debugger
+ * regression test automation, goal is to run entire regression suite from a single command
+
+trade-off: 
+ * using assembler is easier (use assembler definition same way as forth definition), 
+ * rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
+
+}}}
+
+==== 20110924 present status of 5.0 effort ====
+
+  Sal has returned from his many weeks of hiking through the national parks of North America.  
+
+  The "pieces" of PropForth 5.0 are working, they just need to be packaged up and made into a release.  This could be ready in a couple weeks. 
+
+==== 20110703 present status of 5.0 effort ====
+
+
+  ===== Assembler Optimizations =====
+
+  Assembler optimization of the kernel are showing positive results. 
+
+  Already cog memory use has decreased by 16 longs.  This includes the space reserved for paging in assembler routines, Sal reports this method works well. 
+
+  A big speed increase for lots of "small words" like ` 2+ 4* 1- ` has been noticed.  This is kind of a big deal.
+
+  ===== Paged Assembler =====
+
+  Previously, assembler definitions would be loaded into memory before use, now the process is automatic.  When an assembler definition is called, if it is in memory it executes; if its not already in memory it is loaded into the paging area and executes.  This is kind of a big deal. 
+
+  For kernel words, the process is to rewrite the function in assembler, run spinmaker to generate a new PropForthkernel.spin; now the assembler function is used as "paged assembler".  This is a really big deal.
+
+  ===== Direct Access to Stack =====
+
+  There is now a method to directly access specific stack positions: ` 0 st@ ` fetches the 0th (top) stack item, ` 7 st@ ` fetches the 8th (seventh below top) stack item.  ` 13 7 st! ` stores a 13 at the 7th stack location.  Similar words for the return stack are available. 
+
+  ===== EEPROM =====
+
+  The EEPROM access words are significantly faster.  Previously, loading from EEPROM took 17 seconds, now it takes 5 seconds.  This is a big deal. 
+
+  ===== Kernel Branches =====
+
+  There continues to be two kernel choices: a minimal forth kernel, and a an extended development kernel.  As before, the primary kernel for development is the development kernel, and the minimal kernel is intended for finished turnkey applications that no longer need the development support.  Of course you can still stick with the dev kernel in a final app if you choose. 
+
+   ===== EEPROM Branch ======
+
+  There is another branch at the EEPROM file system support.  On a system that has greater than 32k EEPROM, the EEPROM file system kernel is available.  All the development extensions reside in EEPROM to save application space on the prop.  The provisions for using dev extensions from EEPROM load at boot, it takes about 3 seconds to load (2 seconds to boot the prop, and 1 second to load from EEPROM). It turns out that the specs on individual EEPROMS are all over the place, but 400 kilohertz appears to be the lowest common denominator for maximum operational speed, 400 should work with any part.  If you have a faster EEPROM, the speed can be increased.  Right now there are two parameters that have to be adjusted to change the EEPROM speed, Sal is working to make this One parameter as prof_braino tends to forget the other one and screw things up.   
+
+ ===== SD Branch ======
+
+  There is also a branch to include SD support.  The v5.0 SD is also faster, but Sal has not done the benchmarks yet.   Sal's target configuration is to have the EEPROM READONLY file system load the SD file system, to free up application space in the prop.  Since the SD slot is present on the Spinneret board, the SD will likely hold the Ethernet, RTC etc support.   This default of course can be changed for those with for example a wiz5100 and no need of SD, etc.
+
+  ===== MULTIPROP =====
+
+  The MASTER Prop boots, then boots the SLAVE.  The MASTER runs a boot script, and send forth to the individual SLAVE.  Sal is working in the word set to do this, is will be similar to the 
+
+  {{{
+  c" 1 2 3 forth word "  4 cogx 
+  }}}
+
+  construct used for the local cogs, but will provide parameters for accessing individual cogs on specific slaves. This is kind of a totally cool big deal.  The reason it is a big deal is that it eliminates some aspects of the "not enough memory" complaint against the prop.  Now we have unlimited 496 longs in cogs and 32K RAM in props.  
+
+  EXAMPLE:  Since the SD cog has the SD drivers, no other cog need them in memory.  The SD cog grabs data off the SD, and sends it as a byte stream to the slave cog for processing. 
+
+  EXAMPLE:  Main cog gets an HTTP request for time sample and Fast Hartley.  Main cog sends FHT to the slave, sends the request to the slave, the slave does it and sends it back.  
+
+  The opinion is that v4.5 was good enough to demo this functionality, but the 5.0 release should be fast enough for an actual production application.  v4.5 could send data at about 5k bytes per second max, v5.0 can send data about 13k bytes per second on one channel. 
+
+  ===== NEW TEST BED =====
+
+  Sal is working on a new standardized test bed consisting of one spinneret as a gateway, a second spinneret as Unit Under Test, and one or more bare prop chips as slaves.  The automated regression suite will be configured to use this test bed.  Once the regression automation is in place, we can add all regression tests we want, and run them batch, in parallel, repeatedly, for little or no additional effort.  Currently, it takes about an afternoon to run the full regression suite, with delays and interruptions.  It is estimated that the automated regression suite would run end to end in about 5 minutes.  This could possibly be made faster is the various section were run on separate cogs in parallel. 
+
+  The new standard test bed unit could be used for general applications as well.  This is potentially a big deal. 
+
+  For example, the unit is placed in a production environment to monitor/control process.  The device is connected to equipment, and to the internal Ethernet for control and monitoring. The device can be serviced remotely in real time without affecting the process under control.  Also, the external connections can be unplugged or powered down to eliminate any security issues.  
+
+  A pilot project to demonstrate this method is being planned.  "Tom's Automated Greenhouse" is in the planning stages.  Please suggest other applications if you have any on the books. 
+
+  ===== Neural Net =====
+
+  I spoke to Sal about the neural net threads on the forums.  Most of what he said was confidential, but here's the bottom line:  While a neural net is great for simple tasks like character recognition, complex tasks are almost impossible to QA.  
+
+  The Multiprop material will potentially make a very nice inexpensive net on your desk for experiments.  But you might want to consider carefully before putting it into production on a critical task.  On the other hand, if 100 users start experimenting, maybe one might get lucky and find something interesting.  More on this as it develops, time permitting.   
+
+=== PropForth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
+
+Bug fixes to 4.5 as needed 
+
+ * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit 
+ * LogicAnalyzer.f: Sample each 1 cycle bug fix
+
+
+20110703 this is to be released this week after Sal sends the package for final regression test. 
+
+The changes are first posted in issue 27 comment 14 mcs.f and logicanalyzer.f
+
+Result is 
+ * about 13,000 bytes per second for one channel
+ * about 11,500 bytes per second per channel for each of 8 channels, total 90,000 bytes per second total for all 8 channels simultaneously.
+
+Sal commented that the logic analyzer code didn't work well sampling at full speed 1 sample per clock, and wondered why nobody caught this.   Braino thinks that folks that need a logic analyzer have one already, and folks that don't have a logic analyzer don't know how to use one, so the software logic analyzer in PropForth is under used.  
+
+  == *REQUEST* ==
+
+Could someone on the team come up with an example on how using the logic analyzer on something appropriate like VGA?  
+
+  == NOTE ON NUMBER BASE ==
+
+  * PropForthbootkerenel.f set base to hex in fstart line 2487.  That is, the mininmal kerenl is hex by defaut. 
+  * PropForthkerenel.f sets base to decimal in onreset.  That is, since people tend to think in decimal, the kernel switches to decimal when it is reset. 
+
+BUT REMEMBER that each cog has its own number base setting. 
+
+The fastload command (fl) fires off another cog to load the code and interpret it into the dictionary.  That is, you are working in cog6 and you do a fastload, cog6 make cog0 load the code. using the word *hex* in the source file affect cog0 not cog6.  
+
+Any reset will cause the number base to switch back to the default.  
+
+I got bit by this, it needs to be written up better. 
+
+So use  ` 22 pinout ` to set pin 22 to an output, and  ' 22 pinhi ' to set pin high.  Then do bit mask, then do assembler,; but pay attention to the number base for the cog doing the work. 
+
+
+=== PropForth 4.5 Released June 14, 2011 (public release) ===
+
+ * include regression tests
+ * design regression test to serve as tutorial
+ * design regression test to serve as functional definition
+ * design regression test for future automated execution
+
+~~ PropForth 4.5 (Update) targeted June 2011 (public release) ~~
+
+(update)
+
+SD
+
+servers 
+ * HTTP 
+ * telnet 
+ * running forth from a HTTP page
+
+=== PropForth 4.5 targeted March/April 2011 (public release) ===
+
+Final Spinneret Code 
+ * Ethernet support
+ * telnet support using character (byte) transfer
+ * HTTP server support
+ * NIST support
+ * remote development over Internet support
+
+Final SD support
+ * micro SD slot support for Spinneret, C3, etc
+ * Multiple partitions
+ * Multiple files per partition
+ * Any Cog may access any partition it has MOUNTED
+ * One Cog may access multiple files
+ * Multiple Cogs man access the same file
+ * NO BUFFERING FOR the FILE SYSTEM.  The overhead in code and speed penalty is not worth it at this time. 
+This method is nearly as fast as the speed of the SD card data transfer. 
+ * The last file referenced is the current file, regardless of cog or partition.  
+
+Decision is to not worry about SPACE EFFICIENCY on SD card, instead concentrate on ALIGNMENT to SD card 512 byte blocks.  
+This gives maximum speed and efficiency on this system.  
+We expect some discussion on this point until it is understood by users.
+While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
+
+NOTE:
+ * NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  
+Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; 
+we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop". 
+ 
+CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
+
+PWM support:
+ * examples in forth for servo control
+ * examples in forth for ESC control  (electronic speed controller)
+ * examples in forth for stepper motor control
+
+Improved documentation:
+ * improved "white-space" handling
+ * consistent stack notes
+ * more inline comments
+ * inline notation of external references 
+
+NOTE: There is a consequence of the support added this release that will be addressed in PropForth 5.0.  The Ethernet and SD support will take a larger amount of dictionary space.  This is estimated to leave only 2-4k of space for application development.  PropForth 5.0 will attempt to redesign the kernel to free up hub space.
+
+=== PropForth 4.4 April 2011 (development only, not for public release) ===
+
+SD support:
+
+Sal reviewed Caskas's SD code to find the bug that was giving problems.  It was noticed that because the clock is starting and stopping, some SD cards need a couple "stop bits" to get going.  Initially, most worked, some did not.  Sal added a stop bit, and more started working.  Sal added a second, and all his started working.  He added a third and has had no problems. 
+
+The initial SD support will be a low-level, traditional forth "block access".  The idea is access to the card with minimal code and maximum speed.  This is suitable for Sal's embedded project needs.  The initial version will NOT be windows compatible.  Windows compatible extensions can be added using the provided low-level support words, but Sal feels its too big for the benefit it provides, and therefore will not be included in the default kernel.
+
+We plan to review the code, and perhaps Caskaz will provide the extension with Windows FAT support. 
+
+=== PropForth 4.3 Beta March 2011 (development only, not for public release) ===
+
+Spinneret Ethernet support
+
+=== Planned PropForth 4.2 March 2011 ===
+
+Refinement on 4.0:
+ changes to package:
+  * PropForth Boot Kernel - contains minimum to be a forth system on the prop
+  * PropForth Kernel - a subset of ANSI standard kernel words tailored to the prop.  These are extensions typically used in development. 
+  * EEPROM file systems is not assumed present by default, due to 32k EEPROM on the demoboard.  Source code files in the distribution package now have "fswrite" and "..." commented out. Remove the comments on these words is you wish to use the EEPROM file system on your 64K or larger hardware
+
+Source to be re-organized:
+  * PropForth.spin
+  * PropForthboot.spin
+
+Functional Change:
+ * PropForth to come up as DECIMAL by default
+ * Number Base to be controled by HEX and DECIMAL words
+ * Existing source may be loaded by including the HEX word at the start of source file, base will return to decimal after load is complete
+
+Sal to draft article 1 "intro to using PropForth"
+
+=== Planned PropForth 4.1 February 2010 === 4.1 changes to be delayed to a later release
+
+ reference configuration for multiple romless leaf slaves
+
+ reference configuration for multiple romless sub-masters (intermediate slaves) 
+
+ Revert to non-printable characters (invisible characters) echoed as spaces
+
+----
+
+=== Planned PropForth 4.0b Release December 2010 ===
+
+ Demoboard pin-out examples for MASTER/SLAVE support
+
+ any minor bug fixes 
+
+----
+
+=== PropForth 4.0a Released December 18 2010 ===
+
+ Corrected Typos in LogicAnalyzer.f, fs.f, README.txt
+
+ Re-organized files names such that they appear in the directory in the order used  
+
+ Added sub-directory with an example that does NOT reqire 64k EEPROM
+
+   Note:  Demoboard pin out example for MASTER/SLAVE is not included in this example
+
+   Note:  Spineret code is NOT final version, this is current state of development,
+
+   Note: snet.f is a regular serial connection to spineret hardware, where MASTER opens a terminal to spineret's prop chip, but spineret wiznet support is not complete, this is current state of development, 
+
+   Note:  Watch out for invisible characters,  these are not echoed as spaces in this version
+
+----
+
+=== PropForth 4.0 Released December 05 2010 ===
+
+Reorganized Kernel:
+
+ - {{{PropForth.spin}}}  - the simplest kernel that can compile forth source code in SPIN
+
+ - {{{PropForthCore.f}}} - the simplest kernel that can compile forth source code FORTH SOURCE
+
+ - {{{PropForth.f}}} - all necessary Kernel function beyond the core
+
+It was determined that the kernel too big again.  During re-organization, the above method was selected.  All kernel functions will be available in high level forth source code. 
+
+  - Standardize communication interfaces. 
+
+All communications options (serial, VGA, Ethernet, high speed inter-prop serial channels) will have the same structure:  One long, first word is input, second word is output. The method to plug into a channel will be the same for all options.  There will be a single general documentation for communications, and a subsection for the details that differentiate each option.  Should be a little easier.
+
+ - final high speed inter-prop serial channels
+
+High Speed serial from non released V3.6 will be cleaned up in the transition to 4.0.  Documentation and examples. 
+
+ - fl: fixes to FASTLOAD
+
+Change current behavior of loading the source into memory in one pass as a single chunk, and interpreting all the source in a second pass as one chunk.  After months of research, it was determined that the prop has multiple cogs, so a cog could start loading the source, and another cog could start interpreting the source.  Took a while, but we finally noticed.  Consider change in  handling of in-line comments so the input buffer does not overrun when code is followed by a comment on the same line. 
+
+----
+
+=== PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
+
+SD Slot for Cards up to 2 Gig
+
+SRAM and Latch support for Hive
+
+----
+
+=== Not Released PropForth 3.6 November 2010  ===
+
+Sorry, this turned out to be an ALPHA, not to be released to the general public. 
+
+Inter chip serial communication for multiple Propeller configuration
+
+new estimate (20101031) indicates
+
+preliminary estimate (20101024) indicates:
+
+ - 8 channel 
+
+ - full duplex (4 pairs of 2 channels)
+
+ - 5.5 k characters per second application to application (not wire speed)
+
+ - ROM-less slaves: Master load image into slave automagically, slaves come up talking and ready to go
+
+PinoutConfiguration.spin file to select hardware
+
+ - Demoboard pinout
+
+ - Hive pinout ([http://hive-project.de/ Hive-Project.de])
+
+ - C3 (when available)
+
+ - Protoboard (user configuration of all I/O ports)
+
+Ethernet 
+
+ - Hive ENC28J60 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en022889
+
+ - Wiznet [WIZ811MJ] W5100 http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Detail.asp?cate1=&cate2=&cate3=&pid=1035 
+
+----
+
+=== 2010 October 19 PropForth 3.5e ===
+
+  ~~2010 October 17 PropForth 3.5c~~ 
+
+  ~~2010 October 17 PropForth 3.5b~~ 
+
+  ~~2010 October 17 PropForth 3.5a~~ 
+
+  ~~2010 October 10 PropForth 3.5~~ 
+
+ ~~Yes, its sadly comical the way I do configuration management.  The code works the same in all version, I messed up the version strings and made tons of typos~~
+
+The Standard kernel (Non VGA version) is 3.5c.  The VGA versions are have version string updates and are at version E.  Thanks to all the users that pointed this out. 
+
+ALPHA Example speed optimization:  converting forth into assembly - tutorial to follow
+
+HIVE and Demoboard configurations selectable by moving comment marks in:
+
+ - Final Hi Res VGA
+
+ - Low Res VGA option
+
+
+removed from plan - TV option
+
+----
+
+=== 2010 Sept 29 PropForth 3.4 Hive version ===
+
+ ===== unplanned release, braino finished the Hive build early =====
+
+Modified PropForth 3.4 to use Hive hardware pinout
+
+ - Hive-PropForthHiResVGA.spin
+
+ - Hive-HiResVGA.f
+
+VGA and Keyboard have a different pin assignment than Demo Board.
+
+We will try to re-factor the code to prevent parallel branches, target is 3.5 release
+
+----
+
+=== 2010 Sept 05 PropForth 3.4  ===
+
+1. HiRes VGA Option - Jupiter ACE prototype - ALPHA Release:
+
+   a. Uses Demoboard VGA pinout
+
+   b. 128 characters (columns) wide by 64 lines (rows) 
+
+   c. VGA screen is divided into two sections, top half and bottom half.
+Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial terminal is now cog 5 
+
+   d. Serial communications from ~~cog6~~ cog5 to PC terminal program is also active 
+
+   e. uses standard PS/2 keyboard for communication with VGA terminal
+
+   f. mouse support is not planned for this release
+
+   g. see FAQ and JUPITER ACE 
+
+   h. user testing and comments requested. Please play with it and send me any comments   
+
+2. FORTH Output will NOT be in a different color from user input, due to differences in color settings for serial terminal versus VGA terminal
+
+3. Ethernet support NOT added to this release
+
+4. LOW RES VGA NOT included in this release 
+
+----
+
+=== Planned PropForth 3.3 Around September 2010 ===
+
+*UPDATE:  Completed 2010-08-22
+
+*Development release only, needs testing; not for public release
+
+NOTE: CREATE word behaves differently in PropForth - see FAQ
+
+NOTE: lines commented using \  behave different in PropForth - see FAQ
+
+1. Add patches for definition of {{{ * ( : * u* ; ) }}} and other math functions
+
+2. Add keyboard support
+
+3. Add 32x15 VGA text support as extension' LowResVGA.f
+
+4. Add 128x64 Hi Res VGA as commented option in PropForth.spin
+
+5. Close outstanding issues that have been fixed, comment on  issue that has not been fixed.
+
+6.  Begin support for multi-prop system (C3, Hive)
+
+7. ethernet kernel support is NOT planned for 3.3; rescheduled to 3.4
+
+----
+
+=== 2010 July 09 PropForth 3.2 ===
+
+PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the README.txt file in the archive
+
+NOTE: The UNDEFINED WORD error can also occur due to a serial overrun.  If you paste in a chunk of code to teraterm and see this error, you should paste smaller sections of text or use the {{{fl}}} (fileload) word
+
+[http://code.google.com/p/PropForth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
+
+should help in updating existing code. 
+
+Some of the files names have changed BACK to old names due to organizational issues.  Therefore the entire version 3.2 file set is posted as a single zip archive.  Please submit questions and requests based on the v 3.2 file set. 
+
+The additional changes listed in version 2.8 will be added at a later date as time permits. 
+
+----
+
+=== Not Released PropForth 3.0 ===
+
+Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. No date has been targeted for this release.
+
+----
+
+=== Not Released PropForth 2.8 ===
+
+Plan to add words to support calling forth from spin, and spin from forth. 
+
+Plan to post the disassembler and documentation
+
+Plan to post the ethernet interface
+
+----
+
+=== 2010 May 30 PropForth 2.7 ===
+
+fix bug in saveforth for 64k page eeProm write
+
+Fix key input time out 
+
+Some documentation changes
+
+Decided to start including a downloadable file PropForthX.X.zip to contain all releases files in a single archive.  This will be added when all updates are complete.
+
+NOTE: Documentation changes are in progress
+PLEASE send questions, this will help drive the documentation updates
+
+----
+
+=== 2010 May 9 ===
+
+Releasing PropForth 2.6. A number of bug fixes.
+
+----
+
+=== 2009 October 24 ===
+
+Releasing PropForth 2.5. One few bug fix, cogreset issue. eeReadPage and eeWritePage have been modified to support multiple 64kx8 eeproms. eeCopy word was added into the base image.
+
+La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle. Some minor adds, words to sample at different rates.
+
+float.f - ieee754 floating point routines added, very useful in development, still need to use fixed point math where speed is essential.
+
+----
+
+=== 2009 October 2 ===
+
+Releasing PropForth 2.4. A few bug fixes, and a number of enhancements. Stack over/underflow reporting, the divide is now a mixed divide, 64 bits divided by 32 bits to give a 32 bit remainder and result. This is very useful when scaling prop counters.
+
+La.f - a lighter version of La, missing the GUI but more power and easily usable in other forth words. Can also sample every clock cycle.
+
+----
+
+=== 2009 April 20 ===
+
+Added doc for AddingSerialMonitor and a page for the logic analyzer [La], which is early code (V0.8)
+
+----
+
+=== 2009 April 19 ===
+
+Files uploaded, basics documented, fair bit more documentation required.
+#summary Status of PropForth kernel development
+
+=== PropForth 5.1 targeted November - December 2011 ===
+
+ * New Regression Testbed hardware configuration
+
+ - To support automated regression testing
+
+ - Two Spinneret boards + 4 propchips
+
+ - each spinneret board will connect to 2 prop chips via MCS (Multichannel Highspeed Serial)
+
+ - Each spinneret will communicate to (the other) spinneret via MCS
+
+ - Each spinneret will have regular serial (RS232) connection to the propchips and the other spinneret.
+
+ - The result is all the props can function as a single giant model using MCS, or as many independent props via RS232
+
+ After the 5.0 functionality is debugged and working using the 4.5 hardware set up, the working code will be used to get the new hardware configuration nailed down for 5.1.  This is to reduce the number of unknowns and variables in debugging at each phase. 
+
+=== PropForth 5.0 targeted ~~Summer September ~~ October 2011 ===
+{{{
+Redesign PropForth kernel:
+
+ * NEW - Use Test Bed Hardware Configuration from 4.5
+ * minimal kernel, recover (most of?) hub memory
+ * dictionary resides on SD card
+ * SD resident definition loads itself from SD, executes, and removes itself from memory
+ * Maximize space available for user applications
+ * Optimize assembler, disassembler, debugger
+ * regression test automation, goal is to run entire regression suite from a single command
+
+trade-off: 
+ * using assembler is easier (use assembler definition same way as forth definition), 
+ * rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
+
+}}}
+
+==== 20110924 present status of 5.0 effort ====
+
+  Sal has returned from his many weeks of hiking through the national parks of North America.  
+
+  The "pieces" of PropForth 5.0 are working, they just need to be packaged up and made into a release.  This could be ready in a couple weeks. 
+
+==== 20110703 present status of 5.0 effort ====
+
+
+  ===== Assembler Optimizations =====
+
+  Assembler optimization of the kernel are showing positive results. 
+
+  Already cog memory use has decreased by 16 longs.  This includes the space reserved for paging in assembler routines, Sal reports this method works well. 
+
+  A big speed increase for lots of "small words" like ` 2+ 4* 1- ` has been noticed.  This is kind of a big deal.
+
+  ===== Paged Assembler =====
+
+  Previously, assembler definitions would be loaded into memory before use, now the process is automatic.  When an assembler definition is called, if it is in memory it executes; if its not already in memory it is loaded into the paging area and executes.  This is kind of a big deal. 
+
+  For kernel words, the process is to rewrite the function in assembler, run spinmaker to generate a new PropForthkernel.spin; now the assembler function is used as "paged assembler".  This is a really big deal.
+
+  ===== Direct Access to Stack =====
+
+  There is now a method to directly access specific stack positions: ` 0 st@ ` fetches the 0th (top) stack item, ` 7 st@ ` fetches the 8th (seventh below top) stack item.  ` 13 7 st! ` stores a 13 at the 7th stack location.  Similar words for the return stack are available. 
+
+  ===== EEPROM =====
+
+  The EEPROM access words are significantly faster.  Previously, loading from EEPROM took 17 seconds, now it takes 5 seconds.  This is a big deal. 
+
+  ===== Kernel Branches =====
+
+  There continues to be two kernel choices: a minimal forth kernel, and a an extended development kernel.  As before, the primary kernel for development is the development kernel, and the minimal kernel is intended for finished turnkey applications that no longer need the development support.  Of course you can still stick with the dev kernel in a final app if you choose. 
+
+   ===== EEPROM Branch ======
+
+  There is another branch at the EEPROM file system support.  On a system that has greater than 32k EEPROM, the EEPROM file system kernel is available.  All the development extensions reside in EEPROM to save application space on the prop.  The provisions for using dev extensions from EEPROM load at boot, it takes about 3 seconds to load (2 seconds to boot the prop, and 1 second to load from EEPROM). It turns out that the specs on individual EEPROMS are all over the place, but 400 kilohertz appears to be the lowest common denominator for maximum operational speed, 400 should work with any part.  If you have a faster EEPROM, the speed can be increased.  Right now there are two parameters that have to be adjusted to change the EEPROM speed, Sal is working to make this One parameter as prof_braino tends to forget the other one and screw things up.   
+
+ ===== SD Branch ======
+
+  There is also a branch to include SD support.  The v5.0 SD is also faster, but Sal has not done the benchmarks yet.   Sal's target configuration is to have the EEPROM READONLY file system load the SD file system, to free up application space in the prop.  Since the SD slot is present on the Spinneret board, the SD will likely hold the Ethernet, RTC etc support.   This default of course can be changed for those with for example a wiz5100 and no need of SD, etc.
+
+  ===== MULTIPROP =====
+
+  The MASTER Prop boots, then boots the SLAVE.  The MASTER runs a boot script, and send forth to the individual SLAVE.  Sal is working in the word set to do this, is will be similar to the 
+
+  {{{
+  c" 1 2 3 forth word "  4 cogx 
+  }}}
+
+  construct used for the local cogs, but will provide parameters for accessing individual cogs on specific slaves. This is kind of a totally cool big deal.  The reason it is a big deal is that it eliminates some aspects of the "not enough memory" complaint against the prop.  Now we have unlimited 496 longs in cogs and 32K RAM in props.  
+
+  EXAMPLE:  Since the SD cog has the SD drivers, no other cog need them in memory.  The SD cog grabs data off the SD, and sends it as a byte stream to the slave cog for processing. 
+
+  EXAMPLE:  Main cog gets an HTTP request for time sample and Fast Hartley.  Main cog sends FHT to the slave, sends the request to the slave, the slave does it and sends it back.  
+
+  The opinion is that v4.5 was good enough to demo this functionality, but the 5.0 release should be fast enough for an actual production application.  v4.5 could send data at about 5k bytes per second max, v5.0 can send data about 13k bytes per second on one channel. 
+
+  ===== NEW TEST BED =====
+
+  Sal is working on a new standardized test bed consisting of one spinneret as a gateway, a second spinneret as Unit Under Test, and one or more bare prop chips as slaves.  The automated regression suite will be configured to use this test bed.  Once the regression automation is in place, we can add all regression tests we want, and run them batch, in parallel, repeatedly, for little or no additional effort.  Currently, it takes about an afternoon to run the full regression suite, with delays and interruptions.  It is estimated that the automated regression suite would run end to end in about 5 minutes.  This could possibly be made faster is the various section were run on separate cogs in parallel. 
+
+  The new standard test bed unit could be used for general applications as well.  This is potentially a big deal. 
+
+  For example, the unit is placed in a production environment to monitor/control process.  The device is connected to equipment, and to the internal Ethernet for control and monitoring. The device can be serviced remotely in real time without affecting the process under control.  Also, the external connections can be unplugged or powered down to eliminate any security issues.  
+
+  A pilot project to demonstrate this method is being planned.  "Tom's Automated Greenhouse" is in the planning stages.  Please suggest other applications if you have any on the books. 
+
+  ===== Neural Net =====
+
+  I spoke to Sal about the neural net threads on the forums.  Most of what he said was confidential, but here's the bottom line:  While a neural net is great for simple tasks like character recognition, complex tasks are almost impossible to QA.  
+
+  The Multiprop material will potentially make a very nice inexpensive net on your desk for experiments.  But you might want to consider carefully before putting it into production on a critical task.  On the other hand, if 100 users start experimenting, maybe one might get lucky and find something interesting.  More on this as it develops, time permitting.   
+
+=== PropForth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
+
+Bug fixes to 4.5 as needed 
+
+ * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit 
+ * LogicAnalyzer.f: Sample each 1 cycle bug fix
+
+
+20110703 this is to be released this week after Sal sends the package for final regression test. 
+
+The changes are first posted in issue 27 comment 14 mcs.f and logicanalyzer.f
+
+Result is 
+ * about 13,000 bytes per second for one channel
+ * about 11,500 bytes per second per channel for each of 8 channels, total 90,000 bytes per second total for all 8 channels simultaneously.
+
+Sal commented that the logic analyzer code didn't work well sampling at full speed 1 sample per clock, and wondered why nobody caught this.   Braino thinks that folks that need a logic analyzer have one already, and folks that don't have a logic analyzer don't know how to use one, so the software logic analyzer in PropForth is under used.  
+
+  == *REQUEST* ==
+
+Could someone on the team come up with an example on how using the logic analyzer on something appropriate like VGA?  
+
+  == NOTE ON NUMBER BASE ==
+
+  * PropForthbootkerenel.f set base to hex in fstart line 2487.  That is, the mininmal kerenl is hex by defaut. 
+  * PropForthkerenel.f sets base to decimal in onreset.  That is, since people tend to think in decimal, the kernel switches to decimal when it is reset. 
+
+BUT REMEMBER that each cog has its own number base setting. 
+
+The fastload command (fl) fires off another cog to load the code and interpret it into the dictionary.  That is, you are working in cog6 and you do a fastload, cog6 make cog0 load the code. using the word *hex* in the source file affect cog0 not cog6.  
+
+Any reset will cause the number base to switch back to the default.  
+
+I got bit by this, it needs to be written up better. 
+
+So use  ` 22 pinout ` to set pin 22 to an output, and  ' 22 pinhi ' to set pin high.  Then do bit mask, then do assembler,; but pay attention to the number base for the cog doing the work. 
+
+
+=== PropForth 4.5 Released June 14, 2011 (public release) ===
+
+ * include regression tests
+ * design regression test to serve as tutorial
+ * design regression test to serve as functional definition
+ * design regression test for future automated execution
+
+~~ PropForth 4.5 (Update) targeted June 2011 (public release) ~~
+
+(update)
+
+SD
+
+servers 
+ * HTTP 
+ * telnet 
+ * running forth from a HTTP page
+
+=== PropForth 4.5 targeted March/April 2011 (public release) ===
+
+Final Spinneret Code 
+ * Ethernet support
+ * telnet support using character (byte) transfer
+ * HTTP server support
+ * NIST support
+ * remote development over Internet support
+
+Final SD support
+ * micro SD slot support for Spinneret, C3, etc
+ * Multiple partitions
+ * Multiple files per partition
+ * Any Cog may access any partition it has MOUNTED
+ * One Cog may access multiple files
+ * Multiple Cogs man access the same file
+ * NO BUFFERING FOR the FILE SYSTEM.  The overhead in code and speed penalty is not worth it at this time. 
+This method is nearly as fast as the speed of the SD card data transfer. 
+ * The last file referenced is the current file, regardless of cog or partition.  
+
+Decision is to not worry about SPACE EFFICIENCY on SD card, instead concentrate on ALIGNMENT to SD card 512 byte blocks.  
+This gives maximum speed and efficiency on this system.  
+We expect some discussion on this point until it is understood by users.
+While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
+
+NOTE:
+ * NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  
+Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; 
+we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop". 
+ 
+CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
+
+PWM support:
+ * examples in forth for servo control
+ * examples in forth for ESC control  (electronic speed controller)
+ * examples in forth for stepper motor control
+
+Improved documentation:
+ * improved "white-space" handling
+ * consistent stack notes
+ * more inline comments
+ * inline notation of external references 
+
+NOTE: There is a consequence of the support added this release that will be addressed in PropForth 5.0.  The Ethernet and SD support will take a larger amount of dictionary space.  This is estimated to leave only 2-4k of space for application development.  PropForth 5.0 will attempt to redesign the kernel to free up hub space.
+
+=== PropForth 4.4 April 2011 (development only, not for public release) ===
+
+SD support:
+
+Sal reviewed Caskas's SD code to find the bug that was giving problems.  It was noticed that because the clock is starting and stopping, some SD cards need a couple "stop bits" to get going.  Initially, most worked, some did not.  Sal added a stop bit, and more started working.  Sal added a second, and all his started working.  He added a third and has had no problems. 
+
+The initial SD support will be a low-level, traditional forth "block access".  The idea is access to the card with minimal code and maximum speed.  This is suitable for Sal's embedded project needs.  The initial version will NOT be windows compatible.  Windows compatible extensions can be added using the provided low-level support words, but Sal feels its too big for the benefit it provides, and therefore will not be included in the default kernel.
+
+We plan to review the code, and perhaps Caskaz will provide the extension with Windows FAT support. 
+
+=== PropForth 4.3 Beta March 2011 (development only, not for public release) ===
+
+Spinneret Ethernet support
+
+=== Planned PropForth 4.2 March 2011 ===
+
+Refinement on 4.0:
+ changes to package:
+  * PropForth Boot Kernel - contains minimum to be a forth system on the prop
+  * PropForth Kernel - a subset of ANSI standard kernel words tailored to the prop.  These are extensions typically used in development. 
+  * EEPROM file systems is not assumed present by default, due to 32k EEPROM on the demoboard.  Source code files in the distribution package now have "fswrite" and "..." commented out. Remove the comments on these words is you wish to use the EEPROM file system on your 64K or larger hardware
+
+Source to be re-organized:
+  * PropForth.spin
+  * PropForthboot.spin
+
+Functional Change:
+ * PropForth to come up as DECIMAL by default
+ * Number Base to be controled by HEX and DECIMAL words
+ * Existing source may be loaded by including the HEX word at the start of source file, base will return to decimal after load is complete
+
+Sal to draft article 1 "intro to using PropForth"
+
+=== Planned PropForth 4.1 February 2010 === 4.1 changes to be delayed to a later release
+
+ reference configuration for multiple romless leaf slaves
+
+ reference configuration for multiple romless sub-masters (intermediate slaves) 
+
+ Revert to non-printable characters (invisible characters) echoed as spaces
+
+----
+
+=== Planned PropForth 4.0b Release December 2010 ===
+
+ Demoboard pin-out examples for MASTER/SLAVE support
+
+ any minor bug fixes 
+
+----
+
+=== PropForth 4.0a Released December 18 2010 ===
+
+ Corrected Typos in LogicAnalyzer.f, fs.f, README.txt
+
+ Re-organized files names such that they appear in the directory in the order used  
+
+ Added sub-directory with an example that does NOT reqire 64k EEPROM
+
+   Note:  Demoboard pin out example for MASTER/SLAVE is not included in this example
+
+   Note:  Spineret code is NOT final version, this is current state of development,
+
+   Note: snet.f is a regular serial connection to spineret hardware, where MASTER opens a terminal to spineret's prop chip, but spineret wiznet support is not complete, this is current state of development, 
+
+   Note:  Watch out for invisible characters,  these are not echoed as spaces in this version
+
+----
+
+=== PropForth 4.0 Released December 05 2010 ===
+
+Reorganized Kernel:
+
+ - {{{PropForth.spin}}}  - the simplest kernel that can compile forth source code in SPIN
+
+ - {{{PropForthCore.f}}} - the simplest kernel that can compile forth source code FORTH SOURCE
+
+ - {{{PropForth.f}}} - all necessary Kernel function beyond the core
+
+It was determined that the kernel too big again.  During re-organization, the above method was selected.  All kernel functions will be available in high level forth source code. 
+
+  - Standardize communication interfaces. 
+
+All communications options (serial, VGA, Ethernet, high speed inter-prop serial channels) will have the same structure:  One long, first word is input, second word is output. The method to plug into a channel will be the same for all options.  There will be a single general documentation for communications, and a subsection for the details that differentiate each option.  Should be a little easier.
+
+ - final high speed inter-prop serial channels
+
+High Speed serial from non released V3.6 will be cleaned up in the transition to 4.0.  Documentation and examples. 
+
+ - fl: fixes to FASTLOAD
+
+Change current behavior of loading the source into memory in one pass as a single chunk, and interpreting all the source in a second pass as one chunk.  After months of research, it was determined that the prop has multiple cogs, so a cog could start loading the source, and another cog could start interpreting the source.  Took a while, but we finally noticed.  Consider change in  handling of in-line comments so the input buffer does not overrun when code is followed by a comment on the same line. 
+
+----
+
+=== PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
+
+SD Slot for Cards up to 2 Gig
+
+SRAM and Latch support for Hive
+
+----
+
+=== Not Released PropForth 3.6 November 2010  ===
+
+Sorry, this turned out to be an ALPHA, not to be released to the general public. 
+
+Inter chip serial communication for multiple Propeller configuration
+
+new estimate (20101031) indicates
+
+preliminary estimate (20101024) indicates:
+
+ - 8 channel 
+
+ - full duplex (4 pairs of 2 channels)
+
+ - 5.5 k characters per second application to application (not wire speed)
+
+ - ROM-less slaves: Master load image into slave automagically, slaves come up talking and ready to go
+
+PinoutConfiguration.spin file to select hardware
+
+ - Demoboard pinout
+
+ - Hive pinout ([http://hive-project.de/ Hive-Project.de])
+
+ - C3 (when available)
+
+ - Protoboard (user configuration of all I/O ports)
+
+Ethernet 
+
+ - Hive ENC28J60 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en022889
+
+ - Wiznet [WIZ811MJ] W5100 http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Detail.asp?cate1=&cate2=&cate3=&pid=1035 
+
+----
+
+=== 2010 October 19 PropForth 3.5e ===
+
+  ~~2010 October 17 PropForth 3.5c~~ 
+
+  ~~2010 October 17 PropForth 3.5b~~ 
+
+  ~~2010 October 17 PropForth 3.5a~~ 
+
+  ~~2010 October 10 PropForth 3.5~~ 
+
+ ~~Yes, its sadly comical the way I do configuration management.  The code works the same in all version, I messed up the version strings and made tons of typos~~
+
+The Standard kernel (Non VGA version) is 3.5c.  The VGA versions are have version string updates and are at version E.  Thanks to all the users that pointed this out. 
+
+ALPHA Example speed optimization:  converting forth into assembly - tutorial to follow
+
+HIVE and Demoboard configurations selectable by moving comment marks in:
+
+ - Final Hi Res VGA
+
+ - Low Res VGA option
+
+
+removed from plan - TV option
+
+----
+
+=== 2010 Sept 29 PropForth 3.4 Hive version ===
+
+ ===== unplanned release, braino finished the Hive build early =====
+
+Modified PropForth 3.4 to use Hive hardware pinout
+
+ - Hive-PropForthHiResVGA.spin
+
+ - Hive-HiResVGA.f
+
+VGA and Keyboard have a different pin assignment than Demo Board.
+
+We will try to re-factor the code to prevent parallel branches, target is 3.5 release
+
+----
+
+=== 2010 Sept 05 PropForth 3.4  ===
+
+1. HiRes VGA Option - Jupiter ACE prototype - ALPHA Release:
+
+   a. Uses Demoboard VGA pinout
+
+   b. 128 characters (columns) wide by 64 lines (rows) 
+
+   c. VGA screen is divided into two sections, top half and bottom half.
+Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial terminal is now cog 5 
+
+   d. Serial communications from ~~cog6~~ cog5 to PC terminal program is also active 
+
+   e. uses standard PS/2 keyboard for communication with VGA terminal
+
+   f. mouse support is not planned for this release
+
+   g. see FAQ and JUPITER ACE 
+
+   h. user testing and comments requested. Please play with it and send me any comments   
+
+2. FORTH Output will NOT be in a different color from user input, due to differences in color settings for serial terminal versus VGA terminal
+
+3. Ethernet support NOT added to this release
+
+4. LOW RES VGA NOT included in this release 
+
+----
+
+=== Planned PropForth 3.3 Around September 2010 ===
+
+*UPDATE:  Completed 2010-08-22
+
+*Development release only, needs testing; not for public release
+
+NOTE: CREATE word behaves differently in PropForth - see FAQ
+
+NOTE: lines commented using \  behave different in PropForth - see FAQ
+
+1. Add patches for definition of {{{ * ( : * u* ; ) }}} and other math functions
+
+2. Add keyboard support
+
+3. Add 32x15 VGA text support as extension' LowResVGA.f
+
+4. Add 128x64 Hi Res VGA as commented option in PropForth.spin
+
+5. Close outstanding issues that have been fixed, comment on  issue that has not been fixed.
+
+6.  Begin support for multi-prop system (C3, Hive)
+
+7. ethernet kernel support is NOT planned for 3.3; rescheduled to 3.4
+
+----
+
+=== 2010 July 09 PropForth 3.2 ===
+
+PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the README.txt file in the archive
+
+NOTE: The UNDEFINED WORD error can also occur due to a serial overrun.  If you paste in a chunk of code to teraterm and see this error, you should paste smaller sections of text or use the {{{fl}}} (fileload) word
+
+[http://code.google.com/p/PropForth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
+
+should help in updating existing code. 
+
+Some of the files names have changed BACK to old names due to organizational issues.  Therefore the entire version 3.2 file set is posted as a single zip archive.  Please submit questions and requests based on the v 3.2 file set. 
+
+The additional changes listed in version 2.8 will be added at a later date as time permits. 
+
+----
+
+=== Not Released PropForth 3.0 ===
+
+Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. No date has been targeted for this release.
+
+----
+
+=== Not Released PropForth 2.8 ===
+
+Plan to add words to support calling forth from spin, and spin from forth. 
+
+Plan to post the disassembler and documentation
+
+Plan to post the ethernet interface
+
+----
+
+=== 2010 May 30 PropForth 2.7 ===
+
+fix bug in saveforth for 64k page eeProm write
+
+Fix key input time out 
+
+Some documentation changes
+
+Decided to start including a downloadable file PropForthX.X.zip to contain all releases files in a single archive.  This will be added when all updates are complete.
+
+NOTE: Documentation changes are in progress
+PLEASE send questions, this will help drive the documentation updates
+
+----
+
+=== 2010 May 9 ===
+
+Releasing PropForth 2.6. A number of bug fixes.
+
+----
+
+=== 2009 October 24 ===
+
+Releasing PropForth 2.5. One few bug fix, cogreset issue. eeReadPage and eeWritePage have been modified to support multiple 64kx8 eeproms. eeCopy word was added into the base image.
+
+La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle. Some minor adds, words to sample at different rates.
+
+float.f - ieee754 floating point routines added, very useful in development, still need to use fixed point math where speed is essential.
+
+----
+
+=== 2009 October 2 ===
+
+Releasing PropForth 2.4. A few bug fixes, and a number of enhancements. Stack over/underflow reporting, the divide is now a mixed divide, 64 bits divided by 32 bits to give a 32 bit remainder and result. This is very useful when scaling prop counters.
+
+La.f - a lighter version of La, missing the GUI but more power and easily usable in other forth words. Can also sample every clock cycle.
+
+----
+
+=== 2009 April 20 ===
+
+Added doc for AddingSerialMonitor and a page for the logic analyzer [La], which is early code (V0.8)
+
+----
+
+=== 2009 April 19 ===
+
+Files uploaded, basics documented, fair bit more documentation required.
+#summary Status of PropForth kernel development
+
+=== PropForth 5.1 targeted November - December 2011 ===
+
+ * New Regression Testbed hardware configuration
+
+ - To support automated regression testing
+
+ - Two Spinneret boards + 4 propchips
+
+ - each spinneret board will connect to 2 prop chips via MCS (Multichannel Highspeed Serial)
+
+ - Each spinneret will communicate to (the other) spinneret via MCS
+
+ - Each spinneret will have regular serial (RS232) connection to the propchips and the other spinneret.
+
+ - The result is all the props can function as a single giant model using MCS, or as many independent props via RS232
+
+ After the 5.0 functionality is debugged and working using the 4.5 hardware set up, the working code will be used to get the new hardware configuration nailed down for 5.1.  This is to reduce the number of unknowns and variables in debugging at each phase. 
+
+=== PropForth 5.0 targeted ~~Summer September ~~ October 2011 ===
+{{{
+Redesign PropForth kernel:
+
+ * NEW - Use Test Bed Hardware Configuration from 4.5
+ * minimal kernel, recover (most of?) hub memory
+ * dictionary resides on SD card
+ * SD resident definition loads itself from SD, executes, and removes itself from memory
+ * Maximize space available for user applications
+ * Optimize assembler, disassembler, debugger
+ * regression test automation, goal is to run entire regression suite from a single command
+
+trade-off: 
+ * using assembler is easier (use assembler definition same way as forth definition), 
+ * rebuilding the kernel takes two steps in stead of one, (must do extra step for assembler definitions) 
+
+}}}
+
+==== 20110924 present status of 5.0 effort ====
+
+  Sal has returned from his many weeks of hiking through the national parks of North America.  
+
+  The "pieces" of PropForth 5.0 are working, they just need to be packaged up and made into a release.  This could be ready in a couple weeks. 
+
+==== 20110703 present status of 5.0 effort ====
+
+
+  ===== Assembler Optimizations =====
+
+  Assembler optimization of the kernel are showing positive results. 
+
+  Already cog memory use has decreased by 16 longs.  This includes the space reserved for paging in assembler routines, Sal reports this method works well. 
+
+  A big speed increase for lots of "small words" like ` 2+ 4* 1- ` has been noticed.  This is kind of a big deal.
+
+  ===== Paged Assembler =====
+
+  Previously, assembler definitions would be loaded into memory before use, now the process is automatic.  When an assembler definition is called, if it is in memory it executes; if its not already in memory it is loaded into the paging area and executes.  This is kind of a big deal. 
+
+  For kernel words, the process is to rewrite the function in assembler, run spinmaker to generate a new PropForthkernel.spin; now the assembler function is used as "paged assembler".  This is a really big deal.
+
+  ===== Direct Access to Stack =====
+
+  There is now a method to directly access specific stack positions: ` 0 st@ ` fetches the 0th (top) stack item, ` 7 st@ ` fetches the 8th (seventh below top) stack item.  ` 13 7 st! ` stores a 13 at the 7th stack location.  Similar words for the return stack are available. 
+
+  ===== EEPROM =====
+
+  The EEPROM access words are significantly faster.  Previously, loading from EEPROM took 17 seconds, now it takes 5 seconds.  This is a big deal. 
+
+  ===== Kernel Branches =====
+
+  There continues to be two kernel choices: a minimal forth kernel, and a an extended development kernel.  As before, the primary kernel for development is the development kernel, and the minimal kernel is intended for finished turnkey applications that no longer need the development support.  Of course you can still stick with the dev kernel in a final app if you choose. 
+
+   ===== EEPROM Branch ======
+
+  There is another branch at the EEPROM file system support.  On a system that has greater than 32k EEPROM, the EEPROM file system kernel is available.  All the development extensions reside in EEPROM to save application space on the prop.  The provisions for using dev extensions from EEPROM load at boot, it takes about 3 seconds to load (2 seconds to boot the prop, and 1 second to load from EEPROM). It turns out that the specs on individual EEPROMS are all over the place, but 400 kilohertz appears to be the lowest common denominator for maximum operational speed, 400 should work with any part.  If you have a faster EEPROM, the speed can be increased.  Right now there are two parameters that have to be adjusted to change the EEPROM speed, Sal is working to make this One parameter as prof_braino tends to forget the other one and screw things up.   
+
+ ===== SD Branch ======
+
+  There is also a branch to include SD support.  The v5.0 SD is also faster, but Sal has not done the benchmarks yet.   Sal's target configuration is to have the EEPROM READONLY file system load the SD file system, to free up application space in the prop.  Since the SD slot is present on the Spinneret board, the SD will likely hold the Ethernet, RTC etc support.   This default of course can be changed for those with for example a wiz5100 and no need of SD, etc.
+
+  ===== MULTIPROP =====
+
+  The MASTER Prop boots, then boots the SLAVE.  The MASTER runs a boot script, and send forth to the individual SLAVE.  Sal is working in the word set to do this, is will be similar to the 
+
+  {{{
+  c" 1 2 3 forth word "  4 cogx 
+  }}}
+
+  construct used for the local cogs, but will provide parameters for accessing individual cogs on specific slaves. This is kind of a totally cool big deal.  The reason it is a big deal is that it eliminates some aspects of the "not enough memory" complaint against the prop.  Now we have unlimited 496 longs in cogs and 32K RAM in props.  
+
+  EXAMPLE:  Since the SD cog has the SD drivers, no other cog need them in memory.  The SD cog grabs data off the SD, and sends it as a byte stream to the slave cog for processing. 
+
+  EXAMPLE:  Main cog gets an HTTP request for time sample and Fast Hartley.  Main cog sends FHT to the slave, sends the request to the slave, the slave does it and sends it back.  
+
+  The opinion is that v4.5 was good enough to demo this functionality, but the 5.0 release should be fast enough for an actual production application.  v4.5 could send data at about 5k bytes per second max, v5.0 can send data about 13k bytes per second on one channel. 
+
+  ===== NEW TEST BED =====
+
+  Sal is working on a new standardized test bed consisting of one spinneret as a gateway, a second spinneret as Unit Under Test, and one or more bare prop chips as slaves.  The automated regression suite will be configured to use this test bed.  Once the regression automation is in place, we can add all regression tests we want, and run them batch, in parallel, repeatedly, for little or no additional effort.  Currently, it takes about an afternoon to run the full regression suite, with delays and interruptions.  It is estimated that the automated regression suite would run end to end in about 5 minutes.  This could possibly be made faster is the various section were run on separate cogs in parallel. 
+
+  The new standard test bed unit could be used for general applications as well.  This is potentially a big deal. 
+
+  For example, the unit is placed in a production environment to monitor/control process.  The device is connected to equipment, and to the internal Ethernet for control and monitoring. The device can be serviced remotely in real time without affecting the process under control.  Also, the external connections can be unplugged or powered down to eliminate any security issues.  
+
+  A pilot project to demonstrate this method is being planned.  "Tom's Automated Greenhouse" is in the planning stages.  Please suggest other applications if you have any on the books. 
+
+  ===== Neural Net =====
+
+  I spoke to Sal about the neural net threads on the forums.  Most of what he said was confidential, but here's the bottom line:  While a neural net is great for simple tasks like character recognition, complex tasks are almost impossible to QA.  
+
+  The Multiprop material will potentially make a very nice inexpensive net on your desk for experiments.  But you might want to consider carefully before putting it into production on a critical task.  On the other hand, if 100 users start experimenting, maybe one might get lucky and find something interesting.  More on this as it develops, time permitting.   
+
+=== PropForth 4.6 targeted ~~Spring~~ Summer 2011 (public release) ===
+
+Bug fixes to 4.5 as needed 
+
+ * mcs.f:  Marco's changes for 12 cycles per bit from 20 cycles per bit 
+ * LogicAnalyzer.f: Sample each 1 cycle bug fix
+
+
+20110703 this is to be released this week after Sal sends the package for final regression test. 
+
+The changes are first posted in issue 27 comment 14 mcs.f and logicanalyzer.f
+
+Result is 
+ * about 13,000 bytes per second for one channel
+ * about 11,500 bytes per second per channel for each of 8 channels, total 90,000 bytes per second total for all 8 channels simultaneously.
+
+Sal commented that the logic analyzer code didn't work well sampling at full speed 1 sample per clock, and wondered why nobody caught this.   Braino thinks that folks that need a logic analyzer have one already, and folks that don't have a logic analyzer don't know how to use one, so the software logic analyzer in PropForth is under used.  
+
+  == *REQUEST* ==
+
+Could someone on the team come up with an example on how using the logic analyzer on something appropriate like VGA?  
+
+  == NOTE ON NUMBER BASE ==
+
+  * PropForthbootkerenel.f set base to hex in fstart line 2487.  That is, the mininmal kerenl is hex by defaut. 
+  * PropForthkerenel.f sets base to decimal in onreset.  That is, since people tend to think in decimal, the kernel switches to decimal when it is reset. 
+
+BUT REMEMBER that each cog has its own number base setting. 
+
+The fastload command (fl) fires off another cog to load the code and interpret it into the dictionary.  That is, you are working in cog6 and you do a fastload, cog6 make cog0 load the code. using the word *hex* in the source file affect cog0 not cog6.  
+
+Any reset will cause the number base to switch back to the default.  
+
+I got bit by this, it needs to be written up better. 
+
+So use  ` 22 pinout ` to set pin 22 to an output, and  ' 22 pinhi ' to set pin high.  Then do bit mask, then do assembler,; but pay attention to the number base for the cog doing the work. 
+
+
+=== PropForth 4.5 Released June 14, 2011 (public release) ===
+
+ * include regression tests
+ * design regression test to serve as tutorial
+ * design regression test to serve as functional definition
+ * design regression test for future automated execution
+
+~~ PropForth 4.5 (Update) targeted June 2011 (public release) ~~
+
+(update)
+
+SD
+
+servers 
+ * HTTP 
+ * telnet 
+ * running forth from a HTTP page
+
+=== PropForth 4.5 targeted March/April 2011 (public release) ===
+
+Final Spinneret Code 
+ * Ethernet support
+ * telnet support using character (byte) transfer
+ * HTTP server support
+ * NIST support
+ * remote development over Internet support
+
+Final SD support
+ * micro SD slot support for Spinneret, C3, etc
+ * Multiple partitions
+ * Multiple files per partition
+ * Any Cog may access any partition it has MOUNTED
+ * One Cog may access multiple files
+ * Multiple Cogs man access the same file
+ * NO BUFFERING FOR the FILE SYSTEM.  The overhead in code and speed penalty is not worth it at this time. 
+This method is nearly as fast as the speed of the SD card data transfer. 
+ * The last file referenced is the current file, regardless of cog or partition.  
+
+Decision is to not worry about SPACE EFFICIENCY on SD card, instead concentrate on ALIGNMENT to SD card 512 byte blocks.  
+This gives maximum speed and efficiency on this system.  
+We expect some discussion on this point until it is understood by users.
+While this is a different paradigm than currently popular, is it very easy, fast and straight forward. 
+
+NOTE:
+ * NON FAT compatible in RAW form. We can't plug the SD into a windows box and read the files.  
+Model is similar to the way the iPod SD card is only accessed "thru the iPod" when the iPod is connected to the PC; 
+we seldom take the SD out of the iPod and manipulate the files directly. The Prop SD card will be accessed "thru the prop". 
+ 
+CasKaz may continue on FAT-compatibility support if he find it necessary, and we ask him nicely. 
+
+PWM support:
+ * examples in forth for servo control
+ * examples in forth for ESC control  (electronic speed controller)
+ * examples in forth for stepper motor control
+
+Improved documentation:
+ * improved "white-space" handling
+ * consistent stack notes
+ * more inline comments
+ * inline notation of external references 
+
+NOTE: There is a consequence of the support added this release that will be addressed in PropForth 5.0.  The Ethernet and SD support will take a larger amount of dictionary space.  This is estimated to leave only 2-4k of space for application development.  PropForth 5.0 will attempt to redesign the kernel to free up hub space.
+
+=== PropForth 4.4 April 2011 (development only, not for public release) ===
+
+SD support:
+
+Sal reviewed Caskas's SD code to find the bug that was giving problems.  It was noticed that because the clock is starting and stopping, some SD cards need a couple "stop bits" to get going.  Initially, most worked, some did not.  Sal added a stop bit, and more started working.  Sal added a second, and all his started working.  He added a third and has had no problems. 
+
+The initial SD support will be a low-level, traditional forth "block access".  The idea is access to the card with minimal code and maximum speed.  This is suitable for Sal's embedded project needs.  The initial version will NOT be windows compatible.  Windows compatible extensions can be added using the provided low-level support words, but Sal feels its too big for the benefit it provides, and therefore will not be included in the default kernel.
+
+We plan to review the code, and perhaps Caskaz will provide the extension with Windows FAT support. 
+
+=== PropForth 4.3 Beta March 2011 (development only, not for public release) ===
+
+Spinneret Ethernet support
+
+=== Planned PropForth 4.2 March 2011 ===
+
+Refinement on 4.0:
+ changes to package:
+  * PropForth Boot Kernel - contains minimum to be a forth system on the prop
+  * PropForth Kernel - a subset of ANSI standard kernel words tailored to the prop.  These are extensions typically used in development. 
+  * EEPROM file systems is not assumed present by default, due to 32k EEPROM on the demoboard.  Source code files in the distribution package now have "fswrite" and "..." commented out. Remove the comments on these words is you wish to use the EEPROM file system on your 64K or larger hardware
+
+Source to be re-organized:
+  * PropForth.spin
+  * PropForthboot.spin
+
+Functional Change:
+ * PropForth to come up as DECIMAL by default
+ * Number Base to be controled by HEX and DECIMAL words
+ * Existing source may be loaded by including the HEX word at the start of source file, base will return to decimal after load is complete
+
+Sal to draft article 1 "intro to using PropForth"
+
+=== Planned PropForth 4.1 February 2010 === 4.1 changes to be delayed to a later release
+
+ reference configuration for multiple romless leaf slaves
+
+ reference configuration for multiple romless sub-masters (intermediate slaves) 
+
+ Revert to non-printable characters (invisible characters) echoed as spaces
+
+----
+
+=== Planned PropForth 4.0b Release December 2010 ===
+
+ Demoboard pin-out examples for MASTER/SLAVE support
+
+ any minor bug fixes 
+
+----
+
+=== PropForth 4.0a Released December 18 2010 ===
+
+ Corrected Typos in LogicAnalyzer.f, fs.f, README.txt
+
+ Re-organized files names such that they appear in the directory in the order used  
+
+ Added sub-directory with an example that does NOT reqire 64k EEPROM
+
+   Note:  Demoboard pin out example for MASTER/SLAVE is not included in this example
+
+   Note:  Spineret code is NOT final version, this is current state of development,
+
+   Note: snet.f is a regular serial connection to spineret hardware, where MASTER opens a terminal to spineret's prop chip, but spineret wiznet support is not complete, this is current state of development, 
+
+   Note:  Watch out for invisible characters,  these are not echoed as spaces in this version
+
+----
+
+=== PropForth 4.0 Released December 05 2010 ===
+
+Reorganized Kernel:
+
+ - {{{PropForth.spin}}}  - the simplest kernel that can compile forth source code in SPIN
+
+ - {{{PropForthCore.f}}} - the simplest kernel that can compile forth source code FORTH SOURCE
+
+ - {{{PropForth.f}}} - all necessary Kernel function beyond the core
+
+It was determined that the kernel too big again.  During re-organization, the above method was selected.  All kernel functions will be available in high level forth source code. 
+
+  - Standardize communication interfaces. 
+
+All communications options (serial, VGA, Ethernet, high speed inter-prop serial channels) will have the same structure:  One long, first word is input, second word is output. The method to plug into a channel will be the same for all options.  There will be a single general documentation for communications, and a subsection for the details that differentiate each option.  Should be a little easier.
+
+ - final high speed inter-prop serial channels
+
+High Speed serial from non released V3.6 will be cleaned up in the transition to 4.0.  Documentation and examples. 
+
+ - fl: fixes to FASTLOAD
+
+Change current behavior of loading the source into memory in one pass as a single chunk, and interpreting all the source in a second pass as one chunk.  After months of research, it was determined that the prop has multiple cogs, so a cog could start loading the source, and another cog could start interpreting the source.  Took a while, but we finally noticed.  Consider change in  handling of in-line comments so the input buffer does not overrun when code is followed by a comment on the same line. 
+
+----
+
+=== PropForth 3.7 December 2010/January 2011 - REORGANIZED TO AFTER v4.0  ===
+
+SD Slot for Cards up to 2 Gig
+
+SRAM and Latch support for Hive
+
+----
+
+=== Not Released PropForth 3.6 November 2010  ===
+
+Sorry, this turned out to be an ALPHA, not to be released to the general public. 
+
+Inter chip serial communication for multiple Propeller configuration
+
+new estimate (20101031) indicates
+
+preliminary estimate (20101024) indicates:
+
+ - 8 channel 
+
+ - full duplex (4 pairs of 2 channels)
+
+ - 5.5 k characters per second application to application (not wire speed)
+
+ - ROM-less slaves: Master load image into slave automagically, slaves come up talking and ready to go
+
+PinoutConfiguration.spin file to select hardware
+
+ - Demoboard pinout
+
+ - Hive pinout ([http://hive-project.de/ Hive-Project.de])
+
+ - C3 (when available)
+
+ - Protoboard (user configuration of all I/O ports)
+
+Ethernet 
+
+ - Hive ENC28J60 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en022889
+
+ - Wiznet [WIZ811MJ] W5100 http://www.wiznettechnology.com/Sub_Modules/en/product/Product_Detail.asp?cate1=&cate2=&cate3=&pid=1035 
+
+----
+
+=== 2010 October 19 PropForth 3.5e ===
+
+  ~~2010 October 17 PropForth 3.5c~~ 
+
+  ~~2010 October 17 PropForth 3.5b~~ 
+
+  ~~2010 October 17 PropForth 3.5a~~ 
+
+  ~~2010 October 10 PropForth 3.5~~ 
+
+ ~~Yes, its sadly comical the way I do configuration management.  The code works the same in all version, I messed up the version strings and made tons of typos~~
+
+The Standard kernel (Non VGA version) is 3.5c.  The VGA versions are have version string updates and are at version E.  Thanks to all the users that pointed this out. 
+
+ALPHA Example speed optimization:  converting forth into assembly - tutorial to follow
+
+HIVE and Demoboard configurations selectable by moving comment marks in:
+
+ - Final Hi Res VGA
+
+ - Low Res VGA option
+
+
+removed from plan - TV option
+
+----
+
+=== 2010 Sept 29 PropForth 3.4 Hive version ===
+
+ ===== unplanned release, braino finished the Hive build early =====
+
+Modified PropForth 3.4 to use Hive hardware pinout
+
+ - Hive-PropForthHiResVGA.spin
+
+ - Hive-HiResVGA.f
+
+VGA and Keyboard have a different pin assignment than Demo Board.
+
+We will try to re-factor the code to prevent parallel branches, target is 3.5 release
+
+----
+
+=== 2010 Sept 05 PropForth 3.4  ===
+
+1. HiRes VGA Option - Jupiter ACE prototype - ALPHA Release:
+
+   a. Uses Demoboard VGA pinout
+
+   b. 128 characters (columns) wide by 64 lines (rows) 
+
+   c. VGA screen is divided into two sections, top half and bottom half.
+Tops half is Cog 3 forth prompt and bottom half is cog 4 forth prompt.  Serial terminal is now cog 5 
+
+   d. Serial communications from ~~cog6~~ cog5 to PC terminal program is also active 
+
+   e. uses standard PS/2 keyboard for communication with VGA terminal
+
+   f. mouse support is not planned for this release
+
+   g. see FAQ and JUPITER ACE 
+
+   h. user testing and comments requested. Please play with it and send me any comments   
+
+2. FORTH Output will NOT be in a different color from user input, due to differences in color settings for serial terminal versus VGA terminal
+
+3. Ethernet support NOT added to this release
+
+4. LOW RES VGA NOT included in this release 
+
+----
+
+=== Planned PropForth 3.3 Around September 2010 ===
+
+*UPDATE:  Completed 2010-08-22
+
+*Development release only, needs testing; not for public release
+
+NOTE: CREATE word behaves differently in PropForth - see FAQ
+
+NOTE: lines commented using \  behave different in PropForth - see FAQ
+
+1. Add patches for definition of {{{ * ( : * u* ; ) }}} and other math functions
+
+2. Add keyboard support
+
+3. Add 32x15 VGA text support as extension' LowResVGA.f
+
+4. Add 128x64 Hi Res VGA as commented option in PropForth.spin
+
+5. Close outstanding issues that have been fixed, comment on  issue that has not been fixed.
+
+6.  Begin support for multi-prop system (C3, Hive)
+
+7. ethernet kernel support is NOT planned for 3.3; rescheduled to 3.4
+
+----
+
+=== 2010 July 09 PropForth 3.2 ===
+
+PropForth 3.2 uses descriptive names and a simplified naming convention and achieves the intent described for the not-released version 3.0.  The design and architecture are the same as version 2.7, but the name changes will cause an UNDEFINED WORD error message for code using the old names.  The list of word changes in the README.txt file in the archive
+
+NOTE: The UNDEFINED WORD error can also occur due to a serial overrun.  If you paste in a chunk of code to teraterm and see this error, you should paste smaller sections of text or use the {{{fl}}} (fileload) word
+
+[http://code.google.com/p/PropForth/downloads/detail?name=PropForth3.2%2020100710%20archive.zip PropForth3.2 20100710 archive.zip]
+
+should help in updating existing code. 
+
+Some of the files names have changed BACK to old names due to organizational issues.  Therefore the entire version 3.2 file set is posted as a single zip archive.  Please submit questions and requests based on the v 3.2 file set. 
+
+The additional changes listed in version 2.8 will be added at a later date as time permits. 
+
+----
+
+=== Not Released PropForth 3.0 ===
+
+Determined that original design allowing high level forth words to be unique to each cog was overly complex.  As it turns out, any words which need to be custom for a given cog tend to be assembler words.  PropForth 3.0 is planned to be a more standard forth, for example the current word mswHere will be replaced by the standard forth word HERE. No date has been targeted for this release.
+
+----
+
+=== Not Released PropForth 2.8 ===
+
+Plan to add words to support calling forth from spin, and spin from forth. 
+
+Plan to post the disassembler and documentation
+
+Plan to post the ethernet interface
+
+----
+
+=== 2010 May 30 PropForth 2.7 ===
+
+fix bug in saveforth for 64k page eeProm write
+
+Fix key input time out 
+
+Some documentation changes
+
+Decided to start including a downloadable file PropForthX.X.zip to contain all releases files in a single archive.  This will be added when all updates are complete.
+
+NOTE: Documentation changes are in progress
+PLEASE send questions, this will help drive the documentation updates
+
+----
+
+=== 2010 May 9 ===
+
+Releasing PropForth 2.6. A number of bug fixes.
+
+----
+
+=== 2009 October 24 ===
+
+Releasing PropForth 2.5. One few bug fix, cogreset issue. eeReadPage and eeWritePage have been modified to support multiple 64kx8 eeproms. eeCopy word was added into the base image.
+
+La.f - a lighter version of La, missing the gui but more power and easily usable in other forth words. Can also sample every clock cycle. Some minor adds, words to sample at different rates.
+
+float.f - ieee754 floating point routines added, very useful in development, still need to use fixed point math where speed is essential.
+
+----
+
+=== 2009 October 2 ===
+
+Releasing PropForth 2.4. A few bug fixes, and a number of enhancements. Stack over/underflow reporting, the divide is now a mixed divide, 64 bits divided by 32 bits to give a 32 bit remainder and result. This is very useful when scaling prop counters.
+
+La.f - a lighter version of La, missing the GUI but more power and easily usable in other forth words. Can also sample every clock cycle.
 
 ----
 
