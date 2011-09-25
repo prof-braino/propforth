@@ -1,13 +1,22 @@
 #summary One-sentence summary of this page.
+#labels v5.1,Phase-Requirements
 
 = Introduction =
 
-Add your content here.
+Different from earlier releases, starting with Propforth V4.5 there will be a FAQ for each release in a separate page.  This page is the Frequently Asked Questions for v5.1
 
+Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
-= Details =
+= Will the Testbed hardware configuration change? =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  The Regression Test hardware configuration for 5.1 will be different from 4.5-5.0.  
+
+= Will their be regression test automation? =
+
+Regression test automation is expected to be implemented in 5.1.   Automation will consist of scripts that provide execution of functions.  The scripts will contain expected results. The acutal results will be logged (recorded to storage).  The actual results will be compared to the expected results, and a summary provided.
+
+= Question When can we expect v5.1? = 
+
+  %.1 will start upon completion of 5.0 release.  Estimated arrival of 5.1 is estimated as December 2011, based on October release of 5.0. 
+
+= End of 5.1 FAQ =
