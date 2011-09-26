@@ -3,7 +3,7 @@
 
 = Introduction =
 
-Different from earlier releases, starting with Propforth V4.5 there will be a FAQ for each release in a separate page.  This page is the Frequently Asked Questions for v5.1
+Different from earlier releases, starting with PropForth V4.5 there will be a FAQ for each release in a separate page.  This page is the Frequently Asked Questions for v5.1
 
 Newer Topics to be added to the top.  Some questions are in the context of earlier answers, you may have to jump to the bottom.
 
@@ -13,10 +13,10 @@ Newer Topics to be added to the top.  Some questions are in the context of earli
 
 = Will their be regression test automation? =
 
-Regression test automation is expected to be implemented in 5.1.   Automation will consist of scripts that provide execution of functions.  The scripts will contain expected results. The acutal results will be logged (recorded to storage).  The actual results will be compared to the expected results, and a summary provided.
+Regression test automation is expected to be implemented in 5.1.   Automation will consist of scripts that provide execution of functions.  The scripts will contain expected results. The actual results will be logged (recorded to storage).  The actual results will be compared to the expected results, and a summary provided.
 
 = Question When can we expect v5.1? = 
 
-  %.1 will start upon completion of 5.0 release.  Estimated arrival of 5.1 is estimated as December 2011, based on October release of 5.0. 
+  5.1 will start upon completion of 5.0 release.  Estimated arrival of 5.1 is estimated as December 2011, based on October release of 5.0. 
 
 = End of 5.1 FAQ =
