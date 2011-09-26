@@ -104,7 +104,7 @@ But we frequently want to input number in HEX. SOOOOOOOOOO support has been adde
 
  === How big are pages words? ===
   
-  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (40 decimal) bytes.   MOST paged words so far are "small words" like ` + @ ! u* ` etc.  These only take a few bytes each.
+  So far the biggest paged word is "ACCEPT" at x2A bytes.  The buffer is slightly larger than this word at x30 (48 decimal) bytes.   MOST paged words so far are "small words" like ` + @ ! u* ` etc.  These only take a few bytes each.
 
   If any user encounters a case where the paged assembler buffer needs to be increased, post an issue and the size will be adjusted as needed. 
 
