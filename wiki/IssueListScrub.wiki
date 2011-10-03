@@ -55,7 +55,7 @@ Doug issue 36 - doug verify
 
 Doug issue 37 - doug verify
 
-issue 38  - changed in 5.0 verfiy in 5.0
+issue 38 - changed in 5.0 verfiy in 5.0
 
 Doug issue 39 - doug verify, flag to fix in 5.0
 
@@ -93,7 +93,7 @@ Sal issue 54 Sal to comment
 
 issue 55 it loses it 55 is dub will fix for 5.0
 
-issue 56  invalid
+issue 56 invalid
 
 Doug issue 57 ... doesn't affect anything ALWAYS LEAVE IT in THERE. 
 
