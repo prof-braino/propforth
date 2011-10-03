@@ -3,10 +3,9 @@
 
 = Introduction =
 
-20111002 Sal and Prof_Braino did a scrub of the bug list. 
+20111002 Sal and Prof_Braino did a scrub of the bug list.  We assigned all the open bug one or the other of us.  All are to be closed for 5.0.
 
 These are our results, the bug list should be updated to reflect this shortly. 
-
 
 = Details =
 
@@ -99,3 +98,5 @@ Sal 54 Sal to comment
 Doug 57 ... doesn't affect anything ALWAYS LEAVE IT in THERE. 
 
 ... you can control interpret or write ot files
+
+= End of Open Issues list as of 20111002 = 
