@@ -1,0 +1,101 @@
+#summary Scrub of Issue List in preparation for Release 5.0
+#labels v4.6,v5.0,Phase-Requirements
+
+= Introduction =
+
+20111002 Sal and Prof_Braino did a scrub of the bug list. 
+
+These are our results, the bug list should be updated to reflect this shortly. 
+
+
+= Details =
+
+Issues list
+  
+SAL issue 54 - sal to discuss with marco
+
+issue 57 - will not fix 
+
+Sal issue 7 - Sal to check
+
+Sal issue 11 - CREATE doesn't work per normal. its a two step?
+NOW in 5.0, lockdict Forth flag, commas to do allot THEN do freedict.  - Sal to document
+
+Doug issue 14 -  BASE -  Doug BASE is 2 for binary - valid 2-32 4.6  doug to document
+2-64 in 5.0
+
+Doug ISSUE 15 doug verify NIP works.
+
+Doug issue 16 checkdict doug to verufy  
+
+Doug issue 18 doug to verify
+
+Doug issue 19 - multipeeprom -  D to verify
+
+Doug issue 21 - doug verify
+
+Sal issue 25 - Brians board that fails - only fails on this board.  Sal to work vrrify on 5 & diagnos
+
+Sal issue 26 - COG memeory - SD uninit word is needed. SAL    
+
+Sal issue 28 - config log file       SAL 5.0
+
+Doug issue 29 - Doug - not for 5.0 mnaybe for fututre release,  maybe never
+
+Sal issue 30  VGA - sal for 5.1
+
+issue 32 repeat of 26
+
+Doug issue 33 - doug verify
+
+Doug issue 34 - doug verify
+
+Doug issue 35  - doug verify
+
+Doug issue 36 - doug verify
+
+Doug issue 37 - doug verify
+
+issue 38  - changed in 5.0 verfiy in 5.0
+
+Doug issue 39 - doug verify, flag to fix in 5.0
+
+Doug issue 40 - doug verify
+
+Doug 42 verify
+
+Doug 43 verify
+
+Doug 44 verify
+
+Doug 45 verify
+
+Doug 46 verify
+
+Sal 47 sal to work
+
+Doug 48  doug verify and flag as still need fix
+
+Doug 49 verify 
+
+Doug 50 make a note that it is not plug and play, don't have to power cycle but must reinitialize MAke an addidtional test to demonstrate this, Sal will add to regression suite. 
+
+Sal 51 DOES> - sal doesn't think this is part of propforth, Sal to document compile time and run time words.  DOES> would slow down kernel .
+
+Doug 52 WORDS lists, different vcabularies, took them out. DOUG
+
+Sal 53 this calls for a custom kernel, 
+4.6 and 5.0:  4.6 - propforthbootkernel.f - onboot defines pins, add another onboot with pins you want to use. 5.0 will be slightly different.  5.0 - onboot start serial driver, replace onboot do saveforth, it will start on new pins.  
+
+In Ron's case, he does need to make a new kernel.  
+Sal to provide a comment on thread.   
+
+Sal 54 Sal to comment 
+
+55 it loses it 55 is dub will fix for 5.0
+
+56  invalid
+
+Doug 57 ... doesn't affect anything ALWAYS LEAVE IT in THERE. 
+
+... you can control interpret or write ot files
