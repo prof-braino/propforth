@@ -1,9 +1,9 @@
 #summary Control Propforth Spinneret Etherenet Access Through the Firewall
+#labels 4.6,5.0
 
-= Introduction =
+= Summary =
 
 This page discusses setting up your internet connection to control Propforth running on Spinneret or similar access to the internet. 
-
 
 = Default =
 
@@ -49,4 +49,8 @@ Configure your router to send telnet to you spineret.
 
 (More here later)
 
+=  NOTES =
 
+20111026 Prof_Braino
+
+Created in preparation for 5.0 release. Using 4.6 hardware testbed.
