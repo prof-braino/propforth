@@ -1,0 +1,52 @@
+#summary Control Propforth Spinneret Etherenet Access Through the Firewall
+
+= Introduction =
+
+This page discusses setting up your internet connection to control Propforth running on Spinneret or similar access to the internet. 
+
+
+= Default =
+
+Typically, a default firewall configuration does NOT allow an internal address to be externally accessed. By default, everything should be "secure".
+
+For example, if your internal gateway is 192.168.1.1, your internal network addrewsses would 192.168.1.x
+Addresses in the range 192.168.x.x are usually made NOT accessible to extenal sources.
+
+CHECK INTERNAL: From you PC, use telnet and access the spinneret using the IP address you assigned in ipconfig.f.  You should see a regular propforth prompt, and be able to conduct a propforth session. 
+CHECK EXTERNAL: Have your friend at a different location attempt to access the spineret using the same address.  There should be no propforth response to the access attempt. 
+
+= configure an external IP addres =
+
+Typically, Your interenel service provider (ISP) assigns an internet address to your access point, usually a modem of some type.  For example, Comcast and ATT provide a device that sits between the PC and the outside line, this is your access point and has your IP adddres. 
+
+== LAN Address ==
+
+Using a browser, navigate to this devices interface page.  Ususlly this is a web page a specific IP address.  EXAMPLES
+192.168.1.1
+192.168.1.254
+192.168.0.1
+192.168.0.254
+If you can't find this page, contact your provider
+
+This page and this address are the devices LAN access.  Anything on you internal LAN can find the access point using this address.  
+
+== WAN address ==
+
+The WAN address is how the rest of the internet finds you device.  From the devices intenral page, find the device's WAN address.  
+
+The WAN address may change, but tends to remain stable unless something big happens. It pretty safe to use is for our purposes, if it stops working check if the numbers changed. 
+
+= What we want to do =
+
+At this point the goal is to find your WAN address, and route Telnet transactions to you Spineret's internal LAN address.  The outside world only cares about telnet and your WAN address, you router sends it to the spineret. 
+
+= The tricky part =
+
+Configure your router to send telnet to you spineret.  
+(More detail here later)
+
+= Subnet =
+
+(More here later)
+
+
