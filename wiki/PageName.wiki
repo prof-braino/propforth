@@ -122,14 +122,14 @@ sdusr.f in the root directory of the system partition
 
 on any prop system with an eeprom
 
-* load PropForthStartKernel.spin into eeprom, reboot
-* paste contents of optsymsrc.f into teraterm
-* paste contents of PropForthStartKernel.f into teraterm
-* paste contents of spinmaker.f into teraterm
+ * load PropForthStartKernel.spin into eeprom, reboot
+ * paste contents of optsymsrc.f into teraterm
+ * paste contents of PropForthStartKernel.f into teraterm
+ * paste contents of spinmaker.f into teraterm
 
 `spinmaker`
 
-* paste output of spinmaker into PropForthStartKernel.spin
+ * paste output of spinmaker into PropForthStartKernel.spin
 
 
 recompile, trim add 0's at end of file as  required, goal is to get maximum number of zeros
@@ -152,8 +152,8 @@ in files from this step forward. This includes forth files like spinmaker.f, asm
 
 reboot
 
-* paste contents of spinmaker.f into teraterm
-* paste contents of optsymsrc.f into teraterm
+ * paste contents of spinmaker.f into teraterm
+ * paste contents of optsymsrc.f into teraterm
 
 spinmaker
 
@@ -162,7 +162,7 @@ paste output of spinmaker into PropForthBootKernel.spin
 
 recompile, trim add 0's at end of file as  required, goal is to get maximum number in
 
-
+= ==================================================== =
 
 
 \kernels\BootKernel\BootOptimizeKernel
@@ -394,8 +394,6 @@ reboot
 
 5 0 term
 5 1 term
-
-
 
 
 
