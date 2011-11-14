@@ -52,23 +52,25 @@ The user may choose how the kernel is built to include different arrangements of
 
 PATH to Kerrnel files: 
 
-`\kernels\BootKernel`
+*\kernels\BootKernel*
 
-*PropForthStartKernel* 
+`PropForthStartKernel` 
 
 - _slow io, slow multiply and divide, slow to interpret and compile, but very small and code runs fast. Error checking in place, but no error reporting. This kernel has extra symbols which are necessary for recompile but will be removed to shrink it still further._
 
 
-PropForthBootKernel - slow io, slow multiply and divide, slow to interpret and compile,
-                      but very small and code runs fast. Error checking in place, but no error
-                      reporting. This is minimum size. This kernel can be used for specialized
-                      apps.
-                      build 2011OCT04 10:10 20,400 bytes free in dictionary, 222 longs free per cog
+`PropForthBootKernel` 
 
+- _slow io, slow multiply and divide, slow to interpret and compile, but very small and code runs fast. Error checking in place, but no error reporting. This is minimum size. This kernel can be used for specialized apps.+
 
-\kernels\BootKernel\BootOptimizeKernel
+build 2011OCT04 10:10 20,400 bytes free in dictionary, 222 longs free per cog
 
-PropForthBootOptimizeKernel - Assembler optimizations, fast kernel. Error checking in place, but no error
-                              reporting. This kernel can be used for specialized apps.
-                              build 2011SEP29 14:00 19,822 bytes free in dictionary, 176 longs free per cog
-                              This kernel is the base for most kernels and applications.
+*\kernels\BootKernel\BootOptimizeKernel*
+
+`PropForthBootOptimizeKernel`
+
+ - _Assembler optimizations, fast kernel. Error checking in place, but no error reporting. This kernel can be used for specialized apps.
+
+build 2011SEP29 14:00 19,822 bytes free in dictionary, 176 longs free per cog
+
+This kernel is the base for most kernels and applications.
