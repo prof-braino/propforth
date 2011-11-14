@@ -74,3 +74,330 @@ build 2011OCT04 10:10 20,400 bytes free in dictionary, 222 longs free per cog
 build 2011SEP29 14:00 19,822 bytes free in dictionary, 176 longs free per cog
 
 This kernel is the base for most kernels and applications.
+
+
+= 1. Normal Dev/App system =
+
+\kernels\BootKernel\BootOptimizeKernel
+
+Load PropForthBootOptimizeKernel.spin into eeprom, reboot
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeDevKernel
+
+paste contents of PropForthDevKernel.f into teraterm
+
+saveforth
+
+Modifications - add words for the functinality desired and do a saveforth
+
+= 2. eeprom filesystem kernel =
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeFsrdKernel
+
+This kernel is designed to be a base system with an eeprom file system. 
+
+The system comes up with a read only capability, searches for a file called boot.f, and executes it. 
+
+Holding down the ESC key while rebooting prevents the execution of boot.f
+
+Modification should be done by modifying boot.f, and loading the files and capabilities as needed. 
+
+The first thing boot.t does is to define forget, and forgets the seriial driver. 
+
+When needed the serial driver - serial.f can be loaded from the file system. So if you add words and do a saveforth, you will mess up this kernel.
+
+The file system is read only, and fswr.f must be loaded before the file  system can be written.
+
+== 2.1 eeprom filesystem kernel + sd card file system ==
+
+This now provides a large file system, boot modification should be done by modifying
+sdusr.f in the root directory of the system partition
+
+
+= REGRESSION: run sequentially =
+
+== \kernels\BootKernel ==
+
+*Regenerate PropForthStartKernel.spin*
+
+on any prop system with an eeprom
+
+* load PropForthStartKernel.spin into eeprom, reboot
+* paste contents of optsymsrc.f into teraterm
+* paste contents of PropForthStartKernel.f into teraterm
+* paste contents of spinmaker.f into teraterm
+
+`spinmaker`
+
+* paste output of spinmaker into PropForthStartKernel.spin
+
+
+recompile, trim add 0's at end of file as  required, goal is to get maximum number of zeros
+
+== \kernels\BootKernel ==
+
+*Regenerate PropForthBootKernel.f*
+
+load PropForthStartKernel.spin into eeprom, reboot
+
+paste contents of symgen.f into teraterm
+
+symgen
+
+paste output of symgen into optsym.f, this should only change if the assembler forth kernel has been modified
+
+If you do change the assembler forth kernel, these values will change and must be updated where they are used 
+
+in files from this step forward. This includes forth files like spinmaker.f, asm.f, etc.
+
+reboot
+
+* paste contents of spinmaker.f into teraterm
+* paste contents of optsymsrc.f into teraterm
+
+spinmaker
+
+paste output of spinmaker into PropForthBootKernel.spin
+
+
+recompile, trim add 0's at end of file as  required, goal is to get maximum number in
+
+
+
+
+\kernels\BootKernel\BootOptimizeKernel
+
+Regenerate PropForthBootOptimizeKernel.f 
+
+load PropForthBootKernel.spin into eeprom, reboot
+
+paste contents of asm.f into teraterm
+paste contents of PropForthBootOptimzeAsmSrc.f into teraterm
+
+paste output  into PropForthBootOptimize.f
+
+
+reboot
+
+paste contents of PropForthBootOptimize.f into teraterm
+paste contents of spinmaker.f into teraterm
+
+spinmaker
+
+paste output of spinmaker into PropForthBootOptimizeKernel.spin
+
+recompile, trim add 0's at end of file as  required, goal is to get maximum number in
+
+
+
+
+
+
+
+
+= These tests must be run on a system with at least 64kbytes of eeprom =
+
+Regenerate PropForthBootOptimizeFsrdKernel.f
+
+
+\kernels\BootKernel\BootOptimizeKernel
+Load PropForthBootOptimizeKernel.spin into eeprom, reboot
+
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeFsrdKernel
+
+paste contents of fsrd.f into teraterm
+
+comment out line fswrite fswr.f in file fswr.f and paste contents into teraterm
+
+fsclear
+
+uncomment out line fswrite fswr.f in file fswr.f and paste contents into teraterm
+paste contents of serial.f into teraterm
+paste contents of boot.f into teraterm
+
+make sure the fstop is set correctly for the system x10000 for one 64kbyte eeprom, x30000 is for 3
+
+
+reboot
+
+paste contents of fsrd.f into teraterm
+paste contents of spinmaker.f into teraterm
+
+spinmaker
+
+paste output of spinmaker into PropForthBootOptimizeKernel.spin
+
+recompile, trim add 0's at end of file as  required, goal is to get maximum number in
+
+
+
+
+
+The following test must be run on protoboard with a spinneret board connected.
+
+
+
+loading systems
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeFsrdKernel
+
+load PropForthBootOptimizeFsrdKernel.spin into the protoboard
+
+on the protoboard
+
+reboot
+
+fsload fswr.f
+paste contents of snet.f into teraterm
+
+
+
+
+on the spinneret
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeKernel
+
+load PropForthBootOptimizeKernel.spin into the eeprom of the spinneret board
+
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeFsrdKernel
+
+paste contents of fsrd.f into teraterm
+
+comment out line fswrite fswr.f in file fswr.f and paste contents into teraterm
+
+fsclear
+
+uncomment out line fswrite fswr.f in file fswr.f and paste contents into teraterm
+paste contents of serial.f into teraterm
+
+
+load PropForthBootOptimizeFsrdKernel.spin into the spinneret
+
+
+
+on the protoboard
+
+reboot
+
+fsload snet.f
+
+snet
+
+
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeKernel
+
+This set of tests can be done directly on the spinneret board if desired. 
+
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeFsrdKernel\sd
+
+reboot
+
+fsload fswr.f
+
+paste contents of sd.f into teraterm
+paste contents of sd_init.f into teraterm
+paste contents of sd_run.f into teraterm
+paste contents of sdfs.f into teraterm
+
+
+reboot
+
+fsload sd.f
+paste contents of sd_cripts.f into teraterm
+
+reboot
+
+fsload fswr.f
+
+paste contents of boot.f into teraterm
+make sure the fstop is set correctly for the system x10000 for a normal spinneret
+
+reboot
+
+mountsys
+
+ls
+
+mountusr
+
+ls
+
+
+
+
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeFsrdKernel\sd\ip
+
+
+reboot
+
+adjust config in ipserver1.f
+paste contents on ipserver1.f into teraterm
+paste contents on ipserver2.f into teraterm
+paste contents on ipserver.f into teraterm
+paste contents on ip_scripts.f into teraterm
+
+reboot
+
+can now telent in
+
+
+\kernels\BootKernel\BootOptimizeKernel\BootOptimizeKernel
+
+load PropForthBootOptimizeKernel.spin into the eeprom of the proto board
+
+
+reboot
+
+
+uncomment out line 1 wconstant norom_dbg  in file norom.f and paste contents into teraterm
+
+
+test_norom
+
+
+
+
+
+reboot
+
+
+
+paste contents of PropForthDevKernel.f into teraterm
+uncomment out line 1 wconstant mcs_dbg  in file mcs.f and paste contents into teraterm
+
+
+test_mcs
+
+d
+
+f
+
+q
+
+
+
+reboot
+
+paste contents of PropForthDevKernel.f into teraterm
+paste contents of mcs.f into teraterm
+paste contents of norom.f into teraterm
+paste contents of mcsnorom.f into teraterm
+
+saveforth
+
+reboot
+
+5 0 term
+5 1 term
+
+
+
+
+
+
+
