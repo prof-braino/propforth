@@ -86,7 +86,7 @@ Load PropForthBootOptimizeKernel.spin into eeprom, reboot
 
 paste contents of PropForthDevKernel.f into teraterm
 
-saveforth
+`saveforth`
 
 Modifications - add words for the functinality desired and do a saveforth
 
@@ -138,66 +138,64 @@ recompile, trim add 0's at end of file as  required, goal is to get maximum numb
 
 *Regenerate PropForthBootKernel.f*
 
-load PropForthStartKernel.spin into eeprom, reboot
+ * load PropForthStartKernel.spin into eeprom, reboot
 
-paste contents of symgen.f into teraterm
+ * paste contents of symgen.f into teraterm
 
-symgen
+`symgen`
 
-paste output of symgen into optsym.f, this should only change if the assembler forth kernel has been modified
+ * paste output of symgen into optsym.f, this should only change if the assembler forth kernel has been modified
 
-If you do change the assembler forth kernel, these values will change and must be updated where they are used 
+ * If you do change the assembler forth kernel, these values will change and must be updated where they are used in files from this step forward. This includes forth files like spinmaker.f, asm.f, etc.
 
-in files from this step forward. This includes forth files like spinmaker.f, asm.f, etc.
-
-reboot
+`reboot`
 
  * paste contents of spinmaker.f into teraterm
  * paste contents of optsymsrc.f into teraterm
 
-spinmaker
+`spinmaker`
 
-paste output of spinmaker into PropForthBootKernel.spin
+ * paste output of spinmaker into PropForthBootKernel.spin
 
 
-recompile, trim add 0's at end of file as  required, goal is to get maximum number in
+ * recompile, trim add 0's at end of file as  required, goal is to get maximum number in
 
 = ==================================================== =
 
 
-\kernels\BootKernel\BootOptimizeKernel
+== \kernels\BootKernel\BootOptimizeKernel ==
 
-Regenerate PropForthBootOptimizeKernel.f 
+*Regenerate PropForthBootOptimizeKernel.f *
 
-load PropForthBootKernel.spin into eeprom, reboot
+ * load PropForthBootKernel.spin into eeprom, reboot
 
-paste contents of asm.f into teraterm
-paste contents of PropForthBootOptimzeAsmSrc.f into teraterm
+ * paste contents of asm.f into teraterm
+ * paste contents of PropForthBootOptimzeAsmSrc.f into teraterm
 
-paste output  into PropForthBootOptimize.f
-
-
-reboot
-
-paste contents of PropForthBootOptimize.f into teraterm
-paste contents of spinmaker.f into teraterm
-
-spinmaker
-
-paste output of spinmaker into PropForthBootOptimizeKernel.spin
-
-recompile, trim add 0's at end of file as  required, goal is to get maximum number in
+ * paste output  into PropForthBootOptimize.f
 
 
+`reboot`
+
+ * paste contents of PropForthBootOptimize.f into teraterm
+ * paste contents of spinmaker.f into teraterm
+
+`spinmaker`
+
+ * paste output of spinmaker into PropForthBootOptimizeKernel.spin
+
+ * recompile, trim add 0's at end of file as  required, goal is to get maximum number in
 
 
 
 
 
 
-= These tests must be run on a system with at least 64kbytes of eeprom =
 
-Regenerate PropForthBootOptimizeFsrdKernel.f
+
+== These tests must be run on a system with at least 64kbytes of eeprom ==
+
+*Regenerate PropForthBootOptimizeFsrdKernel.f*
 
 
 \kernels\BootKernel\BootOptimizeKernel
@@ -394,8 +392,6 @@ reboot
 
 5 0 term
 5 1 term
-
-
 
 
 
