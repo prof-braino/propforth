@@ -1,0 +1,41 @@
+#summary Propforth 5.0 preview notes
+#labels 5.0
+
+= Propforth 5.0 internally released 2011.10.10 =
+
+Internal QA notes for final changes 
+
+= KernelBUILD.txt = 
+
+
+== BIG CHANGES in V5.0 ==
+
+ * hexadecimal characters must be uppercase
+
+ * xABD will be interpreted as hex no matter what the base is
+
+ * d1234 will be interpreted as decimal no matter what the base is
+
+ * there is an optional line buffer mode which will not echo characters until cr is hit
+
+ * backspace x08 is used, del x7F does not delete a character in the buffer
+
+ * CR x0D is the line termination, LF x0A is not a line termination
+
+ * CR is ouput as x0D, setup teraterm to receive CR+LF, and to transmit CR
+- this was done to allow redirection of files easily to and from IO
+
+ * kernel modified and optimized
+
+ * added ST@ ST! - fast instructions to access and modify stack
+
+ * more assembler instructions can be dynamically added
+
+ * assembler words are now dynamically loaded and cached - this provides huge optimizations and space efficiency
+
+ * There are a few spin constants which allow the modification of:
+  # tx pin
+  # rx pin 
+  # baud rate
+  # cog used for the console serial driver
+  # which cog starts up forth
