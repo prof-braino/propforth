@@ -52,10 +52,11 @@ The user may choose how the kernel is built to include different arrangements of
 
 PATH to Kerrnel files: 
 
-'\kernels\BootKernel'
+`\kernels\BootKernel`
 
 *PropForthStartKernel* 
-- slow io, slow multiply and divide, slow to interpret and compile, but very small and code runs fast. Error checking in place, but no error reporting. This kernel has extra symbols which are necessary for recompile but will be removed to shrink it still further.
+
+- _slow io, slow multiply and divide, slow to interpret and compile, but very small and code runs fast. Error checking in place, but no error reporting. This kernel has extra symbols which are necessary for recompile but will be removed to shrink it still further._
 
 
 PropForthBootKernel - slow io, slow multiply and divide, slow to interpret and compile,
