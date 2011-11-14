@@ -7,8 +7,15 @@ Internal QA notes for final changes
 
 = KernelBUILD.txt = 
 
+KernelBUILD.txt is a documentation file included in the release archive
+
+The text is included here so it can include formatting
+
+Comments are welcome
 
 == BIG CHANGES in V5.0 ==
+
+General descriptive text at the start of the file
 
  * hexadecimal characters must be uppercase
 
@@ -22,8 +29,7 @@ Internal QA notes for final changes
 
  * CR x0D is the line termination, LF x0A is not a line termination
 
- * CR is ouput as x0D, setup teraterm to receive CR+LF, and to transmit CR
-- this was done to allow redirection of files easily to and from IO
+ * CR is ouput as x0D, setup teraterm to receive CR+LF, and to transmit CR - _this was done to allow redirection of files easily to and from IO_
 
  * kernel modified and optimized
 
