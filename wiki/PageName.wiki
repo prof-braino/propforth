@@ -130,34 +130,21 @@ on any prop system with an eeprom
 `spinmaker`
 
  * paste output of spinmaker into PropForthStartKernel.spin
-
-
-recompile, trim add 0's at end of file as  required, goal is to get maximum number of zeros
+ * recompile, trim add 0's at end of file as  required, goal is to get maximum number of zeros
 
 == \kernels\BootKernel ==
 
 *Regenerate PropForthBootKernel.f*
-
  * load PropForthStartKernel.spin into eeprom, reboot
-
  * paste contents of symgen.f into teraterm
-
 `symgen`
-
  * paste output of symgen into optsym.f, this should only change if the assembler forth kernel has been modified
-
  * If you do change the assembler forth kernel, these values will change and must be updated where they are used in files from this step forward. This includes forth files like spinmaker.f, asm.f, etc.
-
 `reboot`
-
  * paste contents of spinmaker.f into teraterm
  * paste contents of optsymsrc.f into teraterm
-
 `spinmaker`
-
  * paste output of spinmaker into PropForthBootKernel.spin
-
-
  * recompile, trim add 0's at end of file as  required, goal is to get maximum number in
 
 = ==================================================== =
@@ -392,6 +379,4 @@ reboot
 
 5 0 term
 5 1 term
-
-
 
