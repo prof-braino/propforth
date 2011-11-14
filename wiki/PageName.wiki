@@ -33,11 +33,11 @@ General descriptive text at the start of the file
 
  * kernel modified and optimized
 
- * added ST@ ST! - fast instructions to access and modify stack
+ * added ST@ ST! - _fast instructions to access and modify stack_
 
  * more assembler instructions can be dynamically added
 
- * assembler words are now dynamically loaded and cached - this provides huge optimizations and space efficiency
+ * assembler words are now dynamically loaded and cached - _this provides huge optimizations and space efficiency_
 
  * There are a few spin constants which allow the modification of:
   # tx pin
