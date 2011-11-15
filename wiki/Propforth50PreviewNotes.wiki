@@ -13,6 +13,12 @@ The text is included here so it can include formatting
 
 Comments are welcome
 
+_This file contain a descrription of finctional changes in the propforth 5.0 Kernel(s)_
+
+_This file contain instructions to rebuild the propforth 5.0 Kernel(s)_
+
+_This file contain HIGH LEVEL instructions to REGRESSION TEST  the propforth 5.0 Kernel(s)_
+
 == BIG CHANGES in V5.0 ==
 
 General descriptive text at the start of the file
