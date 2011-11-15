@@ -56,6 +56,8 @@ General descriptive text at the start of the file
 
 The user may choose how the kernel is built to include different arrangements of options. 
 
+In the following "slow" means "as slow as in 4.6, which at the time seemed pretty fast, but is slow compared to 5/0" 
+
 PATH to Kerrnel files: 
 
 *\kernels\BootKernel*
