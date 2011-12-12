@@ -1,4 +1,5 @@
 #summary Inter-Prop Synchronous Multichannel Serial Communications
+#labels 5.0
 
 = MCS: Multi-Channel Synchrronous Serial =
 
@@ -6,14 +7,35 @@ Thanks to Simon for asking about MCS.
 
 Communication between cogs on different physical prop chips is done with MCS.  Multip-channel Synchronous Serial (MCS) uses the counters (CNTA and CNTB) on a single cog to handle the transfer.
 
+= MCS tutorial =
 
+Frrom the download archive package, under docs find the tutorial for MCS:
 
+test-4.3.1 MCSLoopack.txt
 
+This has the unfortunate name "test" in 4.6 and earlier, in 5.0 and later it will be called "tutorial".   This file shows the correct steps to set up and us MCS.
 
+= Whats going on =
 
-= Details =
+The MSC cog on each chip has two counters, A and B.  The counter is used to send data.  The counter used for transmit (counter A perhaps) is set to toggle the pin at given frequency.  Once the counter is set, it proceeds by itself, and the cog is free to do other tasks. The receive counter (on the other physical chip) is set to a corresponding frequency; it listens to its pin, and determines if the pin is HI or LOW. By this method, physical communication happens.  The counter on one chip send a stream of bits, hi or low, and the counter on the other chip detects if the individual bits are hi or low.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+This is just the raw transfer.  There is also support for encoding data into this stream.  Sal told me the details, but I wasn't really paying attention. Something about a continuous stream of 96 bit packets.  The stream is always operating once connected.  As far as we are concerned, we just dump some data into the stream, and it gets sent as 96 bits per packet. 
+
+ If you really want to know the gritty details, we can look at the code. 
+
+<Look at the code and put the details here>
+
+= The MCS interface =
+
+Since the implementation of Standard Interfaces in propforth 4.3, all the interfaces are the same.  This means if we want to talk to serial, or terminal, or a different cog, we just have to point at proper interface, and communications is set up.  (Sounds too easy, add more detail).
+
+If we want to talk to a cog on the local chip, we point to the cogs interface. 
+Actually, we are talking to cog 7, and cog 7 points us to the terminal, the forth interpreter running on cog 6, or where ever else we have something to talk to.   
+
+If we want to talk to a cog on the remote chip, we talk to the MCS interface, it does the comms, and talks to the cog on the remote chip.  (Actually, we talk to cog 7, cog 7 talks to the MCS interface...)
+
+= Questions =
+
+< No questions have been asked 20111210 >
+
+= End =
