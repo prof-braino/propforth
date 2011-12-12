@@ -1,8 +1,14 @@
-#summary One-sentence summary of this page.
+#summary Inter-Prop Synchronous Multichannel Serial Communications
 
-= Introduction =
+= MCS: Multi-Channel Synchrronous Serial =
 
-Add your content here.
+Thanks to Simon for asking about MCS.
+
+Communication between cogs on different physical prop chips is done with MCS.  Multip-channel Synchronous Serial (MCS) uses the counters (CNTA and CNTB) on a single cog to handle the transfer.
+
+
+
+
 
 
 = Details =
