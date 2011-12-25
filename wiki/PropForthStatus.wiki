@@ -1,7 +1,7 @@
 #summary Status of PropForth kernel development
 #labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1
 
-=== PropForth 5.1 targeted November - December 2011 ===
+=== PropForth 5.1 targeted ~~ November - December 2011 ~~ summer 2012 ===
 
  * New Regression Testbed hardware configuration
 
@@ -19,7 +19,7 @@
 
  After the 5.0 functionality is debugged and working using the 4.5 hardware set up, the working code will be used to get the new hardware configuration nailed down for 5.1.  This is to reduce the number of unknowns and variables in debugging at each phase. 
 
-=== PropForth 5.0 targeted ~~Summer September ~~ October 2011 ===
+=== PropForth 5.0 targeted ~~Summer September October 2011~~  January 2012 ===
 {{{
 Redesign PropForth kernel:
 
