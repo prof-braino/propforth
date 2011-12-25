@@ -1,6 +1,14 @@
 #summary Status of PropForth kernel development
 #labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1
 
+The Propforth team feels it is more important to conform to established requirements than meet any arbitrary deadline. The availability times listed are estimations, and are subject to change.  Previously, the estimated arrival times were very accurate; however, as the project nears the end, the estimates are less accurate.  This is because we have fewer high level general requirements to design, and more low level specific details to implement.  This is the nature of any design project, we can't know how long a task will take unless we have done it before (at least once); and we cannot control non-project interruptions (holidays, illness, other events).  Its like spring, it will get here when it gets here. 
+
+=== 20111225 ===
+
+Merry Xmas!
+
+Propforth 5.0 release candidate (PF5.0-RC) is in internal test.  See the isues lists for current activity and progress. Items that are changed fron NEW to ACCEPTED are being worked;  items completed are removed from the list (not displayed in the open issues listing). 
+
 === PropForth 5.1 targeted ~~ November - December 2011 ~~ summer 2012 ===
 
  * New Regression Testbed hardware configuration
