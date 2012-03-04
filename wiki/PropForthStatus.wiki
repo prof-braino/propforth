@@ -16,9 +16,13 @@ The kernel is complete and stable, the code has not seen significant changes sin
 ==== Development Plans =====
 
 * Automation - automatic regression test scripts
+
 * logging - Logging to SD using precision time stamps
+
 * Motion Control - Servo and Stepper motor support
+
 * CNC - Firmware for prop based drop in replacement for RepRap Sanguino
+
 * GO - GO language bridge support using CSP channels
 
 
