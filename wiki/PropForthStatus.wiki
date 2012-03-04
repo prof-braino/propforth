@@ -1,7 +1,34 @@
 #summary Status of PropForth kernel development
 #labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1
 
+
+
+
+=== 20120304 ===
+
+PropForth 5.0 is released as of RC6.  
+See the discussion thread on the parallax forums
+
+http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download
+
+The kernel is complete and stable, the code has not seen significant changes since November, and not changes at all since January.  Kernel development considered complete.  Future releases will target extensions and documentation. 
+
+==== Development Plans =====
+
+* Automation - automatic regression test scripts
+* logging - Logging to SD using precision time stamps
+* Motion Control - Servo and Stepper motor support
+* CNC - Firmware for prop based drop in replacement for RepRap Sanguino
+* GO - GO language bridge support using CSP channels
+
+
+
+=== Six Release Candidates to prepare PF5.0 === 
+
 The Propforth team feels it is more important to conform to established requirements than meet any arbitrary deadline. The availability times listed are estimations, and are subject to change.  Previously, the estimated arrival times were very accurate; however, as the project nears the end, the estimates are less accurate.  This is because we have fewer high level general requirements to design, and more low level specific details to implement.  This is the nature of any design project, we can't know how long a task will take unless we have done it before (at least once); and we cannot control non-project interruptions (holidays, illness, other events).  Its like spring, it will get here when it gets here. 
+
+
+
 
 === 20111225 ===
 
