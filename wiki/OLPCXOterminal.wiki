@@ -1,5 +1,5 @@
 #summary Using the OLPC-XO for Propforth development
-#labels Phase-Implementation,v4.5
+#labels Phase-Implementation,v5.0,v4.5
 
 = Introduction =
 
@@ -43,35 +43,50 @@ I did not crack open the case, or obtain a serial to USB converter for the inter
 
   finished
 
--- minicom --
+== running minicom ==
+
 http://www.ubuntugeek.com/minicom-hyperterminal-replacement-in-ubuntu.html
+
 http://linux.die.net/man/1/minicom
 
 188 char	USB serial converters
 		  0 = /dev/ttyUSB0	First USB serial converter
 		  1 = /dev/ttyUSB1	Second USB serial converter
 
- --- Start terminal program ---
+==== Start terminal program ====
+
 terminal 
+
 su
-      ---- install minicon- requires network connection ----
+
+===== install minicon- requires network connection =====
+
 yum -y install minicom
+
 already installed nothing to do
 
---- configurare minicom ---
+===== configurare minicom =====
+
 sudo minicom -s
-ports
-/dev/ttyUSB0
-57600 8N1
-Hardware Flow Control: Yes
-Software Flow Control: No
-save as ...
---- run minicom ---
+
+* ports
+* /dev/ttyUSB0
+* 57600 8N1
+* Hardware Flow Control: Yes
+* Software Flow Control: No
+* save as ...
+
+==== run minicom ====
+
 minicom
 
 <gets to propforth prompt>
 
+*NOTE* For some reason, each timne I start minicom, it says /dev/ttyUSBx not Found
 
+.. andI have to switch to the other one, alternating between /dev/ttyUSB0 and /dev/ttyUSB1
+
+I don't know why or how to fix this
 
 === editing forth source on the XO ===
 
