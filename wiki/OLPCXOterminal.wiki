@@ -43,6 +43,36 @@ I did not crack open the case, or obtain a serial to USB converter for the inter
 
   finished
 
+-- minicom --
+http://www.ubuntugeek.com/minicom-hyperterminal-replacement-in-ubuntu.html
+http://linux.die.net/man/1/minicom
+
+188 char	USB serial converters
+		  0 = /dev/ttyUSB0	First USB serial converter
+		  1 = /dev/ttyUSB1	Second USB serial converter
+
+ --- Start terminal program ---
+terminal 
+su
+      ---- install minicon- requires network connection ----
+yum -y install minicom
+already installed nothing to do
+
+--- configurare minicom ---
+sudo minicom -s
+ports
+/dev/ttyUSB0
+57600 8N1
+Hardware Flow Control: Yes
+Software Flow Control: No
+save as ...
+--- run minicom ---
+minicom
+
+<gets to propforth prompt>
+
+
+
 === editing forth source on the XO ===
 
 There are several option,
