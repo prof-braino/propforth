@@ -81,6 +81,10 @@ minicom
 
 I don't know why or how to fix this
 
+*NOTE* something times out after a couple minutes, and the /dev/ttyUSBx port is no longer available. After both ports time out, the OLPC needs to be reset before it works again. 
+
+Could somebody clue me in as to whats going on and how to fix it. 
+
 === editing forth source on the XO ===
 
 There are several option,
