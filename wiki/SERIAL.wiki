@@ -63,12 +63,13 @@ what {{{serial}}} does:
 = INTERFACE to {{{_serial }}}  VIA {{{serial  }}}  =
 
 Please notice the the difference between {{{_serial  }}} and {{{serial  }}} is
-A) {{{_serial  }}} takes number of clocks per bit
-B) {{{serial  }}} takes baud rate
+ * {{{_serial  }}} takes number of clocks per bit
+ * {{{serial  }}} takes baud rate
 
-see {{{..\kernels\doc\tutorials
-tutorial-3.2 Serial Loopback.txt
-}}}
+see 
+{{{..\kernels\doc\tutorials
+tutorial-3.2 Serial Loopback.txt }}}
+
 For instructions how to start a serial connection
 
 = DOCUMENTATION EXPERIMENT =
