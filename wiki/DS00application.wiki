@@ -13,7 +13,7 @@ This project is to explore the device and the ds00vq100 timing chip on which it 
 
 Once the functional requirements are established, a new application firmware for the propeller micro controller will be generated.
 
-This project intends to result in a propforth application for the propeller micro controller included in the DS00 unit.  However, the functional requirements could be used to implement a sufficient application using any suitable micro controller, using and suitable programming language and environment.
+This project intends to result in a propforth application for the propeller micro controller included in the DS00 unit.  However, the functional requirements could be used to implement a sufficient application using any suitable micro controller, using any suitable programming language and environment.
 
 [DRAFT started 2012-03-18]
 
