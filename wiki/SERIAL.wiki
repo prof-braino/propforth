@@ -67,8 +67,10 @@ Please notice the the difference between {{{_serial  }}} and {{{serial  }}} is
  * {{{serial  }}} takes baud rate
 
 see 
-{{{  ..\kernels\doc\tutorials
-tutorial-3.2 Serial Loopback.txt }}}
+{{{  
+..\kernels\doc\tutorials
+tutorial-3.2 Serial Loopback.txt 
+ }}}
 
 For instructions how to start a serial connection
 
