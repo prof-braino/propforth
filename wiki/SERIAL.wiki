@@ -9,9 +9,7 @@ http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-
 
 This draft will go into PROPFORTH.html when complete
 
-= Details =
-
-About SERIAL
+= About SERIAL = 
 
 SERIAL is necessarily built into the kernel, but we tend to use it all over the place in various (modified) forms. To allow the default SERIAL to be present in the kernel , and to allow modification to the kernel default at the same time, SERIAL is a loadable module.
 
@@ -20,7 +18,7 @@ The "internal" part is in the definition _serial (with an underscore). This does
 The "external" part is in the definition serial (with no underscore). This is the function the user or application calls to interface to the function.
 The external word serial is the "interface", this is the word "packages up" the function and is how to get at _serial.
 
-INTERNAL _serial
+= INTERNAL _serial =
 
 The high level source code for _serial is in
 ..\kernels\BootKernel\BootOptimizeKernel\
@@ -36,7 +34,7 @@ build_BootOpt :rasm
 serial assembler code ends at line 1104
 ;asm _serial
 
-EXTERNAL serial
+= EXTERNAL serial =
 
 The high level source code for serial is in
 ..\kernels\BootKernel
@@ -53,7 +51,7 @@ what serial does:
 5) set break length to 0
 6) starts _serail
 
-INTERFACE to _serial VIA serial
+= INTERFACE to _serial VIA serial =
 
 Please notice the the difference between _serial and serial is
 A) _serial take number of clocks per bit
@@ -63,7 +61,7 @@ see ..\kernels\doc\tutorials
 tutorial-3.2 Serial Loopback.txt
 For instructions how to start a serial connection
 
-DOCUMENTATION EXPERIMENT
+= DOCUMENTATION EXPERIMENT =
 
 We are hoping that the user community will contribute to the documentation. The idea is that as each user question is resolved, the user that receives the answer helps us "write it up" such that other folks can understand it, and this gets added to the PROFORTH.html document.
 
