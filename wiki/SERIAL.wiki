@@ -54,15 +54,16 @@ PropForthStartKernel.f
  }}} 
 
 The are some {{{ serial  }}}  related constants at lines 54 through 60
+
 The high level forth definition for {{{ serial }}} is at line 2459
 
 what {{{serial}}} does:
-1) changes baud to number of cock cycles
-2) takes the string to be displayed in {{{cog?}}} and sets it up
-3) takes cog and marks it as no longer available {{{(4 state nc!)}}}
-4) sets flags (HC08 is 1 done expand CRFL)
-5) set break length to 0
-6) starts {{{_serail}}}
+ # changes baud to number of cock cycles
+ # takes the string to be displayed in {{{cog?}}} and sets it up
+ # takes cog and marks it as no longer available {{{(4 state nc!)}}}
+ # sets flags (HC08 is 1 done expand CRFL)
+ # set break length to 0
+ # starts {{{_serail}}}
 
 = INTERFACE to {{{_serial }}}  VIA {{{serial  }}}  =
 
