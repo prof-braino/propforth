@@ -5,9 +5,7 @@
 
 From forum post 
 
-{{{
 http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1083307&viewfull=1#post1083307
-}}}
 
 This draft will go into PROPFORTH.html when complete
 
@@ -15,56 +13,61 @@ This draft will go into PROPFORTH.html when complete
 
 SERIAL is necessarily built into the kernel, but we tend to use it all over the place in various (modified) forms. To allow the default SERIAL to be present in the kernel , and to allow modification to the kernel default at the same time, SERIAL is a loadable module.
 
-There are two parts the the serial function: {{{_serial }}} and {{{serial}}}
-The "internal" part is in the definition _serial (with an underscore). This does that internal kernel operation for serial communications. Generally, we don't want to call _serial or any of its subfunctions directly.
-The "external" part is in the definition serial (with no underscore). This is the function the user or application calls to interface to the function.
-The external word serial is the "interface", this is the word "packages up" the function and is how to get at _serial.
+There are two parts the the serial function: {{{_serial }}} and {{{serial}}}.  
+The "internal" part is in the definition {{{_serial}}} (with an underscore). This does that internal kernel operation for serial communications. Generally, we don't want to call {{{_serial }}} or any of its subfunctions directly.
+The "external" part is in the definition {{{serial  }}} (with no underscore). This is the function the user or application calls to interface to the function.
+The external word {{{serial  }}} is the "interface", this is the word "packages up" the function and is how to get at {{{_serial }}} .
 
-= INTERNAL _serial =
+= INTERNAL {{{_serial }}}  =
 
-The high level source code for _serial is in
+The high level source code for {{{_serial  }}} is in
+{{{
 ..\kernels\BootKernel\BootOptimizeKernel\
 PropForthBootOptimzeAsmSrc.f
 
-Rename file PropForthBootOptimzeAsmSrc.f and modify it as necessary for your particular needs.
+
+Rename file {{{PropForthBootOptimzeAsmSrc.f and modify it as necessary for your particular needs.
 
 This is actually assembler code (and was based on forth definitions in previous versions). This serial code has been optimized to the extent that it is no longer useful to go back to a high forth version for this function.
 
-serial assembler code starts at line 775 actually at label:
+{{{ serial  }}} assembler code starts at line 775 actually at label:
 {{{
 build_BootOpt :rasm
 }}}
 
-serial assembler code ends at line 1104
+{{{ serial  }}} assembler code ends at line 1104
 {{{
 ;asm _serial
 }}}
 
 = EXTERNAL serial =
 
-The high level source code for serial is in
+The high level source code for {{{ serial  }}}  is in
+{{{
 ..\kernels\BootKernel
 PropForthStartKernel.f
+ }}} 
 
-The are some serial related constants at lines 54 through 60
-The high level forth definition for serial is at line 2459
+The are some {{{ serial  }}}  related constants at lines 54 through 60
+The high level forth definition for {{{ serial }}} is at line 2459
 
-what serial does:
+what {{{serial}}} does:
 1) changes baud to number of cock cycles
-2) takes the string to be displayed in cog? and sets it up
-3) takes cog and marks it as no longer available (4 state nc!)
+2) takes the string to be displayed in {{{cog?}}} and sets it up
+3) takes cog and marks it as no longer available {{{(4 state nc!)}}}
 4) sets flags (HC08 is 1 done expand CRFL)
 5) set break length to 0
-6) starts _serail
+6) starts {{{_serail}}}
 
-= INTERFACE to _serial VIA serial =
+= INTERFACE to {{{_serial }}}  VIA {{{serial  }}}  =
 
-Please notice the the difference between _serial and serial is
-A) _serial take number of clocks per bit
-B) serial take baud rate
+Please notice the the difference between {{{_serial  }}} and {{{serial  }}} is
+A) {{{_serial  }}} takes number of clocks per bit
+B) {{{serial  }}} takes baud rate
 
-see ..\kernels\doc\tutorials
+see {{{..\kernels\doc\tutorials
 tutorial-3.2 Serial Loopback.txt
+}}}
 For instructions how to start a serial connection
 
 = DOCUMENTATION EXPERIMENT =
