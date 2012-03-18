@@ -5,7 +5,9 @@
 
 From forum post 
 
+{{{
 http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1083307&viewfull=1#post1083307
+}}}
 
 This draft will go into PROPFORTH.html when complete
 
@@ -13,7 +15,7 @@ This draft will go into PROPFORTH.html when complete
 
 SERIAL is necessarily built into the kernel, but we tend to use it all over the place in various (modified) forms. To allow the default SERIAL to be present in the kernel , and to allow modification to the kernel default at the same time, SERIAL is a loadable module.
 
-There are two parts the the serial function: _serial and serial
+There are two parts the the serial function: {{{_serial }}} and {{{serial}}}
 The "internal" part is in the definition _serial (with an underscore). This does that internal kernel operation for serial communications. Generally, we don't want to call _serial or any of its subfunctions directly.
 The "external" part is in the definition serial (with no underscore). This is the function the user or application calls to interface to the function.
 The external word serial is the "interface", this is the word "packages up" the function and is how to get at _serial.
