@@ -29,10 +29,14 @@ Rename file PropForthBootOptimzeAsmSrc.f and modify it as necessary for your par
 This is actually assembler code (and was based on forth definitions in previous versions). This serial code has been optimized to the extent that it is no longer useful to go back to a high forth version for this function.
 
 serial assembler code starts at line 775 actually at label:
+{{{
 build_BootOpt :rasm
+}}}
 
 serial assembler code ends at line 1104
+{{{
 ;asm _serial
+}}}
 
 = EXTERNAL serial =
 
