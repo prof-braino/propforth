@@ -1,0 +1,39 @@
+#summary Setup for GO  language using CSP channels.
+
+= Introduction =
+
+Propforth uses communication channels similar to those in CSP
+http://www.usingcsp.com/
+
+GO language also uses similar communications channels
+http://golang.org/
+
+The idea is to use the Prop for interafcaing to sensors and actualtors, and using a workstation to do the number crunching,  network communication, display, operator input and storage services.
+
+The prop and the workstation interface will be the CSP commucations channels between propforth and the GO language (or any other that supports communications channels) on the workstation.
+
+= SETUP The Work Station =
+
+The communucations channels make the device on the other end transparent.  So we want to be able to show that OS (windows, linux, Mac) ar4e equivalent, and the particular workstation (x86 PC, Mac, Raspberry Pi, ZipIt2) are functionally equivalent, and so the workstation hardware can be scaled to the task at hand. 
+
+== Target tool chain for workstation ==
+
+The workstation tool chain will be (for now): 
+ # windows XP
+ # GO language
+ # EMACS text editor
+
+=== Windows XP ===
+
+We're starting with windows xp since its already on a machine
+
+=== GO LAnguage ===
+
+=== EMACS Editor ===
+
+EMACS was selected since it has aspects which make it compatible with (people who think in propforth) forth.   Each user is free to use an alternative editor or environment, 
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
