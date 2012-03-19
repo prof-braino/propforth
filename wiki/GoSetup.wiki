@@ -79,82 +79,85 @@ EMACS was selected since it has aspects which make it compatible with (people wh
 
 ==== download emacs ====
 
-http://www.gnu.org/software/emacs/
+  http://www.gnu.org/software/emacs/
 
-Obtaining/Downloading GNU Emacs
+  Obtaining/Downloading GNU Emacs
 
-http://ftp.gnu.org/pub/gnu/emacs/windows/
+  http://ftp.gnu.org/pub/gnu/emacs/windows/
 
-http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
+  http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
 
 
-G:\EMACS
+  G:\EMACS
 
-G:\EMACS\bin
+  G:\EMACS\bin
 
-make desktop/quickstart-bar shortcut to  runemacs.exe 
+  make desktop/quickstart-bar shortcut to  runemacs.exe 
 
 ==== configure EMACS to use go profiles ==== 
 
-visit new filew
+  visit new filew
 
-C:\Go-Docs
+  C:\Go-Docs
 
-.emacs.el
+  .emacs.el
 
-add these lines
+  add these lines
+{{{
 ;; go profile
 [add-to-list 'load-path "C:/go/misc/emacs" t]
 [require 'go-mode-load]
+}}}
 
-to end: CTL-x ctl-s
-close emacs
+   to end: CTL-x ctl-s
+
+   close emacs
 
 ====  create hello.go, make emacs run it ====
 
-dos shell, goto home go dir
+ dos shell, goto home go dir
 
-in C:\Go-Docs
+ in C:\Go-Docs
 
-create text doc    hello.go
+ create text doc    hello.go
 
-right click
+ right click
 
-open with....
+ open with....
 
-C:\EMACS\bin
+ C:\EMACS\bin
 
  runemacs.exe
 
-always do this.
+ always do this.
 
-it open emacs
+ it open emacs
 
-close emacs, make emanc icon is on hello.go
+ close emacs, make emanc icon is on hello.go
 
-click it
+ click it
 
-write a go program
+ write a go program
 
-browse to golang.org
+ browse to golang.org
 
-copy example program   into emacs winows for hello.go
+ copy example program   into emacs winows for hello.go
 
-ctl-y to paste
+ ctl-y to paste
 
-no color or highlightinh yet. ? ? ? Error
+ no color or highlightinh yet. ? ? ? Error
 
-close and open  - only in B&W  ?  ?  ?  Error
+ close and open  - only in B&W  ?  ?  ?  Error
 
-sybntax highlight in a second....
+ sybntax highlight in a second....
 
-tools - compile
+ tools - compile
 
-go build hello.go
+ go build hello.go
 
-path errors !!!!!!
+ path errors !!!!!!
 
-echo %GO_ROOT%
+ echo %GO_ROOT%
 
 
 ----
