@@ -122,7 +122,7 @@ Navigate to  C:\EMACS\bin
 
 Right click the EMACS shortcut, edit the prorerties; change STart-In directory to:
 {{{
-C:\Go-Docs 
+C:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
 
 === configure EMACS to use go profiles === 
