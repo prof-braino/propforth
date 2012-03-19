@@ -86,6 +86,12 @@ From Dos shell command line prompt type:
 
 should give go description, if so, go setup complete!
 
+{{{
+C:\Documents and Settings\kt600a-200g>GO
+Go is a tool for managing Go source code.
+...
+}}}
+
 ----
 
 == EMACS Editor ==
