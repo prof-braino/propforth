@@ -14,6 +14,10 @@ The prop and the workstation interface will be the CSP commucations channels bet
 
 = SETUP The Work Station =
 
+The big issue is that some OS use [forward] slash (/) and some use backslach (\), this serves to screw up the path names.  This configuartion aims to resolve those issues in a standard, reproducable manner. 
+
+NOTE:  I tried to setup my rig so the dat was on the G drive instead of the C drive, and it DID NOT work.  So these instructions are exactly the way Sal did it using C drive.
+
 The communucations channels make the device on the other end transparent.  So we want to be able to show that OS (windows, linux, Mac) ar4e equivalent, and the particular workstation (x86 PC, Mac, Raspberry Pi, ZipIt2) are functionally equivalent, and so the workstation hardware can be scaled to the task at hand. 
 
 == Target tool chain for workstation ==
@@ -27,7 +31,39 @@ The workstation tool chain will be (for now):
 
 We're starting with windows xp since its already on a machine
 
+Steps -
+ * Control panel - system - advanced - environment variables 
+ * system variable  - new
+ * Varaible name: {{{ GO_ROOT }}}
+ * Varialbe Value: {{{  C:\go }}}
+
+User Variables
+ * Varaible name: {{{ HOME }}}
+ * Varialbe Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
+
+PATH
+edit add 
+{{{
+; C:\go\bin
+}}}
+Fromn Dos shell (run cmd:
+{{{ 
+path
+echo %go_root%
+ech %home%
+ }}}
+
+should rreflect the changes we made
+
+Dos shell GO
+ should give go descrivption
+
+
 === GO LAnguage ===
+
+http://code.google.com/p/go/downloads/detail?name=go.weekly.2012-03-13.windows-386.zip&can=2&q=
+
+Move Go directory to C:\go
 
 === EMACS Editor ===
 
