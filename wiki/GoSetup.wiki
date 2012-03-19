@@ -118,6 +118,8 @@ Navigate to  C:\EMACS\bin
 
    move/copy this short cut to your desktop and/or quickstart-bar
 
+   The Icon should display the EMACS logo
+
 === configure EMACS to use go profiles === 
 
   visit new filew
