@@ -44,21 +44,30 @@ Move Go directory to C:\go
 
 We're starting with windows xp since its already on a machine
 
+
 Steps -
+
+
  * Control panel - system - advanced - environment variables 
- * system variable  - new
- * Varaible name: {{{ GO_ROOT }}}
- * Varialbe Value: {{{  C:\go }}}
 
-User Variables
- * Varaible name: {{{ HOME }}}
- * Varialbe Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
+ * User Variables - NEW
+  * Varaible name: {{{ HOME }}}
+  * Varialbe Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
 
-PATH
-edit - add at the end to what ever is there...
+ * User Variables - PATH - Edit 
+
+   PATH
+   edit - add at the end to what ever is there...
 {{{
 ... ; C:\go\bin
 }}}
+
+ * system variable  - new
+  * Varaible name: {{{ GO_ROOT }}}
+  * Varialbe Value: {{{  C:\go }}}
+
+CHECK: 
+
 From Dos shell (run cmd):
 {{{ 
 path
