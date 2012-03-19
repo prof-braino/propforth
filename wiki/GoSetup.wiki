@@ -30,7 +30,7 @@ The workstation tool chain will be (for now):
 
 === GO Language ===
 
-[ assumining the workstation is  windows XP ]
+ _assumining the workstation is  windows XP_
 
 Download the newest version of go, we used 2012-03-13.windows-386.zip
 
