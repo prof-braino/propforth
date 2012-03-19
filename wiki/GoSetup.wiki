@@ -17,18 +17,20 @@ The prop and the workstation interface will be the CSP commucations channels bet
 
 The big issue is that some OS use -forward- slash (/) and some use backslach (\), this serves to screw up the path names.  This configuartion aims to resolve those issues in a standard, reproducable manner. 
 
-NOTE:  I tried to setup my rig so the dat was on the G drive instead of the C drive, and it DID NOT work.  So these instructions are exactly the way Sal did it using C drive.
+NOTE:  I tried to setup my rig so the dat was on the G drive instead of the C drive, and it DID NOT work.  So these instructions are exactly the way Sal did it using C drive.  Now, to see if it works....
 
 The communucations channels make the device on the other end transparent.  So we want to be able to show that OS (windows, linux, Mac) ar4e equivalent, and the particular workstation (x86 PC, Mac, Raspberry Pi, ZipIt2) are functionally equivalent, and so the workstation hardware can be scaled to the task at hand. 
 
-== Target tool chain for workstation ==
+= Target tool chain for workstation =
 
 The workstation tool chain will be (for now): 
  # windows XP
  # GO language
  # EMACS text editor
 
-=== GO Language ===
+---
+
+== GO Language ==
 
  _assumining the workstation is  windows XP_
 
@@ -38,7 +40,7 @@ http://code.google.com/p/go/downloads/detail?name=go.weekly.2012-03-13.windows-3
 
 Move Go directory to C:\go
 
-=== Windows XP ===
+== Windows XP ==
 
 We're starting with windows xp since its already on a machine
 
@@ -73,11 +75,13 @@ From Dos shell command line prompt type:
 
 should give go description, if so, go setup complete!
 
-=== EMACS Editor ===
+---
+
+== EMACS Editor ==
 
 EMACS was selected since it has aspects which make it compatible with (people who think in propforth) forth.   Each user is free to use an alternative editor or environment, any such alternate configurations will be posted as they are made available.
 
-==== download emacs ====
+=== download emacs ===
 
   http://www.gnu.org/software/emacs/
 
@@ -94,7 +98,7 @@ EMACS was selected since it has aspects which make it compatible with (people wh
 
   make desktop/quickstart-bar shortcut to  runemacs.exe 
 
-==== configure EMACS to use go profiles ==== 
+=== configure EMACS to use go profiles === 
 
   visit new filew
 
@@ -112,8 +116,9 @@ EMACS was selected since it has aspects which make it compatible with (people wh
    to end: CTL-x ctl-s
 
    close emacs
+---
 
-====  create hello.go, make emacs run it ====
+=  create hello.go, make emacs run it =
 
  dos shell, goto home go dir
 
@@ -160,9 +165,6 @@ EMACS was selected since it has aspects which make it compatible with (people wh
  echo %GO_ROOT%
 
 
-----
+---
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+20120319-1533
