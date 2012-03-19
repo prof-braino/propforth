@@ -77,45 +77,53 @@ should give go description, if so, go setup complete!
 
 EMACS was selected since it has aspects which make it compatible with (people who think in propforth) forth.   Each user is free to use an alternative editor or environment, any such alternate configurations will be posted as they are made available.
 
-download emacs
+==== download emacs ====
+
 http://www.gnu.org/software/emacs/
+
 Obtaining/Downloading GNU Emacs
 
-
 http://ftp.gnu.org/pub/gnu/emacs/windows/
+
 http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
 
 
 G:\EMACS
 
 G:\EMACS\bin
-make short to  runemacs.exe 
 
-EMACS to use go profiles:
+make desktop/quickstart-bar shortcut to  runemacs.exe 
+
+==== configure EMACS to use go profiles ==== 
 
 visit new filew
-G:\go-Docs
+
+C:\Go-Docs
 
 .emacs.el
 
 add these lines
 ;; go profile
-[add-to-list 'load-path "g:/go/misc/emacs" t]
+[add-to-list 'load-path "C:/go/misc/emacs" t]
 [require 'go-mode-load]
 
-to end. CTL-x ctl-s
+to end: CTL-x ctl-s
 close emacs
 
-  creat hello.go, make emacs run it
+====  create hello.go, make emacs run it ====
 
 dos shell, goto home go dir
 
-in G:\Go-Docs
+in C:\Go-Docs
+
 create text doc    hello.go
 
 right click
+
 open with....
-G:\EMACS\bin
+
+C:\EMACS\bin
+
  runemacs.exe
 
 always do this.
@@ -123,26 +131,34 @@ always do this.
 it open emacs
 
 close emacs, make emanc icon is on hello.go
+
 click it
 
 write a go program
+
 browse to golang.org
 
 copy example program   into emacs winows for hello.go
+
 ctl-y to paste
 
-no color or highlightinh yet.
-close and open  - only in B&W
+no color or highlightinh yet. ? ? ? Error
+
+close and open  - only in B&W  ?  ?  ?  Error
+
 sybntax highlight in a second....
 
 tools - compile
+
 go build hello.go
+
 path errors !!!!!!
 
 echo %GO_ROOT%
 
 
 ----
+
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
