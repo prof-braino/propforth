@@ -59,8 +59,10 @@ Steps -
    PATH
    edit - add at the end to what ever is there...
 {{{
-... ; C:\go\bin
+... ;C:\go\bin
 }}}
+
+NOTE: There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:
 
  * system variable  - new
   * Varaible name: {{{ GO_ROOT }}}
