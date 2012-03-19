@@ -28,7 +28,7 @@ The workstation tool chain will be (for now):
  # GO language
  # EMACS text editor
 
----
+----
 
 == GO Language ==
 
@@ -75,7 +75,7 @@ From Dos shell command line prompt type:
 
 should give go description, if so, go setup complete!
 
----
+----
 
 == EMACS Editor ==
 
@@ -116,7 +116,7 @@ EMACS was selected since it has aspects which make it compatible with (people wh
    to end: CTL-x ctl-s
 
    close emacs
----
+----
 
 =  create hello.go, make emacs run it =
 
@@ -165,6 +165,6 @@ EMACS was selected since it has aspects which make it compatible with (people wh
  echo %GO_ROOT%
 
 
----
+----
 
 20120319-1533
