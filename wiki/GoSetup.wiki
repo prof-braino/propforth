@@ -120,6 +120,11 @@ Navigate to  C:\EMACS\bin
 
    The Icon should display the EMACS logo
 
+Right click the EMACS shortcut, edit the prorerties; change STart-In directory to:
+{{{
+C:\Go-Docs 
+}}}
+
 === configure EMACS to use go profiles === 
 
   visit new filew
