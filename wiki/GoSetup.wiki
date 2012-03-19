@@ -100,20 +100,23 @@ EMACS was selected since it has aspects which make it compatible with (people wh
 
 === download emacs ===
 
-  http://www.gnu.org/software/emacs/
+From the EMACS page http://www.gnu.org/software/emacs/
 
-  Obtaining/Downloading GNU Emacs
+Find Obtaining/Downloading GNU Emacs http://ftp.gnu.org/pub/gnu/emacs/windows/
 
-  http://ftp.gnu.org/pub/gnu/emacs/windows/
+The version we used is:
 
   http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
 
 
-  G:\EMACS
 
-  G:\EMACS\bin
+Move the files to a directory you create called C:\EMACS
 
-  make desktop/quickstart-bar shortcut to  runemacs.exe 
+Navigate to  C:\EMACS\bin
+
+  make shortcut to  runemacs.exe 
+
+   move/copy this short cut to your desktop and/or quickstart-bar
 
 === configure EMACS to use go profiles === 
 
