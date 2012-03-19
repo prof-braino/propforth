@@ -15,7 +15,7 @@ The prop and the workstation interface will be the CSP commucations channels bet
 
 = SETUP The Work Station =
 
-The big issue is that some OS use [forward] slash (/) and some use backslach (\), this serves to screw up the path names.  This configuartion aims to resolve those issues in a standard, reproducable manner. 
+The big issue is that some OS use -forward- slash (/) and some use backslach (\), this serves to screw up the path names.  This configuartion aims to resolve those issues in a standard, reproducable manner. 
 
 NOTE:  I tried to setup my rig so the dat was on the G drive instead of the C drive, and it DID NOT work.  So these instructions are exactly the way Sal did it using C drive.
 
