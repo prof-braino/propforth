@@ -244,6 +244,14 @@ __result
 
 ----
 
+= References =
+
+Propeller Manual http://www.parallax.com/Portals/0/Downloads/docs/prod/prop/WebPM-v1.1.pdf
+
+Propeller Quick Reference v1.6 http://nagasm.suac.net/ASL/Propeller/printedPDF/QuickReference-v15.pdf (This link is to version 1.5; version 1.6 isn't available on line)
+
+
+
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
