@@ -24,6 +24,14 @@ Quickstart and protoobard are used here
 
 = A/D code =
 
+This is the entire code snitpet posted for the AD extension.  It consistes of two parts:
+ # the optimized assembler code, in base 64 encoding
+ # the orignal forth code used to develop the function, in comments
+
+The optimized assembler code is the sequence of prop assembler byte codes that make up the function.  The bytes are coded in base 64 to make loading faster, as fewer symbols are needed to represent the values.  Recall that in propforth, values that begin with lowercase z are interporeted as base 64 (if that are not found in the dictionary as a forth defineition). 
+
+The original forth code is included in comments as a reference.  Once a function is implemented in forth and tested to assure correct function, we have our starting point.  The function can then be optimized in assembler.  This involved removing the "forth over head" from the function's internal parts, and making over changes to improve speed efficiency etc.   It is good parctice to leave the source in comments as a reference incase future changes are required. 
+
 {{{
 \ a cog special register
 [ifndef ctra
