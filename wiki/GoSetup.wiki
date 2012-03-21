@@ -130,6 +130,11 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
   visit new filew
 
   C:\Go-Docs
+--- no --- should be:
+
+{{{
+C:\Documents and Settings\<username>\My Documents\Go-Docs
+}}}
 
   .emacs.el
 
@@ -151,6 +156,13 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
 
  in C:\Go-Docs
 
+-- no -- should be:
+
+{{{
+C:\Documents and Settings\<username>\My Documents\Go-Docs
+}}}
+
+
  create text doc    hello.go
 
  right click
@@ -161,7 +173,7 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
 
  runemacs.exe
 
- always do this.
+check the " always do this " checkbox. 
 
  it open emacs
 
