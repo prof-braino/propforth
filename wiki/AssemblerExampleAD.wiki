@@ -19,7 +19,11 @@ Quickstart and protoobard are used here
 
 == Analog input circuit ==
 
+The input singla is on pin zero as defined by 0 wconstant adcpin
+The feedback pin is on pin one as defined by 1 wconstant fbpin
+in the code below.
 
+An example circuit goes here =>
 
 
 = A/D code =
