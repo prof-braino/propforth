@@ -26,14 +26,14 @@ Quickstart and protoobard are used here
 
 This is the entire code snitpet posted for the AD extension.  It consistes of two parts:
  # the optimized assembler code, in base 64 encoding
- # the PASM assembler instructions for the prop
- # the orignal forth code used to develop the function, in comments
+ # the PASM assembler instructions for the prop, in comments
+ # the orignal forth code used to develop the function (not present in this example)
 
 The optimized assembler code is the sequence of prop assembler byte codes that make up the function.  The bytes are coded in base 64 to make loading faster, as fewer symbols are needed to represent the values.  Recall that in propforth, values that begin with lowercase z are interporeted as base 64 (if that are not found in the dictionary as a forth defineition). 
 
 In this case the A/D function was implemented directly in PASM. Remember that forth works from the stack, and the assembler syntax may appear "backwards" or otherwise different compared to other assembler implementations. 
 
-The original forth code can be included in comments as a reference.  Once a function is implemented in forth and tested to assure correct function, we have our starting point.  The function can then be optimized in assembler.  This involved removing the "forth over head" from the function's internal parts, and making over changes to improve speed efficiency etc.   It is good parctice to leave the source in comments as a reference in case future changes are required. 
+The original forth code can be included in comments as a reference.  Once a function is implemented in forth and tested to assure correct function, we have our starting point. The forth implementation of a time critical function can turn out to be "too slow" for the target application.  The function can then be optimized in assembler.  This involved removing the "forth overhead" from the function's internal parts, and making over changes to improve speed, efficiency, etc.   It is good parctice to leave the source in comments as a reference in case future changes are required.  (braino plans to add example high level forth at a later time)
 
 {{{
 \ a cog special register
