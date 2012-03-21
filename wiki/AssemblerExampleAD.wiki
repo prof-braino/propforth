@@ -177,7 +177,9 @@ result 13880 a_adc
 ;
 }}}
 
+Parallax App note 8 is on sigma delta
 
+http://www.parallaxsemiconductor.com/an008
 
 {{{
 
@@ -190,16 +192,23 @@ result 13880 a_adc
 ;
 }}}
 
+adc is a function that runs on cog 5 and monitors that value in the previoulsy define variable "result".  The contents of result is diplayed every 10 milliseconds.
+
 {{{
 
 decimal
 }}}
+
+switch back to decimal in case something changed the base
+
 
 {{{
 
 {
 
 }}}
+Begining of the section that was commented out, we no longer need this code now that we have series of values in base 64
+
 
 {{{
 fl
