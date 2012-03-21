@@ -123,6 +123,9 @@ __result
 h1F8	wconstant ctra
 ]
 }}}
+
+[ifndef is "if not ddefined"  then do the next lines until the close bracket ].  In this case, define the constant.
+
 Prop Manual Page 95
 
 {{{
