@@ -217,6 +217,10 @@ From within EMACS, select:
 
 The interactive line (at the bottom of the EMACS window) should dispaly the program output
 
+= Setting up the CSP channnels between GO and Propfoth =
+
+(notes incomplete 20120321)
+
 ----
 
 20120319-1533
