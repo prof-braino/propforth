@@ -200,9 +200,8 @@ to
  - or -
 
 from the dos command line enter 
-  go build hello.go
 
-
+     go build hello.go
 
 Either options should compile the current open go source file (hello.go)
 and create 
@@ -214,20 +213,9 @@ and create
 Running hello.exe from the command line will run the program
 
 From within EMACS, select:
-  Tools -> Shell command -> (files name) -> hello
+     Tools -> Shell command -> (files name) -> hello
 
 The interactive line (at the bottom of the EMACS window) should dispaly the program output
-
-
-
-
-
-----
-
- path errors !!!!!!
-
- echo %GO_ROOT%
-
 
 ----
 
