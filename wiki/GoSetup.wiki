@@ -177,14 +177,29 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
 
  ctl-y to paste
 
+----
+
  no color or highlightinh yet. ? ? ? Error
 
  close and open  - only in B&W  ?  ?  ?  Error
 
  sybntax highlight in a second....
 
- tools - compile
+= compile and execute =
 
+EMACS  tools - compile
+
+in the compilation prompt at the bottom of the screen:  
+change 
+         make -k 
+to
+         go build
+
+This should compile the current open go source file (hello.go)
+and create 
+           hello.exe
+
+Running hello.exe from the command line will run the program
  go build hello.go
 
  path errors !!!!!!
