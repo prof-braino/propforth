@@ -25,7 +25,7 @@ Quickstart and protoobard are used here
 
 in the code below.
 
-An example circuit goes here =>  (*)
+An example circuit goes here =>  `(*)`
 
 
 = A/D code =
@@ -124,7 +124,7 @@ h1F8	wconstant ctra
 ]
 }}}
 
-[ifndef is "if not ddefined"  then do the next lines until the close bracket ].  In this case, define the constant.
+`[ifndef` is "if not defined"  then do the next lines until the close bracket `]`.  In this case, define the constant.
 
 Prop Manual Page 95
 
@@ -150,7 +150,7 @@ variable result
 }}}
 Prop Pin 0 is used for input the Analog signal to be converted to Digital 
 
-Prop pin 1 is the Feed Back (???)
+Prop pin 1 is the Feed Back `(???)`
 
 The variable "result" is the hub memory location where the A to D convert result is transfered to other functions.
 
@@ -241,13 +241,13 @@ The label is defined once (the first time) in the forth assembler code.  When th
 build_BootOpt :rasm
 }}}
 
-n1 is the address where the returned value gets placed.  In this example, is is the variable "result"
+`n1` is the address where the returned value gets placed.  In this example, is is the variable "result"
 
-n2 is the number of cycles.  (cycles of what?  Is this the number of times the input pin is sampled?  Or is this the duration of the sampling?)
+`n2` is the number of cycles.  (cycles of what?  Is this the number of times the input pin is sampled?  Or is this the duration of the sampling?)
 
-build_BootOpt  (figure out what this is doing)
+`build_BootOpt`  (figure out what this is doing)
 
-:rasm  (figure out what this is doing)
+`:rasm`  (figure out what this is doing)
 
 {{{
                \ read interval               
@@ -258,6 +258,7 @@ build_BootOpt  (figure out what this is doing)
 This is where the actual assembler code begins.
 
 Move the value at the Top Of Stack to location __interval
+
 pop the value off the top of the stack
 
 {{{
@@ -267,6 +268,7 @@ pop the value off the top of the stack
 }}}
 
 Move the value at the Top Of Stack to location __result
+
 pop the value off the top of the stack
 
 
