@@ -229,6 +229,7 @@ h1FC	wconstant phsa
 Prop Manual Page 180 (why is this in here twice?)
 The ifdef makes sure it is only defined once
 
+The label is defined once (the first time) in the forth assembler code.  When the resultant code is converted to base 64 encoding, the instructions to the interpreter are no longer present at this location.   The label is define again (the second time) in the code that sets up the base 64 encoded routine.  The result (should be) the the label is only defined once, but is available when we have to mess with the original version. 
 
 {{{
 
@@ -325,6 +326,7 @@ This is the ending comment for the forth assembler code.
 
 = converting the result to base 64 = 
 
+( need to figure out this bit )
 
 ----
 
