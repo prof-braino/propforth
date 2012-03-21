@@ -111,51 +111,6 @@ __result
 = Assembler code =
 
 {{{
-\ a cog special register
-[ifndef ctra
-h1F8	wconstant ctra
-]
-[ifndef frqa
-h1FA	wconstant frqa 
-]
-[ifndef phsa
-h1FC	wconstant phsa 
-]
-
-0 wconstant adcpin
-1 wconstant fbpin
-
-variable result
-
-\ a_adc    A/D-conversion    ( result_addr  cycles  -- )
-lockdict create a_adc forthentry
-$C_a_lxasm w, h121  h113  1- tuck - h9 lshift or here W@ alignl h10 lshift or l,
-z2WiZuB l, z1SyLI[ l, z2Wi[3B l, z1SyLI[ l, z2WiPak l, z20iP[V l, z3riP[V l, z2WiPiv l,
-z24iPeE l, z20iPmD l, z8FPfW l, z1SV04P l, 0 l, 0 l,
-freedict
-
-: sigma_delta
-1 frqa COG! fbpin dup pinout 9 lshift h24000000 or adcpin or ctra COG!         
-\ A/D start
-result 13880 a_adc
-;
-
-: adc
- c" sigma_delta" 5 cogx
- begin
-     result L@ .  cr     
-     10 delms             \ 10msec
- 0 until
-;
-
-decimal
-{
-fl
-hex
-[ifndef phsa
-h1FC	wconstant phsa 
-]
-
 \ sigma-delta A/D conversion
 \ ( n1 n2 -- )  n1:result address  n2:cycles 
 build_BootOpt :rasm
@@ -178,8 +133,6 @@ __interval
  0
 __result
  0
-;asm a_adc		
-}
 }}}
 
 
