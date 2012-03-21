@@ -197,7 +197,7 @@ http://www.parallaxsemiconductor.com/an008
 ;
 }}}
 
-adc is a function that runs on cog 5 and monitors that value in the previoulsy define variable "result".  The contents of result is diplayed every 10 milliseconds.
+adc is a function that runs on cog 5 and monitors that value in the previoulsy define variable "result".  The contents of result is displayed every 10 milliseconds.
 
 {{{
 
@@ -212,7 +212,7 @@ switch back to decimal in case something changed the base
 {
 
 }}}
-Begining of the section that was commented out, we no longer need this code now that we have series of values in base 64
+Begining of the section that was commented out, we no longer need this code once we have the sequence of values in base 64
 
 
 {{{
