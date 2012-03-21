@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This page is an example of converting high level FORTH code into assembler.
+This page is an example of converting FORTH assembler code into base 64 encoded assembler.
 
 The code is caskaz's contribution from 20120321
 
