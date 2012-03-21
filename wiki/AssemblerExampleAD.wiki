@@ -110,35 +110,41 @@ __result
 
 = Lots of Comments =
 
+
 {{{
 \ a cog special register
 [ifndef ctra
 h1F8	wconstant ctra
 ]
 }}}
+Prop Manual Page 95
 
 {{{
 [ifndef frqa
 h1FA	wconstant frqa 
 ]
 }}}
+Prop Manual Page 111
 
 {{{
 [ifndef phsa
 h1FC	wconstant phsa 
 ]
 }}}
+Prop Manual Page 180
 
 {{{
-
 0 wconstant adcpin
 1 wconstant fbpin
 
 variable result
 }}}
+Prop Pin 0 is used for input the Analog signal to be converted to Digital 
+Prop pin 1 is the Feed Back (???)
+
+The variable "result" is the hub memory location where the A to D convert result is transfered to other functions.
 
 {{{
-
 \ a_adc    A/D-conversion    ( result_addr  cycles  -- )
 lockdict create a_adc forthentry
 $C_a_lxasm w, h121  h113  1- tuck - h9 lshift or here W@ alignl h10 lshift or l,
@@ -146,6 +152,17 @@ z2WiZuB l, z1SyLI[ l, z2Wi[3B l, z1SyLI[ l, z2WiPak l, z20iP[V l, z3riP[V l, z2W
 z24iPeE l, z20iPmD l, z8FPfW l, z1SV04P l, 0 l, 0 l,
 freedict
 }}}
+lockdict locks the dictionary in hub memory so we can create an entry for the assembler ruoutine (without another process stepping on our definition with its being written). 
+
+The forth word CREATE starts a forth definition.  REMEMBER, 
+the way propforth works, calling create does NOT make a dictionary entry by itself, as in other forths.   CREATE sets up stuff on the stack so the following words can make the definition.
+
+a_adc is the label for the dictionary entry for the function.  
+
+forthentry sets the flag for F so words will dispaly this entry as F.  It also does other stuff, I'm not entirely sure.
+
+
+
 
 {{{
 
