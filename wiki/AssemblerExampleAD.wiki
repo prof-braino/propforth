@@ -108,7 +108,7 @@ __result
 }}}
 
 
-= The high level forth code =
+= Assembler code =
 
 {{{
 \ a cog special register
@@ -183,7 +183,8 @@ __result
 }}}
 
 
-= converting the forth code to assembler = 
+= converting the result to base 64 = 
+
 
 ----
 
