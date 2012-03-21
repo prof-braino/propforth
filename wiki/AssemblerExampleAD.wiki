@@ -9,6 +9,18 @@ The code is caskaz's contribution from 20120321
 
 http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1084006&viewfull=1#post1084006
 
+= Hardware =
+
+== prop board ==
+
+This example can use any propforth board.
+
+Quickstart and protoobard are used here
+
+== Analog input circuit ==
+
+
+
 
 = A/D code =
 
@@ -85,6 +97,11 @@ __result
 }}}
 
 
+= The high level forth code =
+
+= converting the forth code to assembler = 
+
+----
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
