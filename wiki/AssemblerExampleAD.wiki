@@ -168,6 +168,8 @@ a_adc is the label for the dictionary entry for the function.
 
 forthentry sets the flag for F so words will dispaly this entry as F.  It also does other stuff, I'm not entirely sure.
 
+the last freedict ends the process, it might be the part that actually completes the new dictionary entry, I have to check this. 
+
 {{{
 
 : sigma_delta
@@ -215,11 +217,18 @@ fl
 hex
 }}}
 
+FL is the fast load word, this routine uses one cog to send the input text stream into unused hub memory for buffering, while another cog starts interpreting the text in the "buffer".  FL is fast, and doesn't use up any hub memory (since it acts on unused memory), but is limited to the size of unused memory. 
+
+hex changes the base to sixteen. 
+
 {{{
 [ifndef phsa
 h1FC	wconstant phsa 
 ]
 }}}
+Prop Manual Page 180 (why is this in here twice?)
+The ifdef makes sure it is only defined once
+
 
 {{{
 
@@ -228,11 +237,24 @@ h1FC	wconstant phsa
 build_BootOpt :rasm
 }}}
 
+n1 is the address where the returned value gets placed.  In this example, is is the variable "result"
+
+n2 is the number of cycles.  (cycles of what?  Is this the number of times the input pin is sampled?  Or is this the duration of the sampling?)
+
+build_BootOpt  (figure out what this is doing)
+
+:rasm  (figure out what this is doing)
+
 {{{
                \ read interval               
                mov  __interval , $C_stTOS
                spop
 }}}
+
+This is where the actual assembler code begins.
+
+Move the value at the Top Of Stack to location __interval
+pop the value off the top of the stack
 
 {{{
                \ read A/D result address
@@ -240,10 +262,21 @@ build_BootOpt :rasm
                spop
 }}}
 
+Move the value at the Top Of Stack to location __result
+pop the value off the top of the stack
+
+
 {{{
                mov  $C_treg1 , cnt  
                add  $C_treg1 , __interval
 }}}
+
+Move the value from system counter register cnt  (prop maual page 73)
+
+to (explain $C_treg1) 
+
+add __interval to (the previously obtained value of) system counter register
+
 
 {{{
 __1
@@ -255,6 +288,20 @@ __1
                jmp # __1                      
 }}}
 
+__1 is a label, so we have a place to jump to in our loop
+
+When the loop time (value in $C_treg1) expires, jump to label __interval
+
+Get the value of phsa (Propeller manual page 180) and put it in $C_treg2
+
+subtract the value (in $C_treg2 from the value in $C_treg3)  better check this
+
+add the value (in $C_treg3 to the value in $C_treg2)  better check this
+
+write the long in $C_treg3 to location of label __result
+
+jump back to label __1 for our loop
+
 {{{
 __interval
  0
@@ -262,14 +309,19 @@ __result
  0
 }}}
 
+The locations (variables) __interval and __result are initalized to 0 when the code was defined. 
+
 {{{
 ;asm a_adc		
 }}}
+
+This ends the assembler definition for function a_adc
 
 {{{
 }
 }}}
 
+This is the ending comment for the forth assembler code. 
 
 = converting the result to base 64 = 
 
