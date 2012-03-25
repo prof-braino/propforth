@@ -63,10 +63,14 @@ Steps -
 }}}
 
 NOTE: There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:
+MUST be lowercase
 
  * system variable  - new
   * Variable name: {{{ GOROOT }}}  _maybe this should be_ {{{ GOROOT }}} 
-  * Varialbe Value: {{{  c:\go }}}
+GOROOT must be uppercase
+
+  * Variable Value: {{{  c:\go }}}
+MUST be lowercase
 
 CHECK: 
 
@@ -76,6 +80,8 @@ path
 echo %GOROOT%
 echo %HOME%
  }}}
+
+Must be uppercase
 
 should rreflect the changes we made
 
@@ -120,20 +126,18 @@ Navigate to  C:\EMACS\bin
 
    The Icon should display the EMACS logo
 
-Right click the EMACS shortcut, edit the prorerties; change STart-In directory to:
+Right click the EMACS shortcut, edit the properties; change Start-in directory to:
 {{{
-C:\Documents and Settings\<username>\My Documents\Go-Docs
+C:\Documents and Settings\<username>\My Documents\Go-files
 }}}
 
 === configure EMACS to use go profiles === 
 
   visit new filew
 
-  C:\Go-Docs
---- no --- should be:
 
 {{{
-C:\Documents and Settings\<username>\My Documents\Go-Docs
+c:\Documents and Settings\<username>\My Documents\Go-files
 }}}
 
   .emacs.el
@@ -141,8 +145,8 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
   add these lines
 {{{
 ;; go profile
-[add-to-list 'load-path "C:/go/misc/emacs" t]
-[require 'go-mode-load]
+(add-to-list 'load-path "c:/go/misc/emacs" t)
+(require 'go-mode-load)
 }}}
 
    to end: CTL-x ctl-s
@@ -154,12 +158,8 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
 
  dos shell, goto home go dir
 
- in C:\Go-Docs
-
--- no -- should be:
-
 {{{
-C:\Documents and Settings\<username>\My Documents\Go-Docs
+c:\Documents and Settings\<username>\My Documents\Go-files
 }}}
 
 
@@ -169,7 +169,7 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
 
  open with....
 
- C:\EMACS\bin
+ c:\emacs\bin
 
  runemacs.exe
 
@@ -177,7 +177,7 @@ check the " always do this " checkbox.
 
  it open emacs
 
- close emacs, make emanc icon is on hello.go
+ close emacs, make sure emacs icon is on hello.go
 
  click it
 
@@ -191,11 +191,11 @@ check the " always do this " checkbox.
 
 ----
 
- no color or highlightinh yet. ? ? ? Error
+ no color or highlighting yet. This means you used BRACKETS instead of parenthesis!  Changle to paranthesis in .emacs.el as this is LISP
 
  close and open  - only in B&W  ?  ?  ?  Error
 
- sybntax highlight in a second....
+ syntax highlight in a second....
 
 = compile and execute =
 
@@ -207,7 +207,7 @@ in the compilation prompt at the bottom of the screen:
 change 
          make -k 
 to
-         go build
+         go build hello.go
 
  - or -
 
