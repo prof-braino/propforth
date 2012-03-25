@@ -65,7 +65,7 @@ Steps -
 NOTE: There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:
 
  * system variable  - new
-  * Variable name: {{{ GO_ROOT }}}  _maybe this should be_ {{{ GOROOT }}} 
+  * Variable name: {{{ GOROOT }}}  _maybe this should be_ {{{ GOROOT }}} 
   * Varialbe Value: {{{  C:\go }}}
 
 CHECK: 
@@ -73,7 +73,7 @@ CHECK:
 From Dos shell (run cmd):
 {{{ 
 path
-echo %go_root%
+echo %goroot%
 ech %home%
  }}}
 
