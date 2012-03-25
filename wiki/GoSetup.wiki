@@ -59,22 +59,22 @@ Steps -
    PATH
    edit - add at the end to what ever is there...
 {{{
-... ;C:\go\bin
+... ;c:\go\bin
 }}}
 
 NOTE: There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:
 
  * system variable  - new
   * Variable name: {{{ GOROOT }}}  _maybe this should be_ {{{ GOROOT }}} 
-  * Varialbe Value: {{{  C:\go }}}
+  * Varialbe Value: {{{  c:\go }}}
 
 CHECK: 
 
 From Dos shell (run cmd):
 {{{ 
 path
-echo %goroot%
-ech %home%
+echo %GOROOT%
+echo %HOME%
  }}}
 
 should rreflect the changes we made
