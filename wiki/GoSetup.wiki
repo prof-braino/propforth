@@ -124,7 +124,7 @@ The version we used is:
 
   http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
 
-Move the files to a directory you create called c:\emacs
+Copy or Move the files under `<download>\emacs-23.3-bin-i386\emacs-23.3` to a directory you create called `c:\emacs`
  
 Navigate to  c:\emacs\bin
 
