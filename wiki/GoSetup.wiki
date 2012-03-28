@@ -253,27 +253,42 @@ In the meantime, the line `Compile Command: go build <currentfile>.go ` will per
 
 ==== Compile from command line ====
 
-from the dos command line enter 
+from the dos command line Start -> Run... -> cmd
 
-     go build hello.go
+Navigate to the Go source code directory
 
-Either options should compile the current open go source file (hello.go)
-and create 
+enter 
 
-           hello.exe
+` go build hello.go `
+
+Compilation (of hello.go) should result in the creation of the executable
+
+`    hello.exe `
 
 == execute ==
 
 Running hello.exe from the command line will run the program
 
+` Hello, Professor Braino `
+
 From within EMACS, select:
      Tools -> Shell command -> (files name) -> hello
 
-The interactive line (at the bottom of the EMACS window) should dispaly the program output
+The interactive line (at the bottom of the EMACS window) should display the program output
 
 = Setting up the CSP channnels between GO and Propfoth =
 
-(notes incomplete 20120321)
+NOT READY FOR PUBLIC DISTRIBUTION 20120328
+
+BUT Sal sent me the prototype.  Executing this Go program sets connection between  the DOS command line and the prop board running propforth, just like TeraTerm or and terminal program.  Why is this interesting?  
+
+This is interesting because it uses the CSP channels.   There are a couple of benefits to this.  
+
+ # The DOS command line features, such as command completion, command editing, and command history, nw work on the interface to propforth. This save tons of kernel space and save me months of putting off implementing this as an extension. 
+
+ # CSP channels allow multiple connections.  The next version of the Go interface is planned to support many connections (over the same wire, the existing USB virtual serial port connection).  We will be able to have a separate session to each COG simultaneously.  
+
+
 
 ----
 
