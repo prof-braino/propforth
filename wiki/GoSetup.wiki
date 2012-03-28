@@ -68,7 +68,7 @@ Steps -
 ... ;c:\go\bin
 }}}
 
-NOTES: a) There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:  b) MUST be lowercase  c) On one machine the variable was `PATH` and on another it was `Path`.  Use whatever is already there. 
+ NOTES: a) There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:  b) MUST be lowercase  c) On one machine the variable was `PATH` and on another it was `Path`.  Use whatever is already there. 
 
 
  * system variable  - new
