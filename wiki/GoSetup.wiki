@@ -40,6 +40,8 @@ http://code.google.com/p/go/downloads/detail?name=go.weekly.2012-03-13.windows-3
 
 Move Go directory to C:\go
 
+NOTICE: When extracted to the destination directory, verify that you end up with 3,327 files in 360 folders in the go directory.  I used a older slow machine, and the extract stopped before completion for the first couple tries. 
+
 == Windows XP ==
 
 We're starting with windows xp since its already on a machine
@@ -51,7 +53,9 @@ Steps -
  * Control panel - system - advanced - environment variables 
 
  * User Variables for `<USER_NAME>` - NEW
-  * Varaible name: {{{ HOME }}}
+  * New User Variable 
+    * Variable name: {{{ HOME }}}
+    * Must be in uppercase 
   * Varialbe Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
 
  * User Variables - PATH - Edit 
