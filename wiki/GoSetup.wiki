@@ -135,11 +135,13 @@ Copy or Move the files under `<download>\emacs-23.3-bin-i386\emacs-23.3` to a di
 
  The Icon should display the EMACS logo
 
- Right click the EMACS shortcut, edit the properties; change Start-in directory to:  {{{
+ Right click the EMACS shortcut, edit the properties; change Start-in directory to:  
+{{{
 C:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
 
- Click the EMACS shortcut to launch EMACS.  EMACS should create a sub-directory named `.emacs.d` in your {{{
+ Click the EMACS shortcut to launch EMACS.  EMACS should create a sub-directory named `.emacs.d` in your 
+{{{
 C:\Documents and Settings\<username>\My Documents\Go-Docs
 }}} directory.
 
