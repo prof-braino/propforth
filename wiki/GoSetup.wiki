@@ -137,8 +137,10 @@ Copy or Move the files under `<download>\emacs-23.3-bin-i386\emacs-23.3` to a di
 
  Right click the EMACS shortcut, edit the properties; change Start-in directory to:
 {{{
-C:\Documents and Settings\<username>\My Documents\Go-files
+C:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
+
+
 
 === configure EMACS to use go profiles === 
 
@@ -146,7 +148,7 @@ C:\Documents and Settings\<username>\My Documents\Go-files
 
 
 {{{
-c:\Documents and Settings\<username>\My Documents\Go-files
+c:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
 
   .emacs.el
@@ -168,7 +170,7 @@ c:\Documents and Settings\<username>\My Documents\Go-files
  dos shell, goto home go dir
 
 {{{
-c:\Documents and Settings\<username>\My Documents\Go-files
+c:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
 
 
