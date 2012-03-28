@@ -82,7 +82,7 @@ Steps -
 
 CHECK: 
 
-From Dos shell (run cmd):
+From Dos shell (START > Run... > Open: *cmd* ):
 {{{ 
 path
 echo %GOROOT%
