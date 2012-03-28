@@ -140,12 +140,13 @@ Copy or Move the files under `<download>\emacs-23.3-bin-i386\emacs-23.3` to a di
 C:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
 
-
+ Click the EMACS shortcut to launch EMACS.  EMACS should create a sub-directory named `.emacs.d` in your {{{
+C:\Documents and Settings\<username>\My Documents\Go-Docs
+}}} directory.
 
 === configure EMACS to use go profiles === 
 
-  visit new filew
-
+ Launch EMACS. In Emacs, visit new filew
 
 {{{
 c:\Documents and Settings\<username>\My Documents\Go-Docs
@@ -153,7 +154,7 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
 
   .emacs.el
 
-  add these lines
+  add these lines (of LISP source code) to `.emacs.el`
 {{{
 ;; go profile
 (add-to-list 'load-path "c:/go/misc/emacs" t)
@@ -163,6 +164,7 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
    to end: CTL-x ctl-s
 
    close emacs
+
 ----
 
 =  create hello.go, make emacs run it =
