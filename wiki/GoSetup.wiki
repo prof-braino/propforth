@@ -179,17 +179,23 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
 }}}
 
 
- create text doc    hello.go
+create text document and name it `hello.go`
 
- right click
+ right click on this file
 
- open with....
+Select *Open* or `open with....`  This changes after the first time
+
+
+
+Select `Choose from a List` and  `OK`
+
+From the Open With window, use the Browse... button to Navigate to: 
 
  c:\emacs\bin
 
- runemacs.exe
+ Select `runemacs.exe`
 
-check the " always do this " checkbox. 
+check the " always do this " checkbox. (DON'T FORGET to CHECK the CHECKBOX!!!)
 
  it open emacs
 
