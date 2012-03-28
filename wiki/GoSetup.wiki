@@ -112,7 +112,7 @@ So far, so good....
 
 == EMACS Editor ==
 
-EMACS was selected since it has aspects which make it compatible with (people who think in propforth) forth.   Each user is free to use an alternative editor or environment, any such alternate configurations will be posted as they are made available.
+EMACS was selected since it has aspects which make it compatible with (people who think in propforth) forth.   Each user is free to use an alternative editor or environment, alternate configurations will be posted as they are made available.
 
 === download emacs ===
 
@@ -223,29 +223,35 @@ check the " always do this " checkbox. (DON'T FORGET to CHECK the CHECKBOX!!!)
 
  Save the file
 
-=== build and the program ===
+=== build and the program (compile)  ===
 
-----
+GO source can be compiled within EMACS, or from the workstation command prompt.
 
- no color or highlighting yet. This means you used BRACKETS instead of parenthesis!  Changle to paranthesis in .emacs.el as this is LISP
+==== Compile within EMACS ====
 
- close and open  - only in B&W  ?  ?  ?  Error
+In EMACS, select  Tools - Compile...
 
- syntax highlight in a second....
+At the bottom of the EMACS window, the "Compile Command" command line is displayed:
 
-= compile and execute =
+ `Compile Command: make -k `
 
-== compile == 
-
-EMACS  tools - compile
-
-in the compilation prompt at the bottom of the screen:  
 change 
          make -k 
 to
          go build hello.go
 
- - or -
+If successful (it takes a while on an old machine) the compilation finshed will display finished in green. 
+
+NOTE:  There should be a way to configure EMACS default to display 
+
+ `Compile Command: go build <currentfile>.go `
+
+But we didn't figure it out yet.  Please send a comment for how to do this. 
+
+In the meantime, the line `Compile Command: go build <currentfile>.go ` will persist until the EMACS window is closed.
+
+
+==== Compile from command line ====
 
 from the dos command line enter 
 
