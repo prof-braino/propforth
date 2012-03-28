@@ -172,7 +172,7 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
 
 =  create hello.go, make emacs run it =
 
- dos shell, goto home go dir
+From a DOS shell, navigate to your GO home source code directory
 
 {{{
 c:\Documents and Settings\<username>\My Documents\Go-Docs
