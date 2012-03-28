@@ -143,7 +143,9 @@ C:\Documents and Settings\<username>\My Documents\Go-Docs
  Click the EMACS shortcut to launch EMACS.  EMACS should create a sub-directory named `.emacs.d` in your 
 {{{
 C:\Documents and Settings\<username>\My Documents\Go-Docs
-}}} directory.
+}}} 
+
+directory.
 
 === configure EMACS to use go profiles === 
 
