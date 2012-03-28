@@ -205,13 +205,23 @@ check the " always do this " checkbox. (DON'T FORGET to CHECK the CHECKBOX!!!)
   
  emacs opens the (still empty) hello.go program.
 
-=== Try a sample GO program ===
+=== Create a sample GO program ===
 
- browse to golang.org
+ Use your internet browser navigate the main page for the go web site *golang.org*
 
- copy example program   into emacs winows for hello.go
+ copy example program in the yellow window under "Or try it right here from your browser:"
+
+ Paste the copied source code into the emacs window for hello.go
 
  ctl-y to paste
+
+ The source code you copied should be displayed with context highlighting.  The key words should be purple, the `main` should be black, the literal text should be brown.
+
+ In the line `fmt.Println("Hello, 世界")` replace the two Asian characters with your name, unless your name happens to be "World".
+
+ Save the file
+
+=== build and the program ===
 
 ----
 
