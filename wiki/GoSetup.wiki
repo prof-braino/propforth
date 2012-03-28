@@ -56,7 +56,7 @@ Steps -
   * New User Variable 
     * Variable name: {{{ HOME }}}
     * Must be in uppercase 
-  * Varialbe Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
+  * Variable Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
 
  * User Variables - PATH - Edit 
 
