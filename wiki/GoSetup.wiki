@@ -71,12 +71,14 @@ Steps -
  NOTES: a) There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:  b) MUST be lowercase  c) On one machine the variable was `PATH` and on another it was `Path`.  Use whatever is already there. 
 
 
- * system variable  - new
-  * Variable name: {{{ GOROOT }}}  _maybe this should be_ {{{ GOROOT }}} 
-GOROOT must be uppercase
+ * system variables  - New
+  * Variable name: {{{ GOROOT }}}  
+
+  GOROOT must be uppercase
 
   * Variable Value: {{{  c:\go }}}
-MUST be lowercase
+
+  MUST be lowercase
 
 CHECK: 
 
