@@ -58,6 +58,7 @@ Steps -
     * Must be in uppercase 
   * Variable Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
     * The final location can be anything you want to type all the time. We tested the names 'Go-Docs' and 'GoFiles'. Avoid names with spaces, etc. 
+    * Selecting a path in `My Documents` ends up with the characteristically silly extra long path names.  But apps tend to look here by default, and in this case the path was not too long so it worked.   
 
  * User Variables - PATH - Edit 
 
