@@ -68,8 +68,8 @@ Steps -
 ... ;c:\go\bin
 }}}
 
-NOTE: There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:
-MUST be lowercase
+NOTES: a) There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:  b) MUST be lowercase  c) On one machine the variable was `PATH` and on another it was `Path`.  Go with whatever is already there. 
+
 
  * system variable  - new
   * Variable name: {{{ GOROOT }}}  _maybe this should be_ {{{ GOROOT }}} 
