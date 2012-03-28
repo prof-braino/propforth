@@ -124,11 +124,9 @@ The version we used is:
 
   http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
 
-
-
-Move the files to a directory you create called C:\EMACS
-
-Navigate to  C:\EMACS\bin
+Move the files to a directory you create called c:\emacs
+ 
+Navigate to  c:\emacs\bin
 
   make shortcut to  runemacs.exe 
 
