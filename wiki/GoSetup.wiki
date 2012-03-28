@@ -202,8 +202,10 @@ check the " always do this " checkbox. (DON'T FORGET to CHECK the CHECKBOX!!!)
  close emacs, make sure emacs icon is on hello.go
 
  click it
+  
+ emacs opens the (still empty) hello.go program.
 
- write a go program
+=== Try a sample GO program ===
 
  browse to golang.org
 
