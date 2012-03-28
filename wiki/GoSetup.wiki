@@ -280,7 +280,7 @@ In the meantime, the line `Compile Command: go build <currentfile>.go ` will per
 
 NOT READY FOR PUBLIC DISTRIBUTION 20120328
 
-BUT Sal sent me the prototype 20120325.  Executing this Go program sets UP A connection between the DOS command line and the prop board running propforth, just like TeraTerm or and terminal program.  Why is this interesting?  
+BUT Sal sent me the prototype 20120325.  Executing this Go program sets up a connection between the DOS command line and the prop board running propforth, just like TeraTerm or and terminal program.  Why is this interesting?  
 
 This is interesting because it uses the CSP channels.   There are a couple of benefits to this.  
 
