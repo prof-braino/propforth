@@ -126,15 +126,16 @@ The version we used is:
 
 Copy or Move the files under `<download>\emacs-23.3-bin-i386\emacs-23.3` to a directory you create called `c:\emacs`
  
-Navigate to  c:\emacs\bin
 
-  make shortcut to  runemacs.exe 
+ Navigate to  c:\emacs\bin
 
-   move/copy this short cut to your desktop and/or quickstart-bar
+ make shortcut to  runemacs.exe 
 
-   The Icon should display the EMACS logo
+ move/copy this short cut to your desktop and/or quickstart-bar
 
-Right click the EMACS shortcut, edit the properties; change Start-in directory to:
+ The Icon should display the EMACS logo
+
+ Right click the EMACS shortcut, edit the properties; change Start-in directory to:
 {{{
 C:\Documents and Settings\<username>\My Documents\Go-files
 }}}
