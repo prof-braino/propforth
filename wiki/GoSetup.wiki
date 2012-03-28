@@ -164,7 +164,7 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
 (require 'go-mode-load)
 }}}
 
-NOTE: This is LISP source code.  You don't have to know anything about LISP, its just what EMACS is made from.  IF the contextual highlighting does not display correctly later, check this and make sure you use parenthesis and not brackets.   
+NOTE: This is LISP source code.  You don't have to know anything about LISP, its just what EMACS is made from.  IF the contextual highlighting does not display correctly later, check this and make sure you use parenthesis and not brackets.   :)
 
    to end: CTL-x ctl-s
 
