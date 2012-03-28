@@ -50,7 +50,7 @@ Steps -
 
  * Control panel - system - advanced - environment variables 
 
- * User Variables for '<USER_NAME>' - NEW
+ * User Variables for `<USER_NAME>` - NEW
   * Varaible name: {{{ HOME }}}
   * Varialbe Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
 
