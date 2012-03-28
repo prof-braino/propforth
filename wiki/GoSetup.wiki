@@ -91,11 +91,11 @@ echo %HOME%
 
 Must be uppercase
 
-should rreflect the changes we made
+should reflect the changes we made
 
 From Dos shell command line prompt type:
 {{{
- GO
+ go
 }}}
 
 should give go description, if so, go setup complete!
@@ -105,6 +105,8 @@ C:\Documents and Settings\user-name>GO
 Go is a tool for managing Go source code.
 ...
 }}}
+
+So far, so good....
 
 ----
 
