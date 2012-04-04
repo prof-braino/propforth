@@ -290,4 +290,12 @@ This is interesting because it uses the CSP channels.   There are a couple of be
 
 ----
 
+=  Some references =
+
+http://forums.parallax.com/showthread.php?138412-GO-language-amp-Hoare-CSP-Channels/page2
+
+http://forums.parallax.com/showthread.php?126589-Communicating-Sequential-Processes-by-C.A.R.-Hoare
+
+http://www.usingcsp.com/
+
 End of instruction 20120328-0956
