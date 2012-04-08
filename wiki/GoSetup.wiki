@@ -180,6 +180,10 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
 
 }}}
 
+NOTE2: The change configure 
+`emacs => Tools => Compile...`
+to display the compile (build) command with the current files name
+
 NOTE: This is LISP source code.  You don't have to know anything about LISP, its just what EMACS is made from.  IF the contextual highlighting does not display correctly later, check this and make sure you use parenthesis and not brackets.   :)
 
    to end: CTL-x ctl-s
