@@ -160,8 +160,24 @@ c:\Documents and Settings\<username>\My Documents\Go-Docs
   add these lines (of LISP source code) to `.emacs.el`
 {{{
 ;; go profile
+;; (add-to-list 'load-path "c:/go/misc/emacs" t)
+;; (require 'go-mode-load)
+;; above was updated 20120408 with the following:
+
 (add-to-list 'load-path "c:/go/misc/emacs" t)
 (require 'go-mode-load)
+
+(require 'compile)
+(add-hook 'go-mode-hook
+	  (lambda()
+	    (set (make-local-variable 'compile-command)
+		 (format "go build %s" (file-name-nondirectory buffer-file-name))
+		 )
+	    )
+)
+
+
+
 }}}
 
 NOTE: This is LISP source code.  You don't have to know anything about LISP, its just what EMACS is made from.  IF the contextual highlighting does not display correctly later, check this and make sure you use parenthesis and not brackets.   :)
