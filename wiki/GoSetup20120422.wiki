@@ -9,7 +9,7 @@ The setup intructions are the same, except now we use Go version 1, and Sal made
 
 This assumes
 
-PropForthDevKernel.spin
+`PropForthDevKernel.spin`
 
 on a stock prop board or similar 
 
