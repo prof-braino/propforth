@@ -341,6 +341,9 @@ This is interesting because it uses the CSP channels.   There are a couple of be
   == First public demo 20120422 ==
 
  * Download 201200420mygo.zip   from http://code.google.com/p/propforth/downloads/list 
+
+http://propforth.googlecode.com/files/20120420mygo.zip
+
  * extract the mygo directory
  * transfer the mygo dirctory into Go-files %Home% directory
  * from a command shell, cd to the %home% directory 
