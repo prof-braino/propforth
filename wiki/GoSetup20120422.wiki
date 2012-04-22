@@ -1,0 +1,499 @@
+#summary Setup for GO  language using CSP channels.
+#labels v5.0,GO,CSP,demo
+
+= Introduction =
+
+This page supercedes the deprcated previous GoSetup page 
+
+The setup intructions are the same, except now we use Go version 1, and Sal made new go serial driver.   To continue from your previous working installation, replace your GO directory with the GO version 1 below, and and replace the (previously unreleasesed) "GOSERIAL" with "go muxterm com10 57600 3000 4000" as shown below.   
+
+= Specs =
+
+Still a serial prototype demo, it is SLOW.  It is limited to the serial port throughput of 57600 baud for this demo. Serial was used as it is the lowest common denominator for PC hardware, and exists on the Quickstart board I used making this instruction.  Later version may be differnet (read: crazy fast).  This version is just the teaser, so Rick and others don't get any work done this week :)
+
+= General =
+
+Propforth uses communication channels similar to those in CSP
+http://www.usingcsp.com/
+
+GO language also uses similar communications channels
+http://golang.org/
+
+The idea is to use the Prop for interfacing to sensors and actuators, and using a workstation to do the number crunching,  network communication, display, operator input and storage services.
+
+The prop and the workstation interface will be the CSP communications channels between propforth and the GO language (or any other that supports communications channels) on the workstation.
+
+The communications channels make the device on the other end transparent.  So we want to be able to show that OS (windows, linux, Mac) are equivalent, and the particular workstation (x86 PC, Mac, Raspberry Pi, ZipIt2) are functionally equivalent, and so the workstation hardware can be scaled to the application task at hand. 
+
+= Explanations from previous version =
+
+The big issue is that some OS use -forward- slash (/) and some use backslash (\), this serves to screw up the path names.  This configuration aims to resolve those issues in a standard, reproducible manner. 
+
+NOTE:  I tried to setup my rig so the data was on the G drive instead of the C drive, and it DID NOT work.  So these instructions are exactly the way Sal did it using C drive.  This worked last time, the instruction should be the same.
+
+----
+
+= SETUP The Work Station =
+
+This was written for windows XP
+
+It should be very similar for Windows 7
+
+It should be easy to spot the differences for linux 
+
+If you use Mac it should be easy for a linux person to set you up 
+
+== Target tool chain for workstation ==
+
+The workstation tool chain will be (for now): 
+ # windows XP
+ # GO language
+ # EMACS text editor
+
+=== GO Language ===
+
+ _assuming the workstation is  windows XP_
+
+Download the newest version of go,
+
+ ~~we used 2012-03-13.windows-386.zip ~~
+
+~~  http://code.google.com/p/go/downloads/detail?name=go.weekly.2012-03-13.windows-386.zip&can=2&q= ~~
+
+Delete or rename any previous go installation from C:\go
+
+Today 20120422 we used go.go1.windows-386.zip
+
+http://code.google.com/p/go/downloads/detail?name=go.go1.windows-386.zip&can=2&q=
+
+extract the GO directory from this archive, and move it to C:\go
+
+NOTICE: When extracted to the destination directory, verify that you end up with ~3,327~~  3357 files in ~~360~~ 361 folders in the go directory.  I used a older slow machine, and the extract stopped before completion for the first couple tries. check that C:\go\bin exists when you are done (c:\go\go\bin is an error) 
+
+== Windows XP ==
+
+Note: If anybody makes steps for Linux/Mac,  post them here or send them to me or make an entry in the issues page
+
+Steps -
+
+ * Control panel - system - advanced - environment variables 
+
+ * User Variables for `<USER_NAME>` - NEW
+  * New User Variable 
+    * Variable name: {{{ HOME }}}
+    * Must be in uppercase 
+  * Variable Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
+    * The final location can be anything you want to type all the time. We tested the names 'Go-Docs' and 'GoFiles'. Avoid names with spaces, etc. 
+    * Selecting a path in `My Documents` ends up with the characteristically silly extra long path names.  But apps tend to look here by default, and in this case the path was not too long so it worked.   
+
+ * System Variables - (existing variable) PATH - Edit 
+
+   PATH
+   edit - add this at the end of the value that is already there...
+{{{
+... ;c:\go\bin
+}}}
+
+ NOTES: a) There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:  b) MUST be lowercase  c) On one machine the variable was `PATH` and on another it was `Path`.  Use whatever is already there. 
+
+
+ * system variables  - New
+  * Variable name: {{{ GOROOT }}}  
+
+  GOROOT must be uppercase
+
+  * Variable Value: {{{  c:\go }}}
+
+  MUST be lowercase
+
+CHECK: 
+
+From Dos shell (START > Run... > Open: *cmd* ):
+{{{ 
+path
+echo %GOROOT%
+echo %HOME%
+ }}}
+
+Must be uppercase
+
+should reflect the changes we made
+
+From Dos shell command line prompt type:
+{{{
+ go
+}}}
+
+should give go description, if so, go setup complete!
+
+{{{
+C:\Documents and Settings\user-name>GO
+Go is a tool for managing Go source code.
+...
+}}}
+
+So far, so good....
+
+----
+
+== EMACS Editor ==
+
+EMACS was selected since it has aspects which make it compatible with (people who think in propforth) forth.   Each user is free to use an alternative editor or environment, alternate configurations will be posted as they are made available.
+
+=== download emacs ===
+
+From the EMACS page http://www.gnu.org/software/emacs/
+
+Find Obtaining/Downloading GNU Emacs http://ftp.gnu.org/pub/gnu/emacs/windows/
+
+The version we used is:
+
+  http://ftp.gnu.org/pub/gnu/emacs/windows/emacs-23.3-bin-i386.zip
+
+Copy or Move the files under `<download>\emacs-23.3-bin-i386\emacs-23.3` to a directory you create called `c:\emacs`
+ 
+
+ Navigate to  c:\emacs\bin
+
+ make shortcut to  runemacs.exe 
+
+ move/copy this short cut to your desktop and/or quickstart-bar
+
+ The Icon should display the EMACS logo
+
+ Right click the EMACS shortcut, edit the properties; change Start-in directory to:  
+{{{
+C:\Documents and Settings\<username>\My Documents\Go-Docs
+}}}
+
+ Click the EMACS shortcut to launch EMACS.  EMACS should create a sub-directory named `.emacs.d` in your 
+{{{
+C:\Documents and Settings\<username>\My Documents\Go-Docs
+}}} 
+
+ directory.
+
+=== configure EMACS to use go profiles === 
+
+ Launch EMACS. In Emacs, visit new filew
+
+{{{
+c:\Documents and Settings\<username>\My Documents\Go-Docs
+}}}
+
+  .emacs.el
+
+  add these lines (of LISP source code) to `.emacs.el`
+{{{
+;; go profile
+;; (add-to-list 'load-path "c:/go/misc/emacs" t)
+;; (require 'go-mode-load)
+;; above was updated 20120408 with the following:
+
+(add-to-list 'load-path "c:/go/misc/emacs" t)
+(require 'go-mode-load)
+
+(require 'compile)
+(add-hook 'go-mode-hook
+	  (lambda()
+	    (set (make-local-variable 'compile-command)
+		 (format "go build %s" (file-name-nondirectory buffer-file-name))
+		 )
+	    )
+)
+
+
+
+}}}
+
+NOTE2: The change configure 
+`emacs => Tools => Compile...`
+to display the compile (build) command with the current files name
+
+NOTE: This is LISP source code.  You don't have to know anything about LISP, its just what EMACS is made from.  IF the contextual highlighting does not display correctly later, check this and make sure you use parenthesis and not brackets.   :)
+
+   to end: CTL-x ctl-s
+
+   close emacs
+
+----
+
+=  create hello.go, make emacs run it =
+
+From a DOS shell, navigate to your GO home source code directory
+
+{{{
+c:\Documents and Settings\<username>\My Documents\Go-Docs
+}}}
+
+
+create text document and name it `hello.go`
+
+ right click on this file
+
+Select *Open* or `open with....`  This changes after the first time
+
+
+
+Select `Choose from a List` and  `OK`
+
+From the Open With window, use the Browse... button to Navigate to: 
+
+ c:\emacs\bin
+
+ Select `runemacs.exe`
+
+check the " always do this " checkbox. (DON'T FORGET to CHECK the CHECKBOX!!!)
+
+ it open emacs
+
+ close emacs, make sure emacs icon is on hello.go
+
+ click it
+  
+ emacs opens the (still empty) hello.go program.
+
+=== Create a sample GO program ===
+
+ Use your internet browser navigate the main page for the go web site *golang.org*
+
+ copy example program in the yellow window under "Or try it right here from your browser:"
+
+ Paste the copied source code into the emacs window for hello.go
+
+ ctl-y to paste
+
+ The source code you copied should be displayed with context highlighting.  The key words should be purple, the `main` should be black, the literal text should be brown.
+
+ In the line `fmt.Println("Hello, 世界")` replace the two Asian characters with your name, unless your name happens to be "World".
+
+ Save the file
+
+=== build the program (compile)  ===
+
+ GO source can be compiled within EMACS, or from the workstation command prompt.
+
+==== Compile within EMACS ====
+
+ In EMACS, select  Tools - Compile...
+
+ At the bottom of the EMACS window, the "Compile Command" command line is displayed:
+
+ `Compile Command: make -k `
+
+ change 
+         make -k 
+ to
+         go build hello.go
+
+ If successful (it takes a while on an old machine) the compilation finshed will display finished in green. 
+
+NOTE:  There should be a way to configure EMACS default to display 
+
+ `Compile Command: go build <currentfile>.go `
+
+But we didn't figure it out yet.  Please send a comment for how to do this. 
+
+In the meantime, the line `Compile Command: go build <currentfile>.go ` will persist until the EMACS window is closed.
+
+
+==== Compile from command line ====
+
+ from the dos command line Start -> Run... -> cmd
+
+ Navigate to the Go source code directory
+
+ enter 
+
+` go build hello.go `
+
+ Compilation (of hello.go) should result in the creation of the executable
+
+`    hello.exe `
+
+== execute ==
+
+ Running hello.exe from the command line will run the program
+
+` Hello, Professor Braino `
+
+ From within EMACS, select:
+     Tools -> Shell command -> (files name) -> hello
+
+ The interactive line (at the bottom of the EMACS window) should display the program output
+
+= Setting up the CSP channnels between GO and Propfoth =
+
+~~ == NOT READY FOR PUBLIC DISTRIBUTION 20120328 ==  ~~
+
+
+~~BUT Sal sent me the prototype 20120325.  Executing this Go program sets up a connection between the DOS command line and the prop board running propforth, just like TeraTerm or and terminal program.  Why is this interesting?  
+
+This is interesting because it uses the CSP channels.   There are a couple of benefits to this.  
+
+ # The DOS command line features, such as command completion, command editing, and command history, nw work on the interface to propforth. This save tons of kernel space and save me months of putting off implementing this as an extension. 
+
+ # CSP channels allow multiple connections.  The next version of the Go interface is planned to support many connections (over the same wire, the existing USB virtual serial port connection).  We will be able to have a separate session to each COG simultaneously.~~  
+
+  == First public demo 20120422 ==
+
+* Download 201200420mygo.zip   from http://code.google.com/p/propforth/downloads/list 
+* extract the mygo directory
+* transfer the mygo dirctory into Go-files %Home% directory
+* from a command shell, cd to the %home% directory 
+* run C:%home%...\Go-files\mygo\goshell.bat
+* compile the goterm program.  This is the serial terminal program that implements a single GO CSP channel
+
+look in the directory C:%HOME%...\Go-files\mygo\src\serial 
+
+This contains   windows_serial.go by default; if you have a linux system delete this and replace it with  linux_serial.go from the C:%home%...\Go-files\mygo\src\linux_serial directory.
+
+From the command shell run:
+
+` go install goterm `
+
+This recompiles the goterm program.
+
+The command prompt should return ins under five seconds with no error message.  If it takes longer than five seconds, you have a very slow machine indeed.  This should not matter.   
+
+* run the goterm program
+
+On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you comport:
+
+'goterm com10 57600'
+
+The I/O LEDs on the prop should flash, the propforth prompt should display in the command shell
+
+* run a forth word
+
+in the comaand shell, type the forth command "words"
+
+'words'
+
+This will very quicly display the contents of the forth dictionary, which is all the words currently defined in forth.
+
+If it works, the hardware is set up correctly.  
+
+* exit the goterm program
+
+'ctl ^G enter to exit'
+
+Notice, in the command shell window, you can use the command line history tools.  That is, you can use auto complete, arrow through previous commands, etc. as supported by your OS command shell.
+
+Notice that the command shell history tools also work in with the forth prompt!  Whee!  PropForth meets the '80's!
+
+'ctl ^G enter to exit'
+
+* compile the muxterm program. This is the routine that gives us 32 channels of CSP magic 
+
+from the command prompt:
+
+'go  install  muxterm'
+
+The command line prompt should again return in under five seconds. 
+
+* run the muterm program.  This is the goal of todays experiment.  
+
+from the command prompt: 
+
+'gomuxterm com10 57600 3000 4000'
+
+This runs the gomuxterm program on comport10. 3000 is a port number for RAW data interchange (more later), and the 4000 is the starting port number for the "regular" CSP channels.
+
+
+This program resets the prop and loads the CSP channel configuration code to the prop.  (This will be automated in later versions, this is just a multi step process in the demo) 
+
+Message should be:
+  
+{{{
+Resetting prop ... Sending code to prop ... Sending start command
+!
+Listening on 127.0.0.1:3000
+Listening on 192.168.0.250:3000
+Listening on 127.0.0.1:4000
+Listening on 192.168.0.250:4000
+}}}
+
+Prop is now waiting for CSP communications
+
+==== connect to the CSP channels using a terminal program ====  
+
+* teraterm to localhost port 4000.
+
+Open termaterm.  Select File => New Connection (if it did not open automatically)
+
+Select TCP/IP
+
+For "Host:" use 'localhost'
+
+For "port" use 4000
+
+Hit enter a couple times.  You should see the propforth prompt display SLOWLY on cog0 
+
+ALT N to open new windows
+
+Open windows to cog0 through cog5.  Notice you can open no more than SIX termanl windows to cogs.
+
+At any propforth command prompt, enter the cog program assingment query 'Cog?'
+
+'cog?'
+
+This will displa the routine running on each cog.
+
+Notice that cog7 is running the serial driver, as usual.
+
+Notice that cog6 is managing the COG_TO_CHAN mapping.  Cog6 is running the CSP associations between the first six cogs (0-5) and the first six CSP channels (0-5).    
+
+-----
+
+NOTES:
+
+This is synchronous, now we no longer have to worry about over running the interpreter.  In fact, we CAN'T use the FL command anymore, because there are no more cogs available.  This is fine, we won't need fl in this context by definition.  
+
+This is slow because its synchronous over asynchronus.  It will never be a speed demon.  This is just to show it works. 
+
+This demo does byte transfers, with an ACK for every byte. The ACKs are the killer.  Relax! Streaming will be done next, so there will only be an ACK for each line and it will speed up. Remember, the transfer over serial can only be as good as (approach) serial by itself.  Its just a demo. 
+
+Later, sockets will be used, and the ethernet hardware will handle protocol stuff. 
+
+Also, Sal will profile the execution to determin optimizations.   
+ 
+==== The OTHER PORT ====
+
+The other port we specified was 3000.  What does 3000 do? It is used for RAW transfer.  This will be used when sockets are implemented for the TCP/IP stuff.  Want to see it work? (this isn't quite so fun, but the implications are intriging...)
+
+Don't do this unless you are just messing around. This RAW transfer on port 3000 is not for use with teraterm, but we can try is anyway.
+
+Start teraterm again as above, but this time connect a window to localhost:3000
+
+hit enter to get the forth prrompt's attention.
+
+Notice the 'Prop0 Cog5' prompt keeps scrolling over itself, and the I/O LEDs on the quickstart flicker continuosly
+
+The CSP channel is spitting out the raw transfer, the channel runs 96 bits continuously.
+
+Now go to one of the other windows that were previously opened on port 4000.  
+
+Execute the 'words' routine.
+
+Notice that the RAW transfer is still zipping along, and the byte/ack transfer still crawls along at about the same speed as before. The are acutally sharing the same 57600 transfer line, but both transfers fit between each other. SORCERY!  I guess I'm easily impressed by stuff.  
+
+==== Get Back to Work! ====
+
+The CSP program did not affect the code stored in the quickstart. To return to the previous (non-CSP) propforth kernel, hit the reset button or reboot the quickstart. 
+
+Close the terminal program and restart using the previously establish comport.  Bingo! We're back to working as before. 
+
+End instructions 20120422
+
+----
+
+=  Some references =
+
+http://forums.parallax.com/showthread.php?138412-GO-language-amp-Hoare-CSP-Channels/page2
+
+http://forums.parallax.com/showthread.php?126589-Communicating-Sequential-Processes-by-C.A.R.-Hoare
+
+http://www.usingcsp.com/
+
+End of instruction 20120328-0956
