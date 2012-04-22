@@ -15,7 +15,7 @@ on a stock prop board or similar
 
 Please load 
 
-'PropForthDevKernel.spin'  
+`PropForthDevKernel.spin`  
 
 onto your quickstart, etc to proceed with the experiment.
 
@@ -98,7 +98,7 @@ Steps -
     * Variable name: {{{ HOME }}}
     * Must be in uppercase 
   * Variable Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
-    * The final location can be anything you want to type all the time. We tested the names 'Go-Docs' and 'GoFiles'. Avoid names with spaces, etc. 
+    * The final location can be anything you want to type all the time. We tested the names `Go-Docs` and `GoFiles`. Avoid names with spaces, etc. 
     * Selecting a path in `My Documents` ends up with the characteristically silly extra long path names.  But apps tend to look here by default, and in this case the path was not too long so it worked.   
 
  * System Variables - (existing variable) PATH - Edit 
@@ -378,7 +378,7 @@ The command prompt should return ins under five seconds with no error message.  
 
 On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you comport:
 
-'goterm com10 57600'
+`goterm com10 57600`
 
 The I/O LEDs on the prop should flash, the propforth prompt should display in the command shell
 
@@ -386,7 +386,7 @@ The I/O LEDs on the prop should flash, the propforth prompt should display in th
 
 in the comaand shell, type the forth command "words"
 
-'words'
+`words`
 
 This will very quicly display the contents of the forth dictionary, which is all the words currently defined in forth.
 
@@ -394,19 +394,19 @@ If it works, the hardware is set up correctly.
 
  * exit the goterm program
 
-'ctl ^G enter to exit'
+`ctl ^G enter to exit`
 
 Notice, in the command shell window, you can use the command line history tools.  That is, you can use auto complete, arrow through previous commands, etc. as supported by your OS command shell.
 
 Notice that the command shell history tools also work in with the forth prompt!  Whee!  PropForth meets the '80's!
 
-'ctl ^G enter to exit'
+`ctl ^G enter to exit`
 
  * compile the muxterm program. This is the routine that gives us 32 channels of CSP magic 
 
 from the command prompt:
 
-'go  install  muxterm'
+`go  install  muxterm`
 
 The command line prompt should again return in under five seconds. 
 
@@ -414,7 +414,7 @@ The command line prompt should again return in under five seconds.
 
 from the command prompt: 
 
-'gomuxterm com10 57600 3000 4000'
+`gomuxterm com10 57600 3000 4000`
 
 This runs the gomuxterm program on comport10. 3000 is a port number for RAW data interchange (more later), and the 4000 is the starting port number for the "regular" CSP channels.
 
@@ -442,9 +442,9 @@ Open termaterm.  Select File => New Connection (if it did not open automatically
 
 Select TCP/IP
 
-For "Host:" use 'localhost'
+For "Host:" use `localhost`
 
-For "port" use 4000
+For "port" use `4000`
 
 Hit enter a couple times.  You should see the propforth prompt display SLOWLY on cog0 
 
@@ -454,7 +454,7 @@ Open windows to cog0 through cog5.  Notice you can open no more than SIX termanl
 
 At any propforth command prompt, enter the cog program assignment query 'Cog?'
 
-'cog?'
+`cog?`
 
 This will display the routine running on each cog.
 
@@ -482,17 +482,17 @@ The other port we specified was 3000.  What does 3000 do? It is used for RAW tra
 
 Don't do this unless you are just messing around. This RAW transfer on port 3000 is not for use with teraterm, but we can try is anyway.
 
-Start teraterm again as above, but this time connect THE LAST window to localhost:3000
+Start teraterm again as above, but this time connect THE LAST window to `localhost` : `3000`
 
 hit enter to get the forth prompt's attention.
 
-Notice the 'Prop0 Cog5' prompt keeps scrolling over itself, and the I/O LEDs on the quickstart flicker continuously
+Notice the `Prop0 Cog5` prompt keeps scrolling over itself, and the I/O LEDs on the quickstart flicker continuously
 
 The CSP channel is spitting out the raw transfer, the channel runs 96 bits continuously.
 
 Now go to one of the other windows that were previously opened on port 4000.  
 
-Execute the 'words' routine.
+Execute the `words` routine.
 
 Notice that the RAW transfer is still zipping along, and the byte/ack transfer still crawls along at about the same speed as before. The are actually sharing the same 57600 transfer line, but both transfers fit between each other. SORCERY!  I guess I'm easily impressed by stuff.  
 
