@@ -340,12 +340,12 @@ This is interesting because it uses the CSP channels.   There are a couple of be
 
   == First public demo 20120422 ==
 
-* Download 201200420mygo.zip   from http://code.google.com/p/propforth/downloads/list 
-* extract the mygo directory
-* transfer the mygo dirctory into Go-files %Home% directory
-* from a command shell, cd to the %home% directory 
-* run C:%home%...\Go-files\mygo\goshell.bat
-* compile the goterm program.  This is the serial terminal program that implements a single GO CSP channel
+ * Download 201200420mygo.zip   from http://code.google.com/p/propforth/downloads/list 
+ * extract the mygo directory
+ * transfer the mygo dirctory into Go-files %Home% directory
+ * from a command shell, cd to the %home% directory 
+ * run C:%home%...\Go-files\mygo\goshell.bat
+ * compile the goterm program.  This is the serial terminal program that implements a single GO CSP channel
 
 look in the directory C:%HOME%...\Go-files\mygo\src\serial 
 
@@ -359,7 +359,7 @@ This recompiles the goterm program.
 
 The command prompt should return ins under five seconds with no error message.  If it takes longer than five seconds, you have a very slow machine indeed.  This should not matter.   
 
-* run the goterm program
+ * run the goterm program
 
 On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you comport:
 
@@ -367,7 +367,7 @@ On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you c
 
 The I/O LEDs on the prop should flash, the propforth prompt should display in the command shell
 
-* run a forth word
+ * run a forth word
 
 in the comaand shell, type the forth command "words"
 
@@ -377,7 +377,7 @@ This will very quicly display the contents of the forth dictionary, which is all
 
 If it works, the hardware is set up correctly.  
 
-* exit the goterm program
+ * exit the goterm program
 
 'ctl ^G enter to exit'
 
@@ -387,7 +387,7 @@ Notice that the command shell history tools also work in with the forth prompt! 
 
 'ctl ^G enter to exit'
 
-* compile the muxterm program. This is the routine that gives us 32 channels of CSP magic 
+ * compile the muxterm program. This is the routine that gives us 32 channels of CSP magic 
 
 from the command prompt:
 
@@ -395,7 +395,7 @@ from the command prompt:
 
 The command line prompt should again return in under five seconds. 
 
-* run the muterm program.  This is the goal of todays experiment.  
+ * run the muterm program.  This is the goal of todays experiment.  
 
 from the command prompt: 
 
@@ -421,7 +421,7 @@ Prop is now waiting for CSP communications
 
 ==== connect to the CSP channels using a terminal program ====  
 
-* teraterm to localhost port 4000.
+ * teraterm to localhost port 4000.
 
 Open termaterm.  Select File => New Connection (if it did not open automatically)
 
@@ -437,11 +437,11 @@ ALT N to open new windows
 
 Open windows to cog0 through cog5.  Notice you can open no more than SIX termanl windows to cogs.
 
-At any propforth command prompt, enter the cog program assingment query 'Cog?'
+At any propforth command prompt, enter the cog program assignment query 'Cog?'
 
 'cog?'
 
-This will displa the routine running on each cog.
+This will display the routine running on each cog.
 
 Notice that cog7 is running the serial driver, as usual.
 
@@ -453,25 +453,25 @@ NOTES:
 
 This is synchronous, now we no longer have to worry about over running the interpreter.  In fact, we CAN'T use the FL command anymore, because there are no more cogs available.  This is fine, we won't need fl in this context by definition.  
 
-This is slow because its synchronous over asynchronus.  It will never be a speed demon.  This is just to show it works. 
+This is slow because its synchronous over asynchronous.  It will never be a speed demon.  This is just to show it works. 
 
 This demo does byte transfers, with an ACK for every byte. The ACKs are the killer.  Relax! Streaming will be done next, so there will only be an ACK for each line and it will speed up. Remember, the transfer over serial can only be as good as (approach) serial by itself.  Its just a demo. 
 
-Later, sockets will be used, and the ethernet hardware will handle protocol stuff. 
+Later, sockets will be used, and the Ethernet hardware will handle protocol stuff. 
 
-Also, Sal will profile the execution to determin optimizations.   
+Also, Sal will profile the execution to determine optimizations.   
  
 ==== The OTHER PORT ====
 
-The other port we specified was 3000.  What does 3000 do? It is used for RAW transfer.  This will be used when sockets are implemented for the TCP/IP stuff.  Want to see it work? (this isn't quite so fun, but the implications are intriging...)
+The other port we specified was 3000.  What does 3000 do? It is used for RAW transfer.  This will be used when sockets are implemented for the TCP/IP stuff.  Want to see it work? (this isn't quite so fun, but the implications are intriguing...)
 
 Don't do this unless you are just messing around. This RAW transfer on port 3000 is not for use with teraterm, but we can try is anyway.
 
 Start teraterm again as above, but this time connect a window to localhost:3000
 
-hit enter to get the forth prrompt's attention.
+hit enter to get the forth prompt's attention.
 
-Notice the 'Prop0 Cog5' prompt keeps scrolling over itself, and the I/O LEDs on the quickstart flicker continuosly
+Notice the 'Prop0 Cog5' prompt keeps scrolling over itself, and the I/O LEDs on the quickstart flicker continuously
 
 The CSP channel is spitting out the raw transfer, the channel runs 96 bits continuously.
 
@@ -479,7 +479,7 @@ Now go to one of the other windows that were previously opened on port 4000.
 
 Execute the 'words' routine.
 
-Notice that the RAW transfer is still zipping along, and the byte/ack transfer still crawls along at about the same speed as before. The are acutally sharing the same 57600 transfer line, but both transfers fit between each other. SORCERY!  I guess I'm easily impressed by stuff.  
+Notice that the RAW transfer is still zipping along, and the byte/ack transfer still crawls along at about the same speed as before. The are actually sharing the same 57600 transfer line, but both transfers fit between each other. SORCERY!  I guess I'm easily impressed by stuff.  
 
 ==== Get Back to Work! ====
 
