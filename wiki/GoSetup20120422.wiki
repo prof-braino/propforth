@@ -467,7 +467,7 @@ The other port we specified was 3000.  What does 3000 do? It is used for RAW tra
 
 Don't do this unless you are just messing around. This RAW transfer on port 3000 is not for use with teraterm, but we can try is anyway.
 
-Start teraterm again as above, but this time connect a window to localhost:3000
+Start teraterm again as above, but this time connect THE LAST window to localhost:3000
 
 hit enter to get the forth prompt's attention.
 
