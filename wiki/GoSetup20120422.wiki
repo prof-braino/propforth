@@ -49,6 +49,7 @@ The workstation tool chain will be (for now):
  # windows XP
  # GO language
  # EMACS text editor
+ # Go serial program for one (1) session and Go serial program for multiple sessions (up to 32)
 
 === GO Language ===
 
