@@ -1,5 +1,5 @@
 #summary Setup for GO  language using CSP channels.
-#labels v5.0,GO,CSP,demo
+#labels v5.0,GO,CSP,demo,cspchannels
 
 = Introduction =
 
