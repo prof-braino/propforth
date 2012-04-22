@@ -1,5 +1,5 @@
 #summary Setup for GO  language using CSP channels.
-#labels v5.0,cspchannels
+#labels v5.0,cspchannels,Deprecated
 
 = Introduction =
 
