@@ -7,6 +7,18 @@ This page supercedes the deprcated previous GoSetup page
 
 The setup intructions are the same, except now we use Go version 1, and Sal made new go serial driver.   To continue from your previous working installation, replace your GO directory with the GO version 1 below, and and replace the (previously unreleasesed) "GOSERIAL" with "go muxterm com10 57600 3000 4000" as shown below.   
 
+This assumes
+
+PropForthDevKernel.spin
+
+on a stock prop board or similar 
+
+Please load 
+
+'PropForthDevKernel.spin'  
+
+onto your quickstart, etc to proceed with the experiment.
+
 = Specs =
 
 Still a serial prototype demo, it is SLOW.  It is limited to the serial port throughput of 57600 baud for this demo. Serial was used as it is the lowest common denominator for PC hardware, and exists on the Quickstart board I used making this instruction.  Later version may be differnet (read: crazy fast).  This version is just the teaser, so Rick and others don't get any work done this week :)
