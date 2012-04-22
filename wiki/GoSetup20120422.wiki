@@ -69,7 +69,9 @@ http://code.google.com/p/go/downloads/detail?name=go.go1.windows-386.zip&can=2&q
 
 extract the GO directory from this archive, and move it to C:\go
 
-NOTICE: When extracted to the destination directory, verify that you end up with ~~3,327~~  3357 files in ~~360~~ 361 folders in the go directory.  I used a older slow machine, and the extract stopped before completion for the first couple tries. check that C:\go\bin exists when you are done (c:\go\go\bin is an error) 
+NOTICE: When extracted to the destination directory, verify that you end up with ~~3,327~~  3357 files in ~~360~~ 361 folders in the go directory.  I used a older slow machine, and the extract stopped before completion for the first couple tries. Check that C:\go\bin exists when you are done 
+
+(c:\go\go\bin is an error) 
 
 == Windows XP ==
 
