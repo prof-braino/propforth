@@ -15,6 +15,13 @@ The XO-1 from the One Laptop Per Child program (OLPC) has a forth boot firmware.
 
 One has to know a bit about the XO in order to use it as forth only development terminal.  I don't, so I'm starting slow. 
 
+== Pixel Qi Display ==
+
+The OLPC has the Pixel Qi dual model (backlit/reflective) display
+
+The display has a resolution of 1200 x 900. It's size is 7.5" diagonal, or 6 x 4 inches ( 152.4 x 101.6 mm), which gives a dot pitch of 200 dpi. It supports a color resolution of approximately 6 bits per color (262k colors). 
+
+This is the most awesome little display for an indoor/outdoor device. 
 
 
 == Hosting Forth development from a standard XO ==
