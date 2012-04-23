@@ -406,11 +406,11 @@ Notice that the command shell history tools also work in with the forth prompt! 
 
 from the command prompt:
 
-`go  install  muxterm`
+`go  install  gomuxterm`
 
 The command line prompt should again return in under five seconds. 
 
- * run the muterm program.  This is the goal of todays experiment.  
+ * run the gomuxterm program.  This is the goal of today's experiment.  
 
 from the command prompt: 
 
