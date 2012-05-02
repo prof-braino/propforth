@@ -1,4 +1,4 @@
-#summary Place holder for project details.
+#summary Project details and log for Dependent Propeller Configurations
 
 = Dependent Multiple Propeller Configurations =
 Refer to [MultiplePropellerExperiments] for an overview and definition of terms.
