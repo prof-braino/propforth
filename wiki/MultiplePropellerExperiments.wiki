@@ -1,4 +1,4 @@
-#Main page for Multiple Propeller Experiments with PropForth
+#summary Main page for Multiple Propeller Experiments with PropForth
 
 = Purpose of Experiments =
 
