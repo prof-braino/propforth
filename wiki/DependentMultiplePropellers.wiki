@@ -1,13 +1,44 @@
 #Place holder for project details.
 
-= Introduction =
+= Dependent Multiple Propeller Configurations =
+Refer to [MultiplePropellerExperiments] for an overview and definition of terms.
 
+== Basic configuration to be built upon: ==
+
+Master Prop (Quickstart board) with multiple slave Propellers connected to it. There are three possible arrangements for this configuration: horizontal, vertical and mixed. The details of each will be described below. Due to their dependence on the Master, the slaves will be co-located with the Master. This configuration will support experiments with all communication methods.
 Add your content here.
 
 
-= Details =
+== 4-29-2012 Basic Configuration Details ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+=== Master Propeller – Basic Horizontal Configuration (1 Master, 1 to 4 slaves) ===
+  # Master QuickStart with slave Propeller on QuickStart Proto Board
+    * QuickStart provides clock to all Propellers in cluster
+    * QuickStart provides EEPROM to all Propellers in cluster
+    * QuickStart controls reset, loading and serial I/O to all Propellers in cluseter
+    * 6 pin interface for each slave propeller: RESET, XI, TX, RX, EEPROM SCL, EEPROM SDA
+    * 57600bps serial I/O between Propeller – 1 COG on each slave dedicated to I/O, 1 COG per Slave required on Master Propeller
+    * One Master can support up to 4 Slaves in this configuration (6 pins per slave)
+    * Master pins 28-31 are used for standard EEPROM and serial I/O access
+    * Master pins 24-17 are reserved for SD card connection for cluster
+    * Master COG usage:
+      * COG7 – serial I/O to host PC
+      * COG6 – Master Forth Interpreter
+      * COG5 – serial I/O to Slave 1
+      * COG4 – serial I/O to Slave 2
+      * COG3 – serial I/O to Slave 3
+      * COG2 – serial I/O to Slave 4
+      * COG1 – available
+      * COG0 – available
+    * Each slave has 28 free pins and 7 free COGs
+  # Slave Propeller on Quickstart Proto Board
+    * P8X32A DIP in 40 pin socket
+    * Slave PIN 31 connected to Master PIN 1 through 220 Ohm resistor
+    * Slave PIN 30 connected to Master PIN 0 through 220 Ohm resistor
+    * Slave PIN 29 connected to Master PIN 3 through 220 Ohm resistor (PIN 29 also needs a 10k Ohm pull up resistor)
+    * Slave PIN 28 connected to Master PIN 2 through 220 Ohm resistor
+    * Slave RESET to Master PIN 4 – no resistor (my first prototype has RESET and XI flipped)
+    * Slave XI to Master PIN 5 – no resistor
+
+*4-29-12* - With the configuration above, I was able to load PropForthEEpromKernel onto the QuickStart, and follow the PropForth tutorial 7.2 – NoROM, with the appropriate PIN changes to set up a 2 Propeller Master/Slave configuration.
