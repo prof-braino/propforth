@@ -1,4 +1,4 @@
-#Place holder for project details.
+Place holder for project details.
 
 = Introduction =
 
