@@ -1,4 +1,4 @@
-Place holder for project details.
+#summary Project details and log for Independent Propeller Configurations
 
 = Introduction =
 
