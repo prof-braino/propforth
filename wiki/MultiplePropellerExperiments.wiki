@@ -1,0 +1,28 @@
+#Main page for Multiple Propeller Experiments with PropForth
+
+= Purpose of Experiments =
+
+The goal of this project is to explore and identify basic functionality to allow multiple Propellers running PropForth to operate in configurations exceeding 8 COGs and 32 pins per programming environment in as transparent a manner as possible.
+
+Prop to Prop communication methods:
+  # Standard serial I/O – each prop has one or more COGs running the PropForth standard Serial I/O routines
+  # MCS serial I/O – each Prop has one (or more?) COGs running the PropForth Multi-Channel Serial I/O routines
+  # Communicating Sequential Processes (CSP) – the Prop cluster is configured with the CSP implementation and talking through the master to a host PC. At this level, the transport mechanism can probably be serial, MCS or even TCP/IP.
+
+Terms used throughout the projects:
+  * Master Propeller – the Propeller (Prop#0 in some configurations) which communicates to a host PC and provides loading, configuration, control and work distribution to dependent slave Propellers connected to it. Independent Propellers may also be connected to a master and act as slaves looking to it for certain functionality. Even in a peer to peer configuration, there will probably be a Master (or Lead) Propeller in the cluster. 
+  * Slave Propeller - one or more Propellers in a cluster that are connected to a master Propeller and look to it minimally for host PC connectivity (user interaction) as well as work allocation and functional assignments.
+  * Dependent Propeller - a minimal Propeller configuration (generally a single chip) which relies on an independent master Propeller for power, clocking, initial loading and configuration and work assignments. The slave may have peripherals or devices it controls but it does not have EEPROM and does not have any means of loading code except through the Master Prop. Slave props will be used mostly to add COGs and pins to a multi-Propeller cluster.
+  * Independent Propeller - a Propeller with sufficient support components to function as a stand alone unit if required. It has EEPROM, crystal and power connections and a means to load/reload it if needed.
+  * Peer Propeller - an Independent Propeller in a loose cluster relationship with another independent Propeller. A peer-to-peer cluster may exchange data and share resources but they is no master/slave relationship. Peers may be able to provide various specialized and shared services to a cluster.
+
+Parallax Forum Thread for Project: [http://forums.parallax.com/showthread.php?139751-Multi-Propeller-configurations-with-PropForth-v-5.0]
+
+
+= Configurations to be Explored =
+
+Each of these configurations will have their own wiki page. The differences and examples are great enough at this point to warrant keeping them separate.
+
+  * [DependentMultiplePropellers Master with Dependent Propellers] - (Quickstart board) with multiple slave Propellers connected to it. There are three possible arrangements for this configuration: horizontal, vertical and mixed. The details of each will be described below. Due to their dependence on the Master, the slaves will be co-located with the Master. This configuration will support experiments with all communication methods.
+  * [IndependentMultiplePropellers Master with Independent Propellers] - these configurations will be explored with a Gadget Gangster PPUSB hosting a Tetra-Prop card from jazzed. Each Propeller is independently loadable from a host PC and has its own EEPROM for program and configuration retention. This peer-to-peer configuration will be based on co-located, physically connected propellers, basically, a card stack of some sort. This configuration will support experiments with all communication methods.
+  * Distributed Propeller configurations. This configuration has yet to be built. It will allow experiments with remotely distributed peer-to-peer independent Propellers connected in various manner; wired serial, wireless serial, MCS, and TCP/IP
