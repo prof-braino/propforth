@@ -380,6 +380,14 @@ On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you c
 
 `goterm com10 57600`
 
+----
+
+NOTE: is using \Propforth-V5.1BETA-20120505
+
+`goterm com10 115200`
+
+----
+
 The I/O LEDs on the prop should flash, the propforth prompt should display in the command shell
 
  * run a forth word
