@@ -382,7 +382,7 @@ On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you c
 
 ----
 
-NOTE: is using \Propforth-V5.1BETA-20120505
+NOTE: if using \Propforth-V5.1BETA-20120505
 
 `goterm com10 115200`
 
@@ -426,7 +426,7 @@ from the command prompt:
 
 ----
 
-NOTE: is using \Propforth-V5.1BETA-20120505
+NOTE: if using \Propforth-V5.1BETA-20120505
 
 `gomuxterm com10 115200 3000 4000`
 
@@ -455,7 +455,7 @@ Prop is now waiting for CSP communications
 
 ----
 
-NOTE: is using \Propforth-V5.1BETA-20120505
+NOTE: if using \Propforth-V5.1BETA-20120505
 
 `Doesn't work yet!!!!!`
 
