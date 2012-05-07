@@ -1,4 +1,4 @@
-#labels v4.0,Featured,Riley
+#labels v4.0,Riley
     Brian Riley  < brianbr [at] wulfden [dot] org >  2010 Dec 19 @ 1935 EST
 *--------------------------------------------------------------------
 
