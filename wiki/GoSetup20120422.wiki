@@ -430,6 +430,8 @@ NOTE: is using \Propforth-V5.1BETA-20120505
 
 `gomuxterm com10 115200 3000 4000`
 
+`Doesn't work yet!!!!!`
+
 ----
 
 
