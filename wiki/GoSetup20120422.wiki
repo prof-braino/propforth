@@ -432,6 +432,9 @@ NOTE: if using \Propforth-V5.1BETA-20120505
 
 `Doesn't work yet!!!!!`
 
+Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
+
+
 ----
 
 
@@ -458,6 +461,8 @@ Prop is now waiting for CSP communications
 NOTE: if using \Propforth-V5.1BETA-20120505
 
 `Doesn't work yet!!!!!`
+
+Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
 
 ----
 
