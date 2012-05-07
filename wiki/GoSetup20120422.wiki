@@ -451,6 +451,16 @@ Listening on 192.168.0.250:4000
 
 Prop is now waiting for CSP communications
 
+----
+
+NOTE: is using \Propforth-V5.1BETA-20120505
+
+`Doesn't work yet!!!!!`
+
+----
+
+
+
 ==== connect to the CSP channels using a terminal program ====  
 
  * teraterm to localhost port 4000.
