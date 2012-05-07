@@ -1,4 +1,5 @@
 #summary Project details and log for Dependent Propeller Configurations
+#labels v5.0,Featured
 
 = Dependent Multiple Propeller Configurations =
 Refer to [MultiplePropellerExperiments] for an overview and definition of terms.
