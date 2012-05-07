@@ -424,6 +424,15 @@ from the command prompt:
 
 `gomuxterm com10 57600 3000 4000`
 
+----
+
+NOTE: is using \Propforth-V5.1BETA-20120505
+
+`gomuxterm com10 115200 3000 4000`
+
+----
+
+
 This runs the gomuxterm program on comport10. 3000 is a port number for RAW data interchange (more later), and the 4000 is the starting port number for the "regular" CSP channels.
 
 
