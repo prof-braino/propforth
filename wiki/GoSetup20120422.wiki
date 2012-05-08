@@ -1,5 +1,5 @@
 #summary Setup for GO  language using CSP channels.
-#labels v5.0,GO,CSP,demo,cspchannels,Featured
+#labels v5.0,GO,CSP,demo,cspchannels,Featured,v5.1BETA,v5.2BETA
 
 = Introduction =
 
@@ -382,9 +382,13 @@ On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you c
 
 ----
 
-NOTE: if using \Propforth-V5.1BETA-20120505
+~~NOTE: if using \Propforth-V5.1BETA-20120505~~
 
-`goterm com10 115200`
+~~`goterm com10 115200`~~
+
+NOTE: if using \Propforth-V5.2BETA-20120507
+
+`goterm com10 230400`
 
 ----
 
@@ -426,13 +430,17 @@ from the command prompt:
 
 ----
 
-NOTE: if using \Propforth-V5.1BETA-20120505
+~~NOTE: if using \Propforth-V5.1BETA-20120505~~
 
-`gomuxterm com10 115200 3000 4000`
+~~`gomuxterm com10 115200 3000 4000`~~
 
-`Doesn't work yet!!!!!`
+~~`Doesn't work yet!!!!!`~~
 
 Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
+
+NOTE: if using \Propforth-V5.2BETA-20120507
+
+`gomuxterm com10 230400 3000 4000`
 
 
 ----
