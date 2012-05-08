@@ -466,11 +466,16 @@ Prop is now waiting for CSP communications
 
 ----
 
-NOTE: if using \Propforth-V5.1BETA-20120505
+~~NOTE: if using \Propforth-V5.1BETA-20120505~~
 
-`Doesn't work yet!!!!!`
+~~`Doesn't work yet!!!!!`~~
 
 Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
+
+NOTE: if using \Propforth-V5.2BETA-20120507
+
+`gomuxterm com10 230400 3000 4000`
+
 
 ----
 
@@ -503,6 +508,17 @@ This will display the routine running on each cog.
 Notice that cog7 is running the serial driver, as usual.
 
 Notice that cog6 is managing the COG_TO_CHAN mapping.  Cog6 is running the CSP associations between the first six cogs (0-5) and the first six CSP channels (0-5).    
+
+---- 
+
+= Nifty thing that works! =
+
+ * If your PC is connected to a wireless router
+ * If you have an Android phone with WiFi
+ 
+ * Use Luna term, etc
+ * connect to the IP address associate with propforth
+ * enjoy multiple sessions using your android phone as a development terminal!
 
 -----
 
