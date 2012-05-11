@@ -115,12 +115,6 @@ On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you c
 
 `goterm com10 57600`
 
-----
-
-~~NOTE: if using \Propforth-V5.1BETA-20120505~~
-
-~~`goterm com10 115200`~~
-
 NOTE: if using \Propforth-V5.2BETA-20120507
 
 `goterm com10 230400`
@@ -129,7 +123,7 @@ NOTE: if using \Propforth-V5.2BETA-20120507
 
 The I/O LEDs on the prop should flash, the propforth prompt should display in the command shell
 
- * run a forth word
+ * run forth words
 
 in the comaand shell, type the forth command "words"
 
@@ -145,11 +139,9 @@ If it works, the hardware is set up correctly.
 
 Notice, in the command shell window, you can use the command line history tools.  That is, you can use auto complete, arrow through previous commands, etc. as supported by your OS command shell.
 
-Notice that the command shell history tools also work in with the forth prompt!  Whee!  PropForth meets the '80's!
-
 `ctl ^G enter to exit`
 
- * compile the muxterm program. This is the routine that gives us 32 channels of CSP magic 
+ * compile the muxterm program. This is the routine that gives us 32 channels
 
 from the command prompt:
 
@@ -163,26 +155,11 @@ from the command prompt:
 
 `gomuxterm com10 57600 3000 4000`
 
-----
-
-~~NOTE: if using \Propforth-V5.1BETA-20120505~~
-
-~~`gomuxterm com10 115200 3000 4000`~~
-
-~~`Doesn't work yet!!!!!`~~
-
-Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
-
 NOTE: if using \Propforth-V5.2BETA-20120507
 
 `gomuxterm com10 230400 3000 4000`
 
-
-----
-
-
 This runs the gomuxterm program on comport10. 3000 is a port number for RAW data interchange (more later), and the 4000 is the starting port number for the "regular" CSP channels.
-
 
 This program resets the prop and loads the CSP channel configuration code to the prop.  (This will be automated in later versions, this is just a multi step process in the demo) 
 
@@ -200,23 +177,7 @@ Listening on 192.168.0.250:4000
 Prop is now waiting for CSP communications
 
 ----
-
-~~NOTE: if using \Propforth-V5.1BETA-20120505~~
-
-~~`Doesn't work yet!!!!!`~~
-
-Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
-
-NOTE: if using \Propforth-V5.2BETA-20120507
-
-`gomuxterm com10 230400 3000 4000`
-
-
-----
-
-
-
-==== connect to the CSP channels using a terminal program ====  
+= connect to the CSP channels using a terminal program =  
 
  * teraterm to localhost port 4000.
 
@@ -269,6 +230,9 @@ Later, sockets will be used, and the Ethernet hardware will handle protocol stuf
 
 Also, Sal will profile the execution to determine optimizations.   
  
+To see the instructions to set up EMACS and compile GO programs, see the DEPRECATED page 
+
+http://code.google.com/p/propforth/wiki/GoSetup20120422 
 
  ---------
 
