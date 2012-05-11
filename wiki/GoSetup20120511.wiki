@@ -6,9 +6,13 @@
 Add your content here.
 
 
-= Details =
+= Download and install GO =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+http://code.google.com/p/go/downloads/list
+
+http://code.google.com/p/go/downloads/detail?name=go1.0.1.windows-386.msi&can=2&q=
+
+
+ ---------
+
+End 20120511
