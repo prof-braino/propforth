@@ -83,7 +83,203 @@ So far, so good....
 ----
 
 
+= Setting up the CSP channnels between GO and Propfoth =
 
+~~ == NOT READY FOR PUBLIC DISTRIBUTION 20120328 ==  ~~
+
+
+~~BUT Sal sent me the prototype 20120325.  Executing this Go program sets up a connection between the DOS command line and the prop board running propforth, just like TeraTerm or and terminal program.  Why is this interesting?  
+
+This is interesting because it uses the CSP channels.   There are a couple of benefits to this.  
+
+ # The DOS command line features, such as command completion, command editing, and command history, nw work on the interface to propforth. This save tons of kernel space and save me months of putting off implementing this as an extension. 
+
+ # CSP channels allow multiple connections.  The next version of the Go interface is planned to support many connections (over the same wire, the existing USB virtual serial port connection).  We will be able to have a separate session to each COG simultaneously.~~  
+
+  == First public demo 20120422 ==
+
+ * Download 201200420mygo.zip   from http://code.google.com/p/propforth/downloads/list 
+
+http://propforth.googlecode.com/files/20120420mygo.zip
+
+ * extract the mygo directory
+ * transfer the mygo dirctory into Go-files %Home% directory
+ * from a command shell, cd to the %home% directory 
+ * run C:%home%...\Go-files\mygo\goshell.bat
+ * compile the goterm program.  This is the serial terminal program that implements a single GO CSP channel
+
+look in the directory C:%HOME%...\Go-files\mygo\src\serial 
+
+This contains   windows_serial.go by default; if you have a linux system delete this and replace it with  linux_serial.go from the C:%home%...\Go-files\mygo\src\linux_serial directory.
+
+From the command shell run:
+
+` go install goterm `
+
+This recompiles the goterm program.
+
+The command prompt should return ins under five seconds with no error message.  If it takes longer than five seconds, you have a very slow machine indeed.  This should not matter.   
+
+ * run the goterm program
+
+On my rig the quickstart/prop plug shows up as com10.  Run the goterm with you comport:
+
+`goterm com10 57600`
+
+----
+
+~~NOTE: if using \Propforth-V5.1BETA-20120505~~
+
+~~`goterm com10 115200`~~
+
+NOTE: if using \Propforth-V5.2BETA-20120507
+
+`goterm com10 230400`
+
+----
+
+The I/O LEDs on the prop should flash, the propforth prompt should display in the command shell
+
+ * run a forth word
+
+in the comaand shell, type the forth command "words"
+
+`words`
+
+This will very quicly display the contents of the forth dictionary, which is all the words currently defined in forth.
+
+If it works, the hardware is set up correctly.  
+
+ * exit the goterm program
+
+`ctl ^G enter to exit`
+
+Notice, in the command shell window, you can use the command line history tools.  That is, you can use auto complete, arrow through previous commands, etc. as supported by your OS command shell.
+
+Notice that the command shell history tools also work in with the forth prompt!  Whee!  PropForth meets the '80's!
+
+`ctl ^G enter to exit`
+
+ * compile the muxterm program. This is the routine that gives us 32 channels of CSP magic 
+
+from the command prompt:
+
+`go  install  gomuxterm`
+
+The command line prompt should again return in under five seconds. 
+
+ * run the gomuxterm program.  This is the goal of today's experiment.  
+
+from the command prompt: 
+
+`gomuxterm com10 57600 3000 4000`
+
+----
+
+~~NOTE: if using \Propforth-V5.1BETA-20120505~~
+
+~~`gomuxterm com10 115200 3000 4000`~~
+
+~~`Doesn't work yet!!!!!`~~
+
+Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
+
+NOTE: if using \Propforth-V5.2BETA-20120507
+
+`gomuxterm com10 230400 3000 4000`
+
+
+----
+
+
+This runs the gomuxterm program on comport10. 3000 is a port number for RAW data interchange (more later), and the 4000 is the starting port number for the "regular" CSP channels.
+
+
+This program resets the prop and loads the CSP channel configuration code to the prop.  (This will be automated in later versions, this is just a multi step process in the demo) 
+
+Message should be:
+  
+{{{
+Resetting prop ... Sending code to prop ... Sending start command
+!
+Listening on 127.0.0.1:3000
+Listening on 192.168.0.250:3000
+Listening on 127.0.0.1:4000
+Listening on 192.168.0.250:4000
+}}}
+
+Prop is now waiting for CSP communications
+
+----
+
+~~NOTE: if using \Propforth-V5.1BETA-20120505~~
+
+~~`Doesn't work yet!!!!!`~~
+
+Appears to work on next version 5.2 per Issue 147 http://code.google.com/p/propforth/issues/detail?id=147
+
+NOTE: if using \Propforth-V5.2BETA-20120507
+
+`gomuxterm com10 230400 3000 4000`
+
+
+----
+
+
+
+==== connect to the CSP channels using a terminal program ====  
+
+ * teraterm to localhost port 4000.
+
+Open termaterm.  Select File => New Connection (if it did not open automatically)
+
+Select TCP/IP
+
+For "Host:" use `localhost`
+
+For "port" use `4000`
+
+Hit enter a couple times.  You should see the propforth prompt display SLOWLY on cog0 
+
+ALT N to open new windows
+
+Open windows to cog0 through cog5.  Notice you can open no more than SIX termanl windows to cogs.
+
+At any propforth command prompt, enter the cog program assignment query 'Cog?'
+
+`cog?`
+
+This will display the routine running on each cog.
+
+Notice that cog7 is running the serial driver, as usual.
+
+Notice that cog6 is managing the COG_TO_CHAN mapping.  Cog6 is running the CSP associations between the first six cogs (0-5) and the first six CSP channels (0-5).    
+
+---- 
+
+= Nifty thing that works! =
+
+ * If your PC is connected to a wireless router
+ * If you have an Android phone with WiFi
+ 
+ * Use Luna term, etc
+ * connect to the IP address associate with propforth
+ * enjoy multiple sessions using your android phone as a development terminal!
+
+-----
+
+NOTES:
+
+This is synchronous, now we no longer have to worry about over running the interpreter.  In fact, we CAN'T use the FL command anymore, because there are no more cogs available.  This is fine, we won't need fl in this context by definition.  
+
+This is slow because its synchronous over asynchronous.  It will never be a speed demon.  This is just to show it works. 
+
+This demo does byte transfers, with an ACK for every byte. The ACKs are the killer.  Relax! Streaming will be done next, so there will only be an ACK for each line and it will speed up. Remember, the transfer over serial can only be as good as (approach) serial by itself.  Its just a demo. 
+
+Later, sockets will be used, and the Ethernet hardware will handle protocol stuff. 
+
+Also, Sal will profile the execution to determine optimizations.   
+ 
 
  ---------
 
