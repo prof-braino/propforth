@@ -15,6 +15,76 @@ http://code.google.com/p/go/downloads/detail?name=go1.0.1.windows-386.zip&can=2&
 extract the GO directory from this archive, and move it to C:\go 
 
 
+ ------
+== Windows XP ==
+
+Note: If anybody makes steps for Linux/Mac,  post them here or send them to me or make an entry in the issues page
+
+Steps -
+
+ * Control panel - system - advanced - environment variables 
+
+ * User Variables for `<USER_NAME>` - NEW
+  * New User Variable 
+    * Variable name: {{{ HOME }}}
+    * Must be in uppercase 
+  * Variable Value: {{{   C:\Documents and Settings\<username>\My Documents\Go-Docs }}}
+    * The final location can be anything you want to type all the time. We tested the names `Go-Docs` and `GoFiles`. Avoid names with spaces, etc. 
+    * Selecting a path in `My Documents` ends up with the characteristically silly extra long path names.  But apps tend to look here by default, and in this case the path was not too long so it worked.   
+
+ * System Variables - (existing variable) PATH - Edit 
+
+   PATH
+   edit - add this at the end of the value that is already there...
+{{{
+... ;c:\go\bin
+}}}
+
+ NOTES: a) There probably shouldn't be spaces in the path line, this might be why it didn't work for me using G:  b) MUST be lowercase  c) On one machine the variable was `PATH` and on another it was `Path`.  Use whatever is already there. 
+
+
+ * system variables  - New
+  * Variable name: {{{ GOROOT }}}  
+
+  GOROOT must be uppercase
+
+  * Variable Value: {{{  c:\go }}}
+
+  MUST be lowercase
+
+CHECK: 
+
+From Dos shell (START > Run... > Open: *cmd* ):
+{{{ 
+path
+echo %GOROOT%
+echo %HOME%
+ }}}
+
+Must be uppercase
+
+should reflect the changes we made
+
+From Dos shell command line prompt type:
+{{{
+ go
+}}}
+
+should give go description, if so, go setup complete!
+
+{{{
+C:\Documents and Settings\user-name>GO
+Go is a tool for managing Go source code.
+...
+}}}
+
+So far, so good....
+
+----
+
+
+
+
  ---------
 
 End 20120511
