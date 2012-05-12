@@ -1,5 +1,9 @@
 #summary Setup for GO  language using CSP channels.
-#labels v5.0,GO,CSP,demo,cspchannels,Featured,v5.1BETA,v5.2BETA
+#labels v5.0,GO,CSP,demo,cspchannels,Featured,v5.1BETA,v5.2BETA,Deprecated
+
+This page is depracated and replaced by a shorter version
+
+http://code.google.com/p/propforth/wiki/GoSetup20120511
 
 = Introduction =
 
