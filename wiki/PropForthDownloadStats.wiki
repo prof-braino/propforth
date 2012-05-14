@@ -32,6 +32,7 @@ For example Propforth-V5.03-20120505.zip
 = Guesses =
 
  * There were about 16 releases made public from 2010 June the 2012 May
+ * Over 25 months, there was average of 1 release every two months 
  * There might be around 53 to 325 propforth users
  * We might expect average of 1 to 2.6  downloads per day
  * Beginning with 5.0, the release process (testing) took longer than development 
