@@ -2,7 +2,10 @@
 
 = Archive Downloads =
 
-Each PropForth release is a zip archive download. Each archive is identifed by  PropForth+Version+Date+tag+.zip
+Each PropForth release is a zip archive download.
+
+Each archive is identifed by  PropForth+Version+Date+tag+.zip
+
 For example Propforth-V5.03-20120505.zip 
 
 = Days between release dates =
@@ -28,8 +31,8 @@ For example Propforth-V5.03-20120505.zip
 
 = Guesses =
 
-* There might be around X users
-* We might expect between x and x downloads per day
-* Beginning with 5.0, the release process (testing) took longer than development 
-* Release process was not well established in 3.x time frame
-* Record keep was not so accurate in the 2.x releases
+ * There might be around X users
+ * We might expect between x and x downloads per day
+ * Beginning with 5.0, the release process (testing) took longer than development 
+ * Release process was not well established in 3.x time frame
+ * Record keep was not so accurate in the 2.x releases
