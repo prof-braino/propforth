@@ -8,7 +8,6 @@ For example Propforth-V5.03-20120505.zip
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-
 || Propforth-V5.03-20120505.zip || 5.03 || 20120505 || 22  || 9 || 2.4 || 
 
 || Propforth-5.01-20120413.zip  || 5.01 || 20120413 || 2  || 2 ||  1 || 
