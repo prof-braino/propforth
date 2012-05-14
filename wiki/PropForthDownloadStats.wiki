@@ -21,15 +21,15 @@ For example Propforth-V5.03-20120505.zip
 || PropForth3.5-2010OCT09.zip ||  v3.5 || 2010OCT09 || 26 downloads|| 8  || 3   dl/day ||
 || PropForth3.4-2010SEPT05.zip || v3.4 || 2010SEPT05 || 120 downloads || 34 days || 30   dl/day ||
 || PropForth3.2 20100710 archive.zip  ||  v3.2 || 20100710 || 162 downloads || 57 days || 2.8  dl/day ||
-|| ||  PropForth2.7-20100710 archive.zip  ||  v2.7 || 20100710 || 66downloads || *days current* ||  dl/day ||
-
-|| PropForth2.6archive.zip 2010-july ||  v2.6 || 2010-july || 56 downloads || *days current* || *Downloads per day* ||
-
-|| PropForth2.4Archive.zip 2010-june || v2.4 || 2010-june || 53 downloads || *days current* || *Downloads per day* ||
+|| PropForth2.7-20100710 archive.zip  ||  v2.7 || 20100710 || 66 downloads || (56?) days || 1 dl/day ||
+|| PropForth2.6archive.zip 2010-july ||  v2.6 || 2010-july || 56 downloads || (30) days current || 1.8 dl/day  ||
+|| PropForth2.4Archive.zip 2010-june || v2.4 || 2010-june || 53 downloads || 30 days (?) || 1.8 dl/day ||
 
 
 = Guesses =
 
-There might be around X users
-
-We might expect between x and x downloads per day
+* There might be around X users
+* We might expect between x and x downloads per day
+* Beginning with 5.0, the release process (testing) took longer than development 
+* Release process was not well established in 3.x time frame
+* Record keep was not so accurate in the 2.x releases
