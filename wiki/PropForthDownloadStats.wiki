@@ -8,6 +8,8 @@ Each archive is identifed by ` PropForth+Version+Date+tag+.zip `
 
 For example ` Propforth-V5.03-20120505.zip `
 
+Each previous release is deprecated by the current release
+
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
