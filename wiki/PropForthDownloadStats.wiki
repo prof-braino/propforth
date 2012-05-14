@@ -13,7 +13,7 @@ For example Propforth-V5.03-20120505.zip
 || Propforth5.0-20120304.zip   || v5.0 || 20120304 || 164 downloads || 27+30+5 =  62 days || 2.6 || 
 || PropForth4.6-20110725.zip  || v4.6 || 20110725 || 325 downloads ||  7 months 10 days (222 days)|| 1.4 dl/day || 
 || PropForth4.5-20110614.zip ||  v4.5 || 20110614 ||  156 downloads || (30-14+25) = 41 days || 3.8 dl/day|| 
-|| Propforth4.0a-20101218.zip || v4.0a || 20101218 || 205 downloads || *days current* || *Downloads per day* ||
+|| Propforth4.0a-20101218.zip || v4.0a || 20101218 || 205 downloads || 187 days || 1  dl/day ||
 
 || PropForth3.5e-20101019.zip ||  v3.5e || 20101019 || 182 downloads|| *days current* || *Downloads per day* ||
 || Propforth3.5c-20101017.zip ||  v3.5c || 20101017 || 19 downloads|| *days current* || *Downloads per day* ||
