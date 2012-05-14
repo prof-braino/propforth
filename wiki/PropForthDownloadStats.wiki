@@ -8,31 +8,31 @@ For example Propforth-V5.03-20120505.zip
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-|| Propforth-V5.03-20120505.zip || v5.03 || 20120505 || 22 download  || 9 days || 2.4 dl per day || 
-|| Propforth-5.01-20120413.zip  || v5.01 || 20120413 || 2 download || 2 days ||  1 dl/day|| 
-|| Propforth5.0-20120304.zip   || v5.0 || 20120304 || 164 download || 27+30+5 =  62 days || 2.6 || 
-|| PropForth4.6-20110725.zip  || 4.6 || 20110725 || 325 download ||  7 months 10 days (222 days)|| 1.4 dl/day || 
-|| PropForth4.5-20110614.zip ||  4.5 || 20110614 ||  156 || (30-14+25) = 41 days || 3.8 dl/day|| 
-|| Propforth4.0a-20101218.zip || 4.0a || 20101218 || *download count* || *days current* || *Downloads per day* ||
+|| Propforth-V5.03-20120505.zip || v5.03 || 20120505 || 22 downloads  || 9 days || 2.4 dl per day || 
+|| Propforth-5.01-20120413.zip  || v5.01 || 20120413 || 2 downloads || 2 days ||  1 dl/day|| 
+|| Propforth5.0-20120304.zip   || v5.0 || 20120304 || 164 downloads || 27+30+5 =  62 days || 2.6 || 
+|| PropForth4.6-20110725.zip  || v4.6 || 20110725 || 325 downloads ||  7 months 10 days (222 days)|| 1.4 dl/day || 
+|| PropForth4.5-20110614.zip ||  v4.5 || 20110614 ||  156 downloads || (30-14+25) = 41 days || 3.8 dl/day|| 
+|| Propforth4.0a-20101218.zip || v4.0a || 20101218 || downloads || *days current* || *Downloads per day* ||
 
-|| PropForth3.5e-20101019.zip ||  3.5e || 20101019 || *download count* || *days current* || *Downloads per day* ||
-|| Propforth3.5c-20101017.zip ||  3.5c || 20101017 || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.5e-20101019.zip ||  v3.5e || 20101019 || downloads|| *days current* || *Downloads per day* ||
+|| Propforth3.5c-20101017.zip ||  v3.5c || 20101017 || downloads|| *days current* || *Downloads per day* ||
 
-|| Propforth3.5b-20101017.zip ||  3.5b || 20101017 || *download count* || *days current* || *Downloads per day* ||
+|| Propforth3.5b-20101017.zip ||  v3.5b || 20101017 || downloads|| *days current* || *Downloads per day* ||
 
-|| Propforth3.5a-20101017.zip ||  3.5a || 20101017 || *download count* || *days current* || *Downloads per day* ||
+|| Propforth3.5a-20101017.zip ||  v3.5a || 20101017 || downloads|| *days current* || *Downloads per day* ||
 
-|| PropForth3.5-2010OCT09.zip ||  3.5 || 2010OCT09 || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.5-2010OCT09.zip ||  v3.5 || 2010OCT09 || downloads|| *days current* || *Downloads per day* ||
 
-|| PropForth3.4-2010SEPT05.zip || 3.4 || 2010SEPT05 || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.4-2010SEPT05.zip || v3.4 || 2010SEPT05 || downloads || *days current* || *Downloads per day* ||
 
-|| PropForth3.2 20100710 archive.zip  ||  3.2 || 20100710 || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.2 20100710 archive.zip  ||  v3.2 || 20100710 || downloads || *days current* || *Downloads per day* ||
 
-|| ||  PropForth2.7-20100710 archive.zip  ||  2.7 || 20100710 || *download count* || *days current* || *Downloads per day* ||
+|| ||  PropForth2.7-20100710 archive.zip  ||  v2.7 || 20100710 || downloads || *days current* || *Downloads per day* ||
 
-|| PropForth2.6archive.zip 2010-july ||  2.6 || 2010-july || *download count* || *days current* || *Downloads per day* ||
+|| PropForth2.6archive.zip 2010-july ||  v2.6 || 2010-july || downloads || *days current* || *Downloads per day* ||
 
-|| PropForth2.4Archive.zip 2010-june || 2.4 || 2010-june || *download count* || *days current* || *Downloads per day* ||
+|| PropForth2.4Archive.zip 2010-june || v2.4 || 2010-june || downloads || *days current* || *Downloads per day* ||
 
 
 = Guesses =
