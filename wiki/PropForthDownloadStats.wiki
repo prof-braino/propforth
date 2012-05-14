@@ -1,12 +1,12 @@
-#summary Some numbers on PropForth Downloads
+#summary Some numbers on PropForth Downloads 20120514
 
-= Archive Downloads =
+= PropForth Archive Downloads =
 
 Each PropForth release is a zip archive download.
 
-Each archive is identifed by  PropForth+Version+Date+tag+.zip
+Each archive is identifed by ` PropForth+Version+Date+tag+.zip `
 
-For example Propforth-V5.03-20120505.zip 
+For example ` Propforth-V5.03-20120505.zip `
 
 = Days between release dates =
 
@@ -38,3 +38,4 @@ For example Propforth-V5.03-20120505.zip
  * Beginning with 5.0, the release process and testing took longer (months) than development (weeks)
  * Release process was not well established in 3.x time frame
  * Record keep was not so accurate in the 2.x releases
+ * In the 2.x time frame, Sal did not believe many folks were interested in a forth for the prop
