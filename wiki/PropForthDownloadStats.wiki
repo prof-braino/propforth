@@ -31,8 +31,8 @@ For example Propforth-V5.03-20120505.zip
 
 = Guesses =
 
- * There might be around X users
- * We might expect between x and x downloads per day
+ * There might be around 53 to 325 propforth users
+ * We might expect average of 1 to 2.6  downloads per day
  * Beginning with 5.0, the release process (testing) took longer than development 
  * Release process was not well established in 3.x time frame
  * Record keep was not so accurate in the 2.x releases
