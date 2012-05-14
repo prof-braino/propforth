@@ -2,39 +2,29 @@
 
 = Archive Downloads =
 
-Each PropForth release is a zip archive download.
-
-Each archive is identifed by 
-
-PropForth+Version+Date+tag+.zip
-
+Each PropForth release is a zip archive download. Each archive is identifed by  PropForth+Version+Date+tag+.zip
 For example Propforth-V5.03-20120505.zip 
 
 = Days between release dates =
 
-|| *Release* || *version* || *date* || *download count* || *days current* || Downloads per day * ||
-|| 1900 || -10 || 25 ||
-|| 1910 || -15 || 30 ||
-|| 1920 || -10 || 32 ||
-|| 1930 || _N/A_ || _N/A_ ||
-|| 1940 || -2 || 40 ||
+|| *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
 
-|| Propforth-V5.03-20120505.zip - 22  - 9               /= 2.4 || 
-|| Propforth-5.01-20120413.zip  - 2   - 2               /= 1 || 
-|| Propforth5.0-20120304.zip    - 164 - 27+30+5 = 62    /= 2.6 || 
-|| PropForth4.6-20110725.zip    - 325 - (31-25)+31+30+31+30+31 + 31+28+4 = 222   /=  1.4 || 
+|| Propforth-V5.03-20120505.zip  ||  - 22  ||  - 9   ||              /= 2.4 || 
+|| Propforth-5.01-20120413.zip  ||  - 2  ||   - ||  2             ||    /= 1 || 
+|| Propforth5.0-20120304.zip   ||   - 164  || - 27+30+5 =  || 62  ||    /= 2.6 || 
+|| PropForth4.6-20110725.zip  ||    - 325 - ||  (31-25)+31+30+31+30+31 + 31+28+4 = 222   ||  /=  1.4 || 
 || PropForth4.5-20110614.zip    - 156 - (30-14+25) =    41 /=      3.8 || 
-|| Propforth4.0a-20101218.zip || 
-|| PropForth3.5e-20101019.zip || 
-|| Propforth3.5c-20101017.zip || 
-|| Propforth3.5b-20101017.zip || 
-|| Propforth3.5a-20101017.zip || 
-|| PropForth3.5-2010OCT09.zip || 
-|| PropForth3.4-2010SEPT05.zip || 
-|| PropForth3.2 20100710 archive.zip  || 
-|| ||  PropForth2.7-20100710 archive.zip  || 
-|| PropForth2.6archive.zip 2010-july || 
-|| PropForth2.4Archive.zip 2010-june || 
+|| Propforth4.0a-20101218.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.5e-20101019.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| Propforth3.5c-20101017.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| Propforth3.5b-20101017.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| Propforth3.5a-20101017.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.5-2010OCT09.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.4-2010SEPT05.zip || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| PropForth3.2 20100710 archive.zip  || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| ||  PropForth2.7-20100710 archive.zip  || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| PropForth2.6archive.zip 2010-july || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
+|| PropForth2.4Archive.zip 2010-june || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
 
 
 = Guesses =
