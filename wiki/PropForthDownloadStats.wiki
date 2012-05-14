@@ -37,7 +37,7 @@ Each previous release is deprecated by the current release
  * Over 25 months, there was average of 1 release every two months 
  * There might be around 53 to 325 propforth users
  * We might expect average of 1 to 2.6  downloads per day
- * Beginning with 5.0, the release process and testing took longer (months) than development (weeks)
+ * By 5.0, the release process and testing took longer (months) than development (weeks)
  * Release process was not well established in 3.x time frame
  * Record keep was not so accurate in the 2.x releases
  * In the 2.x time frame, Sal did not believe many folks were interested in a forth for the prop
