@@ -17,15 +17,19 @@ Kernel REleases are (in general):
 
 The download archives for Propforth that are posted on this site are generally final or "public releases".  These have been through our test suite and have completed with no errors or issues found that require change to source code. We run it through the regression test suite at least twice, once by Sal, once by Braino. (other members will be added to this process as they agree to build the test bed and run the tests).
 
-If the code passses all tests with no issues found, we think it does what twe wantedit to do (conforms to requirements), and can be presented to the public at large.   The final test comes when people use it and decide i what it does is something they can use. User comments trigger changes to requiments, and re-generation of the kernel as new build with changed requirements.
+If the code passes all tests with no issues found, we think it does what we wanted it to do (conforms to requirements), and can be presented to the public at large.   The final test comes when people use it and decide i what it does is something they can use. User comments trigger changes to requirements, and re-generation of the kernel as new build with changed requirements.
 
 = BETA Release =
 
-These are sent out interanally to the team and other participants via email, etc. Sal has tested them, and feels they are complete.  But for various reasons, these cannot be tested completely in the lab by regression test.  The code can only be proven out when users put it through its paces.  
+These are sent out internally to the team and other participants via email, etc. Sal has tested them, and feels they are complete.  But for various reasons, these cannot be tested completely in the lab by regression test.  The code can only be proven out when users put it through its paces.  
 
 BETA releases are expected to work exactly as required. BUT, there is a possibility that we did not foresee a use case of special circumstance. User feedback on "what got broke" is invaluable for these releases. 
 
-If these releases yield not negative feedback, the changes are added tot the regular code base. Ther remains the risk that some issues were not uncovered.  We feel this process minimizes the risk with the least stress.
+If these releases yield not negative feedback, the changes are added tot the regular code base. There remains the risk that some issues were not uncovered.  We feel this process minimizes the risk with the least stress.
+
+= ALPHA release = 
+
+Alpha release is usually NOT sent out.  Occasionally there will be a new function where we are not clear on some implementation requirement, and we have to all get on the same page with what we want.  In this case, a "sketch" or partial implementation of the function will be put sent out to specific members or user to get feedback.  
 
 ---- 
 
