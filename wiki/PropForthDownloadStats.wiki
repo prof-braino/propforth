@@ -11,7 +11,7 @@ For example Propforth-V5.03-20120505.zip
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-|| Propforth-V5.03-20120505.zip || v5.03 || 20120505 || 22 downloads  || 9 days || 2.4 dl per day || 
+|| Propforth-V5.03-20120505.zip || v5.03 || 20120505 || 22 downloads  || 9 days (at this writing) || 2.4 dl per day || 
 || Propforth-5.01-20120413.zip  || v5.01 || 20120413 || 2 downloads || 2 days ||  1 dl/day|| 
 || Propforth5.0-20120304.zip   || v5.0 || 20120304 || 164 downloads || 27+30+5 =  62 days || 2.6 || 
 || PropForth4.6-20110725.zip  || v4.6 || 20110725 || 325 downloads ||  7 months 10 days (222 days)|| 1.4 dl/day || 
