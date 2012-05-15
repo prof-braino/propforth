@@ -30,8 +30,8 @@ Each previous release is deprecated by the current release
 || PropForth2.6archive.zip 2010-july ||  v2.6 || 2010-july (10th?)|| 56 downloads ||  NA || NA dl/day ||
 || PropForth2.4Archive.zip 2010-june || v2.4 || 2009-April-20 || 53 downloads || 1 year 3 months (465 days) || 0.11 dl/day ||
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-|| Spinforth || v1.1 ||  2008 JAN 25 || 233 downloads ||  NA || NA ||
-|| Spinforth || v1.0 ||  2007 DEC 12 || unknown downloads ||  NA || NA ||
+|| Spinforth || v1.1 ||  2008 JAN 25 || 233 downloads ||  1 year 3 months (451 days) || NA ||
+|| Spinforth || v1.0 ||  2007 DEC 12 || unknown downloads ||  44 days || NA ||
 
 = Guesses =
 
