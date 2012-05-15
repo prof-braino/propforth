@@ -44,4 +44,4 @@ Each previous release is deprecated by the current release
  * Release process was not well established in 3.x time frame
  * Record keep was not so accurate in the 2.x releases
  * In the 2.x time frame, Sal did not believe many folks were interested in a forth for the prop
- * December 2012 will mark the fifth year of Sal's work on this project.
+ * December 2012 will mark the fifth year of Sal's project.
