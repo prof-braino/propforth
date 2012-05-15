@@ -35,7 +35,7 @@ Each previous release is deprecated by the current release
 
 = Guesses =
 
- * There were about 16 releases made public from 2010 June the 2012 May
+ * There were about 16 PropForth releases made public from 2010 June the 2012 May
  * Over 25 months, there was average of 1 release every two months 
  * There might be around 53 to 325 propforth users
  * There are at least 8 propforth users
