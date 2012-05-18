@@ -7,7 +7,7 @@ FORTH is Chuck Moore's personal tool for getting his work done.  Other version o
 
 There are formal definitions and standards of forth, these are optional.  The closer one adheres to a standard the easier it is to talk to other folks about your work.  But a standards compliant forth tends to be less tailored to the hardware and /or task at hand. 
 
-Here are some common refereneces regarding forth.  These represent examples of the main directions forth and propforth can take. 
+Here are some common references regarding forth.  These represent examples of the main directions forth and propforth can take.  This is nowhere near a complete list, but should give you a hint of where to get started. 
 
 = Online Books = 
 
@@ -31,6 +31,8 @@ http://en.wikipedia.org/wiki/Forth_%28programming_language%29
 = Other folks that use forth = 
 
 http://amforth.sourceforge.net/ AMFORTH for ATmega processors. Very active community support.   
+
+http://www.camelforth.com/news.php runs on MSP430 
 
 = Paid Forth Engineering Resources =
 
