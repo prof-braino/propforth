@@ -11,6 +11,10 @@ Here are some common refereneces regarding forth.  These represent examples of t
 
 = Online Books = 
 
+http://www.forth.com/starting-forth/  Many folks started with this book.
+
+http://c2.com/cgi/wiki?ThinkingForth This remains the Second beginner's book for many folks.
+
 = Articles = 
 
 http://www.jupiter-ace.co.uk/Forth_general_DrDobbs7805.html
