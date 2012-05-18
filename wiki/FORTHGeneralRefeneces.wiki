@@ -11,7 +11,7 @@ Here are some common refereneces regarding forth.  These represent examples of t
 
 = Online Books = 
 
-http://www.forth.com/starting-forth/  Many folks started with this book.
+http://www.forth.com/starting-forth/ http://home.iae.nl/users/mhx/sf0/sf0.html  Many folks started with this book.
 
 http://c2.com/cgi/wiki?ThinkingForth This remains the Second beginner's book for many folks.
 
