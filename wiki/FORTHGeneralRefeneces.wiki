@@ -3,9 +3,11 @@
 
 = Introduction =
 
-FORTH is Chuck Moore's personal tool for getting his work done.  Other version of forth vary somewhat from this (these), but still can be considered forth.
+FORTH is Chuck Moore's personal tool for getting his work done.  Other version of forth vary somewhat from this (these), but still can be considered forth. There are formal definitions and standards of forth, these are optional.  The closer one adheres to a standard the easier it is to talk to other folks about your work.  But a "fully" standards compliant forth tends to be less tailored to the hardware and /or task at hand. Full standards compliance is usually only found on a workstation.  Not everything will fit on a micro-controller in the very least.
 
-There are formal definitions and standards of forth, these are optional.  The closer one adheres to a standard the easier it is to talk to other folks about your work.  But a standards compliant forth tends to be less tailored to the hardware and /or task at hand. 
+Propforth is very different from the (all-encompassing) standards in many ways, as it is tailored to the architecture of the parallax propeller chip.  In this respect, it exactly fits the "forth" concept. 
+
+Many common forth functions are not implemented in propforth kernel by design.  One example is software multitasking, as the prop already has 8 cores (and we typically add more as needed), we decided to save the space.   Users are encouraged to implement any functionality as extensions or additions to the kernel. 
 
 Here are some common references regarding forth.  These represent examples of the main directions forth and propforth can take.  This is nowhere near a complete list, but should give you a hint of where to get started. 
 
