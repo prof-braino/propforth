@@ -24,6 +24,8 @@ http://galileo.phys.virginia.edu/classes/551.jvn.fall01/primer.htm
 http://www.jupiter-ace.co.uk/Forth_general_DrDobbs7805.html
 The famous Jupiter ACE console
 
+http://www.ece.cmu.edu/~koopman/forth/rochester_90b.pdf  
+
 = Websites =
 
 http://www.forth.org/
