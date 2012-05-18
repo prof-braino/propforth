@@ -15,6 +15,8 @@ http://www.forth.com/starting-forth/ http://home.iae.nl/users/mhx/sf0/sf0.html  
 
 http://c2.com/cgi/wiki?ThinkingForth This remains the Second beginner's book for many folks.
 
+http://galileo.phys.virginia.edu/classes/551.jvn.fall01/primer.htm
+
 = Articles = 
 
 http://www.jupiter-ace.co.uk/Forth_general_DrDobbs7805.html
@@ -33,6 +35,10 @@ http://amforth.sourceforge.net/ AMFORTH for ATmega processors. Very active commu
 = Paid Forth Engineering Resources =
 
 http://www.forth.com/ Forth Inc
+
+= other forth experts =
+
+http://bernd-paysan.de/
 
 
 
