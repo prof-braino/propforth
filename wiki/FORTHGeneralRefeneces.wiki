@@ -1,5 +1,5 @@
 #summary FORTH References used by the FORTH community
-#labels documentation
+#labels documentation,references
 
 = Introduction =
 
@@ -42,13 +42,12 @@ http://www.forth.com/ Forth Inc
 
 = other forth experts =
 
+http://pygmy.utoh.org/ Frank Sargent
+
 http://bernd-paysan.de/
 
 http://www.bradrodriguez.com/
 
 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+- end of page 20120518 -
