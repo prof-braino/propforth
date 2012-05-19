@@ -110,19 +110,19 @@ This recompiles the goterm program.
 The command prompt should return ins under five seconds with no error message.  If it takes longer than five seconds, you have a very slow machine indeed.  This should not matter.   
 
 
- _NOTE: IF YOU GET a bunch of ERROR messages_
+  _NOTE: IF YOU GET a bunch of ERROR messages_
 
-_ If you get a bunch of error messages, something is wrong.  Wipe my disk drive, and re-installed windows from scratch. I did the steps exactly as before, only this time, I got a bunch of errors endinf with:
+  _If you get a bunch of error messages, something is wrong.  Wipe my disk drive, and re-installed windows from scratch. I did the steps exactly as before, only this time, I got a bunch of errors endinf with:_
 
-{{{
-pack: cannot open $WORK\math\_obj\tan_386.8
-# syscall
-pack: cannot open $WORK\syscall\_obj\asm_windows_386.8
-}}}
+  {{{
+  pack: cannot open $WORK\math\_obj\tan_386.8
+  # syscall
+  pack: cannot open $WORK\syscall\_obj\asm_windows_386.8
+  }}}
 
-Please verify that you ran the goshell.bat script, and ran the go install goterm command from the resulting cmd window.
+  _Please verify that you ran the goshell.bat script, and ran the go install goterm command from the resulting cmd window._
 
-In my case,  installed Prop Tool 1.3 and did a restart.  Then I tried again, and it worked. _
+  _In my case,  installed Prop Tool 1.3 and did a restart.  Then I tried again, and it worked._
 
 
 
