@@ -49,3 +49,15 @@ Gaps between fractional release numbers indicate internal (development) releases
  * Record keep was not so accurate in the 2.x releases
  * In the 2.x time frame, Sal did not believe many folks were interested in a forth for the prop
  * December 2012 will mark the fifth year of Sal's project.
+
+= Trivia =
+
+Integer releases represent significant changes, fractional releases represent incremental changes:
+
+Spinforth 1.1 to Propforth 2.4:  change from SPIN to Assembler
+
+2.4 to 3.x: refine architectural design
+
+3.x to 4.x: explore implementation options and demonstrate basic functions as a system.
+
+4.x to 5.x: final architecture.  User demos for functions. Possible user demos for systems. (in progress)
