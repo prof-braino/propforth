@@ -124,7 +124,9 @@ The command prompt should return ins under five seconds with no error message.  
 
   _In my case,  installed Prop Tool 1.3 and did a restart.  Then I tried again, and it worked._
 
+-----
 
+Now that all errors are gone: 
 
  * run the goterm program
 
