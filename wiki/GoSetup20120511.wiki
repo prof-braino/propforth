@@ -1,5 +1,5 @@
 #summary Using Go1.0.1 from 2012 April 26
-#labels v5.2BETA,Featured
+#labels v5.2BETA,Featured,v5.0
 
 = Introduction =
 
@@ -108,6 +108,23 @@ From the command shell run:
 This recompiles the goterm program.
 
 The command prompt should return ins under five seconds with no error message.  If it takes longer than five seconds, you have a very slow machine indeed.  This should not matter.   
+
+
+ === IF YOU GET a bunch of ERROR messages ===
+
+If you get a bunch of error messages, something is wrong.  Wipe my disk drive, and re-installed windows from scratch. I did the steps exactly as before, only this time, I got a bunch of errors endinf with:
+
+{{{
+pack: cannot open $WORK\math\_obj\tan_386.8
+# syscall
+pack: cannot open $WORK\syscall\_obj\asm_windows_386.8
+}}}
+
+I believe something is not correctly set up in the windows install.
+
+20120519
+
+------
 
  * run the goterm program
 
