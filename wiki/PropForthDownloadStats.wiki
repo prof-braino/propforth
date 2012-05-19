@@ -54,9 +54,9 @@ Gaps between fractional release numbers indicate internal (development) releases
 
 Integer releases represent significant changes, fractional releases represent incremental changes:
 
-Spinforth 1.1 to Propforth 2.4:  change from SPIN to Assembler
+Spinforth 1.1 to Propforth 2.x:  change from SPIN to Assembler
 
-2.4 to 3.x: refine architectural design
+2.x to 3.x: refine architectural design
 
 3.x to 4.x: explore implementation options and demonstrate basic functions as a system.
 
