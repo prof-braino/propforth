@@ -10,6 +10,10 @@ For example ` Propforth-V5.03-20120505.zip `
 
 Each previous release is deprecated by the current release
 
+Gaps between integer release numbers indicate unused numbers.
+
+Gaps between fractional release numbers indicate internal (development) releases.
+
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
