@@ -27,9 +27,15 @@ NOTE: This only applies to BETA testers with PF v5.2.1BETA.  If you want to try 
 \propforth\Propforth-V.5.2.1-20120519\CurrentRelease\PropForth\PropForthDevFastSerialKernel.spin
 }}}
 
-Verify you can get a SERIAL connection using Telnet as usual.
+Verify you can get a SERIAL connection using Telnet as usual, your comport, 230400 baud.  Notice the executing `words` is REALLY fast now!
 
 NOTE: If you try to make a TELNET connection at this pint, you will get a `connection refused` message, as `gomuxterm` is not running yet. 
+
+  == Setup new version of 'gomuxterm' ==
+
+This uses the same installation of 20120420mygo.zip, with a new `/src` directory.
+
+ * unpack 
 
  -- in progress 20120521 --
 
