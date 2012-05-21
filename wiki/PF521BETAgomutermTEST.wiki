@@ -10,9 +10,9 @@ The serial channels don't have any particular regression test suite, as the seri
 = Requested Tests = 
 
 Sal would like to get some throughput data on the various configurations on the various rigs that people use. The BETA has a Test menu that we can access using 
-
+{{{
 control C
-
+}}}
 from the command prompt.  We can launch some loop back and throughput tests, and collect the numbers to see if they look like we expect. 
 
 = Set up =
@@ -23,9 +23,9 @@ NOTE: This only applies to BETA testers with PF v5.2.1BETA.  If you want to try 
 
  * Unpack the archive to your hardrive as usual
  * Using PropTool load the kernel to you propboard Unit Under Test (UIT)
-
+{{{
 \propforth\Propforth-V.5.2.1-20120519\CurrentRelease\PropForth\PropForthDevFastSerialKernel.spin
-
+}}}
 
  -- in progress 20120521 --
 
