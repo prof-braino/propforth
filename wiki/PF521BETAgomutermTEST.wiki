@@ -129,7 +129,7 @@ n1 n2 t - run a send speed test on channel n1 for n2 bytes (data from prop) --  
 n1 n2 u - run a receive speed test on channel n1 for n2 bytes (data to prop) --  0 <= n1 <= 3, 100 <= n2 <= 10000
 }}}
 
-Check the S command works
+  === Check the S command works ===
 
 Run 5000 iterations of the LOOPBACK speed test on one channel (example channel 6) using command `s`
 
@@ -138,7 +138,7 @@ Run 5000 iterations of the LOOPBACK speed test on one channel (example channel 6
 Mux Channel 06  Loop Chars/sec: 2000.00
 }}}
 
-Run a multi channel 
+  === Run a multi channel test: ===
 
 Run 5000 iteration of the LOOPBACK speed test on channels 4, 5, 6, and 7 at the same time
 
@@ -150,13 +150,16 @@ Mux Channel 04  Loop Chars/sec: 1523.81
 Mux Channel 05  Loop Chars/sec: 1523.81
 }}}
 
-Run 5000 iteration of the speed (non loopback) test on channel 0 using the `t` command
+   === Check the T command works ===
+
+Run 5000 iteration of the send test on channel 0 using the `t` command
 
 {{{
 0 5000 t
 Mux Channel 00 Send Chars/sec 3333.33
 }}}
 
+  === Run a multiuchannel send test T ===
 
 Run 5000 iteration of the send data speed test on channels 0, 1, 2, and 3 at the same time using the `t` command
 
@@ -167,6 +170,17 @@ Mux Channel 00 Send Chars/sec 2735.04
 Mux Channel 03 Send Chars/sec 2711.86
 Mux Channel 02 Send Chars/sec 2666.67
 }}}
+
+   === Check the U command works ===
+
+Run 5000 iteration of the send test on channel 0 using the `u` command
+
+{{{
+0 5000 u
+Mux Channel 00 Send Chars/sec 3333.33
+}}}
+
+  === Run a multi channel recive test U ===
 
 Run 5000 iteration of the recieve data speed test on channels 0, 1, 2, and 3 at the same time using the `u` command
 
