@@ -27,7 +27,9 @@ NOTE: This only applies to BETA testers with PF v5.2.1BETA.  If you want to try 
 \propforth\Propforth-V.5.2.1-20120519\CurrentRelease\PropForth\PropForthDevFastSerialKernel.spin
 }}}
 
-Verify you can get a SERIAL connection using Telnet as usual, your comport, 230400 baud.  Notice the executing `words` is REALLY fast now!
+Verify you can get a SERIAL connection to `COG6` using Telnet as usual, your comport, 230400 baud.  Notice the executing `words` is REALLY fast now!
+
+Close the TeraTerm comport session after you know the prop is loaded and working.
 
 NOTE: If you try to make a TELNET connection at this pint, you will get a `connection refused` message, as `gomuxterm` is not running yet. 
 
@@ -62,6 +64,50 @@ can't load package: package goterm: import "goterm": cannot find package
 }}}
 
 it means that goshell.bat was not executed, and the go environment has not been set up.  Check that goshell.bat is being run
+
+ == New parameter for goterm and gomuxterm  ==
+
+OK, goterm has the same parameters as before.  Check it still works but running goshell.bat and using
+
+`goterm com5 230400`
+
+You should see that go term permit command history functions provided by the os. 
+
+Now try gomuxterm.  The parameter string has changed to include the number of channels (8, 16, 32, and possibly 4) and a flag for debug mode, 0 is OFF
+
+`gomuxterm com5 230400 8 3000 4000 0`
+
+Notice that we used 8 for the number of channels. The request for testing is to try the different values 8, 16, 32 (and 4 if it works) on your machine. 
+
+You should see:
+{{{
+C:\Documents and Settings\Boss\My Documents\GoFiles\mygo>gomuxterm com4 230400 8 3000 4000 0
+Using 1 CPUs
+
+Rebooting propeller, try 1
+Sending constant definitions:
+
+d_6 wconstant _MX_BSHIFT
+d_64 wconstant _MX_BSIZE
+d_63 wconstant _MX_BMASK
+d_8 wconstant _MX_NUM_CHAN
+d_32 wconstant _MX_BUF_OFFSET
+
+Sending code...
+Sending start command... Waiting for sync
+Starting serial multiplexer
+Listening on 127.0.0.1:3000
+Listening on 192.168.0.248:3000
+Listening on 127.0.0.1:4000
+Listening on 192.168.0.248:4000
+}}}
+
+ == Whats going on (short version) ==
+
+COG6 is listening to gomuxterm, and go muxterm is listeming to port 4000.
+
+COG6 is using 1K of COG RAM as a buffer for 8 channels (channel 0 through channel 7) 
+
 
  -- in progress 20120521 --
 
