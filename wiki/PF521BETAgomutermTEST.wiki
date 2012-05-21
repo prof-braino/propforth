@@ -1,0 +1,37 @@
+#summary Outline for testing PF5.2.1BETA GoMuxTerm.
+#labels v5.2.1BETA
+
+= Introduction =
+
+PropForth v5.2.1 BETA was sent to team members and various frequent users. We want folks to beat on this, particularly the serial connections, to see if they hold up or show any differences from what we expect.  We hope they will be identical to previous behavior, with the addition of having many channels instead of just one.  
+
+The serial channels don't have any particular regression test suite, as the serial channel is the most basic communication and is assumed to be working in the first place. So the best way to test changes to the serial channel is just to start using it.  Sal didn't see any smoke, but we will only know for sure when users put it through its paces and determine that its the same of different. 
+
+= Requested Tests = 
+
+Sal would like to get some throughput data on the various configurations on the various rigs that people use. The BETA has a Test menu that we can access using 
+
+control C
+
+from the command prompt.  We can launch some loop back and throughput tests, and collect the numbers to see if they look like we expect. 
+
+= Set up =
+
+NOTE: This only applies to BETA testers with PF v5.2.1BETA.  If you want to try the BETA (its fast and fun!) email me or post to the parallax boards or PM me and I'll email you a copy. 
+
+  == Set up PF v5.2.1BETA ==
+
+ * Unpack the archive to your hardrive as usual
+ * Using PropTool load the kernel to you propboard Unit Under Test (UIT)
+
+\propforth\Propforth-V.5.2.1-20120519\CurrentRelease\PropForth\PropForthDevFastSerialKernel.spin
+
+
+ -- in progress 20120521 --
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
