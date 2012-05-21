@@ -192,7 +192,9 @@ Mux Channel 00  Rec Chars/sec 1987.58
 Mux Channel 02  Rec Chars/sec 1987.58
 }}}
 
-send the send and recieve tests at the same time
+  === Do the send and receive tests together ===
+
+Run the send and receive tests at the same time
 
 {{{
 0 5000 t 1 5000 t 2 5000 t 3 5000 t 4 5000 s 5 5000 s 6 5000 s 7 5000 s
