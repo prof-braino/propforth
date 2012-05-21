@@ -51,8 +51,10 @@ RENAME the `src` directory to something like `src.old`
  * run the goshell.bat script
  * recompile goterm and gomuxterm
 
- `go install goterm`
- `go install gomuxterm`
+{{{
+go install goterm
+go install gomuxterm
+}}}
 
 NOTE: If you get the message 
 {{{
