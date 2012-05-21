@@ -35,7 +35,31 @@ NOTE: If you try to make a TELNET connection at this pint, you will get a `conne
 
 This uses the same installation of 20120420mygo.zip, with a new `/src` directory.
 
- * unpack 
+In your `mygo` directory (i.e. C:\Documents and Settings\Boss\My Documents\GoFiles\mygo),
+
+RENAME the `src` directory to something like `src.old`
+
+ * unpack the new `2012May19-mygo.src.zip`
+ * copy the `/src` directory to your `mygo` directory
+ * enter the /src directory 
+ * make the /src/serial directoy contains the correct file for your OS (windows is default)
+
+ From a Windows command prompt, recompile goterm and gomuxterm
+
+ * Start-> Run -> cmd
+ * cd C:\Documents and Settings\Boss\My Documents\GoFiles\mygo
+ * run the goshell.bat script
+ * recompile goterm and gomuxterm
+
+ `go install goterm`
+ `go install gomuxterm`
+
+NOTE: If you get the message 
+{{{
+can't load package: package goterm: import "goterm": cannot find package
+}}}
+
+it means that goshell.bat was not executed, and the go environment has not been set up.  Check that goshell.bat is being run
 
  -- in progress 20120521 --
 
