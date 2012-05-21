@@ -27,6 +27,10 @@ NOTE: This only applies to BETA testers with PF v5.2.1BETA.  If you want to try 
 \propforth\Propforth-V.5.2.1-20120519\CurrentRelease\PropForth\PropForthDevFastSerialKernel.spin
 }}}
 
+Verify you can get a SERIAL connection using Telnet as usual.
+
+NOTE: If you try to make a TELNET connection at this pint, you will get a `connection refused` message, as `gomuxterm` is not running yet. 
+
  -- in progress 20120521 --
 
 = Details =
