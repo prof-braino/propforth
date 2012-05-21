@@ -234,21 +234,23 @@ d_32 wconstant _MX_BUF_OFFSET
 
 *From the Propforth command prompt session:
 
- * capture of the test command and output as above.
+ * capture of the test command and output as in the examples above.
 
  * summary if anything looks different than expected.
 
 So far we expect the buffer and the number of CPU's or affect the results.  More CPU's will be faster, and few number of channels will be faster.  
 
- - Doubling the number of channels (using the same workstation)  should decrease the throughput by 5%
+ - Doubling the number of channels (using the same workstation)  should decrease the throughput by 5% (?) This is what we are trying to figure out.
 
- - Doubling the number of CPUs (ie using different workstation)  should increase throughput by 30%
+ - Doubling the number of CPUs (ie using different workstation)  should increase throughput by 30% (?) This is what we are trying to figure out.
 
 
  = delivering the data = 
 
 Users can create results page on the wiki, or email the file  to me or Sal. 
 
-Folks that don't have wiki 'create' access can email to me. 
+Folks that don't have wiki 'page create' permission  can email to me. 
 
- -- in progress 20120521 --
+Thanks!
+
+ -- TESTING in progress week of 20120521 --
