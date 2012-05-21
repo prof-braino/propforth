@@ -206,7 +206,7 @@ Mux Channel 00 Send Chars/sec 1649.48
 Mux Channel 01 Send Chars/sec 1649.48
 Mux Channel 02 Send Chars/sec 1624.37
 Mux Channel 03 Send Chars/sec 1624.37
-}}}}
+}}}
 
  = collecting data =
 
@@ -214,6 +214,25 @@ Please coolect the following data:
  * Number of CPU on the workstation
  * CPU speed in Ghz if possible (1.6 Ghz, 4.0Ghx, etc)
  * type of workstation (desktop, laptop, netbook)
+
+*From the gomuxterm window get the number of CPUs:
+
+{{{
+C:\Documents and Settings\Boss\My Documents\GoFiles\mygo>gomuxterm com4 230400 8 3000 4000 0
+Using 1 CPUs
+
+Rebooting propeller, try 1
+Sending constant definitions:
+
+d_6 wconstant _MX_BSHIFT
+d_64 wconstant _MX_BSIZE
+d_63 wconstant _MX_BMASK
+d_8 wconstant _MX_NUM_CHAN
+d_32 wconstant _MX_BUF_OFFSET 
+
+}}}
+
+*From the Propforth command prompt session:
 
  * capture of the test command and output as above.
 
