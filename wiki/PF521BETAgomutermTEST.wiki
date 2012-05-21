@@ -79,7 +79,7 @@ Now try gomuxterm.  The parameter string has changed to include the number of ch
 
 Notice that we used 8 for the number of channels. The request for testing is to try the different values 8, 16, 32 (and 4 if it works) on your machine. 
 
-You should see:
+You should see (number of CPUs should reflect whats present on your system):
 {{{
 C:\Documents and Settings\Boss\My Documents\GoFiles\mygo>gomuxterm com4 230400 8 3000 4000 0
 Using 1 CPUs
