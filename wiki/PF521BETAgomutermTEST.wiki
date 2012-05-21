@@ -106,8 +106,17 @@ Listening on 192.168.0.248:4000
 
 COG6 is listening to gomuxterm, and go muxterm is listeming to port 4000.
 
-COG6 is using 1K of COG RAM as a buffer for 8 channels (channel 0 through channel 7) 
+COG6 is using 1K of COG RAM as a buffer for 8 channels (channel 0 through channel 7) using TCP/IP port 4000
 
+ = Running the Tests =
+
+ = collecting data =
+
+ = delivering the data = 
+
+Users can create results page on the wiki, or email the file  to me or Sal. 
+
+Folks that don't have wiki 'create' access can email to me. 
 
  -- in progress 20120521 --
 
