@@ -50,7 +50,6 @@ Intel Pentium 2.4Ghz
 {{{
 6 5000 s
 Mux Channel 06  Loop Chars/sec: 473.37
-
 4 5000 s 5 5000 s 6 5000 s 7 5000 s
 Mux Channel 04  Loop Chars/sec: 208.33
 Mux Channel 05  Loop Chars/sec: 208.33
@@ -59,7 +58,6 @@ Mux Channel 07  Loop Chars/sec: 208.20
 
 0 5000 t
 Mux Channel 00 Send Chars/sec 471.98
-
 0 5000 t 1 5000 t 2 5000 t 3 5000 t
 Mux Channel 01 Send Chars/sec 220.69
 Mux Channel 00 Send Chars/sec 220.84
@@ -68,7 +66,6 @@ Mux Channel 02 Send Chars/sec 220.69
 
 0 5000 u
 Mux Channel 00  Rec Chars/sec 893.85
-
 0 5000 u 1 5000 u 2 5000 u 3 5000 u
 Mux Channel 00  Rec Chars/sec 543.29
 Mux Channel 02  Rec Chars/sec 543.29
@@ -112,6 +109,7 @@ Mux Channel 04  Loop Chars/sec: 239.52
 Mux Channel 05  Loop Chars/sec: 238.98
 Mux Channel 06  Loop Chars/sec: 238.98
 Mux Channel 07  Loop Chars/sec: 238.81
+
 0 5000 t
 Mux Channel 00 Send Chars/sec 786.24
 0 5000 t 1 5000 t 2 5000 t 3 5000 t
@@ -119,6 +117,7 @@ Mux Channel 00 Send Chars/sec 243.35
 Mux Channel 03 Send Chars/sec 243.53
 Mux Channel 01 Send Chars/sec 242.98
 Mux Channel 02 Send Chars/sec 242.61
+
 0 5000 u
 Mux Channel 00  Rec Chars/sec 2000.00
 0 5000 u 1 5000 u 2 5000 u 3 5000 u
@@ -139,6 +138,7 @@ Mux Channel 04  Loop Chars/sec: 239.52
 Mux Channel 05  Loop Chars/sec: 239.16
 Mux Channel 06  Loop Chars/sec: 239.16
 Mux Channel 07  Loop Chars/sec: 238.98
+
 0 5000 t
 Mux Channel 00 Send Chars/sec 786.24
 0 5000 t 1 5000 t 2 5000 t 3 5000 t
@@ -146,6 +146,7 @@ Mux Channel 00 Send Chars/sec 243.53
 Mux Channel 02 Send Chars/sec 243.35
 Mux Channel 01 Send Chars/sec 243.35
 Mux Channel 03 Send Chars/sec 242.79
+
 0 5000 u
 Mux Channel 00  Rec Chars/sec 2000.00
 0 5000 u 1 5000 u 2 5000 u 3 5000 u
@@ -165,6 +166,7 @@ Mux Channel 04  Loop Chars/sec: 239.34
 Mux Channel 05  Loop Chars/sec: 239.34
 Mux Channel 06  Loop Chars/sec: 239.16
 Mux Channel 07  Loop Chars/sec: 238.98
+
 0 5000 t
 Mux Channel 00 Send Chars/sec 786.24
 0 5000 t 1 5000 t 2 5000 t 3 5000 t
@@ -172,6 +174,7 @@ Mux Channel 00 Send Chars/sec 243.16
 Mux Channel 01 Send Chars/sec 243.16
 Mux Channel 02 Send Chars/sec 242.79
 Mux Channel 03 Send Chars/sec 242.61
+
 0 5000 u
 Mux Channel 00  Rec Chars/sec 2000.00
 0 5000 u 1 5000 u 2 5000 u 3 5000 u
