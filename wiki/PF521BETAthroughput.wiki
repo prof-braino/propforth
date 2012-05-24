@@ -267,6 +267,31 @@ Mux Channel 01  Rec Chars/sec 2000.00
 }}}
 
 === TWO CPUS - 4 channels ===
+
+{{{
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 2000.00
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 05  Loop Chars/sec: 1474.65
+Mux Channel 04  Loop Chars/sec: 1474.65
+Mux Channel 07  Loop Chars/sec: 1474.65
+Mux Channel 06  Loop Chars/sec: 1474.65
+0 5000 t
+Mux Channel 00 Send Chars/sec 3298.97
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 01 Send Chars/sec 2711.86
+Mux Channel 00 Send Chars/sec 2666.67
+Mux Channel 02 Send Chars/sec 2666.67
+Mux Channel 03 Send Chars/sec 2644.63
+0 5000 u
+Mux Channel 00  Rec Chars/sec 2012.58
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 00  Rec Chars/sec 1987.58
+Mux Channel 03  Rec Chars/sec 2000.00
+Mux Channel 01  Rec Chars/sec 2000.00
+Mux Channel 02  Rec Chars/sec 1987.58
+
+}}}
 === TWO CPUS - 1 channels ===
 
 
