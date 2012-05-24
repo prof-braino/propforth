@@ -47,11 +47,12 @@ Please capture the numbers of CPUs when gomuxterm is launched
 Intel Pentium 2.4Ghz
 
 === one CPU - 32 channels ===
+/ One channel loopback
 {{{
 6 5000 s
 Mux Channel 06  Loop Chars/sec: 473.37
 }}}
-
+/ four channel loopback
 {{{
 4 5000 s 5 5000 s 6 5000 s 7 5000 s
 Mux Channel 04  Loop Chars/sec: 208.33
@@ -59,14 +60,12 @@ Mux Channel 05  Loop Chars/sec: 208.33
 Mux Channel 06  Loop Chars/sec: 208.20
 Mux Channel 07  Loop Chars/sec: 208.20
 }}}
-
-
+/ one channel transmit
 {{{
 0 5000 t
 Mux Channel 00 Send Chars/sec 471.98
 }}}
-
-
+/ four channel transmit
 {{{
 0 5000 t 1 5000 t 2 5000 t 3 5000 t
 Mux Channel 01 Send Chars/sec 220.69
@@ -74,14 +73,12 @@ Mux Channel 00 Send Chars/sec 220.84
 Mux Channel 03 Send Chars/sec 220.84
 Mux Channel 02 Send Chars/sec 220.69
 }}}
-
-
+/one channel receive
 {{{
 0 5000 u
 Mux Channel 00  Rec Chars/sec 893.85
 }}}
-
-
+/ four channel receive
 {{{
 0 5000 u 1 5000 u 2 5000 u 3 5000 u
 Mux Channel 00  Rec Chars/sec 543.29
