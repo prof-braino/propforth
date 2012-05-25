@@ -25,6 +25,25 @@ At the current configuration, COG6 has 1K of its RAM allocated to buffer for the
 Please capture the numbers of CPUs when gomuxterm is launched
 
 = Test commands =
+PFv5.2.1BETA includes a test function to exercise the MCS serial for loopback, send and receive.  CONTROL-C launches the test menu. 
+
+{{{
+CONTROL PANEL
+h       - prints help
+?       - print status
+q       - disconnect
+
+nn c    - connects to channel nn as a telnet connection (CTL-c will invoke CONTROL PANEL)
+
+n1 n2 s - run a loopback speed test on channel n1 for n2 bytes -- 4 <= n1 <= 32, 100 <= n2 <= 10000
+
+n1 n2 t - run a send speed test on channel n1 for n2 bytes (data from prop) --  0 <= n1 <= 3, 100 <= n2 <= 10000
+
+n1 n2 u - run a receive speed test on channel n1 for n2 bytes (data to prop) --  0 <= n1 <= 3, 100 <= n2 <= 10000
+}}}
+
+These are the test functions we want to run on all configurations. Send 5000 character over the channels, determine characters per second.
+
 {{{
 / One channel loopback
 6 5000 s
