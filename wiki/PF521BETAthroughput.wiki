@@ -495,7 +495,7 @@ Can we guess using the above data?  No.
 The data might be saying this:
 
  * Above 1.8 Ghz, the workstation is fast enough to saturate the asynchronous serial connection
- * the maximum throughput for this test (synchronous serial protocol over asynchronous serial comport hardware) should be around 2000 cps, some numbers come out above that due to the timing of the ways the data is collected ( * * * Or I got this wrong, and the numbers can be way higher)  
+ * the maximum throughput for this test (synchronous serial protocol over asynchronous serial comport hardware) should be around 2000 cps, some numbers come out above that due to the timing of the ways the data is collected ( Or I got this wrong, and the numbers can be way higher)  
  * we start to notice the impact of multiple channels above 8 channels at 16 channels, where send and receive tests are both below 2000 cps on a 1.8Ghz workstation
  * 16 channels is still 75% of maximum; 32 channels is 40% maximum.  We can set up future experiments to run 32 channels, and talk to all the cogs on 4 physical prop chips at the same time, or 32 prop chips through 1 cog.  If more speed (higher cps throughput) is needed we can drop back to 16 channels.  
  
