@@ -64,7 +64,7 @@ These are the test functions we want to run on all configurations. Send 5000 cha
 
 == one CPU ==
 
-Intel Pentium 2.4Ghz
+Intel Pentium 1.7Ghz (Evo)
 
 === one CPU - 32 channels ===
 {{{
