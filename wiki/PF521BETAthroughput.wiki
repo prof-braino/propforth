@@ -70,7 +70,7 @@ As of 20120525, there are 3 sets off data listed.
 
 == one CPU ==
 
-UUT1 - Intel Pentium 4 at 1.7Ghz (Evo)
+UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) Windows XP
 
 === one CPU - 32 channels ===
 {{{
@@ -210,7 +210,7 @@ Mux Channel 03  Rec Chars/sec 1882.35
 
 == UUT3 - one CPU ==
 
-UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU
+UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP
 
 === UUT3 - one CPU - 32 channels ===
 {{{
@@ -339,7 +339,7 @@ Mux Channel 03  Rec Chars/sec 1975.31
 
 == TWO CPU ==
 
-UUT2 - Intel E6750 at 3.4 Ghz
+UUT2 - Intel E6750 at 3.4 Ghz Windows XP
 
 === TWO CPUS - 32 channels ===
 
@@ -488,9 +488,15 @@ Can we guess using the above data?  No.
 === n CPU - 4 channels ===
 === n CPU - 1 channels ===
 
+-----
 
+= Summary =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The data might be saying this:
+
+ * Above 1.8 Ghz, the workstation is fast enough to saturate the asynchronous serial connection
+ * the maximum throughput for this test should be around 2000 cps, some numbers come out above that due to the timing of the ways the data is collected
+ * we start to notice the impact of multiple channels above 8 channels at 16 channels, where send and receive tests are both below 2000 cps on a 1.8Ghz workstation
+ * 16 channels is still 75% of maximum; 32 channels is 40% maximum.  We can set up future experiments to run 32 channels, and talk to all the cogs on 4 physical prop chips at the same time, or 32 prop chips through 1 cog.  If more speed (higher cps throughput) is needed we can drop back to 16 channels.  
+ 
+-- End 20120525 --
