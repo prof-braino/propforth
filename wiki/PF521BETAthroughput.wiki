@@ -68,6 +68,12 @@ Data is listed by number of CPU, processor speed, number of channels.
 
 As of 20120525, there are 3 sets off data listed.
 
+ # UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) Windows XP
+ # UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP
+ # UUT2 - Intel E6750 at 3.4 Ghz Windows XP
+
+-----
+
 == one CPU ==
 
 UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) Windows XP
