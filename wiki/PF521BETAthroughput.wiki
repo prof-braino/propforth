@@ -66,10 +66,11 @@ Unit Under Test #: an ID for each text box listed; assigned in teh order receive
 
 Data is listed by number of CPU, processor speed, number of channels.
 
-As of 20120525, there are 3 sets off data listed.
+As of 20120526, there are 4 sets off data listed.
 
  # UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) - 1 CPU Windows XP
  # UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP
+ # UUT4 - Intel t2450 at 2.0 Ghz Windows XP
  # UUT2 - Intel E6750 at 3.4 Ghz - 2 CPUs Windows XP
 
 -----
@@ -342,6 +343,131 @@ Mux Channel 02  Rec Chars/sec 1975.31
 Mux Channel 03  Rec Chars/sec 1975.31
 }}}
 
+== TWO CPU ==
+
+UUT4 - Intel t2450 at 2.0 Ghz Windows XP
+
+=== UUT4 - TWO CPUS - 32 channels ===  
+{{{ 
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 844.33
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 494.59
+Mux Channel 06  Loop Chars/sec: 493.83
+Mux Channel 05  Loop Chars/sec: 492.31
+Mux Channel 07  Loop Chars/sec: 491.55
+0 5000 t
+Mux Channel 00 Send Chars/sec 883.98
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 01 Send Chars/sec 855.61
+Mux Channel 00 Send Chars/sec 846.56
+Mux Channel 03 Send Chars/sec 848.81
+Mux Channel 02 Send Chars/sec 846.56
+0 5000 u
+Mux Channel 00  Rec Chars/sec 881.54
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 01  Rec Chars/sec 552.68
+Mux Channel 02  Rec Chars/sec 553.63
+Mux Channel 00  Rec Chars/sec 553.63
+Mux Channel 03  Rec Chars/sec 552.68
+ }}}
+=== UUT4 - TWO CPUS - 16 channels === 
+{{{  
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 1684.21
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 06  Loop Chars/sec: 987.65
+Mux Channel 04  Loop Chars/sec: 990.71
+Mux Channel 05  Loop Chars/sec: 987.65
+Mux Channel 07  Loop Chars/sec: 987.65
+0 5000 t
+Mux Channel 00 Send Chars/sec 1739.13
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 01 Send Chars/sec 1616.16
+Mux Channel 00 Send Chars/sec 1600.00
+Mux Channel 02 Send Chars/sec 1592.04
+Mux Channel 03 Send Chars/sec 1584.16
+0 5000 u
+Mux Channel 00  Rec Chars/sec 1748.63
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 987.65
+Mux Channel 02  Rec Chars/sec 987.65
+Mux Channel 00  Rec Chars/sec 987.65
+Mux Channel 01  Rec Chars/sec 987.65
+}}}
+=== UUT4 - TWO CPUS - 8 channels === 
+{{{ 
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 2000.00
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 07  Loop Chars/sec: 1454.55
+Mux Channel 05  Loop Chars/sec: 1454.55
+Mux Channel 04  Loop Chars/sec: 1454.55
+Mux Channel 06  Loop Chars/sec: 1454.55
+0 5000 t
+Mux Channel 00 Send Chars/sec 3200.00
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 2711.86
+Mux Channel 01 Send Chars/sec 2689.08
+Mux Channel 03 Send Chars/sec 2601.63
+Mux Channel 02 Send Chars/sec 2601.63
+0 5000 u
+Mux Channel 00  Rec Chars/sec 2012.58
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 1987.58
+Mux Channel 01  Rec Chars/sec 1987.58
+Mux Channel 00  Rec Chars/sec 2000.00
+Mux Channel 02  Rec Chars/sec 2000.00
+}}}
+=== UUT4 - TWO CPUS - 4 channels === 
+{{{  
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 2012.58
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 07  Loop Chars/sec: 1531.10
+Mux Channel 06  Loop Chars/sec: 1531.10
+Mux Channel 04  Loop Chars/sec: 1531.10
+Mux Channel 05  Loop Chars/sec: 1531.10
+0 5000 t
+Mux Channel 00 Send Chars/sec 3200.00
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 2711.86
+Mux Channel 01 Send Chars/sec 2666.67
+Mux Channel 02 Send Chars/sec 2644.63
+Mux Channel 03 Send Chars/sec 2622.95
+0 5000 u
+Mux Channel 00  Rec Chars/sec 2012.58
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 01  Rec Chars/sec 2000.00
+Mux Channel 02  Rec Chars/sec 1987.58
+Mux Channel 03  Rec Chars/sec 1987.58
+Mux Channel 00  Rec Chars/sec 1987.58
+}}}
+=== UUT4 - TWO CPUS - 1 channels === 
+{{{ 
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 2000.00
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 05  Loop Chars/sec: 1488.37
+Mux Channel 06  Loop Chars/sec: 1488.37
+Mux Channel 04  Loop Chars/sec: 1481.48
+Mux Channel 07  Loop Chars/sec: 1481.48
+0 5000 t
+Mux Channel 00 Send Chars/sec 3232.32
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 01 Send Chars/sec 2782.61
+Mux Channel 00 Send Chars/sec 2735.04
+Mux Channel 03 Send Chars/sec 2689.08
+Mux Channel 02 Send Chars/sec 2689.08
+0 5000 u
+Mux Channel 00  Rec Chars/sec 2012.58
+
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 02  Rec Chars/sec 2000.00
+Mux Channel 03  Rec Chars/sec 1987.58
+Mux Channel 01  Rec Chars/sec 1987.58
+Mux Channel 00  Rec Chars/sec 1975.31
+}}}
 
 == TWO CPU ==
 
