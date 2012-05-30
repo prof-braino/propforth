@@ -46,7 +46,7 @@ http://www.forth.com/ Forth Inc
 
 = other forth experts =
 
-http://pygmy.utoh.org/ Frank Sargent
+http://pygmy.utoh.org/ Frank Sargent Pygmy Forth for the PC http://pygmy.utoh.org/pygmyforth.html is my favorite forth for PC.
 
 http://bernd-paysan.de/
 
