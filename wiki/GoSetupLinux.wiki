@@ -1,16 +1,31 @@
 #summary Notes from Rick on Go Setup.
 #labels Gochannels,linux,OLPC,v5.0,MCS
 
-= Introduction =
+= Go channels set up for Linux =
+
+Thing about Linux is there are a lot of ways the various installs can be different.  Rick got his it run just fine on a standard PC install. Braino is having some issues with the Fedora version on the OLPC XO. 
+
+This page is to collect all the steps specific to Linux, to determine what goes wrong in the Fedora install. 
+
+= Linux instructions =
+
+These are the notes distilled from the items referenced below 
+
+ == steps ==
+
+
+= References =
+
+  == general Go Setup instructions ==
 
 These are in addition to the regular Go setup notes http://code.google.com/p/propforth/wiki/GoSetup20120511
 
-and the otiginal (depracted) notes 
+and the original (deprecated) notes 
 http://code.google.com/p/propforth/wiki/GoSetup20120422
 
 These are on a separate page as there still may be issues in the instructions.  
 
-= Details =
+ == Forum Posts ==
 
 These notes are constructed from the notes in the propforth thread on the parallax forums
 
