@@ -27,6 +27,19 @@ export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
  #  cd to my code directory /code/go/mygo and was able to run goterm and gomuxterm without problems.
  #  I know, please write it up for the wiki (*got this covered!*)
 
+   === Questions ===
+
+ # I see gedit.  
+   * How to set up a terminal tab in the bottom 
+   * How to add GO (the extension .go) into the list of program source?
+   * Or do we use C highlighting, how to associate .go with that?
+   
+  under preferences -> Plugins -> Active Plugins checked the box for External Tools.  Under Configure Plugin I see Build, Open Terminal (Do I go in here everry time I need a terminal, or is there a way to get this in the menu?) Remove trailing spaces, Run Command.
+
+Opening Run Command -> Applicability [...] brought up a language selection window, and the XO froze.  The mouse moves and the seconds on the clock update, but no other response. Could not shut down, removed battery. 
+
+-----
+
  == steps from post 80 ==
 
  == steps from post 83 ==
