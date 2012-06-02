@@ -51,14 +51,33 @@ Note to self -  don't try "Run Command -> Applicability [...]" till its fixed.
 -----
 
  == steps from post 80 ==
+   === Questions ===
+   ==== Answers ====
+-----
 
  == steps from post 83 ==
+   === Questions ===
+   ==== Answers ====
+-----
+
 
  == steps from post 88 ==
+   === Questions ===
+   ==== Answers ====
+-----
+
 
  == steps from post 89 ==
+   === Questions ===
+   ==== Answers ====
+-----
+
 
  == steps from post 93 ==
+   === Questions ===
+   ==== Answers ====
+-----
+
 
 = References =
 
