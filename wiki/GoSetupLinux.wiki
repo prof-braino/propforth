@@ -27,6 +27,15 @@ export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
  #  cd to my code directory /code/go/mygo and was able to run goterm and gomuxterm without problems.
  #  I know, please write it up for the wiki (*got this covered!*)
 
+ == steps from post 80 ==
+
+ == steps from post 83 ==
+
+ == steps from post 88 ==
+
+ == steps from post 89 ==
+
+ == steps from post 93 ==
 
 = References =
 
@@ -43,7 +52,7 @@ These are on a separate page as there still may be issues in the instructions.
 
 These notes are constructed from the notes in the propforth thread on the parallax forums
 
-Post 75 - Rick's summary of linux steps - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1093022&viewfull=1#post1093022
+Post 57 - Rick's summary of linux steps - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1093022&viewfull=1#post1093022
 
 post 80 - Fedora OLPC XO issues - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1100989&viewfull=1#post1100989
 
