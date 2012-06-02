@@ -21,8 +21,8 @@ Speaking of Linux, I go things running there without major effort or problems.
  #  I updated my .bashrc as follows:
 {{{
 export GOROOT=/opt/go
-export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
-}}} - at this point, I bounced out of and back into terminal to get all my settings how I wanted them
+export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo }}} 
+- at this point, I bounced out of and back into terminal to get all my settings how I wanted them
  #  cd to my code directory /code/go/mygo and was able to run goterm and gomuxterm without problems.
  #  I know, please write it up for the wiki (*got this covered!*)
 
