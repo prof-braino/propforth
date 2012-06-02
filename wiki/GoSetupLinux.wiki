@@ -37,7 +37,7 @@ export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
 
 Opening Run Command -> Applicability [...] brought up a language selection window, and the XO froze.  The mouse moves and the seconds on the clock update, but no other response. Could not shut down, removed battery. 
 
-  ==== Answers ====
+  === Answers ===
 
  * GEDIT Terminal Tab
 
@@ -53,7 +53,20 @@ Note to self -  don't try "Run Command -> Applicability [...]" till its fixed.
 
    * GEDIT : go context highlighting
 
+  === Summary ===
+
+{{{
+export GOROOT=/opt/go 
+export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo 
+}}}
+
+GOROOT=/opt/go ; this is directory where GO was INSTALLED
+
+GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo 
+/ ; the first GOPATH is your home directoy for your go source code, the second GOPATH is to the mygo directoy containing the propforth MCS/go channel interface support package
+
 need coffee, must pause
+
 
 -----
 
