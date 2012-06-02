@@ -58,7 +58,7 @@ The are some {{{ serial  }}}  related constants at lines 54 through 60
 The high level forth definition for {{{ serial }}} is at line 2459
 
 what {{{serial}}} does:
- # changes baud to number of cock cycles
+ # changes baud to number of clock cycles
  # takes the string to be displayed in {{{cog?}}} and sets it up
  # takes cog and marks it as no longer available {{{(4 state nc!)}}}
  # sets flags (HC08 is 1 done expand CRFL)
