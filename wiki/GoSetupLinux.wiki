@@ -38,6 +38,16 @@ export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
 
 Opening Run Command -> Applicability [...] brought up a language selection window, and the XO froze.  The mouse moves and the seconds on the clock update, but no other response. Could not shut down, removed battery. 
 
+  ==== Answers ====
+
+After checking box for External Tools (and a forced restart in my case),  the Tools Menu has the option "External Tools".  This contains options Build, Open Terminal Here, Remove Trailing Spaces, Run command. 
+
+Checking the "Run Command -> Applicability [...]" issue again, the same thing happened.  This time, I tried the power button, this put the XO into sleep mode.  When it came back up, it was still in the "mouse and clock only" state. 
+
+Holding the power button for several seconds got a full shutdown, restart came up working with no windows o applications running. 
+
+Note to self -  don't try "Run Command -> Applicability [...]" till its fixed. 
+
 -----
 
  == steps from post 80 ==
