@@ -29,16 +29,17 @@ export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
 
    === Questions ===
 
- # I see gedit.  
-   * How to set up a terminal tab in the bottom 
-   * How to add GO (the extension .go) into the list of program source?
-   * Or do we use C highlighting, how to associate .go with that?
+ * GEDIT : How to set up a terminal tab in the bottom 
+ * GEDIT : How to add GO (the extension .go) into the list of program source?
+ * GEDIT : Or do we use C highlighting, how to associate .go with that?
    
   under preferences -> Plugins -> Active Plugins checked the box for External Tools.  Under Configure Plugin I see Build, Open Terminal (Do I go in here everry time I need a terminal, or is there a way to get this in the menu?) Remove trailing spaces, Run Command.
 
 Opening Run Command -> Applicability [...] brought up a language selection window, and the XO froze.  The mouse moves and the seconds on the clock update, but no other response. Could not shut down, removed battery. 
 
   ==== Answers ====
+
+ * GEDIT Terminal Tab
 
 After checking box for External Tools (and a forced restart in my case),  the Tools Menu has the option "External Tools".  This contains options Build, Open Terminal Here, Remove Trailing Spaces, Run command. 
 
@@ -47,6 +48,10 @@ Checking the "Run Command -> Applicability [...]" issue again, the same thing ha
 Holding the power button for several seconds got a full shutdown, restart came up working with no windows o applications running. 
 
 Note to self -  don't try "Run Command -> Applicability [...]" till its fixed. 
+
+   * Adding GO .go extension to list of identifed languages
+
+   * go context highlighting
 
 -----
 
