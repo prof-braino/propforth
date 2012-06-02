@@ -49,9 +49,11 @@ Holding the power button for several seconds got a full shutdown, restart came u
 
 Note to self -  don't try "Run Command -> Applicability [...]" till its fixed. 
 
-   * Adding GO .go extension to list of identifed languages
+   * GEDIT : Adding GO .go extension to list of identifed languages
 
-   * go context highlighting
+   * GEDIT : go context highlighting
+
+need coffee, must pause
 
 -----
 
