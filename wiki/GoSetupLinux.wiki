@@ -16,15 +16,14 @@ These are the notes distilled from the items referenced below
 Speaking of Linux, I go things running there without major effort or problems.
 
  # I skipped over all the emacs stuff. I use GEDIT with a termial tab at the bottom.
- # Install the new Go package as instructed by the folks at golang.org
-(I ended up putting my Go in /opt/go)
+ # Install the new Go package as instructed by the folks at golang.org (I ended up putting my Go in /opt/go)
  #  I downloaded the mygo.zip from the PropForth downloads and unzipped it into my code directory (/home/rapost/code/go)
  #  I updated my .bashrc as follows:
+{{{
 export GOROOT=/opt/go
 export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
-- at this point, I bounced out of and back into terminal to get all my settings how I wanted them
+}}} - at this point, I bounced out of and back into terminal to get all my settings how I wanted them
  #  cd to my code directory /code/go/mygo and was able to run goterm and gomuxterm without problems.
-
  #  I know, please write it up for the wiki (*got this covered!*)
 
 
