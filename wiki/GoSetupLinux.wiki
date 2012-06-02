@@ -1,0 +1,32 @@
+#summary Notes from Rick on Go Setup.
+#labels Gochannels,linux,OLPC,v5.0,MCS
+
+= Introduction =
+
+These are in addition to the regular Go setup notes http://code.google.com/p/propforth/wiki/GoSetup20120511
+
+and the otiginal (depracted) notes 
+http://code.google.com/p/propforth/wiki/GoSetup20120422
+
+These are on a separate page as there still may be issues in the instructions.  
+
+= Details =
+
+These notes are constructed from the notes in the propforth thread on the parallax forums
+
+Post 75 - Rick's summary of linux steps - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1093022&viewfull=1#post1093022
+
+post 80 - Fedora OLPC XO issues - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1100989&viewfull=1#post1100989
+
+Post 83 - env variables - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1101476&viewfull=1#post1101476
+
+
+Post 88 - env variables - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1101590&viewfull=1#post1101590
+
+Post 89 - Test subroutine execution - http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1101626&viewfull=1#post1101626
+
+Post 93 - error message -  http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1101986&viewfull=1#post1101986
+
+= End = 
+
+end of notes 20120602 
