@@ -63,19 +63,91 @@ export GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
 GOROOT=/opt/go ; this is directory where GO was INSTALLED
 
 GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo 
-/ ; the first GOPATH is your home directoy for your go source code, the second GOPATH is to the mygo directoy containing the propforth MCS/go channel interface support package
-
-need coffee, must pause
-
+; the first GOPATH is your home directory for your go source code, 
+; the second GOPATH is to the mygo directory containing the 
+; propforth MCS/go channel interface support package
 
 -----
 
  == steps from post 80 ==
+
+using OLPC XO, which linux 386 fedora.
+
+Install is to 
+/usr/local/go 
+per the instructions at http://golang.org/doc/install
+
+Code is at 
+/home/oplc/Code/Gocode 
+(per your example, which makes more sense than the instruction I posted)
+This has the bin, pkg, and src from the mygo download.
+
+The instructions indicate that only the PATH needs to be set so in .bashrc I have:
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=/usr/local/go/:/home/oplc/Code/Gocode
+
+the environment variable from "go env"
+
+GOROOT="/usr/local/go"
+
+Hello.go will compile and run, but
+
+"go install goterm"
+
+gives the message
+# runtime/cgo
+exec gcc: exeec: "gcc": executable file not found in $PATH
+
+I tried including various paths in HOME, PATH, GOROOT, and GOPATH, but no luck, and I'm just hacking now.
+
    === Questions ===
+
+Do we need PATH set for Go in Linux?
+What does PATH need to be set to? 
+Is GOROOT set automatically?
+What other environment variables need to be set, are they set automatically?
+
+Does Go need GCC?
+Does the error message say the GCC is NOT installed?
+
    ==== Answers ====
+
 -----
 
  == steps from post 83 ==
+My go env gives this:
+
+Code:
+{{{
+[rapost@C3PO go]$ go env
+GOROOT="/opt/go"
+GOBIN=""
+GOARCH="amd64"
+GOCHAR="6"
+GOOS="linux"
+GOEXE=""
+GOHOSTARCH="amd64"
+GOHOSTOS="linux"
+GOTOOLDIR="/opt/go/pkg/tool/linux_amd64"
+GOGCCFLAGS="-g -O2 -fPIC -m64 -pthread"
+CGO_ENABLED="1"
+}}}
+If I do "which gcc", I get this:
+Code:
+{{{
+[rapost@C3PO go]$ which gcc
+/usr/bin/gcc
+}}}
+If I do "which gccgo", I get this:
+Code:
+{{{
+[rapost@C3PO go]$ which gccgo
+/usr/bin/gccgo
+}}}
+I'm trying to find out if there's a way to get a verbose listing of the install to see what's actually happening.
+
+It's strange that the simple program works but something in the more complex fails. 
    === Questions ===
    ==== Answers ====
 -----
