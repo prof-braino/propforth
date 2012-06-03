@@ -150,7 +150,25 @@ It's strange that the simple program works but something in the more complex fai
    === Questions ===
    ==== Answers ====
 -----
- == steps from post 88 ==
+ == steps from post 87 ==
+
+@PB
+
+If I remember correctly, I just unpacked (untarred?), the release package into /opt/go and set the paths. Nothing beyond that other than setting up the env variables.
+
+I'm not sure if gcc and gccgo play a part. From what I was reading, they shouldn't but your error message might indicate otherwise. I was looking through golang-nut mailing list for any clues last night and didn't see anything.
+
+Can you go to the directory where the source file is: /home/rapost/code/go/src/goterm in my case and then try
+
+go run goterm.go
+
+I think this will run the program directly without tryning to do all the package stuff. If you still get an error, then we probably need to look at your install or see if you need gcc. A simple go program that used a go routine might be interesting to try. It appears that while go doesn't have a byte code interpreter or virtual machine to contend with, there is a runtime wrapper of sorts that goes around the program (you're not directly executing your code on the hardware). I'm wondering if the simple hello.go program doesn't cause the runtime to try something that the more complicated (go routines) goterm program causes to happen. Whenever you do that thing - BOOM!
+
+The $3.03 Kindle book on Go programming was pretty helpful reading last night until my iPad hit me in the face when I finally dozed off. It has some language issues (grammar and such) but the content seems to be spot on.
+
+The Way to Go: A Thorough Introduction to the Go Programming Language
+
+Still working the issue as time permits. What a great way to learn!! 
 
    === Questions ===
    ==== Answers ====
@@ -158,12 +176,68 @@ It's strange that the simple program works but something in the more complex fai
 
 
  == steps from post 89 ==
+Prof B. I think we cross posted - back up a couple and this one make more sense.
+
+Simple program using go routines. I put this into a file name goroutines.go in /code/go/src/goroutines
+
+Code:
+{{{
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func simulateEvent(name string, timeInSecs time.Duration) { 
+    // sleep for a while to simulate time consumed by event
+    fmt.Println("Started ", name, ": Should take", timeInSecs, "seconds.")
+    time.Sleep(time.Duration(timeInSecs * 1e9))
+    fmt.Println("Finished ", name)
+}
+
+func main() {
+    go simulateEvent("100m sprint", 10) //start 100m sprint, it should take 10 seconds
+    go simulateEvent("Long jump", 6) //start long jump, it should take 6 seconds
+    go simulateEvent("High jump", 3) //start high jump, it should take 3 seconds
+
+    //so that the program doesn't exit here, we make the program wait here for a while
+    time.Sleep(time.Duration(12 * 1e9))
+}
+}}}
+from inside that directory, you can do "go run goroutines.go"
+
+from outside that directory, you can do "go install goroutines"
+
+Code:
+{{{
+[rapost@C3PO code]$ goroutines
+Started  100m sprint : Should take 10ns seconds.
+Started  Long jump : Should take 6ns seconds.
+Started  High jump : Should take 3ns seconds.
+Finished  High jump
+Finished  Long jump
+Finished  100m sprint
+}}}
+You should see output like the above.
+(ignore the 'ns seconds' - something funky in the example.)
+
+If this works, we'll need to dig into goterm.go and see what it does that's different.
+
+I hope we can get this working for you....go is starting to grow on me! 
    === Questions ===
    ==== Answers ====
 -----
-
-
  == steps from post 93 ==
+PB, it sounds like the GO compiler doesn't like something in your source file. I think that message is basically, "I got to line 2, column 1 and didn't find the keyword package." This sounds like a cut/paste format problem copying the source to the linux box.
+
+It complains differently if it can't find the packages to import.
+
+If your GOROOT points to the correct directory (where you installed it), GO should be able to find everything.
+
+I pretty sure go is a standalone package....but I can't test that since all of my Linux boxes (even the BeagleBone) have gcc installed as part of the distribution.
+
+We'll get thsi figured out somehow! 
    === Questions ===
    ==== Answers ====
 -----
