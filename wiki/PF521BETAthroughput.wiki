@@ -611,7 +611,7 @@ Mux Channel 00  Rec Chars/sec 2000.00
 
 Partial data  for UUT6
 
-== Four CPUs ==
+== UUT6 - Intel I5-2520 CPU @ 2.5Ghz - 4GB RAM - Four CPUs ==
 
 === Four CPUs - 32 channels ===
 Not collected
