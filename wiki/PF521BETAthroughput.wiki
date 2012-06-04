@@ -618,7 +618,7 @@ Not collected
 === Four CPUs - 16 channels ===
 Not collected
 === UUT6 - Four CPUs - 8 channels ===
-=JUST THE FACTS=
+ - JUST THE FACTS - 
 {{{
 gomuxterm tests @ 230400
 4 cpu (Intel I5-2520 CPU @ 2.5Ghz) - 4GB RAM
