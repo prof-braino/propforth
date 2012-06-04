@@ -610,23 +610,14 @@ Mux Channel 00  Rec Chars/sec 2000.00
 }}}
 
 -----
-
 Partial data  for UUT6
-
 == UUT6 - Intel I5-2520 CPU @ 2.5Ghz - 4GB RAM - Four CPUs ==
-
 === Four CPUs - 32 channels ===
-
 Not collected
-
 === Four CPUs - 16 channels ===
-
 Not collected
-
 === UUT6 - Four CPUs - 8 channels ===
-
  - JUST THE FACTS - 
-
 {{{
 gomuxterm tests @ 230400
 4 cpu (Intel I5-2520 CPU @ 2.5Ghz) - 4GB RAM
@@ -657,28 +648,19 @@ Mux Channel 00 Send Chars/sec 1829.12
 Mux Channel 02 Send Chars/sec 1789.12
 Mux Channel 03 Send Chars/sec 1778.51
 }}}
-
 === Four CPUs - 4 channels ===
-
 Not collected
-
 === Four CPUs - 1 channels ===
-
 Not collected
-
 -----
 == UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16  ==
-
 UUT7 - 4 cpu (Intel i3 M370 @ 2.4GHz) - 8GB RAM Fedora 16 Linux
-
-=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 32 channels === {{{ }}}
-
+=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 32 channels === 
+{{{ }}}
 Not collected 
-
-=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 16 channels === {{{ }}}
-
+=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 16 channels === 
+{{{ }}}
 Not collected
-
 === UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 8 channels === 
 {{{ 
 4 5000 s 5 5000 s 6 5000 s 7 5000 s
@@ -706,21 +688,15 @@ Mux Channel 03 Send Chars/sec 3891.66
 Mux Channel 02 Send Chars/sec 3948.82
 Mux Channel 01 Send Chars/sec 3985.05
 }}} 
-=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 4 channels ===  {{{ }}}
-
+=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 4 channels === 
+ {{{ }}}
 Not collected
-
-=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 1 channels ===  {{{ }}}
-
+=== UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 1 channels === 
+{{{ }}}
 Not collected
-
-
 -----
-
 == UUT5 - OLPC-XO at 433Mhz Linux Fedora - one CPU ==
-
 UUT5 - OLPC-XO at 433Mhz Linux Fedora
-
 === UUT5 - OLPC-XO - one CPU - 32 channels ===
 {{{
 6 5000 s
@@ -770,7 +746,6 @@ Mux Channel 03  Rec Chars/sec 4404.92
 Mux Channel 02  Rec Chars/sec 4398.65
 Mux Channel 00  Rec Chars/sec 4408.18
 }}}
-
 === UUT5 - OLPC-XO -  one CPU - 8 channels ===
 {{{
 6 5000 s
@@ -795,7 +770,6 @@ Mux Channel 00  Rec Chars/sec 4618.10
 Mux Channel 02  Rec Chars/sec 4594.20
 Mux Channel 01  Rec Chars/sec 4585.52
 }}}
-
 === UUT5 - OLPC-XO -  one CPU - 4 channels ===
 {{{
 6 5000 s
@@ -820,9 +794,7 @@ Mux Channel 02  Rec Chars/sec 4624.98
 Mux Channel 01  Rec Chars/sec 4633.83
 Mux Channel 03  Rec Chars/sec 4622.63
 }}}
-
 === UUT5 - OLPC-XO -  one CPU - 1 channels ===
-
 {{{
 6 5000 s
 Mux Channel 06  Loop Chars/sec: 8832.63
@@ -846,23 +818,16 @@ Mux Channel 00  Rec Chars/sec 4424.02
 Mux Channel 01  Rec Chars/sec 4464.47
 Mux Channel 02  Rec Chars/sec 4456.20
 }}}
-
 -----
-
 == n CPU ==
-
 Can we guess using the above data?  No.
-
 === n CPU - 32 channels ===
 === n CPU - 16 channels ===
 === n CPU - 8 channels ===
 === n CPU - 4 channels ===
 === n CPU - 1 channels ===
-
 -----
-
 = Summary =
-
 The data might be saying this:
 
  * Above 1.8 Ghz, the workstation is fast enough to saturate the asynchronous serial connection -- MAYBE NOT
