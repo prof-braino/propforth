@@ -1,0 +1,33 @@
+#gomuxterm perf data from Rick - i5/win7 230400 8 channels
+
+=JUST THE FACTS=
+{{{
+gomuxterm tests @ 230400
+4 cpu (Intel I5-2520 CPU @ 2.5Ghz) - 4GB RAM
+Windows 7 Professional
+
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 07  Loop Chars/sec: 1741.35
+Mux Channel 05  Loop Chars/sec: 1741.35
+Mux Channel 06  Loop Chars/sec: 1741.35
+Mux Channel 04  Loop Chars/sec: 1742.02
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 03 Send Chars/sec 3971.44
+Mux Channel 01 Send Chars/sec 3971.44
+Mux Channel 02 Send Chars/sec 3974.95
+Mux Channel 00 Send Chars/sec 3922.96
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 02  Rec Chars/sec 1874.07
+Mux Channel 00  Rec Chars/sec 1874.07
+Mux Channel 01  Rec Chars/sec 1874.85
+Mux Channel 03  Rec Chars/sec 1874.85
+0 5000 t 1 5000 t 2 5000 t 3 5000 t 4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 06  Loop Chars/sec: 1551.07
+Mux Channel 07  Loop Chars/sec: 1551.60
+Mux Channel 04  Loop Chars/sec: 1539.92
+Mux Channel 05  Loop Chars/sec: 1525.30
+Mux Channel 01 Send Chars/sec 1839.59
+Mux Channel 00 Send Chars/sec 1829.12
+Mux Channel 02 Send Chars/sec 1789.12
+Mux Channel 03 Send Chars/sec 1778.51
+}}}
