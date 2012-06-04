@@ -1,6 +1,8 @@
 #summary Throughput number for MCS
 #labels v5.2.1BETA
 
+<wiki:toc max_depth="1" />
+
 = Introduction =
 
 PF521BETA is testing the affects of the buffer size and number of channels on throughput. 
