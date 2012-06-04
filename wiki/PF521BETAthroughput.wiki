@@ -5,7 +5,6 @@
 
 PF521BETA is testing the affects of the buffer size and number of channels on throughput. 
 
-
 = Details =
 
 We think there are two main factors that affect throughput
@@ -64,16 +63,17 @@ These are the test functions we want to run on all configurations. Send 5000 cha
 
 Unit Under Test #: an ID for each text box listed; assigned in teh order received
 
-Data is listed by number of CPU, processor speed, number of channels.
+~~Data is listed by number of CPU, processor speed, number of channels.~~
+
+Data is listed by throughput results, lowest first.
 
 As of 20120526, there are 4 sets off data listed.
 
- # UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) - 1 CPU Windows XP
- # UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP
- # UUT4 - Intel t2450 at 2.0 Ghz Windows XP
- # UUT2 - Intel E6750 at 3.4 Ghz - 2 CPUs Windows XP
-
- * UUT5 - OLPC-XO at 433Mhz - 1 CPU Linux Fedora
+ # UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) - 1 CPU Windows XP - wired ethernet 100Mb
+ # UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP- wired ethernet 100Mb
+ # UUT4 - Intel t2450 at 2.0 Ghz Windows XP- wired ethernet 100Mb
+ # UUT2 - Intel E6750 at 3.4 Ghz - 2 CPUs Windows XP- wired ethernet 1Gb
+ # UUT5 - OLPC-XO at 433Mhz - 1 CPU Linux Fedora - Wireless 802.11b/g
 
 -----
 
@@ -603,6 +603,138 @@ Mux Channel 01  Rec Chars/sec 2000.00
 Mux Channel 03  Rec Chars/sec 2000.00
 Mux Channel 00  Rec Chars/sec 2000.00
 }}}
+
+-----
+== one CPU ==
+
+UUT5 - OLPC-XO at 300Mhz Linux Fedora
+
+=== UUT5 - OLPC-XO - one CPU - 32 channels ===
+{{{
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 3474.43
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 2034.97
+Mux Channel 05  Loop Chars/sec: 2036.78
+Mux Channel 06  Loop Chars/sec: 2037.76
+Mux Channel 07  Loop Chars/sec: 2039.44
+0 5000 t
+Mux Channel 00 Send Chars/sec 4014.37
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 3441.82
+Mux Channel 01 Send Chars/sec 3461.50
+Mux Channel 02 Send Chars/sec 3363.62
+Mux Channel 03 Send Chars/sec 3367.73
+0 5000 u
+Mux Channel 00  Rec Chars/sec 4561.61
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 3216.43
+Mux Channel 02  Rec Chars/sec 3209.92
+Mux Channel 00  Rec Chars/sec 3208.60
+Mux Channel 01  Rec Chars/sec 3215.11
+}}}
+
+=== UUT5 - OLPC-XO - one CPU - 16 channels ===
+{{{
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 5854.77
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 3275.25
+Mux Channel 05  Loop Chars/sec: 3279.19
+Mux Channel 06  Loop Chars/sec: 3283.71
+Mux Channel 07  Loop Chars/sec: 3288.37
+0 5000 t
+Mux Channel 00 Send Chars/sec 6526.88
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 3588.96
+Mux Channel 03 Send Chars/sec 3384.76
+Mux Channel 01 Send Chars/sec 3388.88
+Mux Channel 02 Send Chars/sec 3397.53
+0 5000 u
+Mux Channel 00  Rec Chars/sec 7245.86
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 01  Rec Chars/sec 4359.30
+Mux Channel 03  Rec Chars/sec 4404.92
+Mux Channel 02  Rec Chars/sec 4398.65
+Mux Channel 00  Rec Chars/sec 4408.18
+}}}
+
+=== UUT5 - OLPC-XO -  one CPU - 8 channels ===
+{{{
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 6300.72
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4284.44
+Mux Channel 05  Loop Chars/sec: 4290.36
+Mux Channel 06  Loop Chars/sec: 4297.02
+Mux Channel 07  Loop Chars/sec: 4302.28
+0 5000 t
+Mux Channel 00 Send Chars/sec 8428.38
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 5156.63
+Mux Channel 02 Send Chars/sec 4982.11
+Mux Channel 03 Send Chars/sec 4992.84
+Mux Channel 01 Send Chars/sec 4995.49
+0 5000 u
+Mux Channel 00  Rec Chars/sec 10369.21
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 4633.87
+Mux Channel 00  Rec Chars/sec 4618.10
+Mux Channel 02  Rec Chars/sec 4594.20
+Mux Channel 01  Rec Chars/sec 4585.52
+}}}
+
+=== UUT5 - OLPC-XO -  one CPU - 4 channels ===
+{{{
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 8594.00
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4302.67
+Mux Channel 05  Loop Chars/sec: 4308.70
+Mux Channel 06  Loop Chars/sec: 4316.24
+Mux Channel 07  Loop Chars/sec: 4321.47
+0 5000 t
+Mux Channel 00 Send Chars/sec 9860.63
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 03 Send Chars/sec 4838.80
+Mux Channel 02 Send Chars/sec 4847.23
+Mux Channel 00 Send Chars/sec 4851.80
+Mux Channel 01 Send Chars/sec 4885.33
+0 5000 u
+Mux Channel 00  Rec Chars/sec 10539.87
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 00  Rec Chars/sec 4608.47
+Mux Channel 02  Rec Chars/sec 4624.98
+Mux Channel 01  Rec Chars/sec 4633.83
+Mux Channel 03  Rec Chars/sec 4622.63
+}}}
+
+=== UUT5 - OLPC-XO -  one CPU - 1 channels ===
+
+{{{
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 8832.63
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4277.52
+Mux Channel 05  Loop Chars/sec: 4283.99
+Mux Channel 06  Loop Chars/sec: 4288.90
+Mux Channel 07  Loop Chars/sec: 4295.44
+0 5000 t
+Mux Channel 00 Send Chars/sec 9551.92
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 5507.39
+Mux Channel 03 Send Chars/sec 5237.59
+Mux Channel 01 Send Chars/sec 5300.87
+Mux Channel 02 Send Chars/sec 5303.54
+0 5000 u
+Mux Channel 00  Rec Chars/sec 11220.95
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 4456.83
+Mux Channel 00  Rec Chars/sec 4424.02
+Mux Channel 01  Rec Chars/sec 4464.47
+Mux Channel 02  Rec Chars/sec 4456.20
+}}}
+
 
 == Four CPUs ==
 
