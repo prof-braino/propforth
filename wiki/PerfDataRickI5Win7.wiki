@@ -1,4 +1,5 @@
-#gomuxterm perf data from Rick - i5/win7 230400 8 channels
+#summary gomuxterm perf data from Rick - i5/win7 230400 8 channels
+#labels Gochannels,v5.0,performance,MCS
 
 =JUST THE FACTS=
 {{{
