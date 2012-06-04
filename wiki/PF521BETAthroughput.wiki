@@ -73,6 +73,8 @@ As of 20120526, there are 4 sets off data listed.
  # UUT4 - Intel t2450 at 2.0 Ghz Windows XP
  # UUT2 - Intel E6750 at 3.4 Ghz - 2 CPUs Windows XP
 
+ * UUT5 - OLPC-XO at 433Mhz - 1 CPU Linux Fedora
+
 -----
 
 == one CPU ==
