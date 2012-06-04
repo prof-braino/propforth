@@ -657,9 +657,9 @@ Not collected
 
 -----
 
-== UUT5 - OLPC-XO at 300Mhz Linux Fedora - one CPU ==
+== UUT5 - OLPC-XO at 433Mhz Linux Fedora - one CPU ==
 
-UUT5 - OLPC-XO at 300Mhz Linux Fedora
+UUT5 - OLPC-XO at 433Mhz Linux Fedora
 
 === UUT5 - OLPC-XO - one CPU - 32 channels ===
 {{{
