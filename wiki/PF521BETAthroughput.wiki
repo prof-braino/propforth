@@ -616,11 +616,17 @@ Partial data  for UUT6
 == UUT6 - Intel I5-2520 CPU @ 2.5Ghz - 4GB RAM - Four CPUs ==
 
 === Four CPUs - 32 channels ===
+
 Not collected
+
 === Four CPUs - 16 channels ===
+
 Not collected
+
 === UUT6 - Four CPUs - 8 channels ===
+
  - JUST THE FACTS - 
+
 {{{
 gomuxterm tests @ 230400
 4 cpu (Intel I5-2520 CPU @ 2.5Ghz) - 4GB RAM
@@ -651,9 +657,13 @@ Mux Channel 00 Send Chars/sec 1829.12
 Mux Channel 02 Send Chars/sec 1789.12
 Mux Channel 03 Send Chars/sec 1778.51
 }}}
+
 === Four CPUs - 4 channels ===
+
 Not collected
+
 === Four CPUs - 1 channels ===
+
 Not collected
 
 -----
@@ -662,9 +672,13 @@ Not collected
 UUT7 - 4 cpu (Intel i3 M370 @ 2.4GHz) - 8GB RAM Fedora 16 Linux
 
 === UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 32 channels === {{{ }}}
+
 Not collected 
+
 === UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 16 channels === {{{ }}}
+
 Not collected
+
 === UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 8 channels === 
 {{{ 
 4 5000 s 5 5000 s 6 5000 s 7 5000 s
@@ -693,8 +707,11 @@ Mux Channel 02 Send Chars/sec 3948.82
 Mux Channel 01 Send Chars/sec 3985.05
 }}} 
 === UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 4 channels ===  {{{ }}}
+
 Not collected
+
 === UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 - 1 channels ===  {{{ }}}
+
 Not collected
 
 
