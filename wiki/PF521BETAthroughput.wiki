@@ -1,7 +1,7 @@
 #summary Throughput number for MCS
 #labels v5.2.1BETA
 
-<wiki:toc max_depth="1" />
+<wiki:toc max_depth="2" />
 
 = Introduction =
 
