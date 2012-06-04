@@ -73,6 +73,7 @@ As of 20120526, there are 4 sets off data listed.
  # UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP- wired ethernet 100Mb
  # UUT4 - Intel t2450 at 2.0 Ghz Windows XP- wired ethernet 100Mb
  # UUT2 - Intel E6750 at 3.4 Ghz - 2 CPUs Windows XP- wired ethernet 1Gb
+ # UUT6 - Intel I5-2520 CPU @ 2.5Ghz) - 4GB RAM Windows 7 Professional
  # UUT5 - OLPC-XO at 433Mhz - 1 CPU Linux Fedora - Wireless 802.11b/g
 
 -----
@@ -735,15 +736,52 @@ Mux Channel 01  Rec Chars/sec 4464.47
 Mux Channel 02  Rec Chars/sec 4456.20
 }}}
 
+-----
+
+Partial data  for UUT6
 
 == Four CPUs ==
 
 === Four CPUs - 32 channels ===
+Not collected
 === Four CPUs - 16 channels ===
-=== Four CPUs - 8 channels ===
-=== Four CPUs - 4 channels ===
-=== Four CPUs - 1 channels ===
+Not collected
+=== UUT6 - Four CPUs - 8 channels ===
+=JUST THE FACTS=
+{{{
+gomuxterm tests @ 230400
+4 cpu (Intel I5-2520 CPU @ 2.5Ghz) - 4GB RAM
+Windows 7 Professional
 
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 07  Loop Chars/sec: 1741.35
+Mux Channel 05  Loop Chars/sec: 1741.35
+Mux Channel 06  Loop Chars/sec: 1741.35
+Mux Channel 04  Loop Chars/sec: 1742.02
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 03 Send Chars/sec 3971.44
+Mux Channel 01 Send Chars/sec 3971.44
+Mux Channel 02 Send Chars/sec 3974.95
+Mux Channel 00 Send Chars/sec 3922.96
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 02  Rec Chars/sec 1874.07
+Mux Channel 00  Rec Chars/sec 1874.07
+Mux Channel 01  Rec Chars/sec 1874.85
+Mux Channel 03  Rec Chars/sec 1874.85
+0 5000 t 1 5000 t 2 5000 t 3 5000 t 4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 06  Loop Chars/sec: 1551.07
+Mux Channel 07  Loop Chars/sec: 1551.60
+Mux Channel 04  Loop Chars/sec: 1539.92
+Mux Channel 05  Loop Chars/sec: 1525.30
+Mux Channel 01 Send Chars/sec 1839.59
+Mux Channel 00 Send Chars/sec 1829.12
+Mux Channel 02 Send Chars/sec 1789.12
+Mux Channel 03 Send Chars/sec 1778.51
+}}}
+=== Four CPUs - 4 channels ===
+Not collected
+=== Four CPUs - 1 channels ===
+Not collected
 == n CPU ==
 
 Can we guess using the above data?  No.
