@@ -1,0 +1,35 @@
+#summary gomuxterm perf data from Rick - i3/linux 230400 8 channels
+#labels Gochannels,v5.0,performance,MCS
+
+= Numbers =
+{{{
+gomuxterm tests @ 230400
+4 cpu (Intel i3 M370 @ 2.4GHz) - 8GB RAM
+Fedora 16 Linux
+
+
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4485.05
+Mux Channel 05  Loop Chars/sec: 4481.55
+Mux Channel 06  Loop Chars/sec: 4475.75
+Mux Channel 07  Loop Chars/sec: 4474.44
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 03 Send Chars/sec 5684.07
+Mux Channel 01 Send Chars/sec 5683.57
+Mux Channel 02 Send Chars/sec 5683.40
+Mux Channel 00 Send Chars/sec 5795.67
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 00  Rec Chars/sec 4755.79
+Mux Channel 03  Rec Chars/sec 4697.35
+Mux Channel 02  Rec Chars/sec 4695.57
+Mux Channel 01  Rec Chars/sec 4699.04
+0 5000 t 1 5000 t 2 5000 t 3 5000 t 4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 05  Loop Chars/sec: 3466.19
+Mux Channel 04  Loop Chars/sec: 3463.15
+Mux Channel 07  Loop Chars/sec: 3453.52
+Mux Channel 06  Loop Chars/sec: 3448.69
+Mux Channel 00 Send Chars/sec 3959.58
+Mux Channel 03 Send Chars/sec 3891.66
+Mux Channel 02 Send Chars/sec 3948.82
+Mux Channel 01 Send Chars/sec 3985.05
+}}}
