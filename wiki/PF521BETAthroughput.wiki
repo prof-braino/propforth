@@ -87,8 +87,7 @@ As of 20120526, there are 4 sets off data listed.
  # UUT6 - Intel I5-2520 CPU @ 2.5Ghz) - 4CPU 4GB RAM Windows 7 Professional
  # UUT5 - OLPC-XO at 433Mhz - 1 CPU Linux Fedora - Wireless 802.11b/g
  # UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 
-
-
+ # UUT8 - Sempron 3000 KT600a - 1 CPU Linux Ubuntu 11.10 (I had trouble with unity and fall back to gnome) wiredethernet 100Mb
 -----
 
 == UUT1 - Intel Pentium 4 at 1.7Ghz (Evo) - 1 CPU Windows XP - wired ethernet 100Mb ==
@@ -828,6 +827,135 @@ Mux Channel 01  Rec Chars/sec 4464.47
 Mux Channel 02  Rec Chars/sec 4456.20
 }}}
 -----
+== UUT8 - Sempron 3000 KT600a - 1 CPU Linux Ubuntu 11.10 (I had trouble with unity and fall back to gnome) ==
+
+I got this message once during set up, but I did not see it a second time.  I don't know what I did or what it means.
+
+Panic: slice out of bounds
+
+=== UUT8 - Sempron 3000 KT600a - 32 channels === 
+{{{ 
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 4831.02
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 2246.50
+Mux Channel 05  Loop Chars/sec: 2245.83
+Mux Channel 06  Loop Chars/sec: 2245.13
+Mux Channel 07  Loop Chars/sec: 2243.47
+0 5000 t
+Mux Channel 00 Send Chars/sec 4773.27
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 4461.58
+Mux Channel 02 Send Chars/sec 4304.35
+Mux Channel 01 Send Chars/sec 4308.48
+Mux Channel 03 Send Chars/sec 4268.15
+0 5000 u
+Mux Channel 00  Rec Chars/sec 5271.17
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 4134.03
+Mux Channel 02  Rec Chars/sec 4137.53
+Mux Channel 00  Rec Chars/sec 4137.14
+Mux Channel 01  Rec Chars/sec 4146.61
+}}}
+=== UUT8 - Sempron 3000 KT600a - 16 channels === 
+{{{ 
+
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 7541.91
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 3556.20
+Mux Channel 05  Loop Chars/sec: 3554.63
+Mux Channel 06  Loop Chars/sec: 3552.85
+Mux Channel 07  Loop Chars/sec: 3551.18
+0 5000 t
+Mux Channel 00 Send Chars/sec 7085.98
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 5564.18
+Mux Channel 01 Send Chars/sec 5490.67
+Mux Channel 02 Send Chars/sec 5311.48
+Mux Channel 03 Send Chars/sec 5220.98
+0 5000 u
+Mux Channel 00  Rec Chars/sec 9868.73
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 02  Rec Chars/sec 4567.77
+Mux Channel 03  Rec Chars/sec 4551.09
+Mux Channel 01  Rec Chars/sec 4550.22
+Mux Channel 00  Rec Chars/sec 4551.83
+}}}
+=== UUT8 - Sempron 3000 KT600a - 8 channels === 
+{{{  
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 10369.46
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4400.36
+Mux Channel 05  Loop Chars/sec: 4394.06
+Mux Channel 06  Loop Chars/sec: 4391.28
+Mux Channel 07  Loop Chars/sec: 4388.54
+0 5000 t
+Mux Channel 00 Send Chars/sec 11662.60
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 03 Send Chars/sec 5621.05
+Mux Channel 00 Send Chars/sec 5620.63
+Mux Channel 02 Send Chars/sec 5640.06
+Mux Channel 01 Send Chars/sec 5671.27
+0 5000 u
+Mux Channel 00  Rec Chars/sec 14212.86
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 00  Rec Chars/sec 4727.76
+Mux Channel 01  Rec Chars/sec 4718.60
+Mux Channel 03  Rec Chars/sec 4705.18
+Mux Channel 02  Rec Chars/sec 4706.03
+}}}
+=== UUT8 - Sempron 3000 KT600a - 4 channels === 
+{{{ 
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 10421.10
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4401.63
+Mux Channel 05  Loop Chars/sec: 4395.40
+Mux Channel 06  Loop Chars/sec: 4392.59
+Mux Channel 07  Loop Chars/sec: 4389.85
+0 5000 t
+Mux Channel 00 Send Chars/sec 10315.19
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 03 Send Chars/sec 5563.93
+Mux Channel 00 Send Chars/sec 5582.31
+Mux Channel 02 Send Chars/sec 5572.71
+Mux Channel 01 Send Chars/sec 5601.32
+0 5000 u
+Mux Channel 00  Rec Chars/sec 13865.63
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 03  Rec Chars/sec 4718.47
+Mux Channel 00  Rec Chars/sec 4718.69
+Mux Channel 02  Rec Chars/sec 4704.92
+Mux Channel 01  Rec Chars/sec 4711.25
+}}}
+=== UUT8 - Sempron 3000 KT600a - 1 channels === 
+{{{ 
+6 5000 s
+Mux Channel 06  Loop Chars/sec: 10292.85
+4 5000 s 5 5000 s 6 5000 s 7 5000 s
+Mux Channel 04  Loop Chars/sec: 4398.06
+Mux Channel 05  Loop Chars/sec: 4395.26
+Mux Channel 06  Loop Chars/sec: 4392.41
+Mux Channel 07  Loop Chars/sec: 4386.24
+0 5000 t
+Mux Channel 00 Send Chars/sec 11913.04
+0 5000 t 1 5000 t 2 5000 t 3 5000 t
+Mux Channel 00 Send Chars/sec 5900.03
+Mux Channel 03 Send Chars/sec 5620.36
+Mux Channel 01 Send Chars/sec 5615.16
+Mux Channel 02 Send Chars/sec 5619.83
+0 5000 u
+Mux Channel 00  Rec Chars/sec 12893.04
+0 5000 u 1 5000 u 2 5000 u 3 5000 u
+Mux Channel 00  Rec Chars/sec 4749.72
+Mux Channel 02  Rec Chars/sec 4705.38
+Mux Channel 03  Rec Chars/sec 4706.10
+Mux Channel 01  Rec Chars/sec 4719.15
+}}}
+
+-----
 == n CPU ==
 Can we guess using the above data?  No.
 === n CPU - 32 channels ===
@@ -845,3 +973,4 @@ The data might be saying this:
  * 16 channels is still 75% of maximum; 32 channels is 40% maximum.  We can set up future experiments to run 32 channels, and talk to all the cogs on 4 physical prop chips at the same time, or 32 prop chips through 1 cog.  If more speed (higher cps throughput) is needed we can drop back to 16 channels.  -- MAYBE NOT
  
 -- End 20120525 --
+-- End 20120604 --
