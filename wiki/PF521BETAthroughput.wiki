@@ -16,11 +16,11 @@ We think there are two main factors that affect throughput
 
 At the current configuration, COG6 has 1K of its RAM allocated to buffer for the MCS Go-channels. This 1k is divided among the channels that COG6 is serving. COG6 watches the data stream, and send bytes to the buffer for each channel.  The cog on the watching the buffer consumes them as then appear, and spits characters back out. COG6 takes these and sends them back out on the data stream. 
 
- * A single channel has 1K buffer
- * 4 channels would have 256 bytes each
- * 8 channels have 128 bytes each
- * 16 channels have 64 bytes each
- * 32 channels have 32 bytes each
+ * A single channel has the entire 1K buffer
+ * 4 channels would each have buffers of 256 bytes each
+ * 8 channels would each have buffers of 128 bytes each
+ * 16 channels would each have buffers of 64 bytes each
+ * 32 channels would each have buffers of 32 bytes each
 
 = Test Setup =
 
