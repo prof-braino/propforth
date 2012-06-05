@@ -67,6 +67,16 @@ GOPATH=/home/rapost/code/go:/home/rapost/code/go/mygo
 ; the second GOPATH is to the mygo directory containing the 
 ; propforth MCS/go channel interface support package
 
+on ubuntu, braino used
+
+{{{ 
+export PATH=$PATH:/usr/local/go/bin:/home/braino/Documents/mygo/bin
+export GOPATH=/usr/local/go:/home/braino/Documents/mygo
+}}}
+
+GO is installed at /usr/local/go
+the location of my source code is at /home/braino/Documents/mygo
+
 -----
 
  == steps from post 80 ==
