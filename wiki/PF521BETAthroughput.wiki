@@ -965,6 +965,18 @@ Can we guess using the above data?  No.
 === n CPU - 1 channels ===
 -----
 = Summary =
+== new summary ==
+
+ * Linux might be more than twice the throughput as windows
+ * the lowest linux box (OLPC 433MHz) throughput 32 channels (3400-4500 cps) was nearly quadruple throughput of the fastest windows box (2 core 3.4Ghz) at 32 channels (855-891)
+ * the lowest linux box (OLPC 433MHz) throughput 32 channels (3400-4500 cps) was higher than the biggest windows box (4 core 2.54Ghz) at 8 channels (1741-3971)
+ * the number of core has an impact
+ * using linux has a bigger impact
+
+-- End 20120604 --
+
+
+== old summary ==
 The data might be saying this:
 
  * Above 1.8 Ghz, the workstation is fast enough to saturate the asynchronous serial connection -- MAYBE NOT
@@ -973,4 +985,3 @@ The data might be saying this:
  * 16 channels is still 75% of maximum; 32 channels is 40% maximum.  We can set up future experiments to run 32 channels, and talk to all the cogs on 4 physical prop chips at the same time, or 32 prop chips through 1 cog.  If more speed (higher cps throughput) is needed we can drop back to 16 channels.  -- MAYBE NOT
  
 -- End 20120525 --
--- End 20120604 --
