@@ -84,9 +84,9 @@ As of 20120526, there are 4 sets off data listed.
  # UUT3 - AMD Athlon 64 3000 at 1.8Ghz - 1 CPU Windows XP- wired ethernet 100Mb
  # UUT4 - Intel t2450 at 2.0 Ghz Windows XP- wired ethernet 100Mb
  # UUT2 - Intel E6750 at 3.4 Ghz - 2 CPUs Windows XP- wired ethernet 1Gb
- # UUT6 - Intel I5-2520 CPU @ 2.5Ghz) - 4CPU 4GB RAM Windows 7 Professional
+ # UUT6 - Intel I5-2520 CPU @ 2.5Ghz) - 4CPU 4GB RAM Windows 7 Professional *Incomplete data*
  # UUT5 - OLPC-XO at 433Mhz - 1 CPU Linux Fedora - Wireless 802.11b/g
- # UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 
+ # UUT7 - Intel i3 M370 @ 2.4GHz - 4 cpu 8GB RAM Linux Fedora 16 *Incomplete data*
  # UUT8 - Sempron 3000 KT600a - 1 CPU Linux Ubuntu 11.10 (I had trouble with unity and fall back to gnome) wiredethernet 100Mb
 -----
 
