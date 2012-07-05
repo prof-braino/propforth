@@ -1,8 +1,24 @@
 #summary Status of PropForth kernel development
-#labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1
+#labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1,5.3
+
+= 20120705 =
+
+== Propforth 5.3 will contain test automation. ==
+
+The Test Automation process looks like this:
+
+The host workstation executes a terminal program written in Go-language.
+The workstation program includes the propellant.exe executatble for compiling the propforth kernel source.  Beginning with the spin source, the workstation compiles each kernel, loads the prop, executes the entire regression test suite, and logs the results. The developer has to locate any differences between the previous "known good" results and the current results.  Two consecutive runs will produce identical results for all deterministic events.
+
+Non-deterministic events (undefined pin states, random numbers,  time stamps, etc) are identified and verified.
+
+Any change to the code will result in change to the results.  The developer need only verify that the changes were expected and correct. Any unexpected changes are analyzed for bugs.  Eventually a new "known good" result is defined. 
+
+We anticipate that the automation will increase productivity by a large amount. This will enable rapid creation and testing of new custom kernels, and quick addition of new custom tests.  The plan is to go back to all the extensions from previous version and bring these up to v5.x, add regression tests for all of these, and add them to the release download archive. This first step will go a long ways towards eliminating the need for separate downloads for extensions, and preventing extensions from getting left behind and rendered incompatible with a current version. 
 
 
 
+-----
 
 === 20120304 ===
 
