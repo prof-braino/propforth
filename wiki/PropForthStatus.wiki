@@ -3,6 +3,8 @@
 
 = 20120705 =
 
+Test automation, logging, and Go-Channel support have been added to version 5.3.  This version is being prepared for release. 
+
 == Propforth 5.3 will contain test automation. ==
 
 The Test Automation process looks like this:
