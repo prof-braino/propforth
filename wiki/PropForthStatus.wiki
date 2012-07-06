@@ -26,9 +26,7 @@ The results look fun.  It used to take at least a couple weeks to run the test s
 
 The automation runs as a series of scripts, the results are logged.
 
-WE go through the test during development, when the test is written, and verufy that the test is correct, and the results are correct. We use each "known good" result as the baseline. 
-
-
+The developers go through the test during development, when the test is written, and verify that the test is correct, and the results are correct. We use each "known good" result as the baseline. 
 
 When changes are made anywhere in the code base, the test results are compared to the "known good" baseline.  All changes are identified as either 1) expected and checked for correctness or 2) unexpected and checked as a possible bug. We should be able to predict the affects of any change, the ones we didn't predict are usually the cause of bugs. 
 
