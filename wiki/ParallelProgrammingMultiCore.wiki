@@ -1,0 +1,89 @@
+#summary Another stab at Parallel Programming for Multiple Cores, Type 2
+
+= Introduction =
+
+20120706 Inspired by this thread
+
+http://forums.parallax.com/showthread.php?141078-ParaSail-Parallel-multicore-programming-Language
+
+I'm not particularly interested in the ParaSail language, but I want to explore using multiple cores on the same task. 
+
+= Details =
+
+= Parallel processing and multi core programmming. =
+
+There's two types, one type is using multiple cores to do different tasks at the same time.  The other type is where we use multiple cores to work parts of the same task.  An example of the first type is usng one cog to run the serial port, one cog to run the keybioard, and one cog to run the VGA display.  An example of the second type is using many cores to crunch the same array or matrix, etc. The second type is the part I don't get yet. 
+
+Lets see if I'm getting my head around this.
+
+= Sieve of Eratosthenes  =
+
+Say we want a simple example, so how about Sieve of Eratosthenes (Google Wiki Sieve of Eratosthenes) on N prop cores.  We want to see how long it takes to fill an SD card with consecutive prime number using 1 to N cores, to see if any interesting differences show up depending on N.  The results are saved to SD card so we have as much space as we need at least to get started.
+
+For simplicity, each prime is treated as a 32 bit value, and each prime and its current multiple are stored as a pair on the SD,   
+
+== cycle 1 -  Find 2 is Prime == 
+
+We start with our number under test.  For starters, the current number under test is 1. We add 1 to this (getting 2), and check if this value is prime.
+
+The check for prime is "Is the number in question a multiple of the previously discovered primes?"
+
+The first entry on the SD is 0 so we know the this slot is empty.  Since 2 was not a multiple of a prime in the list, two must be prime.  The next empty slot (with the intialization value 0) gets prime 2.  The first multiple is also stored at this time, the first multiple of 2 is 2, and is stored as the second value of the pair.
+
+We've completed the cycle once.  Now we start again:
+
+== cycle 2 Find 3 is prime ==
+
+The current prime is 2.  We add 1 to this (getting 3) and check is this valyue is prime. 
+
+The first entry in the talbe of primes is 2.  The current multiple of 2 is also two, and this is less than the number under test (3), so we add the current prime to it.  The current multiple is now 4, which is not equal to three.  So the number under test is not a multiple of this prime.  
+
+The next slot in the list is empty (0), so the number under test must be prime.  We put three into the next slot, and trhee into its first multiple (3) into the second value ofor this prime's pair.
+
+== cycle 3 Find 4 is not prime ==
+
+Example finding non-prime:
+
+The last number under test was three,  WE add 1 to this getting the current number under test, which is 4. 
+
+The first entry in teh table of primes is 2.  The multiple of 2 in the list is 4, so the current number under test is a multiple of a prime in teh list, so is not prime.  
+
+== cycle 4 Find 5 is prime ==
+
+Example finding another prime:
+
+The last number under test was four.  We add 1 to this to get the current number under test, 5.
+
+The first number in the list of primes is 2, its current multiple is 4.  This is less than 5, so we add the prime to the multiple, yeilding 6.  This is great then the number under test, so it is not a multiple of this prime.
+
+The next number in the list is 3.  Its multiple (still first multiple, 3) is less than 5, so add the prime again. The next multiple is 6 and this is greater than the number under test, so number under test is not a multiple of this prime. 
+
+The next prime slot it empty, so the current number under test is prime. 
+
+5 is placed in the next empty slot, and the new prime's first multiple is placed in the second value for the pair.  
+
+== Repeat ==
+     
+And so on. 
+
+= Refinements = 
+
+== Adjust the number of bytes per value as value increases. ==
+
+Start by treating all values as 32 bit numbers, for simplicity. 
+
+Later, switch the numbers to single byte until the values exceded the sbyte range, then make the two bytes, then three , etc.
+
+Or try 1 byte, 2 bytes, four bytes, eight bytes,, etc.
+
+== Add more cogs ==
+
+Here is the real point finally. Each value to be tests can be given to a separate cog.  Maybe a single prop chip can test six values at once?
+
+Can the Values on SD be held in buffers, to minimize I/O?  All cogs must check the first block of values, the higher blocks of values only need to be checked if the lower ones to not find a result.  I guess we should take statistics to see if earlier blocks get more hits than later blocks?  
+
+One buffer per cog? 
+
+Add multiple propchips?  Would each propchip needs its own copy of the SD?  Would each cog need a separate buffer resident on its hub memory (I think yes). 
+
+= End of speculation for today =
