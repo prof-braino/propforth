@@ -18,9 +18,25 @@ Any change to the code will result in change to the results.  The developer need
 
 We anticipate that the automation will increase productivity by a large amount. This will enable rapid creation and testing of new custom kernels, and quick addition of new custom tests.  The plan is to go back to all the extensions from previous version and bring these up to v5.x, add regression tests for all of these, and add them to the release download archive. This first step will go a long ways towards eliminating the need for separate downloads for extensions, and preventing extensions from getting left behind and rendered incompatible with a current version. 
 
-
-
 -----
+
+Propforth versions 5.1Alpha through 5.2.1Beta were NOT made available to the general public. These were used to establish MCS (Go channels) buffering, logging, and regression test suite execution automation. 
+
+The results look fun.  It used to take at least a couple weeks to run the test suite, it was a little intricate and tedious in places. The automation rebuilds all the kernels from source in about an hour, and runs the complete set of tests customized for each kernel in about 40 minutes.
+
+The automation runs as a series of scripts, the results are logged.
+
+WE go through the test during development, when the test is written, and verufy that the test is correct, and the results are correct. We use each "known good" result as the baseline. 
+
+
+
+When changes are made anywhere in the code base, the test results are compared to the "known good" baseline.  All changes are identified as either 1) expected and checked for correctness or 2) unexpected and checked as a possible bug. We should be able to predict the affects of any change, the ones we didn't predict are usually the cause of bugs. 
+
+Some items are never the same, like undefined pin states, time stamps, etc.  The developer hast to look at these and make sure it doesn't match in the expected way, for example the time stamp is there and just has a different number rather than putting out garbage.  While some user interaction is always required, the effort should be minimal.  A human ultimately has to decide what "right" is in the first place.
+
+The automation can run ALL the tests in a short amount of time, this is called 100% coverage. Normally 100% coverage is too time consuming and expensive, so folks skip stuff, which eventually leads to bugs escaping to the field.  Since its automated, we can let it run over night if we have to.  So we can increase our test suite by 24 times and still not have any impact. 
+
+Companies spend huge amounts of money and resources on test and most cannot even afford any automation, and we get a better method for free!
 
 === 20120304 ===
 
