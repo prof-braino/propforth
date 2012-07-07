@@ -83,7 +83,9 @@ Here is the real point finally. Each value to be tests can be given to a separat
 
 Can the Values on SD be held in buffers, to minimize I/O?  All cogs must check the first block of values, the higher blocks of values only need to be checked if the lower ones to not find a result.  I guess we should take statistics to see if earlier blocks get more hits than later blocks?  
 
-One buffer per cog? 
+One buffer per cog? If there is one buffer per cog, then worst case the buffer needs to be read once. If two cogs are working in the same range of values, the SD block is already in the buffer. EDIT 20120707 - The only change occures if a second value in the prime pair is less than the value under test. 
+
+EDIT 20120707 - The number of buffers should be the number of parallel cogs +1
 
 Add multiple propchips?  Would each propchip needs its own copy of the SD?  Would each cog need a separate buffer resident on its hub memory (I think yes). 
 
