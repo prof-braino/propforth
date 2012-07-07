@@ -68,9 +68,10 @@ And so on.
 
 = Refinements = 
 
+Start by using a 4 gig SD card. Start by treating all values as 32 bit numbers, for simplicity. Each SD block is 512 bytes. Each entry on the SD is  number pair for the primes, the first number of the pair is the prime, the second number of the pair is the current multiple opf the prime. 
+
 == Adjust the number of bytes per value as value increases. ==
 
-Start by treating all values as 32 bit numbers, for simplicity. 
 
 Later, switch the numbers to single byte until the values exceded the sbyte range, then make the two bytes, then three , etc.
 
