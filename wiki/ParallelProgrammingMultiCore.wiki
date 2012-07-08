@@ -89,4 +89,8 @@ EDIT 20120707 - The number of buffers should be the number of parallel cogs +1
 
 Add multiple propchips?  Would each propchip needs its own copy of the SD?  Would each cog need a separate buffer resident on its hub memory (I think yes). 
 
-= End of speculation for today =
+= 20120707 =
+
+Number of active cogs should be less than square root of the number being examined.  
+
+Maybe turn this design on its side a little:  Instead of having a cog responsible for checking if a single number in sequence is in the list of multiples of already found primes; Have each parallel cog read in a buffer, and check whether there are any numbers not represented by the multiples? Maybe not, can't see how to make this easier.
