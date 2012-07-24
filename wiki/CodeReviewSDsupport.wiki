@@ -1,5 +1,5 @@
 #summary The Code Review experiments for Propforth - 20110102 SD support
-#labels SD,v4.0,Phase-Implementation
+#labels SD,v4.0,Phase-Implementation,Deprecated
 
 = Update 20110626 =
 
