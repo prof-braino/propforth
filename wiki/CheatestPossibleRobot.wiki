@@ -40,29 +40,53 @@ http://www.ebay.com/itm/1pcs-Ultrasonic-Module-HC-SR04-Distance-Measuring-Transd
 }}}
 http://www.ebay.com/itm/1pcs-Wireless-Bluetooth-Transceiver-Module-RS232-TTL-HC-05-/251066012059
 
-Motors     -  $5.58
-
-Ultrasonic -  $2.26
-
-Blue tooth -  $6.42
-
-             -----
-
-Total      - $14.26
-
+|| Motors   ||  $5.58 || 
+|| Ultrasonic ||   $2.26|| 
+|| Blue tooth ||  $6.42 || 
+||           ||   -----|| 
+|| Total    ||  $14.26|| 
 = Harvestable Parts =
 
 These parts can be collected, printed on a reprap, taken from broken toys, or carved out of plywood. 
 
-1 Battery holder for four AA batteries 
-two wheels, four (?) to eight (?) inches in diameter 
-mounting for the two motors, batteries, and electronics
+ * 1 Battery holder for four AA batteries 
+ * two wheels, four (?) to eight (?) inches in diameter 
+ * mounting for the two motors, batteries, and electronics
 
 = Assembly =
 
+The current concept is a football shaped bot.  Each point of the football is the axis of a wheel, each wheel is half the football.
+The electronics, batteies and sensors are inside the fooball.
+The sensors see out the gap between the wheels.
+
+= Programming =
+
+The bot is to be programmed wirelessly using blue tooth.  After the propforth kernel is loaded on the prop, the blue tooth module is progarmmed as a script.  The prop is then reprogramed to use the bluetooth on pins 25 and 26 instead of the default serial on pins 30 31.
+The bluetooth allows programming at least 230400 baud, so loading forth scripts is very fast.  I tested my rig, it was able o respond from two houses away, so it should be fine anyway in the room. 
+
+= Capabilites =
+
+This bot is not going to be the fastest or most powerful.  In fact, the first prototype may be one of the slowest moving we've seen attempted. 
+
+But it might well be one of the cheapest.  Its certainly going to be cheaper than anything I've built before.  It won't do much, but what it does should be pretty interesting, and flexible.  Anybody can afford it if they wish to try.  At least its within reach. 
+
+= Use =
+
+The first attempt will be used indoors.  The bot will scan its area, make a crude representation in memory (a map), decide a new target location, move, and repeat.  The bot should be able to "remember" each location, and fine its way back to any location.  It should be able to detect and avoid obstacles. 
 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+= Upgrades =
+
+If the fist prototype is interesting (that is folks build them and find them fun) we have upgrade plans.  We will add more sensors, and more processing.  
+
+We would add several props, larger motors, bigger batteries, and make a faster, more capable mobile platform. 
+
+
+We would add GPS, accelerometers and gyro etc when we move outdoors.   
+
+If a school class participated, we would like try programming a swarm algorithm.  
+
+We would like to try implementing control for quadcopter if enough folks are interested to justify the cost and effort.  
+
+Eventually we would like to pre-filter the data streams and send to cooked data to large system for processing.  We're thinking Raspberrry Pi. This may enable  vision systems on our ball bots.
