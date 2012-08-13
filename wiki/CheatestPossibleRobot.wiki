@@ -1,4 +1,5 @@
 #summary What would be the cheapest possible robot?
+#labels Deprecated
 
 = Introduction =
 
