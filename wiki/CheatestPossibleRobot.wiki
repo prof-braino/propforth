@@ -1,0 +1,58 @@
+#summary What would be the cheapest possible robot?
+
+= Introduction =
+
+We need a demo project to show of the capabilities of PropForth v5.3, which we think is the culmination of our kernel design and development efforts. 
+
+The demo should be a little bit cool and dramatic.  It should be something everybody can try.  It has to be worth the effort. 
+
+After much deliberation, we decided that $20 was the price point where "you just buy it". Also, everybody loves robots.  
+
+We decided on a mobile robotic platform for under $20. 
+
+= $20 Robots? =
+
+How can anyone build a robot for under $20 when all the current offerings are several hundred dollars, and the cheapest of those is over $100?
+
+First, we get all the parts directly from china.  No local middlemen, no additional markup.
+
+Second, we assume everybody already has a favorite micro controller on the desk.  If you don't we suggest the prop, since that is the easiest way to run propforth.  But you can still use the same robot with an Arduino, or Xmos, or ATmega, or TMS430 etc.  Its up to you, as long as you think its fun. 
+
+= Orderable Parts =
+
+We ordered these off of eBay, Proudly American Made by Chinese folks in China. 
+
+2 Stepper Motors - $3.32 ( four weeks ago, now they are $2.29 20120812)
+5V Stepper Motor 28BYJ-48 With Drive Test Module Board ULN2003 5 Line 4 Phase
+http://www.ebay.com/itm/5V-Stepper-Motor-28BYJ-48-Drive-Test-Module-Board-ULN2003-5-Line-4-Phase-/170781372685
+
+1 ultrasonic Range finder - $2.35 ( four weeks ago, now they are $2.26 20120812)
+1pcs Ultrasonic Module HC-SR04 Distance Measuring Transducer Sensor for Arduino
+http://www.ebay.com/itm/1pcs-Ultrasonic-Module-HC-SR04-Distance-Measuring-Transducer-Sensor-Arduino-/261009210866
+
+1 Blue Tooth Serial Cable replacement $6.42 - ( four weeks ago, now they are still $6.42 20120812)
+1pcs Wireless Bluetooth Transceiver Module RS232 / TTL HC-05
+http://www.ebay.com/itm/1pcs-Wireless-Bluetooth-Transceiver-Module-RS232-TTL-HC-05-/251066012059
+
+Motors     -  $5.58
+Ultrasonic -  $2.26
+Blue tooth -  $6.42
+             -----
+Total      - $14.26
+
+= Harvestable Parts =
+
+These parts can be collected, printed on a reprap, taken from broken toys, or carved out of plywood. 
+
+1 Battery holder for four AA batteries 
+two wheels, four (?) to eight (?) inches in diameter 
+mounting for the two motors, batteries, and electronics
+
+= Assembly =
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
