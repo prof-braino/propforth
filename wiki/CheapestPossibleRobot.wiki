@@ -8,7 +8,7 @@ The demo should be a little bit cool and dramatic.  It should be something every
 
 After much deliberation, we decided that $20 was the price point where "you just buy it". Also, everybody loves robots.  
 
-We decided on a mobile robotic platform for under $20. 
+We decided on a "starter" mobile robotic platform for under $20.  The code and apps developed for this rig will also be designed for reuse, with upgraded motors etc as the project evolves. 
 
 = $20 Robots? =
 
@@ -45,6 +45,7 @@ http://www.ebay.com/itm/1pcs-Wireless-Bluetooth-Transceiver-Module-RS232-TTL-HC-
 || Blue tooth ||  $6.42 || 
 ||           ||   -----|| 
 || Total    ||  $14.26|| 
+
 = Harvestable Parts =
 
 These parts can be collected, printed on a reprap, taken from broken toys, or carved out of plywood. 
@@ -61,10 +62,10 @@ The sensors see out the gap between the wheels.
 
 = Programming =
 
-The bot is to be programmed wirelessly using blue tooth.  After the propforth kernel is loaded on the prop, the blue tooth module is progarmmed as a script.  The prop is then reprogramed to use the bluetooth on pins 25 and 26 instead of the default serial on pins 30 31.
+The bot is to be programmed wirelessly using blue tooth.  After the propforth kernel is loaded on the prop, the blue tooth module is programmed as a script.  The prop is then reprogrammed to use the bluetooth on pins 25 and 26 instead of the default serial on pins 30 31.
 The bluetooth allows programming at least 230400 baud, so loading forth scripts is very fast.  I tested my rig, it was able o respond from two houses away, so it should be fine anyway in the room. 
 
-= Capabilites =
+= Capabilities =
 
 This bot is not going to be the fastest or most powerful.  In fact, the first prototype may be one of the slowest moving we've seen attempted. 
 
