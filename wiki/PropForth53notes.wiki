@@ -92,15 +92,28 @@ PropForthSDFastSerialKernel.spin (if SD support is required)
 Alternatively, if you with to use the FULL POWER of the package:
 
 - Install GO (as done above)
+
 - Compile GoTerm and GoMuxTerm
-- Runthe build tools
-- Run the test autopmation tools
+
+- Run the build tools
+
+- Run the test automation tools
+
 - Modify the kernel as needed
+
 - Create applications as desired
+
 - Create TESTS FOR EVERY CHANGE and FUNCTION you add
+
 - ADD you tests to the regression suite
+
 - Run the REGRESSION SUITE after EVERY CHANGE (since its fast and automated)
+
 - Rest assured the EVERY function runs exactly as you intend, every time, since you tested everything
+
+- Combine the power of your Workstation with the power of your embedded applications using the Go channels communication infrastructure
+
+- Do great things and become famous
 
 Smile :)
 
