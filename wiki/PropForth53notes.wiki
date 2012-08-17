@@ -5,7 +5,7 @@
 
 PropForth Version 5.3 is the culmination of the development experiments conducted since version 2.4 
 
-PF 5.3 may represent the final kernel configuration.  I supports optimization, generation of alternate arbitrary kernels,  automated build/rebuild of the kernel(s), and automated regression testing. 
+PF 5.3 may represent the final kernel configuration.  It supports optimization, generation of alternate arbitrary kernels,  automated build/rebuild of the kernel(s), and automated regression testing. 
 We don't think anything else needs to change at this point, and most new development can be built on top of this. Unless we find some egregious bugs, this should be the final form of the propforth kernel.
 
 = Differences = 
