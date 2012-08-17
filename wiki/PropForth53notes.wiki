@@ -16,7 +16,7 @@ The release package now looks like it will be in the form of mygo.zip
 
 = MyGo.zip =
 
-[MyGo.zip] is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
+MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
 
 {{{
 C:\Documents and Settings\<user>\My Documents\MyGo
