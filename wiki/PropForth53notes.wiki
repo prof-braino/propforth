@@ -28,19 +28,6 @@ The intention is to use this distributed parallel multi-processor approach to do
 
 NOTE - Do not attempt to use the Go Language interface unless you intend to do cool stuff with robots and embedded systems.  It might not be suitable for any other purpose, we just don't know yet. 
 
-
-= MyGo.zip =
-
-MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
-
-{{{
-C:\Documents and Settings\<user>\My Documents\MyGo
-}}}
-
-rename any previous MyGo directory and replace it with the MyGo directory from the archive. 
-
-Find the README file in each directory, and follow the instructions.  Each README is specific to that directory, so you may have to read more than on, depending on what you are doing. 
-
 = Setting up the Go Language =
 
 The Go language provide the PC interface to the automated test tools.  Using the Go Language is optional.
@@ -64,9 +51,47 @@ MyGo is the directory for Go Language source code and executables.
 Please NOTE - the GO interface is VERY POWERFUL.  You can do amazing and dangerous stuff with this. 
 
 
-= Run th
+= STEPS =
 
+Assuming Go is now set up, here are the steps to run propforth
 
+= MyGo.zip =
+
+MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
+
+{{{
+C:\Documents and Settings\<user>\My Documents\MyGo
+}}}
+
+rename any previous MyGo directory and replace it with the MyGo directory from the archive. 
+
+Find the README file in each directory, and follow the instructions.  Each README is specific to that directory, so you may have to read more than on, depending on what you are doing. 
+
+= Hardware = 
+
+Connect a Quickstart of other prop borad to the workstaion using a USB virtual serial port of other suitable connection. 
+
+= Software =  
+
+== FORTH ONLY == 
+
+If you sue PropForth only (No Go Language tools, (coward!):
+
+ * Select the desired PRopforth.sspin source file (USUALLY) 
+(((
+PropForthDevFastSerialKernel.spin (if no SD support is required)
+
+PropForthSDFastSerialKernel.spin (if SD support is required)
+)))
+ * Use the proptool to load the spin program to EEPROM
+
+ * Begin forthing around
+
+== FORTH + GO ==
+
+Alternatively, if you with to use the FULL POWER of the package:
+
+-
 
 = Details =
 
