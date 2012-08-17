@@ -93,13 +93,22 @@ Alternatively, if you with to use the FULL POWER of the package:
 
 - Install GO (as done above)
 
-- Compile GoTerm and GoMuxTerm
+- copy the new MyGo directory from the release to the GoFiles directory as before
 
-- Run the build tools
+- run the gosheell.bat script, it sets up stuff and leave a command line window open. 
 
-- Run the test automation tools
+- In the open command line winodw:
 
-- Modify the kernel as needed
+  - cd to V5.3
+
+  - cd to kernels
+
+  - execute the maketest.bat script to see the entire automation suite run
+
+The maketest.bat script will MAKE all the kernels from source, and execute the entire regression suite on all the kernels.
+
+
+== Users are encourage to use the automation for their own projects ==
 
 - Create applications as desired
 
@@ -117,9 +126,10 @@ Alternatively, if you with to use the FULL POWER of the package:
 
 Smile :)
 
-= Details =
+= Summary =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The functionality that has been developed over the last several years has been optimized in v5.0.  One design element has been the ability for user to generate custom kernels optimized for any arbitrary set of hardware. Testing became problematic as new kernels requireed new tests, and the new material caused test time to exced development time.   
+
+Automation was planned testing and introduced in this last cycle.  Now, developers can add tests on the fly as they develop; once debugged, the tests can be directly add to the regression suite.  An change that results in a deviation in an unrelated part of the code (one of the most difficult bugs to track) is immediately apparent, as the last change will most likely be related to the deviation.  The build process is also automted, any kernel that can be built from an existing kernel can be added to the build process automation.
+
+Version 5.3 adds automated build process and regression testing. Any user can follow the regression test for an example of the correct use and function of each element of propforth.  Hopefully this will shed light on all but the darkest secrets of propforth.  An items still unclear can be addressed in the wiki pages and future tutorials.  We appreciate community support in pointing thes items out, by asking question.  We and the community will attempt to address these questions as they are presented. 
