@@ -133,3 +133,5 @@ The functionality that has been developed over the last several years has been o
 Automation was planned testing and introduced in this last cycle.  Now, developers can add tests on the fly as they develop; once debugged, the tests can be directly add to the regression suite.  An change that results in a deviation in an unrelated part of the code (one of the most difficult bugs to track) is immediately apparent, as the last change will most likely be related to the deviation.  The build process is also automted, any kernel that can be built from an existing kernel can be added to the build process automation.
 
 Version 5.3 adds automated build process and regression testing. Any user can follow the regression test for an example of the correct use and function of each element of propforth.  Hopefully this will shed light on all but the darkest secrets of propforth.  An items still unclear can be addressed in the wiki pages and future tutorials.  We appreciate community support in pointing thes items out, by asking question.  We and the community will attempt to address these questions as they are presented. 
+
+= End PropForth V5.3 Notes 20120817 =
