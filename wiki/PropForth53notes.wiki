@@ -78,11 +78,11 @@ Connect a Quickstart of other prop borad to the workstaion using a USB virtual s
 If you sue PropForth only (No Go Language tools, (coward!):
 
  * Select the desired PRopforth.sspin source file (USUALLY) 
-(((
+{{{
 PropForthDevFastSerialKernel.spin (if no SD support is required)
 
 PropForthSDFastSerialKernel.spin (if SD support is required)
-)))
+}}}
  * Use the proptool to load the spin program to EEPROM
 
  * Begin forthing around
