@@ -3,7 +3,7 @@
 
 = Introduction =
 
-PropForth Version 5.3 is the culmination of the development experiments conducted since version 2.4 
+[PropForth] Version 5.3 is the culmination of the development experiments conducted since version 2.4 
 
 PF 5.3 may represent the final kernel configuration.  It supports optimization, generation of alternate arbitrary kernels,  automated build/rebuild of the kernel(s), and automated regression testing. 
 We don't think anything else needs to change at this point, and most new development can be built on top of this. Unless we find some egregious bugs, this should be the final form of the propforth kernel.
@@ -16,7 +16,7 @@ The release package now looks like it will be in the form of mygo.zip
 
 = MyGo.zip =
 
-MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
+[MyGo.zip] is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
 
 {{{
 C:\Documents and Settings\<user>\My Documents\MyGo
