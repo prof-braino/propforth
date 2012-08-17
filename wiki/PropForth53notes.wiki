@@ -1,8 +1,53 @@
-#summary One-sentence summary of this page.
+#summary PropForth v5.3 notes 20120817
+#labels v5.3
 
 = Introduction =
 
-Add your content here.
+PropForth Version 5.3 is the culmination of the development experiments conducted since version 2.4 
+
+PF 5.3 may represent the final kernel configuration.  I supports optimization, generation of alternate arbitrary kernels,  automated build/rebuild of the kernel(s), and automated regression testing. 
+We don't think anything else needs to change at this point, and most new development can be built on top of this. Unless we find some egregious bugs, this should be the final form of the propforth kernel.
+
+= Differences = 
+
+There are some slight differences in this release package.
+
+The release package now looks like it will be in the form of mygo.zip
+
+= MyGo.zip =
+
+MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
+
+{{{
+C:\Documents and Settings\<user>\My Documents\MyGo
+}}}
+
+rename any previous MyGo directory and replace it with the MyGo directory from the archive. 
+
+Find the README file in each directory, and follow the instructions.  Each README is specific to that directory, so you may have to read more than on, depending on what you are doing. 
+
+= Go Language Directory =
+
+MyGo is the directory for Go Language source code and executables.
+
+The Go language provide the PC interface to the automated test tools.  Users that do not wish to user the automation may select any directory or directory name to contain the propforth materials. 
+
+Please NOTE - the GO interface is VERY POWERFUL.  You can do amazing and dangerous stuff with this. 
+
+= Go Language Interface =
+
+The Go language provide tools and support so the workstaiton can talk directly to the prop at the application level.  
+
+The Prop now sees it has workstation assets available to it.  
+
+The workstation now sees that it has software configurable I/O attached to various sensors and actuators. 
+
+The intention is to use this distributed parallel multi-processor approach to do cool experiments with robots and embedded systems.  Maybe.
+
+NOTE - Do not attempt to use the Go Language interface unless you intend to do cool stuff with robots and embedded systems.  It might not be suitable for any other purpose, we just don't know yet. 
+
+
+
 
 
 = Details =
