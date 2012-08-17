@@ -14,27 +14,9 @@ There are some slight differences in this release package.
 
 The release package now looks like it will be in the form of mygo.zip
 
-= MyGo.zip =
+This release is built to interface to other systems, using Go channel interfaces, similar to Propforth's  MCS (multichannel synchronous serial). 
 
-MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
-
-{{{
-C:\Documents and Settings\<user>\My Documents\MyGo
-}}}
-
-rename any previous MyGo directory and replace it with the MyGo directory from the archive. 
-
-Find the README file in each directory, and follow the instructions.  Each README is specific to that directory, so you may have to read more than on, depending on what you are doing. 
-
-= Go Language Directory =
-
-MyGo is the directory for Go Language source code and executables.
-
-The Go language provide the PC interface to the automated test tools.  Users that do not wish to user the automation may select any directory or directory name to contain the propforth materials. 
-
-Please NOTE - the GO interface is VERY POWERFUL.  You can do amazing and dangerous stuff with this. 
-
-= Go Language Interface =
+== Go Language Interface ==
 
 The Go language provide tools and support so the workstaiton can talk directly to the prop at the application level.  
 
@@ -47,6 +29,42 @@ The intention is to use this distributed parallel multi-processor approach to do
 NOTE - Do not attempt to use the Go Language interface unless you intend to do cool stuff with robots and embedded systems.  It might not be suitable for any other purpose, we just don't know yet. 
 
 
+= MyGo.zip =
+
+MyGo.zip is the download archive containing the propforth material.  This is a zip of the MyGo directory. On windows, this is usually
+
+{{{
+C:\Documents and Settings\<user>\My Documents\MyGo
+}}}
+
+rename any previous MyGo directory and replace it with the MyGo directory from the archive. 
+
+Find the README file in each directory, and follow the instructions.  Each README is specific to that directory, so you may have to read more than on, depending on what you are doing. 
+
+= Setting up the Go Language =
+
+The Go language provide the PC interface to the automated test tools.  Using the Go Language is optional.
+
+== Go Is Optional ==
+
+Users that do not wish to user the automation may select any directory or directory name to contain the propforth materials. 
+
+== But try it anyway ==
+
+Set up the Go language per the instructions for your operating system. 
+
+http://code.google.com/p/propforth/wiki/GoSetup20120511
+
+Fix that link, it is old
+
+= Go Language Directory =
+
+MyGo is the directory for Go Language source code and executables.
+
+Please NOTE - the GO interface is VERY POWERFUL.  You can do amazing and dangerous stuff with this. 
+
+
+= Run th
 
 
 
