@@ -16,7 +16,7 @@ The various components of the project will be documented on separate pages on th
 
 == Purchasable Parts: ==
 
-LittleRobotBOM
+[http://code.google.com/p/propforth/wiki/LittleRobotBOM LittleRobotBOM]
 
 == Driver Software: ==
 
