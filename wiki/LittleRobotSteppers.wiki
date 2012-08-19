@@ -428,11 +428,15 @@ Test each of the 4 IO Pins
 
 for each pin, do the following test
 
+{{{
 8 pinout 8 pinhi
+}}}
 
 The LED should light.  If so, next step is
 
+{{{
 8 pinlo
+}}}
 
 (If not, there is a problem, 
 
