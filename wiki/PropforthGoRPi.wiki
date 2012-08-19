@@ -1,0 +1,28 @@
+#summary Propforth and Raspberry Pi system concept
+#labels v5.3,RPi
+
+= Introduction =
+
+PropForthGoRPi
+
+The Parallax Propellor chip is very suitable for deterministic real time execution, particularly when running PropForth.
+
+The Raspberry Pi is very good as a baseline Linux workstation.   In fact in terms of benfit per dollar, (bang for the buck) it is unparalled as a low cost Linux workstation.  
+
+ The prop chip is a microcontrollerr. It has many (32) general purpose I/O pins, and eight parallel CPU cores.  It is very easy to ceate software driver interfaces to arbitrary sensors and actuators.  It has minimal memory (by design) and NOT particular suited to workstation activities like GUI, number crunching, network access, data base processing. 
+
+The Raspberry Pi is very good at providing workstation OS services. Its a little slow at running a GUI, but totally smokes (techinical term) at command line operations.  However, it is single threaded.  To do real time functions on the RPi, somewhat complex rituals are needed to ensure latency issues to not impact the application performance, especially when the application increases in size and complexity. 
+
+This experiment deal with combining the excellent workstation abilities of the RPi with the excellent realtime abilities of the prop.  This is accomplish (in this case) with Propforth on the Prop and Go language n teh RPi.  (Other groups are experimenting with for example C on both, etc; but these are out of scope for this discussion unless we find something clever that we can steal/copy/borrow/use :) ).
+
+The Raspberry Pi software and documentation is being developed and stored on a RPi using dokuwiki.  The URL will be released to the general public shortly.   
+
+20120819   
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
