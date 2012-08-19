@@ -1,0 +1,46 @@
+#summary Bill of MAterials (BOM) for Little Robot
+#labels v5.3,LittleRobot
+
+= Introduction =
+
+Little Robot is an example of a mobile robotic platform for embedded systems experimentation. We want it cheap enough so just about anybody can participate.
+
+The user may purchase the recommended parts, or replace any parts with custom selections.  The design is indented to be upgradable.  As the project evolves and users become more capable, the complexity of the system will increase, and allow upgrades and enhancements. 
+
+BOM as of 20120819
+
+We ordered these off of eBay, Proudly American Made by Chinese folks in China. 
+
+ * 2 Stepper Motors - $3.32 ( four weeks ago, now they are $2.29 20120812)
+{{{
+5V Stepper Motor 28BYJ-48 With Drive Test Module Board ULN2003 5 Line 4 Phase
+}}}
+http://www.ebay.com/itm/5V-Stepper-Motor-28BYJ-48-Drive-Test-Module-Board-ULN2003-5-Line-4-Phase-/170781372685
+
+ * 1 ultrasonic Range finder - $2.35 ( four weeks ago, now they are $2.26 20120812)
+{{{
+1pcs Ultrasonic Module HC-SR04 Distance Measuring Transducer Sensor for Arduino
+}}}
+http://www.ebay.com/itm/1pcs-Ultrasonic-Module-HC-SR04-Distance-Measuring-Transducer-Sensor-Arduino-/261009210866
+
+ * 1 Blue Tooth Serial Cable replacement $6.42 - ( four weeks ago, now they are still $6.42 20120812)
+{{{
+1pcs Wireless Bluetooth Transceiver Module RS232 / TTL HC-05
+}}}
+http://www.ebay.com/itm/1pcs-Wireless-Bluetooth-Transceiver-Module-RS232-TTL-HC-05-/251066012059
+
+|| Motors   ||  $5.58 || 
+|| Ultrasonic ||   $2.26|| 
+|| Blue tooth ||  $6.42 || 
+||           ||   -----|| 
+|| Total    ||  $14.26|| 
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
