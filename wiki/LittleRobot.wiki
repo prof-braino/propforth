@@ -1,0 +1,42 @@
+#summary Little Robot project index page
+#labels v5.3,LittleRobot
+
+= Introduction =
+
+LittleRobot - index
+
+The Little Robot porgect has been refer to by various names: The Demo, Football Bot, Cheapest Possible Robot, Complex Datastreams and Filtering experiment.  We descided to try "Little Robot" since it lexcally complete, sounds better and is less threatening than some of the other choices.  The target audience does not particularly care that complex data streams arer filtered in real time, so long as it moves and looks cool.
+
+The various components of the project will be documented on separate pages on this wiki. If it works out, these pages will be expanded as progress dictates.     
+
+   
+--
+
+Type 1 - 20120818 "Cheapest Possible" configuration example
+
+Purchasable Parts:
+
+LittleRobotBOM
+
+Driver Software:
+
+LittleRobotSteppers
+LittleRobotUltraSonic
+
+User Created Parts:
+
+LittleRobotChassis
+LittleRRobotWheels
+
+Type 2 - YYYMMDD - "Additional Sensors" Example
+
+Type 3 - YYYMMDD - "OutDoor" model
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
