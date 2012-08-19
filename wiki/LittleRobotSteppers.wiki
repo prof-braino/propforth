@@ -5,7 +5,7 @@
 
 This is the stepper motor control source code included in ../Proforth5.3/misc/4stepper.f
 
-This code should work on all version of Propfoth, or at least the last one v5.03, so you don't need to wait to try it.  
+This code should work on all version of Propforth, or at least the last one v5.03, so you don't need to wait to try it.  
 
 {{{
 
