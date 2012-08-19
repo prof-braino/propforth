@@ -12,25 +12,27 @@ The various components of the project will be documented on separate pages on th
    
 --
 
-Type 1 - 20120818 "Cheapest Possible" configuration example
+= Type 1 - 20120818 "Cheapest Possible" configuration example =
 
-Purchasable Parts:
+== Purchasable Parts: ==
 
 LittleRobotBOM
 
-Driver Software:
+== Driver Software: ==
 
 LittleRobotSteppers
+
 LittleRobotUltraSonic
 
-User Created Parts:
+== User Created Parts: ==
 
 LittleRobotChassis
+
 LittleRRobotWheels
 
-Type 2 - YYYMMDD - "Additional Sensors" Example
+= Type 2 - YYYMMDD - "Additional Sensors" Example =
 
-Type 3 - YYYMMDD - "OutDoor" model
+= Type 3 - YYYMMDD - "OutDoor" model =
 
 
 
