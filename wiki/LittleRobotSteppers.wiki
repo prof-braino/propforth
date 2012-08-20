@@ -449,8 +449,17 @@ The motor tests check is the motor turns as increasing accelerations. If the mot
 = Test motor =
 
 test half step
+5 volt test 
+Protoboard  (4.37v measured) 
+Quickstart (4.34v measured) drops at 
+
 
 test full step
+
+5 volt test 
+Protoboard  (4.37v measured) drops at 11 (
+Quickstart (4.34v measured) drops at 1 (low current from usb)
+
 
 = Details =
 
