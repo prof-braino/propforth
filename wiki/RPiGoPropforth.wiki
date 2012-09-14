@@ -119,10 +119,7 @@ The idea is that Xming talks through PuTTy and lxterminal and lets us SSH into t
   # Start Xming - Xming Launch
   # Select Multiple Windows - Next>
   # Select Start a Program Next>
-  # Start Program: lxterminal (replace 'xterm' with 'lxterminal'
-
-Don't hit Next yet.  In the same window: 
-
+  # Start Program: lxterminal (replace 'xterm' with 'lxterminal').Don't hit Next yet.  In the same window: 
   # Run Remote
   # Select Using PuTTy (plink.exe)
   # Connect ot computer: IP.Address.of.RPi (this is IP address you put in /etc/hosts on the RPi
