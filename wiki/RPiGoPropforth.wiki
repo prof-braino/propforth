@@ -230,13 +230,89 @@ On windows – map network drive
 
 -------
 
+= GO LANGUAGE =
+
+To install and build the go language:
+
+We need to add some environment variables:
+
+{{{
+cd
+
+nano .profile
+}}}
+
+Add the following to the end of the file:
+
+{{{
+export GOROOT=$HOME/go
+export GOOS=linux
+export GOARCH=arm
+PATH=$HOME/mygo/bin:$GOROOT/bin:$PATH
+export GOPATH=$HOME/mygo
+export MINICOM=-“b 115200 -o -D /dev/ttyAMA0”
+}}}
+
+Logout and log back in, make sure teh environment variables are correct:
+{{{
+env
+}}}
+
+NOTE:  For some reason, the .profile envirnmentn setting are not shown in the Xming window.  But you can check it when running headless using `teraterm`.  The Environment variable are displayed in the GUI terminal window. 
+
+== tools ==
+
+Install some tools we will need:
+
+=== mecurial ===
+
+{{{
+sudo apt-get install mercurial
+}}}
+
+=== install git ===
+
+{{{
+sudo apt-get install git
+}}}
 
 
+=== Go source files ===
+
+Copy the source for Go to your rig:
+{{{
+hg clone -u tip https://code.google.com/p/go
+}}}
+
+The following patch must be applied:
+
+{{{
+cd ~/go/src
+
+wget https://codereview.appspot.com/download/issue5987063_32001.diff
+
+patch -p2 <issue5987063_32001.diff
+
+}}}
+
+NOTE: I get an error here,  but it seemed to work...
 
 
+[https://codereview.appspot.com/5987063 Details on Issue 5987063]
+
+= COMPILE the GO SOURCE =
+
+This compile will take about an hour.
+{{{
+./all.bash
+}}}
+
+NOTE: You are now a pretty bad-ass hacker, as you've just compiled Go language support from source, this is no small feat!
 
 
+Copied over goterm & gomuxterm and compiled 
 
+= end notes 20120914 =
 
 
 = Details =
