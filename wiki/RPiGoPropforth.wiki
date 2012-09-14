@@ -117,19 +117,19 @@ Xming works really well but its a little funcky to set up.  Folks who use Xming 
 The idea is that Xming talks through PuTTy and lxterminal and lets us SSH into terminal windows on the RPI.  If you don't understand, that's ok, it doesn't matter at this point. Here's what matters:
 
   # Start Xming - Xming Launch
- # Select Multiple Windows - Next>
+  # Select Multiple Windows - Next>
   # Select Start a Program Next>
   # Start Program: lxterminal (replace 'xterm' with 'lxterminal'
 
 Don't hit Next yet.  In the same window: 
 
- # Run Remote
+  # Run Remote
   # Select Using PuTTy (plink.exe)
- # Connect ot computer: IP.Address.of.RPi (this is IP address you put in /etc/hosts on the RPi
+  # Connect ot computer: IP.Address.of.RPi (this is IP address you put in /etc/hosts on the RPi
   # Login as user: pi (unless you changed it)
- # Password (raspberry or whatever you set)
+  # Password (raspberry or whatever you set)
   # Next>
- # next> (nothing gets selected on the additional parameters page
+  # next> (nothing gets selected on the additional parameters page
   # Finish
 
 It takes several seconds for the systems to negotiate ssh passwords and whatever else they do to introduce themselves.  Eventually if all is well you get a command window on the RPi.   You are not working remotely on your RPi from your WXP PC.  
