@@ -307,8 +307,13 @@ This compile will take about an hour.
 ./all.bash
 }}}
 
-NOTE: You are now a pretty bad-ass hacker, as you've just compiled Go language support from source, this is no small feat!
+NOTE:  There's an illegal instruction right at the end using 
 
+2012-08-16-wheezy-raspbian
+
+This draft needs update for the recent version
+
+----
 
 Copied over goterm & gomuxterm and compiled 
 
