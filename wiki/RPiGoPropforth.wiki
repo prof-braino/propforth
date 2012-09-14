@@ -1,0 +1,30 @@
+#summary Setting Up Raspberry Pi for GO and PROPFORTH
+= Introduction =
+
+Raspberry Pi is the BASELINE platform LINUX installation for the propforth build and regression test automation. 
+
+This system will also serve as the basis for a workstation OS node in multiprop configurations.
+
+Even if you don't want to do automated kernel builds and or automated regression testing, you still want to stet this up.  This is what turns a couple microcontrollers into .... something interesting.
+
+= set up =
+
+These notes are taken from Sal's dokuwiki raspberry pi notes and are subject to change.  Report any errors and I'll try to fix 'em.
+
+== Install RASPIAN on Raspberry Pi SD ==
+
+These images were tested and worked
+
+[http://downloads.raspberrypi.org/download.php?file=/images/raspbian/2012-07-15-wheezy-raspbian/2012-07-15-wheezy-raspbian.zip 2012-07-15-wheezy-raspbian.zip]
+
+[http://downloads.raspberrypi.org/images/raspbian/2012-08-16-wheezy-raspbian/2012-08-16-wheezy-raspbian.zip
+2012-08-16-wheezy-raspbian.zip]
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
