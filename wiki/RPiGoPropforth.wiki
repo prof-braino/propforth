@@ -1,4 +1,5 @@
 #summary Setting Up Raspberry Pi for GO and PROPFORTH
+#labels RPi,RaspberryPi
 = Introduction =
 
 Raspberry Pi is the BASELINE platform LINUX installation for the propforth build and regression test automation. 
@@ -17,10 +18,88 @@ These images were tested and worked
 
 [http://downloads.raspberrypi.org/download.php?file=/images/raspbian/2012-07-15-wheezy-raspbian/2012-07-15-wheezy-raspbian.zip 2012-07-15-wheezy-raspbian.zip]
 
-[http://downloads.raspberrypi.org/images/raspbian/2012-08-16-wheezy-raspbian/2012-08-16-wheezy-raspbian.zip
-2012-08-16-wheezy-raspbian.zip]
+[http://downloads.raspberrypi.org/images/raspbian/2012-08-16-wheezy-raspbian/2012-08-16-wheezy-raspbian.zip 2012-08-16-wheezy-raspbian.zip]
 
+Follow the directions to burn this to the SD
 
+== Power up the RPi ==
+
+At initial boot, a configuration screen will come up on the RPi. Select and execute the following options:
+{{{
+expand_rootfs
+change_timezone
+memory_split - select the option which allocates the most memory for ARM
+ssh - enable ssh
+finish - answer yes to rebooting 
+login as pi (default password in raspberry)
+}}}
+
+If you want to run the configuration again
+
+raspi-config:
+
+{{{
+sudo raspi-config
+}}}
+
+Change the password for the user pi:
+{{{
+passwd
+}}}
+Now we are going to change the IP address to be a static address, and we are going to change the hostname. Depending on your LAN configuration these addresses may be different.
+
+{{{
+sudo nano /etc/hosts
+}}}
+Change:
+{{{
+raspberrypi
+}}}
+to:
+{{{
+rpi-my-unique-name
+}}}
+(or whatever you want the hostname to be).
+
+And add the following line (the ip address is the static address we will set later):
+{{{
+192.168.0.170 rpi-my-unique-name
+
+sudo nano /etc/hostname
+}}}
+Change:
+{{{
+raspberrypi
+}}}
+to:
+{{{
+rpi-my-unique-name
+}}}
+
+(or whatever you want the hostname to be).
+{{{
+sudo nano /etc/network/interfaces
+}}}
+Change the line:
+{{{
+iface eth0 inet dhcp
+}}}
+to:
+{{{
+iface eth0 inet static
+}}}
+And add the following lines:
+{{{
+address 192.168.0.170
+
+netmask 255.255.255.0
+
+gateway 192.168.0.1
+}}}
+And reboot the system:
+{{{
+sudo reboot 
+}}}
 
 = Details =
 
