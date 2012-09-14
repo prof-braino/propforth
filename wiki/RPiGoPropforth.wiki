@@ -41,11 +41,15 @@ raspi-config:
 {{{
 sudo raspi-config
 }}}
+== set your password ==
 
 Change the password for the user pi:
 {{{
 passwd
 }}}
+
+== set hosttname and IP address ==
+
 Now we are going to change the IP address to be a static address, and we are going to change the hostname. Depending on your LAN configuration these addresses may be different.
 
 {{{
@@ -100,6 +104,40 @@ And reboot the system:
 {{{
 sudo reboot 
 }}}
+to allow the changes to take affect
+
+= Run HEADLESS =
+
+This step is optional.  You don't HAVE to run headless, but the little RPi is faster if it doesn't have to mess running with a GUI.  These steps apply to your windows PC.
+
+== install Xming ==
+
+Xming works really well but its a little funcky to set up.  Folks who use Xming assume everybody understand everything about Xming, which make is a bit problematic for new folks. 
+
+The idea is that Xming talks through PuTTy and lxterminal and lets us SSH into terminal windows on the RPI.  If you don't understand, that's ok, it doesn't matter at this point. Here's what matters:
+
+# Start Xming - Xming Launch
+# Select Multiple Windows - Next>
+# Select Start a Program Next>
+# Start Program: lxterminal (replace 'xterm' with 'lxterminal'
+
+Don't hit Next yet.  In the same window: 
+
+# Run Remote
+# Select Using PuTTy (plink.exe)
+# Connect ot computer: IP.Address.of.RPi (this is IP address you put in /etc/hosts on the RPi
+# Login as user: pi (unless you changed it)
+# Password (raspberry or whatever you set)
+# Next>
+# next> (nothing gets selected on the additional parameters page
+# Finish
+
+It takes several seconds for the systems to negotiate ssh passwords and whatever else they do to introduce themselves.  Eventually if all is well you get a command window on the RPi.   You are not working remotely on your RPi from your WXP PC.  
+
+Navbigate to the instructions pages on the PC browser and cut and paste the instructions into the RPi terminal window.  Its alot easier, and you are less prone to typing mistakes. 
+
+
+
 
 = Details =
 
