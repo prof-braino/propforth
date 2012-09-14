@@ -116,7 +116,7 @@ sudo reboot
 
 to allow the changes to take affect
 
----
+----
 
 = Run HEADLESS =
 
@@ -145,7 +145,7 @@ It takes several seconds for the systems to negotiate ssh passwords and whatever
 
 Navbigate to the instructions pages on the PC browser and cut and paste the instructions into the RPi terminal window.  Its alot easier, and you are less prone to typing mistakes. 
 
----
+-----
 
 = update and upgrade =
 
@@ -164,7 +164,7 @@ sudo apt-get update
 sudo apt-get upgrade
 }}}
 
----
+------
 
 = install SAMBA =
 
@@ -200,7 +200,7 @@ and uncomment:
 {{{
 security = user
 }}}
-Find the line (line 250) in the [homes] section:
+Find the line (line 250) in the `[homes]` section:
 {{{
 read only = yes
 }}}
@@ -228,7 +228,7 @@ sudo /etc/init.d/samba restart
 On windows – map network drive 
 \\MyRPi\pi user - pi, password - set with smbpasswd 
 
----
+-------
 
 
 
