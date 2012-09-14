@@ -52,6 +52,8 @@ passwd
 
 Now we are going to change the IP address to be a static address, and we are going to change the hostname. Depending on your LAN configuration these addresses may be different.
 
+=== edit HOSTS file ===
+
 {{{
 sudo nano /etc/hosts
 }}}
@@ -63,12 +65,17 @@ to:
 {{{
 rpi-my-unique-name
 }}}
+
 (or whatever you want the hostname to be).
 
 And add the following line (the ip address is the static address we will set later):
 {{{
 192.168.0.170 rpi-my-unique-name
+}}}
 
+=== edit HOSTNAME file ===
+
+{{{
 sudo nano /etc/hostname
 }}}
 Change:
@@ -100,15 +107,20 @@ netmask 255.255.255.0
 
 gateway 192.168.0.1
 }}}
+
 And reboot the system:
+
 {{{
 sudo reboot 
 }}}
+
 to allow the changes to take affect
+
+---
 
 = Run HEADLESS =
 
-This step is optional.  You don't HAVE to run headless, but the little RPi is faster if it doesn't have to mess running with a GUI.  These steps apply to your windows PC.
+This step is optional.  You don't HAVE to run headless, but the little RPi is faster if it isn't occupied with running with a GUI.  These steps apply to your windows PC.
 
 == install Xming ==
 
@@ -132,6 +144,97 @@ The idea is that Xming talks through PuTTy and lxterminal and lets us SSH into t
 It takes several seconds for the systems to negotiate ssh passwords and whatever else they do to introduce themselves.  Eventually if all is well you get a command window on the RPi.   You are not working remotely on your RPi from your WXP PC.  
 
 Navbigate to the instructions pages on the PC browser and cut and paste the instructions into the RPi terminal window.  Its alot easier, and you are less prone to typing mistakes. 
+
+---
+
+= update and upgrade =
+
+These step can be run from a terminal window on the RPi desktop GUI, or remotely from a terminal window using xterrm, Xming etc.
+
+== update ==
+
+from teminal window:
+{{{
+sudo apt-get update
+}}}
+
+== upgrade ==
+
+{{{
+sudo apt-get upgrade
+}}}
+
+---
+
+= install SAMBA =
+
+SAMBA allow us to get at the RPi linux file system from a windows PC.
+
+== download and install the packages ==
+
+{{{
+sudo apt-get install samba
+
+sudo apt-get install samba-common-bin 
+}}}
+
+== edit the config files ==
+
+sudo nano /etc/samba/smb.conf
+
+Find the line (line 38):
+{{{
+workgroup = WORKGROUP
+}}}
+and change the workgroup
+{{{
+workgroup = MyWorkGroup
+}}}
+Use can your own workgroup name
+
+Find the line (line 62): ( I think  this is wrong line number?)
+{{{
+# security = user
+}}}
+and uncomment:
+{{{
+security = user
+}}}
+Find the line (line 250) in the [homes] section:
+{{{
+read only = yes
+}}}
+and changes to:
+{{{
+read only = no
+}}}
+
+restart the samba server:
+
+{{{
+sudo /etc/init.d/samba restart
+}}}
+
+Set a password for the user pi, this is separate from the login password.  The Samba password will be the password you need to enter on a remote system to acces pi's files.  You can use the same password for linux and for samba if you wish, just be aware that they are NOT locked together. (It took me a while to figure this out :) )
+{{{
+sudo smbpasswd -a pi
+}}}
+
+restart the samba sever again to make the password change take affect: 
+{{{
+sudo /etc/init.d/samba restart
+}}}
+
+On windows – map network drive 
+\\MyRPi\pi user - pi, password - set with smbpasswd 
+
+---
+
+
+
+
+
+
 
 
 
