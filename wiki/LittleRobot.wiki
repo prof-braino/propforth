@@ -1,4 +1,4 @@
-#summary Little Robot project index page
+#summary Little Robot(c) project index page
 #labels v5.3,LittleRobot
 
 = Introduction =
