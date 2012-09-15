@@ -64,8 +64,12 @@ Now we are going to change the IP address to be a static address, and we are goi
 
 === edit HOSTS file ===
 
+NANO is a text editor.
+
+To show LINE NUMBERS in nano, start with the option ` nano -c <filename>`
+
 {{{
-sudo nano /etc/hosts
+sudo nano -c /etc/hosts
 }}}
 Change:
 {{{
@@ -86,7 +90,7 @@ And add the following line (the ip address is the static address we will set lat
 === edit HOSTNAME file ===
 
 {{{
-sudo nano /etc/hostname
+sudo nano -c /etc/hostname
 }}}
 Change:
 {{{
@@ -99,7 +103,7 @@ rpi-my-unique-name
 
 (or whatever you want the hostname to be).
 {{{
-sudo nano /etc/network/interfaces
+sudo nano -c /etc/network/interfaces
 }}}
 Change the line:
 {{{
@@ -190,7 +194,7 @@ sudo apt-get install samba-common-bin
 
 == edit the config files ==
 
-sudo nano /etc/samba/smb.conf
+sudo nano -c /etc/samba/smb.conf
 
 Find the line (line 38):
 {{{
@@ -261,7 +265,7 @@ We need to add some environment variables:
 {{{
 cd
 
-nano .profile
+nano -c .profile
 }}}
 
 Add the following to the end of the file:
