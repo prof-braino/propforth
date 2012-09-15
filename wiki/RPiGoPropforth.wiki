@@ -238,6 +238,18 @@ sudo /etc/init.d/samba restart
 On windows – map network drive 
 \\MyRPi\pi user - pi, password - set with smbpasswd 
 
+=== this might be OPTIONAL add a user for your WXP id ===
+
+The first time I set up the RPi Iwas able to map to it on WXP.  The second time, its not letting me map a drive letter on WXP to my home directroy on the (second) RPi.
+
+So I think I need to add a user to the RPi with the same name as my WXP login. 
+
+{{{
+
+}}}
+
+Nope, this didn't work either.  I must have missed a stepp in the SAMBA set up.
+
 -------
 
 = GO LANGUAGE =
