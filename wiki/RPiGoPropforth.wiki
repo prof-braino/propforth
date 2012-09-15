@@ -48,6 +48,16 @@ Change the password for the user pi:
 passwd
 }}}
 
+== set the ROOT passwd ==
+
+NOTE: there isn't a root password by default.  To login in as root we have to set a password.
+
+{{{
+sudo passwd root
+}}}
+
+We might not need to do this.  However, many old-school linux references (pre-sudo) require logging in as root to execute some administrative commands. 
+
 == set hosttname and IP address ==
 
 Now we are going to change the IP address to be a static address, and we are going to change the hostname. Depending on your LAN configuration these addresses may be different.
