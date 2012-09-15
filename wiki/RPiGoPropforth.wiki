@@ -89,6 +89,8 @@ And add the following line (the ip address is the static address we will set lat
 192.168.0.170 rpi-my-unique-name
 }}}
 
+NOTE: I'm using 192.168.0.170 as my example, you should use an IP address suitable for your network and router.  Configuring yur network and router is beyond the scope of this instruction, but you want an address that you can set as STATIC so it doesn't get changed due to power failures, etc. 
+
 === edit HOSTNAME file ===
 
 {{{
