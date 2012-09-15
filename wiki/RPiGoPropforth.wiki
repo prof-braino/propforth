@@ -275,6 +275,11 @@ export GOPATH=$HOME/mygo
 export MINICOM=-“b 115200 -o -D /dev/ttyAMA0”
 }}}
 
+the last line should be(?):`export MINICOM=“-b 115200 -o -D /dev/ttyAMA0”`
+
+
+
+
 Logout and log back in, make sure teh environment variables are correct:
 {{{
 env
