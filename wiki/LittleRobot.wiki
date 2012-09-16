@@ -5,7 +5,7 @@
 
 LittleRobot™ - index
 
-The Little Robot© project has been refer to by various names: The Demo©, Football Bot©©, [http://code.google.com/p/propforth/wiki/CheapestPossibleRobot Cheapest Possible Robot©], Complex Datastreams and Filtering experiment©.  We decided to try "Little Robot©" since it lexically complete, sounds better and is less threatening than some of the other choices.  The target audience does not particularly care that complex data streams are filtered in real time, so long as it moves and looks cool.
+The Little Robot™ project has been refer to by various names: The Demo™, Football Bot™, [http://code.google.com/p/propforth/wiki/CheapestPossibleRobot Cheapest Possible Robot™], Complex Datastreams and Filtering experiment™.  We decided to try "Little Robot™" since it lexically complete, sounds better and is less threatening than some of the other choices.  The target audience does not particularly care that complex data streams are filtered in real time, so long as it moves and looks cool.
 
 The various components of the project will be documented on separate pages on this wiki. If it works out, these pages will be expanded as progress dictates.     
 
@@ -13,9 +13,9 @@ The various components of the project will be documented on separate pages on th
 
 Kids, older and younger siblings, parents, teachers.  Lend me  your ears!
 
-The Little Robot© project is a demo for the Propforth© software project. The intent is to develop a package simple enough so "non-techie©" parents can help the kids learn about cool stuff like building robots from scratch.  It also might include math, physics, mechanics, etc, but these will be hidden and nobody will know, it can be our little secret. 
+The Little Robot™ project is a demo for the Propforth™ software project. The intent is to develop a package simple enough so "non-techie™" parents can help the kids learn about cool stuff like building robots from scratch.  It also might include math, physics, mechanics, etc, but these will be hidden and nobody will know, it can be our little secret. 
 
-= Simple Enough for Parents? =
+= Simple Enough for Parents™? =
 
 So how is this possible?  If it is possible, why hasn't it been done before?
 
