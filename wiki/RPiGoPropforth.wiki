@@ -12,6 +12,14 @@ Even if you don't want to do automated kernel builds and or automated regression
 
 These notes are taken from Sal's dokuwiki raspberry pi notes and are subject to change.  Report any errors and I'll try to fix 'em.
 
+ ******
+
+NOTICE:  We need to set up GO using Teraterm, not Xming.
+
+Xming doesn't set up the env properly yet
+
+ ******
+
 == Install RASPIAN on Raspberry Pi SD ==
 
 These images were tested and worked
@@ -21,6 +29,9 @@ These images were tested and worked
 The 7-15 worked, the newer one 8-16 gave me some problems:
 
 `[http://downloads.raspberrypi.org/images/raspbian/2012-08-16-wheezy-raspbian/2012-08-16-wheezy-raspbian.zip 2012-08-16-wheezy-raspbian.zip]`
+
+Although the 8-16 problems may have been a result of using Xming instead of teraterm.  I'll post more after the next experiment.
+
 
 Follow the directions to burn this to the SD
 
@@ -142,6 +153,8 @@ This step is optional.  You don't HAVE to run headless, but the little RPi is fa
 
 == install Xming ==
 
+NOTICE: Xming works great EXCEPT it doesn't set up the environment variable properly for Go, so go won't compile from an Xming terminal window.  USE Teraterm when you do the GO stuff.
+
 Xming works really well but its a little funcky to set up.  Folks who use Xming assume everybody understand everything about Xming, which make is a bit problematic for new folks. 
 
 The idea is that Xming talks through PuTTy and lxterminal and lets us SSH into terminal windows on the RPI.  If you don't understand, that's ok, it doesn't matter at this point. Here's what matters:
@@ -256,11 +269,13 @@ So I think I need to add a user to the RPi with the same name as my WXP login.
 
 }}}
 
-Nope, this didn't work either.  I must have missed a stepp in the SAMBA set up.
+Nope, this didn't work either.  I must have missed a step in the SAMBA set up.
 
 -------
 
 = GO LANGUAGE =
+
+NOTE: Do this using a teraterm window or the RPi GUI desktop.  Xming doesn't do the env properly, so go doesn't compile remotely using Xming.
 
 To install and build the go language:
 
