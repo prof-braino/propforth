@@ -1,0 +1,43 @@
+#summary Instructions for Automated Build and Test in Propforth v5.3.
+
+= Automated Build and Test =
+
+This is to be covered in Propforth.htm in the download archive.   This wiki page is just a palceholder for the draft notes in preparation for the release.
+
+The Automated Build and Test functionality introduced in Propforth v5.3 uses a PC workstation to exercise the interactive propforth system.  The workstation will generate the propforth kernels from source, load each kernel in turn onto the propforth standard testbed, and execute the regression test suite. 
+
+= Preparation =
+
+== Required hardware ==
+ 
+  * A PC workstation running windows or Linux (or a Mac, you should ask Brian Riley if these instructions don't cover your rig)
+  * standard testbed as described in download archive, which should end up on your PC someplace like: 
+
+C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\kernels\doc\
+
+MultiPropReferenceSystemHardware.txt
+
+== Required Software ==
+
+  * Go Language must be correctly installed.  SEE http://code.google.com/p/propforth/wiki/GoSetup20120511 ask Rick to verify that these instructions still make sense
+  * you need the current kernel BURNED INTO EEPROM on both:
+    * the master (protoboard/shmart board/C3/quickstart
+    * the spinneret/wiznet5100
+
+The file you want on there is
+
+C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForth
+
+PropForthDevFastSerialKernel.spin
+
+
+Notice:  I had an OLD kernel on the spinneret, which ran at the old 57600 baud, instead of the current 230400 baud.  And of course everything came out junk.  If you get FAIL on SNET tests, check for this; its easy to fix.
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
