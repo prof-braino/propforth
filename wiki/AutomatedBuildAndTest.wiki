@@ -13,9 +13,9 @@ The Automated Build and Test functionality introduced in Propforth v5.3 uses a P
   * A PC workstation running windows or Linux (or a Mac, you should ask Brian Riley if these instructions don't cover your rig)
   * standard testbed as described in download archive, which should end up on your PC someplace like: 
 
-C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\kernels\doc\
+'C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\kernels\doc\
 
-MultiPropReferenceSystemHardware.txt
+MultiPropReferenceSystemHardware.txt'
 
 == Required Software ==
 
@@ -26,9 +26,9 @@ MultiPropReferenceSystemHardware.txt
 
 The file you want on there is
 
-C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForth
+'C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForth
 
-PropForthDevFastSerialKernel.spin
+PropForthDevFastSerialKernel.spin'
 
 
 Notice:  I had an OLD kernel on the spinneret, which ran at the old 57600 baud, instead of the current 230400 baud.  And of course everything came out junk.  If you get FAIL on SNET tests, check for this; its easy to fix.
