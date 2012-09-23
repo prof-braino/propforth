@@ -3,7 +3,7 @@
 
 = Automated Build and Test =
 
-This is to be covered in Propforth.htm in the download archive.   This wiki page is just a palceholder for the draft notes in preparation for the release.
+This is to be covered in Propforth.htm in the download archive.   This wiki page is just a placeholder for the draft notes in preparation for the release.
 
 The Automated Build and Test functionality introduced in Propforth v5.3 uses a PC workstation to exercise the interactive propforth system.  The workstation will generate the propforth kernels from source, load each kernel in turn onto the propforth standard testbed, and execute the regression test suite. 
 
@@ -11,7 +11,7 @@ The Automated Build and Test functionality introduced in Propforth v5.3 uses a P
 
 If you've already run all the parts, you should already be set up.
 
-Jump down to 'Launching the Automation' to fire off the automation.
+Jump down to `Launching the Automation` to fire off the automation.
 
 == Required hardware ==
  
@@ -27,8 +27,8 @@ MultiPropReferenceSystemHardware.txt
 
   * Go Language must be correctly installed.  SEE http://code.google.com/p/propforth/wiki/GoSetup20120511 ask Rick to verify that these instructions still make sense
   * you need the current kernel BURNED INTO EEPROM on both:
-    * the master (protoboard/shmart board/C3/quickstart
-    * the spinneret/wiznet5100
+    * the master (protoboard/shmart board/C3/quickstart)
+    * the SNET slave (spinneret/wiznet5100)
 
 The file you want on there is
 
