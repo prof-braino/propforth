@@ -19,6 +19,7 @@ The HC05 does not have "PINS" per se.  It has teeny micro notches that are much 
 
 You can use any color wire you want, if you use the same color as we do yours will match the pictures. :)
 
+This source code is also included in the propforth download archive beginning with release v 5.3
 
 {{{
 fl
