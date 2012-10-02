@@ -9,11 +9,11 @@ Connect:
 
 || HC05 Bluetooth ||
 || HC05  || Prop || Wire Color||
-||Pin 1 TX   - P25  - Grey  ||
-||Pin 2 RX   - P26  - white||
-||Pin 34 Key - P27   - Green||
-||Pin 12 3.3v - 3.3v - Orange||
-||Pin 13 GND  - GND  - Blue||
+||Pin 1 TX  || P25 || Grey  ||
+||Pin 2 RX   || P26 || white||
+||Pin 34 Key || P27  || Green||
+||Pin 12 3.3v ||3.3v || Orange||
+||Pin 13 GND  || GND || Blue||
 
 The HC05 does not have "PINS" per se.  It has teeny micro notches that are much closer together than the standard .1 inch spacing I usually work with.  But, you can solder a bit of wire to the notch, and make a connection to the prop. You can put a pin on the other end of the wire, and jab it right into the bread board or 40 pin female connector on a Quickstart board.
 
