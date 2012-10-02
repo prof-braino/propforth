@@ -7,7 +7,8 @@ The HC05 Bluetooth module allows communication with the prop via bluetooth.  No 
 
 Connect:
 
-Ultrasonic - Prop - Wire Color
+|| HC05 Bluetooth ||
+HC05  - Prop - Wire Color
 
 Pin 1 TX   - P25  - Grey  
 
