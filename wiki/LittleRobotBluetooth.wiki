@@ -1,0 +1,81 @@
+#summary HC05 Bluetooth for Little Robot(tm)
+#labels v5.3,LittleRobot
+
+= Introduction =
+
+The HC05 Bluetooth module allows communication with the prop via bluetooth.  No cables are needed after initial programming. 
+
+Connect:
+
+Ultrasonic - Prop - Wire Color
+Pin 1 TX   - P25  - Grey  
+Pin 2 RX   - P26  - white
+
+Pin 34 Key - P27   - Green
+
+Pin 12 3.3v - 3.3v - Orange
+Pin 13 GND  - GND  - Blue
+
+The HC05 does not have "PINS" per se.  It has teeny micro notches that are much closer together than the standard .1 inch spacing I usually work with.  But, you can solder a bit of wire to the notch, and make a connection to the prop. You can put a pin on the other end of the wire, and jab it right into the bread board or 40 pin female connector on a Quickstart board.
+
+You can use any color wire you want, if you use the same color as we do yours will match the pictures. :)
+
+
+{{{
+fl
+
+fswrite sr04.f
+
+1 wconstant build_sr04
+22 wconstant _sr04_trig
+23 wconstant _sr04_echo
+
+variable _sr04_distance
+
+: _sr04_measure
+	c" MEASURE" cds W!
+	4 state andnC!
+
+	_sr04_trig pinlo _sr04_trig pinout
+	_sr04_echo >m
+	_sr04_trig >m
+	begin
+		dup _maskouthi dup dup drop _maskoutlo
+
+		over dup dup dup
+
+		waitpeq
+		cnt COG@
+		rot2
+
+		waitpne
+		cnt COG@ swap - d_580 u/
+
+		_sr04_distance L!
+		
+		100 delms
+	0 until
+;
+
+[ifdef sr04_test
+: sr04_test
+	begin
+		_sr04_distance L@ . cr
+		fkey? nip
+	until
+;
+]
+
+c" _sr04_measure" 0 cogx
+
+...
+
+}}}
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
