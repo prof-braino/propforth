@@ -24,51 +24,54 @@ You can use any color wire you want, if you use the same color as we do yours wi
 {{{
 fl
 
-fswrite sr04.f
+\ for the HC05
 
-1 wconstant build_sr04
-22 wconstant _sr04_trig
-23 wconstant _sr04_echo
+\ green wire       GREEN
+27 wconstant hcProgPin
 
-variable _sr04_distance
+\ white/orange wire GREY
+26 wconstant hcRx
 
-: _sr04_measure
-	c" MEASURE" cds W!
-	4 state andnC!
+\ white/green wire  WHITE
+25 wconstant hcTx
 
-	_sr04_trig pinlo _sr04_trig pinout
-	_sr04_echo >m
-	_sr04_trig >m
-	begin
-		dup _maskouthi dup dup drop _maskoutlo
+\ ORANGE 3.3v
+\ BLUE Ground
 
-		over dup dup dup
+9600 4/ wconstant hcBaud
 
-		waitpeq
-		cnt COG@
-		rot2
+0 wconstant hcSerialCog
 
-		waitpne
-		cnt COG@ swap - d_580 u/
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+1 hcSerialCog sersetflags
 
-		_sr04_distance L!
-		
-		100 delms
-	0 until
+
+: hcSend
+	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
 ;
 
-[ifdef sr04_test
-: sr04_test
-	begin
-		_sr04_distance L@ . cr
-		fkey? nip
-	until
-;
-]
+hcProgPin pinhi hcProgPin pinout
 
-c" _sr04_measure" 0 cogx
+c" AT+VERSION~h0D~h0A" hcSend
+c" AT+ROLE?~h0D~h0A" hcSend
+c" AT+UART?~h0D~h0A" hcSend
+c" AT+NAME?~h0D~h0A" hcSend
+c" AT+PSWD?~h0D~h0A" hcSend
+c" AT+NAME=SanciHc05-1~h0D~h0A" hcSend
+c" AT+PSWD=9097~h0D~h0A" hcSend
+c" AT+UART=230400,0,0~h0D~h0A" hcSend
+c" AT+VERSION~h0D~h0A" hcSend
+c" AT+ROLE?~h0D~h0A" hcSend
+c" AT+UART?~h0D~h0A" hcSend
+c" AT+NAME?~h0D~h0A" hcSend
+c" AT+PSWD?~h0D~h0A" hcSend
 
-...
+hcProgPin pinlo 
+
+\ after the hc05 is power cycled, the baud rate will change, not like the hc06
+
+
 
 }}}
 
