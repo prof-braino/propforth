@@ -50,6 +50,9 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
 	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
 ;
 
+\ NOTE: Change your unit NAME to something unique if you have more than one
+\ NOTE: change your PSWD to something other than 1234 as that is the most common four digit password 
+
 hcProgPin pinhi hcProgPin pinout
 
 c" AT+VERSION~h0D~h0A" hcSend
@@ -57,8 +60,8 @@ c" AT+ROLE?~h0D~h0A" hcSend
 c" AT+UART?~h0D~h0A" hcSend
 c" AT+NAME?~h0D~h0A" hcSend
 c" AT+PSWD?~h0D~h0A" hcSend
-c" AT+NAME=SanciHc05-1~h0D~h0A" hcSend
-c" AT+PSWD=9097~h0D~h0A" hcSend
+c" AT+NAME=BrainoHc05-1~h0D~h0A" hcSend
+c" AT+PSWD=1234~h0D~h0A" hcSend
 c" AT+UART=230400,0,0~h0D~h0A" hcSend
 c" AT+VERSION~h0D~h0A" hcSend
 c" AT+ROLE?~h0D~h0A" hcSend
