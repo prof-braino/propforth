@@ -58,6 +58,8 @@ So depending on where you start, you can git' goin' with $20, maybe $50 if you b
 
 LittleRobotSteppers
 
+LittleRobotBluetooth
+
 LittleRobotUltraSonic
 
 == User Created Parts: ==
