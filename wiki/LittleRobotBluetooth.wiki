@@ -1,5 +1,5 @@
 #summary HC05 Bluetooth for Little Robot(tm)
-#labels v5.3,LittleRobot
+#labels v5.3,LittleRobot,bluetooth
 
 = Introduction =
 
