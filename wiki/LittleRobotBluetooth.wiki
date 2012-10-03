@@ -36,22 +36,22 @@ fl
 \ REMEMBER! ONLY connect the KEY-GREEN-Prop24 wire when you run the programming script!
 \ AFTER the script is run, disconnect the green wire!
 \ green wire  \ key - PROGRAM WHEN 3.3V - to prop 24
-\\ 27 wconstant hcProgPin
+\ 27 wconstant hcProgPin
  22 wconstant hcProgPin 
 
 
 
 \ white/orange wire \ WHITE - HC05-2 Rx - to prop 26
-\\ 26 wconstant hcRx
+\ 26 wconstant hcRx
  26 wconstant hcRx
 
 \ white/green wire  \ GREY - HC05-1 Tx - to prop 27
-\\ 25 wconstant hcTx
+\ 25 wconstant hcTx
  27 wconstant hcTx
 
-\ 9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
+ 9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
 \ the baud is set to a really fast speed, so you must change these comments
-  230400 4/ wconstant hcBaud  
+\ 230400 4/ wconstant hcBaud  
 
 
 0 wconstant hcSerialCog
