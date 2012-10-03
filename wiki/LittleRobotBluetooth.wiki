@@ -27,7 +27,7 @@ NOTICE that for this Little Robot instruction page, I changed the pin assignment
 {{{
 
 \ REMEMBER set pins in PROPFORTH as below!!!! 
-\ i'M USING quickstart
+\ Im USING quickstart
 
 fl
 
