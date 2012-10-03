@@ -9,9 +9,9 @@ Connect:
 
 || HC05 Bluetooth module ||
 || HC05  || Prop || Wire Color||
-||Pin 1 - TX  || P25 || Grey  ||
+||Pin 1 - TX  || P27 || Grey  ||
 ||Pin 2 - RX   || P26 || white||
-||Pin 34 - Key || P27  || Green||
+||Pin 34 - Key || P22  || Green||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
 
