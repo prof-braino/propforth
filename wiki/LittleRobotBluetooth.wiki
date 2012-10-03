@@ -54,7 +54,7 @@ fl
 \ 230400 4/ wconstant hcBaud  
 
 
-0 wconstant hcSerialCog
+0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
 
 hcSerialCog cogreset 100 delms
 c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
