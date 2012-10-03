@@ -152,9 +152,9 @@ Save the file as PropforthBluetooth.spin
 
 Load it onto the prop EEPROM
 
-The USB serial will no longer connect to propforth until the propis reloaded with a standard kernel. 
+The USB serial will no longer connect to propforth until the prop is reloaded with a standard kernel. 
 
-PRopforth will come up looking for the virtual Bluetooth com port.
+Propforth will come up looking for the virtual Bluetooth com port.
 
 
 = Details =
