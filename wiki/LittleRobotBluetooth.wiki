@@ -22,7 +22,22 @@ You can use any color wire you want, if you use the same color as we do yours wi
 This source code is also included in the propforth download archive beginning with release v 5.3
 
 NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions.  The instruction Sal made for the download archive are for his Gadget gangster board, these below are for the Quickstart.  You could use either for either, I find these pins are easier on the quickstart.
+
+HC05 comes with 9600 baud by default.  
+
+We run this script to 
+ * give it a unique name (choose anything)
+ * set baud to 23040
+ * set (this one) to SLAVE mode
+ * set the password (each kid connects to the correct bot)
+
+I set the unique name to LittleRobotYYYMMDDhhmm
+
+This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can somtimes tell when the bot came into service.
  
+NOTICE that after the script run successfully, the bad rate has been set from 9600 to 230400.  So the script won't run a second time.  If you with to re-run the script (and name your bot "JimmyJohinson") you must change the comments so the script is set to 230400 like the HC05.
+
+Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
 
 {{{
 
@@ -35,19 +50,19 @@ fl
 
 \ REMEMBER! ONLY connect the KEY-GREEN-Prop24 wire when you run the programming script!
 \ AFTER the script is run, disconnect the green wire!
-\ green wire  \ key - PROGRAM WHEN 3.3V - to prop 24
+\ green wire            \ GREEN key - PROGRAM WHEN 3.3V - to prop 24
 \ 27 wconstant hcProgPin
- 22 wconstant hcProgPin 
+  22 wconstant hcProgPin 
 
+\ after programming, disconnect the GREEN wire!
 
-
-\ white/orange wire \ WHITE - HC05-2 Rx - to prop 26
+\ white/orange wire    \ WHITE - HC05-2 Rx - to prop 26
 \ 26 wconstant hcRx
- 26 wconstant hcRx
+  26 wconstant hcRx
 
-\ white/green wire  \ GREY - HC05-1 Tx - to prop 27
+\ white/green wire     \ GREY - HC05-1 Tx - to prop 27
 \ 25 wconstant hcTx
- 27 wconstant hcTx
+  27 wconstant hcTx
 
  9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
 \ the baud is set to a really fast speed, so you must change these comments
