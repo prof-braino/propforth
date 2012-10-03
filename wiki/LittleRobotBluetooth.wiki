@@ -22,23 +22,34 @@ You can use any color wire you want, if you use the same color as we do yours wi
 This source code is also included in the propforth download archive beginning with release v 5.3
 
 {{{
+
+\ REMEMBER set pins in PROPFORTH as below!!!! 
+\ i'M USING quickstart
+
 fl
 
 \ for the HC05
 
-\ green wire       GREEN
-27 wconstant hcProgPin
+\ REMEMBER! ONLY connect the KEY-GREEN-Prop24 wire when you run the programming script!
+\ AFTER the script is run, disconnect the green wire!
+\ green wire  \ key - PROGRAM WHEN 3.3V - to prop 24
+\ 27 wconstant hcProgPin
+ 22 wconstant hcProgPin 
 
-\ white/orange wire GREY
-26 wconstant hcRx
 
-\ white/green wire  WHITE
-25 wconstant hcTx
 
-\ ORANGE 3.3v
-\ BLUE Ground
+\ white/orange wire \ WHITE - HC05-2 Rx - to prop 26
+\ 26 wconstant hcRx
+ 26 wconstant hcRx
 
-9600 4/ wconstant hcBaud
+\ white/green wire  \ GREY - HC05-1 Tx - to prop 27
+\ 25 wconstant hcTx
+ 27 wconstant hcTx
+
+\ 9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
+\ the baud is set to a really fast speed, so you must change these comments
+  230400 4/ wconstant hcBaud  
+
 
 0 wconstant hcSerialCog
 
@@ -51,17 +62,20 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
 	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
 ;
 
-\ NOTE: Change your unit NAME to something unique if you have more than one
-\ NOTE: change your PSWD to something other than 1234 as that is the most common four digit password 
-
 hcProgPin pinhi hcProgPin pinout
+
+\ sometimes Teraterm hangs here until you press enter key
 
 c" AT+VERSION~h0D~h0A" hcSend
 c" AT+ROLE?~h0D~h0A" hcSend
 c" AT+UART?~h0D~h0A" hcSend
 c" AT+NAME?~h0D~h0A" hcSend
 c" AT+PSWD?~h0D~h0A" hcSend
-c" AT+NAME=BrainoHc05-1~h0D~h0A" hcSend
+
+10000 delms
+
+
+c" AT+NAME=LittleRobot201210022032~h0D~h0A" hcSend
 c" AT+PSWD=1234~h0D~h0A" hcSend
 c" AT+UART=230400,0,0~h0D~h0A" hcSend
 c" AT+VERSION~h0D~h0A" hcSend
@@ -74,6 +88,10 @@ hcProgPin pinlo
 
 \ after the hc05 is power cycled, the baud rate will change, not like the hc06
 
+\ REMEMBER! HC05 Rx goes to PROP Tx
+\ REMEMBER! HC05 Tx goes to PROP Rx
+
+\ they have to criss-cross, the talker from one goes to the listener from the other
 
 
 }}}
