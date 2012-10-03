@@ -7,6 +7,11 @@ This is the stepper motor control source code included in ../Proforth5.3/misc/4s
 
 This code should work on all version of Propforth, or at least the last one v5.03, so you don't need to wait to try it.  
 
+NOTE: Sal used 16, 17, 18, 19 for stepper motor pins.
+
+I am using a quickstart and two steppers, so I am using 
+8, 9, 10, 11 and 12, 13, 14, 15 for stepper pins.
+
 {{{
 
 fl
