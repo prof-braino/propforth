@@ -135,6 +135,12 @@ By default, propforth talks on pins 30 and 31.
 
 we have to change the spin file that creates the kernel to use pins 26 and 27 that connect to the HC05
 
+In the proforth spin ource file
+
+{{{
+PropForthDevFastSerialKernel.spin
+}}}
+
 Edit lines 116 and 117:
 
 {{{
