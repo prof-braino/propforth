@@ -39,6 +39,12 @@ NOTICE that after the script run successfully, the bad rate has been set from 96
 
 Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
 
+= NOTICE NOTICE NOTICE =
+
+To use the HC05 as cable replacement:
+
+See the note at the bottom of this page!
+
 {{{
 
 \ REMEMBER set pins in PROPFORTH as below!!!! 
@@ -116,6 +122,33 @@ hcProgPin pinlo
 
 
 }}}
+
+= NOTICE NOTICE NOTICE =
+
+To use the HC05 as cable replacement:
+
+After you have run the above script in propforth, and gotten the OK response for each configuration command, the HC05 is ready for use.
+
+BUT you must also change the PROPFROTH KERNEL!
+
+By default, propforth talks on pins 30 and 31.  
+
+we have to change the spin file that creates the kernel to use pins 26 and 27 that connect to the HC05
+
+Edit lines 116 and 117:
+
+{{{
+  dlrS_txpin = 26 ' 30           ' $S_txpin forth word 
+  dlrS_rxpin=  27 ' 31            ' $S_rxpin forth word 
+}}}
+
+Save the file as PropforthBluetooth.spin
+
+Load it onto the prop EEPROM
+
+The USB serial will no longer connect to propforth until the propis reloaded with a standard kernel. 
+
+PRopforth will come up looking for the virtual Bluetooth com port.
 
 
 = Details =
