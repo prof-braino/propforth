@@ -75,7 +75,10 @@ c" AT+UART?~h0D~h0A" hcSend
 c" AT+NAME?~h0D~h0A" hcSend
 c" AT+PSWD?~h0D~h0A" hcSend
 
-10000 delms
+
+             \ make sure these display 'OK' 
+             \ otherwise it isn't working, powercycle to fix
+10000 delms \ 10 seconds to read the screen
 
 
 c" AT+NAME=LittleRobot201210022032~h0D~h0A" hcSend
