@@ -77,7 +77,7 @@ c" AT+PSWD?~h0D~h0A" hcSend
 
 
              \ make sure these display 'OK' 
-             \ otherwise it isn't working, powercycle to fix
+             \ otherwise it isnt working, powercycle to fix
 10000 delms \ 10 seconds to read the screen
 
 
