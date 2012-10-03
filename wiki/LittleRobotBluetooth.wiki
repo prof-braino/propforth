@@ -21,13 +21,13 @@ You can use any color wire you want, if you use the same color as we do yours wi
 
 This source code is also included in the propforth download archive beginning with release v 5.3
 
-NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions.  The instruction Sal made for the download archive are for his Gadget gangster board, these below are for the Quickstart.  You could use either for either, I find these pins are easier on the quickstart.
+NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions.  The instruction Sal made for the download archive are for his Gadget Gangster board, these below are for the Quickstart.  You could use either for either, I find these pins are easier on the quickstart.
 
 HC05 comes with 9600 baud by default.  
 
 We run this script to 
  * give it a unique name (choose anything)
- * set baud to 23040
+ * set baud to 230400
  * set (this one) to SLAVE mode
  * set the password (each kid connects to the correct bot)
 
