@@ -1,0 +1,40 @@
+#summary PropFORTH is Designed for a Specific Purpose
+#labels v5.3,FORTH
+
+= What is FORTH? =
+
+Often folks ask "Why FORTH? What is it used for?"
+
+For me, its the most fun way to get work done. 
+
+= The Right Tool For the Right Job =
+
+Often we can find a particular tool that is special crafted for a task we wish to perform.  The trick is identifying which tool is best in what circumstance.
+
+= Choice of Tools =
+
+In software, we have many choices.  We can chose the hardware:  mainframe, workstation, micro controler, PLC, dedicated circuitry.
+We can chose the language: C, BASIC, Perl, Python, Spin, forth.
+
+= Choosing a Language and environment = 
+
+BASIC is a very good choice for showing basic general programming operation.  It is not always optimal when speed or complexity is a a consideration. 
+
+Python is a very good choice when a function is to be run for example from the command line of a fast workstation. 
+
+C is a very good choice when writing operating system code on a workstation.
+
+SPIN is very good when learning about the propeller chip.
+
+FORTH is ideal suited for interactive development on a micro controller, when fast development time, faster execution speed, and low resource usage is an important consideration. 
+
+Any one of these tools could be used for any purpose and be just fine.  One could write a fully, high level application in forth.  One could write embedded control code in Python. 
+
+PropFORTH is specially design to for developing embedded control systems on the propeller chip, and is ideally suited for interactive development on this chip.  And its fun. 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
