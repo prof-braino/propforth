@@ -20,9 +20,9 @@ We can chose the language: C, BASIC, Perl, Python, Spin, forth.
 
 BASIC is a very good choice for showing basic general programming operation.  It is not always optimal when speed or complexity is a a consideration. 
 
-Python is a very good choice when a function is to be run for example from the command line of a fast workstation. 
+Python is a very good choice when a function is to be run for example from the command line of a fast workstation. Python can get slow when the program becomes large or complex.
 
-C is a very good choice when writing operating system code on a workstation.
+C is a very good choice when writing operating system code on a workstation. If you're not writing an operating system on a workstation, there are a lot of functions that can get in the way. 
 
 SPIN is very good when learning about the propeller chip.
 
@@ -31,6 +31,14 @@ FORTH is ideal suited for interactive development on a micro controller, when fa
 Any one of these tools could be used for any purpose and be just fine.  One could write a fully, high level application in forth.  One could write embedded control code in Python. 
 
 PropFORTH is specially design to for developing embedded control systems on the propeller chip, and is ideally suited for interactive development on this chip.  And its fun. 
+
+= leveler or amplifier? = 
+
+Folks say C is a "leveler".  That is the code produced is very consistent, there is little difference between the output of a master and the output of a "less than master" coder. 
+
+Forth is often call an "amplifier".  The code produced by a skilled experienced coder can be extraordinary.  The code produced by an unskilled programmer can be very bad indeed. 
+
+When using forth, one may make noticeable improvement. 
 
 = Details =
 
