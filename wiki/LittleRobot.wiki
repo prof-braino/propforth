@@ -7,7 +7,7 @@ LittleRobot™ - index
 
 The Little Robot™ project has been refer to by various names: The Demo™, Football Bot™, [http://code.google.com/p/propforth/wiki/CheapestPossibleRobot Cheapest Possible Robot™], Complex Datastreams and Filtering experiment™.  We decided to try "Little Robot™" since it lexically complete, sounds better and is less threatening than some of the other choices.  The target audience does not particularly care that complex data streams are filtered in real time, so long as it moves and looks cool.
 
-The goal is to develop a compete, kid centric mobile robotics platform for under $20. 
+The goal is to develop a compete, kid centric mobile robotics platform for under $20.  
 
 The various components of the project will be documented on separate pages on this wiki. If it works out, these pages will be expanded as progress dictates.     
 
