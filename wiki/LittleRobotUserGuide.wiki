@@ -1,0 +1,45 @@
+#summary User Guide for the Little Robot(tm)
+
+= Introduction =
+
+The User Guide is also the functional specification for the software.  The User Guide is written first, and the firmware is written to comply with the functional description.  Both components, the User Guide and the firmware, will influence each other during development.  
+
+= Description =
+
+The Little Robot(tm) Project is designed to demo the capabilities of micro controller software/firmware. The target microcontroller considered here is the Parallax Propeller P8X32A.  Other devices may also be used, at the user's discretion.
+
+= Baseline Hardware =
+
+The Little Robot (tm) consists of:
+ * two stepper motors per the LittleRobotBOM
+ * one utlrasonic ranfgfinder module per the LittleRobotBOM
+ * one bluetooth module per the LittleRobotBOM
+ * any standard Propeller board or equivalent
+
+Besides the user supplied microcontroller, other user supplied hardware will be needed. Anything you want to use is OK, harvested parts are fine.  These include:
+
+ * wheels 
+ * battery holder
+ * a chassis (can be 3D printed, carved from wood, etc)
+ * various wires
+ * various screws and small parts 
+
+The fun is building the mechanical parts of the bot from nothing.  You may be surprised how easy it is! 
+
+= Functions =
+
+The Little Robot only has three subsystems, and these only have a few simple functions. 
+
+= Pre-Construction: Test the Electronics =
+
+
+
+
+
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
