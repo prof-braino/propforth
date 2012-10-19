@@ -27,7 +27,7 @@ Besides the user supplied microcontroller, other user supplied hardware will be 
 
 The fun is building the mechanical parts of the bot from nothing.  You may be surprised how easy it is! 
 
----
+-----
 
 = Functions =
 
@@ -121,7 +121,7 @@ http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo2012
 QuickstartTouchDemo20120611-1540.txt
 }}}
 
----
+-----
 
 
 = Pre-Construction: Test the Electronics =
@@ -162,7 +162,7 @@ Pre-drill the holes.  Its a LOT easier to to screw in the screws when there's al
 
 GET HELP FROM SOMEBODY if you haven't done this before, these are useful skills and good habits to establish. 
 
----
+-----
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
