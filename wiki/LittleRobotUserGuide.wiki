@@ -28,11 +28,47 @@ The fun is building the mechanical parts of the bot from nothing.  You may be su
 
 = Functions =
 
-The Little Robot only has three subsystems, and these only have a few simple functions. 
+The Little Robot only has three subsystems, and these only have a few 
+simple functions.  You can do these in any order.
+
+== Ultrasonics Range finder ==
+
+The ultrasonic range finder distance measurement unit has only two functions:
+  # trigger a measurement pulse sequence 
+  # Report the measurement
+
+== Stepper Motors == 
+
+The stepper motor has only a few simple functions. These are:
+
+ # Stop
+ # Rotate Clockwise (CW)
+ # Rotate Counterclockwise (CCW)
+ # Rotate Slow (Half steps)
+ # Rotate FAST (Full steps)
+ # Acceleration (how quickly the stepper reaches it maximum speed)
+
+The rotation can further  be controlled by adjusting the acceleration and rate.
+
+== Bluetooth Cable Replacement ==
+
+The Bluetooth module allow communication with the propforth command line wirelessly, using any bluetooth capable device, and a suitable terminal program.
+
+Remember, the propforth.SPIN file must be adjusted so communication occurs on the Bluetooth pins 26 & 27 instead of the default RS232 pins 30 and 31.
+
+== OPTIONAL: LEDs ==
+
+The Propeller Quickstart has 8 LEDs on pins 16-23.  These can be used as indicators and for diagnostics. LEDs in this same configuration can be added to any standard propeller oboard.  The LEDs can be driven using the Quickstart touchpad demo example.
+
+== OPTIONAL: Touch Pad buttons ==
+
+The Propeller Quickstart has 8 resistive touch pad buttons on pins 0-7.  These can be used as indicators and for diagnostics. Resistive touch pad buttons  in this same configuration can be added to any standard propeller oboard.  The Resistive touch pad buttons  can be driven using the Quickstart touchpad demo example.
+
+
 
 = Pre-Construction: Test the Electronics =
 
-
+Be sure to test the components before assembleing the bot. After assembly, test to compenents again to ensure nothing got confused.
 
 
 
