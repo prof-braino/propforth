@@ -88,6 +88,16 @@ The LEDS have two functions:
 
 for all 8 LEDs
 
+See the extension for the Prop Quickstart in the downloads section of this wiki. 
+
+http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo20120611-1540.txt
+
+{{{
+QuickstartTouchDemo20120611-1540.txt
+}}}
+
+
+
 == OPTIONAL: Touch Pad buttons ==
 
 The Propeller Quickstart has 8 resistive touch pad buttons on pins 0-7.  These can be used as indicators and for diagnostics. Resistive touch pad buttons  in this same configuration can be added to any standard propeller oboard.  The Resistive touch pad buttons  can be driven using the Quickstart touchpad demo example.
@@ -101,9 +111,23 @@ Remember, the touch pads are scanned MANY times a second.  When use with the LED
 
 If you try to light an LED, but it does not light, consider that the touch button driver may be setting the LED back to the OFF value faster than the LED can turn on!
 
+See the extension for the Prop Quickstart in the downloads section of this wiki. 
+
+http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo20120611-1540.txt
+
+{{{
+QuickstartTouchDemo20120611-1540.txt
+}}}
+
+
+
 = Pre-Construction: Test the Electronics =
 
-Be sure to test the components before assembleing the bot. After assembly, test to compenents again to ensure nothing got confused.
+Be sure to test the components before assembleing the bot. 
+
+After assembly, test to compenents again to ensure nothing got confused.
+
+
 
 
 
