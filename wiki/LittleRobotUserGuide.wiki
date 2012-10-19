@@ -1,17 +1,19 @@
-#summary User Guide for the Little Robot(tm)
+#summary User Guide for the Little Robot™(tm)
 #labels v5.3,LittleRobot
 
 = Introduction =
 
 The User Guide is also the functional specification for the software.  The User Guide is written first, and the firmware is written to comply with the functional description.  Both components, the User Guide and the firmware, will influence each other during development.  
 
+I'm writing this for my daughter's elementary school class, so I'm assuming I have to define all the terms in detail.  Please don't find this patronizing. 
+
 = Description =
 
-The Little Robot(tm) Project is designed to demo the capabilities of micro controller software/firmware. The target microcontroller considered here is the Parallax Propeller P8X32A.  Other devices may also be used, at the user's discretion.
+The Little Robot™(tm) Project is designed to demo the capabilities of micro controller software/firmware. The target microcontroller considered here is the Parallax Propeller P8X32A.  Other devices may also be used, at the user's discretion.
 
 = Baseline Hardware =
 
-The Little Robot (tm) consists of:
+The Little Robot(tm) consists of:
  * two stepper motors per the LittleRobotBOM
  * one utlrasonic ranfgfinder module per the LittleRobotBOM
  * one bluetooth module per the LittleRobotBOM
@@ -31,7 +33,7 @@ The fun is building the mechanical parts of the bot from nothing.  You may be su
 
 = Functions =
 
-The Little Robot only has three subsystems, and these only have a few 
+The LittleRobot™ only has three subsystems, and these only have a few 
 simple functions.  You can do these in any order.
 
 == Ultrasonics Range finder ==
@@ -131,7 +133,7 @@ Be sure to test the components before assembleing the bot.
 After assembly, test to compenents again to ensure nothing got confused.
 
 
-= Assembling the Little Robot(tm) =
+= Assembling the LittleRobot™(tm) =
 
 This is the fun part. As you see from the picture, the Little Robot is just some wheels stuck on some motors, and the motors are stuck on some crude chassis. I took a roughly square chunk of 2x4 scrap wood (pine) and squared it up, and cut motor sized notches in the sides. Sal wanted to use his new 3D pinter, so he designed a chassis, drew it up in OpenSCAD, and printted it. 
 
