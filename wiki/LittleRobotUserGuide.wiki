@@ -27,6 +27,8 @@ Besides the user supplied microcontroller, other user supplied hardware will be 
 
 The fun is building the mechanical parts of the bot from nothing.  You may be surprised how easy it is! 
 
+---
+
 = Functions =
 
 The Little Robot only has three subsystems, and these only have a few 
@@ -119,6 +121,7 @@ http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo2012
 QuickstartTouchDemo20120611-1540.txt
 }}}
 
+---
 
 
 = Pre-Construction: Test the Electronics =
@@ -128,11 +131,38 @@ Be sure to test the components before assembleing the bot.
 After assembly, test to compenents again to ensure nothing got confused.
 
 
+= Assembling the Little Robot(tm) =
+
+This is the fun part. As you see from the picture, the Little Robot is just some wheels stuck on some motors, and the motors are stuck on some crude chassis. I took a roughly square chunk of 2x4 scrap wood (pine) and squared it up, and cut motor sized notches in the sides. Sal wanted to use his new 3D pinter, so he designed a chassis, drew it up in OpenSCAD, and printted it. 
+
+(include files here).
+
+== chassis ==
+
+You can make any chassis you want, as long as the motor shafts end up more or less opposite each other, and facing apart.  The critical aspect is that the shafts line on the same line.  But its not TOO critical. 
 
 
+Try a design. Build it.  Watch it fall apart. (FUN!) Build it again, a little bit better.  Do this a few times, and you will have a suit able chassis, and you will have learned the most important aspect of engineering, which is YOU are the engineer. 
 
+== wheels ==
 
+Wheels are little trickier. Just as the critical aspect of the chassis is getting the shafts to line up, the critical aspect of the wheels is getting the shafts in the center. The better they are centered, the smoother the robot will roll.  But, if they are not centered perfectly, the robot will simply "waddle" a little bit, no biggie. 
 
+== Battery case ==
+
+I get my battery cases from surplus, they are right down the rod from me. But you can use anything handy, a mailing box with paper clip contacts, duct tape, cable ties, etc.  AS long as the batteries don't fall out too often, you should be fine. 
+
+== Tips ==
+
+Put Blue painters tape on you work so you can do layout of the lines and where the holes go.  If you make a mistake, you can take off the tape, and start over. When its time to drill or saw, you can cut right through the tape. 
+
+Measure everything first.  I try to measure to the thickness of my pen or pencil.  I ussually can get things pretty close. 
+
+Pre-drill the holes.  Its a LOT easier to to screw in the screws when there's already a hole there. 
+
+GET HELP FROM SOMEBODY if you haven't done this before, these are useful skills and good habits to establish. 
+
+---
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
