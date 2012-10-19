@@ -40,7 +40,7 @@ The ultrasonic range finder distance measurement unit only needs two functions:
 
 See the extension for the ultrasonic rangefinder driver in the extensions directory /misc of the v5.3 download archive.
 
-'SR04.f'
+`SR04.f`
 
 == Stepper Motors == 
 
@@ -57,7 +57,7 @@ The rotation can further  be controlled by adjusting the acceleration and rate.
 
 See the extension for the stepper motor driver in the extensions directory /misc of the v5.3 download archive.
 
-'4step.f'
+`4step.f`
 
 == Bluetooth Cable Replacement ==
 
