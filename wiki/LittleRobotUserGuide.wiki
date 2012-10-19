@@ -34,9 +34,13 @@ simple functions.  You can do these in any order.
 
 == Ultrasonics Range finder ==
 
-The ultrasonic range finder distance measurement unit has only two functions:
+The ultrasonic range finder distance measurement unit only needs two functions:
   # trigger a measurement pulse sequence 
   # Report the measurement
+
+See the extension for the ultrasonic rangefinder driver in the extensions directory /misc of the v5.3 download archive.
+
+'SR04.f'
 
 == Stepper Motors == 
 
@@ -50,6 +54,10 @@ The stepper motor has only a few simple functions. These are:
  # Acceleration (how quickly the stepper reaches it maximum speed)
 
 The rotation can further  be controlled by adjusting the acceleration and rate.
+
+See the extension for the stepper motor driver in the extensions directory /misc of the v5.3 download archive.
+
+'4step.f'
 
 == Bluetooth Cable Replacement ==
 
