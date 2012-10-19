@@ -59,7 +59,9 @@ The rotation can further  be controlled by adjusting the acceleration and rate.
 
 See the extension for the stepper motor driver in the extensions directory /misc of the v5.3 download archive.
 
-`4step.f`
+{{{
+4step.f
+}}}
 
 == Bluetooth Cable Replacement ==
 
@@ -68,6 +70,12 @@ The Bluetooth module allow communication with the propforth command line wireles
 Remember, the propforth.SPIN file must be adjusted so communication occurs on the Bluetooth pins 26 & 27 instead of the default RS232 pins 30 and 31.
 
 The Bluetooth module only has one function, tha it "Communicate".  When the bluetooth is installed, configured, and mated with your bluetooth master device, and your bluetooth master device is running a suitable terminal program, communications is established.  The propforth command line is available just as if it we hardwired to the PC running teraterm. 
+
+See the extension for the Bluetooth Cable replacement in the extensions directory /misc of the v5.3 download archive.
+
+{{{
+BluetoothHC05-06.f
+}}}
 
 == OPTIONAL: LEDs ==
 
