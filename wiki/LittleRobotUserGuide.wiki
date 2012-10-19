@@ -1,4 +1,4 @@
-#summary User Guide for the Little Robot™(tm)
+#summary User Guide for the Little Robot™
 #labels v5.3,LittleRobot
 
 = Introduction =
@@ -9,11 +9,11 @@ I'm writing this for my daughter's elementary school class, so I'm assuming I ha
 
 = Description =
 
-The Little Robot™(tm) Project is designed to demo the capabilities of micro controller software/firmware. The target microcontroller considered here is the Parallax Propeller P8X32A.  Other devices may also be used, at the user's discretion.
+The LittleRobot™ Project is designed to demo the capabilities of micro controller software/firmware. The target microcontroller considered here is the Parallax Propeller P8X32A.  Other devices may also be used, at the user's discretion.
 
 = Baseline Hardware =
 
-The Little Robot(tm) consists of:
+The LittleRobot™ consists of:
  * two stepper motors per the LittleRobotBOM
  * one utlrasonic ranfgfinder module per the LittleRobotBOM
  * one bluetooth module per the LittleRobotBOM
