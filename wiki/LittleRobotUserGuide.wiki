@@ -11,6 +11,10 @@ I'm writing this for my daughter's elementary school class, so I'm assuming I ha
 
 The LittleRobot™ Project is designed to demo the capabilities of micro controller software/firmware. The target microcontroller considered here is the Parallax Propeller P8X32A.  Other devices may also be used, at the user's discretion.
 
+Previous details start here, you have to drill down.
+
+http://code.google.com/p/propforth/wiki/LittleRobot
+
 = Baseline Hardware =
 
 The LittleRobot™ consists of:
