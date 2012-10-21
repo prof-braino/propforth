@@ -28,6 +28,56 @@ Besides the user supplied microcontroller, other user supplied hardware will be 
  * various screws and small parts 
 
 The fun is building the mechanical parts of the bot from nothing.  You may be surprised how easy it is! 
+-----
+Note: I'm adding this section at the top for easier editing, it should probably be moved later.
+
+= Little Robot Commands =
+
+These are the commands that we plan to code for the little robot as part of the demo.  Not all the command will be implemented, just enough of the low level functions to build the high level functions
+
+== senor commands ==
+
+ * @distance \  trigger an ultrasonic sensor measurement sequence;  this returns the distance measure
+ * MaxDistance - this is the maximum distance the bot can detect
+ * MinDistance - this is the minimum distance the bot "wants" between it and any object, ideally so it does not crash into an object while manuvering
+
+== Motor Commands ==
+
+ * motorA\B \  to designate a motor as motor A or motor B
+ * motorLeftRight designate motor A as Left and B as right, or the opposite
+
+ * motor-cw \ command motor to rotate clockwise
+ * motor-ccw \ command motor to rotate counterclockwise
+ * motor-halfstep \ set motor to halfstep mode
+ * motor-fullstep \ set motor to fullstep mode
+ * MotorSpeed \  set the motor to a particular speed (steps per second?)
+ * Forward \ set one motor CW and other CCW to go forward
+ * Reverse \ opposite of forward
+ * pivotRight \ pivot in place 0-360 degrees
+ * pivotLeft \ pivot in place 0-360 degrees
+ * scanRight \ pivot in place 0-360 degrees and return to original heading
+ * scanLeft \ pivot in place 0-360 degrees and return to original heading
+
+ * arcLeft \ For a point N cm to the left of the bot, move D degrees of arc
+ * arcRight \ For a point N cm to the right of the bot, move D degrees of arc
+  
+== Complex Functions == 
+
+ * orientation \ return the bot orientation relative to power-up, based on wheel rotation.  This assumes the wheels did not skid, nor that the bot was moved in any way aside from its wheels rotating on a reasonable surface.
+
+ * DeltaX \  overall X delta from power up location based on wheel rotation
+ * DeltaY \  overall X delta from power up location based on wheel rotation
+
+ * sentry \ travel environment in wall-follow mode unitl it returns to starting position. then turn around and go the other ways, repeat.
+
+ * Explore \ log distance reading for the local environment.  Determine a closest area that does not have readings (mapping data coverage), travel to that are and establish reading, repeat. 
+
+== outputs ==
+
+There will be three types of output from the bot. Not all outputs will be present at all times for all functions.
+ # text output \ a test status display of the result of the previous or current command
+ # motion output \  the bot will move its wheels in response to particular commands.
+ # control line output \ the bot will raise hi or hold low control lines as a result of the previous or current command.  These control lines could be connecter to LEDs in the case of the quickstart and other propboards.  These could also be connected to beepers or other transducers, according to user preference. 
 
 -----
 
