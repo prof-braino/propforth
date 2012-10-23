@@ -89,3 +89,9 @@ If a school class participated, we would like try programming a swarm algorithm.
 We would like to try implementing control for quadcopter if enough folks are interested to justify the cost and effort.  
 
 Eventually we would like to pre-filter the data streams and send to cooked data to large system for processing.  We're thinking Raspberrry Pi. This may enable  vision systems on our ball bots.
+
+= LittleRobot(tm) =
+
+This has been renamed Little Robot (TM)
+
+http://code.google.com/p/propforth/wiki/LittleRobot
