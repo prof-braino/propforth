@@ -107,6 +107,23 @@ NOTE: Quickstart boards do NOT ship with propforth in EEPROM.
 
 = Load the SD kernel =
 
+In my case the path to the SD kernel is
+{{{
+C:\Documents and Settings\Braino\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForthSD
+}}}
+and the file is
+{{{
+PropForthSDFastSerialKernel.spin
+}}}
+
+This should be the same for v5.03 and 5.0.   The "GO" stuff in the path is an artifact from other testing, and you do not need any Go Language support installed for the SD support to run.
+
+Use the SPIN TOOL to install the SD kernel into prop EEPROM.  Whe the firmware is loaded, power cycle and start teraterm.
+
+
+
+
+
 = Details =
 
 Add your content here.  Format your content with:
