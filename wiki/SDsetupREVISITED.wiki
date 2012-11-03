@@ -48,7 +48,7 @@ From Left to Right the tabs are
 
 || 9 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 ||     
 || DAT2 || CS || DATIN || VSS1 || VDD || CLK || VSS2 || DATOUT || DAT1 || 
-|| ss | MOSI || GND || 3.3V || SCK || *NC* || MISO || *NC* || *NC* ||
+|| ss || MOSI || GND || 3.3V || SCK || *NC* || MISO || *NC* || *NC* ||
 
 
 
