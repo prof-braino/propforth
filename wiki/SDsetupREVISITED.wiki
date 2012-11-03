@@ -33,6 +33,9 @@ Looking at the bottom of the Full size SD adaptor with the gold tabs facing up a
 || Px|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
 || Px|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
 
+Notice:  If you use a resistor pack for the pull ups, you can connect the Vdd to the common on the resistor pack.  I usually bend up the pins on the resistor pack for the connections that do not take a pull up.  wasting a pins on a resistor pack is cheaper and easier than soldering individual resistors. 
+
+
 == Spineret (standard) Pinout ==
 
 
