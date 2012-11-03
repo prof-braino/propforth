@@ -20,14 +20,7 @@ I'm using a full size SD adaptor as a card slot for microsd cards.
 
 Looking at the bottom of the Full size SD adaptor with the gold tabs facing up and at the top of the card, the truncated corner is at the upper left. This is DAT2 and is usually numbered TAB9
 
-
-From Left to Right the tabs are
-
-|| 9 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |  |    
-|| DAT2 | CS | DATIN | VSS1 | VDD | CLK | VSS2 | DATOUT | DAT1 |  |
-|| ss | MOSI | GND | 3.3V SCK | *NC* | MISO | *NC* | *NC* ||
-
-or 
+== Spineret (standard) Pinout ==
 
 || PIN  || SPI function || Prop Pin || description || Pull Up resistor? ||
 || Pin9 || nc || P18 || not used in SPI mode || Pull Up resistor optional ||
@@ -39,6 +32,34 @@ or
 || Pin6 || Vss2 || P-Vss || GND ground || Pull Up resistor - no ||
 || Pin7 || Do/MISO || P16 || description || Pull Up resistor - YES ||
 || Pin8 || nc || P17 ||not used in SPI mode  || Pull Up resistor optional ||
+
+== Demoboard ==
+
+|| PIN  || SPI function || Prop Pin || description || Pull Up resistor? ||
+|| Pin9 || nc || P18 || not used in SPI mode || Pull Up resistor optional ||
+|| Pin1 || CS || P19 || Chip Select || Pull Up resistor- YES ||
+|| Pin2 || DI/MOSI || P20 || description || Pull Up resistor - YES ||
+|| Pin3 || Vss1 || P-Vss || GND ground || Pull Up resistor- no ||
+|| Pin4 || Vdd || P-Vdd || 3.3 volts ||Pull Up resistor - (YES) ||
+|| Pin5 || Sclk || P21 || Serial Clock || Pull Up resistor - no ||
+|| Pin6 || Vss2 || P-Vss || GND ground || Pull Up resistor - no ||
+|| Pin7 || Do/MISO || P16 || description || Pull Up resistor - YES ||
+|| Pin8 || nc || P17 ||not used in SPI mode  || Pull Up resistor optional ||
+
+
+== Quickstart ==
+
+|| PIN  || SPI function || Prop Pin || description || Pull Up resistor? ||
+|| Pin9 || nc || P18 || not used in SPI mode || Pull Up resistor optional ||
+|| Pin1 || CS || P19 || Chip Select || Pull Up resistor- YES ||
+|| Pin2 || DI/MOSI || P20 || description || Pull Up resistor - YES ||
+|| Pin3 || Vss1 || P-Vss || GND ground || Pull Up resistor- no ||
+|| Pin4 || Vdd || P-Vdd || 3.3 volts ||Pull Up resistor - (YES) ||
+|| Pin5 || Sclk || P21 || Serial Clock || Pull Up resistor - no ||
+|| Pin6 || Vss2 || P-Vss || GND ground || Pull Up resistor - no ||
+|| Pin7 || Do/MISO || P16 || description || Pull Up resistor - YES ||
+|| Pin8 || nc || P17 ||not used in SPI mode  || Pull Up resistor optional ||
+
 
 
 
