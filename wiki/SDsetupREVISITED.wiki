@@ -118,6 +118,32 @@ PropForthSDFastSerialKernel.spin
 
 This should be the same for v5.03 and 5.0.   The "GO" stuff in the path is an artifact from other testing, and you do not need any Go Language support installed for the SD support to run.
 
+Use the SPIN TOOL to open the  SD kernel source file 
+{{{
+PropForthSDFastSerialKernel.spin
+}}}
+
+EDIT lines '125 thorugh 128' to match your hardware.  This is the prop pins where you put the SD card.  By default, we use 16, 17, 18, 19, 20, 21 per the spineret.  Pins 17 and 18 are not used in SPI mode, but we advise keeping the physical connections in place (until there is a valid reason to change). 
+
+I'm using Quickstart with the SD on pins 8, 9, 10, 11, 12, 13.
+
+So I change   dlrS_sd_cs = 19           ' $S_sd_cs forth word
+{{{
+  dlrS_sd_di = 20           ' $S_sd_di forth word
+  dlrS_sd_clk = 21          ' $S_sd_clk forth word
+  dlrS_sd_do = 16           ' $S_sd_do forth word
+}}}
+to
+{{{
+  dlrS_sd_cs  = 11           ' $S_sd_cs forth word
+  dlrS_sd_di  = 12           ' $S_sd_di forth word
+  dlrS_sd_clk = 13           ' $S_sd_clk forth word
+  dlrS_sd_do  =  8           ' $S_sd_do forth word
+}}}
+
+
+into prop EEPROM.  Whe the firmware is loaded, power cycle and start teraterm.
+
 Use the SPIN TOOL to install the SD kernel into prop EEPROM.  Whe the firmware is loaded, power cycle and start teraterm.
 
 
