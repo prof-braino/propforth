@@ -245,9 +245,296 @@ Looking in the 'GettingStartedPropForthSD.txt' told me I can use the ESC key to 
 
 Hit the reset key, and hold the ESC key whil it comes up.....
 
+This time when it comes up, it says 
+
+{{{
+CON:Prop0 Cog0 RESET - last status: 0 ok
+
+CON:Prop0 Cog1 RESET - last status: 0 ok
+
+CON:Prop0 Cog2 RESET - last status: 0 ok
+
+CON:Prop0 Cog3 RESET - last status: 0 ok
+
+CON:Prop0 Cog4 RESET - last status: 0 ok
+
+CON:Prop0 Cog5 RESET - last status: 0 ok
+
+CON:Prop0 Cog6 RESET - last status: 0 ok
+
+Prop0 Cog6 RESET - last status: 0 ok
+Prop0 Cog6 ok
+
+}}}
+
+and the cursor is advancing across the bottom of the screen.  Bacuase I am still holding down the ESC key.
+
+Release ESC and hit enter.  SUCCESS! We have the command prompt back!
+
+NOW we can load the initialization script, as before.
+
+Select the contents of sd_init.f, and paste it into the teraterm window.
+
+==== FIRST time intialization =====
 
 
 
+NOW something happens different!
+
+When the init script runs we see some activity, a slight pause (I'll break the printout to show that word) and the rest of the scrip.  It goes by pretty fast, and you only get to see it whne to initia new card, so here it is:
+
+{{{
+Prop0 Cog6 ok
+fl
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+sd_init
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+1 constant _sysstart
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+: _sd_CrEaTe
+sd_cogbuf h80 bounds
+do
+h20202020 i COG!
+loop
+h20202F01 dup sd_cogbuf COG!
+sd_cogbuf h20 + COG!
+h10000 sd_cogbuf h2A + COG!
+h81 sd_cogbuf h2B + COG!
+over sd_cogbuf h2E + COG!
+over sd_cogbuf h2F + COG!
+over sd_cogbuf h32 + COG!
+sd_cogbuf h33 + COG!
+dup h81 + sd_cogbuf h36 + COG!
+sd_lock dup sd_blockwrite
+_sd_initdir
+sd_unlock
+;
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+h10000 _sysstart + constant _sysblocks
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sd_maxblock L@ constant _usrend
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart _sysblocks _sd_CrEaTe
+Prop0 Cog5 ok
+_sysstart _sysblocks + _usrend _sd_CrEaTe
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart sd_mount
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+h2 fwrite .sdcardinfo
+
+SDCard size:Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sd_maxblock L@ 2/ _nf C@++
+Prop0 Cog5 ok
+c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+c"  Kbytes~h0D~h0D" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" File System: sys~h0D                      Start Block:" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart _nf C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" ~h0D                        End Block:" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart _sysblocks + _nf C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" ~h0D        File System Size (blocks):" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysblocks _nf C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" ~h0D        File System Size  (bytes):" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysblocks 2/ _nf C@++
+Prop0 Cog5 ok
+c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c"  Kbytes~h0D~h0D" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" File System: usr~h0D                      Start Block:" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart _sysblocks + _nf C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" ~h0D                        End Block:" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+_usrend _nf C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" ~h0D        File System Size (blocks):" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+_usrend _sysstart _sysblocks + - _nf C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" ~h0D        File System Size  (bytes):" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_usrend _sysstart _sysblocks + - 2/ _nf C@++
+Prop0 Cog5 ok
+c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+c"  Kbytes~h0D~h0D" C@++ c" .sdcardinfo" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+h100 fwrite sdboot.f
+
+hA state orC!  c" ~h1B[1A~h1B[20D~h1B[K~h0D~h0D" .cstr
+
+c" sdboot.f  -  initializing~h0D~h0D" .cstr
+1 sd_mount
+
+[ifndef mountsys : mountsys sd_init Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart <# # # # # # # # # # # #> C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c"  sd_mount ; ]~h0D" C@++  c" sdboot.f"  sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" \ mountusr ( -- ) mount the user disk~h0D[ifndef mountusr : mountusr sd_init " C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart _sysblocks + <# #s #> C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c"  sd_mount ; ]~h0D"  C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" c~h22 sdboot.f  -  Loading boot.f~h7Eh0D~h7Eh0D~h22 .cstr~h0D~h0D" C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" fload boot.f~h0D" C@++  c" sdboot.f"  sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" c~h22 sdboot.f  -  DONE - PropForth Loaded ~h7Eh0D~h7Eh0D~h22 .cstr~h0D~h0D" C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+c" hA state andnC!~h0D~h0D" C@++ c" sdboot.f" sd_append
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+100 fwrite boot.f
+hA state orC!  c" ~h1B[1A~h1B[20D~h1B[K~h0D~h0D" .cstr
+
+c" boot.f  -  initializing~h0D~h0D" .cstr
+
+1 sd_mount
+
+fread .sdcardinfo
+
+c" boot.f  -  DONE~h0D~h0D" .cstr
+hA state andnC!
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+mkdir .partion-sys/
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart _sysblocks + sd_mount
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+mkdir .partion-usr/
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+_sysstart sd_mount
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+forget _sysstart
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog6 ok
+
+
+}}}
 
 
 
