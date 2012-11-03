@@ -1,4 +1,5 @@
 #summary Set up SD for Propforth.
+#labels SDcard,PropForthSDFastSerialKernel.spin,Loopy
 
 = NOTICE =
 
@@ -275,13 +276,11 @@ NOW we can load the initialization script, as before.
 
 Select the contents of sd_init.f, and paste it into the teraterm window.
 
-==== FIRST time intialization =====
-
-
-
 NOW something happens different!
 
-When the init script runs we see some activity, a slight pause (I'll break the printout to show that word) and the rest of the scrip.  It goes by pretty fast, and you only get to see it whne to initia new card, so here it is:
+==== FIRST time intialization =====
+
+When the init script runs we see some activity, a slight pause (I'll break the printout to show that word) and the rest of the scrip.  It goes by pretty fast, and you only get to see it when you initialize a new card, so here it is:
 
 {{{
 Prop0 Cog6 ok
@@ -345,6 +344,20 @@ Prop0 Cog5 ok
 _sysstart _sysblocks _sd_CrEaTe
 Prop0 Cog5 ok
 _sysstart _sysblocks + _usrend _sd_CrEaTe
+}}}
+
+At this point there is a slight delay. The word '_sd_CrEaTe' is executing, and setting up the card. It only takes a few seconds.  When this happens, I usually say, "great, it crashed again, better write a bug report" but before I can get my hand to the rest button, it starts going again. 
+
+The text scrolls by very fast, but remember, the display of the text is the slowest part. Even at 230400 baud.
+
+Any who, the remainder of the text that scroll by is the following:
+
+{{{
+Prop0 Cog5 ok
+_sysstart _sysblocks _sd_CrEaTe
+Prop0 Cog5 ok
+_sysstart _sysblocks + _usrend _sd_CrEaTe
+
 Prop0 Cog5 ok
 
 Prop0 Cog5 ok
@@ -536,8 +549,105 @@ Prop0 Cog6 ok
 
 }}}
 
+At this point, we know:
+
+ * The SD card is good
+ * The SD slot we made is good
+ * The wiring is good
+ * The firmware kernel is good
+ * The SD driver is good
+
+== second boot ==
+
+OK we ran the init script,  we should have a prop chip with 4 gig of storage that we can pretend is RAM, maybe.  Let's check:
+
+ * hit the reset button on the propboard
+ * watch the teraterm display
+
+It says:
+
+{{{
+
+Prop0 Cog6 ok
+
+CON:Prop0 Cog0 RESET - last status: 0 ok
+
+CON:Prop0 Cog1 RESET - last status: 0 ok
+
+CON:Prop0 Cog2 RESET - last status: 0 ok
+
+CON:Prop0 Cog3 RESET - last status: 0 ok
+
+CON:Prop0 Cog4 RESET - last status: 0 ok
+
+CON:Prop0 Cog5 RESET - last status: 0 ok
+Prop0 Cog5 ok
 
 
+sdboot.f  -  initializing
+
+sdboot.f  -  Loading boot.f
+
+
+boot.f  -  initializing
+
+
+SDCard size:      3,858,435 Kbytes
+
+File System: sys
+                      Start Block:              1
+                        End Block:         65,538
+        File System Size (blocks):         65,537
+        File System Size  (bytes):         32,765 Kbytes
+
+File System: usr
+                      Start Block:         65,538
+                        End Block:      7,716,864
+        File System Size (blocks):      7,651,326
+        File System Size  (bytes):      3,825,665 Kbytes
+
+boot.f  -  DONE
+
+Prop0 Cog4 ok
+
+Prop0 Cog4 ok
+
+sdboot.f  -  DONE - PropForth Loaded
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+
+CON:Prop0 Cog6 RESET - last status: 0 ok
+
+Prop0 Cog6 RESET - last status: 0 ok
+Prop0 Cog6 ok
+
+}}}
+
+== sdboot.f ==
+
+sdboot.f is a file that is auto loaded at kernel start.
+
+'SDCard size:      3,858,435 Kbytes' shows its a 4 gig card
+
+'File System: sys' is the propforth system partition. Its about 65 thousand blocks long.  About like my walk to work.  I guess its about 32 meg, or 32 thousand pages of text, if you were to use the forth blocks raw disk sectors as pages.  You don't, you can set these sectors up as files and treat them as files as usual, internal to forth.
+
+One might load propforth development extension script here.  Also perhaps diagnostic extensions.  Maybe even application development experiment. 
+
+'File System: usr' is the user application extension. It starts at the end of the development partition, and goes to the end of the card. 
+
+This is for logging, application data, whatever. At 3.8 gig of storage, its still practically the whole card.
+
+
+== autoboot.f ==
+
+You can put anything you want in this file.  You should make sure its some thing that you want to execute, maybe your final application, or a list of the development extension you want to load from the SD. If you load a program the makes the system crash, you can use the ESC key during boot to abort the autoload process as before. 
+
+= EDITING FILE on SD =
+
+Sorry, got to go to dinner. More later.
 
 
 
