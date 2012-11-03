@@ -77,20 +77,25 @@ You don't have to start at pin 0. But you do have to end by pin 7.
 
 The quickstart has a double row of connectors, so we have to alternate pins.  Unfortunately, there are only 4 pins in a row, and we need six.  Do I have to make a special connector for the quickstart, or can we share? 
 
+We can use the unassigned pins 8 through 14 or pins 9 through 15. If we can use all even or all odd pins, we can use the same connector from above on the quickstart. 
+
+Pins 16 and 18 or 17 and 19 are physically connected to LEDs, those are connected to ground. So maybe we should use these.
+
+Pins 4 and 6 or 5 and 7 are connected to resistive pad buttons.  If we don't touch the buttons, maybe these will work.
+
 || Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
-|| P08|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
-|| P10|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
-|| P12|| tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
-|| P14|| tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
-|| P18|| tab2 || DI/MOSI || description || Pull Up resistor - YES ||
-|| P20|| tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
+|| P04|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
+|| P06 || tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
+|| P08 || tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
+|| P10 || tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
+|| P12 || tab2 || DI/MOSI || description || Pull Up resistor - YES ||
+|| P14 || tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
 || P-Vdd || tab4 || Vdd ||  3.3 volts ||Pull Up resistor - (YES) ||
 || P-Vss || tab3 || Vss1 ||  GND ground || Pull Up resistor- no ||
 || P-Vss || tab6 || Vss2 ||  GND ground || Pull Up resistor - no ||
 
-Pins 18 and 20 are physically connected to LEDs.  
 
-
+Testing....
 
 = Details =
 
