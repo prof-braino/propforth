@@ -22,16 +22,16 @@ Looking at the bottom of the Full size SD adaptor with the gold tabs facing up a
 
 == SD Card Tabs ==
 
-|| TAB  || SPI function || Prop Pin || description || Pull Up resistor? ||
-|| tab9 || nc || Px || not used in SPI mode || Pull Up resistor optional ||
-|| tab1 || CS || Px || Chip Select || Pull Up resistor- YES ||
-|| tab2 || DI/MOSI || Px || description || Pull Up resistor - YES ||
-|| tab3 || Vss1 || P-Vss || GND ground || Pull Up resistor- no ||
-|| tab4 || Vdd || P-Vdd || 3.3 volts ||Pull Up resistor - (YES) ||
-|| tab5 || Sclk || Px || Serial Clock || Pull Up resistor - no ||
-|| tab6 || Vss2 || P-Vss || GND ground || Pull Up resistor - no ||
-|| tab7 || Do/MISO || Px || description || Pull Up resistor - YES ||
-|| tab8 || nc || Px ||not used in SPI mode  || Pull Up resistor optional ||
+|| Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
+|| Px|| tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
+|| Px|| tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
+|| Px|| tab2 || DI/MOSI || description || Pull Up resistor - YES ||
+|| P-Vss || tab3 || Vss1 ||  GND ground || Pull Up resistor- no ||
+|| P-Vdd || tab4 || Vdd ||  3.3 volts ||Pull Up resistor - (YES) ||
+|| Px|| tab5 || Sclk || Px || Serial Clock || Pull Up resistor - no ||
+|| P-Vss || tab6 || Vss2 ||  GND ground || Pull Up resistor - no ||
+|| Px|| tab7 || Do/MISO || Px || description || Pull Up resistor - YES ||
+|| Px|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
 
 == Spineret (standard) Pinout ==
 
