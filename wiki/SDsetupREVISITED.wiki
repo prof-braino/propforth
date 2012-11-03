@@ -213,6 +213,46 @@ And guess what?  I didn't put the micro SD in the slot yet.  So this is good, we
 
 This time , put an SD card in the adapter slot. 
 
+Here's a 4 gig micro SD that says ubuntu 11.4 Natty Narwal.  Don't need that at the moment, so the narwal gets it.
+
+When I power up the quickstart, the firmware tries to autoboot.  Before I can start teraterm, it has done its thing, and has end up in a frozen state.  Perhaps Minnesota?  So I hit the reset button on the Quickstart, and see this message: 
+
+{{{
+CON:Prop0 Cog0 RESET - last status: 0 ok
+
+CON:Prop0 Cog1 RESET - last status: 0 ok
+
+CON:Prop0 Cog2 RESET - last status: 0 ok
+
+CON:Prop0 Cog3 RESET - last status: 0 ok
+
+CON:Prop0 Cog4 RESET - last status: 0 ok
+
+CON:Prop0 Cog5 RESET - last status: 0 ok
+
+CON:Prop0 Cog6 RESET - last status: 172 UNKNOWN ERROR
+
+CON:Prop0 Cog5 RESET - last status: 7 LOCK TIMEOUT
+
+Prop0 Cog5 RESET - last status: 7 LOCK TIMEOUT
+Prop0 Cog5 ok
+
+}}}
+
+Each time it comes back from 'LOCK TIMEOUT', any characer causes another lock.
+
+Looking in the 'GettingStartedPropForthSD.txt' told me I can use the ESC key to disable the autoboot routine.  Maybe that will help?
+
+Hit the reset key, and hold the ESC key whil it comes up.....
+
+
+
+
+
+
+
+
+
 
 
 = Details =
