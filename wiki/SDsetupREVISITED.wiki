@@ -102,6 +102,11 @@ Since the Quickstart has Vin next to Vss, and my conneector is built for Vdd nes
 
 Testing....
 
+NOTE: Quickstart boards do NOT ship with propforth in EEPROM.  
+
+
+= Load the SD kernel =
+
 = Details =
 
 Add your content here.  Format your content with:
