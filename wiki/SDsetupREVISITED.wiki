@@ -39,6 +39,21 @@ Notice:  If you use a resistor pack for the pull ups, you can connect the Vdd to
 == Spineret (standard) Pinout ==
 
 
+|| Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
+|| P16|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
+|| P17|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
+|| P18|| tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
+
+|| P19|| tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
+|| P20|| tab2 || DI/MOSI || description || Pull Up resistor - YES ||
+|| P21|| tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
+|| P-Vdd || tab4 || Vdd ||  3.3 volts ||Pull Up resistor - (YES) ||
+|| P-Vss || tab3 || Vss1 ||  GND ground || Pull Up resistor- no ||
+|| P-Vss || tab6 || Vss2 ||  GND ground || Pull Up resistor - no ||
+
+
+
+
 == Demoboard ==
 
 The Prop demo board only has  pins 0 through 7 available, so we move the pins accordingly
