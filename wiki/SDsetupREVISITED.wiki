@@ -20,37 +20,6 @@ I'm using a full size SD adaptor as a card slot for microsd cards.
 
 Looking at the bottom of the Full size SD adaptor with the gold tabs facing up and at the top of the card, the truncated corner is at the upper left. This is DAT2 and is usually numbered TAB9
 
-Next to TAB9 is TAB1.   Noone knows why they put TAB9 in front TAB9, probably to be more interesting. In any case TAB1, the first and leftmost of the eight tabs at the top of the card, is CS or Chip Select.  This is tab is set to VDD (3.3v) to enable the SD card.
-
-The remaining tabs are in a normal consecutive order across the card.
-
-Next to TAB1 is TAB2 MOSI, Master Out Slave In.  Master refers to the PC or microcontroller, Slave refers to the SD card. This line is for the Master (PC or Micro controller) to talk to the slave SD device; and the Slave SD device to listen to the master..  
-
-NExt to tab 2 is TAB3 GND, Ground. This is connected to the Vss of the PC or microcontroller. 
-
-Next to tab 3 is TAB4 Vcc (3.3volts).  This is connneect to Vdd on the PC or microcontroller.  This is NOT to be connected to Vin, that is unregulated and could burn the SD card.
-
-Next to tab 4 is  TAB5 SCK, Serial Clock.  This is the clock line driven by the PC or micrtocontroller
-
-Next to tab 5 is TAB6 GND.  Notice that there are two tabs labeled Vss/GND.  I connect them both to ground.
-
-Next to tab 6 is TAB7 MISO, Master In Slave Out. Master is the PC, Slave is the SD. This connection is for the 
-the PC or microcontroller master to listen to the slave SD device; and the slave SD device to talk to the PC/microcontroller master.
-
-Next to tab 7 is TAB8. TAB8 is not used in SPI mode but we reserve the tab  connection as part of this set up in case omebody does a 4 bit mode. You can always change this later.   
-
-
-
-
-http://tinkerish.com/blog/?p=13
-
-From Left to Right the tabs are
-
-|| 9 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 ||     
-|| DAT2 || CS || DATIN || VSS1 || VDD || CLK || VSS2 || DATOUT || DAT1 || 
-|| ss || MOSI || GND || 3.3V || SCK || *NC* || MISO || *NC* || *NC* ||
-
-
 
 = Details =
 
