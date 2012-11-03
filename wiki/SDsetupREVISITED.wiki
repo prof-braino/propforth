@@ -82,13 +82,19 @@ Pins 16 and 18 or 17 and 19 are physically connected to LEDs, those are connecte
 
 Pins 4 and 6 or 5 and 7 are connected to resistive pad buttons.  If we don't touch the buttons, maybe these will work.
 
+ALMOST
+
+Since the Quickstart has Vin next to Vss, and my conneector is built for Vdd nest to Vss, I can't directly use my standard SD adapter  connector for the quickstart.  No worries, I'll just use a bread board and some jumpers.  
+
+
+
 || Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
-|| P04|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
-|| P06 || tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
-|| P08 || tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
-|| P10 || tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
+|| P08|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
+|| P09 || tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
+|| P10 || tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
+|| P11 || tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
 || P12 || tab2 || DI/MOSI || description || Pull Up resistor - YES ||
-|| P14 || tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
+|| P13 || tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
 || P-Vdd || tab4 || Vdd ||  3.3 volts ||Pull Up resistor - (YES) ||
 || P-Vss || tab3 || Vss1 ||  GND ground || Pull Up resistor- no ||
 || P-Vss || tab6 || Vss2 ||  GND ground || Pull Up resistor - no ||
