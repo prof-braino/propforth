@@ -35,6 +35,8 @@ Looking at the bottom of the Full size SD adaptor with the gold tabs facing up a
 
 == Demoboard ==
 
+The Prop demo board only has  pins 0 through 7 available, so we move the pins accordingly
+
 || PIN  || SPI function || Prop Pin || description || Pull Up resistor? ||
 || Pin9 || nc || P18 || not used in SPI mode || Pull Up resistor optional ||
 || Pin1 || CS || P19 || Chip Select || Pull Up resistor- YES ||
