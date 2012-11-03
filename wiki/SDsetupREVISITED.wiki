@@ -43,7 +43,6 @@ Notice:  If you use a resistor pack for the pull ups, you can connect the Vdd to
 || P16|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
 || P17|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
 || P18|| tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
-
 || P19|| tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
 || P20|| tab2 || DI/MOSI || description || Pull Up resistor - YES ||
 || P21|| tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
