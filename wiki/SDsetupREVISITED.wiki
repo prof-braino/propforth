@@ -57,8 +57,38 @@ Notice:  If you use a resistor pack for the pull ups, you can connect the Vdd to
 
 The Prop demo board only has  pins 0 through 7 available, so we move the pins accordingly
 
+
+|| Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
+|| P0|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
+|| P1|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
+|| P2|| tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
+|| P3|| tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
+|| P4|| tab2 || DI/MOSI || description || Pull Up resistor - YES ||
+|| P5|| tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
+|| P-Vdd || tab4 || Vdd ||  3.3 volts ||Pull Up resistor - (YES) ||
+|| P-Vss || tab3 || Vss1 ||  GND ground || Pull Up resistor- no ||
+|| P-Vss || tab6 || Vss2 ||  GND ground || Pull Up resistor - no ||
+
+You don't have to start at pin 0. But you do have to end by pin 7.
+
+
+
 == Quickstart ==
 
+The quickstart has a double row of connectors, so we have to alternate pins.  Unfortunately, there are only 4 pins in a row, and we need six.  Do I have to make a special connector for the quickstart, or can we share? 
+
+|| Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
+|| P08|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
+|| P10|| tab8 || nc || not used in SPI mode  || Pull Up resistor optional ||
+|| P12|| tab9 || nc ||  not used in SPI mode || Pull Up resistor optional ||
+|| P14|| tab1 || CS ||  Chip Select || Pull Up resistor- YES ||
+|| P18|| tab2 || DI/MOSI || description || Pull Up resistor - YES ||
+|| P20|| tab5 || Sclk ||  Serial Clock || Pull Up resistor - no ||
+|| P-Vdd || tab4 || Vdd ||  3.3 volts ||Pull Up resistor - (YES) ||
+|| P-Vss || tab3 || Vss1 ||  GND ground || Pull Up resistor- no ||
+|| P-Vss || tab6 || Vss2 ||  GND ground || Pull Up resistor - no ||
+
+Pins 18 and 20 are physically connected to LEDs.  
 
 
 
