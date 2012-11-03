@@ -30,15 +30,15 @@ From Left to Right the tabs are
 or 
 
 || PIN  || SPI function || Prop Pin || description || Pull Up resistor? ||
-|| Pin9 || nc || Px || not used in SPI mode || Pull Up resistor optional ||
-|| Pin1 || CS || Px || Chip Select || Pull Up resistor- YES ||
-|| Pin2 || DI/MOSI || px|| description || Pull Up resistor - YES ||
-|| Pin3 || Vss1 || Px || GND ground || Pull Up resistor- no ||
-|| Pin4 || Vdd || Px || 3.3 volts ||Pull Up resistor - (YES) ||
-|| Pin5 || Sclk || Px || Serial Clock || Pull Up resistor - no ||
-|| Pin6 || Vss2 || Px || GND ground || Pull Up resistor - no ||
-|| Pin7 || Do/MISO || Px || description || Pull Up resistor - YES ||
-|| Pin8 || nc || Px ||not used in SPI mode  || Pull Up resistor optional ||
+|| Pin9 || nc || P18 || not used in SPI mode || Pull Up resistor optional ||
+|| Pin1 || CS || P19 || Chip Select || Pull Up resistor- YES ||
+|| Pin2 || DI/MOSI || P20 || description || Pull Up resistor - YES ||
+|| Pin3 || Vss1 || P-Vss || GND ground || Pull Up resistor- no ||
+|| Pin4 || Vdd || P-Vdd || 3.3 volts ||Pull Up resistor - (YES) ||
+|| Pin5 || Sclk || P21 || Serial Clock || Pull Up resistor - no ||
+|| Pin6 || Vss2 || P-Vss || GND ground || Pull Up resistor - no ||
+|| Pin7 || Do/MISO || P16 || description || Pull Up resistor - YES ||
+|| Pin8 || nc || P17 ||not used in SPI mode  || Pull Up resistor optional ||
 
 
 
