@@ -127,12 +127,13 @@ EDIT lines '125 thorugh 128' to match your hardware.  This is the prop pins wher
 
 I'm using Quickstart with the SD on pins 8, 9, 10, 11, 12, 13.
 
-So I change   dlrS_sd_cs = 19           ' $S_sd_cs forth word
+So I change   
 {{{
+  dlrS_sd_cs = 19           ' $S_sd_cs forth word
   dlrS_sd_di = 20           ' $S_sd_di forth word
   dlrS_sd_clk = 21          ' $S_sd_clk forth word
   dlrS_sd_do = 16           ' $S_sd_do forth word
-}}}
+{}}}
 to
 {{{
   dlrS_sd_cs  = 11           ' $S_sd_cs forth word
