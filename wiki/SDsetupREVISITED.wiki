@@ -124,7 +124,7 @@ Use the SPIN TOOL to open the  SD kernel source file
 PropForthSDFastSerialKernel.spin
 }}}
 
-EDIT lines '125 thorugh 128' to match your hardware.  This is the prop pins where you put the SD card.  By default, we use 16, 17, 18, 19, 20, 21 per the spineret.  Pins 17 and 18 are not used in SPI mode, but we advise keeping the physical connections in place (until there is a valid reason to change). 
+EDIT lines '125 through 128' to match your hardware.  This is the prop pins where you put the SD card.  By default, we use 16, 17, 18, 19, 20, 21 per the spineret SD card pin allocation.  Pins 17 and 18 are not used in SPI mode, but we advise keeping the physical connections in place just in case (until there is a valid reason to change). 
 
 I'm using Quickstart with the SD on pins 8, 9, 10, 11, 12, 13.
 
