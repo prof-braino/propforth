@@ -161,11 +161,12 @@ In the same directory as above
 find two files: 
 
 `GettingStartedPropForthSD.txt`
+
 `sd_scripts.f`
 
-GettingStartedPropForthSD.txt is the instructions for running SD.  Read this.  You'd be surprised how many folks don't read it, then ask questions that are answered in the file. 
+`GettingStartedPropForthSD.txt` is the instructions for running SD.  Read this.  You'd be surprised how many folks don't read it, then ask questions that are answered in the file. 
 
-sd_scripts.f initializes the SD card.
+`sd_scripts.f` initializes the SD card.
 
 To load the sd_scripts.f SD card initialization script:
  # open sd_scripts.f in you favorite editor
@@ -206,13 +207,13 @@ This means:
  # 166 is the number of the message, but there isn't an extension that defines the text for this error (this is so new the paint isn't dry)   
  # error 166 mean "SD card not found"
 
-And guess what?  I didn't put the micro SD in the slot yet.  So this is good, we can detect and erro if the hardware isn't right.
+And guess what?  I didn't put the micro SD in the slot yet.  So this is good, we can detect and error if the hardware isn't right.
 
 === Positive test case ===
 
 This time , put an SD card in the adapter slot. 
 
-Here's a 4 gig micro SD that says ubuntu 11.4 Natty Narwal.  Don't need that at the moment, so the narwal gets it.
+Digging around in my desk.... Here's a 4 gig micro SD that says ubuntu 11.4 Natty Narwal.  Don't need that at the moment, so the narwal gets it.
 
 When I power up the quickstart, the firmware tries to autoboot.  Before I can start teraterm, it has done its thing, and has end up in a frozen state.  Perhaps Minnesota?  So I hit the reset button on the Quickstart, and see this message: 
 
@@ -238,11 +239,11 @@ Prop0 Cog5 ok
 
 }}}
 
-Each time it comes back from 'LOCK TIMEOUT', any characer causes another lock.
+Each time it comes back from 'LOCK TIMEOUT', any character causes another lock.  So, something is not going as expected. Probably it started automatically loading something, that turned out to be garbage, and it didn't like it. 
 
 Looking in the 'GettingStartedPropForthSD.txt' told me I can use the ESC key to disable the autoboot routine.  Maybe that will help?
 
-Hit the reset key, and hold the ESC key whil it comes up.....
+Hit the reset key, and hold the ESC key while it comes up.....
 
 This time when it comes up, it says 
 
@@ -266,17 +267,17 @@ Prop0 Cog6 ok
 
 }}}
 
-and the cursor is advancing across the bottom of the screen.  Bacuase I am still holding down the ESC key.
+and the cursor is advancing across the bottom of the screen.  Bacause I am still holding down the ESC key! 
 
-Release ESC and hit enter.  SUCCESS! We have the command prompt back!
+Release ESC and hit enter a couple times.  SUCCESS! We have the command prompt back!
 
 NOW we can load the initialization script, as before.
 
-Select the contents of sd_init.f, and paste it into the teraterm window.
+Select the contents of `sd_init.f`, and paste it into the teraterm window.
 
 NOW something happens different!
 
-==== FIRST time intialization =====
+==== FIRST time initialization =====
 
 When the init script runs we see some activity, a slight pause (I'll break the printout below to show that word) and the rest of the scrip.  It goes by pretty fast, and you only get to see it when you initialize a new card, so here it is:
 
