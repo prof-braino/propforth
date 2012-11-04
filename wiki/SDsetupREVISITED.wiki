@@ -667,17 +667,17 @@ This might be what was messin' you up,  this got me the first couple of time I t
 
 To write a source text file to the SD use the 'fwrite' command:
 
-'100 fwrite myfile'
+`100 fwrite myfile`
 
 100 is the number of sectors to allocate for the file? (look at the source for fwrite tomorrow?)
 
-To load a file from a mounted SD us 'fload' command:
+To load a file from a mounted SD us `fload` command:
 
-'fload myfile'
+`fload myfile`
 
-to list the files in the SD use 'fsls' command:
+to list the files in the SD use `fsls` command:
 
-'fsls'
+`fsls`
 
 to continuously write to a log file
 
