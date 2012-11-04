@@ -645,9 +645,29 @@ This is for logging, application data, whatever. At 3.8 gig of storage, its stil
 
 You can put anything you want in this file.  You should make sure its some thing that you want to execute, maybe your final application, or a list of the development extension you want to load from the SD. If you load a program the makes the system crash, you can use the ESC key during boot to abort the autoload process as before. 
 
+= mounting a partition =
+
+This is little different, this is NOT an OS file system the command is
+
+The command to mount the user partition is:
+{{{
+mountusr
+}}}
+
+The command to mount the system partition is:
+{{{
+mountsys
+}}}
+
+Notice that this is a single word, NOT 'mount system' 
+
+This might be what was messin' you up,  this got me the first couple of time I tried it, I hadn't wrapped my head around it properly. 
+
 = EDITING FILE on SD =
 
 Sorry, got to go to dinner. More later.
+
+R
 
 
 
