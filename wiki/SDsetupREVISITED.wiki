@@ -663,11 +663,27 @@ Notice that this is a single word, NOT 'mount system'
 
 This might be what was messin' you up,  this got me the first couple of time I tried it, I hadn't wrapped my head around it properly. 
 
-= EDITING FILE on SD =
+= FILES on SD =
 
-Sorry, got to go to dinner. More later.
+To write a source text file to the SD use the 'fwrite' command:
+
+'100 fwrite myfile'
+
+100 is the number of sectors to allocate for the file? (look at the source for fwrite tomorrow?)
+
+To load a file from a mounted SD us 'fload' command:
+
+'fload myfile'
+
+to list the files in the SD use 'fsls' command:
+
+'fsls'
+
+to continuously write to a log file
+
 
 D
+
 
 
 
