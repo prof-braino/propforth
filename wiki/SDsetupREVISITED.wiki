@@ -83,11 +83,9 @@ Pins 16 and 18 or 17 and 19 are physically connected to LEDs, those are connecte
 
 Pins 4 and 6 or 5 and 7 are connected to resistive pad buttons.  If we don't touch the buttons, maybe these will work.
 
-ALMOST
+ALMOST, but no cigar.  We can't plug a regular straight-header-pin-to-adapter hack to the quickstart.  Since the Quickstart has Vin next to Vss, and my conneector is built for Vdd nest to Vss, I can't directly use my standard SD adapter  connector for the quickstart. Should have thought of this first.
 
-Since the Quickstart has Vin next to Vss, and my conneector is built for Vdd nest to Vss, I can't directly use my standard SD adapter  connector for the quickstart.  No worries, I'll just use a bread board and some jumpers.  
-
-
+No worries, I'll just use a bread board and some jumpers.  pins 8 to 15 are available, we have plenty and some to spare. 
 
 || Prop Pin || TAB  || SPI function ||  description || Pull Up resistor? ||
 || P08|| tab7 || Do/MISO ||  description || Pull Up resistor - YES ||
