@@ -152,18 +152,16 @@ Use the SPIN TOOL to install the SD kernel into prop EEPROM.  Whe the firmware i
 
 Start teraterm, you should see the propforth command line prompt.
 
-
-
 == Load sd_scripts.f ==
 
 In the same directory as above
 
-'C:\Documents and Settings\Braino\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForthSD'
+`C:\Documents and Settings\Braino\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForthSD`
 
-find two files"
+find two files: 
 
-'GettingStartedPropForthSD.txt'
-'sd_scripts.f'
+`GettingStartedPropForthSD.txt`
+`sd_scripts.f`
 
 GettingStartedPropForthSD.txt is the instructions for running SD.  Read this.  You'd be surprised how many folks don't read it, then ask questions that are answered in the file. 
 
@@ -197,12 +195,12 @@ Prop0 Cog6 ok
 CON:Prop0 Cog5 RESET - last status: 166 UNKNOWN ERROR
 }}}
 
-This means"
+This means:
  # cog 6 was running normally
- # you pasted the source correctly into the terminal ('fl'  is the fast load command)
+ # you pasted the source correctly into the terminal (`fl`  is the fast load command)
  # cog 6 gave the input stream to cog 5
  # cog 5 did what ever the script told it to do
- # cog 5ran the 'sd_init' routine
+ # cog 5ran the `sd_init` routine
  # cog 5 returned control to the console (cog 6)
  # cog 6 displayed an error message
  # 166 is the number of the message, but there isn't an extension that defines the text for this error (this is so new the paint isn't dry)   
@@ -280,7 +278,7 @@ NOW something happens different!
 
 ==== FIRST time intialization =====
 
-When the init script runs we see some activity, a slight pause (I'll break the printout to show that word) and the rest of the scrip.  It goes by pretty fast, and you only get to see it when you initialize a new card, so here it is:
+When the init script runs we see some activity, a slight pause (I'll break the printout below to show that word) and the rest of the scrip.  It goes by pretty fast, and you only get to see it when you initialize a new card, so here it is:
 
 {{{
 Prop0 Cog6 ok
@@ -346,7 +344,7 @@ Prop0 Cog5 ok
 _sysstart _sysblocks + _usrend _sd_CrEaTe
 }}}
 
-At this point there is a slight delay. The word '_sd_CrEaTe' is executing, and setting up the card. It only takes a few seconds.  When this happens, I usually say, "great, it crashed again, better write a bug report" but before I can get my hand to the rest button, it starts going again. 
+At this point there is a slight delay. The word `_sd_CrEaTe` is executing, and setting up the card. It only takes a few seconds.  When this happens, I usually say, "great, it crashed again, better write a bug report" but before I can get my hand to the rest button, it starts going again. 
 
 The text scrolls by very fast, but remember, the display of the text is the slowest part. Even at 230400 baud.
 
@@ -630,13 +628,13 @@ Prop0 Cog6 ok
 
 sdboot.f is a file that is auto loaded at kernel start.
 
-'SDCard size:      3,858,435 Kbytes' shows its a 4 gig card
+`SDCard size:      3,858,435 Kbytes` shows its a 4 gig card
 
-'File System: sys' is the propforth system partition. Its about 65 thousand blocks long.  About like my walk to work.  I guess its about 32 meg, or 32 thousand pages of text, if you were to use the forth blocks raw disk sectors as pages.  You don't, you can set these sectors up as files and treat them as files as usual, internal to forth.
+`File System: sys` is the propforth system partition. Its about 65 thousand blocks long.  About like my walk to work.  I guess its about 32 meg, or 32 thousand pages of text, if you were to use the forth blocks raw disk sectors as pages.  You don't, you can set these sectors up as files and treat them as files as usual, internal to forth.
 
 One might load propforth development extension script here.  Also perhaps diagnostic extensions.  Maybe even application development experiment. 
 
-'File System: usr' is the user application extension. It starts at the end of the development partition, and goes to the end of the card. 
+`File System: usr` is the user application extension. It starts at the end of the development partition, and goes to the end of the card. 
 
 This is for logging, application data, whatever. At 3.8 gig of storage, its still practically the whole card.
 
