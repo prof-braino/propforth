@@ -20,22 +20,22 @@ Sal Sanci
 The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / PropForth capabilities. It will require an editor, but as time progresses this should be a lighter task.
 
 This Document is currently produced using Word 2007. It uses specific styles for formatting to allow publishing to a web format, as well as other electronic formats.
-== 1.2       Revision History == 
-=== 1.2.1   Revision: 2012-03-04_07:00:00 === 
+ == 1.2       Revision History == 
+ === 1.2.1   Revision: 2012-03-04_07:00:00 === 
 
 This revision is draft. It needs to be proof read and edited.
-=== 1.2.2   Revision: 2012-04-13_08:00:00 === 
+ === 1.2.2   Revision: 2012-04-13_08:00:00 === 
 
 Changed Word options so smart quotes are not used, and - is not changed to dash. This should ensure you can copy from the html version to a text document or terminal screen with proper fidelity. Re: issue 145
-=== 1.2.3   Revision 2012-04-14_12:00:00 === 
+ === 1.2.3   Revision 2012-04-14_12:00:00 === 
 
 Fixed some remaining - (dash) problems.
------
-= 2         Introduction = 
-== 2.1       Who is this written for? ==
+ -----
+ = 2         Introduction = 
+ == 2.1       Who is this written for? ==
 
 PropForth is written for people who want to interactively use and program Propeller based systems. It assumes you are familiar with Propeller based hardware, and have some knowledge of the Propeller architecture.
-== 2.2       What is PropForth? ==
+ == 2.2       What is PropForth? ==
 
 PropForth runs on the propeller. It is an interactive development and run time system. You can communicate with PropForth using a standard serial port, or via ethernet and telnet depending on the capabilities of the system you are using. It has a rich set of words which allow you to quickly and easily manipulate the hardware interactively. It is easy to program new words and use them in addition to the native set of words. Where necessary, you can write new words in assembler code for fast execution.
 
@@ -44,7 +44,7 @@ PropForth is outstanding for rapid exploration and development. The interactive 
 Each Propeller can run PropForth on up to 8 cogs, and you can concurrently interact with the cogs. Normal configuration uses one cog for serial or ethernet communication allowing for up to 7 concurrent PropForth sessions.
 
 It is based on the Forth programming language, but it has been tuned for the propeller architecture and parallel execution. PropForth does not prevent or protect you from manipulating the propeller however you like. While it can be simple to use, it is also very powerful.
-== 2.3       Document Conventions ==
+ == 2.3       Document Conventions ==
 
 This document contains a lot of code samples and the following are the conventions used.
 
@@ -67,7 +67,7 @@ For the output of the PropForth interpreter, and user written words:
 Prop0 Cog6 ok
 
 Forth words are documented in the following way. The text in the example input can be copied and pasted to a PropForth terminal
-2.3.1   sc
+ === 2.3.1   sc === 
 
 \ sc ( -- )
 
@@ -76,22 +76,22 @@ Example input
 Output line1
 
 More output
-== 2.4       Propforth Version ==
+ == 2.4       Propforth Version ==
 
 This text is written assuming PropForth V5.0, the download is available on Google Code. We will be using the PropForth System except where explicitly noted.
-2.5       Loading PropForth
+ == 2.5       Loading PropForth == 
 
 Download PropForth, and unzip. In the directory CurrentRelease\PropForth, follow the instructions in GettingStarted.txt.
-2.6       Teraterm / terminal programs
+ == 2.6       Teraterm / terminal programs == 
 
 The examples were written and tested using Teraterm, however just about any terminal program should work.
------
-= 3         Getting started = 
+ -----
+ = 3         Getting started = 
 
 The best way to use this document is with a running PropForth system. Use the examples to explore PropForth. At the end of the getting started section, you will  have been introduced to a number of the native PropForth words and you will be able to program new words.
 
 The sections which follow will then focus on different topics and continue the exploration of PropForth.
-3.1       Numbers
+ == 3.1       Numbers == 
 
 At the prompt, numbers can be entered in a few ways.
 
@@ -122,7 +122,7 @@ Prop0 Cog6 ok
 Remember, Hex digits are always UPPERCASE letters A, B, C, D, E, and F; and the number base designators b, d, and h (for binary, decimal, and hex) are always lowercase.
 
 Most variables in PropForth are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs. PropForth words treat numbers on the stack as signed long numbers by default.
-3.2       Words
+ == 3.2       Words
 
 The PropForth interpreter can understand numbers and words. Words and numbers are delimited by blanks. Word names are up to 31 characters, and can contain any sequence of characters, symbols, and letters. PropForth is extended by programming new words.
 
@@ -450,20 +450,20 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_003
 ST: 0_000_000_001 0_000_000_002 0_000_000_360
 
 Prop0 Cog6 ok
-3.6       Memory
+ == 3.6       Memory == 
 
 Before we proceed, a short discussion on memory. The propeller has 32k bytes of main memory that is accessible to all the cogs. Each cog has 512 32bit longs which are only accessible to the individual cogs.
 3.6.1   Cog Memory
 
 In cog memory, PropForth has the assembler instructions for the interpreter, the space for the stack, and the space for the return stack, temporary variables, and the assembler word page area, which will be discussed later.  This takes up 320 longs. There are 16 special registers in each cog, so this leaves 176 long which are available. Cog memory is accessible as 32bit longs.
-3.6.2   Main Memory
+ === 3.6.2   Main Memory === 
 
 In main memory, there are 8 special areas of 224 bytes of length each, which are dedicated to the PropForth interpreter running on each cog. The rest of main memory is used by the forth dictionary. The forth dictionary is the forth words and their definitions. When the interpreter gets input from the prompt, it looks up the words in the dictionary, and executes the definition. If it does not find the word definition, it attempts to interpret it as a number. If this succeeds the number goes on the stack.
 
 Variables and constants are also defined in the forth dictionary.
 
 Main memory is accessible as 8bit bytes, 16bit words, or 32bit longs.
-3.6.2.1     Variables
+ ==== 3.6.2.1     Variables ==== 
 
 Variables in main memory are normally defined as either 16bit words, or 32bit longs.
 
@@ -476,7 +476,7 @@ To define a long variable
 variable name_of_variable
 
 Most variables in PropForth are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs.
-3.6.2.2     Constants
+ ==== 3.6.2.2     Constants ==== 
 
 Like variables, constants in main memory are normally defined as either 16bit words, or 32bit longs.
 
@@ -487,8 +487,8 @@ value wconstant name_of_constant
 To define a long constant, the value is on the top of the stack:
 
 value constant name_of_constant
-3.7       Forth Words - Part 2
-3.7.1   hex
+ == 3.7       Forth Words - Part 2 == 
+ === 3.7.1   hex === 
 
 \ hex ( -- ) set the base for hexadecimal
 
@@ -511,7 +511,7 @@ Prop0 Cog6 ok
 Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. PropForth can support any base from 2 (binary) to 64. The most common are 10 (decimal) 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
 
 When using n base W! to set the base, remember one cannot use 10 base W! to set the base back to decimal, because 10 represents a different value in each base (10 always represents the base value in every base).  Use d_10 base W!  or the word decimal.
-3.7.2   decimal
+ === 3.7.2   decimal === 
 
 \ decimal ( -- ) set the base for decimal
 
@@ -528,7 +528,7 @@ ST: 0000_0000 0000_0001 FFFF_FFFF 0000_000A 0000_0064
 ST: 0_000_000_000 0_000_000_001 -0_000_000_001 0_000_000_010 0_000_000_100
 
 Prop0 Cog6 ok
-3.7.3   COG@
+ === 3.7.3   COG@ === 
 
 \ COG@ ( addr -- n1 ) \ fetch 32 bit value at cog addr
 
@@ -555,7 +555,7 @@ ST: -2_113_416_610
 Prop0 Cog6 ok
 
 The cnt register, in cog memory, is a high speed 32bit counter  incrementing once every clock cycle. Normally with a propeller running at 80Mhz, it increments once every 12.5 nanoseconds. This register wraps around to zero about every 53.7 seconds at 80 Mhz.
-3.7.4   COG!
+ === 3.7.4   COG! === 
 
 \ COG! ( n1 addr -- ) \ store 32 bit value (n1) at cog addr
 
@@ -588,7 +588,7 @@ Prop0 Cog6 ok
 Each cog has an outa register, in this case we are reading the value, setting bit 0 to 1, and writing the value. If the dira register bit 0 is set to 1 as well, the value of the outa register, will be or’d with all the other cogs outa registers bit 0 with dira registers bit 0, and appear on io pin 0.
 
 Normally, one cog has a pin set to output, so the value on the io pin is corresponds to the bit in that cog’s outa register.
-3.7.5   L@
+ === 3.7.5   L@ === 
 
 \ L@ ( addr -- n1 ) \ fetch 32 bit value at main memory addr
 
@@ -613,7 +613,7 @@ ST: 0_000_017_604
 ST: 0_000_000_000
 
 Prop0 Cog6 ok
-3.7.6   L!
+ === 3.7.6   L! === 
 
 \ L! ( n1 addr -- ) \ store 32 bit value (n1) at main memory addr
 
@@ -640,7 +640,7 @@ ST: -0_000_000_001
 Prop0 Cog6 ok
 
 32bit long addresses must be long aligned. In this example, the forth word "variable" uses the next text string it encourters (in this case "tmp1") and defines  a 32bit variable using that string as the name. Now when tmp1 is entered it returns the address of the variable. This is how we store values to a memory location using a variable name.
-3.7.7   W@
+ === 3.7.7   W@ === 
 
 \ W@ ( addr -- h1 ) \ fetch 16 bit value at main memory addr
 
@@ -663,7 +663,7 @@ ST: 0_000_017_646
 ST: 0_000_000_000
 
 Prop0 Cog6 ok
-3.7.8   W!
+ === 3.7.8   W! === 
 
 \ W! ( h1 addr -- ) \ store 16 bit value (h1) main memory at addr
 
@@ -690,7 +690,7 @@ ST: 0_000_065_535
 Prop0 Cog6 ok
 
 16bit word addresses must be word aligned. Note that when there is a -1 on the stack it corresponds to h_FFFF_FFFF. When W! stores a value it only store the lower 16bits. So the value h_FFFF is stored in the word variable. When it is fetched, the value h_FFFF goes on the stack, this corresponds to d_65_535. Generally 16bit words are used unsigned values and addresses, as they take up less space than longs. If you need signed values, use 32bit longs.
-3.7.9   C@
+ === 3.7.9   C@ === 
 
 \ C@ ( addr -- c1 ) \ fetch 8 bit value at main memory addr
 
