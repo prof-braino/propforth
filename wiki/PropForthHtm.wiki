@@ -312,7 +312,7 @@ Prop0 Cog6 ok
 sc 1 2 3 4 5 -6 cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st?
 }}}
  
- === 3.4.7   * ===
+ === 3.4.7   `*` ===
 
 {{{
 \ * ( n1 n2 -- n1*n2) n1 multiplied by n2
@@ -338,7 +338,7 @@ Prop0 Cog6 ok
 
 `*` is a signed multiply. There is a u* for unsigned multiply.
 
- === 3.4.8    / ===
+ === 3.4.8    `/` ===
 
 {{{
 \ / ( n1 n2 -- n1/n2) n1 divided by n2
