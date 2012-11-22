@@ -1088,6 +1088,8 @@ Prop0 Cog6 ok
 
 === 3.7.12                      <>  ===
 
+{{{
+
 \ <> ( x1 x2 -- flag ) flag is true if and only if x1 is not bit-for-bit the same as x2.
 
 sc 1 0 st? cr <> . cr cr 1 1 st? cr <> . cr cr 0 -1 st? cr <> . cr cr
@@ -1119,11 +1121,17 @@ ST: 0_000_000_000 -0_000_000_001
  
 
 Prop0 Cog6 ok
-3.8       Strings
+}}}
+
+ == 3.8       Strings ==
 
 In PropForth strings are stored as a series of bytes, where the first byte is the unsigned length of the string, and the bytes of the string immediately follow. String can be from 0 to 255 bytes long, and they consume 1 to 256 bytes of memory. To declare a string, c" string_characters" is used. The c" is followed by a space which is not part of the string, and ends with " which is not part of the string. When a string is declared at the prompt, it is only valid until that line is finished executing, as it is in temp storage. When a string is declared in a word definition, the string will be written to the dictionary, and will be valid until reboot.
-3.9       Forth Words - Part 3
-3.9.1   .cstr
+
+ == 3.9       Forth Words - Part 3 == 
+
+ === 3.9.1   .cstr ===
+
+{{{
 
 \ .cstr ( addr -- ) emit a counted string at addr
 
@@ -1142,8 +1150,11 @@ Hello world
 ST:
 
 Prop0 Cog6 ok
-3.9.2   ."
+}}}
 
+ === 3.9.2   `."` ===
+
+{{{
 \ ." string_chars" is the equivalent of c" string_chars" .cstr in a definition
 
 sc : helloworld c" Hello world" .cstr cr ." HELLO WORLD" cr ; cr helloworld
@@ -1157,9 +1168,13 @@ Hello world
 HELLO WORLD
 
 Prop0 Cog6 ok
+}}}
 
 If we wish to embed non printable characters, or quotes in a string we can use ~nnn where nnn is a valid number 3 characters long. This will embed one character, with ascii value nnn in the string. Since the number is interpreted according to the current settings, is best use ~hxx where xx are 2 valid hex digits.
-3.9.3   String examples
+
+ === 3.9.3   String examples ===
+
+{{{
 
 \ String examples
 
@@ -1208,23 +1223,33 @@ c" ~h0D~h0D LF example - Hello~h0AWorld~h0D" .cstr
                    World
 
 Prop0 Cog6 ok
-3.10  Control Flow
+}}}
+
+ == 3.10  Control Flow ==
 
 These words are only valid while defining a word. They are not valid at the prompt.
-3.10.1                      if then
+
+ === 3.10.1                      if then ===
 
 If the value on top of the stack is any value other than 0, execute the words between if and then. If the value is zero, jump to the word after then.
-3.10.2                      if else then
+
+ === 3.10.2                      if else then === 
 
 If the value on top of the stack is any value other than 0, execute the words between if and else. If the value is zero, execute the words between else and then.
-3.10.3                      begin until
+
+ === 3.10.3                      begin until ===
 
 until will check the value on top of the stack. If it is 0, it will jump back to begin, otherwise it will continue with the word following until.
-3.10.4                      do loop
+
+ === 3.10.4                      do loop ===
 
 hiboundary loboudary do xxx loop. This will increment from loboundary, and execute xxx until the value reaches hiboundary -1. Between the do and loop, the word i will put the current loop counter on the top of the stack.
-3.11  Forth Words - Part 4
-3.11.1                      if then
+
+ == 3.11  Forth Words - Part 4 == 
+
+ === 3.11.1                      if then ===
+
+{{{
 
 \ if then
 
@@ -1257,8 +1282,12 @@ ST:
  
 
 Prop0 Cog6 ok
-3.11.2                      if else then
+}}} 
 
+
+ === 3.11.2                      if else then ===
+
+{{{
 \ if else then
 
 sc : test2 st? if ." executing if" else ." executing else" then cr st? cr ;  0 test2 1 test2 -1 test2
@@ -1290,8 +1319,11 @@ ST:
  
 
 Prop0 Cog6 ok
+}}}
+
 === 3.11.3                      begin until  ===
 
+{{{
 \ begin until
 
 sc : test3 begin  st? 1 - dup 0 = st? until ; 3 test3
@@ -1326,14 +1358,19 @@ ST: 0_000_000_004 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
-3.12  Talking to the other cogs
+}}}
+
+ == 3.12  Talking to the other cogs ==
 
 Up until this point we have been interacting with cog 6. What about the rest of the cogs?
 
 When PropForth starts up, it starts a serial driver on cog 7, this is assumed to be connected to a terminal, or console. The console is connected to cog 6 on startup. We can easily connect other cogs to the console.
-3.13  Forth Words - Part 5
-3.13.1                      >con
 
+ == 3.13  Forth Words - Part 5 ==
+
+ === 3.13.1                      >con ===
+
+{{{
 \ >con ( n1 -- ) disconnect the current cog, and connect the console to the cog n1
 
 sc 6 st?
@@ -1419,9 +1456,13 @@ st?
 ST: 0_000_000_006
 
 Prop0 Cog6 ok
+}}}
 
 When we are connected to cog 6, and we type in 5 >con(ENTER), we connect the console to the cog 5. Because input to a cog has a buffer of one character, if we type quickly enough the first character following may be sent to the currently connected cog. So we make sure to type 2 additional enters. The first additional enter will be consumed by cog 6, and the second by cog 5. Realistically, if you are typing, this will not be an issue, but if you paste in text, or are sending it programmatically, this can occur.
-3.13.2                      cogx
+
+ === 3.13.2                      cogx ===
+
+{{{
 
 \ cogx ( cstr n -- ) execute cstr on cog n
 
@@ -1472,9 +1513,14 @@ st?
 ST:
 
 Prop0 Cog6 ok
+}}}
 
 We can use another cog by sending it a command. If we know the cog is waiting at the command prompt, cogx will send it the command string. This is useful for starting up programs, and monitoring status.
-3.13.3                      cogreset
+
+
+ === 3.13.3                      cogreset ===
+
+{{{
 
 \ cogreset ( n1 -- ) reset the forth cog
 
@@ -1485,10 +1531,13 @@ Prop0 Cog6 ok
  
 
 CON:Prop0 Cog0 RESET - last status: 0 ok
+}}}
 
 When we do not know the status of a cog, or we have set a word running on a cog, and we want it to stop, cogreset is how we do it.
-3.13.4                      Underflow error
 
+ === 3.13.4                      Underflow error ===
+
+{{{
 \ underflow error example
 
 c" sc + + +" 0 cogx
@@ -1498,9 +1547,11 @@ Prop0 Cog6 ok
  
 
 CON:Prop0 Cog0 RESET - last status: 3 MAIN STACK UNDERFLOW
+}}}
 
 If we make a mistake, the cog will write an error to the console. If other cogs are trying write to the console at the same time, the messages may get a little garbled, the price of concurrency. In this example we send cog 0 a command which will cause an error, and we dump our stack 3 times, note how the error message can get interleaved with our output.
 
+{{{
 \ underflow error example 2
 
 1 2 3 4 5 6 c" sc + + +" 0 cogx st? st? st?
@@ -1520,8 +1571,11 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_003 0_000_000_004 0_000_000_005 0_000_
 Prop0 Cog6 ok
 
 Prop0 Cog6 ok
-3.13.5                      .const?
+}}}
 
+ === 3.13.5                      .const? ===
+
+{{{
 \ .const? ( -- ) prints out the stack to the console
 
 c" sc 111 222 333 .const?" 0 cogx
@@ -1529,9 +1583,12 @@ c" sc 111 222 333 .const?" 0 cogx
 Prop0 Cog6 ok
 
 ST: 0_000_000_111 0_000_000_222 0_000_000_333
+}}}
 
 If a cog does not have the console connected, the output of st? is discarded. We can use .const?, which behaves like st? but send the output to the console. This allows us to see the stack on another cog.
+
 -----
+
  = 4         PropForth pin IO = 
 
 One of the most common tasks on a microcontroller is input from pins, and output to pins. PropForth makes this easy.
@@ -1539,9 +1596,12 @@ One of the most common tasks on a microcontroller is input from pins, and output
 The examples we will be using, do not require any special hardware as we will be using the capabilities of the propeller to write pins from one cog, and read them with another.
 
 Before we move on to examples, we will have to introduce a few more words.
+
  == 4.1       Forth Words - Part 5 == 
+
  === 4.1.1   space === 
 
+{{{
 \ space ( -- ) emits a space
 
 sc c" hello" .cstr space c" world" .cstr cr
@@ -1551,8 +1611,11 @@ sc c" hello" .cstr space c" world" .cstr cr
 hello world
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.2   delms === 
 
+{{{
 \ delms ( n1 -- ) delay n1 milli-seconds for 80Mhz h68DB max
 
 sc 2000 delms st?
@@ -1562,8 +1625,11 @@ sc 2000 delms st?
 ST:
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.3   pinin === 
 
+{{{
 \ pinin ( n1 -- ) set pin # n1 to an input
 
 sc 0 st? cr pinin st?
@@ -1577,8 +1643,11 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.4   pinout === 
 
+{{{
 \ pinout ( n1 -- ) set pin # n1 to an output
 
 sc 0 st? cr pinout st?
@@ -1592,8 +1661,11 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.5   pinlo === 
 
+{{{
 \ pinlo ( n1 -- ) set pin # n1 to lo
 
 sc 0 st? cr pinlo st?
@@ -1607,8 +1679,11 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.6   pinhi === 
 
+{{{
 \ pinhi ( n1 -- ) set pin # n1 to hi
 
 sc 0 st? cr pinhi st?
@@ -1622,8 +1697,11 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.7   px === 
 
+{{{
 \ px ( t/f n1 -- ) set pin # n1 to high when true or low when false
 
 sc 0 0 st? cr px st? -1 0 st? cr px st?
@@ -1643,8 +1721,11 @@ ST: -0_000_000_001 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.8   px? === 
 
+{{{
 \ px? ( n1 -- t/f) true if pin n1 is hi
 
 sc 0 st? cr px? st? 31 st? cr px? st?
@@ -1664,8 +1745,11 @@ ST: 0_000_000_000 0_000_000_031
 ST: 0_000_000_000 -0_000_000_001
 
 Prop0 Cog6 ok
+}}}
+
  === 4.1.9   pins? === 
 
+{{{
 \ pins ( -- ) samples the current status of all the io pins and prints them to the terminal
 
 : pins?
@@ -1695,9 +1779,12 @@ pins?
 LO LO LO LO LO LO LO LO LO HI HI LO HI HI HI LO LO LO LO LO LO LO LO LO LO LO LO LO HI HI HI HI
 
 Prop0 Cog6 ok
+}}}
 
 Now having defined pins? We can start turning pins on and off and look at them.
+
  === 4.1.10                      IO example 1 === 
+{{{
 
 \ IO example 1
 
@@ -1786,9 +1873,12 @@ LO LO LO LO LO LO LO LO LO HI HI LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO
  
 
 Prop0 Cog6 ok
+}}}
 
 We are only interested in pin 00 at this point. On this system pin 00 has nothing connected to it, so when we make it an input, it may be hi or lo. Generally after a period of time the pin will read lo. It is not a good idea to rely on this, but it is good to be aware.
+
  === 4.1.11                      IO example 2 === 
+{{{
 
 \ IO example 2
 
@@ -1876,12 +1966,18 @@ HI LO LO LO LO LO LO LO LO HI HI LO HI HI HI LO LO LO LO LO LO LO LO LO LO LO LO
 
 HI LO LO LO LO LO LO LO LO HI HI LO HI HI HI LO LO LO LO LO LO LO LO LO LO LO LO LO HI HI HI HI
 
+
  
 
 Prop0 Cog6 ok
 
+}}}
+
 We set one cog modifying a signal with a cycle of one second, and we set another cog looking at the signal 5 times a second. If the signal is changing more often than we are looking at it, it is pretty obvious we are going to miss some changes. This an important concept when sampling signals, we need to look at the signal at least twice as rapidly as it is changing (search the web for Nyquist and sampling for details). If we need to see the signal edges in relation to other signals, we will need to sample more rapidly.  To start looking at this in more detail, we will need to cover LogicAnalyzer.  This is a PropForth tool that looks at the pins and displays them graphically.
-5         LogicAnalyzer
+
+-----
+
+ = 5         LogicAnalyzer =
 
 When we need to look at changing io pins, and understand what they are doing, Logic Analyzer that looks at the pins a user determined intervals, and store the results. It can only understand if a pin is hi or lo, if it is left as a floating input, it may appear as either, or as changing. When Logic Analyzer samples, it either uses cog memory for fast sampling or free dictionary memory for slower sampling.
 
@@ -1894,13 +1990,16 @@ The first is triggering, when does it start sampling. It can start sampling on t
 Sample Interval is the next important item. This is what defines how often lac looks at the pins. Look too slowly, and you will miss something, look too quickly and you may not get the big picture. We will see examples of both.
 
 The user interface of lac uses single keys to change values and start sampling. It requires an ANSI terminal, as it running in full screen. A previous version of lac had a much more elaborate interface, but it consumed too much memory, and thus did not have adequate space for the samples.
-5.1       Loading lac
+
+ == 5.1       Loading lac ==
 
 In the download of PropForth, in the directory CurrentRelease\Extensions, open the file lac.f and paste the contents in the terminal.
 
 If you wish to have lac always available, type in saveforth, this will save the running image to eeprom, and lac wil be available after rebooting.
-5.2       Running lac
 
+== 5.2       Running lac ==
+
+{{{
 lac
 
  
@@ -1919,6 +2018,8 @@ Sample Interval -asdfg +ASDFG: 500.0 nS             40 clock cycles
 
 Sample Display  -zxcv  +ZXCV :                 clock cycles of             128
 
+}}}
+
 Starting from the top, the trigger pin is currently pin 0. Q will decrement this number and Q will increment this number. When this pin changes, depending on other settings is when we will start sampling.
 
 The trigger edge indicates we are looking for a low to high transition on this pin, w, W  and space will set this setting to  --__ or --__ or NONE. When we set this to NONE, there are no specific criteria for when we start sampling.
@@ -1933,6 +2034,8 @@ Sample Display tells which samples of the total sample you are looking at. To sc
 
 Now for an example, we are going to define a simple program which increment pins. Enter / paste in the following and hit enter to get lac to sample.
 
+
+{{{
 \ pinIncrementer( n1 ) increment 8 pins starting at pin n1
 
 : pinIncrement
@@ -1950,8 +2053,11 @@ Now for an example, we are going to define a simple program which increment pins
 c" 0 pinIncrement" 0 cogx
 
 lac
+}}}
 
 We should see something like the following, notice that we only see one transition, so we are not really getting a good picture of what is going on.
+
+ - - -  picture goes herre - - - -
 
  
 
@@ -1966,7 +2072,9 @@ Remember that lac is just looking at the pins every sample interval as specified
 Sampling too slow can really give us a bad picture, which can be very misleading. Here is the same signal sampled every 20,000 cycles. It look like pin 0 is changing at the same rate as pin 6. We are sampling way too slow, and we happen to be sampling at a frequency that makes pin 0 look ok, but is really very wrong. This undersampling can lead to bad information.
 
 Undersampling is one of the most common errors leading to bad information, remember to sample and look at the signal at multiple sample rates.
+
  = 6         PropForth Input/Output = 
+
  == 6.1       Overview == 
 
 A PropForth cog by default has a single character IO channel. This channel consists of a character input channel and a  character output channel. The input channel is where input is received and interpreted by PropForth, and the output channel is where the interpreter echoes characters, and sends any output. This IO channel is a synchronous channel. When a cog’s output channel is not connected, the output is thrown away.
@@ -1976,6 +2084,8 @@ In normal operation a cog’s output channel is connected to another cog’s inp
 When PropForth starts, cog 7 is repurposed as a serial cog. Cog 7’s IO channel is buffered and received/sent to the serial driver pins. The serial driver has a circular receive buffer of 128 bytes, and a circular transmit buffer of 64 bytes. When a character is received on the serial line, it is put in the next free position in the receive buffer. If the receive buffer is full, it wraps around and starts overwriting the buffer. If the output channel is not connected, the serial driver throws away the characters received. However, if it is connected, it will synchronously send the next available character to the connected cog.
 
 Normal startup is to connect the serial driver to cog 6.  The cog? word is one way to see this.
+
+{{{
 
 cog?
 
@@ -1996,28 +2106,21 @@ Cog:6  #io chan:1 PropForth v5.0 2012JAN09 14:30 1  6(0)->7(0)
 Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 
 Prop0 Cog6 ok
+}}}
 
 This word looks at each cog, and prints out how many IO channels the cog has, a string of what the cog is running, and its IO connections. Most times a cog will have only one IO channel. The exception is a cog running an IP server, or MCS (Multi Channel Synchronous) communications. If we look at cog 7, it tells us that 7(0) (cog 7 channel 0) -> (is connected to) 6(0) (cog 6 channel 0). This means serial driver is sending the characters it receives to cog 6. Conversely, cog 6 is sending its output to cog 7’s input, which the serial driver buffers and transmits.
 
+{{{
+
 5 >con
-
- 
-
- 
 
 cog?
 
 4 >con
 
- 
-
 cog?
 
 6 >con
-
- 
-
- 
 
 cog?
 
@@ -2025,11 +2128,7 @@ cog?
 
 Prop0 Cog5 ok
 
- 
-
 Prop0 Cog5 ok
-
- 
 
 Prop0 Cog5 ok
 
@@ -2096,9 +2195,11 @@ Cog:6  #io chan:1 PropForth v5.0 2012JAN09 14:30 1  6(0)->7(0)
 Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 
 Prop0 Cog6 ok
+}}}
 
 Recall >con from the getting started section, all it is doing is disconnecting and connection IO channels. This is a very straightforward case. There are more complex uses which involve linking cogs. The most common one is fl .
 
+{{{
 fl
 
  
@@ -2154,7 +2255,7 @@ Prop0 Cog5 ok
  
 
 Prop0 Cog6 ok
-
+}}}
  
 
 fl takes the input it is receiving, strips out comments, and comment blocks, strips leading whitespace, buffers it, and simultaneously send it to another cog to process. This allows PropForth to accept input faster than it can interpret or compile it. So in this case we see cog 5 is now linked between cog 6 and cog 7. Cog 7 is the serial driver, sends the characters received to cog 6 who strips out comments, does buffering, and send the characters to cog 5, who does the actual processing of the input, and send it’s output to cog 7, who buffers and transmits over the serial line.
