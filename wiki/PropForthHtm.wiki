@@ -2,7 +2,7 @@
 
  = NOTICE =
 
-This is a COPY. The version in the current download is the correct version. 
+This is a COPY. The version in the current download is the correct version.
 
 
  = COPY of Propforth htm fom current download (v5.3 20121122) =
@@ -103,19 +103,19 @@ Prop0 Cog6 ok
 
 Entering a hexadecimal number, often useful, is done by preceding the number with an h. Once again the _ (underscore) is ignored. Note that only caps are used in hexadecimal numbers.
 
-h100 h-100 hFFFF_FFFF
+`h100 h-100 hFFFF_FFFF`
 
 Prop0 Cog6 ok
 
 Binary numbers are preceded with a b.
 
-b_1001_0011 b0010
+`b_1001_0011 b0010`
 
 Prop0 Cog6 ok
 
 Decimal numbers are default at boot, but they can be entered explicitly by preceding the number with a d.
 
-d_1 d3 d-100
+`d_1 d3 d-100`
 
 Prop0 Cog6 ok
 
@@ -138,7 +138,7 @@ When you enter a number at the prompt, PropForth puts the numbers on a stack. Th
 Each cog has its own stack in cog memory.
 
 To see what is on the stack we can use the st? word.
-
+{{{
 1 3 h-100 st?
 
 ST: 0_000_000_001 0_000_000_003 -0_000_000_256
@@ -161,6 +161,7 @@ The examples are ordered to give an introduction to PropForth, and introduce the
 
 \ sc ( -- ) clears the stack
 
+{{{
 1 2 3 st? sc st?
 
 ST: 0_000_000_001 0_000_000_002 0_000_000_003
@@ -173,7 +174,7 @@ Prop0 Cog6 ok
 3.4.2   cr
 
 \ cr ( -- ) emits a carriage return
-
+{{{
 1 2 3 cr cr st? cr cr sc cr cr st?
 
  
@@ -262,7 +263,7 @@ Note in the default mode, which is decimal numbers, st? prints negative numbers 
 3.4.5   +
 
 \ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
-
+{{{
 sc 1 2 3 4 5 -6 cr st? cr + cr st? cr + cr st? cr + cr st? cr + cr st? cr + cr st?
 
 0 items cleared
@@ -312,7 +313,7 @@ sc 1 2 3 4 5 -6 cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr s
 3.4.7   *
 
 \ * ( n1 n2 -- n1*n2) n1 multiplied by n2
-
+{{{
 sc 1 2 3 4 5 -6 cr st? cr * cr st? cr * cr st? cr * cr st? cr * cr st? cr * cr st?
 
 1 items cleared
@@ -398,7 +399,7 @@ Prop0 Cog6 ok
 3.5       Defining new words
 
 The following examples show how to define new words. Once a word is defined, it is immediately available. This capability allows you try new things quickly . As a rule, defined words should be no more than 20 or 30  lines, most should only be a few lines.
-
+{{{
 \ new word example1
 
 : add37 37 + ; sc 1 2 3 cr st? add37 cr st?
@@ -416,7 +417,7 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_040
 Prop0 Cog6 ok
 
 The : (COLON) indicates that we are starting a definition, it is followed by a space, then the name of our new word. We then type what we want the word to do, and end the definition of our new word with a ; (SEMICOLON).
-
+{{{
 \ new word example2
 
 : times9 9 * ; sc 1 2 40 cr st? times9 cr st?
@@ -434,7 +435,7 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_360
 Prop0 Cog6 ok
 
 We can use the words we defined just as we use native forth words.
-
+{{{
 \ new word example3
 
 : add37times9 add37 times9 ; sc 1 2 3 cr st? add37times9 cr st?
@@ -450,12 +451,15 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_003
 ST: 0_000_000_001 0_000_000_002 0_000_000_360
 
 Prop0 Cog6 ok
+
  == 3.6       Memory == 
 
 Before we proceed, a short discussion on memory. The propeller has 32k bytes of main memory that is accessible to all the cogs. Each cog has 512 32bit longs which are only accessible to the individual cogs.
+
 3.6.1   Cog Memory
 
 In cog memory, PropForth has the assembler instructions for the interpreter, the space for the stack, and the space for the return stack, temporary variables, and the assembler word page area, which will be discussed later.  This takes up 320 longs. There are 16 special registers in each cog, so this leaves 176 long which are available. Cog memory is accessible as 32bit longs.
+
  === 3.6.2   Main Memory === 
 
 In main memory, there are 8 special areas of 224 bytes of length each, which are dedicated to the PropForth interpreter running on each cog. The rest of main memory is used by the forth dictionary. The forth dictionary is the forth words and their definitions. When the interpreter gets input from the prompt, it looks up the words in the dictionary, and executes the definition. If it does not find the word definition, it attempts to interpret it as a number. If this succeeds the number goes on the stack.
@@ -463,19 +467,21 @@ In main memory, there are 8 special areas of 224 bytes of length each, which are
 Variables and constants are also defined in the forth dictionary.
 
 Main memory is accessible as 8bit bytes, 16bit words, or 32bit longs.
+
  ==== 3.6.2.1     Variables ==== 
 
 Variables in main memory are normally defined as either 16bit words, or 32bit longs.
 
 To define a 16bit word variable:
 
-wvariable name_of_variable
+`wvariable name_of_variable`
 
 To define a long variable
 
-variable name_of_variable
+`variable name_of_variable`
 
 Most variables in PropForth are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs.
+
  ==== 3.6.2.2     Constants ==== 
 
 Like variables, constants in main memory are normally defined as either 16bit words, or 32bit longs.
@@ -487,9 +493,11 @@ value wconstant name_of_constant
 To define a long constant, the value is on the top of the stack:
 
 value constant name_of_constant
- == 3.7       Forth Words - Part 2 == 
- === 3.7.1   hex === 
 
+ == 3.7       Forth Words - Part 2 == 
+
+ === 3.7.1   hex === 
+{{{
 \ hex ( -- ) set the base for hexadecimal
 
 sc 0 1 -1 10 100 cr st? cr hex cr st? decimal
@@ -511,8 +519,9 @@ Prop0 Cog6 ok
 Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. PropForth can support any base from 2 (binary) to 64. The most common are 10 (decimal) 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
 
 When using n base W! to set the base, remember one cannot use 10 base W! to set the base back to decimal, because 10 represents a different value in each base (10 always represents the base value in every base).  Use d_10 base W!  or the word decimal.
- === 3.7.2   decimal === 
 
+ === 3.7.2   decimal === 
+{{{
 \ decimal ( -- ) set the base for decimal
 
 sc hex 0 1 FFFF_FFFF A 64 cr st? decimal cr st?
@@ -528,8 +537,9 @@ ST: 0000_0000 0000_0001 FFFF_FFFF 0000_000A 0000_0064
 ST: 0_000_000_000 0_000_000_001 -0_000_000_001 0_000_000_010 0_000_000_100
 
 Prop0 Cog6 ok
- === 3.7.3   COG@ === 
 
+ === 3.7.3   COG@ === 
+{{{
 \ COG@ ( addr -- n1 ) \ fetch 32 bit value at cog addr
 
 sc cnt cr st? cr COG@ st? cr u. cnt COG@ cr u. cr
@@ -555,8 +565,9 @@ ST: -2_113_416_610
 Prop0 Cog6 ok
 
 The cnt register, in cog memory, is a high speed 32bit counter  incrementing once every clock cycle. Normally with a propeller running at 80Mhz, it increments once every 12.5 nanoseconds. This register wraps around to zero about every 53.7 seconds at 80 Mhz.
- === 3.7.4   COG! === 
 
+ === 3.7.4   COG! === 
+{{{
 \ COG! ( n1 addr -- ) \ store 32 bit value (n1) at cog addr
 
 sc outa cr st? cr COG@ st? cr 1 or outa st? cr COG! st? cr outa COG@ st?
@@ -613,8 +624,9 @@ ST: 0_000_017_604
 ST: 0_000_000_000
 
 Prop0 Cog6 ok
- === 3.7.6   L! === 
 
+ === 3.7.6   L! === 
+{{{
 \ L! ( n1 addr -- ) \ store 32 bit value (n1) at main memory addr
 
 sc variable tmp1 -1 tmp1 cr st? cr L! st? cr tmp1 st? cr L@ st?
@@ -640,8 +652,9 @@ ST: -0_000_000_001
 Prop0 Cog6 ok
 
 32bit long addresses must be long aligned. In this example, the forth word "variable" uses the next text string it encourters (in this case "tmp1") and defines  a 32bit variable using that string as the name. Now when tmp1 is entered it returns the address of the variable. This is how we store values to a memory location using a variable name.
- === 3.7.7   W@ === 
 
+ === 3.7.7   W@ === 
+{{{
 \ W@ ( addr -- h1 ) \ fetch 16 bit value at main memory addr
 
 sc wvariable tmp2 0 tmp2 cr st? cr W! cr tmp2 st? cr W@ st?
@@ -663,8 +676,9 @@ ST: 0_000_017_646
 ST: 0_000_000_000
 
 Prop0 Cog6 ok
- === 3.7.8   W! === 
 
+ === 3.7.8   W! === 
+{{{
 \ W! ( h1 addr -- ) \ store 16 bit value (h1) main memory at addr
 
 sc variable tmp3 -1 tmp3 cr st? cr W! st? cr tmp3 st? cr W@ st?
@@ -690,8 +704,9 @@ ST: 0_000_065_535
 Prop0 Cog6 ok
 
 16bit word addresses must be word aligned. Note that when there is a -1 on the stack it corresponds to h_FFFF_FFFF. When W! stores a value it only store the lower 16bits. So the value h_FFFF is stored in the word variable. When it is fetched, the value h_FFFF goes on the stack, this corresponds to d_65_535. Generally 16bit words are used unsigned values and addresses, as they take up less space than longs. If you need signed values, use 32bit longs.
- === 3.7.9   C@ === 
 
+ === 3.7.9   C@ === 
+{{{
 \ C@ ( addr -- c1 ) \ fetch 8 bit value at main memory addr
 
 sc wvariable tmp4 h_00_FF tmp4 cr st? W! st? tmp4 cr st? C@ cr st? tmp4 1 + cr st? C@ st?
@@ -721,8 +736,10 @@ ST: 0_000_000_255 0_000_000_000
 Prop0 Cog6 ok
 
 When a 16bit word is stored, it is stored as 2 bytes, the lower byte is stored first, and the upper byte is stored next.
-3.7.1   C!
 
+ === 3.7.1   C! === 
+
+{{{
 \ C! ( c1 addr -- ) \ store 8 bit value (c1) main memory at addr
 
 sc wvariable tmp5 h_FF_00 tmp5 cr st? W! st? tmp5 cr st? C@ cr st? tmp5 1 + cr st? C@ st?
