@@ -14,7 +14,7 @@ An Introduction to Interactively programming parallel processors
 
 Sal Sanci
 
-= #         Document Status =
+ # = Document Status =
    #        Documentation Plan
 
 The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / PropForth capabilities. It will require an editor, but as time progresses this should be a lighter task.
