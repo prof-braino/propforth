@@ -3168,69 +3168,39 @@ These are the mnemonics the assembler recognizes. For a detailed description see
 
 These are the prefixes the assembler recognizes. For a detailed description see the Propeller manual.
 
-·         if_always
+ * 'if_always`
+ * 'if_never`
+ * 'if_e`
+ * 'if_ne`
+ * 'if_a`
+ * 'if_b`
+ * 'if_ae`
+ * 'if_be`
+ * 'if_c`
+ * 'if_nc`
+ * 'if_z`
+ * 'if_nz`
+ * 'if_c_eq_z`
+ * 'if_c_ne_z`
+ * 'if_c_and_z`
+ * 'if_c_and_nz`
+ * 'if_nc_and_z`
+ * 'if_nc_and_nz`
+ * 'if_c_or_z`
+ * 'if_c_or_nz`
+ * 'if_nc_or_z`
+ * 'if_nc_or_nz`
+ * 'if_z_eq_c`
+ * 'if_z_ne_c`
+ * 'if_z_and_c`
+ * 'if_z_and_nc`
+ * 'if_nz_and_c`
+ * 'if_nz_and_nc`
+ * 'if_z_or_c`
+ * 'if_z_or_nc`
+ * 'if_nz_or_c`
+ * 'if_nz_or_nc`
 
-·         if_never
-
-·         if_e
-
-·         if_ne
-
-·         if_a
-
-·         if_b
-
-·         if_ae
-
-·         if_be
-
-·         if_c
-
-·         if_nc
-
-·         if_z
-
-·         if_nz
-
-·         if_c_eq_z
-
-·         if_c_ne_z
-
-·         if_c_and_z
-
-·         if_c_and_nz
-
-·         if_nc_and_z
-
-·         if_nc_and_nz
-
-·         if_c_or_z
-
-·         if_c_or_nz
-
-·         if_nc_or_z
-
-·         if_nc_or_nz
-
-·         if_z_eq_c
-
-·         if_z_ne_c
-
-·         if_z_and_c
-
-·         if_z_and_nc
-
-·         if_nz_and_c
-
-·         if_nz_and_nc
-
-·         if_z_or_c
-
-·         if_z_or_nc
-
-·         if_nz_or_c
-
-·         if_nz_or_nc
  == 7.6       Assembler Postfix List == 
 
 These are the postfixes the assembler recognizes. For a detailed description see the Propeller manual.
