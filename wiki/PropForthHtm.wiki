@@ -2564,6 +2564,7 @@ The IP server interfaces to the WIZNET W5100 to provide 4 Internet Protocol chan
 For further details see the IP documentation.
 
 -----
+
  = 7         PropForth Assembler = 
 
 The propeller has a unique architecture and PropForth was written to match the architecture. Using assembler on the propeller is not the same as using assembler on a more conventional architecture, and it is very different than a CISC  architecture like what you find in your PC. Firstly each cog has 496 registers that are accessible only to that cog for instructions and data. Each cog can rely on the fact that only it can modify those registers, short of the cog being reset externally. In addition, each cog will never be interrupted, it will continually execute and it can decide when to access main memory or not. This can give each cog a high degree of isolation from the other cogs.
@@ -2580,8 +2581,8 @@ To understand how to use assembler words, it is necessary to understand how they
 
 PropForth starts life as PropForthStartKernel. This kernel has no assembler words defined, has all the symbols defined, is slow to interpret or compile anything, has error detection, and  no error reporting. The cog memory usage is small. It uses a total of 274 cog longs, and 13,594 main memory bytes. The cog memory usage includes:
 
-·         32 longs for the main stack
-·         32 longs for the return stack
+ * 32 longs for the main stack
+ * 32 longs for the return stack
 
 ·         6 longs for temporary registers tregone - tregsix
 
