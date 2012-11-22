@@ -2062,6 +2062,8 @@ Sampling too slow can really give us a bad picture, which can be very misleading
 
 Undersampling is one of the most common errors leading to bad information, remember to sample and look at the signal at multiple sample rates.
 
+-----
+
  = 6         PropForth Input/Output = 
 
  == 6.1       Overview == 
@@ -2075,7 +2077,6 @@ When PropForth starts, cog 7 is repurposed as a serial cog. Cog 7’s IO channel
 Normal startup is to connect the serial driver to cog 6.  The cog? word is one way to see this.
 
 {{{
-
 cog?
 
 Cog:0  #io chan:1 PropForth v5.0 2012JAN09 14:30 1
@@ -2186,7 +2187,7 @@ Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 Prop0 Cog6 ok
 }}}
 
-Recall >con from the getting started section, all it is doing is disconnecting and connection IO channels. This is a very straightforward case. There are more complex uses which involve linking cogs. The most common one is fl .
+Recall >con from the getting started section, all it is doing is disconnecting and connection IO channels. This is a very straightforward case. There are more complex uses which involve linking cogs. The most common one is `fl` .
 
 {{{
 fl
@@ -2247,8 +2248,9 @@ Prop0 Cog6 ok
 }}}
  
 
-fl takes the input it is receiving, strips out comments, and comment blocks, strips leading whitespace, buffers it, and simultaneously send it to another cog to process. This allows PropForth to accept input faster than it can interpret or compile it. So in this case we see cog 5 is now linked between cog 6 and cog 7. Cog 7 is the serial driver, sends the characters received to cog 6 who strips out comments, does buffering, and send the characters to cog 5, who does the actual processing of the input, and send it’s output to cog 7, who buffers and transmits over the serial line.
+`fl` takes the input it is receiving, strips out comments, and comment blocks, strips leading whitespace, buffers it, and simultaneously send it to another cog to process. This allows PropForth to accept input faster than it can interpret or compile it. So in this case we see cog 5 is now linked between cog 6 and cog 7. Cog 7 is the serial driver, sends the characters received to cog 6 who strips out comments, does buffering, and send the characters to cog 5, who does the actual processing of the input, and send it’s output to cog 7, who buffers and transmits over the serial line.
 
+{{{
 \ toupperdemo ( -- ) receive a character and echoes the upper case character
 
 : toupperdemo
@@ -2334,9 +2336,11 @@ COG:6  #IO CHAN:1 PROPFORTH V5.0 2012JAN09 14:30 1  6(0)->3(0)
 COG:7  #IO CHAN:1                           SERIAL  7(0)->6(0)
 
 PROP0 COG6 OK
+}}}
 
 Cog 3 is converting the output of cog 6 to upper case, and then forwarding it to the serial driver. Cog 6 still receive the characters as lower case and processes them as such, but when it echoes the characters or generates any output, cog 3 turns them to uppercase.
 
+{{{
 cogid iounlink 3 cogreset 100 delms cog?
 
 COGID IOUNLINK 3 COGRESET 100 DELMS COG?
@@ -2362,14 +2366,19 @@ Cog:6  #io chan:1 PropForth v5.0 2012JAN09 14:30 1  6(0)->7(0)
 Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 
 Prop0 Cog6 ok
+}}}
 
 And back to normal.
+
  == 6.2       Technical details == 
 
 Each cog has 224 bytes of main memory which hold a number of variables. This cog data area has the beginning the IO channel which PropForth uses for input and output. The IO channel is 2 words, the first word is the input character to PropForth. The second word is a pointer to an input channel, or zero if the channel is not connected.
+
  === 6.2.1   Input Word === 
 
 When another cog wants to send input to another cogs, it waits until the value of that cog’s input word is h_0100. It then writes a word with the value h_00xx where xx is the character value.  The receiving cog waits until the h_0100 anded with the input word is zero, and it then accepts the character. When it is ready to accept another character, it write h_0100 to the word. This is how all the PropForth IO words read a character.
+
+{{{
 
 \ io  ( -- addr ) the address of the io channel for the cog
 
@@ -2380,8 +2389,10 @@ sc io st?
 ST: 0_000_002_184
 
 Prop0 Cog6 ok
+}}}
 
 Obviously this will return a different value for each cog, if we need another cog’s IO channel / data area:
+{{{
 
 \ cogio ( n -- addr) the address of the data area for cog n
 
@@ -2408,9 +2419,11 @@ ST: 0000_0100
 ST: 0000_0100
 
 Prop0 Cog6 ok
+}}}
 
 Cog 0 is waiting for input, when we write a character, cog 0 accept it, and writes h_0100 back. The io routines in PropForth and optimized in assembler, so the time it takes cog 0 to accept the word, and be ready for another word is very short. So we will make cog 0 busy.
 
+{{{
 \ input demo, send the key 5 to cog 0, after we make it busy
 
 sc 0 cogreset 10 delms hex
@@ -2450,12 +2463,15 @@ Prop0 Cog6 ok
 decimal
 
 Prop0 Cog6 ok
+}}}
 
 After we write the character we can see cog 0 has not yet accepted it, and will not since we made it busy.
+
  === 6.2.2   Output Pointer === 
 
 The second word of the IO channel is a pointer. If the pointer is zero, all the output to the IO channel is discarded. This prevents a cog from blocking. When a cog is connected, it will point to the input word of the channel.
 
+{{{
 \ cog ouput pointer example
 
 sc cog? 5 cogio 2+ W@ 6 cogio 2+ W@ 7 cogio st?
@@ -2481,14 +2497,12 @@ Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 ST: 0_000_000_000 0_000_002_408 0_000_002_408
 
 Prop0 Cog6 ok
+}}}
 
 We can see that the output pointer of cog 5 is zero, not connected. The output pointer of cog 6 points to the input word of cog7, which is the serial driver.
 
+{{{
 5 >con
-
- 
-
- 
 
 sc cog? 5 cogio 2+ W@ 6 cogio 2+ W@ 7 cogio st?
 
@@ -2529,21 +2543,26 @@ Prop0 Cog5 ok
 6 >con
 
 Prop0 Cog6 ok
+}}}
 
 Now see that the output pointer of cog 5 points to the input word of cog7, which is the serial driver. And the output pointer of cog 6 is zero.
+
  === 6.2.3   Advanced topics === 
 
 Each PropForth cog has a single IO channel. A serial driver running on a cog has one IO channel as well. This is channel zero, and in most cases the only channel. There are cases where a cog is running a driver that has more than one channel. Two examples of this are the MCS driver, and the IP server.
+
  ==== 6.2.3.1     MCS (Multi Channel Synchronous) Driver ====
 
 MCS is a driver that uses 2 pins to provide 8 full duplex IO channels to another propeller running MCS. In this case the cog running MCS has an array of 8 IO channels, starting where the normal IO channel resides. This means that when we want to address an MCS channel, we need to specify the cog running MCS, and which channel we wish to address. The native PropForth words which require both the cog and the channel to be specified (ioconn) (iodis) (iolink) (iounlink). The words ioconn, iodis, iolink, iounlink calls these words with a channel number of zero.
 
 For further details see the MCS documentation.
+
  ==== 6.2.3.2     IP Server ==== 
 
 The IP server interfaces to the WIZNET W5100 to provide 4 Internet Protocol channels. Like any channel, these can connect to cogs and provide IO. In the case when all the channels are started as telnet channels, each channel can connect to a cog. This allows talking to 4 cogs at the same time with 4 telnet sessions. Very handy for some applications.
 
 For further details see the IP documentation.
+
 -----
  = 7         PropForth Assembler = 
 
@@ -2556,12 +2575,12 @@ One of the changes in PropForth v5.0 was the way in which assembler words are de
 The result was many more words defined as assembler words, and the overall kernel speed was greatly improved, and total cog memory usage went down.
 
 To understand how to use assembler words, it is necessary to understand how they fit into the kernel.
+
  == 7.1       Kernels and Assembler Words == 
 
 PropForth starts life as PropForthStartKernel. This kernel has no assembler words defined, has all the symbols defined, is slow to interpret or compile anything, has error detection, and  no error reporting. The cog memory usage is small. It uses a total of 274 cog longs, and 13,594 main memory bytes. The cog memory usage includes:
 
 ·         32 longs for the main stack
-
 ·         32 longs for the return stack
 
 ·         6 longs for temporary registers tregone - tregsix
