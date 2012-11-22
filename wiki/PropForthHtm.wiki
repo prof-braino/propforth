@@ -2583,42 +2583,32 @@ PropForth starts life as PropForthStartKernel. This kernel has no assembler word
 
  * 32 longs for the main stack
  * 32 longs for the return stack
+ * 6 longs for temporary registers tregone - tregsix
+ * 5 longs for constants, fDestInc, fCondMask, fMask, fAddrMask, fLongMask
+ * 1 long for the a register used for reset, resetDreg
+ * 1 long used for the interpreter instruction pointer, IP
+ * 1 long for the stack pointer, stPtr
+ * 1 long for the return stack pointer, rsPtr
+ * 1 long for the top of stack value, stTOS
+ * 194 longs for the forth interpreter
 
-·         6 longs for temporary registers tregone - tregsix
-
-·         5 longs for constants, fDestInc, fCondMask, fMask, fAddrMask, fLongMask
-
-·         1 long for the a register used for reset, resetDreg
-
-·         1 long used for the interpreter instruction pointer, IP
-
-·         1 long for the stack pointer, stPtr
-
-·         1 long for the return stack pointer, rsPtr
-
-·         1 long for the top of stack value, stTOS
-
-·         194 longs for the forth interpreter
-
-This leaves a total of 222 cog longs free (512 -16 (special purpose regs) - 274 (PropForth regs). The only use for this kernel is to build other kernels. The first useful kernel, is PropForthBootKernel. This kernel removes the symbols which are necessary for rebuilding the start kernel, but are used infrequently. They can be dynamically defined as needed. The PropForthBootKernel uses 274 cog longs and 12646 main memory bytes. This kernel is still slow to interpret or compile code, but is fully functional. It is used as the base for PropForthOptimizeBootKernel. We start with PropForthBootKernel, and define a number of assembler words which will greatly speed up the kernel. Words like _accept, which reads an input line from the console, _dictsearch, which searches the dictionary, and a number of other words.
+This leaves a total of 222 cog longs free (512 -16 (special purpose regs) - 274 (PropForth regs). The only use for this kernel is to build other kernels. The first useful kernel, is PropForthBootKernel. This kernel removes the symbols which are necessary for rebuilding the start kernel, but are used infrequently. They can be dynamically defined as needed. The PropForthBootKernel uses 274 cog longs and 12646 main memory bytes. This kernel is still slow to interpret or compile code, but is fully functional. It is used as the base for PropForthOptimizeBootKernel. We start with PropForthBootKernel, and define a number of assembler words which will greatly speed up the kernel. Words like `_accept`, which reads an input line from the console, `_dictsearch`, which searches the dictionary, and a number of other words.
 
 All the words are assembled to load at cog address 274, the initial value of the wvariable coghere which the first free long in cog memory.  
 
 When a word is assembled, the first long in the assembler definition is constructed as follows:
 
-·         Bits 31 - 19 (14 bits) - correspond to the 14 hi bits in main memory where the assembler word is defined, since it is always long aligned the 2 low bits will always be 0
-
-·         Bits 18 - 9 (9 bits) - the number of longs in this assembler words
-
-·         Bits 8 - 0 (9 bits) - the starting cog address of this assembler word
+ * Bits 31 - 19 (14 bits) - correspond to the 14 hi bits in main memory where the assembler word is defined, since it is always long aligned the 2 low bits will always be 0
+ * Bits 18 - 9 (9 bits) - the number of longs in this assembler words
+ * Bits 8 - 0 (9 bits) - the starting cog address of this assembler word
 
 When the PropForth interpreter encounters an assembler word, it checks the first word of the definition against the starting cog address of the assembler word, if it matches, the assembler code for this word is already loaded, and the assembler code is executed. If it does not match, it loads the code from main memory, and then executes the assembler code. This simple mechanism allows PropForth to page in and cache assembler words into cog memory.
 
-The kernel build process, looks at all the assembler words to and generates a word, init_coghere, which defines the new free cog starting address. This means the area between cog address 274, and 320 is used as the area where the kernel loads assembler words . This leaves room for the largest assembler word defined in the boot optimization process (_accept).
+The kernel build process, looks at all the assembler words to and generates a word, `init_coghere`, which defines the new free cog starting address. This means the area between cog address 274, and 320 is used as the area where the kernel loads assembler words . This leaves room for the largest assembler word defined in the boot optimization process (`_accept`).
 
 The new kernel, PropForthOptimizeBootKernel incorporates the assembler optimizations. This kernel uses 320 cog longs and 13,262 byte of main memory. If is fast to interpret and compile, but does not have any error reporting. This is added and the release kernel(s) are generated. The release kernels do not consume more cog memory but they do consume more main memory. The starting address for the area where the assembler words are paged is defined by the constant build_BootOpt. The end of the page area is defined by the initial value of the wvariable coghere, which is 320.
 
- Any assembler word which is to be paged in and out of this portion of cog memory, must then be defined to start at the address build_bootOpt, and be less than 46 longs. If the assembler word never returns, like _serial, which starts a serial driver on the cog, it can be longer than 46 longs, as nothing else will ever have the opportunity to be paged in.
+ Any assembler word which is to be paged in and out of this portion of cog memory, must then be defined to start at the address build_bootOpt, and be less than 46 longs. If the assembler word never returns, like `_serial`, which starts a serial driver on the cog, it can be longer than 46 longs, as nothing else will ever have the opportunity to be paged in.
 
 If nothing else is using the cog memory, and the page area is overflowed, this will be a bug that doesn’t show up, until something uses the free cog memory, like the sd card forth code.
 
@@ -2627,6 +2617,7 @@ So the rules for assembler words; the start address if defined by build_BootOpt,
 LogicAnalyzer breaks these rules, the faster sampling routines (sampling faster than every 41 cycles) uses the cog memory to store samples, so if you use LogicAnalyzer on the same cogs as the sd card driver, there will be strange effects. The original LogicAnalyzer was written before these rules were established. All of the other optimizations in the sd card driver or the ipserver follow the rules with no problems.
 
 Some programmers may quickly deduce that this mechanism can allow for multiple page areas in each cog. This capability can allow for multiple cache sets in each cogs memory. This capability has not yet been explored by the PropForth kernel.
+
  == 7.2       Writing Assembler Words == 
 
 The interactive nature of PropForth guides us when to use assembler. Generally the development cycle it to write forth words, verify the development functionality, and then rewrite some of the forth words in assembler to get the performance we need or want, and then of course re-verify the functionality. This has been the development cycle for the kernel and extensions.
@@ -2634,6 +2625,8 @@ The interactive nature of PropForth guides us when to use assembler. Generally t
 To illustrate how to use the assembler we will generate some simple artificial examples, which illustrate the concepts. To use the assembler, load asm.f from the CurrentRelease/Extensions directory, and if you like do a saveforth.
 
 A PropForth assembler word is always in the form:
+
+{{{
 
 build_BootOpt :rasm
 
@@ -2656,25 +2649,32 @@ freedict
  
 
 Prop0 Cog6 ok
+}}}
 
-In the input,  build_BootOpt is the constant which defines the starting address to load this word, :rasm starts the assembler definition, jexit is an assembler macro (more on macros later) which returns control to the PropForth interpreter, and ;asm noop ends the definition and names  the word noop  .
+In the input,  `build_BootOpt` is the constant which defines the starting address to load this word, :rasm starts the assembler definition, jexit is an assembler macro (more on macros later) which returns control to the PropForth interpreter, and ;asm noop ends the definition and names  the word noop  .
 
 The assembler does not define the word, it emits the definition which is used to define the word. The first line locks the dictionary and defines the dictionary entry, adds the forth interpreter code for assembler definitions, and generates the first long of the assembler definition. Recall, the first long defines the address in main memory where the definition resides, the starting address in cog memory, and the number of longs in the definition.
 
 Then follow the longs which are the assembler code. These are output as base 64 numbers, this is the most compact representation. If you really want to see hex change the line:
 
+{{{
+
 h7A emit base W@ h40 base W! swap u. base W!
+}}}
 
 to:
 
+{{{
 h68 emit base W@ h10 base W! swap u. base W!
+}}}
 
-in asm.f
+in `asm.f`
 
 And the last line frees the dictionary. Since multiple cogs can update the dictionary, the definition must start and end with no other cogs able to update the dictionary. This is accomplished by lockdict / freedict.
 
 Now we can take the assembler definition and paste it into the console, and run the word.
 
+{{{
 lockdict create noop forthentry
 
 $C_a_lxasm w, h114  h113  1- tuck - h9 lshift or here W@ alignl h10 lshift or l,
@@ -2704,18 +2704,27 @@ Prop0 Cog6 ok
 noop
 
 Prop0 Cog6 ok
+}}}
+
 
 Not a functionally exciting example, but we have generates an assembler word which can be automatically paged in and out as needed.
 
 The assembler generates a definition which we can load, without having the assembler present. This is great, but it will get a little tedious to have to
+
+
+-----
+
+-----
+
 7.3       The Stack in Detail
 
-To write useful assembler words, we need to understand the stack and how to manipulate it with assembler. In the execution of an assembler word, there are six temporary registers available for use. The contents of these registers is undefined every time the word is called. Some of these registers are commoly used in stack manipulations, and they are referred to as $C_treg1 - $C_treg6 .
+To write useful assembler words, we need to understand the stack and how to manipulate it with assembler. In the execution of an assembler word, there are six temporary registers available for use. The contents of these registers is undefined every time the word is called. Some of these registers are commoly used in stack manipulations, and they are referred to as `$C_treg1` - `$C_treg6` .
 
-The $C_ prefix indicated this refers to an address in cog memory, and the forth kernel rebuild procedure updates these as necessary when kernels are rebuilt.
+The `$C_ prefix` indicated this refers to an address in cog memory, and the forth kernel rebuild procedure updates these as necessary when kernels are rebuilt.
 
-The value on the top of the stack is held in a register called $C_stTOS . The first example we will generate is a very simple operation which changes the value on the top of the stack.
+The value on the top of the stack is held in a register called `$C_stTOS` . The first example we will generate is a very simple operation which changes the value on the top of the stack.
 
+{{{
 build_BootOpt :rasm
 
      add    $C_stTOS , # d_256
@@ -2739,12 +2748,14 @@ freedict
  
 
 Prop0 Cog6 ok
-
+}}}
  
 
 All assembler mnemonics are lower case and are delimited by spaces, the next field is the destination register also delimited by spaces, and the next field is the source register, also delimited by spaces. The # indicates the following value is an immediate value, as opposed to the register location. Immediate values in assembler instructions are numbers between 0 and 511 inclusively. Any numbers used in an assembler definition should explicitly define the base as decimal, hex, binary or base64.
 
 Now we define the example:
+
+{{{
 
 lockdict create add256 forthentry
 
@@ -2786,19 +2797,22 @@ ST: 0_000_000_512 0_000_000_156
 
 Prop0 Cog6 ok
 
+}}}
+
 Now we will deal with multiple items on the stack, but first the assembler macros. Assembler macros are defined in asm.f, and there are a few defined which are used repeatedly, we have already used one, which is jexit. Macros are just shorthand for an assembler instruction with specific source and destination.
 
-·         jexit - jmp    $C_a_exit - jumps to the PropForth interpreter assembler code which is executed when an assembler word in finished execution
+ * jexit - jmp    `$C_a_exit` - jumps to the PropForth interpreter assembler code which is executed when an assembler word in finished execution
+ * spush - jmpret    `$C_a_stpush_ret` , `$C_a_stpush` - calls a subroutine which pushes the register `$C_a_stTOS` onto the stack, after which `$C_a_stTOS` must be set to  a new value. This subroutine will cause a reset error if the stack is overflowed.
 
-·         spush - jmpret    $C_a_stpush_ret , $C_a_stpush - calls a subroutine which pushes the register $C_a_stTOS onto the stack, after which $C_a_stTOS must be set to  a new value. This subroutine will cause a reset error if the stack is overflowed.
+ * spopt - jmpret    `$C_a_stpoptreg_ret` , `$C_a_stpoptreg` - moves the register `$C_a_stTOS` into `$C_a_treg1`, and pops on item off the stack into `$C_a_stTOS` . This subroutine will cause a reset error if the stack is underflowed.
 
-·         spopt - jmpret    $C_a_stpoptreg_ret , $C_a_stpoptreg - moves the register $C_a_stTOS into $C_a_treg1, and pops on item off the stack into $C_a_stTOS. This subroutine will cause a reset error if the stack is underflowed.
+ * rpush - jmpret    `$C_a_rspush_ret` , `$C_a_rspush` - pushes the value in `$C_treg5` onto the return stack. This subroutine will cause a reset error if the return stack is overflowed.
 
-·         rpush - jmpret    $C_a_rspush_ret , $C_a_rspush - pushes the value in $C_treg5 onto the return stack. This subroutine will cause a reset error if the return stack is overflowed.
-
-·         rspop - jmpret    $C_a_rspop_ret , $C_a_rspop - pops  a  value from the return stack into $C_treg5. This subroutine will cause a reset error if the return stack is underflowed.
+ * rspop - jmpret    `$C_a_rspop_ret` , `$C_a_rspop` - pops  a  value from the return stack into `$C_treg5` . This subroutine will cause a reset error if the return stack is underflowed.
 
 Normally the spush, spop, spopt, and jexit are the only macros used. The return stack is where the interpreter stores the addresses of the words it needs to execute when the current word is done. If they are tampered with, havoc will result. It is useful to be able to put things on the return stack, and remove them, but care should be taken, just as when using the forth r> and >r words. Now we will define an example that uses the top two stack items.
+
+{{{
 
 \ cmpsubtest ( n1 n2 - n3) if n1 is greater than or equal to n2, n3 = n1 - n2, otherwise n3 = n1
 
@@ -2827,8 +2841,9 @@ freedict
  
 
 Prop0 Cog6 ok
+}}}
 
-The first instruction, spopt, pops a value off the stack (n2), and puts it in $C_treg1. The value in $C_a_stTOS is now n1. The assembler instruction, cmpsub, subtracts the source value from the destination value if the source is greater than or equal to the destination. Note the use of wr, to explicitly write the result. When the assembler was first written, the reference used was the Propeller Manual version 1.01. In that reference the cmpsub instruction did not write the result by default.
+The first instruction, spopt, pops a value off the stack (n2), and puts it in `$C_treg1` . The value in `$C_a_stTOS` is now n1. The assembler instruction, cmpsub, subtracts the source value from the destination value if the source is greater than or equal to the destination. Note the use of wr, to explicitly write the result. When the assembler was first written, the reference used was the Propeller Manual version 1.01. In that reference the cmpsub instruction did not write the result by default.
 
 The assembler supports, wr, nr, wz, and wc as instruction postfix operators.
 
@@ -2836,6 +2851,7 @@ To prevent the result from being written in the destination register, use nr, to
 
 Now we define the example:
 
+{{{
 lockdict create cmpsubtest forthentry
 
 $C_a_lxasm w, h116  h113  1- tuck - h9 lshift or here W@ alignl h10 lshift or l,
@@ -2859,11 +2875,12 @@ Prop0 Cog6 ok
 freedict
 
 Prop0 Cog6 ok
-
+}}}
  
 
 And run some tests:
 
+{{{
 sc 10 9 cmpsubtest st? 10 11 cmpsubtest st?
 
 0 items cleared
@@ -2873,9 +2890,11 @@ ST: 0_000_000_001
 ST: 0_000_000_001 0_000_000_010
 
 Prop0 Cog6 ok
+}}}
 
 One more stack example,
 
+{{{
 \ hibitset? ( n1 - n1 n2) n2 is the highest bit set in n1, -1 if there are not bits set
 
 fl
@@ -2995,11 +3014,13 @@ Prop0 Cog5 ok
  
 
 Prop0 Cog6 ok 
+}}}
 
 In  assembler words,  labels start with __ . A long can be initialized with a value as shown in  __valhi and __minusone. All the prefix operators can be used in the assembler as well.
 
 Now to define the example:
 
+{{{
 fl
 
  
@@ -3061,159 +3082,88 @@ ST: 0_000_000_002 0_000_000_001
 ST: 0_000_000_001 0_000_000_000
 
 ST: 0_000_000_000 -0_000_000_001
+}}}
+
  == 7.4       Assembler Mnemonic List == 
 
 These are the mnemonics the assembler recognizes. For a detailed description see the Propeller manual. The assembler is based on V1.01. There are some changes in later versions.
 
-·         abs
+ * abs
+ * absneg
+ * add
+ * addabs
+ * adds
+ * addsx
+ * addx
+ * and
+ * andn
+ * cogid
+ * coginit
+ * cogstop
+ * clkset
+ * cmp
+ * cmps
+ * cmpsub
+ * cmpsx
+ * cmpx
+ * djnz
+ * jmp
+ * jmpret
+ * lockclr
+ * locknew
+ * lockret
+ * lockset
+ * long
+ * max
+ * maxs
+ * min
+ * mins
+ * mov
+ * movd
+ * movi
+ * movs
+ * muxc
+ * muxnc
+ * muxnz
+ * muxz
+ * neg
+ * negc
+ * negnc
+ * negnz
+ * negz
+ * or
+ * rdbyte
+ * rdlong
+ * rdword
+ * rcl
+ * rcr
+ * rev
+ * rol
+ * ror
+ * sar
+ * shl
+ * shr
+ * sub
+ * subabs
+ * subs
+ * subsx
+ * subx
+ * sumc
+ * sumnc
+ * sumnz
+ * sumz
+ * test
+ * tjnz
+ * tjz
+ * waitcnt
+ * waitpeq
+ * waitpne
+ * waitvid
+ * wrbyte
+ * wrlong
+ * wrword
+ * xor
 
-·         absneg
-
-·         add
-
-·         addabs
-
-·         adds
-
-·         addsx
-
-·         addx
-
-·         and
-
-·         andn
-
-·         cogid
-
-·         coginit
-
-·         cogstop
-
-·         clkset
-
-·         cmp
-
-·         cmps
-
-·         cmpsub
-
-·         cmpsx
-
-·         cmpx
-
-·         djnz
-
-·         jmp
-
-·         jmpret
-
-·         lockclr
-
-·         locknew
-
-·         lockret
-
-·         lockset
-
-·         long
-
-·         max
-
-·         maxs
-
-·         min
-
-·         mins
-
-·         mov
-
-·         movd
-
-·         movi
-
-·         movs
-
-·         muxc
-
-·         muxnc
-
-·         muxnz
-
-·         muxz
-
-·         neg
-
-·         negc
-
-·         negnc
-
-·         negnz
-
-·         negz
-
-·         or
-
-·         rdbyte
-
-·         rdlong
-
-·         rdword
-
-·         rcl
-
-·         rcr
-
-·         rev
-
-·         rol
-
-·         ror
-
-·         sar
-
-·         shl
-
-·         shr
-
-·         sub
-
-·         subabs
-
-·         subs
-
-·         subsx
-
-·         subx
-
-·         sumc
-
-·         sumnc
-
-·         sumnz
-
-·         sumz
-
-·         test
-
-·         tjnz
-
-·         tjz
-
-·         waitcnt
-
-·         waitpeq
-
-·         waitpne
-
-·         waitvid
-
-·         wrbyte
-
-·         wrlong
-
-·         wrword
-
-·         xor
  == 7.5       Assembler Prefix List == 
 
 These are the prefixes the assembler recognizes. For a detailed description see the Propeller manual.
