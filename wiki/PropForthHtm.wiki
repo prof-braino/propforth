@@ -948,7 +948,7 @@ Prop0 Cog6 ok
 
  === 3.7.8   xor ===
 
-(((
+{{{
 \ xor ( n1 n2 -- n1_xor_n2 ) \ bitwise xor
 
 sc hex F000_00F0 1_0001 cr st? cr xor st? cr 1_0003 st? cr xor st? decimal
@@ -1082,7 +1082,11 @@ ST: 0_000_000_000 0_000_000_001
  
 
 Prop0 Cog6 ok
-3.7.12                      <> 
+}}}
+
+-----
+
+=== 3.7.12                      <>  ===
 
 \ <> ( x1 x2 -- flag ) flag is true if and only if x1 is not bit-for-bit the same as x2.
 
