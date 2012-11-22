@@ -8,7 +8,7 @@ This is a COPY. The version in the current download is the correct version.
  = COPY of Propforth htm fom current download (v5.3 20121122) =
 
 
-PropForth
+`PropForth`
 
 An Introduction to Interactively programming parallel processors
 
@@ -19,7 +19,7 @@ Sal Sanci
 
  == 1.1 Documentation Plan ==
 
-The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / PropForth capabilities. It will require an editor, but as time progresses this should be a lighter task.
+The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / `PropForth` capabilities. It will require an editor, but as time progresses this should be a lighter task.
 
 This Document is currently produced using Word 2007. It uses specific styles for formatting to allow publishing to a web format, as well as other electronic formats.
 
@@ -41,17 +41,17 @@ Fixed some remaining - (dash) problems.
 
  == 2.1       Who is this written for? ==
 
-PropForth is written for people who want to interactively use and program Propeller based systems. It assumes you are familiar with Propeller based hardware, and have some knowledge of the Propeller architecture.
+`PropForth` is written for people who want to interactively use and program Propeller based systems. It assumes you are familiar with Propeller based hardware, and have some knowledge of the Propeller architecture.
 
- == 2.2       What is PropForth? ==
+ == 2.2       What is `PropForth`? ==
 
-PropForth runs on the propeller. It is an interactive development and run time system. You can communicate with PropForth using a standard serial port, or via ethernet and telnet depending on the capabilities of the system you are using. It has a rich set of words which allow you to quickly and easily manipulate the hardware interactively. It is easy to program new words and use them in addition to the native set of words. Where necessary, you can write new words in assembler code for fast execution.
+`PropForth` runs on the propeller. It is an interactive development and run time system. You can communicate with `PropForth` using a standard serial port, or via ethernet and telnet depending on the capabilities of the system you are using. It has a rich set of words which allow you to quickly and easily manipulate the hardware interactively. It is easy to program new words and use them in addition to the native set of words. Where necessary, you can write new words in assembler code for fast execution.
 
-PropForth is outstanding for rapid exploration and development. The interactive nature allows you to try new things easily, verify functions, and allows for easy monitoring of hardware. You can manipulate IO pins on one cog, and user another cog to monitor the pins.
+`PropForth` is outstanding for rapid exploration and development. The interactive nature allows you to try new things easily, verify functions, and allows for easy monitoring of hardware. You can manipulate IO pins on one cog, and user another cog to monitor the pins.
 
-Each Propeller can run PropForth on up to 8 cogs, and you can concurrently interact with the cogs. Normal configuration uses one cog for serial or ethernet communication allowing for up to 7 concurrent PropForth sessions.
+Each Propeller can run `PropForth` on up to 8 cogs, and you can concurrently interact with the cogs. Normal configuration uses one cog for serial or ethernet communication allowing for up to 7 concurrent `PropForth` sessions.
 
-It is based on the Forth programming language, but it has been tuned for the propeller architecture and parallel execution. PropForth does not prevent or protect you from manipulating the propeller however you like. While it can be simple to use, it is also very powerful.
+It is based on the Forth programming language, but it has been tuned for the propeller architecture and parallel execution. `PropForth` does not prevent or protect you from manipulating the propeller however you like. While it can be simple to use, it is also very powerful.
 
  == 2.3       Document Conventions ==
 
@@ -71,13 +71,13 @@ For text typed or pasted in at the prompt:
 }}}
 Text to be typed or pasted into the command line at the command prompt is blue in this document.
 
-For the output of the PropForth interpreter, and user written words:
+For the output of the `PropForth` interpreter, and user written words:
 
 {{{
 Prop0 Cog6 ok
 }}}
 
-Forth words are documented in the following way. The text in the example input can be copied and pasted to a PropForth terminal
+Forth words are documented in the following way. The text in the example input can be copied and pasted to a `PropForth` terminal
 
  === 2.3.1   sc === 
 
@@ -93,13 +93,13 @@ Output line1
 
 More output
 
- == 2.4       Propforth Version ==
+ == 2.4       `Propforth` Version ==
 
 This text is written assuming PropForth V5.0, the download is available on Google Code. We will be using the PropForth System except where explicitly noted.
 
- == 2.5       Loading PropForth == 
+ == 2.5       Loading `PropForth` == 
 
-Download PropForth, and unzip. In the directory CurrentRelease\PropForth, follow the instructions in GettingStarted.txt.
+Download `PropForth`, and unzip. In the directory `CurrentRelease`\`PropForth`, follow the instructions in `GettingStarted.txt`.
 
  == 2.6       Teraterm / terminal programs == 
 
@@ -109,9 +109,9 @@ The examples were written and tested using Teraterm, however just about any term
 
  = 3         Getting started = 
 
-The best way to use this document is with a running PropForth system. Use the examples to explore PropForth. At the end of the getting started section, you will  have been introduced to a number of the native PropForth words and you will be able to program new words.
+The best way to use this document is with a running `PropForth` system. Use the examples to explore PropForth. At the end of the getting started section, you will  have been introduced to a number of the native `PropForth` words and you will be able to program new words.
 
-The sections which follow will then focus on different topics and continue the exploration of PropForth.
+The sections which follow will then focus on different topics and continue the exploration of `PropForth`.
 
  == 3.1       Numbers == 
 
@@ -153,21 +153,21 @@ Prop0 Cog6 ok
 
 Remember, Hex digits are always UPPERCASE letters A, B, C, D, E, and F; and the number base designators b, d, and h (for binary, decimal, and hex) are always lowercase.
 
-Most variables in PropForth are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs. PropForth words treat numbers on the stack as signed long numbers by default.
+Most variables in `PropForth` are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs. PropForth words treat numbers on the stack as signed long numbers by default.
 
  == 3.2       Words ==
 
 The PropForth interpreter can understand numbers and words. Words and numbers are delimited by blanks. Word names are up to 31 characters, and can contain any sequence of characters, symbols, and letters. PropForth is extended by programming new words.
 
-The core set of PropForth words includes words like + - * / .
+The core set of `PropForth` words includes words like + - * / .
 
 When a new word is defined it can use other words. So a word is really a sequence of other words.
 
-At the low level, some words are a sequence of assembler instruction codes. These are generally native PropForth words. We will see later how we can program words, and later still how we can program assembler words
+At the low level, some words are a sequence of assembler instruction codes. These are generally native `PropForth` words. We will see later how we can program words, and later still how we can program assembler words
 
  == 3.3       Stack ==
 
-When you enter a number at the prompt, PropForth puts the numbers on a stack. The stack can hold up to 32 32-bit numbers, but the PropForth interpreter code uses the stack as well. The pragmatic limit of numbers on the stack is about 24.
+When you enter a number at the prompt, `PropForth` puts the numbers on a stack. The stack can hold up to 32 32-bit numbers, but the `PropForth` interpreter code uses the stack as well. The pragmatic limit of numbers on the stack is about 24.
 
 Each cog has its own stack in cog memory.
 
@@ -183,7 +183,7 @@ Prop0 Cog6 ok
 
 By convention the stack is represented with the bottom of the stack on the left and the top of the stack on the right.
 
-Normal documentation of a PropForth word is a comment line which shows how it changes the stack.
+Normal documentation of a `PropForth` word is a comment line which shows how it changes the stack.
 
 {{{
 \ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
@@ -195,7 +195,7 @@ On the left of the -- ,  is the stack before word executes, and on the right, th
 
 The best way to understand a word is to run the examples. The words are introduced in order of use in the examples. The first comment line is the documentation on the word. The next line is what is typed at the prompt. The remaining is the output.
 
-The examples are ordered to give an introduction to PropForth, and introduce the words and concepts so you can start programming. Feel free to start experimenting whenever you like, it is the purpose of PropForth to help you experiment.
+The examples are ordered to give an introduction to `PropForth`, and introduce the words and concepts so you can start programming. Feel free to start experimenting whenever you like, it is the purpose of `PropForth` to help you experiment.
 
  === 3.4.1   sc ===
 
@@ -455,11 +455,11 @@ Before we proceed, a short discussion on memory. The propeller has 32k bytes of 
 
  === 3.6.1   Cog Memory ===
 
-In cog memory, PropForth has the assembler instructions for the interpreter, the space for the stack, and the space for the return stack, temporary variables, and the assembler word page area, which will be discussed later.  This takes up 320 longs. There are 16 special registers in each cog, so this leaves 176 long which are available. Cog memory is accessible as 32bit longs.
+In cog memory, `PropForth` has the assembler instructions for the interpreter, the space for the stack, and the space for the return stack, temporary variables, and the assembler word page area, which will be discussed later.  This takes up 320 longs. There are 16 special registers in each cog, so this leaves 176 long which are available. Cog memory is accessible as 32bit longs.
 
  === 3.6.2   Main Memory === 
 
-In main memory, there are 8 special areas of 224 bytes of length each, which are dedicated to the PropForth interpreter running on each cog. The rest of main memory is used by the forth dictionary. The forth dictionary is the forth words and their definitions. When the interpreter gets input from the prompt, it looks up the words in the dictionary, and executes the definition. If it does not find the word definition, it attempts to interpret it as a number. If this succeeds the number goes on the stack.
+In main memory, there are 8 special areas of 224 bytes of length each, which are dedicated to the `PropForth` interpreter running on each cog. The rest of main memory is used by the forth dictionary. The forth dictionary is the forth words and their definitions. When the interpreter gets input from the prompt, it looks up the words in the dictionary, and executes the definition. If it does not find the word definition, it attempts to interpret it as a number. If this succeeds the number goes on the stack.
 
 Variables and constants are also defined in the forth dictionary.
 
@@ -477,7 +477,7 @@ To define a long variable
 
 `variable name_of_variable`
 
-Most variables in PropForth are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs.
+Most variables in `PropForth` are 16bit variables. This save a lot of space in `PropForth`, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs.
 
  ==== 3.6.2.2     Constants ==== 
 
@@ -515,7 +515,7 @@ ST: 0000_0000 0000_0001 FFFF_FFFF 0000_000A 0000_0064
 Prop0 Cog6 ok
 }}}
 
-Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. PropForth can support any base from 2 (binary) to 64. The most common are 10 (decimal) and 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
+Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. `PropForth` can support any base from 2 (binary) to 64. The most common are 10 (decimal) and 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
 
 When using n base W! to set the base, remember one cannot use 10 base W! to set the base back to decimal, because 10 represents a different value in each base (10 always represents the base value in every base).  Use d_10 base W!  or the word decimal.
 
@@ -1125,7 +1125,7 @@ Prop0 Cog6 ok
 
  == 3.8       Strings ==
 
-In PropForth strings are stored as a series of bytes, where the first byte is the unsigned length of the string, and the bytes of the string immediately follow. String can be from 0 to 255 bytes long, and they consume 1 to 256 bytes of memory. To declare a string, c" string_characters" is used. The c" is followed by a space which is not part of the string, and ends with " which is not part of the string. When a string is declared at the prompt, it is only valid until that line is finished executing, as it is in temp storage. When a string is declared in a word definition, the string will be written to the dictionary, and will be valid until reboot.
+In `PropForth` strings are stored as a series of bytes, where the first byte is the unsigned length of the string, and the bytes of the string immediately follow. String can be from 0 to 255 bytes long, and they consume 1 to 256 bytes of memory. To declare a string, c" string_characters" is used. The c" is followed by a space which is not part of the string, and ends with " which is not part of the string. When a string is declared at the prompt, it is only valid until that line is finished executing, as it is in temp storage. When a string is declared in a word definition, the string will be written to the dictionary, and will be valid until reboot.
 
  == 3.9       Forth Words - Part 3 == 
 
@@ -1364,7 +1364,7 @@ Prop0 Cog6 ok
 
 Up until this point we have been interacting with cog 6. What about the rest of the cogs?
 
-When PropForth starts up, it starts a serial driver on cog 7, this is assumed to be connected to a terminal, or console. The console is connected to cog 6 on startup. We can easily connect other cogs to the console.
+When `PropForth` starts up, it starts a serial driver on cog 7, this is assumed to be connected to a terminal, or console. The console is connected to cog 6 on startup. We can easily connect other cogs to the console.
 
  == 3.13  Forth Words - Part 5 ==
 
@@ -1589,9 +1589,9 @@ If a cog does not have the console connected, the output of st? is discarded. We
 
 -----
 
- = 4         PropForth pin IO = 
+ = 4         `PropForth` pin IO = 
 
-One of the most common tasks on a microcontroller is input from pins, and output to pins. PropForth makes this easy.
+One of the most common tasks on a microcontroller is input from pins, and output to pins. `PropForth` makes this easy.
 
 The examples we will be using, do not require any special hardware as we will be using the capabilities of the propeller to write pins from one cog, and read them with another.
 
@@ -1962,7 +1962,7 @@ Prop0 Cog6 ok
 
 }}}
 
-We set one cog modifying a signal with a cycle of one second, and we set another cog looking at the signal 5 times a second. If the signal is changing more often than we are looking at it, it is pretty obvious we are going to miss some changes. This an important concept when sampling signals, we need to look at the signal at least twice as rapidly as it is changing (search the web for Nyquist and sampling for details). If we need to see the signal edges in relation to other signals, we will need to sample more rapidly.  To start looking at this in more detail, we will need to cover LogicAnalyzer.  This is a PropForth tool that looks at the pins and displays them graphically.
+We set one cog modifying a signal with a cycle of one second, and we set another cog looking at the signal 5 times a second. If the signal is changing more often than we are looking at it, it is pretty obvious we are going to miss some changes. This an important concept when sampling signals, we need to look at the signal at least twice as rapidly as it is changing (search the web for Nyquist and sampling for details). If we need to see the signal edges in relation to other signals, we will need to sample more rapidly.  To start looking at this in more detail, we will need to cover LogicAnalyzer.  This is a `PropForth` tool that looks at the pins and displays them graphically.
 
 -----
 
