@@ -754,7 +754,7 @@ Prop0 Cog6 ok
 
 When a 16bit word is stored, it is stored as 2 bytes, the lower byte is stored first, and the upper byte is stored next.
 
- === 3.7.1   C! === 
+ === 3.7.1 (this should be 10, see issue179)     C! === 
 
 {{{
 \ C! ( c1 addr -- ) \ store 8 bit value (c1) main memory at addr
