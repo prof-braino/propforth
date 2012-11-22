@@ -3168,58 +3168,57 @@ These are the mnemonics the assembler recognizes. For a detailed description see
 
 These are the prefixes the assembler recognizes. For a detailed description see the Propeller manual.
 
- * 'if_always`
- * 'if_never`
- * 'if_e`
- * 'if_ne`
- * 'if_a`
- * 'if_b`
- * 'if_ae`
- * 'if_be`
- * 'if_c`
- * 'if_nc`
- * 'if_z`
- * 'if_nz`
- * 'if_c_eq_z`
- * 'if_c_ne_z`
- * 'if_c_and_z`
- * 'if_c_and_nz`
- * 'if_nc_and_z`
- * 'if_nc_and_nz`
- * 'if_c_or_z`
- * 'if_c_or_nz`
- * 'if_nc_or_z`
- * 'if_nc_or_nz`
- * 'if_z_eq_c`
- * 'if_z_ne_c`
- * 'if_z_and_c`
- * 'if_z_and_nc`
- * 'if_nz_and_c`
- * 'if_nz_and_nc`
- * 'if_z_or_c`
- * 'if_z_or_nc`
- * 'if_nz_or_c`
- * 'if_nz_or_nc`
+ * `if_always`
+ * `if_never`
+ * `if_e`
+ * `if_ne`
+ * `if_a`
+ * `if_b`
+ * `if_ae`
+ * `if_be`
+ * `if_c`
+ * `if_nc`
+ * `if_z`
+ * `if_nz`
+ * `if_c_eq_z`
+ * `if_c_ne_z`
+ * `if_c_and_z`
+ * `if_c_and_nz`
+ * `if_nc_and_z`
+ * `if_nc_and_nz`
+ * `if_c_or_z`
+ * `if_c_or_nz`
+ * `if_nc_or_z`
+ * `if_nc_or_nz`
+ * `if_z_eq_c`
+ * `if_z_ne_c`
+ * `if_z_and_c`
+ * `if_z_and_nc`
+ * `if_nz_and_c`
+ * `if_nz_and_nc`
+ * `if_z_or_c`
+ * `if_z_or_nc`
+ * `if_nz_or_c`
+ * `if_nz_or_nc`
 
  == 7.6       Assembler Postfix List == 
 
 These are the postfixes the assembler recognizes. For a detailed description see the Propeller manual.
 
-·         nr
-
-·         wr
-
-·         wc
-
-·         wz
+ * `nr`
+ * `wr`
+ * `wc`
+ * `wz`
 
 -----
+
  = 8         A Low Power example = 
 
 We are going to see how we can make a propeller go into very low power mode, and then boot up when a key is hit.
 
 We are low to accomplish this by stopping all the cogs but one, and have it wait for a transition on the serial input line.
 
+{{{
 fl
 
 \ sleep ( -- ) go into low power mode until a transition is detected on the serial input line to the cog
@@ -3385,142 +3384,214 @@ CON:Prop0 Cog4 RESET - last status: 0 ok
 CON:Prop0 Cog5 RESET - last status: 0 ok
 
 Prop0 Cog6 ok
+}}}
 
 According to the specs, typical current consumption should be in the 25 micro-amp range. Will measure and update sometime.
+
 -----
+
  = 9         Forth Word Reference = 
 
  == 9.1       Core Word Set (build_BootKernel, build_BootOpt) == 
 
  === 9.1.1   # ===
 
+{{{
+
 \ # ( n1 -- n2 ) divide n1 by base and convert the remainder to a char and append to the output
+}}}
 
  === 9.1.2   #> === 
 
+{{{
 \ #> ( n1 -- caddr ) address of a counted string representing the output, NOT ANSI
+}}}
+
 
  === 9.1.3   #s === 
 
+{{{
 \ #s ( n1 -- 0 ) execute # until the remainder is 0
+}}}
+
 
  === 9.1.4   $C_IP === 
 
+{{{
 \ The forth instruction pointer
+}}}
+
 
  === 9.1.5   $C_a_(+loop) === 
 
+{{{
 \ This word constant is an assembler addresses
+}}}
+
 
  === 9.1.6   $C_a_(loop) === 
 
+{{{
 \ This word constant is an assembler addresses
+}}}
+
 
  === 9.1.7   $C_a_0branch === 
 
+{{{
 \ This word constant is an assembler addresses
+}}}
+
 
  === 9.1.8   $C_a_2>r === 
 
+{{{
 \ This word constant is an assembler addresses
+}}}
+
 
  === 9.1.9   $C_a_branch === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.10                      $C_a_doconw === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.11                      $C_a_dovarw === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.12                      $C_a_exit === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.13                      $C_a_litl === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.14                      $C_a_litw === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.15                      $C_a_lxasm === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.16                      $C_a_next === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.17                      $C_fMask === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.18                      $C_resetDreg === 
 
+{{{
 \ This word constant is an assembler addresses
 
  === 9.1.19                      $C_varEnd === 
 
+{{{
 \ This word constant is an assembler addresses
+}}}
+
 
  === 9.1.20                      $H_cogdata === 
 
+{{{
 \ This is a pointer to the main cogdata area
+}}}
+
 
  === 9.1.21                      $H_cq === 
 
+{{{
 \ This is ' cq - the routine which handles the word c"
+}}}
+
 
  === 9.1.22                      $H_dq === 
 
+{{{
 \ This is ' dq - the routine which handles the word ."
+}}}
+
 
  === 9.1.23                      $H_entry === 
 
+{{{
 \ This is the address of the assembler which is loaded to a PropForth Cog
+}}}
+
 
  === 9.1.24                      $S_baud === 
 
+{{{
 \ Word constant, the initial starting baud rate of the serial driver
+}}}
 
  === 9.1.25                      $S_cdsz === 
 
+{{{
 \ The size of the cog's data area, this will be initialized by $S_cdsz defined as a spin constant
+}}}
+
 
  === 9.1.26                      $S_con === 
 
 \ prop 7 is normally the console channel, this is the prop which handles communication to the console, and
 \ provides the interface to the rest of the cogs
+}}}
+
 
  === 9.1.27                      $S_rxpin === 
 
 \ Word constant, the rxpin of the serial driver
+}}}
+
 
  === 9.1.28                      $S_txpin === 
 
 \ Word constant, the txpin of the serial driver
+}}}
+
 
  === 9.1.29                      ' === 
 
 \ ' ( -- addr ) returns the execution token for the next name, if not found it returns 0
+}}}
+
 
  === 9.1.30                       (+loop) === 
 
 \ (+loop) ( n1 -- ) \ add n1 to loop counter, branch if count is below limit, offset follows,
 \ -2 is to itself, +2 is next word
+}}}
+
 
  === 9.1.31                      (createbegin) === 
 
 \ Internal word
+}}}
+
 
  === 9.1.32                       (createend) === 
 
 \ Internal word
+}}}
+
+
 
  === 9.1.33                       (fl) === 
 
@@ -3537,18 +3608,26 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ dictend - pointer to the next character for output
 
 \ initialize
+}}}
+
 
  === 9.1.34                       (flout) === 
 
 \ (flout)  ( -- ) attempt to output a character
+}}}
+
 
  === 9.1.35                      (ioconn) === 
 
 \ (ioconn) ( n1 n2 n3 n4 -- ) connect cog n1 channel n2 to cog n3 channel n4, disconnect them from other cogs first
+}}}
+
 
  === 9.1.36                      (iodis) === 
 
 \ (iodis) ( n1 n2 -- ) cog n1 channel n2 disconnect, disconnect this cog and the cog it is connected to
+
+}}}
 
  === 9.1.37                       (iolink) === 
 
@@ -3556,9 +3635,13 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 \  output of n3 channel n4 -> old output of n1 channel n2
 
+}}}
+
  === 9.1.38                       (iounlink) === 
 
 \ (iounlink) ( n1 n2 -- ) unlinks cog n1 channel n2
+
+}}}
 
  === 9.1.39                       (loop) === 
 
@@ -3566,25 +3649,37 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 \ -2 is to itself, +2 is next word
 
+}}}
+
  === 9.1.40                       (nfcog) === 
 
 \ (nfcog) ( -- n1 n2 ) n1 the next valid free forth cog, n2 is 0 if the cog is valid
+
+}}}
 
  === 9.1.41                       (prop) === 
 
 \ The default prop string
 
+}}}
+
  === 9.1.42                       (version) === 
 
 \ The default version string
+
+}}}
 
  === 9.1.43                      + === 
 
 \ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
 
+}}}
+
  === 9.1.44                      +loop === 
 
 \
+
+}}}
 
  === 9.1.45                      - === 
 
