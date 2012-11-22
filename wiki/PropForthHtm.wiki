@@ -408,7 +408,8 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_040
 Prop0 Cog6 ok
 }}}
 
-The : (COLON) indicates that we are starting a definition, it is followed by a space, then the name of our new word. We then type what we want the word to do, and end the definition of our new word with a ; (SEMICOLON).
+
+The `:` (COLON) indicates that we are starting a definition, it is followed by a space, then the name of our new word. We then type what we want the word to do, and end the definition of our new word with a `;` (SEMICOLON).
 
 {{{
 \ new word example2
@@ -426,8 +427,10 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_040
 ST: 0_000_000_001 0_000_000_002 0_000_000_360
 
 Prop0 Cog6 ok
+}}}
 
 We can use the words we defined just as we use native forth words.
+
 {{{
 \ new word example3
 
@@ -512,7 +515,7 @@ ST: 0000_0000 0000_0001 FFFF_FFFF 0000_000A 0000_0064
 Prop0 Cog6 ok
 }}}
 
-Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. PropForth can support any base from 2 (binary) to 64. The most common are 10 (decimal) 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
+Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. PropForth can support any base from 2 (binary) to 64. The most common are 10 (decimal) and 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
 
 When using n base W! to set the base, remember one cannot use 10 base W! to set the base back to decimal, because 10 represents a different value in each base (10 always represents the base value in every base).  Use d_10 base W!  or the word decimal.
 
@@ -629,6 +632,7 @@ ST: 0_000_000_000
 Prop0 Cog6 ok
 
  === 3.7.6   L! === 
+
 {{{
 \ L! ( n1 addr -- ) \ store 32 bit value (n1) at main memory addr
 
@@ -683,6 +687,7 @@ ST: 0_000_000_000
 Prop0 Cog6 ok
 
  === 3.7.8   W! === 
+
 {{{
 \ W! ( h1 addr -- ) \ store 16 bit value (h1) main memory at addr
 
