@@ -14,27 +14,35 @@ An Introduction to Interactively programming parallel processors
 
 Sal Sanci
 -----
+
  = 1 Document Status =
+
  == 1.1 Documentation Plan ==
 
 The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / PropForth capabilities. It will require an editor, but as time progresses this should be a lighter task.
 
 This Document is currently produced using Word 2007. It uses specific styles for formatting to allow publishing to a web format, as well as other electronic formats.
+
  == 1.2       Revision History == 
+
  === 1.2.1   Revision: 2012-03-04_07:00:00 === 
 
 This revision is draft. It needs to be proof read and edited.
+
  === 1.2.2   Revision: 2012-04-13_08:00:00 === 
 
 Changed Word options so smart quotes are not used, and - is not changed to dash. This should ensure you can copy from the html version to a text document or terminal screen with proper fidelity. Re: issue 145
+
  === 1.2.3   Revision 2012-04-14_12:00:00 === 
 
 Fixed some remaining - (dash) problems.
  -----
  = 2         Introduction = 
+
  == 2.1       Who is this written for? ==
 
 PropForth is written for people who want to interactively use and program Propeller based systems. It assumes you are familiar with Propeller based hardware, and have some knowledge of the Propeller architecture.
+
  == 2.2       What is PropForth? ==
 
 PropForth runs on the propeller. It is an interactive development and run time system. You can communicate with PropForth using a standard serial port, or via ethernet and telnet depending on the capabilities of the system you are using. It has a rich set of words which allow you to quickly and easily manipulate the hardware interactively. It is easy to program new words and use them in addition to the native set of words. Where necessary, you can write new words in assembler code for fast execution.
@@ -44,22 +52,23 @@ PropForth is outstanding for rapid exploration and development. The interactive 
 Each Propeller can run PropForth on up to 8 cogs, and you can concurrently interact with the cogs. Normal configuration uses one cog for serial or ethernet communication allowing for up to 7 concurrent PropForth sessions.
 
 It is based on the Forth programming language, but it has been tuned for the propeller architecture and parallel execution. PropForth does not prevent or protect you from manipulating the propeller however you like. While it can be simple to use, it is also very powerful.
+
  == 2.3       Document Conventions ==
 
 This document contains a lot of code samples and the following are the conventions used.
 
 For Comments:
-
+{{{
 \ A code comment, frequently documenting the stack use of the word.
-
+}}}
 The backslash denotes a comment.  When a backslash is encountered, the interpreter ignores the rest of the characters on the line (the CR at the end of the line ends the comment).  Comment lines are green in this document. A comment is entered for each command word definitions, and includes values needed on the stack (inputs), and the values to be left on the stack (outputs).
 
  
 
 For text typed or pasted in at the prompt:
-
+{{{
 1 3 -100
-
+}}}
 Text to be typed or pasted into the command line at the command prompt is blue in this document.
 
 For the output of the PropForth interpreter, and user written words:
@@ -67,39 +76,52 @@ For the output of the PropForth interpreter, and user written words:
 Prop0 Cog6 ok
 
 Forth words are documented in the following way. The text in the example input can be copied and pasted to a PropForth terminal
+
  === 2.3.1   sc === 
 
+{{{
 \ sc ( -- )
+}}}
 
 Example input
 
+{{{
 Output line1
+}}}
 
 More output
+
  == 2.4       Propforth Version ==
 
 This text is written assuming PropForth V5.0, the download is available on Google Code. We will be using the PropForth System except where explicitly noted.
+
  == 2.5       Loading PropForth == 
 
 Download PropForth, and unzip. In the directory CurrentRelease\PropForth, follow the instructions in GettingStarted.txt.
+
  == 2.6       Teraterm / terminal programs == 
 
 The examples were written and tested using Teraterm, however just about any terminal program should work.
+
  -----
+
  = 3         Getting started = 
 
 The best way to use this document is with a running PropForth system. Use the examples to explore PropForth. At the end of the getting started section, you will  have been introduced to a number of the native PropForth words and you will be able to program new words.
 
 The sections which follow will then focus on different topics and continue the exploration of PropForth.
+
  == 3.1       Numbers == 
 
 At the prompt, numbers can be entered in a few ways.
 
 This is an example of both positive and negative decimal numbers being entered. The _ (underscore) is available for formatting. It is ignored when evaluating a number.
 
+{{{
 1 3 -100
 
 Prop0 Cog6 ok
+}}}
 
 Entering a hexadecimal number, often useful, is done by preceding the number with an h. Once again the _ (underscore) is ignored. Note that only caps are used in hexadecimal numbers.
 
@@ -109,20 +131,25 @@ Prop0 Cog6 ok
 
 Binary numbers are preceded with a b.
 
-`b_1001_0011 b0010`
+{{{
+b_1001_0011 b0010
 
 Prop0 Cog6 ok
+}}}
 
 Decimal numbers are default at boot, but they can be entered explicitly by preceding the number with a d.
 
-`d_1 d3 d-100`
+{{{
+d_1 d3 d-100
 
 Prop0 Cog6 ok
+}}}
 
 Remember, Hex digits are always UPPERCASE letters A, B, C, D, E, and F; and the number base designators b, d, and h (for binary, decimal, and hex) are always lowercase.
 
 Most variables in PropForth are 16bit variables. This save a lot of space in PropForth, but a 16 bit variable is a positive number between 0 and 65,535. For many uses this is adequate. If you need positive numbers larger than 65,535 or you need negative numbers, you must use longs. PropForth words treat numbers on the stack as signed long numbers by default.
- == 3.2       Words
+
+ == 3.2       Words ==
 
 The PropForth interpreter can understand numbers and words. Words and numbers are delimited by blanks. Word names are up to 31 characters, and can contain any sequence of characters, symbols, and letters. PropForth is extended by programming new words.
 
@@ -131,37 +158,44 @@ The core set of PropForth words includes words like + - * / .
 When a new word is defined it can use other words. So a word is really a sequence of other words.
 
 At the low level, some words are a sequence of assembler instruction codes. These are generally native PropForth words. We will see later how we can program words, and later still how we can program assembler words
-3.3       Stack
+
+ == 3.3       Stack ==
 
 When you enter a number at the prompt, PropForth puts the numbers on a stack. The stack can hold up to 32 32-bit numbers, but the PropForth interpreter code uses the stack as well. The pragmatic limit of numbers on the stack is about 24.
 
 Each cog has its own stack in cog memory.
 
-To see what is on the stack we can use the st? word.
+To see what is on the stack we can use the `st?` word.
+
 {{{
 1 3 h-100 st?
 
 ST: 0_000_000_001 0_000_000_003 -0_000_000_256
 
 Prop0 Cog6 ok
+}}}
 
 By convention the stack is represented with the bottom of the stack on the left and the top of the stack on the right.
 
 Normal documentation of a PropForth word is a comment line which shows how it changes the stack.
 
+{{{
 \ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
+}}}
 
 On the left of the -- ,  is the stack before word executes, and on the right, the stack after the word executes. Once again, the rightmost numbers are the top of the stack.
-3.4       Forth Words - Part 1
+
+ == 3.4       Forth Words - Part 1 == 
 
 The best way to understand a word is to run the examples. The words are introduced in order of use in the examples. The first comment line is the documentation on the word. The next line is what is typed at the prompt. The remaining is the output.
 
 The examples are ordered to give an introduction to PropForth, and introduce the words and concepts so you can start programming. Feel free to start experimenting whenever you like, it is the purpose of PropForth to help you experiment.
-3.4.1   sc
 
-\ sc ( -- ) clears the stack
+ === 3.4.1   sc ===
 
 {{{
+\ sc ( -- ) clears the stack
+
 1 2 3 st? sc st?
 
 ST: 0_000_000_001 0_000_000_002 0_000_000_003
@@ -171,134 +205,96 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_003
 ST:
 
 Prop0 Cog6 ok
-3.4.2   cr
+}}}
 
-\ cr ( -- ) emits a carriage return
+ === 3.4.2   cr ===
+
 {{{
+\ cr ( -- ) emits a carriage return
+
 1 2 3 cr cr st? cr cr sc cr cr st?
-
- 
-
- 
 
 ST: 0_000_000_001 0_000_000_002 0_000_000_003
 
- 
-
- 
-
 3 items cleared
-
- 
-
- 
 
 ST:
 
 Prop0 Cog6 ok
-3.4.3   . (DOT)
+}}}
 
+ === 3.4.3   . (DOT) ===
+
+{{{
 \ . ( n1 -- ) prints the signed number on the top of the stack
 
 sc 1 -2 3 cr st? cr . cr st? cr . cr st? cr . cr st?
 
 0 items cleared
 
- 
-
 ST: 0_000_000_001 -0_000_000_002 0_000_000_003
-
- 
 
 3
 
 ST: 0_000_000_001 -0_000_000_002
 
- 
-
 -2
 
 ST: 0_000_000_001
-
- 
 
 1
 
 ST:
 
 Prop0 Cog6 ok
-3.4.4   u.
+}}}
 
+ === 3.4.4   u. === 
+
+{{{
 \ u. ( n1 -- ) prints the unsigned number on the top of the stack
 
 sc 1 -2 3 cr st? cr u. cr st? cr u. cr st? cr u. cr st?
 
 0 items cleared
 
- 
-
 ST: 0_000_000_001 -0_000_000_002 0_000_000_003
-
- 
 
 3
 
 ST: 0_000_000_001 -0_000_000_002
 
- 
-
 4294967294
 
 ST: 0_000_000_001
-
- 
 
 1
 
 ST:
 
 Prop0 Cog6 ok
+}}}
 
 Note in the default mode, which is decimal numbers, st? prints negative numbers as -nnnn.  The range of 32bit signed longs is -2147483648 to 2147483647. The range of unsigned numbers is 0 - 4294967295.
-3.4.5   +
 
-\ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
+ === 3.4.5   + ===
+
 {{{
+\ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
+
 sc 1 2 3 4 5 -6 cr st? cr + cr st? cr + cr st? cr + cr st? cr + cr st? cr + cr st?
 
 0 items cleared
 
- 
-
 ST: 0_000_000_001 0_000_000_002 0_000_000_003 0_000_000_004 0_000_000_005 -0_000_000_006
-
- 
-
- 
 
 ST: 0_000_000_001 0_000_000_002 0_000_000_003 0_000_000_004 -0_000_000_001
 
- 
-
- 
-
 ST: 0_000_000_001 0_000_000_002 0_000_000_003 0_000_000_003
-
- 
-
- 
 
 ST: 0_000_000_001 0_000_000_002 0_000_000_006
 
- 
-
- 
-
 ST: 0_000_000_001 0_000_000_008
-
- 
-
- 
 
 ST: 0_000_000_009
 
@@ -308,62 +304,42 @@ Prop0 Cog6 ok
 \ - ( n1 n2 -- n1-n2 ) \ subtracts n2 from n1
 
 sc 1 2 3 4 5 -6 cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st?
-
+}}
  
-3.4.7   *
+ === 3.4.7   * ===
 
-\ * ( n1 n2 -- n1*n2) n1 multiplied by n2
 {{{
+\ * ( n1 n2 -- n1*n2) n1 multiplied by n2
+
 sc 1 2 3 4 5 -6 cr st? cr * cr st? cr * cr st? cr * cr st? cr * cr st? cr * cr st?
 
 1 items cleared
 
- 
-
 ST: 0_000_000_001 0_000_000_002 0_000_000_003 0_000_000_004 0_000_000_005 -0_000_000_006
-
- 
-
- 
 
 ST: 0_000_000_001 0_000_000_002 0_000_000_003 0_000_000_004 -0_000_000_030
 
- 
-
- 
-
 ST: 0_000_000_001 0_000_000_002 0_000_000_003 -0_000_000_120
-
- 
-
- 
 
 ST: 0_000_000_001 0_000_000_002 -0_000_000_360
 
- 
-
- 
-
 ST: 0_000_000_001 -0_000_000_720
-
- 
-
- 
 
 ST: -0_000_000_720
 
 Prop0 Cog6 ok
+}}}
 
 * is a signed multiply. There is a u* for unsigned multiply.
-3.4.8    /
 
+ === 3.4.8    / ===
+
+{{{
 \ / ( n1 n2 -- n1/n2) n1 divided by n2
 
 sc 10_000_000 3 cr st? cr / cr st? 10 cr st? cr / cr st? -45 cr st? cr / cr st?
 
 1 items cleared
-
- 
 
 ST: 0_010_000_000 0_000_000_003
 
@@ -396,9 +372,11 @@ ST: -0_000_007_407
 Prop0 Cog6 ok
 
 / is a signed integer divide. There is a u/ for unsigned integer divide.
-3.5       Defining new words
+
+ == 3.5       Defining new words == 
 
 The following examples show how to define new words. Once a word is defined, it is immediately available. This capability allows you try new things quickly . As a rule, defined words should be no more than 20 or 30  lines, most should only be a few lines.
+
 {{{
 \ new word example1
 
@@ -415,8 +393,10 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_003
 ST: 0_000_000_001 0_000_000_002 0_000_000_040
 
 Prop0 Cog6 ok
+}}}
 
 The : (COLON) indicates that we are starting a definition, it is followed by a space, then the name of our new word. We then type what we want the word to do, and end the definition of our new word with a ; (SEMICOLON).
+
 {{{
 \ new word example2
 
@@ -451,12 +431,13 @@ ST: 0_000_000_001 0_000_000_002 0_000_000_003
 ST: 0_000_000_001 0_000_000_002 0_000_000_360
 
 Prop0 Cog6 ok
+}}}
 
  == 3.6       Memory == 
 
 Before we proceed, a short discussion on memory. The propeller has 32k bytes of main memory that is accessible to all the cogs. Each cog has 512 32bit longs which are only accessible to the individual cogs.
 
-3.6.1   Cog Memory
+ === 3.6.1   Cog Memory ===
 
 In cog memory, PropForth has the assembler instructions for the interpreter, the space for the stack, and the space for the return stack, temporary variables, and the assembler word page area, which will be discussed later.  This takes up 320 longs. There are 16 special registers in each cog, so this leaves 176 long which are available. Cog memory is accessible as 32bit longs.
 
@@ -488,15 +469,16 @@ Like variables, constants in main memory are normally defined as either 16bit wo
 
 To define a 16-bit word constant, the value is on top of the stack:
 
-value wconstant name_of_constant
+`value wconstant name_of_constant`
 
 To define a long constant, the value is on the top of the stack:
 
-value constant name_of_constant
+`value constant name_of_constant`
 
  == 3.7       Forth Words - Part 2 == 
 
  === 3.7.1   hex === 
+
 {{{
 \ hex ( -- ) set the base for hexadecimal
 
@@ -515,12 +497,14 @@ ST: 0_000_000_000 0_000_000_001 -0_000_000_001 0_000_000_010 0_000_000_100
 ST: 0000_0000 0000_0001 FFFF_FFFF 0000_000A 0000_0064
 
 Prop0 Cog6 ok
+}}}
 
 Hexadecimal mode is useful when interfacing to propeller registers or peripheral registers. PropForth can support any base from 2 (binary) to 64. The most common are 10 (decimal) 16 (hex). These have native words that set the base. For other bases, such as 8 (octal) for PDP11 programmers, or 2 (binary),  use: n base W! This sets the base to n, and all numbers will be printed in that base. This can give some pretty strange looking numbers but it is very useful as we will see later.
 
 When using n base W! to set the base, remember one cannot use 10 base W! to set the base back to decimal, because 10 represents a different value in each base (10 always represents the base value in every base).  Use d_10 base W!  or the word decimal.
 
  === 3.7.2   decimal === 
+
 {{{
 \ decimal ( -- ) set the base for decimal
 
@@ -563,10 +547,12 @@ ST: -2_113_416_610
 2182562366
 
 Prop0 Cog6 ok
+}}}
 
 The cnt register, in cog memory, is a high speed 32bit counter  incrementing once every clock cycle. Normally with a propeller running at 80Mhz, it increments once every 12.5 nanoseconds. This register wraps around to zero about every 53.7 seconds at 80 Mhz.
 
  === 3.7.4   COG! === 
+
 {{{
 \ COG! ( n1 addr -- ) \ store 32 bit value (n1) at cog addr
 
@@ -595,11 +581,15 @@ ST:
 ST: 0_000_000_001
 
 Prop0 Cog6 ok
+}}}
 
 Each cog has an outa register, in this case we are reading the value, setting bit 0 to 1, and writing the value. If the dira register bit 0 is set to 1 as well, the value of the outa register, will be or’d with all the other cogs outa registers bit 0 with dira registers bit 0, and appear on io pin 0.
 
 Normally, one cog has a pin set to output, so the value on the io pin is corresponds to the bit in that cog’s outa register.
+
  === 3.7.5   L@ === 
+
+{{{
 
 \ L@ ( addr -- n1 ) \ fetch 32 bit value at main memory addr
 
@@ -650,10 +640,12 @@ ST: 0_000_017_620
 ST: -0_000_000_001
 
 Prop0 Cog6 ok
+}}}
 
 32bit long addresses must be long aligned. In this example, the forth word "variable" uses the next text string it encourters (in this case "tmp1") and defines  a 32bit variable using that string as the name. Now when tmp1 is entered it returns the address of the variable. This is how we store values to a memory location using a variable name.
 
  === 3.7.7   W@ === 
+
 {{{
 \ W@ ( addr -- h1 ) \ fetch 16 bit value at main memory addr
 
@@ -702,10 +694,12 @@ ST: 0_000_017_660
 ST: 0_000_065_535
 
 Prop0 Cog6 ok
+}}}
 
 16bit word addresses must be word aligned. Note that when there is a -1 on the stack it corresponds to h_FFFF_FFFF. When W! stores a value it only store the lower 16bits. So the value h_FFFF is stored in the word variable. When it is fetched, the value h_FFFF goes on the stack, this corresponds to d_65_535. Generally 16bit words are used unsigned values and addresses, as they take up less space than longs. If you need signed values, use 32bit longs.
 
  === 3.7.9   C@ === 
+
 {{{
 \ C@ ( addr -- c1 ) \ fetch 8 bit value at main memory addr
 
@@ -734,6 +728,7 @@ ST: 0_000_000_255 0_000_017_675
 ST: 0_000_000_255 0_000_000_000
 
 Prop0 Cog6 ok
+}}}
 
 When a 16bit word is stored, it is stored as 2 bytes, the lower byte is stored first, and the upper byte is stored next.
 
@@ -767,8 +762,11 @@ ST: 0_000_000_000 0_000_017_687
 ST: 0_000_000_000 0_000_000_255
 
 Prop0 Cog6 ok
-3.7.2   and
+}}}
 
+ === 3.7.2   and === 
+
+{{{
 \ and ( n1 n2 -- n1 ) \ bitwise and n1 n2
 
 sc hex F0F0_FFFF AAAA_5555 cr st? cr and st? cr FF st? cr and st? decimal
@@ -792,8 +790,11 @@ ST: A0A0_5555 0000_00FF
 ST: 0000_0055
 
 Prop0 Cog6 ok
-3.7.3   andn
+}}}
 
+ === 3.7.3   andn ===
+
+{{{
 \ andn ( n1 n2 -- n1 ) \ bitwise and n1 invert n2
 
 sc hex F0F0_FFFF AAAA_5555 cr st? cr andn st? cr FFFF st? cr andn st? decimal
@@ -817,8 +818,11 @@ ST: 5050_AAAA 0000_FFFF
 ST: 5050_0000
 
 Prop0 Cog6 ok
-3.7.4   invert
+}}}
 
+ === 3.7.4   invert ===
+
+{{{
 \ invert ( n1 -- n2 ) bitwise invert n1
 
 sc hex F0F0_FFFF cr st? cr invert st? decimal
@@ -834,8 +838,11 @@ ST: F0F0_FFFF
 ST: 0F0F_0000
 
 Prop0 Cog6 ok
-3.7.5   lshift
+}}}
 
+ === 3.7.5   lshift ===
+
+{{{
 \ lshift (n1 n2 -- n3) \ n3 = n1 shifted left n2 bits
 
 sc hex F000_000F 1 cr st? cr lshift st? cr 3 st? cr lshift st? decimal
@@ -859,8 +866,11 @@ ST: E000_001E 0000_0003
 ST: 0000_00F0
 
 Prop0 Cog6 ok
-3.7.6   rshift
+}}}
 
+ === 3.7.6   rshift === 
+
+{{{
 \ rshift ( n1 n2 -- n3) \ n3 = n1 shifted right logically n2 bits
 
 sc hex F000_00F0 3 cr st? cr rshift st? cr 1 st? cr rshift st? decimal
@@ -884,8 +894,11 @@ ST: 1E00_001E 0000_0001
 ST: 0F00_000F
 
 Prop0 Cog6 ok
-3.7.7   or
+}}}
 
+ === 3.7.7   or ===
+
+{{{
 \ or ( n1 n2 -- n1_or_n2 ) \ bitwise or
 
 sc hex F000_00F0 1_0001 cr st? cr or st? cr 1_0003 st? cr or st? decimal
@@ -909,8 +922,11 @@ ST: F001_00F1 0001_0003
 ST: F001_00F3
 
 Prop0 Cog6 ok
-3.7.8   xor
+}}}
 
+ === 3.7.8   xor ===
+
+(((
 \ xor ( n1 n2 -- n1_xor_n2 ) \ bitwise xor
 
 sc hex F000_00F0 1_0001 cr st? cr xor st? cr 1_0003 st? cr xor st? decimal
@@ -934,8 +950,11 @@ ST: F001_00F1 0001_0003
 ST: F000_00F2
 
 Prop0 Cog6 ok
-3.7.9   > 
+}}}
 
+ === 3.7.9   >  ===
+
+{{{
 \ > ( n1 n2 -- t/f ) \ flag is true if and only if n1 is greater than n2
 
 sc 1 0 st? cr > . cr cr 1 1 st? cr > . cr cr 0 -1 st? cr > . cr cr
@@ -967,7 +986,9 @@ ST: 0_000_000_000 -0_000_000_001
  
 
 Prop0 Cog6 ok
-3.7.10                      =
+}}}
+
+ === 3.7.10                      = ===
 
 \ = ( n1 n2 -- t/f ) \ compare top 2 32 bit stack values, true if they are equal
 
