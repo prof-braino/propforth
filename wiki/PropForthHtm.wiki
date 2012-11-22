@@ -13,14 +13,14 @@ PropForth
 An Introduction to Interactively programming parallel processors
 
 Sal Sanci
-
- # = Document Status =
-   #        Documentation Plan
+-----
+= 1 Document Status =
+== 1.1 Documentation Plan ==
 
 The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / PropForth capabilities. It will require an editor, but as time progresses this should be a lighter task.
 
 This Document is currently produced using Word 2007. It uses specific styles for formatting to allow publishing to a web format, as well as other electronic formats.
-1.2       Revision History
+== 1.2       Revision History == 
 1.2.1   Revision: 2012-03-04_07:00:00
 
 This revision is draft. It needs to be proof read and edited.
@@ -30,7 +30,7 @@ Changed Word options so smart quotes are not used, and - is not changed to dash.
 1.2.3   Revision 2012-04-14_12:00:00
 
 Fixed some remaining - (dash) problems.
-2         Introduction
+= 2         Introduction = 
 2.1       Who is this written for?
 
 PropForth is written for people who want to interactively use and program Propeller based systems. It assumes you are familiar with Propeller based hardware, and have some knowledge of the Propeller architecture.
@@ -84,7 +84,7 @@ Download PropForth, and unzip. In the directory CurrentRelease\PropForth, follow
 2.6       Teraterm / terminal programs
 
 The examples were written and tested using Teraterm, however just about any terminal program should work.
-3         Getting started
+= 3         Getting started = 
 
 The best way to use this document is with a running PropForth system. Use the examples to explore PropForth. At the end of the getting started section, you will  have been introduced to a number of the native PropForth words and you will be able to program new words.
 
@@ -1218,7 +1218,7 @@ ST:
  
 
 Prop0 Cog6 ok
-3.11.3                      begin until
+=== 3.11.3                      begin until  ===
 
 \ begin until
 
@@ -1459,7 +1459,7 @@ Prop0 Cog6 ok
 ST: 0_000_000_111 0_000_000_222 0_000_000_333
 
 If a cog does not have the console connected, the output of st? is discarded. We can use .const?, which behaves like st? but send the output to the console. This allows us to see the stack on another cog.
-4         PropForth pin IO
+= 4         PropForth pin IO = 
 
 One of the most common tasks on a microcontroller is input from pins, and output to pins. PropForth makes this easy.
 
