@@ -30,6 +30,7 @@ Changed Word options so smart quotes are not used, and - is not changed to dash.
 1.2.3   Revision 2012-04-14_12:00:00
 
 Fixed some remaining - (dash) problems.
+-----
 = 2         Introduction = 
 2.1       Who is this written for?
 
