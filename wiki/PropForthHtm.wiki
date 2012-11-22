@@ -128,7 +128,9 @@ Prop0 Cog6 ok
 
 Entering a hexadecimal number, often useful, is done by preceding the number with an h. Once again the `_` (underscore) is ignored. Note that only caps are used in hexadecimal numbers.
 
-{{{h100 h-100 hFFFF_FFFF
+{{{
+
+h100 h-100 hFFFF_FFFF
 
 Prop0 Cog6 ok
 }}}
