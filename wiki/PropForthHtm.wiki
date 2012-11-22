@@ -73,7 +73,9 @@ Text to be typed or pasted into the command line at the command prompt is blue i
 
 For the output of the PropForth interpreter, and user written words:
 
+{{{
 Prop0 Cog6 ok
+}}}
 
 Forth words are documented in the following way. The text in the example input can be copied and pasted to a PropForth terminal
 
@@ -123,11 +125,12 @@ This is an example of both positive and negative decimal numbers being entered. 
 Prop0 Cog6 ok
 }}}
 
-Entering a hexadecimal number, often useful, is done by preceding the number with an h. Once again the _ (underscore) is ignored. Note that only caps are used in hexadecimal numbers.
+Entering a hexadecimal number, often useful, is done by preceding the number with an h. Once again the `_` (underscore) is ignored. Note that only caps are used in hexadecimal numbers.
 
-`h100 h-100 hFFFF_FFFF`
+{{{h100 h-100 hFFFF_FFFF
 
 Prop0 Cog6 ok
+}}}
 
 Binary numbers are preceded with a b.
 
