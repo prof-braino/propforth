@@ -1462,15 +1462,15 @@ ST: 0_000_000_111 0_000_000_222 0_000_000_333
 
 If a cog does not have the console connected, the output of st? is discarded. We can use .const?, which behaves like st? but send the output to the console. This allows us to see the stack on another cog.
 -----
-= 4         PropForth pin IO = 
+ = 4         PropForth pin IO = 
 
 One of the most common tasks on a microcontroller is input from pins, and output to pins. PropForth makes this easy.
 
 The examples we will be using, do not require any special hardware as we will be using the capabilities of the propeller to write pins from one cog, and read them with another.
 
 Before we move on to examples, we will have to introduce a few more words.
-4.1       Forth Words - Part 5
-4.1.1   space
+ == 4.1       Forth Words - Part 5 == 
+ === 4.1.1   space === 
 
 \ space ( -- ) emits a space
 
@@ -1481,7 +1481,7 @@ sc c" hello" .cstr space c" world" .cstr cr
 hello world
 
 Prop0 Cog6 ok
-4.1.2   delms
+ === 4.1.2   delms === 
 
 \ delms ( n1 -- ) delay n1 milli-seconds for 80Mhz h68DB max
 
@@ -1492,7 +1492,7 @@ sc 2000 delms st?
 ST:
 
 Prop0 Cog6 ok
-4.1.3   pinin
+ === 4.1.3   pinin === 
 
 \ pinin ( n1 -- ) set pin # n1 to an input
 
@@ -1507,7 +1507,7 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
-4.1.4   pinout
+ === 4.1.4   pinout === 
 
 \ pinout ( n1 -- ) set pin # n1 to an output
 
@@ -1522,7 +1522,7 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
-4.1.5   pinlo
+ === 4.1.5   pinlo === 
 
 \ pinlo ( n1 -- ) set pin # n1 to lo
 
@@ -1537,7 +1537,7 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
-4.1.6   pinhi
+ === 4.1.6   pinhi === 
 
 \ pinhi ( n1 -- ) set pin # n1 to hi
 
@@ -1552,7 +1552,7 @@ ST: 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
-4.1.7   px
+ === 4.1.7   px === 
 
 \ px ( t/f n1 -- ) set pin # n1 to high when true or low when false
 
@@ -1573,7 +1573,7 @@ ST: -0_000_000_001 0_000_000_000
 ST:
 
 Prop0 Cog6 ok
-4.1.8   px?
+ === 4.1.8   px? === 
 
 \ px? ( n1 -- t/f) true if pin n1 is hi
 
@@ -1594,7 +1594,7 @@ ST: 0_000_000_000 0_000_000_031
 ST: 0_000_000_000 -0_000_000_001
 
 Prop0 Cog6 ok
-4.1.9   pins?
+ === 4.1.9   pins? === 
 
 \ pins ( -- ) samples the current status of all the io pins and prints them to the terminal
 
@@ -1627,7 +1627,7 @@ LO LO LO LO LO LO LO LO LO HI HI LO HI HI HI LO LO LO LO LO LO LO LO LO LO LO LO
 Prop0 Cog6 ok
 
 Now having defined pins? We can start turning pins on and off and look at them.
-4.1.10                      IO example 1
+ === 4.1.10                      IO example 1 === 
 
 \ IO example 1
 
@@ -1718,7 +1718,7 @@ LO LO LO LO LO LO LO LO LO HI HI LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO
 Prop0 Cog6 ok
 
 We are only interested in pin 00 at this point. On this system pin 00 has nothing connected to it, so when we make it an input, it may be hi or lo. Generally after a period of time the pin will read lo. It is not a good idea to rely on this, but it is good to be aware.
-4.1.11                      IO example 2
+ === 4.1.11                      IO example 2 === 
 
 \ IO example 2
 
@@ -1896,8 +1896,8 @@ Remember that lac is just looking at the pins every sample interval as specified
 Sampling too slow can really give us a bad picture, which can be very misleading. Here is the same signal sampled every 20,000 cycles. It look like pin 0 is changing at the same rate as pin 6. We are sampling way too slow, and we happen to be sampling at a frequency that makes pin 0 look ok, but is really very wrong. This undersampling can lead to bad information.
 
 Undersampling is one of the most common errors leading to bad information, remember to sample and look at the signal at multiple sample rates.
-6         PropForth Input/Output
-6.1       Overview
+ = 6         PropForth Input/Output = 
+ == 6.1       Overview == 
 
 A PropForth cog by default has a single character IO channel. This channel consists of a character input channel and a  character output channel. The input channel is where input is received and interpreted by PropForth, and the output channel is where the interpreter echoes characters, and sends any output. This IO channel is a synchronous channel. When a cog’s output channel is not connected, the output is thrown away.
 
@@ -2204,10 +2204,10 @@ Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 Prop0 Cog6 ok
 
 And back to normal.
-6.2       Technical details
+ == 6.2       Technical details == 
 
 Each cog has 224 bytes of main memory which hold a number of variables. This cog data area has the beginning the IO channel which PropForth uses for input and output. The IO channel is 2 words, the first word is the input character to PropForth. The second word is a pointer to an input channel, or zero if the channel is not connected.
-6.2.1   Input Word
+ === 6.2.1   Input Word === 
 
 When another cog wants to send input to another cogs, it waits until the value of that cog’s input word is h_0100. It then writes a word with the value h_00xx where xx is the character value.  The receiving cog waits until the h_0100 anded with the input word is zero, and it then accepts the character. When it is ready to accept another character, it write h_0100 to the word. This is how all the PropForth IO words read a character.
 
@@ -2292,7 +2292,7 @@ decimal
 Prop0 Cog6 ok
 
 After we write the character we can see cog 0 has not yet accepted it, and will not since we made it busy.
-6.2.2   Output Pointer
+ === 6.2.2   Output Pointer === 
 
 The second word of the IO channel is a pointer. If the pointer is zero, all the output to the IO channel is discarded. This prevents a cog from blocking. When a cog is connected, it will point to the input word of the channel.
 
@@ -2371,21 +2371,21 @@ Prop0 Cog5 ok
 Prop0 Cog6 ok
 
 Now see that the output pointer of cog 5 points to the input word of cog7, which is the serial driver. And the output pointer of cog 6 is zero.
-6.2.3   Advanced topics
+ === 6.2.3   Advanced topics === 
 
 Each PropForth cog has a single IO channel. A serial driver running on a cog has one IO channel as well. This is channel zero, and in most cases the only channel. There are cases where a cog is running a driver that has more than one channel. Two examples of this are the MCS driver, and the IP server.
-6.2.3.1     MCS (Multi Channel Synchronous) Driver
+ ==== 6.2.3.1     MCS (Multi Channel Synchronous) Driver ====
 
 MCS is a driver that uses 2 pins to provide 8 full duplex IO channels to another propeller running MCS. In this case the cog running MCS has an array of 8 IO channels, starting where the normal IO channel resides. This means that when we want to address an MCS channel, we need to specify the cog running MCS, and which channel we wish to address. The native PropForth words which require both the cog and the channel to be specified (ioconn) (iodis) (iolink) (iounlink). The words ioconn, iodis, iolink, iounlink calls these words with a channel number of zero.
 
 For further details see the MCS documentation.
-6.2.3.2     IP Server
+ ==== 6.2.3.2     IP Server ==== 
 
 The IP server interfaces to the WIZNET W5100 to provide 4 Internet Protocol channels. Like any channel, these can connect to cogs and provide IO. In the case when all the channels are started as telnet channels, each channel can connect to a cog. This allows talking to 4 cogs at the same time with 4 telnet sessions. Very handy for some applications.
 
 For further details see the IP documentation.
 -----
-7         PropForth Assembler
+ = 7         PropForth Assembler = 
 
 The propeller has a unique architecture and PropForth was written to match the architecture. Using assembler on the propeller is not the same as using assembler on a more conventional architecture, and it is very different than a CISC  architecture like what you find in your PC. Firstly each cog has 496 registers that are accessible only to that cog for instructions and data. Each cog can rely on the fact that only it can modify those registers, short of the cog being reset externally. In addition, each cog will never be interrupted, it will continually execute and it can decide when to access main memory or not. This can give each cog a high degree of isolation from the other cogs.
 
@@ -2396,7 +2396,7 @@ One of the changes in PropForth v5.0 was the way in which assembler words are de
 The result was many more words defined as assembler words, and the overall kernel speed was greatly improved, and total cog memory usage went down.
 
 To understand how to use assembler words, it is necessary to understand how they fit into the kernel.
-7.1       Kernels and Assembler Words
+ == 7.1       Kernels and Assembler Words == 
 
 PropForth starts life as PropForthStartKernel. This kernel has no assembler words defined, has all the symbols defined, is slow to interpret or compile anything, has error detection, and  no error reporting. The cog memory usage is small. It uses a total of 274 cog longs, and 13,594 main memory bytes. The cog memory usage includes:
 
@@ -2447,7 +2447,7 @@ So the rules for assembler words; the start address if defined by build_BootOpt,
 LogicAnalyzer breaks these rules, the faster sampling routines (sampling faster than every 41 cycles) uses the cog memory to store samples, so if you use LogicAnalyzer on the same cogs as the sd card driver, there will be strange effects. The original LogicAnalyzer was written before these rules were established. All of the other optimizations in the sd card driver or the ipserver follow the rules with no problems.
 
 Some programmers may quickly deduce that this mechanism can allow for multiple page areas in each cog. This capability can allow for multiple cache sets in each cogs memory. This capability has not yet been explored by the PropForth kernel.
-7.2       Writing Assembler Words
+ == 7.2       Writing Assembler Words == 
 
 The interactive nature of PropForth guides us when to use assembler. Generally the development cycle it to write forth words, verify the development functionality, and then rewrite some of the forth words in assembler to get the performance we need or want, and then of course re-verify the functionality. This has been the development cycle for the kernel and extensions.
 
@@ -2881,7 +2881,7 @@ ST: 0_000_000_002 0_000_000_001
 ST: 0_000_000_001 0_000_000_000
 
 ST: 0_000_000_000 -0_000_000_001
-7.4       Assembler Mnemonic List
+ == 7.4       Assembler Mnemonic List == 
 
 These are the mnemonics the assembler recognizes. For a detailed description see the Propeller manual. The assembler is based on V1.01. There are some changes in later versions.
 
@@ -3034,7 +3034,7 @@ These are the mnemonics the assembler recognizes. For a detailed description see
 ·         wrword
 
 ·         xor
-7.5       Assembler Prefix List
+ == 7.5       Assembler Prefix List == 
 
 These are the prefixes the assembler recognizes. For a detailed description see the Propeller manual.
 
@@ -3101,7 +3101,7 @@ These are the prefixes the assembler recognizes. For a detailed description see 
 ·         if_nz_or_c
 
 ·         if_nz_or_nc
-7.6       Assembler Postfix List
+ == 7.6       Assembler Postfix List == 
 
 These are the postfixes the assembler recognizes. For a detailed description see the Propeller manual.
 
@@ -3114,7 +3114,7 @@ These are the postfixes the assembler recognizes. For a detailed description see
 ·         wz
 
 -----
-8         A Low Power example
+ = 8         A Low Power example = 
 
 We are going to see how we can make a propeller go into very low power mode, and then boot up when a key is hit.
 
@@ -3288,51 +3288,51 @@ Prop0 Cog6 ok
 
 According to the specs, typical current consumption should be in the 25 micro-amp range. Will measure and update sometime.
 -----
-9         Forth Word Reference
-9.1       Core Word Set (build_BootKernel, build_BootOpt)
-9.1.1   #
+ = 9         Forth Word Reference = 
+ == 9.1       Core Word Set (build_BootKernel, build_BootOpt) == 
+ === 9.1.1   # ===
 
 \ # ( n1 -- n2 ) divide n1 by base and convert the remainder to a char and append to the output
-9.1.2   #>
+ === 9.1.2   #> === 
 
 \ #> ( n1 -- caddr ) address of a counted string representing the output, NOT ANSI
-9.1.3   #s
+ === 9.1.3   #s === 
 
 \ #s ( n1 -- 0 ) execute # until the remainder is 0
-9.1.4   $C_IP
+ === 9.1.4   $C_IP === 
 
 \ The forth instruction pointer
-9.1.5   $C_a_(+loop)
+ === 9.1.5   $C_a_(+loop) === 
 
 \ This word constant is an assembler addresses
-9.1.6   $C_a_(loop)
+ === 9.1.6   $C_a_(loop) === 
 
 \ This word constant is an assembler addresses
-9.1.7   $C_a_0branch
+ === 9.1.7   $C_a_0branch === 
 
 \ This word constant is an assembler addresses
-9.1.8   $C_a_2>r
+ === 9.1.8   $C_a_2>r === 
 
 \ This word constant is an assembler addresses
-9.1.9   $C_a_branch
+ === 9.1.9   $C_a_branch === 
 
 \ This word constant is an assembler addresses
-9.1.10                      $C_a_doconw
+ === 9.1.10                      $C_a_doconw === 
 
 \ This word constant is an assembler addresses
-9.1.11                      $C_a_dovarw
+ === 9.1.11                      $C_a_dovarw === 
 
 \ This word constant is an assembler addresses
-9.1.12                      $C_a_exit
+ === 9.1.12                      $C_a_exit === 
 
 \ This word constant is an assembler addresses
-9.1.13                      $C_a_litl
+ === 9.1.13                      $C_a_litl === 
 
 \ This word constant is an assembler addresses
-9.1.14                      $C_a_litw
+ === 9.1.14                      $C_a_litw === 
 
 \ This word constant is an assembler addresses
-9.1.15                      $C_a_lxasm
+ === 9.1.15                      $C_a_lxasm === 
 
 \ This word constant is an assembler addresses
 9.1.16                      $C_a_next
