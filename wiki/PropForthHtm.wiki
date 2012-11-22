@@ -1,11 +1,11 @@
 #summary Propforth.htm from the download archive.
 
-= NOTICE =
+ = NOTICE =
 
 This is a COPY. The version in the current download is the correct version. 
 
 
-= COPY of Propforth htm fom current download (v5.3 20121122) =
+ = COPY of Propforth htm fom current download (v5.3 20121122) =
 
 
 PropForth
@@ -14,28 +14,28 @@ An Introduction to Interactively programming parallel processors
 
 Sal Sanci
 -----
-= 1 Document Status =
-== 1.1 Documentation Plan ==
+ = 1 Document Status =
+ == 1.1 Documentation Plan ==
 
 The long term plan is to have this document be maintained by the user community. It is structured so that we can add sections to deal with specific projects / PropForth capabilities. It will require an editor, but as time progresses this should be a lighter task.
 
 This Document is currently produced using Word 2007. It uses specific styles for formatting to allow publishing to a web format, as well as other electronic formats.
 == 1.2       Revision History == 
-1.2.1   Revision: 2012-03-04_07:00:00
+=== 1.2.1   Revision: 2012-03-04_07:00:00 === 
 
 This revision is draft. It needs to be proof read and edited.
-1.2.2   Revision: 2012-04-13_08:00:00
+=== 1.2.2   Revision: 2012-04-13_08:00:00 === 
 
 Changed Word options so smart quotes are not used, and - is not changed to dash. This should ensure you can copy from the html version to a text document or terminal screen with proper fidelity. Re: issue 145
-1.2.3   Revision 2012-04-14_12:00:00
+=== 1.2.3   Revision 2012-04-14_12:00:00 === 
 
 Fixed some remaining - (dash) problems.
 -----
 = 2         Introduction = 
-2.1       Who is this written for?
+== 2.1       Who is this written for? ==
 
 PropForth is written for people who want to interactively use and program Propeller based systems. It assumes you are familiar with Propeller based hardware, and have some knowledge of the Propeller architecture.
-2.2       What is PropForth?
+== 2.2       What is PropForth? ==
 
 PropForth runs on the propeller. It is an interactive development and run time system. You can communicate with PropForth using a standard serial port, or via ethernet and telnet depending on the capabilities of the system you are using. It has a rich set of words which allow you to quickly and easily manipulate the hardware interactively. It is easy to program new words and use them in addition to the native set of words. Where necessary, you can write new words in assembler code for fast execution.
 
@@ -44,7 +44,7 @@ PropForth is outstanding for rapid exploration and development. The interactive 
 Each Propeller can run PropForth on up to 8 cogs, and you can concurrently interact with the cogs. Normal configuration uses one cog for serial or ethernet communication allowing for up to 7 concurrent PropForth sessions.
 
 It is based on the Forth programming language, but it has been tuned for the propeller architecture and parallel execution. PropForth does not prevent or protect you from manipulating the propeller however you like. While it can be simple to use, it is also very powerful.
-2.3       Document Conventions
+== 2.3       Document Conventions ==
 
 This document contains a lot of code samples and the following are the conventions used.
 
@@ -76,7 +76,7 @@ Example input
 Output line1
 
 More output
-2.4       Propforth Version
+== 2.4       Propforth Version ==
 
 This text is written assuming PropForth V5.0, the download is available on Google Code. We will be using the PropForth System except where explicitly noted.
 2.5       Loading PropForth
