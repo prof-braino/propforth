@@ -135,7 +135,7 @@ h100 h-100 hFFFF_FFFF
 Prop0 Cog6 ok
 }}}
 
-Binary numbers are preceded with a b.
+Binary numbers are preceded with a `b`.
 
 {{{
 b_1001_0011 b0010
@@ -143,7 +143,7 @@ b_1001_0011 b0010
 Prop0 Cog6 ok
 }}}
 
-Decimal numbers are default at boot, but they can be entered explicitly by preceding the number with a d.
+Decimal numbers are default at boot, but they can be entered explicitly by preceding the number with a `d`.
 
 {{{
 d_1 d3 d-100
@@ -342,7 +342,7 @@ ST: -0_000_000_720
 Prop0 Cog6 ok
 }}}
 
-`*` is a signed multiply. There is a u* for unsigned multiply.
+`*` is a signed multiply. There is a `u*` for unsigned multiply.
 
  === 3.4.8    `/` ===
 
