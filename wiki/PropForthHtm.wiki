@@ -29,9 +29,9 @@ This Document is currently produced using Word 2007. It uses specific styles for
 
 This revision is draft. It needs to be proof read and edited.
 
- === 1.2.2   Revision: 2012-04-13_08:00:00 === 
+ === 1.2.2   Revision: `2012-04-13_08:00:00` === 
 
-Changed Word options so smart quotes are not used, and - is not changed to dash. This should ensure you can copy from the html version to a text document or terminal screen with proper fidelity. Re: issue 145
+Changed Word options so smart quotes are not used, and `-` is not changed to dash. This should ensure you can copy from the html version to a text document or terminal screen with proper fidelity. Re: issue 145
 
  === 1.2.3   Revision `2012-04-14_12:00:00` === 
 
