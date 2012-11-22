@@ -3643,6 +3643,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 }}}
 
+}}}
+
  === 9.1.39                       (loop) === 
 
 \ (loop) ( -- ) \ add 1 to loop counter, branch if count is below limit offset follows,
@@ -3685,57 +3687,85 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 \ - ( n1 n2 -- n1-n2 ) \ subtracts n2 from n1
 
+}}}
+
  === 9.1.46                      -1 === 
 
 \ -1 or true, used frequently
+
+}}}
 
  === 9.1.47                      . === 
 
 \ . ( n1 -- ) prints the signed number on the top of the stack
 
+}}}
+
  === 9.1.48                      ." === 
 
 \
+
+}}}
 
  === 9.1.49                      ... === 
 
 \ ... followed by a CR indicates the end of file by the file system write/update word, nop at the prompt
 
+}}}
+
  === 9.1.50                      .cstr === 
 
 \ .cstr ( addr -- ) emit a counted string at addr
+
+}}}
 
  === 9.1.51                      .str === 
 
 \ .str ( c-addr u1 -- ) emit u1 characters at c-addr
 
+}}}
+
  === 9.1.52                      .strname === 
 
 \ .strname ( c-addr -- ) c-addr points to a forth name field, print the name
+
+}}}
 
  === 9.1.53                      0 === 
 
 \ Word constant, 0 or false, used frequently
 
+}}}
+
  === 9.1.54                      0< === 
 
 \ 0< ( n1 -- t/f ) true if n1 < 0
+
+}}}
 
  === 9.1.55                      0<> === 
 
 \ 0<> ( n1 -- t/f ) true if n1 is not zero 
 
+}}}
+
  === 9.1.56                      0= === 
 
 \ 0= ( n1 -- t/f ) true if n1 is zero
+
+}}}
 
  === 9.1.57                      0> === 
 
 \ 0> ( n1 -- t/f ) true if n1 > 0
 
+}}}
+
  === 9.1.58                      0>= === 
 
 \ 0>= ( n1 -- t/f ) true if n1 >= 0
+
+}}}
 
  === 9.1.59                      0branch === 
 
@@ -3743,210 +3773,338 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 \ -2 is to itself, +2 is next word
 
+}}}
+
  === 9.1.60                      1 === 
 
 \ Word constant, 1, used frequently
+
+}}}
 
  === 9.1.61                      1+ === 
 
 \ 1+ ( n1 -- n1+1 )
 
+}}}
+
  === 9.1.62                      1- === 
 
 \ 1- ( n1 -- n1-1 )
+
+}}}
 
  === 9.1.63                      2 === 
 
 \ Word constant, 2, used frequently
 
+}}}
+
  === 9.1.64                      2+ === 
 
 \ 2+ ( n1 -- n1+2 )
+
+}}}
 
  === 9.1.65                      2- === 
 
 \ 2- ( n1 -- n1-2 )
 
+}}}
+
  === 9.1.66                      2/ === 
 
 \ 2/ ( n1 -- n1>>1 ) n1 is shifted arithmetically right 1 bit
 
+}}}
+
  === 9.1.67                      2>r === 
 
 \ 2>r ( n1 n2 -- ) \ pop top 2 stack to RS
+}}}
+
  === 9.1.68                      2drop
 
 \ 2drop ( n1 n2 -- ) drop top 2 items on the stack
+}}}
+
  === 9.1.69                      2dup
 
 \ 2dup ( n1 n2 -- n1 n2 n1 n2 ) copy top 2 items on the stack
+}}}
+
  === 9.1.70                      2lock
 
 \
+}}}
+
  === 9.1.71                      2unlock
 
 \
+}}}
+
  === 9.1.72                      3drop
 
 \ 3drop ( n1 n2 n3 -- ) drop top 3 items on the stack
+}}}
+
  === 9.1.73                      4*
 
 \ 4* ( n1 -- n1<<2 ) n1 is shifted logically left 2 bits
+}}}
+
  === 9.1.74                      4+
 
 \ 4+ ( n1 -- n1+4 )
+}}}
+
  === 9.1.75                      :
 
 \
+}}}
+
  === 9.1.76                      ;
 
 \
+}}}
+
 9.1.77                      < 
 
 \ < ( n1 n2 -- t/f ) \ flag is true if and only if n1 is less than n2
+}}}
+
 9.1.78                      <#
 
 \ <# ( -- ) initialize the output area
+}}}
+
 9.1.79                      <=
 
 \ <= ( n1 n2 -- t/f) true if n1 <= n2
+}}}
+
 9.1.80                      <> 
 
 \ <> ( x1 x2 -- flag ) flag is true if and only if x1 is not bit-for-bit the same as x2.
+}}}
+
 9.1.81                      =
 
 \ = ( n1 n2 -- t/f ) \ compare top 2 32 bit stack values, true if they are equal
+}}}
+
 9.1.82                      > 
 
 \ > ( n1 n2 -- t/f ) \ flag is true if and only if n1 is greater than n2
+}}}
+
 9.1.83                      >=
 
 \ >= ( n1 n2 -- t/f) true if n1 >= n2
+}}}
+
 9.1.84                      >con
 
 \ >con ( n1 -- ) disconnect the current cog, and connect the console to the cog n1
+}}}
+
 9.1.85                      >in
 
 \ >in ( -- addr ) access as a word, addr is the var the offset in characters from the start of the input buffer to
+}}}
+
 9.1.86                      >m
 
 \ >m ( n1 -- n2 ) produce a 1 bit mask n2 for position n1
+}}}
+
 9.1.87                      >out
 
 \ >out ( -- addr ) access as a word, the offset to the current output byte
+}}}
+
 9.1.88                      >r
 
 \ >r ( n1 -- ) \ pop stack top to RS
+}}}
+
 9.1.89                      C!
 
 \ C! ( c1 addr -- ) \ store 8 bit value (c1) main memory at addr
+}}}
+
 9.1.90                      C@
 
 \ C@ ( addr -- c1 ) \ fetch 8 bit value at main memory addr
+}}}
+
 9.1.91                      C@++
 
 \ C@++ ( c-addr -- c-addr+1 c1 ) fetch the character and increment the address
+}}}
+
 9.1.92                      COG!
 
 \ COG! ( n1 addr -- ) \ store 32 bit value (n1) at cog addr
 
  
+}}}
+
 9.1.93                      COG@
 
 \ COG@ ( addr -- n1 ) \ fetch 32 bit value at cog addr
+}}}
+
 9.1.94                      ERR
 
 \ ERR ( n1 -- ) clear the input queue, set the error n1 and reset this cog
+}}}
+
 9.1.95                      L!
 
 \ L! ( n1 addr -- ) \ store 32 bit value (n1) at main memory addr
+}}}
+
 9.1.96                      L@
 
 \ L@ ( addr -- n1 ) \ fetch 32 bit value at main memory addr
+}}}
+
 9.1.97                      RS!
 
 \ RS! ( n1 n2 -- ) \ store n1 at the n2th position on the return stack, 0 is the top of stack
+}}}
+
 9.1.98                      RS@
 
 \ RS@ ( addr -- n1 ) \ fetch n1th value down the return stack, 0 is the top of stack
+}}}
+
 9.1.99                      ST!
 
 \ ST! ( n1 n2 -- ) \ store n1 at the n2th position on the stack, 0 is the top of stack
+}}}
+
 9.1.100                 ST@
 
 \ ST@ ( addr -- n1 ) \ fetch n1th value down the stack, 0 is the top of stack
+}}}
+
 9.1.101                 W!
 
 \ W! ( h1 addr -- ) \ store 16 bit value (h1) main memory at addr
+}}}
+
 9.1.102                 W+!
 
 \ W+! ( n1 addr -- ) add n1 to the word contents of address
+}}}
+
 9.1.103                 W@
 
 \ W@ ( addr -- h1 ) \ fetch 16 bit value at main memory addr
+}}}
+
 9.1.104                  [if
 
 \ [if xxx   ( flag -- ) if flag  is 0, drop all characters until ], [if should be the first only only chars on the line
+}}}
+
 9.1.105                  [ifdef
 
 \ [ifdef xxx   ( -- ) if xxx is not defined drop all characters until ], [ifdef xxx should be the first only only chars on the line
+}}}
+
 9.1.106                  [ifndef
 
 \ [ifndef xxx   ( -- ) if xxx is defined drop all characters until ], [ifndef xxx should be the first only only chars on the line
+}}}
+
 9.1.107                 \
 
 \ \ ( -- ) moves the parse pointer >in to the end of the line
+}}}
+
 9.1.108                 ]
 
 \
+}}}
+
 9.1.109                 _accept
 
 \ _accept ( -- +n2 ) collect padsize -2 characters or until eol, convert ctl chars to space,
 
 \ pad with 1 space at start & end. For parsing ease, and for the length byte when we make cstrs
+}}}
+
 9.1.110                 _asmpfa>nfa
 
 \ _asmpfa>nfa ( addr -- addr ) pfa>nfa for an asm word
+}}}
+
 9.1.111                 _cnip
 
 \ _ cnip ( -- )  Use in the _xasm*>* words to get rid of litw word
+}}}
+
 9.1.112                 _dictsearch
 
 \ _dictsearch ( nfa cstr -- n1) nfa - addr to start searching in the dictionary, cstr - the counted string to find
 
 \   n1 - -1 if found, 0 if not found, a fast assembler routine
+}}}
+
 9.1.113                 _dl
 
 \ _dl( c1 -- ) drop lines unitl c1 is received as the first or second character in a line, a . is emitted for each line
+}}}
+
 9.1.114                 _ecs
 
 \ _ecs ( -- ) emit a colon followed by a space
+}}}
+
 9.1.115                 _eeread
 
 \ _eeread ( t/f -- c1 ) flag should be true is this is the last read
+}}}
+
 9.1.116                 _eewrite
 
 \ _eewrite ( c1 -- t/f ) write c1 to the eeprom, true if there was an error
+}}}
+
 9.1.117                 _femit?
 
 \ _femit? (c1 ioaddr -- t/f) true if the output emitted a char, a fast non blocking emit
+}}}
+
 9.1.118                 _finit
 
 \ This word variable is 0 (spin code) when the propeller is rebooted and set to non-zero when
 
 \ forth is initialized
+}}}
+
 9.1.119                 _fkey?
 
 \ _fkey? ( ioaddr -- c1 t/f ) fast nonblocking key routine, true if c1 is a valid key
+}}}
+
 9.1.120                 _forthpfa>nfa
 
 \ _forthpfa>nfa ( addr -- addr ) pfa>nfa for a forth word
+}}}
+
 9.1.121                 _if
 
 \ _if xxx   ( flag -- ) if flag  is 0, drop all characters until ], [if should be the first only only chars on the line
+}}}
+
 9.1.122                 _lc
 
 \ _lc ( -- addr) the address of the last character in the pad, filled by the parse word
+}}}
+
 9.1.123                 _lockarray
 
 \ _lockarray - 8 character array used to keep track of locks
@@ -3958,29 +4116,48 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \                                 \ hi 4 bits is the lockcount
 
 \                                 \ lo 4 bits is the cogid
+}}}
+
 9.1.124                 _maskin
 
 \ _maskin ( n -- t/f ) n is the bit mask to read in
+}}}
+
+}}}
+
 9.1.125                 _maskouthi
 
 \ _maskouthi ( n -- ) set the bits in n hi
+}}}
+
+
 9.1.126                 _maskoutlo
 
 \ _maskoutlo ( n -- ) set the bits in n low
+}}}
+
 9.1.127                 _mmcs
 
 \ _ mmcs ( -- ) print MISMATCHED CONTROL STRUCTURE(S), then clear input keys
+}}}
+
 9.1.128                 _p+
 
 \ _p+ ( offset -- addr )  the offset is added to the contents of the par register, giving an address references
 
 \ the cogdata
+}}}
+
 9.1.129                 _p?
 
 \ \ _p? ( -- t/f) true if prompts and errors are on
+}}}
+
 9.1.130                 _qp
 
 \ _qp ( -- cstr ) we are past the open " in a string, parse the string in the pad and return a cstr
+}}}
+
 9.1.131                 _serial
 
 \ _serial ( n1 n2 n3 -- )
@@ -4012,18 +4189,28 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \
 
 \
+}}}
+
 9.1.132                 _sp
 
 \ _sp ( n1 -- ) put n1 in the dictionary, followed by the string in the pad
+}}}
+
 9.1.133                 _udf
 
 \ _udf ( -- ) print out UNDEFINED WORD
+}}}
+
 9.1.134                 _wc1
 
 \ _wc1 ( x -- nfa ) skip blanks parse the next word and create a constant, allocate a word, 2 bytes
+}}}
+
 9.1.135                 _wkeyto
 
 \ This word variable defines the number of loops for an input timeout
+}}}
+
 9.1.136                 _xasm1>1
 
 \ _xasm1>1 ( n -- n ) \ the assembler operation is specified by the literal which follows (replaces the i field)
@@ -4046,92 +4233,152 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ _xasm2>flagIMM ( n1 n2 -- n ) \ there is first an immediate word, then assembler operation
 
 \ is specified by the literal which follows (replaces the i field)
+}}}
+
 9.1.142                 _xis
 
 \ _xis ( c-addr len base -- t/f ) true if the string is numeric
+}}}
+
 9.1.143                 _xnu
 
 \ _xnu ( c-addr len base -- n1 ) convert string to a signed number
+}}}
+
 9.1.144                 accept
 
 \ accept ( -- ) uses the pad and accepts up to padsize - 2
+}}}
+
 9.1.145                 alignl
 
 \ alignl ( n1 -- n1) aligns n1 to a long (32 bit)  boundary
+}}}
+
 9.1.146                 alignw
 
 \ alignw ( n1 -- n1) aligns n1 to a halfword (16 bit)  boundary
+}}}
+
 9.1.147                 allot
 
 \ allot ( n1 -- ) add n1 to here, allocates space on the data dictionary or release it
+}}}
+
 9.1.148                 and
 
 \ and ( n1 n2 -- n1 ) \ bitwise n1 and n2
+}}}
+
 9.1.149                 andn
 
 \ andn ( n1 n2 -- n1 ) \ bitwise n1 and inverted n2
+}}}
+
 9.1.150                 andnC!
 
 \ andnC! ( c1 addr -- ) and inverse of c1 with the contents of address
+}}}
+
 9.1.151                 asmlabel
 
 \ asmlabel ( x -- ) skip blanks parse the next word and create an assembler entry
+}}}
+
 9.1.152                 base
 
 \ base ( -- addr ) access as a word, the address of the base variable
+}}}
+
 9.1.153                 begin
 
 \
+}}}
+
 9.1.154                 between
 
 \ between ( n1 n2 n3 -- t/f ) true if n2 <= n1 <= n3
+}}}
+
 9.1.155                 bl
 
 \ This is space constant
+}}}
+
 9.1.156                 bounds
 
 \ bounds ( x n -- x+n x )
+}}}
+
 9.1.157                 branch
 
 \ branch \ 16 bit branch offset follows -  -2 is to itself, +2 is next word
+}}}
+
 9.1.158                 build_BootKernel
 
 \
+}}}
+
 9.1.159                 build_BootOpt
 
 \
+}}}
+
 9.1.160                 c"
 
 \ c" ( -- c-addr ) compiles the string delimited by ", runtime return the addr of the counted string ** valid only in that line
 
 \ comiple time, caddress is not left on the stack
+}}}
+
 9.1.161                 c,
 
 \ c, ( x -- ) allocate 1 byte in the dictionary and copy x to that location
+}}}
+
 9.1.162                 cappend
 
 \ cappend ( c-addr1 c-addr2 -- ) addpend the cstr from c-addr1 to c-addr2
+}}}
+
 9.1.163                 cappendn
 
 \ cappendn ( n cstr -- ) print the number n and append to cstr
+}}}
+
 9.1.164                 ccopy
 
 \ ccopy ( c-addr1 c-addr2 -- ) Copy the cstr from c-addr1 to c-addr2
+}}}
+
 9.1.165                 ccreate
 
 \ ccreate ( cstr -- ) create a dictionary entry
+}}}
+
+}}}
+
 9.1.166                 cds
 
 \ cds ( -- addr) access as a word, the display string for this cog
+}}}
+
 9.1.167                 checkdict
 
 \ checkdict ( n -- ) make sure there are at least n bytes available in the dictionary
+}}}
+
 9.1.168                 clearkeys
 
 \ clearkeys ( -- ) clear the input keys
+}}}
+
 9.1.169                 clkfreq
 
 \ clkfreq ( -- u1 ) the system clock frequency
+}}}
+
 9.1.170                 cmove
 
 \ cmove ( c-addr1 c-addr2 u -- ) If u is greater than zero, copy u consecutive characters from the data space starting
@@ -4140,402 +4387,655 @@ According to the specs, typical current consumption should be in the 25 micro-am
 9.1.171                 cnt
 
 \ cnt - address of the the global cnt register for this cog
+}}}
+
 9.1.172                 cogcds
 
 \ cogcds ( n1 -- addr) the address of the display string for cog n1
+}}}
+
 9.1.173                 coghere
 
 \ coghere ( -- addr ) access as a word, the first unused register address in this cog
+}}}
+
 9.1.174                 cogid
 
 \ cogid ( -- n1 ) return id of the current cog ( 0 - 7 )
+}}}
+
 9.1.175                 cogio
 
 \ cogio ( n -- addr) the address of the data area for cog n
+}}}
+
 9.1.176                 cogiochan
 
 \ cogiochan ( n1 n2 -- addr ) cog n1, channel n2 ->addr
+}}}
+
 9.1.177                 cognchan
 
 \ cognchan ( n1 -- n2 ) number of io channels for cog n2
+}}}
+
 9.1.178                 cognumpad
 
 \ cognumpad ( n1 -- addr ) the address of numpad for cog n1
+}}}
+
 9.1.179                 cogpad
 
 \ cogpad ( n1 -- addr ) the address of pad for cog n1
+}}}
+
 9.1.180                 cogreset
 
 \ cogreset ( n1 -- ) reset the forth cog
+}}}
+
 9.1.181                 cogstate
 
 \ cogstate ( n1 -- addr ) the address of state for cog n1
+}}}
+
 9.1.182                 cogstop
 
 \ cogstop ( n -- ) stop cog n
+}}}
+
 9.1.183                 cogx
 
 \ cogx ( cstr n -- ) execute cstr on cog n
+}}}
+
 9.1.184                 compile?
 
 \ compile? ( -- t/f ) true if we are in a compile
+}}}
+
 9.1.185                 cq
 
 \ cq ( -- addr ) returns the address of the counted string following this word and increments the IP past it
+}}}
+
 9.1.186                 cr
 
 \ cr ( -- ) emits a carriage return
+}}}
+
 9.1.187                 create
 
 \ create ( -- ) skip blanks parse the next word and create a dictionary entry
+}}}
+
 9.1.188                 cstr=
 
 \ cstr= ( cstr1 cstr2 -- t/f ) case sensitive compare
+}}}
+
 9.1.189                 delms
 
 \ delms ( n1 -- ) delay n1 milli-seconds for 80Mhz h68DB max
+}}}
+
 9.1.190                 dictend
 
 \ dictend - access as a word, the end of the total dictionary space
+}}}
+
 9.1.191                 dira
 
 \ dira - address of the the dira register for this cog
+}}}
+
 9.1.192                 do
 
+
 \
+}}}
+
 9.1.193                 doconl
 
 \ doconl ( -- n1 ) \ push a 32 bit constant which follows the stack - implicit a_exit
+}}}
+
 9.1.194                 doconw
 
 \ doconw ( -- h1 ) \ push 16 bit constant which follows on the stack - implicit a_exit
+}}}
+
 9.1.195                 doloop
 
 \
+}}}
+
 9.1.196                 dothen
 
 \
 9.1.197                 dovarl
 
 \ dovarl ( -- addr ) \ push address of 32 bit variable which follows the stack - implicit a_exit
+}}}
+
 9.1.198                 dovarw
 
 \ dovarw ( -- addr ) \ push address of 16 bit variable which follows on the stack - implicit a_exit
+}}}
+
 9.1.199                 dq
 
 \ dq ( -- ) emit a counted string at the ip, and increment the ip past it and word alignw it
+}}}
+
 9.1.200                 drop
 
 \ drop ( n1 -- ) \ drop the value on the top of the stack
+}}}
+
 9.1.201                 dup
 
 \ dup ( n1 -- n1 n1 )
+}}}
+
 9.1.202                 else
 
 \
+}}}
+
 9.1.203                 emit
 
 \ emit ( c1 -- ) emit the char on the stack
+}}}
+
 9.1.204                 exec
 
 \ exec ( -- ) marks last entry as an eXecute word, executes always
+}}}
+
 9.1.205                 execute
 
 \ execute ( addr -- ) execute the word - pfa address is on the stack
+}}}
+
 9.1.206                 execword
 
 \ execword ( -- addr ) a long, an area where the current word for execute is stored
+}}}
+
 9.1.207                 exit
 
 \ exit the current forth word, and back to the caller
+}}}
+
 9.1.208                 femit?
 
 \ femit? (c1 -- t/f) true if the output emitted a char, a fast non blocking emit
+}}}
+
 9.1.209                 fill
 
 \ fill ( c-addr u char -- ) fill the memory with char
+}}}
+
 9.1.210                 find
 
 \ find ( c-addr -- c-addr 0 | xt 2 | xt 1  |  xt -1 ) c-addr is a counted string, 0 - not found, 2 eXecute word,
 
 \ 1 immediate word, -1 word NOT ANSI
+}}}
+
 9.1.211                 fisnumber
 
 \ fisnumber ( -- ) dummy routines for indirection when float package is loaded
+}}}
+
 9.1.212                 fkey?
 
 \ fkey? ( -- c1 t/f ) fast nonblocking key routine, true if c1 is a valid key
+}}}
+
 9.1.213                 fl
 
 \ fl ( -- ) buffer the input and route to a free cog
+}}}
+
 9.1.214                 fl_in
 
 \ fl_in - pointer to next character for input
+}}}
+
 9.1.215                 fl_lock
 
 \ to ensure one fast load at a time
+}}}
+
 9.1.216                 fnumber
 
 \ fnumber ( c-addr len -- n1 ) convert string to a signed number
 
 \ dummy routines for indirection when float package is loaded
+}}}
+
 9.1.217                 forthentry
 
 \ forthentry ( -- ) marks last entry as a forth word
+}}}
+
 9.1.218                 freedict
 
 \ freedict ( -- ) free the forth dictionary
+}}}
+
 9.1.219                 fstart
 
 \ this word is what the IP is set to on a reboot or a reset
 
 \ fstart ( -- ) the start word
+}}}
+
 9.1.220                 here
 
 \ here - access as a word, the current end of the dictionary space being used
+}}}
+
 9.1.221                 herelal
 
 \ herelal ( -- ) alignw contents of here to a long boundary, 4 byte boundary
+}}}
+
 9.1.222                 herewal
 
 \ herewal ( -- ) align contents of here to a word boundary, 2 byte boundary
+}}}
+
 9.1.223                 hex
 
 \ hex ( -- ) set the base for hexadecimal
+}}}
+
 9.1.224                 hubopf
 
 \ hubopf ( n1 n2 -- t/f ) n2 specifies which hubop (0 - 7), t/f is the 'c' flag is set from the hubop
+}}}
+
 9.1.225                 hubopr
 
 \ hubopr ( n1 n2 -- n3 ) n2 specifies which hubop (0 - 7), n1 is the source datcog, n3 is returned,
+}}}
+
 9.1.226                 i
 
 \ i ( -- n1 ) the most current loop counter
+}}}
+
 9.1.227                 if
 
 \
+}}}
+
 9.1.228                 immediate
 
 \ immediate ( -- ) marks last entry as an immediate word
+}}}
+
 9.1.229                 ina
 
 \ ina - address of the the ina register for this cog
+}}}
+
 9.1.230                 init_coghere
 
 \ init_coghere ( -- ) This word can be replaced to the assembler optimizations, initializes the coghere wvariable
+}}}
+
 9.1.231                 initcon
 
 \ initcon ( -- ) initialize the default serial console on this cog
+}}}
+
 9.1.232                 interpret
 
 \ interpret ( -- ) the main interpreter loop
+}}}
+
 9.1.233                 interpretpad
 
 \ interpretpad ( -- ) interpret the contents of the pad
+}}}
+
 9.1.234                 io
 
 \ io  ( -- addr ) the address of the io channel for the cog
+}}}
+
 9.1.235                 ioconn
 
 \ ioconn ( n1 n2 -- ) connect the 2 cogs, disconnect them from other cogs first
+}}}
+
 9.1.236                 iodis
 
 \ iodis ( n1 -- ) cogid to disconnect, disconnect this cog and the cog it is connected to
+}}}
+
 9.1.237                 iolink
 
 \ iolink ( n1 n2 -- ) links the 2 cogs, output of n1 -> input of n2, output of n2 -> old output of n1
+}}}
+
 9.1.238                 iounlink
 
 \ iounlink ( n1 -- ) unlinks the cog n1
+}}}
+
 9.1.239                 isdigit
 
 \ isdigit ( c1 -- t/f ) true if is it a valid digit according to base
+}}}
+
 9.1.240                 isnamechar
 
 \ isnamechar ( c1 -- t/f ) true if c1 is a valif name char > $20 < $7F
+}}}
+
 9.1.241                 isnumber
 
 \ isnumber ( c-addr len -- t/f ) true if the string is numeric
+}}}
+
 9.1.242                 isunumber
 
 \ isunumber ( c-addr len -- t/f ) true if the string is numeric
+}}}
+
 9.1.243                 key
 
 \ key ( -- c1 ) get a key
+}}}
+
 9.1.244                 l,
 
 \ l, ( x -- ) allocate 1 long, 4 bytes in the dictionary and copy x to that location
+}}}
+
 9.1.245                 l>w
 
 \ l>w ( n1n2 -- n1 n2) break into 16 bits
+}}}
+
 9.1.246                 lasterr
 
 \ lasterr ( -- addr ) access as a char, an errorcode, set by ERR, and the kernel - if 0 - no error
+}}}
+
 9.1.247                 lastnfa
 
 \ lastnfa ( -- addr ) gets the last NFA
 9.1.248                 leave
 
 \ leave ( -- ) exits at the next loop or +loop, i is placed to the max loop value
+}}}
+
 9.1.249                 litl
 
 \ litl ( -- n1 ) \  push a 32 bit literal on the stack
+}}}
+
 9.1.250                 litw
 
 \ litw ( -- h1 ) \  push a 16 bit literal on the stack
+}}}
+
 9.1.251                 lock
 
 \ lock ( lock# -- )
+}}}
+
 9.1.252                 lockdict
 
 \ lockdict ( -- ) lock the forth dictionary
+}}}
+
 9.1.253                 loop
 
 \
+}}}
+
 9.1.254                 lshift
 
 \ lshift (n1 n2 -- n3) \ n3 = n1 shifted left n2 bits
+}}}
+
 9.1.255                 lxasm
 
 \ lxasm ( addr -- ) load the assembler at addr and execute it
+}}}
+
 9.1.256                 max
 
 \ max ( n1 n2 -- n1 ) \ signed max of top 2 stack values
+}}}
+
 9.1.257                 memend
 
 \ memend - access as a word, the end of memory available to PropForth
+}}}
+
 9.1.258                 min
 
 \ min ( n1 n2 -- n1 ) \ signed min of top 2 stack values
+}}}
+
 9.1.259                 name=
 
 \ name= ( cstr1 cstr2 -- t/f ) case sensitive compare
+}}}
+
 9.1.260                 namecopy
 
 \ namecopy ( c-addr1 c-addr2 -- ) Copy the name from c-addr1 to c-addr2
+}}}
+
 9.1.261                 namelen
 
 \ namelen ( c-addr -- c-addr+1 len ) returns c-addr+1 and the length of the name at c-addr
+}}}
+
 9.1.262                 namemax
 
 \ the maximum name length allowed must be 1F
 9.1.263                 negate
 
 \ negate ( n1 -- 0-n1 ) the negative of n1
+}}}
+
 9.1.264                 nextword
 
 \ nextword ( -- ) increment >in past current counted string
+}}}
+
 9.1.265                 nfa>lfa
 
 \ nfa>lfa ( addr -- addr ) go from the nfa (name field address) to the lfa (link field address)
+}}}
+
 9.1.266                 nfa>next
 
 \ nfa>next ( addr -- addr ) go from the current nfa to the prev nfa in the dictionary
+}}}
+
 9.1.267                 nfa>pfa
 
 \ nfa>pfa ( addr -- addr ) go from the nfa (name field address) to the pfa (parameter field address)
+}}}
+
 9.1.268                 nfcog
 
 \ nfcog ( -- n ) returns the next valid free forth cog
+}}}
+
 9.1.269                 nip
 
 \ nip ( x1 x2 -- x2 ) delete the item x1 from the stack
+}}}
+
 9.1.270                 npfx
 
 \ npfx ( c-addr1 c-addr2 -- t/f ) -1 if c-addr2 is prefix of c-addr1, 0 otherwise
+}}}
+
 9.1.271                 number
 
 \ number ( c-addr len -- n1 ) convert string to a signed number
+}}}
+
 9.1.272                 numpad
 
 \ numpad ( -- addr ) the of the area used by the numeric output routines, can be used carefully by other code
+}}}
+
 9.1.273                 numpadsize
 
 \ the size of the numpad, 34 bytes the largest number we can deal with is 33 digits
+}}}
+
 9.1.274                 onboot
 
 \ onboot ( n1 -- n1 ) n1 - reset error code
+}}}
+
 9.1.275                 onreset
 
 \ onreset ( n1 -- ) n1 - reset error code
+}}}
+
 9.1.276                 or
 
 \ or ( n1 n2 -- n1_or_n2 ) \ bitwise or
+}}}
+
 9.1.277                 orC!
 
 \ orC! ( c1 addr -- ) or c1 with the contents of address
+}}}
+
 9.1.278                 orlnfa
 
 \ orlnfa ( c1 -- ) ors c1 with the nfa length of the last name field entered
+}}}
+
 9.1.279                 outa
 
 \ outa - address of the the outa register for this cog
+}}}
+
 9.1.280                 over
 
 \ over ( n1 n2 -- n1 n2 n1 ) \ duplicate 2 value down on the stack to the top of the stack
+}}}
+
 9.1.281                 pad
 
 \ pad  ( -- addr ) access as bytes, or words and long, the address of the pad area - used by accept for keyboard input,
 
 \ can be used carefully by other code
+}}}
+
 9.1.282                 pad>in
 
 \ pad>in ( -- addr ) addr is the address to the start of the parse area.
+}}}
+
 9.1.283                 pad>out
 
 \ pad>out ( -- addr ) addr is the address to the the current output byte
+}}}
+
 9.1.284                 padbl
 
 \ padbl ( -- ) fills this cogs pad with blanks
+}}}
+
 9.1.285                 padsize
 
 \ the size of the pad area, 128 bytes
+}}}
+
 9.1.286                 par
 
 \ This is the par register, always initalized to point to this cogs section of cogdata
+}}}
+
 9.1.287                 parse
 
 \ parse ( c1 -- +n2 ) parse the word delimited by c1, or the end of buffer is reached, n2 is the length >in is the offset
 
 \ in the pad of the start of the parsed word REPLACED IN VERSION 4.3 2011FEB24
+}}}
+
 9.1.288                 parsebl
 
 \ parsebl ( -- t/f) parse the next word in the pad delimited by blank, true if there is a word
+}}}
+
 9.1.289                 parsenw
 
 \ parsenw ( -- cstr ) parse and move to the next word, str ptr is zero if there is no next word
+}}}
+
 9.1.290                 parseword
 
 \ parseword ( c1 -- +n2 ) skip blanks, and parse the following word delimited by c1, update to be a counted string in
 
 \ the pad
+}}}
+
 9.1.291                 pfa>nfa
 
 \ pfa>nfa ( addr -- addr ) gets the name field address (nfa) for a parameter field address (pfa)
+}}}
+
 9.1.292                 prop
 
 \ prop - access as a word, the address of the string identifier of this prop
+}}}
+
 9.1.293                 propid
 
 \ propid - access as a word, the numeric id of this prop
+}}}
+
 9.1.294                 r>
 
 \ r> ( -- n1 ) \ pop top of RS to stack
+}}}
+
 9.1.295                 reboot
 
 \ reboot ( -- ) reboot the propellor chip
+}}}
+
 9.1.296                 reset
 
 \ reset ( -- ) reset this cog
+}}}
+
 9.1.297                 rot
 
 : rot h2 ST@ h2 ST@ h2 ST@ 3 ST! 3 ST! 0 ST! ;
+}}}
+
 9.1.298                 rot2
 
 \ rot2 ( x1 x2 x3 -- x3 x1 x2 )
+}}}
+
 9.1.299                 rshift
 
 \ rshift ( n1 n2 -- n3) \ n3 = n1 shifted right logically n2 bits
+}}}
+
 9.1.300                 serial
 
 \ serial ( n1 n2 n3 -- )
@@ -4565,20 +5065,30 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \               - if this bit is 1, CR is transmitted as CR
 
 \
+}}}
+
 
  
 9.1.301                 seti
 
 \ seti ( n1 -- ) set the most current loop counter
+}}}
+
 9.1.302                 skipbl
 
 \ skipbl ( -- ) increment >in past blanks or until it equals padsize
+}}}
+
 9.1.303                 space
 
 \ space ( -- ) emits a space
+}}}
+
 9.1.304                 spaces
 
 \ spaces ( n -- ) emit n spaces
+}}}
+
 9.1.305                 state
 
 \ state ( -- addr) access as a char
@@ -4594,9 +5104,13 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ bit 4 -  0 - accept echos line off / 1 - accept echos line on
 
 \ bit 5 - 7 - number of io channels - 1
+}}}
+
 9.1.306                 swap
 
 \ swap ( n1 n2 -- n2 n1 ) \ swap top 2 stack values
+}}}
+
 9.1.307                 t0
 
 \ these are temporay variables, and by convention are only used within a word
@@ -4604,6 +5118,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ caution, make sure you know what words you are calling
 
 \ t0 - access as a word, temp variable
+}}}
+
 9.1.308                 t1
 
 \ these are temporay variables, and by convention are only used within a word
@@ -4611,6 +5127,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ caution, make sure you know what words you are calling
 
 \ t1 - access as a word, temp variable
+}}}
+
 9.1.309                 tbuf
 
 \ these are temporay variables, and by convention are only used within a word
@@ -4618,30 +5136,48 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ caution, make sure you know what words you are calling
 
 \ tbuf - access as a chars, words, or longs. Temp array of 32 bytes
+}}}
+
 9.1.310                 then
 
 \
+}}}
+
 9.1.311                 thens
 
 \
+}}}
+
 9.1.312                 tochar
 
 \ tochar ( n1 -- c1 ) convert c1 to a char
+}}}
+
 9.1.313                 todigit
 
 \ todigit ( c1 -- n1 ) converts character to a number
+}}}
+
 9.1.314                 tuck
 
 \ tuck ( x1 x2 -- x2 x1 x2 )
+}}}
+
 9.1.315                 u*
 
 \ u* ( u1 u2 -- u1*u2) u1*u2 must be a valid 32 bit unsigned number
+}}}
+
 9.1.316                 u.
 
 \ u. ( n1 -- ) prints the unsigned number on the top of the stack
+}}}
+
 9.1.317                 u/
 
 \ u/ ( u1 u2 -- u1/u2) u1 divided by u2
+}}}
+
 9.1.318                 u/mod
 
 \ u/mod ( u1 u2 -- remainder quotient) both remainder and quotient are 32 bit unsigned numbers
@@ -4654,50 +5190,81 @@ According to the specs, typical current consumption should be in the 25 micro-am
 9.1.321                 um/mod
 
 \ um/mod ( u1lo u1hi u2 -- remainder quotient ) \ unsigned divide & mod  u1 divided by u2
+}}}
+
 9.1.322                 unlock
 
 \ unlock ( lock# -- )
+}}}
+
 9.1.323                 unlockall
 
 \ unlockall ( -- ) unlocks everything this cog has locked
+}}}
+
 9.1.324                 until
 
 \
+}}}
+
 9.1.325                 unumber
 
 \ unumber ( c-addr len -- u1 ) convert string to an unsigned number
+}}}
+
 9.1.326                 version
 
 \ version - access as a word, the address of the string version of PropForth
+}}}
+
 9.1.327                 w,
 
 \ w, ( x -- ) allocate 1 halfword 2 bytes in the dictionary and copy x to that location
+}}}
+
 9.1.328                 w>l
 
 \ w>l ( n1 n2 -- n1n2 ) consider only lower 16 bits of each source word
+}}}
+
 9.1.329                 wconstant
 
 \ wconstant ( x -- ) skip blanks parse the next word and create a constant, allocate a word, 2 bytes
+}}}
+
 9.1.330                 wlastnfa
 
 \ wlastnfa - access as a word, the address of the last nfa
+}}}
+
 9.1.331                 wvariable
 
 \ wvariable ( -- ) skip blanks parse the next word and create a variable, allocate a word, 2 bytes
+}}}
+
 9.1.332                 xisnumber
 
 \ xisnumber ( c-addr len -- t/f ) true if the string is numeric
+}}}
+
 9.1.333                 xnumber
 
 \ xnumber ( c-addr len -- n1 ) convert string to a signed number
+}}}
+
 9.1.334                 xor
 
 \ \ xor ( n1 n2 -- n1_xor_n2 ) \ bitwise xor
+}}}
+
 9.1.335                 {
 
 \ { ( -- ) discard all the characters between { and }
 
 \ open brace MUST be the first and only character on a new line, the close brace must be on another line
+}}}
+
+
 9.1.336                 }
 
 \ } ( -- )
