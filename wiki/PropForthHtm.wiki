@@ -85,6 +85,7 @@ Download PropForth, and unzip. In the directory CurrentRelease\PropForth, follow
 2.6       Teraterm / terminal programs
 
 The examples were written and tested using Teraterm, however just about any terminal program should work.
+-----
 = 3         Getting started = 
 
 The best way to use this document is with a running PropForth system. Use the examples to explore PropForth. At the end of the getting started section, you will  have been introduced to a number of the native PropForth words and you will be able to program new words.
@@ -1460,6 +1461,7 @@ Prop0 Cog6 ok
 ST: 0_000_000_111 0_000_000_222 0_000_000_333
 
 If a cog does not have the console connected, the output of st? is discarded. We can use .const?, which behaves like st? but send the output to the console. This allows us to see the stack on another cog.
+-----
 = 4         PropForth pin IO = 
 
 One of the most common tasks on a microcontroller is input from pins, and output to pins. PropForth makes this easy.
@@ -2382,6 +2384,7 @@ For further details see the MCS documentation.
 The IP server interfaces to the WIZNET W5100 to provide 4 Internet Protocol channels. Like any channel, these can connect to cogs and provide IO. In the case when all the channels are started as telnet channels, each channel can connect to a cog. This allows talking to 4 cogs at the same time with 4 telnet sessions. Very handy for some applications.
 
 For further details see the IP documentation.
+-----
 7         PropForth Assembler
 
 The propeller has a unique architecture and PropForth was written to match the architecture. Using assembler on the propeller is not the same as using assembler on a more conventional architecture, and it is very different than a CISC  architecture like what you find in your PC. Firstly each cog has 496 registers that are accessible only to that cog for instructions and data. Each cog can rely on the fact that only it can modify those registers, short of the cog being reset externally. In addition, each cog will never be interrupted, it will continually execute and it can decide when to access main memory or not. This can give each cog a high degree of isolation from the other cogs.
@@ -3109,6 +3112,8 @@ These are the postfixes the assembler recognizes. For a detailed description see
 ·         wc
 
 ·         wz
+
+-----
 8         A Low Power example
 
 We are going to see how we can make a propeller go into very low power mode, and then boot up when a key is hit.
@@ -3282,6 +3287,7 @@ CON:Prop0 Cog5 RESET - last status: 0 ok
 Prop0 Cog6 ok
 
 According to the specs, typical current consumption should be in the 25 micro-amp range. Will measure and update sometime.
+-----
 9         Forth Word Reference
 9.1       Core Word Set (build_BootKernel, build_BootOpt)
 9.1.1   #
@@ -5454,5 +5460,9 @@ There are 2 versions of this word, the first is a slow version used during initi
 
 \ Address to a long in cog memory, the base for all the cog memory used by thesd filesystem
 
- 
+-----
+
+= Section 10 =
+
+This sections is under design 
  
