@@ -3499,6 +3499,9 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 {{{
 \ This word constant is an assembler addresses
+}}}
+
+
 
  === 9.1.19                      $C_varEnd === 
 
@@ -3550,6 +3553,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
  === 9.1.26                      $S_con === 
 
+
+{{{
 \ prop 7 is normally the console channel, this is the prop which handles communication to the console, and
 \ provides the interface to the rest of the cogs
 }}}
@@ -3557,24 +3562,32 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
  === 9.1.27                      $S_rxpin === 
 
+
+{{{
 \ Word constant, the rxpin of the serial driver
 }}}
 
 
  === 9.1.28                      $S_txpin === 
 
+
+{{{
 \ Word constant, the txpin of the serial driver
 }}}
 
 
  === 9.1.29                      ' === 
 
+
+{{{
 \ ' ( -- addr ) returns the execution token for the next name, if not found it returns 0
 }}}
 
 
  === 9.1.30                       (+loop) === 
 
+
+{{{
 \ (+loop) ( n1 -- ) \ add n1 to loop counter, branch if count is below limit, offset follows,
 \ -2 is to itself, +2 is next word
 }}}
@@ -3582,12 +3595,16 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
  === 9.1.31                      (createbegin) === 
 
+
+{{{
 \ Internal word
 }}}
 
 
  === 9.1.32                       (createend) === 
 
+
+{{{
 \ Internal word
 }}}
 
@@ -3595,6 +3612,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
  === 9.1.33                       (fl) === 
 
+
+{{{
 \ (fl) ( -- n1 ) buffer input and emit n1 is the number of characters overflowed
 
 \
@@ -3613,12 +3632,16 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
  === 9.1.34                       (flout) === 
 
+
+{{{
 \ (flout)  ( -- ) attempt to output a character
 }}}
 
 
  === 9.1.35                      (ioconn) === 
 
+
+{{{
 \ (ioconn) ( n1 n2 n3 n4 -- ) connect cog n1 channel n2 to cog n3 channel n4, disconnect them from other cogs first
 }}}
 
@@ -4761,182 +4784,258 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.245                 l>w
 
+
+{{{
 \ l>w ( n1n2 -- n1 n2) break into 16 bits
 }}}
 
 9.1.246                 lasterr
 
+
+{{{
 \ lasterr ( -- addr ) access as a char, an errorcode, set by ERR, and the kernel - if 0 - no error
 }}}
 
 9.1.247                 lastnfa
 
+
+{{{
 \ lastnfa ( -- addr ) gets the last NFA
 9.1.248                 leave
 
+
+{{{
 \ leave ( -- ) exits at the next loop or +loop, i is placed to the max loop value
 }}}
 
 9.1.249                 litl
 
+
+{{{
 \ litl ( -- n1 ) \  push a 32 bit literal on the stack
 }}}
 
 9.1.250                 litw
 
+
+{{{
 \ litw ( -- h1 ) \  push a 16 bit literal on the stack
 }}}
 
 9.1.251                 lock
 
+
+{{{
 \ lock ( lock# -- )
 }}}
 
 9.1.252                 lockdict
 
+
+{{{
 \ lockdict ( -- ) lock the forth dictionary
 }}}
 
 9.1.253                 loop
 
+
+{{{
 \
 }}}
 
 9.1.254                 lshift
 
+
+{{{
 \ lshift (n1 n2 -- n3) \ n3 = n1 shifted left n2 bits
 }}}
 
 9.1.255                 lxasm
 
+
+{{{
 \ lxasm ( addr -- ) load the assembler at addr and execute it
 }}}
 
 9.1.256                 max
 
+
+{{{
 \ max ( n1 n2 -- n1 ) \ signed max of top 2 stack values
 }}}
 
 9.1.257                 memend
 
+
+{{{
 \ memend - access as a word, the end of memory available to PropForth
 }}}
 
 9.1.258                 min
 
+
+{{{
 \ min ( n1 n2 -- n1 ) \ signed min of top 2 stack values
 }}}
 
 9.1.259                 name=
 
+
+{{{
 \ name= ( cstr1 cstr2 -- t/f ) case sensitive compare
 }}}
 
 9.1.260                 namecopy
 
+
+{{{
 \ namecopy ( c-addr1 c-addr2 -- ) Copy the name from c-addr1 to c-addr2
 }}}
 
 9.1.261                 namelen
 
+
+{{{
 \ namelen ( c-addr -- c-addr+1 len ) returns c-addr+1 and the length of the name at c-addr
 }}}
 
 9.1.262                 namemax
 
+
+{{{
 \ the maximum name length allowed must be 1F
+}}}
+
 9.1.263                 negate
 
+
+{{{
 \ negate ( n1 -- 0-n1 ) the negative of n1
 }}}
 
 9.1.264                 nextword
 
+
+{{{
 \ nextword ( -- ) increment >in past current counted string
 }}}
 
 9.1.265                 nfa>lfa
 
+
+{{{
 \ nfa>lfa ( addr -- addr ) go from the nfa (name field address) to the lfa (link field address)
 }}}
 
 9.1.266                 nfa>next
 
+
+{{{
 \ nfa>next ( addr -- addr ) go from the current nfa to the prev nfa in the dictionary
 }}}
 
 9.1.267                 nfa>pfa
 
+
+{{{
 \ nfa>pfa ( addr -- addr ) go from the nfa (name field address) to the pfa (parameter field address)
 }}}
 
 9.1.268                 nfcog
 
+
+{{{
 \ nfcog ( -- n ) returns the next valid free forth cog
 }}}
 
 9.1.269                 nip
 
+
+{{{
 \ nip ( x1 x2 -- x2 ) delete the item x1 from the stack
 }}}
 
 9.1.270                 npfx
 
+
+{{{
 \ npfx ( c-addr1 c-addr2 -- t/f ) -1 if c-addr2 is prefix of c-addr1, 0 otherwise
 }}}
 
 9.1.271                 number
 
+
+{{{
 \ number ( c-addr len -- n1 ) convert string to a signed number
 }}}
 
 9.1.272                 numpad
 
+
+{{{
 \ numpad ( -- addr ) the of the area used by the numeric output routines, can be used carefully by other code
 }}}
 
 9.1.273                 numpadsize
 
+
+{{{
 \ the size of the numpad, 34 bytes the largest number we can deal with is 33 digits
 }}}
 
 9.1.274                 onboot
 
+
+{{{
 \ onboot ( n1 -- n1 ) n1 - reset error code
 }}}
 
 9.1.275                 onreset
 
+
+{{{
 \ onreset ( n1 -- ) n1 - reset error code
 }}}
 
 9.1.276                 or
 
+
+{{{
 \ or ( n1 n2 -- n1_or_n2 ) \ bitwise or
 }}}
 
 9.1.277                 orC!
 
+
+{{{
 \ orC! ( c1 addr -- ) or c1 with the contents of address
 }}}
 
 9.1.278                 orlnfa
 
+
+{{{
 \ orlnfa ( c1 -- ) ors c1 with the nfa length of the last name field entered
 }}}
 
 9.1.279                 outa
 
+
+{{{
 \ outa - address of the the outa register for this cog
 }}}
 
 9.1.280                 over
 
+
+{{{
 \ over ( n1 n2 -- n1 n2 n1 ) \ duplicate 2 value down on the stack to the top of the stack
 }}}
 
 9.1.281                 pad
 
+
+{{{
 \ pad  ( -- addr ) access as bytes, or words and long, the address of the pad area - used by accept for keyboard input,
 
 \ can be used carefully by other code
@@ -4949,26 +5048,36 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.283                 pad>out
 
+
+{{{
 \ pad>out ( -- addr ) addr is the address to the the current output byte
 }}}
 
 9.1.284                 padbl
 
+
+{{{
 \ padbl ( -- ) fills this cogs pad with blanks
 }}}
 
 9.1.285                 padsize
 
+
+{{{
 \ the size of the pad area, 128 bytes
 }}}
 
 9.1.286                 par
 
+
+{{{
 \ This is the par register, always initalized to point to this cogs section of cogdata
 }}}
 
 9.1.287                 parse
 
+
+{{{
 \ parse ( c1 -- +n2 ) parse the word delimited by c1, or the end of buffer is reached, n2 is the length >in is the offset
 
 \ in the pad of the start of the parsed word REPLACED IN VERSION 4.3 2011FEB24
@@ -4976,16 +5085,22 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.288                 parsebl
 
+
+{{{
 \ parsebl ( -- t/f) parse the next word in the pad delimited by blank, true if there is a word
 }}}
 
 9.1.289                 parsenw
 
+
+{{{
 \ parsenw ( -- cstr ) parse and move to the next word, str ptr is zero if there is no next word
 }}}
 
 9.1.290                 parseword
 
+
+{{{
 \ parseword ( c1 -- +n2 ) skip blanks, and parse the following word delimited by c1, update to be a counted string in
 
 \ the pad
@@ -4993,31 +5108,43 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.291                 pfa>nfa
 
+
+{{{
 \ pfa>nfa ( addr -- addr ) gets the name field address (nfa) for a parameter field address (pfa)
 }}}
 
 9.1.292                 prop
 
+
+{{{
 \ prop - access as a word, the address of the string identifier of this prop
 }}}
 
 9.1.293                 propid
 
+
+{{{
 \ propid - access as a word, the numeric id of this prop
 }}}
 
 9.1.294                 r>
 
+
+{{{
 \ r> ( -- n1 ) \ pop top of RS to stack
 }}}
 
 9.1.295                 reboot
 
+
+{{{
 \ reboot ( -- ) reboot the propellor chip
 }}}
 
 9.1.296                 reset
 
+
+{{{
 \ reset ( -- ) reset this cog
 }}}
 
@@ -5028,16 +5155,22 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.298                 rot2
 
+
+{{{
 \ rot2 ( x1 x2 x3 -- x3 x1 x2 )
 }}}
 
 9.1.299                 rshift
 
+
+{{{
 \ rshift ( n1 n2 -- n3) \ n3 = n1 shifted right logically n2 bits
 }}}
 
 9.1.300                 serial
 
+
+{{{
 \ serial ( n1 n2 n3 -- )
 
 \ n1 - tx pin
@@ -5071,26 +5204,36 @@ According to the specs, typical current consumption should be in the 25 micro-am
  
 9.1.301                 seti
 
+
+{{{
 \ seti ( n1 -- ) set the most current loop counter
 }}}
 
 9.1.302                 skipbl
 
+
+{{{
 \ skipbl ( -- ) increment >in past blanks or until it equals padsize
 }}}
 
 9.1.303                 space
 
+
+{{{
 \ space ( -- ) emits a space
 }}}
 
 9.1.304                 spaces
 
+
+{{{
 \ spaces ( n -- ) emit n spaces
 }}}
 
 9.1.305                 state
 
+
+{{{
 \ state ( -- addr) access as a char
 
 \ bit 0 -  0 - interpret mode / 1 - forth compile mode
@@ -5108,11 +5251,15 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.306                 swap
 
+
+{{{
 \ swap ( n1 n2 -- n2 n1 ) \ swap top 2 stack values
 }}}
 
 9.1.307                 t0
 
+
+{{{
 \ these are temporay variables, and by convention are only used within a word
 
 \ caution, make sure you know what words you are calling
@@ -5122,6 +5269,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.308                 t1
 
+
+{{{
 \ these are temporay variables, and by convention are only used within a word
 
 \ caution, make sure you know what words you are calling
@@ -5131,6 +5280,8 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.309                 tbuf
 
+
+{{{
 \ these are temporay variables, and by convention are only used within a word
 
 \ caution, make sure you know what words you are calling
@@ -5140,31 +5291,43 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.310                 then
 
+
+{{{
 \
 }}}
 
 9.1.311                 thens
 
+
+{{{
 \
 }}}
 
 9.1.312                 tochar
 
+
+{{{
 \ tochar ( n1 -- c1 ) convert c1 to a char
 }}}
 
 9.1.313                 todigit
 
+
+{{{
 \ todigit ( c1 -- n1 ) converts character to a number
 }}}
 
 9.1.314                 tuck
 
+
+{{{
 \ tuck ( x1 x2 -- x2 x1 x2 )
 }}}
 
 9.1.315                 u*
 
+
+{{{
 \ u* ( u1 u2 -- u1*u2) u1*u2 must be a valid 32 bit unsigned number
 }}}
 
@@ -5180,85 +5343,127 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 9.1.318                 u/mod
 
+
+{{{
 \ u/mod ( u1 u2 -- remainder quotient) both remainder and quotient are 32 bit unsigned numbers
+}}}
+
 9.1.319                 u>=
 
+
+{{{
 \ u>= ( u1 u2 -- t/f ) \ flag is true if and only if u1 is greater or equal to than u2
+}}}
+
 9.1.320                 um*
 
+
+{{{
 \ um* ( u1 u2 -- u1*u2L u1*u2H ) \ unsigned 32bit * 32bit -- 64bit result
+}}}
+
 9.1.321                 um/mod
 
+
+{{{
 \ um/mod ( u1lo u1hi u2 -- remainder quotient ) \ unsigned divide & mod  u1 divided by u2
 }}}
 
 9.1.322                 unlock
 
+
+{{{
 \ unlock ( lock# -- )
 }}}
 
 9.1.323                 unlockall
 
+
+{{{
 \ unlockall ( -- ) unlocks everything this cog has locked
 }}}
 
 9.1.324                 until
 
+
+{{{
 \
 }}}
 
 9.1.325                 unumber
 
+
+{{{
 \ unumber ( c-addr len -- u1 ) convert string to an unsigned number
 }}}
 
 9.1.326                 version
 
+
+{{{
 \ version - access as a word, the address of the string version of PropForth
 }}}
 
 9.1.327                 w,
 
+
+{{{
 \ w, ( x -- ) allocate 1 halfword 2 bytes in the dictionary and copy x to that location
 }}}
 
 9.1.328                 w>l
 
+
+{{{
 \ w>l ( n1 n2 -- n1n2 ) consider only lower 16 bits of each source word
 }}}
 
 9.1.329                 wconstant
 
+
+{{{
 \ wconstant ( x -- ) skip blanks parse the next word and create a constant, allocate a word, 2 bytes
 }}}
 
 9.1.330                 wlastnfa
 
+
+{{{
 \ wlastnfa - access as a word, the address of the last nfa
 }}}
 
 9.1.331                 wvariable
 
+
+{{{
 \ wvariable ( -- ) skip blanks parse the next word and create a variable, allocate a word, 2 bytes
 }}}
 
 9.1.332                 xisnumber
 
+
+{{{
 \ xisnumber ( c-addr len -- t/f ) true if the string is numeric
 }}}
 
 9.1.333                 xnumber
 
+
+{{{
 \ xnumber ( c-addr len -- n1 ) convert string to a signed number
 }}}
 
 9.1.334                 xor
 
+
+{{{
 \ \ xor ( n1 n2 -- n1_xor_n2 ) \ bitwise xor
 }}}
 
 9.1.335                 {
 
+
+{{{
 \ { ( -- ) discard all the characters between { and }
 
 \ open brace MUST be the first and only character on a new line, the close brace must be on another line
