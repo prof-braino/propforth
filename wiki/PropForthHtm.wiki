@@ -25,7 +25,7 @@ This Document is currently produced using Word 2007. It uses specific styles for
 
  == 1.2       Revision History == 
 
- === 1.2.1   Revision: 2012-03-04_07:00:00 === 
+ === 1.2.1   Revision: `2012-03-04_07:00:00` === 
 
 This revision is draft. It needs to be proof read and edited.
 
