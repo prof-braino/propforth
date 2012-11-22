@@ -1012,6 +1012,8 @@ Prop0 Cog6 ok
 
  === 3.7.10                      = ===
 
+{{{
+
 \ = ( n1 n2 -- t/f ) \ compare top 2 32 bit stack values, true if they are equal
 
 sc 1 0 st? cr = . cr cr 1 1 st? cr = . cr cr 0 -1 st? cr = . cr cr
@@ -1043,8 +1045,12 @@ ST: 0_000_000_000 -0_000_000_001
  
 
 Prop0 Cog6 ok
-3.7.11                      < 
+}}}
 
+ === 3.7.11                      <  === 
+
+
+{{{
 \ < ( n1 n2 -- t/f ) \ flag is true if and only if n1 is less than n2
 
 sc 1 0 st? cr < . cr cr 1 1 st? cr < . cr cr 0 1 st? cr < . cr cr
