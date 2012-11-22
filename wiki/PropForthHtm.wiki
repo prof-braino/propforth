@@ -1966,7 +1966,7 @@ We set one cog modifying a signal with a cycle of one second, and we set another
 
 -----
 
- = 5         LogicAnalyzer =
+ = 5         `LogicAnalyzer` =
 
 When we need to look at changing io pins, and understand what they are doing, Logic Analyzer that looks at the pins a user determined intervals, and store the results. It can only understand if a pin is hi or lo, if it is left as a floating input, it may appear as either, or as changing. When Logic Analyzer samples, it either uses cog memory for fast sampling or free dictionary memory for slower sampling.
 
