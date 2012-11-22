@@ -304,13 +304,13 @@ Prop0 Cog6 ok
 
 }}}
 
- === 3.4.6   - ===
+ === 3.4.6   `-` ===
 
 {{{
 \ - ( n1 n2 -- n1-n2 ) \ subtracts n2 from n1
 
 sc 1 2 3 4 5 -6 cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st? cr - cr st?
-}}
+}}}
  
  === 3.4.7   * ===
 
