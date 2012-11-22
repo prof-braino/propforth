@@ -1784,6 +1784,7 @@ Prop0 Cog6 ok
 Now having defined pins? We can start turning pins on and off and look at them.
 
  === 4.1.10                      IO example 1 === 
+
 {{{
 
 \ IO example 1
@@ -1804,10 +1805,6 @@ pins? cr cr
 
 c" 0 pinout 0 pinlo" 0 cogx cr cr
 
- 
-
- 
-
 Prop0 Cog6 ok
 
 pins? cr cr
@@ -1816,17 +1813,9 @@ pins? cr cr
 
 LO LO LO LO LO LO LO LO LO HI HI LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO LO HI HI HI HI
 
- 
-
- 
-
 Prop0 Cog6 ok
 
 c" 0 pinhi" 0 cogx cr cr
-
- 
-
- 
 
 Prop0 Cog6 ok
 
