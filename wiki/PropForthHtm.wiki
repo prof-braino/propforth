@@ -3289,108 +3289,140 @@ Prop0 Cog6 ok
 According to the specs, typical current consumption should be in the 25 micro-amp range. Will measure and update sometime.
 -----
  = 9         Forth Word Reference = 
+
  == 9.1       Core Word Set (build_BootKernel, build_BootOpt) == 
+
  === 9.1.1   # ===
 
 \ # ( n1 -- n2 ) divide n1 by base and convert the remainder to a char and append to the output
+
  === 9.1.2   #> === 
 
 \ #> ( n1 -- caddr ) address of a counted string representing the output, NOT ANSI
+
  === 9.1.3   #s === 
 
 \ #s ( n1 -- 0 ) execute # until the remainder is 0
+
  === 9.1.4   $C_IP === 
 
 \ The forth instruction pointer
+
  === 9.1.5   $C_a_(+loop) === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.6   $C_a_(loop) === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.7   $C_a_0branch === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.8   $C_a_2>r === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.9   $C_a_branch === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.10                      $C_a_doconw === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.11                      $C_a_dovarw === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.12                      $C_a_exit === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.13                      $C_a_litl === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.14                      $C_a_litw === 
 
 \ This word constant is an assembler addresses
+
  === 9.1.15                      $C_a_lxasm === 
 
 \ This word constant is an assembler addresses
-9.1.16                      $C_a_next
+
+ === 9.1.16                      $C_a_next === 
 
 \ This word constant is an assembler addresses
-9.1.17                      $C_fMask
+
+ === 9.1.17                      $C_fMask === 
 
 \ This word constant is an assembler addresses
-9.1.18                      $C_resetDreg
+
+ === 9.1.18                      $C_resetDreg === 
 
 \ This word constant is an assembler addresses
-9.1.19                      $C_varEnd
+
+ === 9.1.19                      $C_varEnd === 
 
 \ This word constant is an assembler addresses
-9.1.20                      $H_cogdata
+
+ === 9.1.20                      $H_cogdata === 
 
 \ This is a pointer to the main cogdata area
-9.1.21                      $H_cq
+
+ === 9.1.21                      $H_cq === 
 
 \ This is ' cq - the routine which handles the word c"
-9.1.22                      $H_dq
+
+ === 9.1.22                      $H_dq === 
 
 \ This is ' dq - the routine which handles the word ."
-9.1.23                      $H_entry
 
-\ This is the address of the assembler which is loaded to a PropForth cog
-9.1.24                      $S_baud
+ === 9.1.23                      $H_entry === 
+
+\ This is the address of the assembler which is loaded to a PropForth Cog
+
+ === 9.1.24                      $S_baud === 
 
 \ Word constant, the initial starting baud rate of the serial driver
-9.1.25                      $S_cdsz
+
+ === 9.1.25                      $S_cdsz === 
 
 \ The size of the cog's data area, this will be initialized by $S_cdsz defined as a spin constant
-9.1.26                      $S_con
+
+ === 9.1.26                      $S_con === 
 
 \ prop 7 is normally the console channel, this is the prop which handles communication to the console, and
-
 \ provides the interface to the rest of the cogs
-9.1.27                      $S_rxpin
+
+ === 9.1.27                      $S_rxpin === 
 
 \ Word constant, the rxpin of the serial driver
-9.1.28                      $S_txpin
+
+ === 9.1.28                      $S_txpin === 
 
 \ Word constant, the txpin of the serial driver
-9.1.29                      '
+
+ === 9.1.29                      ' === 
 
 \ ' ( -- addr ) returns the execution token for the next name, if not found it returns 0
-9.1.30                       (+loop)
+
+ === 9.1.30                       (+loop) === 
 
 \ (+loop) ( n1 -- ) \ add n1 to loop counter, branch if count is below limit, offset follows,
-
 \ -2 is to itself, +2 is next word
-9.1.31                      (createbegin)
+
+ === 9.1.31                      (createbegin) === 
 
 \ Internal word
-9.1.32                       (createend)
+
+ === 9.1.32                       (createend) === 
 
 \ Internal word
-9.1.33                       (fl)
+
+ === 9.1.33                       (fl) === 
 
 \ (fl) ( -- n1 ) buffer input and emit n1 is the number of characters overflowed
 
@@ -3405,139 +3437,173 @@ According to the specs, typical current consumption should be in the 25 micro-am
 \ dictend - pointer to the next character for output
 
 \ initialize
-9.1.34                       (flout)
+
+ === 9.1.34                       (flout) === 
 
 \ (flout)  ( -- ) attempt to output a character
-9.1.35                      (ioconn)
+
+ === 9.1.35                      (ioconn) === 
 
 \ (ioconn) ( n1 n2 n3 n4 -- ) connect cog n1 channel n2 to cog n3 channel n4, disconnect them from other cogs first
-9.1.36                      (iodis)
+
+ === 9.1.36                      (iodis) === 
 
 \ (iodis) ( n1 n2 -- ) cog n1 channel n2 disconnect, disconnect this cog and the cog it is connected to
-9.1.37                       (iolink)
+
+ === 9.1.37                       (iolink) === 
 
 \ (iolink) ( n1 n2 n3 n4 -- ) links the 2 channels, output of cog n1 channel n2 -> input of cog n3 channel n4,
 
 \  output of n3 channel n4 -> old output of n1 channel n2
-9.1.38                       (iounlink)
+
+ === 9.1.38                       (iounlink) === 
 
 \ (iounlink) ( n1 n2 -- ) unlinks cog n1 channel n2
-9.1.39                       (loop)
+
+ === 9.1.39                       (loop) === 
 
 \ (loop) ( -- ) \ add 1 to loop counter, branch if count is below limit offset follows,
 
 \ -2 is to itself, +2 is next word
-9.1.40                       (nfcog)
+
+ === 9.1.40                       (nfcog) === 
 
 \ (nfcog) ( -- n1 n2 ) n1 the next valid free forth cog, n2 is 0 if the cog is valid
-9.1.41                       (prop)
+
+ === 9.1.41                       (prop) === 
 
 \ The default prop string
-9.1.42                       (version)
+
+ === 9.1.42                       (version) === 
 
 \ The default version string
-9.1.43                      +
+
+ === 9.1.43                      + === 
 
 \ + ( n1 n2 -- n1+n2 ) \ sum of n1 & n2
-9.1.44                      +loop
+
+ === 9.1.44                      +loop === 
 
 \
-9.1.45                      -
+
+ === 9.1.45                      - === 
 
 \ - ( n1 n2 -- n1-n2 ) \ subtracts n2 from n1
-9.1.46                      -1
+
+ === 9.1.46                      -1 === 
 
 \ -1 or true, used frequently
-9.1.47                      .
+
+ === 9.1.47                      . === 
 
 \ . ( n1 -- ) prints the signed number on the top of the stack
-9.1.48                      ."
+
+ === 9.1.48                      ." === 
 
 \
-9.1.49                      ...
+
+ === 9.1.49                      ... === 
 
 \ ... followed by a CR indicates the end of file by the file system write/update word, nop at the prompt
-9.1.50                      .cstr
+
+ === 9.1.50                      .cstr === 
 
 \ .cstr ( addr -- ) emit a counted string at addr
-9.1.51                      .str
+
+ === 9.1.51                      .str === 
 
 \ .str ( c-addr u1 -- ) emit u1 characters at c-addr
-9.1.52                      .strname
+
+ === 9.1.52                      .strname === 
 
 \ .strname ( c-addr -- ) c-addr points to a forth name field, print the name
-9.1.53                      0
+
+ === 9.1.53                      0 === 
 
 \ Word constant, 0 or false, used frequently
-9.1.54                      0<
+
+ === 9.1.54                      0< === 
 
 \ 0< ( n1 -- t/f ) true if n1 < 0
-9.1.55                      0<>
 
-\ 0<> ( n1 -- t/f ) true if n1 is not zero
-9.1.56                      0=
+ === 9.1.55                      0<> === 
+
+\ 0<> ( n1 -- t/f ) true if n1 is not zero 
+
+ === 9.1.56                      0= === 
 
 \ 0= ( n1 -- t/f ) true if n1 is zero
-9.1.57                      0>
+
+ === 9.1.57                      0> === 
 
 \ 0> ( n1 -- t/f ) true if n1 > 0
-9.1.58                      0>=
+
+ === 9.1.58                      0>= === 
 
 \ 0>= ( n1 -- t/f ) true if n1 >= 0
-9.1.59                      0branch
+
+ === 9.1.59                      0branch === 
 
 \ 0branch ( t/f -- ) \ branch it top of stack value is zero 16 bit branch offset follows,
 
 \ -2 is to itself, +2 is next word
-9.1.60                      1
+
+ === 9.1.60                      1 === 
 
 \ Word constant, 1, used frequently
-9.1.61                      1+
+
+ === 9.1.61                      1+ === 
 
 \ 1+ ( n1 -- n1+1 )
-9.1.62                      1-
+
+ === 9.1.62                      1- === 
 
 \ 1- ( n1 -- n1-1 )
-9.1.63                      2
+
+ === 9.1.63                      2 === 
 
 \ Word constant, 2, used frequently
-9.1.64                      2+
+
+ === 9.1.64                      2+ === 
 
 \ 2+ ( n1 -- n1+2 )
-9.1.65                      2-
+
+ === 9.1.65                      2- === 
 
 \ 2- ( n1 -- n1-2 )
-9.1.66                      2/
+
+ === 9.1.66                      2/ === 
 
 \ 2/ ( n1 -- n1>>1 ) n1 is shifted arithmetically right 1 bit
-9.1.67                      2>r
+
+ === 9.1.67                      2>r === 
 
 \ 2>r ( n1 n2 -- ) \ pop top 2 stack to RS
-9.1.68                      2drop
+ === 9.1.68                      2drop
 
 \ 2drop ( n1 n2 -- ) drop top 2 items on the stack
-9.1.69                      2dup
+ === 9.1.69                      2dup
 
 \ 2dup ( n1 n2 -- n1 n2 n1 n2 ) copy top 2 items on the stack
-9.1.70                      2lock
+ === 9.1.70                      2lock
 
 \
-9.1.71                      2unlock
+ === 9.1.71                      2unlock
 
 \
-9.1.72                      3drop
+ === 9.1.72                      3drop
 
 \ 3drop ( n1 n2 n3 -- ) drop top 3 items on the stack
-9.1.73                      4*
+ === 9.1.73                      4*
 
 \ 4* ( n1 -- n1<<2 ) n1 is shifted logically left 2 bits
-9.1.74                      4+
+ === 9.1.74                      4+
 
 \ 4+ ( n1 -- n1+4 )
-9.1.75                      :
+ === 9.1.75                      :
 
 \
-9.1.76                      ;
+ === 9.1.76                      ;
 
 \
 9.1.77                      < 
