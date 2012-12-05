@@ -5,21 +5,35 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 
 = General =
 
- * which release should I use? 
+* which release should I use? 
 
 Always use the the most recent public release.  Previous releases are not supported,  as those issues are fixed in newer releases. 
 
- * Where do I start?
+* Where do I start?
 
-# Download the release archive zip file
-# Unzip the release to your hard drive anywhere you like
-# READ each README file you encounter in each directory AS  YOU ENCOUNTER IT
-# Find the CURRENT RELEASE DIRECTORY
-# FIND and start reading Propforth.htm This is your main reference for propforth
-# Determine which kernel you wish to use
+ # Download the release archive zip file
+ # Unzip the release to your hard drive anywhere you like
+ # READ each README file you encounter in each directory AS  YOU ENCOUNTER IT
+ # Find the CURRENT RELEASE DIRECTORY
+ # FIND and start reading Propforth.htm This is your main reference for propforth
+ # Determine which kernel you wish to use
  - PropForthDevKernel.spin is for plain propforth
 
  - PropForthSDKernel.spin is if you need TONS of storage for scripts, source code, data, etc.  You can use any size SD card.  Follow the directions for adding an SD card to you rig, its very simple and inexpensive.  Ask if you have questions. 
+
+* How do I learn propforth?  I have a question about a specific word.
+
+ # Load your kernel
+ # execute the word
+ # read the entries applicable to the word word in propforth.htm
+ # find the example code for the word in propforth.htm, if available
+ # find the example(s) in the tutorials that use the word
+ # run the examples and do experiments 
+ # if you still have questions, ask on the online forums
+ # email me directly.  I will try to get you to write up all you notes and post them on the wiki pages, be prepared to become famous in the forth world. 
+
+
+
 
  * What has changed, will my code be compatible with the new release, what words have changed?
 
@@ -34,6 +48,14 @@ The last significant change was NUMBER FORMATTING.  Decimal values composed of d
 Propforth v5.3 is expected to be the final version of propforth for the Prop 1. V5.3 contains the easier assembler, the assembler optimized kernel, the standard interfaces, the "standard interfaces" support, MCS (Go channels compatible) support, kernel buils automation, and automated test support.
 
 V5.3 really ROCKS.
+
+V5.3 is still in final packaging.  The documentation has to be reworked, as the ORGANIZATION of the docs has been adjusted. Yes, this is a pain in brain, but it must be done to be done right, and now is the time to do it right. 
+
+ * When will v5.3 be released?
+
+Sorry, I keep thinking we are done, and there keeps being another little thing we have to do.  After v3.x, I have decided never to release until the material is ready.  Rules is rules for a reason. 
+
+v5.3 have been released to the team, but will not be released to the public until the team has completed testing and vetting the docs. 
 
 = v5.2, v5.1 =
 
