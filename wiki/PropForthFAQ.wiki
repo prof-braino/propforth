@@ -18,9 +18,9 @@ Always use the the most recent public release.  Previous releases are not suppor
  # FIND and start reading Propforth.htm This is your main reference for propforth
  # Determine which kernel you wish to use
 
- - PropForthDevKernel.spin in `\V5.0\CurrentRelease\PropForth`  is for plain propforth
+ - PropForthDevKernel.spin in `..\V5.0\CurrentRelease\PropForth `  is for plain propforth
 
- - PropForthSDKernel.spin in '..\\V5.0\CurrentRelease\PropForthSD' is if you need TONS of storage for scripts, source code, data, etc.  You can use any size SD card.  Follow the directions for adding an SD card to you rig, its very simple and inexpensive.  Ask if you have questions. 
+ - PropForthSDKernel.spin in `..\\V5.0\CurrentRelease\PropForthSD ` is if you need TONS of storage for scripts, source code, data, etc.  You can use any size SD card.  Follow the directions for adding an SD card to you rig, its very simple and inexpensive.  Ask if you have questions. 
 
 * How do I learn propforth?  I have a question about a specific word.
 
