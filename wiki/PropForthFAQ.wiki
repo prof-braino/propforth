@@ -9,6 +9,17 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 
 Always use the the most recent public release.  Previous releases are not supported,  as those issues are fixed in newer releases. 
 
+* Where do I start?
+
+# Download the release archive zip file
+# Unzip the release to your hard drive anywhere you like
+# READ each README file you encounter in each directory AS  YOU ENCOUNTER IT
+# Find the CURRENT RELEASE DIRECTORY
+# FIND and start reading Propforth.htm This is your main reference for propforth
+# Determine which kernel you wish to use
+ * PropForthDevKernel.spin is for plain propforth
+ * PropForthSDKernel.spin is if you need TONS of storage for scripts, source code, data, etc.  You can use any size SD card.  Follow the directions for adding an SD card to you rig, its very simple and inexpensive.  Ask if you have questions. 
+
  * What has changed, will my code be compatible with the new release, what words have changed?
 
 To the user, everything should be pretty much identical from release to release Only the internal plumbing is changed since version 3.X. The user accessible words generally do not change.  The code is optimized to to be faster, and smaller memory foot print. Words that are internal to propforth many change, but this would only affect advanced users attempting to redesign the kernel for custom applications.  Please contact the team directly with specific questions if you need to redesign the kernel.
