@@ -32,10 +32,7 @@ Always use the the most recent public release.  Previous releases are not suppor
  # if you still have questions, ask on the online forums
  # email me directly.  I will try to get you to write up all you notes and post them on the wiki pages, be prepared to become famous in the forth world. 
 
-
-
-
- * What has changed, will my code be compatible with the new release, what words have changed?
+* What has changed, will my code be compatible with the new release, what words have changed?
 
 To the user, everything should be pretty much identical from release to release Only the internal plumbing is changed since version 3.X. The user accessible words generally do not change.  _The code is optimized to to be faster, and smaller memory foot print. Words that are internal to propforth many change, but this would only affect advanced users attempting to redesign the kernel for custom applications.  Please contact the team directly with specific questions if you need to redesign the kernel_.
 
