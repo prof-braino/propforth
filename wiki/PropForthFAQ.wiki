@@ -3,6 +3,22 @@
 
 Newest questions are towards the top.  Older questions toward the bottom are for older versions, but may still address issues new users experience.  
 
+= General =
+
+ * which release should I use? 
+
+Always use the the most recent public release.  Previous releases are not supported,  as those issues are fixed in newer releases. 
+
+ * What has changed, will my code be compatible with the new release, what words have changed?
+
+To the user, everything should be pretty much identical from release to release Only the internal plumbing is changed since version 3.X. The user accessible words generally do not change.  The code is optimized to to be faster, and smaller memory foot print. Words that are internal to propforth many change, but this would only affect advanced users attempting to redesign the kernel for custom applications.  Please contact the team directly with specific questions if you need to redesign the kernel.
+
+The last significant change was NUMBER FORMATING.  Decimal values composed of digit 0-9 can be prefixed with a letter lowercase d to force decimal.Hex values using 0-9 and characters A-F can be prefixed with lowercase h to force hex. Radix-64 values (bear with me, I'm not really clear on this bit) using characters 0-9, A-Z, and a-y can be prefixed with lowercase letter z to force radix 64.  RADIX 64 is mainly used to encode optimized assembler routines in text files.  
+
+
+
+= v5.3 =
+
 = v5.0 (Planned September 2011) =
 
 When are going to start a separate FAQ for v5.0?
