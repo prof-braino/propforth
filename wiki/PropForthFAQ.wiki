@@ -9,6 +9,10 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 
 Always use the the most recent public release.  Previous releases are not supported,  as those issues are fixed in newer releases. 
 
+* What special hardware do I need?
+
+Propforth runs on any propchip that can load a spin file.  If you need SD storage, you need an SD card. Please follow the instructions for adding SD. 
+
 * Where do I start?
 
  # Download the release archive zip file
