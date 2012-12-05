@@ -19,6 +19,16 @@ The last significant change was NUMBER FORMATING.  Decimal values composed of di
 
 = v5.3 =
 
+Propforth v5.3 is expected to be the final version of propforth for the Prop 1. V5.3 contains the easier assembler, the assembler optimized kernel, the standard interfaces, the "standard interfaces" support, MCS (Go channels compatible) support, kernel buils automation, and automated test support.
+
+V5.3 really ROCKS.
+
+= v5.2, v5.1 =
+
+ * Where the heck are v5.1 and 5.2? 
+
+Propforth versions 5.1 and 5.2 were internal development releases and not publicly released.  These were the experiments for Build automation and automated test execution. 
+
 = v5.0 (Planned September 2011) =
 
 When are going to start a separate FAQ for v5.0?
