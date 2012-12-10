@@ -1,11 +1,117 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Some example code for doing squareroot in forth =
 
-Add your content here.
+There was a discussion about ANSI standard forth and whether forth code was portable across various implementations.  We came away with these examples.
+
+Basically, it seems that forth is not usually COMPLETELY compatible, that is, there are always at least some minor differences. Also, it seems that the minor differences can be identied easily (the words that don't exist in the target get flagged as UNKNOWN IDENTIFIER, etc), and the offending words can easily be replaced with valid words. 
+
+Your mileage may vary.
+
+= heater's squareroot examples =
+
+from http://forums.parallax.com/showthread.php?144414-The-Forth-Dimension.&p=1148471&viewfull=1#post1148471
+
+I think he started in gforth (GNU forth on the PC)
+
+{{{
+: sqrtiloop
+    begin
+        dup 0=  if exit then
+        swap over or
+        swap rot rot 2dup swap <=
+        if
+            swap over -
+            swap rot swap over +
+        else
+            rot swap over -
+        then
+        1 rshift
+        swap 2 rshift
+    again
+;
 
 
-= Braino Quare Root Example =
+\ Integer square root ( i -- s )
+: sqrti
+   0 1 30 lshift sqrtiloop drop swap drop                         
+;
+
+
+." Square root of 1000000 = "
+1000000 sqrti . cr
+}}}
+
+{{{
+: sqrtiloop
+    begin
+        dup 0=                            
+                                     ( i s t flag )
+        if
+            exit
+        then
+                                     ( i s t ) 
+
+
+    \ s |= t
+        swap                         ( i t s ) 
+        over                         ( i t s t )
+        or                           ( i t s )                                 
+ 
+        \ if (s <= i)                             
+        swap                         ( i s t )
+        rot                          ( s t i )
+        rot                          ( t i s ) 
+        2dup                         ( t i s i s )  
+        swap                         ( t i s s i )  
+        <=                           ( t i s f ) 
+        if
+            \ i = i - s
+            swap                     ( t s i )   
+            over                     ( t s i s )   
+            -
+                                     ( t s i ) 
+            \ s = s + t
+            swap                     ( t i s )
+            rot                      ( i s t ) 
+            swap                     ( i t s ) 
+            over                     ( i t s t ) 
+            +                        ( i t s )            
+        else
+            \ s = s - t
+            rot                      ( i s t )    
+            swap                     ( i t s )    
+            over                     ( i t s t )    
+            -                        ( i t s )    
+        then
+        
+        \ s = s >> 1
+        1 rshift                     ( i t s )           
+        \ t = t >> 2   
+        swap                         ( i s t )    
+        2 rshift                     ( i s t )    
+    again
+;
+
+
+\ Integer square root   ( i -- s )
+: sqrti
+   0                                 ( i s )
+   1 30 lshift                       ( i s t )
+   sqrtiloop                         ( i s t )
+   drop                              ( i s )
+   swap                              ( s i )
+   drop                              ( s )
+;
+
+
+}}}
+
+= Braino Square Root Example for propforth =
+
+From http://jasonwoof.org/sqrt.fs
+
+tweaked to run on propforth
 
 {{{
 : sqrt-closer \ ( square guess -- square guess adjustment) 
@@ -21,8 +127,8 @@ Add your content here.
              sqrt-closer \ target guess - target guess adjustment
       \       st?         \ comment this out when done
              dup         \ test the adjustment
-             0=          \ if result not zerro do it again
-       until             \ if result not zerro do it again
+             0=          \ if result not zero do it again
+       until             \ if result not zero do it again
        drop           \ get rid of guess 
 
        nip  \        get rid of old target
