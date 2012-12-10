@@ -1,0 +1,38 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Braino Quare Root Example =
+
+{{{
+: sqrt-closer \ ( square guess -- square guess adjustment) 
+              2dup / over - 2 / ;
+
+
+: sqrt \ ( square -- root )   start with our number on tthe stack 
+
+       1             \ first guess is 1 
+       0             \  first adjustment is zero
+       begin 
+             +           \ add the result to guess
+             sqrt-closer \ target guess - target guess adjustment
+      \       st?         \ comment this out when done
+             dup         \ test the adjustment
+             0=          \ if result not zerro do it again
+       until             \ if result not zerro do it again
+       drop           \ get rid of guess 
+
+       nip  \        get rid of old target
+       \ .              \ print the result  (instead of nip)
+       \ drop           \ get rid of  the old target (instead of nip)            
+   ;
+
+: sqrt-test 2000000000 1 do i dup . sqrt . cr loop ;
+: test 20 1 do i dup .  cr loop ;
+
+}}}
+
+end of page
