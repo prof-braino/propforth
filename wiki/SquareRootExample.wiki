@@ -115,15 +115,21 @@ tweaked to run on propforth
 
 {{{
 : sqrt-closer \ ( square guess -- square guess adjustment) 
-              2dup / over - 2 / ;
+              2dup \ take the target and the last guess
+              /    \ divide the target by the guess
+              over \ get the previous guess
+              -    \ subtract the previous guess from the intermediate value
+              2    \ divide this  
+              /    \ in half, to make the adjustment
+;
 
 
-: sqrt \ ( square -- root )   start with our number on tthe stack 
+: sqrt \ ( square -- root )   start with our number on the stack 
 
        1             \ first guess is 1 
        0             \  first adjustment is zero
        begin 
-             +           \ add the result to guess
+             +           \ add the previous adjustment to our guess
              sqrt-closer \ target guess - target guess adjustment
       \       st?         \ comment this out when done
              dup         \ test the adjustment
