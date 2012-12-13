@@ -79,6 +79,11 @@ tutorial-3.2 Serial Loopback.txt
 
 For instructions how to start a serial connection
 
+
+see
+http://code.google.com/p/propforth/wiki/HalfDuplexSerial
+for information on half duplex serial
+
 = DOCUMENTATION EXPERIMENT =
 
 We are hoping that the user community will contribute to the documentation. The idea is that as each user question is resolved, the user that receives the answer helps us "write it up" such that other folks can understand it, and this gets added to the PROFORTH.html document.
