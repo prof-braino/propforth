@@ -28,7 +28,7 @@ fl
 
 {  
 
-\ This entire block in curly brackets is a comment you you to read.  It is not interpreted
+\ This entire block in curly brackets is a comment for you to read.  It is not interpreted
 
 forth routines 25kbps max (80 Mhz clock), 14.5kpbs max for open collector
 assembler routines 3.636Mbs max (80Mhz clock - max is clkfreq / 22)
