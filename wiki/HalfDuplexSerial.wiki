@@ -1,4 +1,5 @@
 #summary Added Half Duplex Serial.
+#labels serial,halfduplex
 
 = Introduction =
 User Loopy's questions bout half duplex serial in these threads
@@ -490,7 +491,7 @@ variable numtesterrors  \ to count errors
 	0 until
 ;
 
-\ choose the Open Collector Test if the regular test don't do it for you
+\ choose the Open Collector Test if the regular test didnt do it for you
 
 : test_transmitOC
 	c" TEST_TX" cds W!
@@ -632,12 +633,12 @@ Disconnectiong the pin 17 wire makes the errors stop.
 If you have seen the results described, you have successfully demonstrated the half duplex serial connection between two props. 
 
  
-Add your content here.
+= more infor = 
 
+See the serial wiki page for more info
 
-= Details =
+http://code.google.com/p/propforth/wiki/SERIAL
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Also see the sections in Propforth.HTM in the download archive for the "official" documentation
+
+= End =
