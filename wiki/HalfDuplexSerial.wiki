@@ -633,7 +633,7 @@ Disconnectiong the pin 17 wire makes the errors stop.
 If you have seen the results described, you have successfully demonstrated the half duplex serial connection between two props. 
 
  
-= more infor = 
+= more information = 
 
 See the serial wiki page for more info
 
