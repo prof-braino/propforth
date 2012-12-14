@@ -46,7 +46,9 @@ Here is Caskaz's example of how its used:
             dup ft
             1+
        0 until 
-; 
+; \ this example work correctly for values up to 12
+  \ the value displayed for 13 is incorrect, it has already overflowed
+  \ the routine finally crashes after 25
 
 
 }}}
