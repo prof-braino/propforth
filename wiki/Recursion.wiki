@@ -162,7 +162,7 @@ Straight off the requirements, no refactoring
        2swap  \ a b c d - a b c d a b c d 
 ;
 
-: FFT_call_twice ( x y n s - ) \ when n is not zero
+: FFT_call_twice \ ( x y n s - ) when n is not zero
   \ Once with parameters x, y, n/2, s*2                
                  4dup 
                  swap  2/ \ (n/2)
