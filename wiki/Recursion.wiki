@@ -1,0 +1,52 @@
+#summary Recursion in Proforth
+
+= Recursion =
+
+Recursion is when a function calls itself. 
+
+In forth, we can have a reference to the same function with a function definition.  The word "recurse" make a function call itself again.
+
+Caskaz got this from  Sal, and posted it in the rpopforth 5.0 thread
+
+http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1145116&viewfull=1#post1145116
+
+= Code =
+
+This code implements recursion
+
+{{{
+lockdict
+: recurse lastnfa nfa>pfa w, ; immediate
+freedict
+
+}}}
+
+Here is Caskaz's example of how its used:
+
+{{{
+\ ( n1 -- n2 )  n2 = n1 X (n1-1) X (n1-2) X . . . X 1
+: factoral
+       dup 0 <=
+               if
+                   drop 1
+               else
+                   dup 1- recurse u*
+               then
+;
+
+\ ( n1 -- n2 )  n2 = n1 X (n1-1) X (n1-2) X . . . X 1
+: factoral_test factoral . cr ;
+}}}
+
+In this example, `factoral` takes a number off the stack.
+If the number is less than or equal to 1, the function returns 1
+Otherrwise, it decrements the number, call itself, and does unsigned multiply on the result.
+
+The affect is the factoral function. 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
