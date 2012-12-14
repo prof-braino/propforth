@@ -135,7 +135,7 @@ drop drop drop drop
 
 Using the stated requirements: [Recursion#Requirements]
 
-Straight off the requirements, no refactoring
+Straight off the requirements, no refactoring.  There are better ways to do this, I'm just playing
  
 {{{
 
@@ -149,7 +149,6 @@ Straight off the requirements, no refactoring
         swap >r \  c a b d - c a d (b)r
         swap r> \ c a d (b)r - c d a b 
 ;
-
 
 : 4dup \ ( a b c d - a b c d a b c d )
        >r >r \ a b c d - a b  (c d)r
@@ -193,20 +192,45 @@ Straight off the requirements, no refactoring
 
 \ -------------------------------------------------------------
 : FFT \ ( x y n s -- ) consumes 4 values, deposits no values
-   \ Check if n is zero
-     swap dup if 
-                  FFT_call_twice  
-              else
-                  \ do nothing if n is  0
-                  swap \ but do put the stack back
-              then
- 
-    something something something FFT
-    something something something FFT
- 
+  \ Check if n is zero
+    swap dup 0 <= if 
+    \ Once with parameters x, y, n/2, s*2                
+           4dup 
+           swap  2/ \ (n/2)
+           swap  2* \ (s*2)
+           recurse           
+    \ of course, the above assumes that FFT leaves no values on the stack
+
+    \ And again with: x+s/2, y+n, n/2, s*2 
+            4dup 
+            dup 2/  \ (s/2)
+            swap >r \ hide s
+            swap >r \ hide n
+            swap >r \ hide y
+            +       \ x+s/2  (this stacks on stack)      
+            r> r>   \ retrieve y , n
+            swap    \ n, y
+            2dup    \ n, y , n , y
+            +       \ n, y , n+y
+            swap    \ n, n+y, y
+            drop    \ n, n+y
+            swap 2/ \ n+y, n/2 (this stays on stck)
+            r>       \ retrieve s
+            2*       \ s*2     
+            recurse  \ x+s/2, y+n, n/2, s*2
+     \ of course, the above assumes that FFT leaves no values on the stack
+
+     else
+          \ do nothing if n is  0
+          swap \ but do put the stack back
+     then
+
     \ more processing using n
+    \ just to make it work, I will decrement n
+    swap 1- swap
  
 ;
+
 
 }}}
 
