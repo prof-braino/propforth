@@ -68,15 +68,15 @@ fast as the normal style we see and it needs 50% more buffer space but it occurs
 
 == Requirements ==
 
-* define a word, call it FFT, 
-* FFT  takes four parameters off the stack, call them: x, y, n, s,
-* FFT needs to be able call itself twice,
- * Once with parameters x, y, n/2, s*2  
- * And again with: x+s/2, y+n, n/2, s*2
+ * define a word, call it FFT, 
+ * FFT  takes four parameters off the stack, call them: x, y, n, s,
+ * FFT needs to be able call itself twice,
+   * Once with parameters x, y, n/2, s*2  
+   * And again with: x+s/2, y+n, n/2, s*2
  
-* Then FFT will do a bunch of processing using the original value of n it was passed and the global input/output buffers.
+ * Then FFT will do a bunch of processing using the original value of n it was passed and the global input/output buffers.
  
-* It should do nothing when n is zero.
+ * It should do nothing when n is zero.
  
 
 
