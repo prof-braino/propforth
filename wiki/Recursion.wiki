@@ -138,9 +138,38 @@ Using the stated requirements: [Recursion#Requirements]
 
 {{{
 
+: 4dup \ ( a b c d - a b c d a b c d)
+       >r >r \ a b c d - a b  (c d)r
+       2dup  \ a b - a b a b  (c d)r
+       r> r> \ a b a b - a b a b c d 
+       2swap \ a b a b c d - a b c d a b 
+       >r >r \ a b c d a b - a b c d  (a b)r
+       2dup  \ a b c d - a b c d c d
+       >r >r \ a b c d c d a b
+       2swap  \ a b c d - a b c d a b c d 
+;
+
+: FFT_call_twice ( x y n s - ) \ when n is not zero
+                 
+                 4dup 
+                 swap  2/ \ (n/2)
+                 swap  2* \ (s*2)
+                 FFT_A
+                 4dup 
+                  
+                 FFT_B
+ 
+ 
+
 \ -------------------------------------------------------------
 : FFT \ ( x y n s -- ) consumes 4 values, deposits no values
    \ Check if n is zero
+     swap dup if 
+                  FFT_call_twice  
+              else
+                  \ do nothing if n is  0
+                  swap \ but do put the stack back
+              then
  
     something something something FFT
     something something something FFT
