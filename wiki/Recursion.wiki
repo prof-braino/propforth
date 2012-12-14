@@ -271,7 +271,9 @@ freedict
 \ -------------------------------------------------------------
 : FFT \ ( x y n s -- ) consumes 4 values, deposits no values
   \ Check if n is zero
+    st?
     swap dup 0 >= if 
+           swap \ put the stack back in order
     \ Once with parameters x, y, n/2, s*2                
            4dup 
            swap  2/ \ (n/2)
@@ -299,7 +301,7 @@ freedict
      \ of course, the above assumes that FFT leaves no values on the stack
 
      else
-          \ do nothing if n is  0
+               \ do nothing if n is  0
           swap \ but do put the stack back
      then
 
