@@ -139,6 +139,18 @@ Straight off the requirements, no refactoring
  
 {{{
 
+
+: 2swap \ ( a b c d - c d a b )
+        >r    \ a b c d - a b c (d)r
+        swap  \ a b c (d)r - a c b (d)r
+        >r    \ a c b (d)r - a c (b d)r 
+        swap  \ a c (b d)r -  c a (b d)r
+        r> r> \ c a (b d)r -  c a b d
+        swap >r \  c a b d - c a d (b)r
+        swap r> \ c a d (b)r - c d a b 
+;
+
+
 : 4dup \ ( a b c d - a b c d a b c d )
        >r >r \ a b c d - a b  (c d)r
        2dup  \ a b - a b a b  (c d)r
