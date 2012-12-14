@@ -59,6 +59,35 @@ Otherrwise, it decrements the number, call itself, and does unsigned multiply on
 
 The affect is the factorial function. 
 
+= What it does =
+
+Here is a test to show what the recursion really does.
+
+{{{
+lockdict
+: recurse lastnfa nfa>pfa w, ; immediate
+freedict
+
+: rtest  
+  ." IN->" st?
+   dup 0 > 
+   if
+     1- recurse  ." here!" st?
+   else
+        ." finish!"
+   then
+   ." Out->" st?
+; 
+  
+
+
+}}}
+
+In the case of propforth, the routine repeats itelf.
+
+
+
+
 = Recursion for FFT (under construction) =
 
 From heater:
