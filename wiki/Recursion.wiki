@@ -85,7 +85,24 @@ freedict
 
 In the case of propforth, the routine repeats itelf.
 
+{{{
+Prop0 Cog6 ok
+  3 rtest
+IN->ST: 0_000_000_003
+IN->ST: 0_000_000_002
+IN->ST: 0_000_000_001
+IN->ST: 0_000_000_000
+finish!Out->ST: 0_000_000_000
+here!ST: 0_000_000_000
+Out->ST: 0_000_000_000
+here!ST: 0_000_000_000
+Out->ST: 0_000_000_000
+here!ST: 0_000_000_000
+Out->ST: 0_000_000_000
+Prop0 Cog6 ok
 
+
+}}}
 
 
 = Recursion for FFT (under construction) =
@@ -166,6 +183,8 @@ Using the stated requirements: [Recursion#Requirements]
 
 Straight off the requirements, no refactoring.  There are better ways to do this, I'm just playing
  
+NOTICE: each time the recurse word is executed, the return stack grows.  Each time the function call itself, the parameter stack grows by 4 elements. 
+
 {{{
 
 lockdict
