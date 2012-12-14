@@ -136,6 +136,21 @@ drop drop drop drop
 Using the stated requirements: [Recursion#Requirements]
  
 
+{{{
+
+\ -------------------------------------------------------------
+: FFT \ ( x y n s -- ) consumes 4 values, deposits no values
+   \ Check if n is zero
+ 
+    something something something FFT
+    something something something FFT
+ 
+    \ more processing using n
+ 
+;
+
+}}}
+
 
 
 = Details =
