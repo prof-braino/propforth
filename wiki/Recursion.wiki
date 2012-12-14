@@ -139,6 +139,9 @@ Straight off the requirements, no refactoring.  There are better ways to do this
  
 {{{
 
+lockdict
+: recurse lastnfa nfa>pfa w, ; immediate
+freedict
 
 : 2swap \ ( a b c d - c d a b )
         >r    \ a b c d - a b c (d)r
@@ -230,6 +233,7 @@ Straight off the requirements, no refactoring.  There are better ways to do this
     swap 1- swap
  
 ;
+
 
 
 }}}
