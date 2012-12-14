@@ -196,7 +196,7 @@ freedict
 \ -------------------------------------------------------------
 : FFT \ ( x y n s -- ) consumes 4 values, deposits no values
   \ Check if n is zero
-    swap dup 0 <= if 
+    swap dup 0 >= if 
     \ Once with parameters x, y, n/2, s*2                
            4dup 
            swap  2/ \ (n/2)
