@@ -57,7 +57,7 @@ In this example, `factorial` takes a number off the stack.
 If the number is less than or equal to 1, the function returns 1
 Otherrwise, it decrements the number, call itself, and does unsigned multiply on the result.
 
-The affect is the factoral function. 
+The affect is the factorial function. 
 
 = Details =
 
