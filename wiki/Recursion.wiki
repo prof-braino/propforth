@@ -101,9 +101,11 @@ inBuff outBuff buffSize 1 FFT
 
 heater's first try:
 
+"My current attempt is below. It uses pick which some people seem to frown on.  What do you think?"
+
+Braino response:  Pick is very expensive and slow. Propforth does not include PICK in the kernel for this reason.  We can use it if we wish, but we must recognize the cost. Since it is probably not what you want, you have to want it enough to implement it yourself.  My advise is you probably don't, but there are case where it is the only way. 
+
 {{{
-My current attempt is below. It uses pick which some people seem to frown on.
-What do you think?
  
 \ -------------------------------------------------------------
 : FFT ( x y n s -- ) recursive
@@ -127,7 +129,11 @@ drop drop drop drop
 \ -------------------------------------------------------------
 }}} 
  
-I'm hoping the recursive FFT can work easily with no locals or globals (except the buffers). The magic part is that there is only a single loop, all the other house keeping happens by virtue of that recursive calling. It's a very neat and short way to do it.
+"I'm hoping the recursive FFT can work easily with no locals or globals (except the buffers). The magic part is that there is only a single loop, all the other house keeping happens by virtue of that recursive calling. It's a very neat and short way to do it."
+
+== Braino's attempt ==
+
+Using the stated erquirements: Recursion#Requirements
  
 
 
