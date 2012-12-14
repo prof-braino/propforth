@@ -134,11 +134,12 @@ drop drop drop drop
 == Braino's attempt ==
 
 Using the stated requirements: [Recursion#Requirements]
- 
 
+Straight off the requirements, no refactoring
+ 
 {{{
 
-: 4dup \ ( a b c d - a b c d a b c d)
+: 4dup \ ( a b c d - a b c d a b c d )
        >r >r \ a b c d - a b  (c d)r
        2dup  \ a b - a b a b  (c d)r
        r> r> \ a b a b - a b a b c d 
@@ -150,14 +151,31 @@ Using the stated requirements: [Recursion#Requirements]
 ;
 
 : FFT_call_twice ( x y n s - ) \ when n is not zero
-                 
+  \ Once with parameters x, y, n/2, s*2                
                  4dup 
                  swap  2/ \ (n/2)
                  swap  2* \ (s*2)
                  FFT_A
+
+  \ And again with: x+s/2, y+n, n/2, s*2 
+
                  4dup 
-                  
-                 FFT_B
+                 dup 2/  \ (s/2)
+                 swap >r \ hide s
+                 swap >r \ hide n
+                 swap >r \ hide y
+                 +       \ x+s/2  (this stacks on stack)      
+                 r> r>   \ retrieve y , n
+                 swap    \ n, y
+                 2dup    \ n, y , n , y
+                 +       \ n, y , n+y
+                 swap    \ n, n+y, y
+                 drop    \ n, n+y
+                 swap  2/  \ n+y, n/2 (this stays on stck)
+                 r>       \ retrieve s
+                 2*       \ s*2     
+                 FFT_B    \ x+s/2, y+n, n/2, s*2
+; 
  
  
 
