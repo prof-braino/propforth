@@ -133,7 +133,7 @@ drop drop drop drop
 
 == Braino's attempt ==
 
-Using the stated erquirements: Recursion#Requirements
+Using the stated requirements: [Recursion#Requirements]
  
 
 
