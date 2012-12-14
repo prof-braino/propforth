@@ -160,7 +160,7 @@ Straight off the requirements, no refactoring.  There are better ways to do this
        r> r> \ a b c d c d a b
        2swap  \ a b c d - a b c d a b c d 
 ;
-
+{ \ this was the intermediate coding, this is not used
 : FFT_call_twice \ ( x y n s - ) when n is not zero
   \ Once with parameters x, y, n/2, s*2                
                  4dup 
@@ -187,7 +187,7 @@ Straight off the requirements, no refactoring.  There are better ways to do this
                  2*       \ s*2     
                  FFT_B    \ x+s/2, y+n, n/2, s*2
 ; 
- 
+} \ the above routine is commented out
  
 
 \ -------------------------------------------------------------
