@@ -158,7 +158,7 @@ Straight off the requirements, no refactoring
        2swap \ a b a b c d - a b c d a b 
        >r >r \ a b c d a b - a b c d  (a b)r
        2dup  \ a b c d - a b c d c d
-       >r >r \ a b c d c d a b
+       r> r> \ a b c d c d a b
        2swap  \ a b c d - a b c d a b c d 
 ;
 
