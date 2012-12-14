@@ -25,7 +25,7 @@ Here is Caskaz's example of how its used:
 
 {{{
 \ ( n1 -- n2 )  n2 = n1 X (n1-1) X (n1-2) X . . . X 1
-: factoral
+: factorial
        dup 0 <=
                if
                    drop 1
@@ -35,10 +35,23 @@ Here is Caskaz's example of how its used:
 ;
 
 \ ( n1 -- n2 )  n2 = n1 X (n1-1) X (n1-2) X . . . X 1
-: factoral_test factoral . cr ;
+: factorial_test factorial . cr ;
+
+: ft factorial_test ; \ so its shorter to type
+
+: ftl  
+     0 begin
+            cr 
+            dup . 
+            dup ft
+            1+
+       0 until 
+; 
+
+
 }}}
 
-In this example, `factoral` takes a number off the stack.
+In this example, `factorial` takes a number off the stack.
 If the number is less than or equal to 1, the function returns 1
 Otherrwise, it decrements the number, call itself, and does unsigned multiply on the result.
 
