@@ -59,6 +59,27 @@ Otherrwise, it decrements the number, call itself, and does unsigned multiply on
 
 The affect is the factorial function. 
 
+= Recursion for FFT (under construction) =
+
+From heater:
+
+" there is a recursive definition of the FFT. It's not quite as 
+fast as the normal style we see and it needs 50% more buffer space but it occurs to me that Forth should be well suited to a recursive approach what with being stack based."
+
+== Requirements ==
+
+* define a word, call it FFT, 
+* FFT  takes four parameters off the stack, call them: x, y, n, s,
+* FFT needs to be able call itself twice,
+ * Once with parameters x, y, n/2, s*2  
+ * And again with: x+s/2, y+n, n/2, s*2
+ 
+* Then FFT will do a bunch of processing using the original value of n it was passed and the global input/output buffers.
+ 
+* It should do nothing when n is zero.
+ 
+
+
 = Details =
 
 Add your content here.  Format your content with:
