@@ -104,6 +104,33 @@ Prop0 Cog6 ok
 
 }}}
 
+The most we can do with the current stack configuration is 16 calls.
+
+{{{
+Prop0 Cog6 ok
+100 rtest
+IN->ST: 0_000_000_100
+IN->ST: 0_000_000_099
+IN->ST: 0_000_000_098
+IN->ST: 0_000_000_097
+IN->ST: 0_000_000_096
+IN->ST: 0_000_000_095
+IN->ST: 0_000_000_094
+IN->ST: 0_000_000_093
+IN->ST: 0_000_000_092
+IN->ST: 0_000_000_091
+IN->ST: 0_000_000_090
+IN->ST: 0_000_000_089
+IN->ST: 0_000_000_088
+IN->ST: 0_000_000_087
+IN->ST: 0_000_000_086
+IN->ST: 0_000_000_085
+IN->ST: 0_000_000_084
+IN->ST:
+CON:Prop0 Cog6 RESET - last status: 2 RETURN STACK OVERFLOW
+
+}}}
+
 
 = Recursion for FFT (under construction) =
 
