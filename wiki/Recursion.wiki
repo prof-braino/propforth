@@ -78,6 +78,58 @@ fast as the normal style we see and it needs 50% more buffer space but it occurs
  
  * It should do nothing when n is zero.
  
+ == To Start ==
+
+Here is what heater suggests as a start:
+
+{{{
+\ -------------------------------------------------------------
+: FFT ( x y n s -- )
+   \ Check if n is zero
+ 
+    something something something FFT
+    something something something FFT
+ 
+    \ more processing using n
+ 
+;
+ 
+\ FFT is originally called with
+inBuff outBuff buffSize 1 FFT
+\ -------------------------------------------------------------
+}}}
+
+heater's first try:
+
+{{{
+My current attempt is below. It uses pick which some people seem to frown on.
+What do you think?
+ 
+\ -------------------------------------------------------------
+: FFT ( x y n s -- ) recursive
+    3 pick . 2 pick . 1 pick . 0 pick . cr
+ 
+    1 pick 0= if
+        ." Bottom" cr
+        \ Something here
+    else
+        3 pick 3 pick 3 pick 2 / 3 pick 2 * FFT
+ 
+        3 pick over 2 / + 3 pick 3 pick + 3 pick 2 / 3 pick 2 * FFT
+ 
+        \ Something here.
+ 
+    endif
+drop drop drop drop
+;
+ 
+100 200 1024 1 FFT
+\ -------------------------------------------------------------
+}}} 
+ 
+I'm hoping the recursive FFT can work easily with no locals or globals (except the buffers). The magic part is that there is only a single loop, all the other house keeping happens by virtue of that recursive calling. It's a very neat and short way to do it.
+ 
+
 
 
 = Details =
