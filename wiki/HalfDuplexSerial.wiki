@@ -7,7 +7,7 @@ http://forums.parallax.com/showthread.php?143900-WINNER!!-Forthers-Thanksgiving-
 
 http://forums.parallax.com/showthread.php?143961-quot-Forth-of-the-Forth-quot-Challenge-(in-December)&p=1145782&viewfull=1#post1145782
 
-showed some weakness in the materials. 
+showed some weakness in the propforth documentation materials. 
 
 User Caskaz did some work on serial half duplex 
 http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-download&p=1149921&viewfull=1#post1149921
