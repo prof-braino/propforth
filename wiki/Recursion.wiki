@@ -287,14 +287,14 @@ freedict
             swap >r \ hide s
             swap >r \ hide n
             swap >r \ hide y
-            +       \ x+s/2  (this stacks on stack)      
+            +       \ x+s/2  (this stays on stack)      
             r> r>   \ retrieve y , n
             swap    \ n, y
             2dup    \ n, y , n , y
             +       \ n, y , n+y
             swap    \ n, n+y, y
             drop    \ n, n+y
-            swap 2/ \ n+y, n/2 (this stays on stck)
+            swap 2/ \ n+y, n/2 (this stays on stack)
             r>       \ retrieve s
             2*       \ s*2     
             recurse  \ x+s/2, y+n, n/2, s*2
@@ -311,10 +311,13 @@ freedict
  
 ;
 
-
-
 }}}
 
+For the time being, this only fills the stack. And of course, since it calls itself with a new set of parameters, it uses up the stack twice as fast. 
+
+This routine would have to be re-written so it only uses the top four elements of the stack.  It has to keep doing something to those, rather than calling with new parameters, as the prop does not have the memory to waste. 
+
+The other alternative would be to move the stack to SD memory.  But that is a task for another day. 
 
 
 = Details =
