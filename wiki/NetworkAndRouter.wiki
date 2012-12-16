@@ -14,24 +14,28 @@ Propforth can see the internet (at least) two ways, if you set it up to permit i
 
 Propforth needs to know something about your network. Propforth also nees to know something about your hardware.
 
+-----
 == Internal network IP ==
-internal gateway network address  (your router)
+
+=== internal gateway network address  (your router) ===
 {{{
 REM					192.168.0.1
 set dlrS_ip_gatewayhi=$C0_A8
 set dlrS_ip_gatewaylo=$00_01
 }}}
 
-internal subnet mask (
+=== internal subnet mask ===
+
 {{{
 REM					255.255.255.0
 set dlrS_ip_subnetmaskhi=$FF_FF
 set dlrS_ip_subnetmasklo=$FF_00
 }}}
+-----
 
 == local hardware ==
 
-spinneret/WIZNET static ip ADDRESS
+=== spinneret/WIZNET static ip ADDRESS ===
 {{{
 REM					192.168.0.129
 set dlrS_ip_addrhi=$C0_A8
@@ -40,7 +44,7 @@ set dlrS_ip_addrlo=$00_81
 
 NOTE the Spinneret address is NOT included in your dynamic DNS address range.  Also, STATIC ADDRESS devices are not displayed in you lost of devics that have an address on some router.  On one system, I could make an entry for the spinneret so it would display "spinneret" as associated with 192.168.0.129. On another system, this setting cause the spinneret to not exist on the network.  
 
-SPINNERET/Wiznet5100 MAC address
+=== SPINNERET/Wiznet5100 MAC address ===
 
 You have to check the spinneret board and read the MAC address printed on it, and enter it in the text file.  
 
@@ -52,7 +56,7 @@ set dlrS_ip_macmid=$xx_xx
 set dlrS_ip_maclo=$00_xx
 }}}
 
-comport
+=== comport === 
 
 The comport gets assigned by the PC (Windows in my case) automatically for each FTDI chip that gets connected.  There is a routing that can clear the old comprts if there gets to be too many. I had a problem when the number went above 28 or so.  I ran the routing and the the next Quickstart assigned was com3 again. 
 
@@ -72,21 +76,25 @@ set dlrS_ip_telnetport=3020
 
 Some providers don't let us assign the "normal" telnet port, which would be 22.  So we use an uncommon number, 3020 as our first telnet port.  You can use any number that woks. Just make sure that port isn't being used for something else. 
 
+-----
+
 == propforth configuration for network ==
 
-number of telnet sockets 
+=== number of telnet sockets  ===
 
 {{{set dlrS_ip_numsock=4}}}
 
 Propforth can use four telnet sessions with no problems
 
-number of telnet ports 
+=== number of telnet ports ===
 
 set dlrS_ip_numTelnet=4
 
 The telent ports are four sequential port numbers starting with  `dlrS_ip_telnetport`
 
-cog to run the IP support
+=== IP cog  ===
+
+IP cog is the cog to run the IP support
 
 {{{set dlrS_ip_cog=5}}}
 
