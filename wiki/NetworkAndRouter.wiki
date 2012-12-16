@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Each brand for Network and Router hardware is a little bit different.  Either the terrminology is different, or the way something is implemented or some little detail is just different enough to get one confused. 
+Each brand for Network and Router hardware is a little bit different.  Either the terminology is different, or the way something is implemented or some little detail is just different enough to get one confused. 
 
 After switching internet providers recently, my personal network (inside the ISP's cable modem) stopped working.  Go figure.  In sorting is out, I missed one or two details, and ending up making everything worse.
 
@@ -10,7 +10,7 @@ Here are some tips, maybe it will be easier next time.
 
 = What Propforth needs =
 
-Propforth can see the internet (at least) two ways, if you set it up to permit it. One way it to be associated with you PC's ethernet device.  The other way is using its own internet device, such as the Spinneret board or similar, such as the wiznet5100 module.
+Propforth can see the internet (at least) two ways, if you set it up to permit it. One way it to be associated with you PC's Ethernet device.  The other way is using its own internet device, such as the Spinneret board or similar, such as the wiznet5100 module.
 
 Propforth needs to know something about your network. Propforth also nees to know something about your hardware.
 
@@ -38,7 +38,21 @@ set dlrS_ip_addrhi=$C0_A8
 set dlrS_ip_addrlo=$00_81
 }}}
 
-NOTE the Spineret address is NOT included in your dynamic DNS address range.  Also, STAIC ADDERESS devices are not displayed in you lost of devics that have an address on some router.  On one system, I could make an entry for the spinneret so it would display "spinneret" as associated with 192.168.0.129. On another system, this setting cause the spinneret to not exist on the network.  
+NOTE the Spinneret address is NOT included in your dynamic DNS address range.  Also, STATIC ADDRESS devices are not displayed in you lost of devics that have an address on some router.  On one system, I could make an entry for the spinneret so it would display "spinneret" as associated with 192.168.0.129. On another system, this setting cause the spinneret to not exist on the network.  
+
+
+SPINNERET/Wiznet5100 MAC address
+
+You have to check the spinneret board and read the MAC address printed on it, and enter it in the text file.  
+
+{{{
+
+REM					00:xx:xx:xx:00:xx
+set dlrS_ip_machi=$00_xx
+set dlrS_ip_macmid=$xx_xx
+set dlrS_ip_maclo=$00_xx
+}}}
+
 
 
 comport
@@ -73,12 +87,6 @@ set dlrS_ip_light=$FFFF
 
 
 
-
-
-REM					00:0c:29:8b:00:70
-set dlrS_ip_machi=$00_0C
-set dlrS_ip_macmid=$29_8B
-set dlrS_ip_maclo=$00_70
 
 
 Add your content here.  Format your content with:
