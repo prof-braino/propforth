@@ -18,10 +18,25 @@ Propforth needs to know something about your network. Propforth also nees to kno
 
 There are a couple places to enter this cofiguration parameters depending on what you are doing.
 
+=== the test automation === 
+
+Th Go-Terminal support is set up so we can pre-configure the scripts.  This way we don't have to edit the actual spin files, etc. 
+
+This is at...
+ 
+`..\mygo'
+
+in the file 
+
+`goshell.bat`
+
+In most cases,  `goshell.bat` is the only files  you have to edit to get the network running. 
+
 === Debugging the general configuration ===
 
+When I changed internet providers, things stopped working, and I had to do additional debugging. 
 
-IF you are debgging, and just want to test that the network runs, 
+IF you are debugging, and just want to test that the network runs, 
 
 in directory `referenceResults\Outputfiles`
 
@@ -33,13 +48,9 @@ lines 110 to 138
 
 All the defaults worked for me in this file, so you should not have to edit it unless you use other than 192.168.0.1; etc.
 
-=== the test automation === 
+Load this spin file onto your spinneret board, and verify that you can ping the spinneret address. Verify you can telnet to the propforth prompt.  If these work, you have your router configure correctly.  
 
-Th Go-Terminal support is set up so we can pre-configure the scripts.  This way we don't have to edit the actual spin files, etc. 
-
-This is at.....
- 
-
+This is the diagnostic I used to get my static IP address assignment sorted out (below). 
 
 -----
 == Internal network IP ==
