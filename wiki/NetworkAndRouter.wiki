@@ -57,13 +57,20 @@ comport
 The comport gets assigned by the PC (Windows in my case) automatically for each FTDI chip that gets connected.  There is a routing that can clear the old comprts if there gets to be too many. I had a problem when the number went above 28 or so.  I ran the routing and the the next Quickstart assigned was com3 again. 
 
 http port
+
 {{{
 set dlrS_ip_httpport=8080
 }}}
-telent ports
+
+HTTP port is often 8080, and this seems to work in our testing so far. 
+
+telnet ports
+
 {{{
 set dlrS_ip_telnetport=3020
 }}}
+
+Some providers don't let us assign the "normal" telnet port, which would be 22.  So we use an uncommon number, 3020 as our first telnet port.  You can use any number that woks. Just make sure that port isn't being used for something else. 
 
 == propforth configuration for network ==
 
@@ -71,14 +78,19 @@ number of telnet sockets
 
 {{{set dlrS_ip_numsock=4}}}
 
+Propforth can use four telnet sessions with no problems
+
 number of telnet ports 
 
 set dlrS_ip_numTelnet=4
+
+The telent ports are four sequential port numbers starting with  `dlrS_ip_telnetport`
 
 cog to run the IP support
 
 {{{set dlrS_ip_cog=5}}}
 
+The test automeation assigns COG5 as the IP cog.
 
 = Details =
 
