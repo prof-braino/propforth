@@ -14,6 +14,33 @@ Propforth can see the internet (at least) two ways, if you set it up to permit i
 
 Propforth needs to know something about your network. Propforth also nees to know something about your hardware.
 
+== What to edit ==
+
+There are a couple places to enter this cofiguration parameters depending on what you are doing.
+
+=== Debugging the general configuration ===
+
+
+IF you are debgging, and just want to test that the network runs, 
+
+in directory `referenceResults\Outputfiles`
+
+edit the file
+
+`IPKernel.spin`
+
+lines 110 to 138
+
+All the defaults worked for me in this file, so you should not have to edit it unless you use other than 192.168.0.1; etc.
+
+=== the test automation === 
+
+Th Go-Terminal support is set up so we can pre-configure the scripts.  This way we don't have to edit the actual spin files, etc. 
+
+This is at.....
+ 
+
+
 -----
 == Internal network IP ==
 
