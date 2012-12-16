@@ -1,0 +1,87 @@
+#summary Tips for Setting up Network and Router
+
+= Introduction =
+
+Each brand for Network and Router hardware is a little bit different.  Either the terrminology is different, or the way something is implemented or some little detail is just different enough to get one confused. 
+
+After switching internet providers recently, my personal network (inside the ISP's cable modem) stopped working.  Go figure.  In sorting is out, I missed one or two details, and ending up making everything worse.
+
+Here are some tips, maybe it will be easier next time.
+
+= What Propforth needs =
+
+Propforth can see the internet (at least) two ways, if you set it up to permit it. One way it to be associated with you PC's ethernet device.  The other way is using its own internet device, such as the Spinneret board or similar, such as the wiznet5100 module.
+
+Propforth needs to know something about your network. Propforth also nees to know something about your hardware.
+
+== Internal network IP ==
+internal gateway network address  (your router)
+{{{
+REM					192.168.0.1
+set dlrS_ip_gatewayhi=$C0_A8
+set dlrS_ip_gatewaylo=$00_01
+}}}
+
+internal subnet mask (
+{{{
+REM					255.255.255.0
+set dlrS_ip_subnetmaskhi=$FF_FF
+set dlrS_ip_subnetmasklo=$FF_00
+}}}
+
+== local hardware ==
+
+spinneret/WIZNET static ip ADDRESS
+{{{
+REM					192.168.0.129
+set dlrS_ip_addrhi=$C0_A8
+set dlrS_ip_addrlo=$00_81
+}}}
+
+NOTE the Spineret address is NOT included in your dynamic DNS address range.  Also, STAIC ADDERESS devices are not displayed in you lost of devics that have an address on some router.  On one system, I could make an entry for the spinneret so it would display "spinneret" as associated with 192.168.0.129. On another system, this setting cause the spinneret to not exist on the network.  
+
+
+comport
+
+http port
+{{{
+set dlrS_ip_httpport=8080
+}}}
+telent ports
+{{{
+set dlrS_ip_telnetport=3020
+}}}
+
+== propforth configuration for network ==
+
+number of telnet sockets 
+
+{{{set dlrS_ip_numsock=4}}}
+
+number of telnet ports 
+
+set dlrS_ip_numTelnet=4
+
+cog to run the IP support
+
+{{{set dlrS_ip_cog=5}}}
+
+
+= Details =
+
+set dlrS_ip_light=$FFFF
+
+
+
+
+
+REM					00:0c:29:8b:00:70
+set dlrS_ip_machi=$00_0C
+set dlrS_ip_macmid=$29_8B
+set dlrS_ip_maclo=$00_70
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
