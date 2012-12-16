@@ -40,7 +40,6 @@ set dlrS_ip_addrlo=$00_81
 
 NOTE the Spinneret address is NOT included in your dynamic DNS address range.  Also, STATIC ADDRESS devices are not displayed in you lost of devics that have an address on some router.  On one system, I could make an entry for the spinneret so it would display "spinneret" as associated with 192.168.0.129. On another system, this setting cause the spinneret to not exist on the network.  
 
-
 SPINNERET/Wiznet5100 MAC address
 
 You have to check the spinneret board and read the MAC address printed on it, and enter it in the text file.  
@@ -53,9 +52,9 @@ set dlrS_ip_macmid=$xx_xx
 set dlrS_ip_maclo=$00_xx
 }}}
 
-
-
 comport
+
+The comport gets assigned by the PC (Windows in my case) automatically for each FTDI chip that gets connected.  There is a routing that can clear the old comprts if there gets to be too many. I had a problem when the number went above 28 or so.  I ran the routing and the the next Quickstart assigned was com3 again. 
 
 http port
 {{{
@@ -82,10 +81,6 @@ cog to run the IP support
 
 
 = Details =
-
-set dlrS_ip_light=$FFFF
-
-
 
 
 
