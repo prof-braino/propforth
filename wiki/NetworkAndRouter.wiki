@@ -24,7 +24,7 @@ Th Go-Terminal support is set up so we can pre-configure the scripts.  This way 
 
 This is at...
  
-`..\mygo'
+`..\mygo`
 
 in the file 
 
