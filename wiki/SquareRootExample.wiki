@@ -14,7 +14,7 @@ from http://forums.parallax.com/showthread.php?144414-The-Forth-Dimension.&p=114
 
 I think he started in gforth (GNU forth on the PC)
 
-NOTE:  On Propforth values over h_7FFF_FFF decimal 2,147,483,647 are negative.  That is h_8000_000 decimal 2,147,483,648 and above, show up a negative numbers because of the sign bit. Negative numbers are not handled, they make the routine wander off forever.  
+NOTE:  On Propforth values over h_7FFF_FFF (hex) 2,147,483,647 (decimal) are negative.  That is h_8000_000 (hex) 2,147,483,648 (decimal)and above, show up a negative numbers because of the sign bit. Negative numbers are not handled, they make the routine wander off forever.  
 
 {{{
 : sqrtiloop
