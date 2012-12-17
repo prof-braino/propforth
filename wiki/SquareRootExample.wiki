@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary heater's square root routine, converted from C to propforth.
 
 = Some example code for doing squareroot in forth =
 
