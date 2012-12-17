@@ -111,6 +111,8 @@ NOTE:  On Propforth values over h_7FFF_FFF decimal 2,147,483,647 are negative.  
 
 = Braino Square Root Example for propforth =
 
+I couldn't figure out what heater was doing, so I just found the first example from google, and converted it to propforth. 
+
 From http://jasonwoof.org/sqrt.fs
 
 tweaked to run on propforth
@@ -137,7 +139,7 @@ tweaked to run on propforth
              dup         \ test the adjustment
              0=          \ if result not zero do it again
        until             \ if result not zero do it again
-       drop           \ get rid of guess 
+       drop           \ get rid of guess as we are done at this point
 
        nip  \        get rid of old target
        \ .              \ print the result  (instead of nip)
