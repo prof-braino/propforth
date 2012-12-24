@@ -55,6 +55,7 @@ Connecting to ip addr [192.168.0.129:8080] - [dial tcp 192.168.0.129:8080: No co
 
 SnetEEpromHTTPTelnet0Result.txt
 
+{{{
  scriptFileName: TEST/scripts/SnetEEpromHTTPTelnet0.txt
    logFileName: TEST/results/runLogs/SnetEEpromHTTPTelnet0RunLog.txt
 resultFileName: TEST/results/resultFiles/SnetEEpromHTTPTelnet0Result.txt
@@ -71,6 +72,7 @@ Cog:5  #io chan:4                        IP SERVER  5(0)->0(0)  5(1)->1(0)  5(2)
 Cog:6  #io chan:1 PropForth v5.3 2012JUN10 11:00 0  6(0)->7(0)
 Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
 Prop0 Cog0 ok
+}}}
 
 == MAKE ==
 
