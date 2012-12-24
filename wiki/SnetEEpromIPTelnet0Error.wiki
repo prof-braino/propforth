@@ -36,8 +36,7 @@ First noticed the issue in the test potion of the automation.  The following two
 
 === SnetEEpromHTTPResult.txt ===
 
-\V5.3\kernels\TEST\results\resultFiles 
-SnetEEpromHTTPResult.txt
+` \V5.3\kernels\TEST\results\resultFiles SnetEEpromHTTPResult.txt `
 
 {{{
  scriptFileName: TEST/scripts/SnetEEpromHTTP.txt
@@ -51,9 +50,7 @@ Connecting to ip addr [192.168.0.129:8080] - [dial tcp 192.168.0.129:8080: No co
 
 === SnetEEpromHTTPTelnet0Result.txt ===
 
-\V5.3\kernels\TEST\results\resultFiles 
-
-SnetEEpromHTTPTelnet0Result.txt
+`\V5.3\kernels\TEST\results\resultFiles SnetEEpromHTTPTelnet0Result.txt `
 
 {{{
  scriptFileName: TEST/scripts/SnetEEpromHTTPTelnet0.txt
@@ -78,9 +75,9 @@ Prop0 Cog0 ok
 
 Find the wherre we make
 
- * SnetEEpromHTTP
+ * `SnetEEpromHTTP`
 
-\mygo\V5.3\kernels\MAKE\scripts
+`\mygo\V5.3\kernels\MAKE\scripts `
 
  # InitSnetEEprom.txt
  # InitSnetEEpromIP.txt
