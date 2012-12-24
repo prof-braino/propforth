@@ -28,7 +28,13 @@ The is for internal visibility.  That is, I don't have to set anything to make i
 
 = the scripts =
 
-First noticed the issue in the test potion of the automation 
+The the error was flagged in the test portion of the automation.  The actual error may have been captured in the build portion, but not flagged.
+
+== TEST == 
+
+First noticed the issue in the test potion of the automation.  The following two output files were active when the automation flagged the error. 
+
+=== SnetEEpromHTTPResult.txt ===
 
 \V5.3\kernels\TEST\results\resultFiles 
 SnetEEpromHTTPResult.txt
@@ -43,17 +49,42 @@ index.htm
 Connecting to ip addr [192.168.0.129:8080] - [dial tcp 192.168.0.129:8080: No connection could be made because the target machine actively refused it.] 
 }}}
 
+=== SnetEEpromHTTPTelnet0Result.txt ===
+
+\V5.3\kernels\TEST\results\resultFiles 
+
+SnetEEpromHTTPTelnet0Result.txt
+
+ scriptFileName: TEST/scripts/SnetEEpromHTTPTelnet0.txt
+   logFileName: TEST/results/runLogs/SnetEEpromHTTPTelnet0RunLog.txt
+resultFileName: TEST/results/resultFiles/SnetEEpromHTTPTelnet0Result.txt
+outputFileName: 
+ÿûÿû
+PropForth v5.3 2012JUN10 11:00 0
+cog?
+Cog:0  #io chan:1 PropForth v5.3 2012JUN10 11:00 0  0(0)->5(0)
+Cog:1  #io chan:1 PropForth v5.3 2012JUN10 11:00 0  1(0)->5(1)
+Cog:2  #io chan:1 PropForth v5.3 2012JUN10 11:00 0  2(0)->5(2)
+Cog:3  #io chan:1 PropForth v5.3 2012JUN10 11:00 0  3(0)->5(3)
+Cog:4  #io chan:1 PropForth v5.3 2012JUN10 11:00 0
+Cog:5  #io chan:4                        IP SERVER  5(0)->0(0)  5(1)->1(0)  5(2)->2(0)  5(3)->3(0)
+Cog:6  #io chan:1 PropForth v5.3 2012JUN10 11:00 0  6(0)->7(0)
+Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
+Prop0 Cog0 ok
+
+== MAKE ==
+
+Find the wherre we make
+
+ * SnetEEpromHTTP
+
+\mygo\V5.3\kernels\MAKE\scripts
+
+ # InitSnetEEprom.txt
+ # InitSnetEEpromIP.txt
+ # InitSnetEEpromHTTP.txt
 
 
+=== NNNN ===
 
-
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= end 20121224  =
