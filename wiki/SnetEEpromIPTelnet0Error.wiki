@@ -73,7 +73,7 @@ Prop0 Cog0 ok
 
 *INVESTGATE* the wierd characters `ÿûÿû`  in the above output.
 
-This could be an error in the build process diuring the cut over from the old code (using 5.0 to generate 5.3) to the new code (using 5.3 to re-generate 5.3
+This could be an error in the build process diuring the cut over from the old code (using 5.0 to generate 5.3) to the new code (using 5.3 to re-generate 5.3)
 
 == MAKE ==
 
