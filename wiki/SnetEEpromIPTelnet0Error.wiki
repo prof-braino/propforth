@@ -1,0 +1,59 @@
+#summary SnetEEpromIPTelnet0Error in automation
+
+= The Error =
+
+Braino cannot get HTTP test to run using v5.3RC3
+
+I have not been able to run the full suite since I changed internet providers.   Originally this was due to router and firewall configuration differences. Now that those are  (mostly?) sorted out,there are other issues.
+
+== Router ==
+
+The telnet portion did not work.  
+
+=== Router -> Advanced -> Virtual Server -> Telnet ===
+
+This should NOT be enabled for the spinneret IP address and port.
+
+129:3020
+
+=== Router -> Advanced -> Port Forwarding -> Spinneret Telnet ===
+
+This should NOT be enabled for the spinneret IP address and port.
+
+129:3020-3023
+
+=== internal /external ===
+
+The is for internal visibility.  That is, I don't have to set anything to make it work locally.  I don't want to futz with setting to to get it visible externally (on the internet) until the internal errors are all corrected.
+
+= the scripts =
+
+First noticed the issue in the test potion of the automation 
+
+\V5.3\kernels\TEST\results\resultFiles 
+SnetEEpromHTTPResult.txt
+
+{{{
+ scriptFileName: TEST/scripts/SnetEEpromHTTP.txt
+   logFileName: TEST/results/runLogs/SnetEEpromHTTPRunLog.txt
+resultFileName: TEST/results/resultFiles/SnetEEpromHTTPResult.txt
+outputFileName: 
+
+index.htm
+Connecting to ip addr [192.168.0.129:8080] - [dial tcp 192.168.0.129:8080: No connection could be made because the target machine actively refused it.] 
+}}}
+
+
+
+
+
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
