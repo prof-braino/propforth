@@ -40,5 +40,11 @@ _put actual message in here_
 HTTP -- No Response
 }}}
 
+= Solution =
+
+A separate wallwart was added to the spinneret.  While the protoboard is using a standard parallax 7.2 volt 1000 mA  wallwart, the spinneret got a 6.5 volt 300 mA junky one harvested from a cordless phone. 
+
+All issues stopped.  Everything passes and works just fine.  It must have been _JUST_ at the borderline.
+
 
 = Details =
