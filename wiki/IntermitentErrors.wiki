@@ -1,7 +1,7 @@
-#summary Possible Cause and Slution for Intermittent Errors in Propforth.
+#summary Possible Cause and Solution for Intermittent Errors in Propforth.
 #labels v5.3
 
-= Intermittent Erros =
+= Intermittent Errors =
 
 During v5.3 final test, intermittent errors were found.  Since these cannot be consistently reproduces, they are very hard to track down. Since we can tell what is causing the problem, these are difficult to correct.
 
@@ -29,7 +29,7 @@ During testing, the telnet test fails when the telnet kernel does not respond. M
 _put actual message in here_
 
 {{{
-Telent -- No Response
+Telnet -- No Response
 }}}
 
 If the telnet test passes, the HTTP test test fails when the HTTP kernel does not respond. Message is:
@@ -42,7 +42,7 @@ HTTP -- No Response
 
 = Solution =
 
-A separate wallwart was added to the spinneret.  While the protoboard is using a standard parallax 7.2 volt 1000 mA  wallwart, the spinneret got a 6.5 volt 300 mA junky one harvested from a cordless phone. 
+A separate wall wart was added to the spinneret.  While the protoboard is using a standard parallax 7.2 volt 1000 mA  wall wart, the spinneret got a 6.5 volt 300 mA junky one harvested from a cordless phone. 
 
 All issues stopped.  Everything passes and works just fine.  It must have been _JUST_ at the borderline.
 
