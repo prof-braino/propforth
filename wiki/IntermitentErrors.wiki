@@ -22,7 +22,7 @@ Surge Current is similar to in rush current, except its not at start up. When a 
 
 In the automated regression test suite, the  Telnet and HTTP tests use both the protoboard and the spinneret.  Also, the slave propchip is still connected and remains in whatever state is was in at the end of its final test.  So the whole rig is running. 
 
-The code that was previously compiled in the MAKE automation in run on the protoboard.  Using the serial function, the Telnet and HTTP code is sent to the Spinneret for execution and testing. 
+The code that was previously compiled in the MAKE automation in run on the protoboard.  Using the serial function, the protoboard sends the Telnet and HTTP code to the Spinneret for execution and testing. 
 
 During testing, the telnet test fails when the telnet kernel does not respond. Message is:
 
