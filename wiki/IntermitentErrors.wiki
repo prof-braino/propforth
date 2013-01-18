@@ -1,0 +1,26 @@
+#summary Possible Cause and Slution for Intermittent Errors in Propforth.
+
+= Intermittent Erros =
+
+During v5.3 final test, intermittent errors were found.  Since these cannot be consistently reproduces, they are very hard to track down. Since we can tell what is causing the problem, these are difficult to correct.
+
+= Cause =
+
+We think is was the Power Supply.   The common "wall wart" switching power supply used was rated for the middle of the range of the prop input voltage, and had about 3x the necessary current rating.  It SHOULD have been just fine, according to the ratings. 
+
+== In-Rush Current ==
+
+In Rush current is the large current required when a part starts up.  If In Rush current were the issue, we would have notices something each time the rig starts up.  But this was not the case
+
+== Surge Current ==
+
+Surge Current is similar to in rush current, except its not at start up. When a parts starts operating and doing its thing, certain functions can suddenly draw a bunch more current. Somethings, several parts start doing heavy current draw operations at the same time and can result in a surge, and the wall wart cannot keep up.  The result could be an operation fails (and gives and error) or it could be that something just "doesn't work right" and results in a condition that is detectable as an error, but did not immediately "fail".
+
+
+= Symptoms =
+
+In the automated regression test suite, the  Telnet and HTTP tests use both the protoboard and the spinneret.  Also, the slave propchip is still connected and remains in whatever state is was in at the end of its final test.  So the whole rig is running. 
+
+The code that was previously compiled in the MAKE automation
+
+= Details =
