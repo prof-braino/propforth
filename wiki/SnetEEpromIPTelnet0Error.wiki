@@ -6,6 +6,10 @@ Braino cannot get HTTP test to run using v5.3RC3
 
 I have not been able to run the full suite since I changed internet providers.   Originally this was due to router and firewall configuration differences. Now that those are  (mostly?) sorted out,there are other issues.
 
+== Power Supply Issue ==
+
+This was added last, 20130118.  IntermitentErrors
+
 == Router ==
 
 The telnet portion did not work.  
