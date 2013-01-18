@@ -1,5 +1,5 @@
 #summary Possible Cause and Solution for Intermittent Errors in Propforth.
-#labels v5.3
+#labels v5.3,Phase-QA,Phase-Requirements
 
 = Intermittent Errors =
 
