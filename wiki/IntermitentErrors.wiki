@@ -17,12 +17,15 @@ In Rush current is the large current required when a part starts up.  If In Rush
 
 Surge Current is similar to in rush current, except its not at start up. When a parts starts operating and doing its thing, certain functions can suddenly draw a bunch more current. Sometimes, several parts start doing heavy current draw operations at the same time and can result in a surge, and the wall wart cannot keep up. There is a "sag" in the voltage or current. If the sag is severe, the micro processor may reset, otherwise if might "appear" that things operated correctly. The result could be an operation fails (and gives and error) or it could be that something just "doesn't work right" and results in a condition that is detectable as an error, but did not immediately "fail".
 
+= Testing =
+
+
+The code that was previously compiled in the MAKE automation in run on the protoboard.  Using the serial function, the protoboard sends the Telnet and HTTP code to the Spinneret for execution and testing. 
+
 
 = Symptoms =
 
 In the automated regression test suite, the  Telnet and HTTP tests use both the protoboard and the spinneret.  Also, the slave propchip is still connected and remains in whatever state is was in at the end of its final test.  So the whole rig is running. 
-
-The code that was previously compiled in the MAKE automation in run on the protoboard.  Using the serial function, the protoboard sends the Telnet and HTTP code to the Spinneret for execution and testing. 
 
 During testing, the telnet test fails when the telnet kernel does not respond. Message is:
 
