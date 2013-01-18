@@ -3,7 +3,7 @@
 
 = Intermittent Errors =
 
-During v5.3 final test, intermittent errors were found.  Since these cannot be consistently reproduces, they are very hard to track down. Since we can tell what is causing the problem, these are difficult to correct.
+During v5.3 final test, intermittent errors were found.  Since these cannot be consistently reproduces, they are very hard to track down. Since we can't tell what is causing the problem, we can't tell what to fix.  These are difficult to correct.
 
 = Cause =
 
