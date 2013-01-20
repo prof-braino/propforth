@@ -1,0 +1,36 @@
+#summary Additional info on spinneret and ethernet
+#labels v5.3,spinnerret,wiznet
+
+= Introduction =
+
+Spinneret (wiznet5100 compatible) is one way to get Ethernet access to a prop system.
+
+Other methods are becoming easier and cheaper (Go channels on PC or Raspberry Pi) and spinneret is becoming less optimal. 
+
+However, we already have it in place, so it will continue to be packaged with the propforth download for the time being. 
+
+= Spinneret support =
+
+Th Ethernet support for spinneret is big.  It takes up most of the prop memory, leaving little left for user application words.  
+
+= Using Spinneret with Propforth =
+
+The solution chosen was to run scripts from SD.  Almost any SD card provides enough space to allow web pages of any size and comlexity. 
+
+However, Propforth on the spinneret is not something that a bignner can set up and get running in five minutes. One has to be very aware of what to do when and why to make it work.  
+
+For this reason, the Spinneret support is no longer present in the "CurrentReleases" directory as of version 5.3.   Th spinneret suppot is still present, but is left in the "results" directory
+
+{{{ 
+...\V5.3\kernels\MAKE\results\outputFiles
+}}}
+
+for experienced developers. 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
