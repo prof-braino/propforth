@@ -1,4 +1,11 @@
 #summary SnetEEpromIPTelnet0Error in automation
+#labels v5.3-RC3
+
+= SOLVED =
+
+This was determined to be caused by power supply + Ethernet issues.
+
+http://code.google.com/p/propforth/wiki/IntermitentErrors
 
 = The Error =
 
