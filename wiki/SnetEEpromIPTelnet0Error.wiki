@@ -99,6 +99,8 @@ Find the wherre we make
  # InitSnetEEpromHTTP.txt
 
 
-=== NNNN ===
+= SOLVED =
 
-= end 20121224  =
+This was determined to be caused by power supply + Ethernet issues.
+
+http://code.google.com/p/propforth/wiki/IntermitentErrors
