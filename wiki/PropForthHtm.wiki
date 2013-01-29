@@ -4,6 +4,10 @@
 
 This is a COPY. The version in the current download is the correct version.
 
+Notice:  Making Propfoth.htm appear in the google code wiki is problematic.  It takes a bunch of tedious editing that consumes valuable time.  Must find a better way to do this. 
+
+Sincce this page already exists, I'll leave it up, but you should just download the propforth archive and work from that, as it is the official document. 
+
 
  = COPY of Propforth htm fom current download (v5.3 20121122) =
 
