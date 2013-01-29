@@ -18,13 +18,14 @@ The TO/VALUE solution in PropForth or changing constant values.
 : TO ' 4+ L! ;
 
 345 constant try
+}}}
 
+{{{
 try . 345
 
 45678 TO try
 
 try . 45678
-
-}}
+}}}
 
 NickL 
