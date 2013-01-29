@@ -1,5 +1,5 @@
 #summary SnetEEpromIPTelnet0Error in automation
-#labels v5.3-RC3
+#labels v5.3-RC3,Deprecated
 
 = SOLVED =
 
