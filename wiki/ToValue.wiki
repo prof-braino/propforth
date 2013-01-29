@@ -29,3 +29,7 @@ try . 45678
 }}}
 
 NickL 
+
+= Notes = 
+
+Remember, just because we CAN do something, it doesn't necessarily mean we should.  CONSTANT means it does NOT change.  But as with all rules, valid exceptions can be found.  If you are an advanced user, you may find you also need to change a constant, in which case this is one nice way to do it. Most off the time, changing constants is not something one does. 
