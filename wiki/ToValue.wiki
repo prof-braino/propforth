@@ -1,0 +1,30 @@
+#summary TO Value for propforth from Nick
+
+= Introduction =
+
+Change a constant is not included in the default propforth dictionary. 
+
+Nick provides support in a parallax forum post
+
+http://forums.parallax.com/showthread.php/138399-Propforth-5.0-is-available-for-download?p=1160432&viewfull=1#post1160432
+
+
+= Details =
+
+
+The TO/VALUE solution in PropForth or changing constant values.
+
+{{{
+: TO ' 4+ L! ;
+
+345 constant try
+
+try . 345
+
+45678 TO try
+
+try . 45678
+
+}}
+
+NickL 
