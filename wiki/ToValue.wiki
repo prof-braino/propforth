@@ -1,4 +1,4 @@
-#summary TO change the value for a CONSTANT in propforth from Nick
+#summary Change a constant TO a new value
 
 = Introduction =
 
