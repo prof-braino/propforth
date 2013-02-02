@@ -7,6 +7,8 @@ Hobby Servo is controlled by sending it a pulse every 20 milliseconds. The width
 
 == Not always the MAX ==
 
+Digital servos compensate, analog servos chatter or go through stops. 
+
 Most cheaper servos do not move the full 180 degrees.  Some expensive servos move greater than 180.
 
 Requesting the a servo to move beyond its physical limit can cause the servo to "chatter"; it hits the end stop but continues to try to move farther. We had a case where a cheap servo was used, and it broke through the end stops.  So we went conservative, and change the DEFAULT code to stop short of the usual limit.
@@ -30,21 +32,39 @@ Max time is 2.35-2.39 ms due to processing overhead.
 
 Each cog has two counters, (A and B).  Each counter can control 8 servos.  On cog can control 16 servos.  Two cogs can control 32 servos if we wish to use up all the pins.  
 
-== 
+== mask bit =
 
-Absolute allowable limits are 0.75 to 2.25   (1.5 is alway middle)
-adjustable in code
+The software is set up to control which servos are enabled.
 
-Turn servos on and off.  Mask work is
+The word `sm_enable ` contains a bit mask to turn servos on and off.
 
 =====>
-sm_enable 
+`sm_enable `
 ========>
 put a 1 in the bits to turn on the servo
 
-if you want to keep RSR232 and EEPROM default lines use
+For example:
+{{{
+b_1_0000_0000_0000 sm_enable 
+}}} 
+or
+{{{
+d_4096 sm_enable 
+}}} 
 
-digital servos compensate, analog servos chatter or go through stops. 
+will enable the servo on pin 12.  (There is a 1 in position 12 of the binary value, and that binary value is 4096 in decimal). 
+
+
+
+if you want to keep RSR232 and EEPROM default lines use
+{{{
+h_FFF_FFFF  sm_enable 
+d_268_435_455 sm_enable 
+b_1111_1111_1111__1111_1111_1111_1111 sm_enable 
+}}}
+ 
+to enable all the pins 28 servos, leaving 28, 29 for EEPROM, and 30 31 for serial. 
+
 
 Pins are related to servo number. 
 recommend NOT changing this, 
