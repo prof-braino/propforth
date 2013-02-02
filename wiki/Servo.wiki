@@ -125,12 +125,7 @@ MAX setup 28 servos
   * specs - deadbandwidth 4uS - this many 12.5 ns = 320 counts
   * must have at least this much variabltion before it moves.
 
-  * 320 * 12.5 is minimum it can move. 
+  * `320 * 12.5 is minimum it can move.` 
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= End 20130202 =
