@@ -1,0 +1,105 @@
+#summary Notes for Hobby Servo Support.
+#labels servo
+
+= Servo =
+
+Hobby Servo is controlled by sending it a pulse every 20 milliseconds. The width of the pulse tell the servo the desired position, and it tries to move to that position.  The pulse can be 1.5 ms +/- 1 ms .  That is a pulse of 2.5 will ask for rotation 90 degrees. A pulse of 0.5 ms will ask for rotation of -90 degrees.  a pulse of 1.5 ms will ask the servo to move to its middle position. 
+
+== Not always the MAX ==
+
+Most cheaper servos do not move the full 180 degrees.  Some expensive servos move greater than 180.
+
+Requesting the a servo to move beyond its physical limit can cause the servo to "chatter"; it hits the end stop but continues to try to move farther. We had a case where a cheap servo was used, and it broke through the end stops.  So we went conservative, and change the DEFAULT code to stop short of the usual limit.
+
+Absolute allowable limits are 0.75 to 2.25   (1.5 is alway middle).
+The limits are adjustable in code.  It is suggested that users get familiar with the code and controlling the servo before changing the defaults.  Then, it is suggested to find out the max for your specific servos, and set those as the limits in software.
+
+== One I/O pin per servo ==
+
+One I/O pin is required to directly control a servo.  Up to 32 servos can be directly controlled using a propeller chip. This would consume at minimum two cogs. If 32 servos were used, all the I/O pins would be outputs, so it would not be easy to talk to the prop chip.
+
+== One counter can control 8 servos ==
+
+Instead of 1 clock 1 servo; 1 clock 8 servos, 20 ms / 2.5 = 8
+
+To control a servo, a pulse is sent out every 20 milliseconds. While a cog is waiting until it needs to send another pulse, it can send pulses to additional servos.  The maximum pulse that will be sent to a servo is 2.5 milliseconds.  20 ms per servo / 2.5 ms = 8 servos total.  
+
+Max time is 2.35-2.39 ms due to processing overhead. 
+
+== One cog has two counters ==
+
+Each cog has two counters, (A and B).  Each counter can control 8 servos.  On cog can control 16 servos.  Two cogs can control 32 servos if we wish to use up all the pins.  
+
+== 
+
+Absolute allowable limits are 0.75 to 2.25   (1.5 is alway middle)
+adjustable in code
+
+Turn servos on and off.  Mask work is
+
+=====>
+sm_enable 
+========>
+put a 1 in the bits to turn on the servo
+
+if you want to keep RSR232 and EEPROM default lines use
+
+digital servos compensate, analog servos chatter or go through stops. 
+
+Pins are related to servo number. 
+recommend NOT changing this, 
+===> 
+specify start pin, goes from there,
+Pin 8-24
+depends on if servo is enabled,
+
+can be changed but code get complex, so don't bother.
+
+This is done the 
+
+interfaces are same 
+
+set-pause and calibrate are same 
+
+SMALLEST NOTICABLE CHANGE
+1.5 ms = 1500uS = 1,500,000 ns
+
+Theoretically, div by 12.5 ns 
+120,000 is DYNAMIC RANGE
+
+To TEST - 
+not will 1 move it,
+move to a position, mark it 
+move it to 45 degrees
+move it back (repeatability)
+
+move to a position, mark it 
+move it to 45 degrees
+move it to position -1 to notice a change
+  
+120,000 position is    1D4C0 hex
+65535            is     FFFF
+
+variable is 32 bits anyway.
+
+change comment in line 166
+and 1000 in line 168 and 176 to 120,000
+
+MAX setup 28 servos
+
+two servo, leave on a the same pin
+move one on each diferent pin.
+Plug one servo is in each 
+
+specs - deadbandwidth 4uS - this many 12.5 ns = 320 counts
+must have at least this much variabltion before it moves.
+
+320 * 12.5 is minimum it can move. 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
