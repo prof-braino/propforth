@@ -13,8 +13,7 @@ Most cheaper servos do not move the full 180 degrees.  Some expensive servos mov
 
 Requesting the a servo to move beyond its physical limit can cause the servo to "chatter"; it hits the end stop but continues to try to move farther. We had a case where a cheap servo was used, and it broke through the end stops.  So we went conservative, and change the DEFAULT code to stop short of the usual limit.
 
-Absolute allowable limits are 0.75 to 2.25   (1.5 is alway middle).
-The limits are adjustable in code.  It is suggested that users get familiar with the code and controlling the servo before changing the defaults.  Then, it is suggested to find out the max for your specific servos, and set those as the limits in software.
+By DEFAULT the Absolute allowable limits are 0.75 to 2.25   (1.5 is alway middle). The limits are adjustable in code.  It is suggested that users get familiar with the code and controlling the servo before changing the defaults.  Then, it is suggested to find out the max for your specific servos, and set those as the limits in software.
 
 == One I/O pin per servo ==
 
@@ -93,33 +92,52 @@ What is the smallest noticeable change in servo position we can achieve?
 
 SMALLEST NOTICE ABLE CHANGE
 
+The default limits for the control pulses are 0.75 to 2.25 ms.  2.25 - 0.75 = range of 1.5 ms 
+
   * 1.5 ms = 1500uS = 1,500,000 ns
 
-Theoretically, div by 12.5 ns 
+Theoretically, divide 15,000,000 ns by 12.5 ns 
 
   * 120,000 is DYNAMIC RANGE
 
 To TEST - 
-  * not will 1 move it,
+  * Whether or not a change of 1 will move the servo arm?
   * move to a position, mark it 
   * move it to 45 degrees
   * move it back (repeatability)
 
   * move to a position, mark it 
-  * move it to 45 degrees
+  * move it to 45 degrees (or any repeatable position that is convenient)
   * move it to position -1 to notice a change
+  * keep changing position by 1 unit until a change is noticed.
+
+Repeat this until it does not return to the the exact starting point. 
   
   * 120,000 position is    1D4C0 hex
   * 65535            is     FFFF
 
 variable is 32 bits anyway.
 
+== To test ==
+
+Move to 120,000 positions (1D4C0 hex).  Some changes are too small to cause the servo to move.  Determine for a give servo the smallest positional change that can be performed. 
+
+The number of positions is greater than 16 bits, so it wont fit in a word.  It will definitely fit in a long, but the long has more bits than we need.  be aware so junk in the the unused bits doesn't trip something up. 
+
+The number of usable positions may be smaller than 120,000.  If the number turns out to be 65535 or less, the position value could be scaled and a word (16 bit) variable could be used. 
+
+= note = 
+
 change comment in line 166 and 1000 in line 168 and 176 to 120,000
+
+= Max is probably 28 servos = 
+
+More than 28 servos prevents us from talking to and controlling the prop, and getting to the EEPROM.  
 
 MAX setup 28 servos
 
   * two servo, leave on a the same pin
-  * move one on each diferent pin.
+  * move one on each different pin.
   * Plug one servo is in each 
 
   * specs - deadbandwidth 4uS - this many 12.5 ns = 320 counts
