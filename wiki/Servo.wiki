@@ -136,14 +136,20 @@ More than 28 servos prevents us from talking to and controlling the prop, and ge
 
 MAX setup 28 servos
 
-  * two servo, leave on a the same pin
+But I don't have 28 servos. How to test?   
+
+  * two servo, leave one at the same pin
   * move one on each different pin.
-  * Plug one servo is in each 
+  * Plug one servo is in each pin, and move both
+
+= Deadband = 
+
+This is not Jerry Garcia for servos.  This is the minimum value change for evoking movement from the servo. Typical specs say 4 microseconds (4uS) or 4000ns. Which is also 0.004 milliseconds. 
 
   * specs - deadbandwidth 4uS - this many 12.5 ns = 320 counts
-  * must have at least this much variabltion before it moves.
+  * must have at least this much variational before it moves.
 
-  * `320 * 12.5 is minimum it can move.` 
+  * 320 `*` 12.5 is minimum it can move.` 
 
 
 = End 20130202 =
