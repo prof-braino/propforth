@@ -65,56 +65,67 @@ b_1111_1111_1111__1111_1111_1111_1111 sm_enable
  
 to enable all the pins 28 servos, leaving 28, 29 for EEPROM, and 30 31 for serial. 
 
+= Pin is Servo number =
 
-Pins are related to servo number. 
-recommend NOT changing this, 
-===> 
-specify start pin, goes from there,
-Pin 8-24
-depends on if servo is enabled,
+The software is designs so that Pins are related to servo number. 
+Recommend NOT changing this.
+ 
+== Usage of pin assignments ==
 
-can be changed but code get complex, so don't bother.
+===> specify start pin, the servos and pin assignments proceed in sequence.  
 
-This is done the 
+Pin 8-24 depends on if servo is enabled, can be changed but code get complex, so don't bother.
+
+NOTE:  check the sm_emable example above?  If this means only pins 8-23(?) are assigned for servo use? 
+
+
+= same as previous versions =
+
+In case anybody has existing code based on previous versions:  The current support is done to same as previous versions (somebody check?  I don't have the previous versions set up)
 
 interfaces are same 
 
 set-pause and calibrate are same 
 
-SMALLEST NOTICABLE CHANGE
-1.5 ms = 1500uS = 1,500,000 ns
+= Smallest noticeable change = 
+
+What is the smallest noticeable change in servo position we can achieve? 
+
+SMALLEST NOTICE ABLE CHANGE
+
+  * 1.5 ms = 1500uS = 1,500,000 ns
 
 Theoretically, div by 12.5 ns 
-120,000 is DYNAMIC RANGE
+
+  * 120,000 is DYNAMIC RANGE
 
 To TEST - 
-not will 1 move it,
-move to a position, mark it 
-move it to 45 degrees
-move it back (repeatability)
+  * not will 1 move it,
+  * move to a position, mark it 
+  * move it to 45 degrees
+  * move it back (repeatability)
 
-move to a position, mark it 
-move it to 45 degrees
-move it to position -1 to notice a change
+  * move to a position, mark it 
+  * move it to 45 degrees
+  * move it to position -1 to notice a change
   
-120,000 position is    1D4C0 hex
-65535            is     FFFF
+  * 120,000 position is    1D4C0 hex
+  * 65535            is     FFFF
 
 variable is 32 bits anyway.
 
-change comment in line 166
-and 1000 in line 168 and 176 to 120,000
+change comment in line 166 and 1000 in line 168 and 176 to 120,000
 
 MAX setup 28 servos
 
-two servo, leave on a the same pin
-move one on each diferent pin.
-Plug one servo is in each 
+  * two servo, leave on a the same pin
+  * move one on each diferent pin.
+  * Plug one servo is in each 
 
-specs - deadbandwidth 4uS - this many 12.5 ns = 320 counts
-must have at least this much variabltion before it moves.
+  * specs - deadbandwidth 4uS - this many 12.5 ns = 320 counts
+  * must have at least this much variabltion before it moves.
 
-320 * 12.5 is minimum it can move. 
+  * 320 * 12.5 is minimum it can move. 
 
 
 = Details =
