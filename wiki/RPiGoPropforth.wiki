@@ -22,6 +22,8 @@ Xming doesn't set up the env properly yet
 
 == Install RASPIAN on Raspberry Pi SD ==
 
+This image is being tested 2012-12-16 wheezy
+
 These images were tested and worked
 
 [http://downloads.raspberrypi.org/download.php?file=/images/raspbian/2012-07-15-wheezy-raspbian/2012-07-15-wheezy-raspbian.zip 2012-07-15-wheezy-raspbian.zip]
@@ -56,6 +58,8 @@ sudo raspi-config
 }}}
 == set your password ==
 
+This is done in raspi-config, but in case you missed it
+
 Change the password for the user pi:
 {{{
 passwd
@@ -63,7 +67,7 @@ passwd
 
 == set the ROOT passwd ==
 
-NOTE: there isn't a root password by default.  To login in as root we have to set a password.
+NOTE: there isn't a root password by default.  To login in as root we have to set a password.  Probably don't want to do this....
 
 {{{
 sudo passwd root
@@ -151,6 +155,8 @@ to allow the changes to take affect
 
 This step is optional.  You don't HAVE to run headless, but the little RPi is faster if it isn't occupied with running with a GUI.  These steps apply to your windows PC.
 
+This allow us to run the GUI for the PI on the PC. Th RPI needs no monitor or keyboard or mouse.
+
 == install Xming ==
 
 NOTICE: Xming works great EXCEPT it doesn't set up the environment variable properly for Go, so go won't compile from an Xming terminal window.  USE Teraterm when you do the GO stuff.
@@ -195,6 +201,8 @@ sudo apt-get update
 sudo apt-get upgrade
 }}}
 
+This runs for a long time.  It seems like an hour, but is usually less.
+
 ------
 
 = install SAMBA =
@@ -205,9 +213,15 @@ SAMBA allow us to get at the RPi linux file system from a windows PC.
 
 {{{
 sudo apt-get install samba
+}}}
 
+only takes a couple minutes
+
+{{{
 sudo apt-get install samba-common-bin 
 }}}
+
+
 
 == edit the config files ==
 
