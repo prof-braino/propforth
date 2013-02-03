@@ -12,7 +12,8 @@ I have not been able to test it yet, but present it here for comment.  It is an 
 
 NickL
 
-{{{
+<code language="xml">
+
 
 {
  EXPERIMENTAL  - Defining a Generic PID Controller
@@ -28,10 +29,7 @@ NickL
  TO is a word which can change the value of a constant, thus, allowing constants to function as
   variables.  For example:  45 constant try  try . 45  165 TO try  try . 165
 
-}
-}}}
 
-{{{
 : TO ' 4+ L!  ;
  
 \ pid parameters 
@@ -51,9 +49,7 @@ variable e2     \ e(k-2)
 125  constant dt      \ millisec sampling time - 8 samples/sec 
 100  constant uref    \ target value of measured parameter (umeas)
 
-}}}
 
-{{{
 : initERR  \ ( -- ) sets e0, e1, & e2 to 0
    0 e0 L!  0 e1 L!  0 e2 L!  ; 
 
@@ -72,8 +68,17 @@ variable e2     \ e(k-2)
    uref swap - dup e0 L! K1 Ti */
    e1 L@ K2 * +  e2 L@ Td * +  Kp scale */  ; 
 
-}}}
+</code>
+
 
 = NOTE =
 
 This is presented for comments, and is still in progress
+{{{
+Figure out how to use the code tags for forth?
+
+<code language="xml">
+<hello target="world"/>
+</code>
+
+}}}
