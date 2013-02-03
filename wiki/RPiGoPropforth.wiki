@@ -162,7 +162,7 @@ This step is optional.  You don't HAVE to run headless, but the little RPi is fa
 
 This allow us to run the GUI for the PI on the PC. Th RPI needs no monitor or keyboard or mouse.
 
-== install Xming ==
+== install Xming (on PC) ==
 
 NOTICE: Xming works great EXCEPT it doesn't set up the environment variable properly for Go, so go won't compile from an Xming terminal window.  USE Teraterm when you do the GO stuff.
 
@@ -389,7 +389,7 @@ Check this if there proves to be a problem....
 
 = COMPILE the GO SOURCE =
 
-This compile will take about an hour.
+This compile will take about an hour. (1:20 for this run)
 {{{
 ./all.bash
 }}}
@@ -399,6 +399,27 @@ NOTE:  There's an illegal instruction right at the end using
 2012-08-16-wheezy-raspbian
 
 This draft needs update for the recent version
+
+Note: using 2012-12-16- wheezy ending messages were
+{{{
+---------------------------------------------------------------
+# ../test
+run                  nilptr.go           : incorrect output
+signal: killed
+
+runoutput            rotate0.go          : incorrect output
+go build command-line-arguments: signal: killed
+
+exit status 1
+
+real    34m32.604s
+user    30m6.830s
+sys     1m53.020s
+Sun Feb  3 01:28:46 CST 2013
+---------------------------------------------------------------
+}}}
+
+
 
 ----
 
