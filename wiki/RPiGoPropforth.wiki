@@ -75,9 +75,14 @@ sudo passwd root
 
 We might not need to do this.  However, many old-school linux references (pre-sudo) require logging in as root to execute some administrative commands. 
 
+-----
+
 == set hosttname and IP address ==
 
 Now we are going to change the IP address to be a static address, and we are going to change the hostname. Depending on your LAN configuration these addresses may be different.
+
+You router also wants to associate the RPi MAC address with the static IP address.  You might want to edit these files only on the RPi that is destined to use this card.
+
 
 === edit HOSTS file ===
 
@@ -237,7 +242,7 @@ workgroup = MyWorkGroup
 }}}
 Use can your own workgroup name
 
-Find the line (line 62): ( I think  this is wrong line number?)
+Find the line (line 62): ( I think  this is wrong line number? should be 102 )
 {{{
 # security = user
 }}}
@@ -314,10 +319,10 @@ export MINICOM=-“b 115200 -o -D /dev/ttyAMA0”
 
 the last line should be(?):`export MINICOM=“-b 115200 -o -D /dev/ttyAMA0”`
 
+For some reason the double quotes seem to mess up, and I have to edit the line
 
 
-
-Logout and log back in, make sure teh environment variables are correct:
+Logout and log back in, make sure the environment variables are correct:
 {{{
 env
 }}}
