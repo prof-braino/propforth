@@ -353,7 +353,7 @@ Copy the source for Go to your rig:
 hg clone -u tip https://code.google.com/p/go
 }}}
 
-the step "adding file changes" is taking a LONG time....
+the step "adding file changes" is taking a LONG time.... but it comes back after a few minutes.
 
 
 The following patch must be applied:
@@ -369,6 +369,21 @@ patch -p2 <issue5987063_32001.diff
 
 NOTE: I get an error here,  but it seemed to work...
 
+it was :
+
+{{{
+patching file cmd/5l/asm.c
+Hunk #1 FAILED at 2192.
+Hunk #2 succeeded at 1928 with fuzz 2 (offset -275 lines).
+1 out of 2 hunks FAILED -- saving rejects to file cmd/5l/asm.c.rej
+patching file cmd/5l/l.h
+Hunk #1 succeeded at 329 with fuzz 2 (offset 14 lines).
+patching file cmd/5l/obj.c
+Hunk #1 FAILED at 85.
+1 out of 1 hunk FAILED -- saving rejects to file cmd/5l/obj.c.rej
+}}}
+
+Check this if there proves to be a problem....
 
 [https://codereview.appspot.com/5987063 Details on Issue 5987063]
 
