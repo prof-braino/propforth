@@ -1,0 +1,79 @@
+#summary Proportional-Integral-Derivative (PID) control from NGLordi
+
+= Proportional-Integral-Derivative (PID) control =
+
+_posted so Randal and Vic can see it too_
+
+Parallax forum post http://forums.parallax.com/showthread.php/138399-Propforth-5.0-is-available-for-download?p=1161308&viewfull=1#post1161308
+
+[
+
+QUOTE=nglordi;1161308 The following code is a PropForth version of the PID controller which I plan to include in a PropForth robot control language.
+
+I have not been able to test it yet, but present it here for comment.  It is an example where the word TO (using constants as values) can be effective.
+
+NickL
+
+[CODE] [/CODE]
+
+
+{{{
+
+{
+ EXPERIMENTAL  - Defining a Generic PID Controller
+    Reference: Digital PID Controllers  Dr. Varodon Taochindi  6/2011  www.controlsystemslab.com   
+
+ PID equation: u(k) = u(k-1) + k1*e(k) + k2*e(k-1) + k3*e(k-2)
+   where k1 = kp+ki+kd   k2 = -kp-2kd   k3 = kd   ki = kp/Ti   kd = kp*Td 
+   Both Ti & Td are defined in terms of sample numbers.     
+ 
+   ucorr = u(k) - u(k-1) = Kp*(K1*e0+K2*e1+K3*e2) where  Kp = kp*scale
+      K1Ti = Ti(1+TD)+1  K2 = -(1+2Td)  K3 = Td.}
+
+ TO is a word which can change the value of a constant, thus, allowing constants to function as
+  variables.  For example:  45 constant try  try . 45  165 TO try  try . 165
+
+}
+
+: TO ' 4+ L!  ;
+ 
+\ pid parameters 
+  
+variable e0     \ e(k)
+variable e1     \ e(k-1)
+variable e2     \ e(k-2)
+
+\ These constants are intended to be used as "values", i.e., their values can be
+\ altered, using TO, prior to running the controller.  
+1    constant Ti
+8    constant Td 
+10   constant K1      \ p: 1
+-17  constant K2      \ p: -1   
+125  constant Kp      \ kp*scale 
+1000 constant scale   \ scales Kp
+125  constant dt      \ millisec sampling time - 8 samples/sec 
+100  constant uref    \ target value of measured parameter (umeas)
+
+: initERR  \ ( -- ) sets e0, e1, & e2 to 0
+   0 e0 L!  0 e1 L!  0 e2 L!  ; 
+
+\ The following 3  words simpify calulating K1 & K2, eg, cK1pid TO K1. 
+: cK1pid   \ ( -- n1 ) leaves calculated  K1 for a pid controller on the stack.
+    Td 1+ Ti * 1+  ;
+
+: cK1pd    \ ( -- n1) leaves calculated K1 for a pd controller on the stack. Set Ti to 1.
+    Td 1+  ;
+
+: cK2   \ ( -- n1) leaves calculated K2 for a pid\pd controller on the stack.
+    Td 2* 1+ negate  ;
+
+: PID  \ ( n1 -- n2 ) n1 is umeas and n2 is ucorr.
+   e1 L@ e2 L!  e0 L@ e1 L!  
+   uref swap - dup e0 L! K1 Ti */
+   e1 L@ K2 * +  e2 L@ Td * +  Kp scale */  ; 
+
+}}}
+
+= NOTE =
+
+This is presented for comments, and is still in progress
