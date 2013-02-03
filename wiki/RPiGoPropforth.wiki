@@ -353,6 +353,9 @@ Copy the source for Go to your rig:
 hg clone -u tip https://code.google.com/p/go
 }}}
 
+the step "adding file changes" is taking a LONG time....
+
+
 The following patch must be applied:
 
 {{{
