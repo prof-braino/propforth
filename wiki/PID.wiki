@@ -51,6 +51,9 @@ variable e2     \ e(k-2)
 125  constant dt      \ millisec sampling time - 8 samples/sec 
 100  constant uref    \ target value of measured parameter (umeas)
 
+}}}
+
+{{{
 : initERR  \ ( -- ) sets e0, e1, & e2 to 0
    0 e0 L!  0 e1 L!  0 e2 L!  ; 
 
