@@ -6,16 +6,11 @@ _posted so Randal and Vic can see it too_
 
 Parallax forum post http://forums.parallax.com/showthread.php/138399-Propforth-5.0-is-available-for-download?p=1161308&viewfull=1#post1161308
 
-[
-
 QUOTE=nglordi;1161308 The following code is a PropForth version of the PID controller which I plan to include in a PropForth robot control language.
 
 I have not been able to test it yet, but present it here for comment.  It is an example where the word TO (using constants as values) can be effective.
 
 NickL
-
-[CODE] [/CODE]
-
 
 {{{
 
@@ -34,7 +29,9 @@ NickL
   variables.  For example:  45 constant try  try . 45  165 TO try  try . 165
 
 }
+}}}
 
+{{{
 : TO ' 4+ L!  ;
  
 \ pid parameters 
