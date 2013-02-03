@@ -28,7 +28,7 @@ NickL
 
  TO is a word which can change the value of a constant, thus, allowing constants to function as
   variables.  For example:  45 constant try  try . 45  165 TO try  try . 165
-
+}
 
 : TO ' 4+ L!  ;
  
