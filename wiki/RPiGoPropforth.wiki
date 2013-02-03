@@ -388,6 +388,8 @@ Copied over goterm & gomuxterm and compiled
 
 = end notes 20120914 =
 
+= some updates 20130202 =
+
 
 = Details =
 
