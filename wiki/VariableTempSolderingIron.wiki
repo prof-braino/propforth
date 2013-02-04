@@ -86,7 +86,7 @@ Data from the old two setting soldering station
 Radio shack 20 watt 40 watt soldering station
 
 
-|| High power || 41 watts || 252c || -- minutes ||
+|| High power || 41 watts || 250c || 22 minutes ||
 || Low power || 23 watts || 183c || 20 minutes ||
 
 It a good thing I checked this! I need to find a setting for 183c, so I can use my old fashion hobbyist lead solder!. 
