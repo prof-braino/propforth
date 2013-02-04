@@ -16,7 +16,7 @@ This experiment will look at the temperature control on the soldering iron.
 
 I have a stack of kit boards that need soldering.  I have spent too much time fixing projects from soldering errors, from using an old fashioned giant tip soldering iron.  I need a new fine tip soldering iron. 
 
-I was looking into those fancy adjustable soldering stations. A friend suggested that thyristors used in rotary dimmer swiches and are very efficient, and a workable adjustable temperature soldering iron could be had for next to nothing. So I decided to try it out.  I collected:        
+I was looking into those fancy adjustable soldering stations. A friend suggested that thyristors used in rotary dimmer switches and are very efficient, and a workable adjustable temperature soldering iron could be had for next to nothing. So I decided to try it out.  I collected:        
 
   * 30 Watt fine tip soldering iron from Science and Surplus $6
   * Rotary dimmer wall switch  $5
