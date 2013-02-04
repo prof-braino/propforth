@@ -6,7 +6,7 @@ This is an experiment.  Do not try this at home. This device uses wall current f
 
 User accepts all responsibility.
 
-= Variable Temperatyre soldering iron =
+= Variable Temperature soldering iron =
 
 
 I have a stack of kit boards that need soldering.  I have spent too much time fixing projects from soldering errors, from using an old fashioned giant tip soldering iron.  I need a new fine tip soldering iron. 
