@@ -44,6 +44,16 @@ Room temperature was 23C
 
 = Results =
 
+|| Percent  ||  Watts  || Temperature C  || 
+|| 100%  ||  28 Watts.  ||  ---c || 
+|| 75%,  ||  22 watts. ||    ---c   ||  277c || 
+|| 62%,  ||  18 watts.  ||    ---c ||   237c || 
+|| 50%,  ||  14 watts.  ||   ---c   ||  197c || 
+|| 40%   ||  11 watts.  ||    ---c  ||  131c   || 
+|| 30%,  ||  2 to 4 watts  ||   ---c   ||  58c   || 
+|| 25%,  ||  zero watts   || ambient ||
+
+
 = Raw Data =
 
 || = Raw data 1 = || 
