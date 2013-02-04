@@ -75,7 +75,7 @@ Room temperature was 23C
 || 30%  ||  2-6 Watts.  ||  65c || 13 minutes ||
 || 40%  ||  11 Watts.  ||  125c || 22 minutes ||
 || 50%  ||  15 Watts.  ||  178c || 22 minutes ||
-|| 62%  ||  18 Watts.  ||  278c ??? || 36 minutes || This looks like a data collection error
+|| 62%  ||  18 Watts.  ||  278c ??? || 36 minutes || This looks like a data collection error ||
 || 75%  ||  22 Watts.  ||  270c || 22 minutes ||
 
 || 62%  ||  18 Watts.  ||  225c || 10 minutes ||
@@ -87,7 +87,7 @@ Data from the old two setting soldering station
 Radio shack 20 watt 40 watt soldering station
 
 
-|| High power || 41 watts || --c \\ -- minutes ||
+|| High power || 41 watts || --c || -- minutes ||
 || Low power || 23 watts || --c || -- minutes ||
 
 
