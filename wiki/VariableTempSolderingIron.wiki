@@ -61,6 +61,7 @@ Room temperature was 23C
 
 = Raw data 3 =
  
-
+ || Percent  ||  Watts  || Temperature C  || time ||
+ || 100%  ||  27 Watts.  ||  312c || 20 minutes ||
 
 = End = 
