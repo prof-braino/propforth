@@ -1,0 +1,50 @@
+#summary DIY Variable temperature soldering iron experiment
+
+= DANGER This is an experiment =
+
+This is an experiment.  Do not try this at home. This device uses wall current from the AC main and is very dangerous if mishandled. This should only be done by a qualified adult.  
+
+User accepts all responsibility.
+
+= Variable Temperatyre soldering iron =
+
+
+I have a stack of kit boards that need soldering.  I have spent too much time fixing projects from soldering errors, from using an old fashioned giant tip soldering iron.  I need a new fine tip soldering iron. 
+
+I was looking into those fancy adjustable soldering stations. A friend suggested that thyristors used in rotary dimmer swiches and are very efficient, and a workable adjustable temperature soldering iron could be had for next to nothing. So I decided to try it out.  I collected:        
+
+ - 30 Watt fine tip soldering iron from Science and Surplus $6
+ - Rotary dimmer wall switch  $5
+ - Conduit box $1
+ - LED night light $1
+ - salvaged outlet recepticle
+ - salvaged PC power chord
+
+NOTE: Night light is used as a pilot light, plugged into one of the pair of outlets.  The first one tired drew 0 watts (measured) at max setting, and 5 watts at lowest setting.  I removed it after about two minutes when it started to stink. It had many parts inside and several were very hot. The second  night light is the cheapest I've ever found, three LEDs, one resistor (maybe) and one diode (maybe); this one stays cold all the time.   
+
+TEST and MEASUREMENT:
+ - cheap but fancy VOM with a thermocouple. I stuck the tip of the soldering iron against the thermocouple bead and set it on a piece of scrap wood.  Maybe it will catch fire?  
+ - kill-o-watt from Harbor Frieght. Displays line voltage, watts, and amps.  Its fairly consistent.
+ 
+Test Procedure:  
+Start at the highest setting
+Mark the position of the dial
+Wait till the Watts settls, note the watts
+Wait till the temperature settles (about 15 minutes when drropping, 10 minutes when rising) notes the temperature
+Measure at each extreme setting  Max and min
+Measure half way between any two points
+Repeat until the wife wants chores done.  c
+
+Room temperature was 23C   
+
+Percent - Watts - Temperature C 
+100%  28 Watts.  320 to 360c
+75%,  22 watts.  271 to 285c   277c
+62%,  18 watts.  234 to 240c   237c
+50%,  14 watts.  194 to 200c = 197c
+40%   11 watts.  130 to 131c = 131c  
+30%,  2 to 4 watts 57 to 58c = 58c  
+25%,  zero watts  
+
+50%  14WATTs   177c
+62%  18watts   232-237 = 235
