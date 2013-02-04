@@ -44,9 +44,9 @@ Room temperature was 23C
 
 = Results =
 
-  || = Raw data 1 = ||
- 
+= Raw Data =
 
+|| = Raw data 1 = ||
 || Percent  ||  Watts  || Temperature C  || 
 || 100%  ||  28 Watts.  ||  320 to 360c || 
 || 75%,  ||  22 watts. ||   271 to 285c   ||  277c || 
@@ -55,17 +55,10 @@ Room temperature was 23C
 || 40%   ||  11 watts.  ||  130 to 131c  ||  131c   || 
 || 30%,  ||  2 to 4 watts  || 57 to 58c  ||  58c   || 
 || 25%,  ||  zero watts   || 
-
-
 || = Raw data 2 = ||
- 
-
 || 50%  ||  14WATTs  ||   177c || 
 || 62%  ||  18watts  ||   232-237  ||  235 || 
-
-
-= Raw data 3 =
- 
+||= Raw data 3 =||
 || Percent  ||  Watts  || Temperature C  || time ||
 || 100%  ||  27 Watts.  ||  312c || 20 minutes ||
 || 0%  ||  0 Watts.  ||  --- || 0 minutes ||
