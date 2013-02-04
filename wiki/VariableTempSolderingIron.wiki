@@ -87,7 +87,7 @@ Radio shack 20 watt 40 watt soldering station
 
 
 || High power || 41 watts || --c || -- minutes ||
-|| Low power || 23 watts || --c || -- minutes ||
+|| Low power || 23 watts || 183c || -- minutes ||
 
 
 
