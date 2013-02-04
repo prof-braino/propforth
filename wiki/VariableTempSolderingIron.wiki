@@ -61,8 +61,9 @@ Room temperature was 23C
 ||= Raw data 3 =||
 || Percent  ||  Watts  || Temperature C  || time ||
 || 100%  ||  27 Watts.  ||  312c || 20 minutes ||
-|| 0%  ||  0 Watts.  ||  --- || 0 minutes ||
-|| 30%  ||  2-4 Watts.  ||  ---c || 22 minutes ||
+|| 25%  ||  0 Watts.  ||  --- || 0 minutes ||
+|| 30%  ||  2-6 Watts.  ||  65c || 13 minutes ||
+|| 40%  ||  11 Watts.  ||  ---c || -- minutes ||
 
   
 
