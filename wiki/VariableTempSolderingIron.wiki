@@ -66,7 +66,7 @@ Room temperature was 23C
 || 40%  ||  11 Watts.  ||  125c || 22 minutes ||
 || 50%  ||  15 Watts.  ||  178c || 22 minutes ||
 || 62%  ||  18 Watts.  ||  278c || 36 minutes ||
-|| 75%  ||  -- Watts.  ||  ---c || -- minutes ||
+|| 75%  ||  22 Watts.  ||  ---c || -- minutes ||
 
 
   
