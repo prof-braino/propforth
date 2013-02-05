@@ -10,7 +10,7 @@ V: "At the beginning."
 
 B: "With the download?"
 
-V:  "I got the download, and I opened it (exacted), but I'm having trouble with the terminal".
+V:  "I got the download, and I opened it (extracted), but I'm having trouble with the terminal".
 
 B:  "teraterm?"
 
@@ -22,11 +22,11 @@ V: "No, Mac uses Brad's Spin Tool. Now, at what point do I uses the spin tool, a
 
 B: "Use the spin tol to load the kernel.spin from the current release directory. Then use the terminal program to talk to the prop, i the kernel.spin program running on the prop is the forth command line. "
 
-V: "Ok, I having trouble with the teraminal program running at 34000"
+V: "Ok, I having trouble with the terminal program running at 34000"
 
-B: "Ah.  Close the terminal program so it releases the serial port.  The load the kernel.spin into eeprom.  The proptool is supposed release the com port when its done loading (it does this on windows) but close it anyway just to be sure.  Then start the terminal program, and set the baud to 230400.  Now hit enter a couple times......  "
+B: "Ah.  Close the terminal program so it releases the serial port.  The load the kernel.spin into EEPROM.  The proptool is supposed release the com port when its done loading (it does this on windows) but close it anyway just to be sure.  Then start the terminal program, and set the baud to 230400.  Now hit enter a couple times......  "
 
-V: " ok, it say Pro0 cog6 OK"
+V: "OK, it say Pro0 cog6 OK"
 
 B:  "OK!  So now your running, everything is good." 
 
@@ -34,9 +34,9 @@ V:  "But what do I do now?"
 
 B: " Can you keep following the instructions?  It supposed to tell us everything we need to know, in the order we need it. "
 
-V: "OK, I got part ways throught README.txt, then partway through GettingStarted.txt, now what?"
+V: "OK, I got part ways through README.txt, then partway through GettingStarted.txt, now what?"
 
-B: "Ah.  I think I see the problem.   README.txt tesll you where the documentation is, but you didn't get to that yet.  We have to re-order README.txt.  The first thing should be 'the file propforth.htm has all the documetation and examples to get you up to speed.  
+B: "Ah.  I think I see the problem.   README.txt tells you where the documentation is, but you didn't get to that yet.  We have to re-order README.txt.  The first thing should be 'the file propforth.htm has all the documentation and examples to get you up to speed.  
 You just need to read up to section 4 and you'll know everything we know.  You'll still need to run the examples and get experience, but all the information is there."
 
 V:  "Well, that's just me. Other folks probably read all the instructions."
@@ -44,7 +44,5 @@ V:  "Well, that's just me. Other folks probably read all the instructions."
 B:  "I think everybody does just what you did.  The instructions are out of sequence or something, that's why folks get stuck.  We should work on this."
 
 V: "in that case, I'll try to write something up.  Give me till Friday to go over this."
-
-
 
 = end 20130205 =
