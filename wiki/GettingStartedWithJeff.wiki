@@ -1,0 +1,81 @@
+#summary First discussions with Jeff
+
+= Data on first discussion =
+
+Background:  Propforth is easy. It should also be easy to get started.  There's a couple things we have to do to get set up, and after that its a breeze.  Unfortunately, we forget what we went through when we got started, and it looks easy because we already know it.     
+
+Sal and Braino have made the docs organized for the beginner.  But, since its so simple, we don't see it anymore, as our minds automagically fill in all the gaps. We no longer realize what a new user doesn't know. 
+
+So, a couple new members are starting up, now is the time to capture what they are going through. 
+
+= Do This =
+
+So this is what I tell new folks (and I think I am simply repeating what I think it says in the docs)
+
+1. Google for Propforth
+
+2. Find the propforth google code page for downloads http://code.google.com/p/propforth/downloads/list
+
+3. find the current release (v5.0 today, v5.3 or 5.4 soon)
+http://propforth.googlecode.com/files/Propforth-V5.03-20120505.zip
+
+4. Extra the archive to your PC someplace convenient
+
+5. find the directory with the readme.txt file
+
+..\mygo\V5.x 
+
+6. Read the Readme
+
+7. Find the propforth kernel you want to use.  This is always the simple devkernel.   
+
+..\mygo\V5.3\CurrentRelease\PropForth
+
+DevKernel.spin
+
+8. Read the Getting Started file in this directory
+
+GettingStartedPropForth.txt
+
+9.  Find the documentation directory
+
+..\mygo\V5.x\doc
+
+find the PropForth.htm file
+
+PropForth.htm
+
+10. Read the first four sections of Propforth.htm
+
+11. Execute the examples
+
+At this point, you will have all the knowledge that we have concerning the propforth kernel. You will need to use it to gain experience, but you knowledge is all there and you have at least been exposed to it (or so we think).  
+
+If this is not correct, please inform us.  Email, phone call, skype, drop by with a six pack and a lasagna casserole, post on the forums, open an issue, anything you want.  We will attempt to clarify and correct any issues that we find. 
+
+= Jeff's comments: =
+
+As of this writing, Jeff is the newest member. Let's closely follow his learning curve.
+
+== Comment1 - 20130205 ==
+
+Are there additional recommended resources (which are compatible) for
+those who don't have a clue which end is up?
+
+This document really deserves something along the lines of "FORTH For
+The BASIC Programmer" written to go with it.
+
+Jeff
+
+  * *Conclusion* The docs did not communicate that he should use propforthdevkernel.spin
+
+  * *Conclusion* The docs did not communicate that he should read propforth.htm.  
+
+  * *Conclusion* The docs did not communicate that he should read ReadMe.txt and GettingStarted.txt
+
+  * *Conclusion* The docs did not communicate that he should read GettingStarted.txt
+
+  * *Conclusion* The docs did not communicate that he should use propforthdevkernel.spin, and he should read propforth.htm.  Also,he may not have understood that he needs to read ReadMe.txt and GettingStarted.txt
+
+So something needs to be re-organized
+
