@@ -1,6 +1,8 @@
 #summary DS00 Time-of-Flight Laser Rangefinder
 #labels DS00
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 The DS00 Time-of-Flight Laser Rangefinder using DS00VQ100 timing chip.
