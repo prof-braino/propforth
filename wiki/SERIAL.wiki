@@ -1,6 +1,11 @@
 #summary Using a custom Serial connection
 #labels v5.0,Serial
 
+
+<wiki:toc max_depth="9" />
+
+
+
 = Introduction =
 
 From forum post 
