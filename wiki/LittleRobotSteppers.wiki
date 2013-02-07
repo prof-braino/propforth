@@ -1,6 +1,8 @@
 #summary Forth Software Driver for Little Robot Stepper motors
 #labels v5.3,LittleRobot,Steppers
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 This is the stepper motor control source code included in ../Proforth5.3/misc/4stepper.f
