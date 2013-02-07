@@ -1,6 +1,8 @@
 #summary Hints on Learning PropForth
 #labels LearningPropforth,LearningForth
 
+<wiki:toc max_depth="9" />
+
 = Get Started =
 
 Load propforth into EEPROM
