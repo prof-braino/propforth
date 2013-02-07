@@ -1,4 +1,8 @@
 #summary How to use float or stick with integer
+#labels Deprecated
+
+
+<wiki:toc max_depth="9" />
 
 = Float or Integer? =
 
