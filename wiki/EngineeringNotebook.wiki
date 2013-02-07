@@ -1,6 +1,9 @@
 #summary Recommendations for an Engineering Notebook for the BSA Robotic Merit Badge
 #labels BSA,EngineeringNotbook
 
+
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 "Engineering Notebook" is simply any notebook an engineer uses to record information during the course of a project.  While there is no "Official Definition" of what constitutes an engineering notebook, there are certain guideline we can try to follow. 
