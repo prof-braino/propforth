@@ -5,6 +5,8 @@
 
 = Introduction =
 
+_note: this should be redone on the next release, and this page deprecated_
+
 PF521BETA is testing the affects of the buffer size and number of channels on throughput. 
 
 = Details =
