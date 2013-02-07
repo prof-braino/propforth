@@ -1,6 +1,8 @@
 #summary HC05 Bluetooth for Little Robot(tm)
 #labels v5.3,LittleRobot,bluetooth
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 The HC05 Bluetooth module allows communication with the prop via bluetooth.  No cables are needed after initial programming. 
