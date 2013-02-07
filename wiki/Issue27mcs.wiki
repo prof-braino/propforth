@@ -1,6 +1,8 @@
 #summary Speed Test for MultiChannel Synchronous Serial.
 #labels v4.5,Phase-Support
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Marco (kuroneko on the parallax forums) asked about the multichannel synchronous serial support, and how it was coded in assembler.  He and Sal did some analysis which resulted in a bug fix to LogicAnalyzer.f and MCS.f as posted in Propforth4.5-20110614RC0.zip
@@ -243,9 +245,3 @@ http://code.google.com/p/propforth/issues/detail?id=27
         200.0 nS|       400.0 nS|       600.0 nS|       800.0 nS|
 
 }}}
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
