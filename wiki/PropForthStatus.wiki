@@ -1,6 +1,16 @@
 #summary Status of PropForth kernel development
 #labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1,5.3
 
+<wiki:toc max_depth="9" />
+
+= 20130207 =
+
+v5.3 has been stable for months.  We found a bunch of issues, but these were concerning packagin the release, the build and test automation, and hardware configurations. 
+
+Also the release identifiers got messed up:  The current release is v5.03, meanins after 5.0 and before 5.1; while the candidate for next public release is v5.3, meaning after 5.2 and before 5.4.  But unless you know that , 5.03 and version 5.3 could mean the same thing.  As a result, the next release should be v5.4 just to eliminate confusion. 
+
+At this time, we are generating the next release,and getting docs squared up for release. 
+
 = 20120705 =
 
 Test automation, logging, and Go-Channel support have been added to version 5.3.  This version is being prepared for release. 
