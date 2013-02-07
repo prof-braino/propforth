@@ -1,5 +1,5 @@
 #summary Additional explanation for spimaker.f
-#labels v3.2
+#labels v3.2,Deprecated
 
 = Introduction =
 
