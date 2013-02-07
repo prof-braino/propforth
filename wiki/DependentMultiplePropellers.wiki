@@ -1,5 +1,7 @@
 #summary Project details and log for Dependent Propeller Configurations
-#labels v5.0,Featured
+#labels v5.0,Featured,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Dependent Multiple Propeller Configurations =
 Refer to [MultiplePropellerExperiments] for an overview and definition of terms.
