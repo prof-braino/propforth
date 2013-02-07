@@ -1,6 +1,9 @@
 #summary Notes for Robotics project for BSA merit badge and School in general
 #labels robotics,BSA,meritbadge,12blocks,school
 
+
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 The primary motivation behind the propforth project is training in micro controllers, beginning with absolute beginners. While the majority of this site documents the development of the propforth kernel, this page begins examination of a possible application of the propforth core in a "training environment".  
