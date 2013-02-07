@@ -1,5 +1,7 @@
 #summary Main page for Multiple Propeller Experiments with PropForth
-#labels v5.0,Featured
+#labels v5.0,Featured,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Purpose of Experiments =
 
