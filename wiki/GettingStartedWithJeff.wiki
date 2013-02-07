@@ -1,4 +1,7 @@
 #summary First discussions with Jeff
+#labels v5.3
+
+<wiki:toc max_depth="9" />
 
 = Data on first discussion =
 
@@ -78,4 +81,3 @@ Jeff
   * *Conclusion* The docs did not communicate that he should use propforthdevkernel.spin, and he should read propforth.htm.  Also,he may not have understood that he needs to read ReadMe.txt and GettingStarted.txt
 
 So something needs to be re-organized
-
