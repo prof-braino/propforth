@@ -1,5 +1,7 @@
 #summary Saving a copy of modifications to eeprom.
-#labels v2.4
+#labels v2.4,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Saving a copy of modifications to eeprom =
 
