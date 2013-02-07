@@ -1,6 +1,10 @@
 #summary Physical Connection for Prop to SD per Spinneret
 
+<wiki:toc max_depth="9" />
+
 Add this to the Hardware Configuration . txt in v5.0 documentation?
+
+The Propforth SD setup is based on the Spinneret SD connections
 
 = Spinneret SD Configuration =
 
