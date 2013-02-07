@@ -1,6 +1,8 @@
 #summary Debugger and Disassembler for Propeller
 #labels debugger,disassembler,v2.7
 
+<wiki:toc max_depth="9" />
+
 = cogdbg =
 
 NOTE: this needs the assemler timeslicer to be loaded first!
