@@ -1,5 +1,5 @@
 #summary Frequently Asked Questions for PropForth Version 4.6
-#labels v4.6
+#labels v4.6,Deprecated
 
 = Introduction =
 
