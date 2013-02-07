@@ -1,6 +1,8 @@
 #summary FORTH References used by the FORTH community
 #labels documentation,references
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 FORTH is Chuck Moore's personal tool for getting his work done.  Other version of forth vary somewhat from this (these), but still can be considered forth. There are formal definitions and standards of forth, these are optional.  The closer one adheres to a standard the easier it is to talk to other folks about your work.  But a "fully" standards compliant forth tends to be less tailored to the hardware and /or task at hand. Full standards compliance is usually only found on a workstation.  Not everything will fit on a micro-controller in the very least.
