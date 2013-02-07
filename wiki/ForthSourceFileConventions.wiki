@@ -1,4 +1,7 @@
 #summary A stab at conventions for forth source code files
+#labels Deprecated
+
+<wiki:toc max_depth="9" />
 
 = A Method to Keep Organized =
 
