@@ -1,5 +1,5 @@
 #summary Verify that Propforth functions as defined
-#labels v3.2
+#labels v3.2,Deprecated
 
 = Introduction =
 
