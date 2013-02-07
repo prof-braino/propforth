@@ -1,4 +1,8 @@
 #summary Attempt at Standardized Forth Code
+#labels Deprecated
+
+
+<wiki:toc max_depth="9" />
 
 = To share/exchange/review code in the project,  please consider these guidelines =
 
