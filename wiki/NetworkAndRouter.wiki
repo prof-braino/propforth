@@ -1,4 +1,8 @@
 #summary Tips for Setting up Network and Router
+#labels v5.0
+
+<wiki:toc max_depth="9" />
+
 
 = Introduction =
 
