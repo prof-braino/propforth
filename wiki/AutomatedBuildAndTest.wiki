@@ -1,6 +1,8 @@
 #summary Instructions for Automated Build and Test in Propforth v5.3.
 #labels v5.3,automation,build,make,test
 
+<wiki:toc max_depth="9" />
+
 = Automated Build and Test =
 
 This is to be covered in Propforth.htm in the download archive.   This wiki page is just a placeholder for the draft notes in preparation for the release.
