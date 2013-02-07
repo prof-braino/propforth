@@ -1,6 +1,8 @@
 #summary Most of the differences from DPANS94 forth standard
 #labels 3.4
 
+<wiki:toc max_depth="9" />
+
 = Why there are differences =
 
 The Propeller chip is sufficiently different from other hardware.
