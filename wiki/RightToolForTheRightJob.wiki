@@ -1,5 +1,7 @@
 #summary PropFORTH is Designed for a Specific Purpose
-#labels v5.3,FORTH
+#labels v5.3,FORTH,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = What is FORTH? =
 
