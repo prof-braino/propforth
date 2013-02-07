@@ -1,5 +1,8 @@
 #summary Propforth for HIVE pinout
-#labels Hive,JupiterACE
+#labels Hive,JupiterACE,v3.4
+
+
+<wiki:toc max_depth="9" />
 
 = What is the Hive? =
 
