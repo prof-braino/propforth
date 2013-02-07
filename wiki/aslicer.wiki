@@ -1,4 +1,4 @@
 #summary aslicer.f - An assembler time slicer for the cog, cooperative multitasking
-#labels v2.4
+#labels v2.4,Deprecated
 
 http://code.google.com/p/propforth/downloads/list
