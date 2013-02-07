@@ -3,6 +3,8 @@
 *--------------------------------------------------------------------
 
 
+<wiki:toc max_depth="9" />
+
       =Setting Up PropForth v4.0=
 
 ==Load the Basic Prop Forth Kernal==
