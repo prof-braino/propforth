@@ -1,5 +1,7 @@
 #summary FAQ for Propforth 4.5 Release
-#labels Phase-Support,v4.5
+#labels Phase-Support,v4.5,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Introduction =
 
