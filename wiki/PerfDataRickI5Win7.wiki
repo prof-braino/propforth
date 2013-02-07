@@ -1,6 +1,8 @@
 #summary gomuxterm perf data from Rick - i5/win7 230400 8 channels
 #labels Gochannels,v5.0,performance,MCS
 
+<wiki:toc max_depth="9" />
+
 =JUST THE FACTS=
 {{{
 gomuxterm tests @ 230400
