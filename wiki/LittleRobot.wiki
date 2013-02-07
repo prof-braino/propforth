@@ -1,6 +1,8 @@
 #summary Little Robot™ project index page
 #labels v5.3,LittleRobot
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 LittleRobot™ - index
