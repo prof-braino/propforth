@@ -1,6 +1,8 @@
 #summary Technical Documentation for the PropForth kernel and utilities.
 #labels Phase-Design,In-progress20100705
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 PropForth provides an interactive development environment for the Parallax Propeller micro controller.
