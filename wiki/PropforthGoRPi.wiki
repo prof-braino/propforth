@@ -1,5 +1,5 @@
 #summary Propforth and Raspberry Pi system concept
-#labels v5.3,RPi
+#labels v5.3,RPi,Deprecated
 
 = Introduction =
 
