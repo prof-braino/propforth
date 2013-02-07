@@ -1,13 +1,10 @@
 #summary Propforth.htm from the download archive.
 
-!PROFORTH.HTM is the primary reference for learning and using propforth.  It contains explanation and examples for all the functions of propforth.    
+!PropForh.htm is the primary reference for learning and using propforth.  It contains explanation and examples for all the functions of propforth.    
 
-!PROPFORTH.HTM is included in the propforht doawnload archive, in the `/doc` directory
+!PropForh.htm is included in the propforht doawnload archive, in the `/doc` directory
 
 <wiki:toc max_depth="9" />
-
-
-
 
  = NOTICE =
 
