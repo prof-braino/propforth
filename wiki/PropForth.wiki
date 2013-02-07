@@ -1,6 +1,8 @@
 #summary The main page forth PropForth
 #labels v3.4,v4.0
 
+<wiki:toc max_depth="9" />
+
 = The main page forth PropForth =
 
   * PropForthStatus
