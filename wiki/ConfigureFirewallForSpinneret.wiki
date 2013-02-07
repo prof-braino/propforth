@@ -1,11 +1,13 @@
 #summary Control Propforth Spinneret Etherenet Access Through the Firewall
-#labels 4.6,5.0
+#labels 4.6,5.0,Deprecated
 
 <wiki:toc max_depth="9" />
 
 = Summary =
 
 This page discusses setting up your internet connection to control Propforth running on Spinneret or similar access to the internet. 
+
+Setting you r hardware firewall is beyond the scope of propforth.  But it needs to be done in order to use the spinneret. 
 
 = Default =
 
