@@ -1,5 +1,5 @@
 #summary Additional explanation for PropforthPart1.f
-#labels v3.2
+#labels v3.2,Deprecated
 
 = Introduction =
 
