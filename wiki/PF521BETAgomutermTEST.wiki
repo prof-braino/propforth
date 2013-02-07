@@ -1,6 +1,12 @@
 #summary Outline for testing PF5.2.1BETA GoMuxTerm.
 #labels v5.2.1BETA
 
+<wiki:toc max_depth="9" />
+
+= Note = 
+
+_This should be redone using the next public release (v5.3, v5.4) and this page deprecated_
+
 = Introduction =
 
 PropForth v5.2.1 BETA was sent to team members and various frequent users. We want folks to beat on this, particularly the serial connections, to see if they hold up or show any differences from what we expect.  We hope they will be identical to previous behavior, with the addition of having many channels instead of just one.  
