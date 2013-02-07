@@ -1,5 +1,5 @@
 #summary Download the PropForth source code text files to the propeller chip
-#labels v3.2
+#labels v3.2,Deprecated
 
 = Introduction =
 
