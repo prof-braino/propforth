@@ -1,5 +1,5 @@
 #summary Propforth 4.5 Instructions.
-#labels Phase-Implementation,Phase-QA,Phase-Deploy,Phase-Support,v4.5
+#labels Phase-Implementation,Phase-QA,Phase-Deploy,Phase-Support,v4.5,Deprecated
 
 <wiki:toc max_depth="9" />
 
