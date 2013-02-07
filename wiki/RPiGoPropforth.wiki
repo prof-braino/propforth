@@ -234,6 +234,8 @@ from teminal window:
 sudo apt-get update
 }}}
 
+This can take a couple minutes to download the updates
+
 == upgrade ==
 
 {{{
