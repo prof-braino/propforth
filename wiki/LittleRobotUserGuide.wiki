@@ -1,6 +1,8 @@
 #summary User Guide for the Little Robot™
 #labels v5.3,LittleRobot
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 The User Guide is also the functional specification for the software.  The User Guide is written first, and the firmware is written to comply with the functional description.  Both components, the User Guide and the firmware, will influence each other during development.  
