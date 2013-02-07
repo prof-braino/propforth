@@ -1,5 +1,5 @@
 #summary Adding SerialMonitor - Setting up cog 7 to run as a PropForth cog and using the assembler and forth time slicers
-#labels v2.4
+#labels v2.4,Deprecated
 
 = Setting up cog 7 to run as a PropForth cog and using the assembler and forth time slicers =
 
