@@ -1,6 +1,8 @@
 #summary Setup a Text Editor to do Syntax Highlighting for FORTH
 #labels SyntaxEditor,PSPad
 
+<wiki:toc max_depth="9" />
+
 = PSPad  =
 
 PSPad is a free syntax highlighting editor that supports custom configurations. PSPad can easily be configurated for FORTH, and for PropForth
