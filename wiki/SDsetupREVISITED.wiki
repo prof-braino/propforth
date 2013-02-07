@@ -1,5 +1,7 @@
 #summary Set up SD for Propforth.
-#labels SDcard,PropForthSDFastSerialKernel.spin,Loopy
+#labels SDcard,PropForthSDFastSerialKernel.spin,Loopy,v5.3
+
+<wiki:toc max_depth="9" />
 
 = NOTICE =
 
