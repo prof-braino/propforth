@@ -1,6 +1,8 @@
 #summary Index of Forth words for V5.0
 #labels v5.0,Featured
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 Text file generated from Python program. 
 
