@@ -1,5 +1,8 @@
 #summary Setting Up Raspberry Pi for GO and PROPFORTH
 #labels RPi,RaspberryPi
+
+#sidebar TableOfContents 
+
 = Introduction =
 
 Raspberry Pi is the BASELINE platform LINUX installation for the propforth build and regression test automation. 
