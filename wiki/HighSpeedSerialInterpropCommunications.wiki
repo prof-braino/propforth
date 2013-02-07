@@ -1,6 +1,8 @@
 #summary Low Level Support for Prop Arrays - COMMS
 #labels v3.6,Phase-Design,parallel,draft,V4.0ALPHA
 
+<wiki:toc max_depth="9" />
+
 Also see the single prop example:
 
 http://code.google.com/p/propforth/wiki/HiSpeedSerialOneProp
