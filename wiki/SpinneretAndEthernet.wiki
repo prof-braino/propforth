@@ -1,6 +1,9 @@
 #summary Additional info on spinneret and ethernet
 #labels v5.3,spinnerret,wiznet
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 Spinneret (wiznet5100 compatible) is one way to get Ethernet access to a prop system.  Originally, spinneret was the only way. 
