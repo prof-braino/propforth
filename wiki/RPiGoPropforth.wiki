@@ -149,7 +149,7 @@ netmask 255.255.255.0
 gateway 192.168.0.1
 }}}
 
-
+REMEMBER to change 192.168.0.170 to the STATIC ADDRESS you selected for your use in your own home network. 
 
 And reboot the system:
 
@@ -158,6 +158,32 @@ sudo reboot
 }}}
 
 to allow the changes to take affect
+
+You should be able to  PING your RPi on its new static address
+
+From a windows command line: Ping 1972.168.0.170
+{{{
+
+
+C:\Documents and Settings\MyPC>ping 192.168.0.170
+
+Pinging 192.168.0.232 with 32 bytes of data:
+
+Reply from 192.168.0.170: bytes=32 time=1ms TTL=64
+Reply from 192.168.0.170: bytes=32 time=1ms TTL=64
+Reply from 192.168.0.170: bytes=32 time=1ms TTL=64
+Reply from 192.168.0.170: bytes=32 time=1ms TTL=64
+
+Ping statistics for 192.168.0.170:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\Documents and Settings\MyPC>
+
+}}}
+
+You can also recoonect to the RPI using a IP session from tereaterm, to a secure shell session SSH on port 22
 
 ----
 
