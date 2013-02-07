@@ -1,5 +1,5 @@
 #summary Rebuilding PropForth - generating the spin code for the currently running image
-#labels v2.4
+#labels v2.4,Deprecated
 
 = Rebuilding PropForth - generating the spin code for the currently running image =
 
