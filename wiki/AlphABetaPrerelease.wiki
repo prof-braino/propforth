@@ -1,5 +1,7 @@
 #summary Alpha, Beta, Development, versus Public Releases.
-#labels v5.0,20120507
+#labels v5.0,20120507,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Propforth Releases =
 
