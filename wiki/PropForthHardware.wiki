@@ -1,5 +1,8 @@
 #summary Hardware Requirements for Propfoth.
-#labels AllReleases,Phase-Design,Phase-Requirements
+#labels AllReleases,Phase-Design,Phase-Requirements,Deprecated
+
+
+<wiki:toc max_depth="9" />
 
 = Introduction =
 
