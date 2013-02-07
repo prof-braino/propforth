@@ -1,6 +1,8 @@
 #summary A/D in assembler for Propforth 5.0
 #labels AD,v5.0,caskaz
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 This page is an example of converting FORTH assembler code into base 64 encoded assembler.
