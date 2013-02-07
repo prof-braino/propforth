@@ -1,4 +1,4 @@
 #summary SerialMonitor.f - A serial monitor which runs on cog 7
-#labels v2.4
+#labels v2.4,Deprecated
 
 http://code.google.com/p/propforth/downloads/list
