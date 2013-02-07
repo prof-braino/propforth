@@ -1,5 +1,7 @@
 #summary FAQ for Propforth 5.1 Release
-#labels v5.1,Phase-Requirements
+#labels v5.1,Phase-Requirements,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Introduction =
 
