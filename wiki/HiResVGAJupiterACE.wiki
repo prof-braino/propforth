@@ -1,6 +1,9 @@
 #summary Propfroth HiResVGA.spin implements Jupiter ACE type functionality on the Prop
 #labels v3.4
 
+
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 [ http://en.wikipedia.org/wiki/Jupiter_AceSee Wikipedia article on Jupiter ACE ]
