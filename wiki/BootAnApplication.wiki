@@ -1,6 +1,8 @@
 #summary Make Application Start at Boot
 #labels Phase-Implementation,Phase-QA,V4.5
 
+<wiki:toc max_depth="9" />
+
 = Make and Application Start at Boot AND run FORTH prompt  =
 
 Context: QuickStart Board Demo
