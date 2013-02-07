@@ -1,6 +1,9 @@
 #summary Added Half Duplex Serial.
 #labels serial,halfduplex
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 User Loopy's questions bout half duplex serial in these threads
 http://forums.parallax.com/showthread.php?143900-WINNER!!-Forthers-Thanksgiving-Challenge-it-s-all-about-the-projects-baby!!!&p=1143371&viewfull=1#post1143371
