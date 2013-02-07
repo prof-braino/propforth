@@ -1,6 +1,8 @@
 #summary Bill of MAterials (BOM) for Little Robot
 #labels v5.3,LittleRobot
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Little Robot is an example of a mobile robotic platform for embedded systems experimentation. We want it cheap enough so just about anybody can participate.
