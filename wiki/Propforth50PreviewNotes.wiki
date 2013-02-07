@@ -1,5 +1,7 @@
 #summary Propforth 5.0 preview notes
-#labels 5.0
+#labels 5.0,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Propforth 5.0 internally released 2011.10.10 =
 
