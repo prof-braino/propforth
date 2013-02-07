@@ -1,5 +1,5 @@
 #summary PropForthUtilities - a collection of useful utilities
-#labels v2.4
+#labels v2.4,Deprecated
 
 = PropForthUtilities - a collection of useful utilities =
 
