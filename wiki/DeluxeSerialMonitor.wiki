@@ -1,5 +1,7 @@
 #summary Enhanced Cog7 Serial Driver with development functions.
-#labels v2.7
+#labels v2.7,Deprecated
+
+<wiki:toc max_depth="9" />
 
 === SerialMonitorDocumentation ===
 
