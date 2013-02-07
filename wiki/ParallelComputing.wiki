@@ -1,4 +1,7 @@
 #summary There's more to this than having a bunch of cores running
+#labels v4.0,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = What is parallel computing? =
 
