@@ -1,6 +1,8 @@
 #summary Using the OLPC-XO for Propforth development
 #labels Phase-Implementation,v5.0,v4.5
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Originally I wanted a PC forth system to Host development for the PropForth.  The idea was that the same code and or technicques used on one would apply towards the other. 
