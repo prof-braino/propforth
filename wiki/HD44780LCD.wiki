@@ -1,5 +1,7 @@
 #summary Caskaz's HD44780 based two line LCD display driver
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 User caskaz has posted several versions of his HD44780 based two line LCD display driver in the various threads.  
