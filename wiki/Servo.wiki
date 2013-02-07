@@ -1,6 +1,7 @@
 #summary Notes for Hobby Servo Support.
 #labels servo
 
+<wiki:toc max_depth="9" />
 = Servo =
 
 Hobby Servo is controlled by sending it a pulse every 20 milliseconds. The width of the pulse tell the servo the desired position, and it tries to move to that position.  The pulse can be 1.5 ms +/- 1 ms .  That is a pulse of 2.5 will ask for rotation 90 degrees. A pulse of 0.5 ms will ask for rotation of -90 degrees.  a pulse of 1.5 ms will ask the servo to move to its middle position. 
