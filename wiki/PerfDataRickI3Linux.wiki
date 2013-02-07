@@ -1,6 +1,8 @@
 #summary gomuxterm perf data from Rick - i3/linux 230400 8 channels
 #labels Gochannels,v5.0,performance,MCS
 
+<wiki:toc max_depth="9" />
+
 = Numbers =
 {{{
 gomuxterm tests @ 230400
