@@ -1,4 +1,8 @@
 #summary What would be the cheapest possible robot?
+#labels v5.0
+
+<wiki:toc max_depth="9" />
+
 
 = Introduction =
 
