@@ -49,6 +49,13 @@ The user has to have access to a PC or workstation of some type.  This is not an
 
 So depending on where you start, you can git' goin' with $20, maybe $50 if you buy all the parts new.  For this price, entry should be possible for many folks. 
 
+= User Guide =
+
+To define how the robot interface should look, we starter with the User Guide. the robot may or may not work exactly this way, but this was our starting point for high level requirements.  The robot function should match this doc, and the doc should match the robot.  Any differences should be resolved. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotUserGuide
+
+
    
 --
 
