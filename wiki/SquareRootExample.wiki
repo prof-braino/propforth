@@ -1,4 +1,9 @@
 #summary heater's square root routine, converted from C to propforth.
+#labels Deprecated
+
+
+<wiki:toc max_depth="9" />
+
 
 = Some example code for doing squareroot in forth =
 
