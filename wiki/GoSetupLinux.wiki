@@ -1,6 +1,8 @@
 #summary Notes from Rick on Go Setup.
 #labels Gochannels,linux,OLPC,v5.0,MCS
 
+<wiki:toc max_depth="9" />
+
 = Go channels set up for Linux =
 
 Thing about Linux is there are a lot of ways the various installs can be different.  Rick got his it run just fine on a standard PC install. Braino is having some issues with the Fedora version on the OLPC XO. 
