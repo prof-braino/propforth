@@ -1,5 +1,7 @@
 #summary Getting PropForth going.
-#labels v3.2,v4.5
+#labels v3.2,v4.5,Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Getting PropForth going =
 
