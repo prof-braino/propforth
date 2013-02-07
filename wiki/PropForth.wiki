@@ -1,9 +1,11 @@
 #summary The main page forth PropForth
-#labels v3.4,v4.0
+#labels v3.4,v4.0,Deprecated
 
 <wiki:toc max_depth="9" />
 
 = The main page forth PropForth =
+
+This needs to be updated for v5.3, v5.4
 
   * PropForthStatus
   * [http://code.google.com/p/propforth/wiki/PropForthFAQ PropForthFAQ]
