@@ -138,7 +138,7 @@ to:
 iface eth0 inet static
 }}}
 
-REMOVE the lines after the line with static, to the end of the file. 
+REMOVE the lines after the line with static, to the end of the file. (20130207 capture the lines that get removed, and check that this is correct next time working from a clean install.)
 
 Add the following lines:
 {{{
