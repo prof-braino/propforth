@@ -1,6 +1,8 @@
 #summary Propforth 4.5 Instructions.
 #labels Phase-Implementation,Phase-QA,Phase-Deploy,Phase-Support,v4.5
 
+<wiki:toc max_depth="9" />
+
 = Introduction & Preparation =
 
 All information required to use Propforth 4.5 is included in the zip archive.  This page is a summary and further explanation for the more complex points.  Please join the discussion here or on the parallax forums in the propforth 4.5 thread.
