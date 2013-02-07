@@ -137,7 +137,10 @@ to:
 {{{
 iface eth0 inet static
 }}}
-And add the following lines:
+
+REMOVE the lines after the line with static, to the end of the file. 
+
+Add the following lines:
 {{{
 address 192.168.0.170
 
@@ -145,6 +148,8 @@ netmask 255.255.255.0
 
 gateway 192.168.0.1
 }}}
+
+
 
 And reboot the system:
 
