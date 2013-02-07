@@ -1,4 +1,7 @@
 #summary Another stab at Parallel Programming for Multiple Cores, Type 2
+#labels Deprecated
+
+<wiki:toc max_depth="9" />
 
 = Introduction =
 
