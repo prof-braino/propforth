@@ -1,4 +1,7 @@
 #summary Proportional-Integral-Derivative (PID) control from NGLordi
+#labels v5.3
+
+<wiki:toc max_depth="9" />
 
 = Proportional-Integral-Derivative (PID) control =
 
