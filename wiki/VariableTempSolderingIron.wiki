@@ -1,4 +1,10 @@
 #summary DIY Variable temperature soldering iron experiment
+#labels v5.3
+
+This isn't directly releated to Propforth.  Its more like making custom hardware (for propforth).  I don't have anyplace else to keep it, so it here for the time being. 
+
+<wiki:toc max_depth="9" />
+
 
 = DANGER This is an experiment =
 
