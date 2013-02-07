@@ -1,5 +1,7 @@
 #summary this page is underconstruction.
 
+<wiki:toc max_depth="9" />
+
 = A detailed technical description of the !PropForth Interpreter =
 
 The !PropForth interpreter is implemented in Propeller assembler. Before proceeding with details of the interpreter review the PropForthDictionaryStructure.
