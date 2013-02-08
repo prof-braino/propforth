@@ -112,6 +112,9 @@ And add the following line (the ip address is the static address we will set lat
 192.168.0.170 rpi-my-unique-name
 }}}
 
+ * CTL^O to write the files
+ * CTL^X to exit nano
+
 NOTE: I'm using 192.168.0.170 as my example, you should use an IP address suitable for your network and router.  Configuring yur network and router is beyond the scope of this instruction, but you want an address that you can set as STATIC so it doesn't get changed due to power failures, etc. 
 
 NOTE2: After you change the hosts file, if you are editing from ssh telnet session (to use you main computer to work on the pi)  it gives a message "can't resolve hostname" or such for the next two files.  That's ok, it still gets there after a bit, and goes away after the next reboot. 
@@ -131,6 +134,12 @@ rpi-my-unique-name
 }}}
 
 (or whatever you want the hostname to be).
+
+ * CTL^O to write the files
+ * CTL^X to exit nano
+
+
+=== edit INTERFACES file ===
 {{{
 sudo nano -c /etc/network/interfaces
 }}}
@@ -156,6 +165,11 @@ gateway 192.168.0.1
 
 REMEMBER to change 192.168.0.170 to the STATIC ADDRESS you selected for your use in your own home network. 
 
+ * CTL^O to write the files
+ * CTL^X to exit nano
+
+
+
 And reboot the system:
 
 {{{
@@ -163,6 +177,9 @@ sudo reboot
 }}}
 
 to allow the changes to take affect
+
+
+=== test : ping the pi ===
 
 You should be able to  PING your RPi on its new static address
 
