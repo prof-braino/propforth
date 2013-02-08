@@ -114,6 +114,8 @@ And add the following line (the ip address is the static address we will set lat
 
 NOTE: I'm using 192.168.0.170 as my example, you should use an IP address suitable for your network and router.  Configuring yur network and router is beyond the scope of this instruction, but you want an address that you can set as STATIC so it doesn't get changed due to power failures, etc. 
 
+NOTE2: After you change the hosts file, if you are editing from ssh telnet session (to use you main computer to work on the pi)  it gives a message "can't resolve hostname" or such for the next two files.  That's ok, it still gets there after a bit, and goes away after the next reboot. 
+
 === edit HOSTNAME file ===
 
 {{{
