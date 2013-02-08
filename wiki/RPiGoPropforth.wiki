@@ -291,15 +291,15 @@ security = user
 }}}
 Find the line (line 250) in the `[homes]` section:
 {{{
-read only = yes
+# read only = yes
 }}}
 and changes to:
 {{{
 read only = no
 }}}
 
-write the file ctl^O
-exit nano ctl^X
+  * write the file ctl^O
+  * exit nano ctl^X
 
 restart the samba server:
 
@@ -318,7 +318,15 @@ sudo /etc/init.d/samba restart
 }}}
 
 On windows – map network drive 
-\\MyRPi\pi user - pi, password - set with smbpasswd 
+
+  * assumine the login is still *`pi`*
+
+{{{
+\\rpi-my-unique-name\pi 
+}}}
+
+ * user - *pi* 
+ * password - set with smbpasswd 
 
 === this might be OPTIONAL add a user for your WXP id ===
 
