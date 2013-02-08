@@ -266,9 +266,12 @@ sudo apt-get install samba-common-bin
 
 == edit the config files ==
 
+{{{
 sudo nano -c /etc/samba/smb.conf
+}}}
 
 Find the line (line 38):
+
 {{{
 workgroup = WORKGROUP
 }}}
@@ -294,6 +297,9 @@ and changes to:
 {{{
 read only = no
 }}}
+
+write the file ctl^O
+exit nano ctl^X
 
 restart the samba server:
 
