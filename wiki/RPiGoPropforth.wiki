@@ -328,17 +328,9 @@ On windows – map network drive
  * user - *pi* 
  * password - set with smbpasswd 
 
-=== this might be OPTIONAL add a user for your WXP id ===
+ == Extra Bonus ==
 
-The first time I set up the RPi Iwas able to map to it on WXP.  The second time, its not letting me map a drive letter on WXP to my home directroy on the (second) RPi.
-
-So I think I need to add a user to the RPi with the same name as my WXP login. 
-
-{{{
-
-}}}
-
-Nope, this didn't work either.  I must have missed a step in the SAMBA set up.
+From windows, you can create directory movies and copy a bunch of mkv files here, and then play them on a hi def tv using xbmc
 
 -------
 
