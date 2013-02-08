@@ -330,7 +330,7 @@ On windows – map network drive
 
  == Extra Bonus ==
 
-From windows, you can create directory movies and copy a bunch of mkv files here, and then play them on a hi def tv using xbmc
+From windows, you can create directory movies and copy a bunch of mkv files here, and then play them on a hi def tv using omxplayer or xbmc
 
 -------
 
