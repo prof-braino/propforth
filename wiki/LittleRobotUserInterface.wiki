@@ -4,6 +4,19 @@
 
 An important part of the !LittlRobot software is the user interface.  The user interface allow us to communicate with the robot, to tell is what to do and get reports its responses. 
 
+= terminal interface =
+
+The simplest user interface to the !LittleRobot is to use the !PropForth command line.  An sequences of forth words may be executed from the command line. A PC or laptop running a terminal program will be sufficient.  Typically, a !PropForth stem will b tethered to a PC via USB cable during development.
+
+= Application interface =
+
+A final application will typically require a custom application interface.  Rather than the user choosing from the entire set of forth words, the application will present specific words in specific context, to perform a given application.  The goal is to make it simple for the user to send the necessary commends and receive back the required information. 
+
+
+== Android App ==
+
+The !LittleRobot Prroject includes plans for an Android App that packages functions for communicating with the !LittleRobot. 
+
 
 
 = Details =
