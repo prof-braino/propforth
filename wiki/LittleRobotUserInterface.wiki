@@ -8,6 +8,16 @@ An important part of the !LittlRobot software is the user interface.  The user i
 
 The simplest user interface to the !LittleRobot is to use the !PropForth command line.  An sequences of forth words may be executed from the command line. A PC or laptop running a terminal program will be sufficient.  Typically, a !PropForth stem will b tethered to a PC via USB cable during development.
 
+== Wired: TeraTerm ==
+
+During development, it is recommended to use Teraterm or other terminal program.
+
+== Wireless: BlueTerm ==
+
+Blue Term is a free android app for Terminal over bluetooth.  It behave pretty much the same as a wired terminal setup.  With a clear line of sight on a clear day, Blueterm has functioned up to 100 feet.  Beyond the range of the bluetooth devices, the transfer rate decrease sharply, and errors begin to become noticiable, of course. 
+
+
+
 = Application interface =
 
 A final application will typically require a custom application interface.  Rather than the user choosing from the entire set of forth words, the application will present specific words in specific context, to perform a given application.  The goal is to make it simple for the user to send the necessary commends and receive back the required information. 
