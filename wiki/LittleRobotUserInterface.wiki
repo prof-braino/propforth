@@ -1,0 +1,14 @@
+#summary Options for an interface to the LittleRobot
+
+= Introduction =
+
+An important part of the !LittlRobot software is the user interface.  The user interface allow us to communicate with the robot, to tell is what to do and get reports its responses. 
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
