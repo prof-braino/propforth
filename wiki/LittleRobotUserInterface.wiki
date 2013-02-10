@@ -49,8 +49,9 @@ Th Android app is expected to run java scripts, and generate code sequences to s
 
 === using the app (preliminary) ===
 
-  * Select Terminal (DARK GREEN button) if is has not autostarted.
-  * Execuute a forth word interactively
+  Select Terminal (DARK GREEN button) if is has not autostarted.
+
+==== Execute a forth word interactively ====
 
 In the LARGE INPUT FIELD, enter a forth word (ex st?)
 Select button [SEND + CR] Observe that the forth word executed and the result was displayed on the android device
@@ -77,20 +78,64 @@ Propforth v5.0 2012JAN09 14:30 0
 Prop0 Cog6 ok
 }}}
 
-=== Execute from a MACRO ===
+==== Execute from a MACRO ====
 
 In the LARGE INPUT FIELD, enter a foth word (or any valid sequence of forth words) terminaled by \r (backslash and lower case r).  This will be the body of the macro that is executed.
-Example:
-[code follows]
-st? 
-[/code ends]
+
+* Example 1:
+
+Set up a macro to display the stack stutus using the 'st?' word.
+
+{{{
+st?\r 
+}}}
 
 In the SMALL INPUT FIELD, put a Name for the MACRO.
-[code follows]
+{{{
 ST?
-[/code ends]
+}}}
 
-  
+Verify that a button labeled  'ST?' is now displayed
+
+select the button 'ST?'
+
+Verify the output 
+{{{
+st?
+ST:
+
+Prop0 Cog6 ok
+}}}  
+
+* Example 2:
+
+Set up a macro to display the version string and build status using the 'build?' word
+
+In the LARGE INPUT FIELD, enter 'build?\r'
+{{{ 
+build?\r
+}}}
+
+In the SMALL INPUT FIELD, put a Name for the MACRO.
+
+{{{
+version
+}}}
+
+Verify that a button labeled  'ST?' is now displayed
+
+select the button 'version'
+
+Verify the output 
+{{{
+build?
+
+build_DevKernel 
+
+Propforthv5.0 2012JAN09 14:30 0
+Prop0 Cog6 ok
+}}}  
+
 
 
 = Details =
