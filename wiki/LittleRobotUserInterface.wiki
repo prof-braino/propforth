@@ -2,9 +2,13 @@
 
 <wiki:toc max_depth="9" />
 
+= NOTE =
+
+This is in development.  This page is only to capture my notes during development and test.   The final app, if it makes it to release, will likely be different. 
+
 = Introduction =
 
-An important part of the !LittlRobot software is the user interface.  The user interface allow us to communicate with the robot, to tell is what to do and get reports its responses. 
+An important part of the !LittleRobot software is the user interface.  The user interface allow us to communicate with the robot, to tell is what to do and get reports its responses. 
 
 = terminal interface =
 
@@ -80,6 +84,8 @@ Prop0 Cog6 ok
 
 ==== Execute from a MACRO ====
 
+===== Define Macro =====
+
 In the LARGE INPUT FIELD, enter a foth word (or any valid sequence of forth words) terminaled by \r (backslash and lower case r).  This will be the body of the macro that is executed.
 
 * Example 1:
@@ -136,11 +142,20 @@ Propforthv5.0 2012JAN09 14:30 0
 Prop0 Cog6 ok
 }}}  
 
+===== Delete Macro =====
 
+
+
+To Delete a Macro and remove the button, overwrite the macro with a blank definition. 
+
+Blank out the LARGE INPUT FIELD.  The LARGE INPUT FIELD must be blank to remove a macro.
+
+In the SMALL INPUT FIELD, enter the existing MACRO name as it appears on the macro button label.
+
+Select [ADD MACRO]
+
+Verify the Macro button of that name is no longer displayed. 
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+This is still in progress.  It will likely change before release. 
