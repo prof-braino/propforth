@@ -1,4 +1,6 @@
-#summary Options for an interface to the LittleRobot
+#summary Options for an interface to the !LittleRobot
+
+<wiki:toc max_depth="9" />
 
 = Introduction =
 
