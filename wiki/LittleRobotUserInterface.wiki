@@ -31,6 +31,65 @@ The !LittleRobot Prroject includes plans for an Android App that packages functi
 
 Th Android app is expected to run java scripts, and generate code sequences to send to the bot.  It will also display information from the bot. The functionality relies on web support, so it seems the !LittleRobot Android app will require Android 3.x or greater.  The prototype has been demonstrated to function using Android 3.2 and Android 4.1
 
+
+=== Set up: ===
+  * Requires initializzed HCO05 (script to set name, baud, password, etc)
+  * Pair HC05 with Android.
+  * Load GREEN.apb, must be signed.
+
+=== Configure  application ===
+
+  *  Launch application 
+  * Go to SETTINGS.  
+  * verify CONNECT message.
+  * Set [Turn on Bluetooth when started]
+  * set [Connect Bluetooth when Started]
+  * Set [Run Application:] and select TERMINAL (terminal.htm)
+  * select [DONE]
+
+=== using the app (preliminary) ===
+
+  * Select Terminal (DARK GREEN button) if is has not autostarted.
+  * Execuute a forth word interactively
+
+In the LARGE INPUT FIELD, enter a forth word (ex st?)
+Select button [SEND + CR] Observe that the forth word executed and the result was displayed on the android device
+
+EX1: Type in
+{{{
+st?
+}}}
+
+Veriy the response:
+{{{
+ST:
+Prop0 Cog6 ok
+}}}
+
+EX2: Type in
+{{{
+build?
+}}}
+
+See the response
+{{{
+Propforth v5.0 2012JAN09 14:30 0
+Prop0 Cog6 ok
+}}}
+
+=== Execute from a MACRO ===
+
+In the LARGE INPUT FIELD, enter a foth word (or any valid sequence of forth words) terminaled by \r (backslash and lower case r).  This will be the body of the macro that is executed.
+Example:
+[code follows]
+st? 
+[/code ends]
+
+In the SMALL INPUT FIELD, put a Name for the MACRO.
+[code follows]
+ST?
+[/code ends]
+
   
 
 
