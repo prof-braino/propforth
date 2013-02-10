@@ -189,7 +189,7 @@ Be sure to test the components before assembleing the bot.
 After assembly, test to compenents again to ensure nothing got confused.
 
 
-= Assembling the LittleRobot™(tm) =
+= Assembling the !LittleRobot™ =
 
 This is the fun part. As you see from the picture, the Little Robot is just some wheels stuck on some motors, and the motors are stuck on some crude chassis. I took a roughly square chunk of 2x4 scrap wood (pine) and squared it up, and cut motor sized notches in the sides. Sal wanted to use his new 3D pinter, so he designed a chassis, drew it up in OpenSCAD, and printted it. 
 
