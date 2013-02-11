@@ -48,7 +48,7 @@ Trivia:   `Green` is a random development name.  The first version was called RE
   *  Launch application 
   * Go to SETTINGS.  
   * verify CONNECT message.
-  * Set [Turn on Bluetooth when started]
+  * Set `[Turn on Bluetooth when started]`
   * set [Connect Bluetooth when Started]
   * Set [Run Application:] and select TERMINAL (terminal.htm)
   * select [DONE]
