@@ -166,9 +166,17 @@ Currently, the app may or may not save macros between sessions.
 
 == IOS App ==
 
-Crurrently, we do not have anyone working on the IOS App.  
+Currently, we do not have anyone working on the IOS App.  
 
-Anyone care to volenteer?
+Anyone care to volunteer?
+
+== GO Lang App ==
+
+On the PC, the two Go Language functions GoTerm and GoMuxTerm (included in the build and test automation) operate as wired only.  
+
+When the wireless modules become cheap enough that there is a demand, we may add wireless capability to  GoTerm and/or GoMuxTerm.
+
+For now, the Bluetooth on Android is enough to keep us busy. 
 
 = Details =
 
