@@ -49,9 +49,9 @@ Trivia:   `Green` is a random development name.  The first version was called RE
   * Go to SETTINGS.  
   * verify CONNECT message.
   * Set `[Turn on Bluetooth when started]`
-  * set [Connect Bluetooth when Started]
-  * Set [Run Application:] and select TERMINAL (terminal.htm)
-  * select [DONE]
+  * set `[Connect Bluetooth when Started]`
+  * Set `[Run Application]` and select TERMINAL (terminal.htm)
+  * select `[DONE]`
 
 === using the app (preliminary) ===
 
@@ -60,7 +60,7 @@ Trivia:   `Green` is a random development name.  The first version was called RE
 ==== Execute a forth word interactively ====
 
 In the LARGE INPUT FIELD, enter a forth word (ex st?)
-Select button [SEND + CR] Observe that the forth word executed and the result was displayed on the android device
+Select button `[SEND+CR]` Observe that the forth word executed and the result was displayed on the android device
 
 EX1: Type in
 {{{
@@ -88,11 +88,11 @@ Prop0 Cog6 ok
 
 ===== Define Macro =====
 
-In the LARGE INPUT FIELD, enter a foth word (or any valid sequence of forth words) terminaled by \r (backslash and lower case r).  This will be the body of the macro that is executed.
+In the LARGE INPUT FIELD, enter a foth word (or any valid sequence of forth words) terminated by \r (backslash and lower case r).  This will be the body of the macro that is executed.
 
 * Example 1:
 
-Set up a macro to display the stack stutus using the 'st?' word.
+Set up a macro to display the stack status using the `st?` word.
 
 {{{
 st?\r 
@@ -103,7 +103,7 @@ In the SMALL INPUT FIELD, put a Name for the MACRO.
 ST?
 }}}
 
-Verify that a button labeled  'ST?' is now displayed
+Verify that a button labeled  `ST?` is now displayed
 
 select the button 'ST?'
 
@@ -117,7 +117,7 @@ Prop0 Cog6 ok
 
 * Example 2:
 
-Set up a macro to display the version string and build status using the 'build?' word
+Set up a macro to display the version string and build status using the `build?` word
 
 In the LARGE INPUT FIELD, enter 'build?\r'
 {{{ 
@@ -130,7 +130,7 @@ In the SMALL INPUT FIELD, put a Name for the MACRO.
 version
 }}}
 
-Verify that a button labeled  'ST?' is now displayed
+Verify that a button labeled  `version` is now displayed
 
 select the button 'version'
 
@@ -138,7 +138,7 @@ Verify the output
 {{{
 build?
 
-build_DevKernel 
+build_DevKernel (etc.)
 
 Propforthv5.0 2012JAN09 14:30 0
 Prop0 Cog6 ok
@@ -146,21 +146,19 @@ Prop0 Cog6 ok
 
 ===== Delete Macro =====
 
-
-
 To Delete a Macro and remove the button, overwrite the macro with a blank definition. 
 
 Blank out the LARGE INPUT FIELD.  The LARGE INPUT FIELD must be blank to remove a macro.
 
 In the SMALL INPUT FIELD, enter the existing MACRO name as it appears on the macro button label.
 
-Select [ADD MACRO]
+Select `[ADD MACRO]`
 
 Verify the Macro button of that name is no longer displayed. 
 
 === Notes for Android APP ===
 
-For Testing, Green contains a bad macro button. At startup, the MACRO [Version] gives an error when selected. Use this for the Delete MACRO test.  Delete this button, and redefine a button labeled [Version] with some valid forth, to show a macro can be deleted and redefined. 
+For Testing, Green contains a bad macro button. At startup, the MACRO `[Version]` gives an error when selected. Use this for the Delete MACRO test.  Delete this button, and redefine a button labeled `[Version]` with some valid forth, to show a macro can be deleted and redefined. 
 
 Currently, the app may or may not save macros between sessions.
 
