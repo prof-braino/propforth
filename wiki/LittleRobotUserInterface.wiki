@@ -164,7 +164,7 @@ For Testing, Green contains a bad macro button. At startup, the MACRO [Version] 
 
 Currently, the app may or may not save macros between sessions.
 
-= IOS App =
+== IOS App ==
 
 Crurrently, we do not have anyone working on the IOS App.  
 
