@@ -178,6 +178,8 @@ When the wireless modules become cheap enough that there is a demand, we may add
 
 For now, the Bluetooth on Android is enough to keep us busy. 
 
+End 20130210
+
 = Details =
 
 This is still in progress.  It will likely change before release. 
