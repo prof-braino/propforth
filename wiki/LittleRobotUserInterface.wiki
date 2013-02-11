@@ -158,6 +158,13 @@ Select [ADD MACRO]
 
 Verify the Macro button of that name is no longer displayed. 
 
+= Notes =
+
+For Testing, Green contains a bad macro button. At startup, the MACRO [Version] gives an error when selected. Use this for the Delete MACRO test.  Delete this button, and redefine a button labeled [Version] with some valid forth, to show a macro can be deleted and redefined. 
+
+Currently, the app may or may not save macros between sessions.
+
+
 = Details =
 
 This is still in progress.  It will likely change before release. 
