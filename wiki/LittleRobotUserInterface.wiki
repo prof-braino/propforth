@@ -103,9 +103,11 @@ In the SMALL INPUT FIELD, put a Name for the MACRO.
 ST?
 }}}
 
-Verify that a button labeled  `ST?` is now displayed
+Select `[ADD MACRO]`
 
-select the button 'ST?'
+Verify that a button labeled  `[ST?]` is now displayed
+
+select the button `[ST?]`
 
 Verify the output 
 {{{
@@ -129,6 +131,8 @@ In the SMALL INPUT FIELD, put a Name for the MACRO.
 {{{
 version
 }}}
+
+Select `[ADD MACRO]`
 
 Verify that a button labeled  `version` is now displayed
 
