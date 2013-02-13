@@ -12,6 +12,10 @@ The LittleRobot(tm) at Google Code Propforth http://code.google.com/p/propforth/
 
 Propeller Powered discussion forms http://propellerpowered.com/forum/index.php?board=9.0
 
+OBC thread in paral;lax forums http://forums.parallax.com/showthread.php/145828-My-stab-a-Cheap-Robotics
+
+Duane's thread in parallax forums http://forums.parallax.com/showthread.php/145826-Cheap-Bot-A-Possible-BSA-Robotics-Merit-Badge-Robot
+
 
  == Sources for parts ==
 
