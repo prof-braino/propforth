@@ -27,7 +27,10 @@ PropellerPowered.com  http://propellerpowered.com/
 
 What is the difference between these to sites, why are there two?
 
-== Similar bot designs == 
+== Education Materials == 
+
+http://forums.parallax.com/showthread.php/145628-BSA-Robotics-Merit-Badge-Mini-Course-Development
+
 
 
 
