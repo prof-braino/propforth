@@ -82,19 +82,42 @@ LittleRobotUltraSonic
 
 == User Created Parts: ==
 
+Please create pages as more parts come available.  I'm not able to keep up on this myself. - braino
+
 LittleRobotChassis
 
-LittleRRobotWheels
+LittleRobotWheels
+
+
 
 = Type 2 - YYYMMDD - "Additional Sensors" Example =
 
+Additional Sensor will go here.  These have not been implemented yet
+
+== 10DOF INU ==
+
+for example 20130214 - this unit is $13 + $2 shipping
+
+ http://www.ebay.com/itm/10DOF-L3G4200D-ADXL345-HMC5883L-BMP085-Nine-Axis-IMU-Module-ge-/281043201090?pt=LH_DefaultDomain_0&hash=item416f7aec42
+
+NOTE: I got mine for $29 about six months ago
+
+== DS00 Laser Range finder ==
+
+
 = Type 3 - YYYMMDD - "OutDoor" model =
 
+The "outdoor modele"  has not been implemented yet.  We plan to go outdoors (wireless) when the weather gets nice, and we have enough users to warrant this.
+
+= Type 4 - air ships = 
+
+If uit ever gets this far I have dreams of all kinds of air bots.
+
+== Blimp type ==
+
+== Quadcopter type ==
 
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+This is in progress.  Please follow the links above to the work in progress.
