@@ -37,6 +37,8 @@ http://forums.parallax.com/showthread.php/145628-BSA-Robotics-Merit-Badge-Mini-C
 == BRAINO! or (sombody) SORT THESE LINK OUT ==
 
 
+These are all the links to LittleRobot pages on this site (internal)
+
 http://code.google.com/p/propforth/wiki/LittleRobotUserInterface
 
 
