@@ -1,5 +1,8 @@
 #summary The ultrasonic Range finder
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 The ultrasonic rangefinder is similar to but different from the parallas PING))) rangefinder.
