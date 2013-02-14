@@ -7,7 +7,11 @@ The "stack".  Once you figure this out, you are golden.
 <wiki:toc max_depth="9" />
 
 
-= Summary =
+= Simple Instructions =
+
+You should be able to get up to speed in an afternoon. 
+
+== first Pass 20 minutes ==
 
   * Read this page
   * Download and extract the archive PropForthv5.x-20130xxx.zip
@@ -20,13 +24,12 @@ You are now ready to get started.
 
 REMEMBER:  Just skim the reference manual the first time through.  It should take no more than 20 minutes (otherwise you are not skimming enough).  
 
+== Second pass 2 hours ==
 
   * READ (not just skim) the first for sections of PropForth.htm (the reference manual) doing the examples as you go
 
 
 REMEMBER:  After your SKIMMED the first four sections, go back and read it again a little more carefully.  It WILL START TO MAKE SENSE after you skimmed it once, AND DONE THE EXAMPLES!.  The second time, take a little longer and do more experiments. The second pass should take about two hours.  
-
-
 
 
 
