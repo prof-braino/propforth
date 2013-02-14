@@ -1,10 +1,14 @@
 #summary BEGINNERS START HERE
 
+
+
 This page is the result of a request for "PropForth for BASIC users". Turns out the instructins were too complex, now ANYBODY should be able to get started here. 
 
 FIRST THING:  STACKS! http://www.forth.org/svfig/Len/softstak.htm
 
 The "stack".  Once you figure this out, you are golden. 
+
+<wiki:toc max_depth="9" />
 
 
 = Summary =
