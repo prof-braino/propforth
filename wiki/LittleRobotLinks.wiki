@@ -1,6 +1,8 @@
 #summary A list of all the links associated with Little Robot (tm) project
 #labels LittleRobot
 
+<wiki:toc max_depth="9" />
+
 
 = Links for the LittleRobot(tm) =
 
