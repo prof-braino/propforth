@@ -33,9 +33,26 @@ REMEMBER:  After your SKIMMED the first four sections, go back and read it again
 
 
 
-= Details =
+= Whats all the rest? =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Some folks might notice that there is more material beyond  !PropForth.spin and !PropForth.htm 
+
+In fact, there is a TON more stuff.  EVERYTHING is included, to the extent that an interested user can re-rcreate the entire kernel from scratch, and or modify anything and everything to any given purpose.  
+
+YOU DON'T want to do this just yet!  There are only about five people in the world that can use the extra stuff, and I'm not even one of them. Sal is very thorough.  He knows that if we did our job right, somebody will eventually learn enough and want to use the full power of Propforth.  But this is the long term use, we need to focus on the immediate needs of the beginners. 
+
+= What do I really want to do? =
+
+Fist thing you want to do is try all the examples.  
+
+Then you want to try changing bits of the examples to get used to using propforth. 
+
+Then you want to try to make a specific, simple application.  
+
+For example, turn on the LED's when the lights go off in the room. 
+
+Then try a more complex application.  
+
+Before you know it, you will be more expert than me.
+
+The learning curve is very steep, but very fun.  
