@@ -1,0 +1,43 @@
+#summary The ultrasonic Range finder
+
+= Introduction =
+
+The ultrasonic rangefinder is similar to but different from the parallas PING))) rangefinder.
+
+Besdies cost, this item has four pins instead of three as on the PING))).
+
+= Four Pins =
+
+The four pions are:
+POWER (3.3v)
+Groung
+Trigger (set this high for XXX millseconds to start measuingg)
+Recive - listen to this pin to read back the average of ten samples
+
+= Power Pin = 
+
+This unit takes 3.3v (check, is it really 5v?) 
+It draws xx milliamps.  Size you batteries accordingly. 
+
+= Ground Pin =
+
+This is the common circuit ground.  Does this unit need decoupling capacitors?  If you are getting noise, check into decoupleing capaticors.
+
+= Trigger Pin =
+
+Connect this pin to a Prop I/O pin.  Does this need a resistor?  Propbabl;y not, check. 
+
+Raise this pin to trigger a sample.  It needs aminimum pulse width of xx milliseconds to trigger. 
+
+= Recieve Pin =
+
+Connect this pin to another Prop I/O pin.  This will send the sample results as xxx Baud.   The result is and average of ten samples.  The time from trigger to sending the sample is about xxx milliseconds.  The maximum sample rate is XXX samples per second. 
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
