@@ -1,5 +1,5 @@
 #summary Little Robot™ project index page
-#labels v5.3,LittleRobot
+#labels v5.3,LittleRobot,Featured
 
 <wiki:toc max_depth="9" />
 
