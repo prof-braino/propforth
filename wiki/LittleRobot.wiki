@@ -13,6 +13,13 @@ The goal is to develop a compete, kid centric mobile robotics platform for under
 
 The various components of the project will be documented on separate pages on this wiki. If it works out, these pages will be expanded as progress dictates.     
 
+Here is a list of links to the LittleRobot(tm) Project
+
+http://code.google.com/p/propforth/wiki/LittleRobotLinks
+
+
+
+
 = Target Audience =
 
 Kids, older and younger siblings, parents, teachers.  Lend me  your ears!
