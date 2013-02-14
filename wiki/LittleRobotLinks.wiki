@@ -34,6 +34,31 @@ What is the difference between these to sites, why are there two?
 http://forums.parallax.com/showthread.php/145628-BSA-Robotics-Merit-Badge-Mini-Course-Development
 
 
+== BRAINO! or (sombody) SORT THESE LINK OUT ==
+
+
+http://code.google.com/p/propforth/wiki/LittleRobotUserInterface
+
+
+
+
+http://code.google.com/p/propforth/wiki/LittleRobotUserGuide
+
+
+http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth
+
+                                                            
+http://code.google.com/p/propforth/wiki/GettingStartedWithJeff
+
+http://code.google.com/p/propforth/wiki/GettingStartedWithVic
+
+http://code.google.com/p/propforth/wiki/LittleRobotSteppers
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
+
+http://code.google.com/p/propforth/wiki/LittleRobotBOM
+
+http://code.google.com/p/propforth/wiki/LearningPropForth
 
 
 = Details =
