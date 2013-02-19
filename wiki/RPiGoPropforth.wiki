@@ -351,8 +351,10 @@ On windows – map network drive
 
 From windows, you can create directory movies and copy a bunch of mkv files here, and then play them on a hi def tv using omxplayer or xbmc
 
-NOTE: wheezy 20121216 has something broken, so omxplayer doesn't work. As of 20130208 I had to use rpi-update (not raspi-update that comes with raspbian) and run rpi-update. 
-from this thread http://www.raspberrypi.org/phpBB3/viewtopic.php?t=32423&p=280421
+
+OK, they fixed it, we had to use an older version of omxplayer that day 
+~~NOTE: wheezy 20121216 has something broken, so omxplayer doesn't work. As of 20130208 I had to use rpi-update (not raspi-update that comes with raspbian) and run rpi-update. 
+from this thread http://www.raspberrypi.org/phpBB3/viewtopic.php?t=32423&p=280421~~
 
 -------
 
