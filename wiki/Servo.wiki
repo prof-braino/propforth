@@ -2,11 +2,14 @@
 #labels servo,v5.3
 
 <wiki:toc max_depth="9" />
+
 = Servo =
 
-This page is a supplement to to the main PROPFORTH.HTM refernce document.  Proforth.htm is included in the proforth download. When extracted,  the path to PROFORTH.htm is 
+This page is a supplement to to the main PROPFORTH.HTM refernce document.  Propforth.htm is included in the proforth download. When extracted,  the path to PROFORTH.htm is 
 
-..\My Documents\GoDocs\mygo\V5.x\doc\PropForth.htm
+..\My Documents\!GoDocs\mygo\V5.x\doc\PropForth.htm
+
+[ note: sections specific to PWM and servo are to be added to the main propforth reference. This page is working towards those updates ]
 
 
 
