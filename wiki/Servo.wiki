@@ -14,12 +14,9 @@ servo.f is included in the proforth download. When extracted,  the path to servo
 
 ..\My Documents\!xx\mygo\V5.x\kernels\!BootKernel\!BootOptimizeKernel\!BootOptimizeDevKernel\servo.f
 
-
-Note: sections specific to PWM and servo may be added to the main propforth reference. This page is working towards a draft for these updates.
+Note: sections specific to PWM and servo may be added to the main propforth reference. This page is working towards a draft for these updates. Thanks Vic for running through this.
 
 In this page servo is restricted to mean RC Hobby Servo.
-
-
 
 = Basic Operation =
 
@@ -562,3 +559,7 @@ lockdict variable sm_maxhitime d_124 allot freedict	\ 32 longs
 
 
 = End 20130202 =
+
+Change log (do we even need this?)
+20130221 update first section servo 
+20130202 first version
