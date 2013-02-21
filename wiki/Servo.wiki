@@ -5,7 +5,7 @@
 
 = Servo =
 
-This page is a supplement to to the comments in the main PROPFORTH.HTM refernce document.  Propforth.htm is included in the proforth download. When extracted,  the path to PROFORTH.htm is 
+This page is a supplement to to the main PROPFORTH.HTM reference document.  Propforth.htm is included in the propforth download. When extracted,  the path to PROPFORTH.htm is 
 
 ..\My Documents\!xx\mygo\V5.x\doc\PropForth.htm
 
