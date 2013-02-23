@@ -384,14 +384,14 @@ export GOOS=linux
 export GOARCH=arm
 PATH=$HOME/mygo/bin:$GOROOT/bin:$PATH
 export GOPATH=$HOME/mygo
-export MINICOM=-“b 115200 -o -D /dev/ttyAMA0”
+# export MINICOM=-“b 115200 -o -D /dev/ttyAMA0”
 }}}
 
 the last line should be(?):`export MINICOM=“-b 115200 -o -D /dev/ttyAMA0”`
 
 For some reason the double quotes seem to mess up, and I have to edit the line
 
-*ALSO, NOTE THAT IF you put this last line in a .profile on a regular workstation, you won't be able to log in to a GUI session anymore.*
+*ALSO, NOTE THAT IF you put this last line in a .profile on a regular workstation, you won't be able to log in to a GUI session anymore.*  Uncomment the last line if you are setting up a headless raspberry pi.
 
 
 Logout and log back in, make sure the environment variables are correct:
