@@ -372,6 +372,10 @@ cd
 nano -c .profile
 }}}
 
+
+THE LAST LINE OF THE FOLLOWING DIVERTS I/O TO A TERMINAL!
+DON'T DO THAT ON REGULAR LINUX STATION!
+
 Add the following to the end of the file:
 
 {{{
@@ -386,6 +390,8 @@ export MINICOM=-“b 115200 -o -D /dev/ttyAMA0”
 the last line should be(?):`export MINICOM=“-b 115200 -o -D /dev/ttyAMA0”`
 
 For some reason the double quotes seem to mess up, and I have to edit the line
+
+*ALSO, NOTE THAT IF you put this last line in a .profile on a regular workstation, you won't be able to log in to a GUI session anymore.*
 
 
 Logout and log back in, make sure the environment variables are correct:
