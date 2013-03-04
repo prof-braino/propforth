@@ -21,10 +21,19 @@ https://www.virtualbox.org/
 
 and get 4.2 (4.2.4.2. 8 is what I used)
 
+http://download.virtualbox.org/virtualbox/4.2.8/virtualbox-4.2_4.2.8-83876~Ubuntu~precise_i386.deb
 
+== Install Windows ==
 
+Be sure you have a valid license
 
 = Install Proptool =
+
+Be sure to get version 1.3.  Note that Googling for parallax propeller proptool tends to bring up version 1.2.7 (R2) (or at least it used to, this is not the right version.
+
+As of this writing, I notice there is a version 1.3.2, I will be trying that. 
+
+http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1.3.2.zip
 
 
 Add your content here.  Format your content with:
