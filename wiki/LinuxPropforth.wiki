@@ -33,9 +33,35 @@ and get 4.2 (4.2.4.2. 8 is what I used)
 
 http://download.virtualbox.org/virtualbox/4.2.8/virtualbox-4.2_4.2.8-83876~Ubuntu~precise_i386.deb
 
-== Install Windows ==
+= Install Windows =
 
 Be sure you have a valid license
+
+= Allow USB =
+
+You will have gottena bunch of messages saying USB is not captured, and mouse is captured.   Now we set up USB and get rid of the nag screens.
+
+Notice that you have to shutdown the windows virtual machine for this step.
+
+Shutdown the Windows Virtual Machine.
+
+In Oracle VirtualBox Manager > Settings > USB 
+
+  Verify that Enable USB Controller is checked
+
+  Also check Enable USB 2.0 (EHCI) controller
+
+An error warning pops up, that is OK. 
+
+Restart the w9ndows virtual machine 
+
+  Start ->
+
+Another warning comes up about auto capture keyboar, check "Do not show this again" and hit OK
+
+The virtual machine should now be able to see the USB device when you connect your propplug, Quickstart, etc.
+
+
 
 = Install Proptool =
 
@@ -45,6 +71,7 @@ As of this writing, I notice there is a version 1.3.2, I will be trying that.
 
 http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1.3.2.zip
 
+=  = 
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
