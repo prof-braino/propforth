@@ -39,19 +39,19 @@ Be sure you have a valid license
 
 = install Guest extensions = 
 
-Launch the Oravle Virtual Box application.
+Launch the Oracle Virtual Box application.
 
 Under Devices, select Install Guest applications
 
 Allow the software to install, and reboot
 
- == Optional: 3D accelleration ==
+ == Optional: 3D acceleration ==
 
-  Restart Windwos virtual machine in SafeMode
+  Restart Windows virtual machine in !SafeMode
 
   Again select install Guest Additions
 
-  This time it will let you select enable 3D accelleration
+  This time it will let you select enable 3D acceleration
 
   Allow the software to install and reboot
 
@@ -64,7 +64,7 @@ Notice that you have to shutdown the windows virtual machine for this step.
 
 Shutdown the Windows Virtual Machine.
 
-In Oracle VirtualBox Manager > Settings > USB 
+In Oracle !VirtualBox Manager > Settings > USB 
 
   Verify that Enable USB Controller is checked
 
@@ -80,23 +80,23 @@ Another warning comes up about auto capture keyboard, check "Do not show this ag
 
 The virtual machine should now be able to see the USB device when you connect your propplug, Quickstart, etc.
 
-= Map linux drirectory so Windows can see it =
+= Map linux directory so Windows can see it =
 
 Devices > Shared Folders
 
 Navigate to your Public directory. Map it as Read Only
 
-== Optional: Writeable ==
+== Optional: Writable ==
 
-Bfronm linux:
+From Linux:
 
 Under your Public directory:
 
-Make a subdirectoy name "Writable" or something
+Make a subdirectory named "Writable" or something
 
 Give this one full access
 
-*This dierectoy is so yu can send stuff bback out to linux from windows. The Public directoy is read only in case something bad gets in through windows, it will limit its affect (maybe).* 
+*This directory is so yu can send stuff back out to Linux from windows. The Public directory is read only in case something bad gets in through windows, it will limit its affect (maybe).* 
 
 = Install Proptool =
 
