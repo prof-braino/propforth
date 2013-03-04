@@ -10,15 +10,6 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
-Notice: if you are coming from Windows, the keyboard numeric keypad might behave oddly. If you prefer to have the keypad behave as in Windows:
-
-  Applications > System Tools> System Settings
-
-  Keyboard Layout > Layouts > Options 
-
-  > Miscellaneous comp[compatibility options
-
-    *Shift with Numeric keypad works as in MS Windows*
 
 = install Virtual Box =
 
@@ -37,6 +28,18 @@ http://download.virtualbox.org/virtualbox/4.2.8/virtualbox-4.2_4.2.8-83876~Ubunt
 Be sure you have a valid license
 
 Be sure to install service pack 3, some antivirus (like AVG_free_x86_xx), and maybe a (more) secure browser like firefox.  This might be easier to do after mapping shared directories from linux, below.
+
+Notice: if you are coming from Windows, the keyboard numeric keypad might behave oddly. If you prefer to have the keypad behave as in Windows:
+
+  Applications > System Tools> System Settings
+
+  Keyboard Layout > Layouts > Options 
+
+  > Miscellaneous comp[compatibility options
+
+*Shift with Numeric keypad works as in MS Windows*
+
+
 
 = install Guest extensions = 
 
