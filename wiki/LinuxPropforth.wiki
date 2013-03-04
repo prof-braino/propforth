@@ -1,5 +1,7 @@
 #summary Using Propforth with Linux
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 There's a couple ways.  I use Ubuntu 12.04 and run a virtualbox windows xp session.
