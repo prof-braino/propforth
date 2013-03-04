@@ -1,0 +1,30 @@
+#summary Using Propforth with Linux
+
+= Introduction =
+
+There's a couple ways.  I use Ubuntu 12.04 and run a virtualbo windows xp session.
+
+
+= Install Linux =
+
+If you have an old PC, the hardware might not accept 12.04 directly.
+
+Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
+
+= install Virtual Box =
+
+In the Ubuntu software center, Virtual Box 4.1.12 is offered, but this doesn't work.
+
+Go to the developer site 
+
+https://www.virtualbox.org/
+
+and get 4.2
+
+= Install Proptool =
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
