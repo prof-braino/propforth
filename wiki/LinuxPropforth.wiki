@@ -37,9 +37,28 @@ http://download.virtualbox.org/virtualbox/4.2.8/virtualbox-4.2_4.2.8-83876~Ubunt
 
 Be sure you have a valid license
 
+= install Guest extensions = 
+
+Launch the Oravle Virtual Box application.
+
+Under Devices, select Install Guest applications
+
+Allow the software to install, and reboot
+
+ == Optional: 3D accelleration ==
+
+  Restart Windwos virtual machine in SafeMode
+
+  Again select install Guest Additions
+
+  This time it will let you select enable 3D accelleration
+
+  Allow the software to install and reboot
+
+
 = Allow USB =
 
-You will have gottena bunch of messages saying USB is not captured, and mouse is captured.   Now we set up USB and get rid of the nag screens.
+You will have gotten a bunch of messages saying USB is not captured, and mouse is captured.   Now we set up USB and get rid of the nag screens.
 
 Notice that you have to shutdown the windows virtual machine for this step.
 
@@ -57,11 +76,27 @@ Restart the w9ndows virtual machine
 
   Start ->
 
-Another warning comes up about auto capture keyboar, check "Do not show this again" and hit OK
+Another warning comes up about auto capture keyboard, check "Do not show this again" and hit OK
 
 The virtual machine should now be able to see the USB device when you connect your propplug, Quickstart, etc.
 
+= Map linux drirectory so Windows can see it =
 
+Devices > Shared Folders
+
+Navigate to your Public directory. Map it as Read Only
+
+== Optional: Writeable ==
+
+Bfronm linux:
+
+Under your Public directory:
+
+Make a subdirectoy name "Writable" or something
+
+Give this one full access
+
+*This dierectoy is so yu can send stuff bback out to linux from windows. The Public directoy is read only in case something bad gets in through windows, it will limit its affect (maybe).* 
 
 = Install Proptool =
 
