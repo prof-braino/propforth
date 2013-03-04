@@ -11,6 +11,16 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
+Notice: if you are coming from Windows, the keyboard numeric keypad might behave oddly. If you prefer to have the keypad behave as in Windows:
+
+  Applications > System Tools> System Settings
+
+  Keyboard Layout > Layouts > Options 
+
+  > Miscellaneous comp[compatibility options
+
+    *Shift with Numeric keypad works as in MS Windows*
+
 = install Virtual Box =
 
 In the Ubuntu software center, Virtual Box 4.1.12 is offered, but this doesn't work.
