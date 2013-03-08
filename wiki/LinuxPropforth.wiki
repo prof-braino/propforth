@@ -129,4 +129,10 @@ Now you know as much as I do about propforth for the most part. From here on out
 
 I tried WINE windows emulator version 1.4 as included in Ubuntu 1.4
 
-The installer ran.  I did NOT allow the installer to "update drivers" as I figured the windows drivers might be a problem in linux.  The result did not detect any USB port or quickstart.  I volunteered to update the WINEHQ database for the proptool as v1.3.2 is not listed yet.   I'll do more experiments if they get back to me. 
+I volunteered to update the WINEHQ database for the proptool as v1.3.2 is not listed yet.   I'll do more experiments if they get back to me. 
+
+== update drivers - NO - did not work ==
+
+The installer ran.  I did NOT allow the installer to "update drivers" as I figured the windows drivers might be a problem in linux.  The result did not detect any USB port or quickstart. 
+
+== update drivers - YES - testing ==
