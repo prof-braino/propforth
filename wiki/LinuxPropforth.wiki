@@ -12,7 +12,6 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
-
 = install Virtual Box =
 
 In the Ubuntu software center, Virtual Box 4.1.12 is offered, but this doesn't work.
@@ -125,3 +124,9 @@ Do the examples in propforth.htm.  This is cut and paste.  Just do it.  It will 
 READ doc/Propforth.htm sections 1 through 4 once more a little slower after your done the examples.   This time, when you do the examples, you will find that you can play and experiment, and you will be able to predict some of the results. 
 
 Now you know as much as I do about propforth for the most part. From here on out, you skill level is a function of the time you spend practising using propforth.  The more hours you accumulate, the more skill you will develop. 
+
+= Attempted setting up WINE =
+
+I tried WINE windows emulator version 1.4 as included in Ubuntu 1.4
+
+The installer ran.  I did NOT allow the installer to "update drivers" as I figured the windows drivers might be a problem in linux.  The result did not detect any USB port or quickstart.  I volunteered to update the WINEHQ database for the proptool as v1.3.2 is not listed yet.   I'll do more experiments if they get back to me. 
