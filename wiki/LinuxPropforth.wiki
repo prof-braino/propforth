@@ -65,11 +65,11 @@ Allow the software to install, and reboot
 
 You will have gotten a bunch of messages saying USB is not captured, and mouse is captured.   Now we set up USB and get rid of the nag screens.
 
-== add your  login ID to vboxxsuer group ==
+== add your login ID to vboxusers group ==
 
 You'll messages tell you to add your user to the vboxuser group
 
-in a termina (CTL+ALT+T) enter the command
+in a terminal (CTL+ALT+T) enter the command
 
 {{{
 sudo adduser <myloggin> vboxusers
