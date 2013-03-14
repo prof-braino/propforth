@@ -72,7 +72,7 @@ You'll messages tell you to add your user to the vboxuser group
 in a termina (CTL+ALT+T) enter the command
 
 {{{
-sudo adduser <myloggin> vboxuser
+sudo adduser <myloggin> vboxusers
 }}}
 
 ==  Allow virtual session to access USB == 
