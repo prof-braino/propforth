@@ -65,6 +65,18 @@ Allow the software to install, and reboot
 
 You will have gotten a bunch of messages saying USB is not captured, and mouse is captured.   Now we set up USB and get rid of the nag screens.
 
+== add your  login ID to vboxxsuer group ==
+
+You'll messages tell you to add your user to the vboxuser group
+
+in a termina (CTL+ALT+T) enter the command
+
+{{{
+sudo adduser <myloggin> vboxuser
+}}}
+
+==  Allow virtual session to access USB == 
+
 Notice that you have to shutdown the windows virtual machine for this step.
 
 Shutdown the Windows Virtual Machine.
