@@ -1,0 +1,28 @@
+#summary PropForth routines in lexical order
+
+= Introduction =
+
+wordlister list all the forth words in lexical (alphabetical) order. 
+
+wordlister.f is a propforth source code file in the mygo\V5.3\CurrentRelease\Extensions
+
+Open wordlister.f in your text editor (pspdad, gedit, etc)
+
+highlight the entire contents of the file
+
+Paste the contents of the file in to yor terminal window (teraterm)
+
+wordlister takes no values from the stack, and deposites no values on the stack
+
+= wordlister output =
+
+Here is the output of wordlister in 5.0.  It should be fairly similar in 5.5
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
