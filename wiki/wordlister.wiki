@@ -73,8 +73,8 @@ Here is the output of wordlister in 5.0.  It should be fairly similar in 5.5
   #  (nfcog)
   #  (prop)
   #  (version)
-  #  *
-  #  */
+  #  `*`
+  #  `*/`
   #  */mod
   #  +
   #  +loop
