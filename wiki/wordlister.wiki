@@ -19,7 +19,7 @@ wordlister takes no values from the stack, and deposites no values on the stack
 Here is the output of wordlister in 5.0.  It should be fairly similar in 5.5
 
 
-  #  #
+  #  `#`
   #  #>
   #  #C
   #  #s
@@ -165,7 +165,7 @@ Here is the output of wordlister in 5.0.  It should be fairly similar in 5.5
   #  [ifndef
   #  \
   #  ]
-  #  _accept
+  #  `_accept`
   #  _asmpfa>nfa
   #  _bf
   #  _cnip
