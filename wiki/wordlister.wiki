@@ -18,6 +18,13 @@ wordlister takes no values from the stack, and deposites no values on the stack
 
 Here is the output of wordlister in 5.0.  It should be fairly similar in 5.5
 
+  #  #
+  #  #>
+  #  #C
+  #  #s
+  #  $C_IP
+  #  $C_a_(+loop)
+  #  $C_a_(loop)
 
 
 = Details =
