@@ -48,7 +48,7 @@ The last significant change was NUMBER FORMATTING.  Decimal values composed of d
 
 = new stuff with 5.5 =
 
-= What is PropForth? =
+= What is !PropForth? =
 
 Propforth is an interactive command line software development environment for the Parallax Propeller Chip.
 
