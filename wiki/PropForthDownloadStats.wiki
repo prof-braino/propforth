@@ -70,4 +70,4 @@ Spinforth 1.1 to Propforth 2.x:  change from SPIN to Assembler
 
 4.x to 5.x: final architecture.  User demos for functions. Possible user demos for systems. (in progress)
 
-5.0 to 5.5: packaging to include full suit for advanced developer, yet remain simple for a new user and beginner. 
+5.0 to 5.5: Include automation for build and test. Packaging to include full suit for advanced developer, yet remain simple for a new user and beginner.  Begin final documentation (beyond stack notes for kernel words). Selected LittleRobot as demo project. 
