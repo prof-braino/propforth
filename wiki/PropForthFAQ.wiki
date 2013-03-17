@@ -6,8 +6,6 @@ Newest questions are towards the top.  Older questions toward the bottom are for
 
 <wiki:toc max_depth="9" />
 
-
-
 = General =
 
 * which release should I use? 
@@ -48,6 +46,137 @@ To the user, everything should be pretty much identical from release to release 
 
 The last significant change was NUMBER FORMATTING.  Decimal values composed of digit 0-9 can be prefixed with a letter lowercase d to force decimal.Hex values using 0-9 and characters A-F can be prefixed with lowercase h to force hex. Radix-64 values (bear with me, I'm not really clear on this bit) using characters 0-9, A-Z, and a-y can be prefixed with lowercase letter z to force radix 64.  RADIX 64 is mainly used to encode optimized assembler routines in text files.  
 
+= new stuff with 5.5 =
+
+= What is PropForth? =
+
+Propforth is an interactive command line software development environment for the Parallax Propeller Chip.
+
+= What is The Parallax Propeller Chip?  How is this different from other microcontrollers?  = 
+
+The Parallax Propeller chip is a bit different than some other microcontrollers.  Instead of a single processor core and interupts, the Prop has eight cores.  Instead of having some action "interupt" the main execution, the prop allows us to dedicate a full process core to these "interupt" tasks. This means the main program can exeecute in a very predicable manner, with very small event intervals.  This can be very useful in "real time" applications, such as control systems for robotics. 
+
+= What is Forth? How is this different from other programming languages/environments?  =
+
+FORTH is a program which runs as an interpreter on a microcontroller. The interpreter executes little routines or "words" with can be scripted together to form more complex routines, such as defining more forth words and adding these to the forth "dictionary".  When a new definition is interpreted, the new program is COMPILED into the dictionar.  When a word is called, it is executed (basically  as assembler, with some forth overhead for the dictionary).   Because of this,  the execution is very fast compared to "interpreted" environments like BASIC. 
+
+Also, since forth can create new definitions, we can also create assembler routines as well (and eliminate the forth dictionary overhead).  In general, forth routines can be made to execute pretty much as fast as assembler routines (since the parts that matter can be made directly in assembler). 
+ 
+= What Language is propforth written in?  What are forth words? = 
+
+a given Forth is usually written in forth for that processor.   But what about in the beginning, before forth was started? The first version of a forth is generally implemented in some other language, what ever is handy in the situation.  The first version of PropForth was written in SPIN (an interpreted language), resulting in SPINforth.  Very quickly this was shown to be very slow compared to PASM (prop assembler) and was even slower than SPIN.  SPINforth was enough to start laying out a proper forth kernel, and generating a new optimized "native" forth.  At some point, the native forth was able to compile its own code to regenerate its own executable, and SPINforth was no longer needed.  Now, each version of forth is used to generate the next version, and propforth "evolved" its way forward.  The present release is optimized in assembler and structured to further optimize various features, and bears little resemblance to the original versions.   
+
+Because the Propeller always starts off by loading a SPIN program, the PropForth Kernel is also a SPIN file.  SPIN files can also contain assembler instructions.  Looking in the propforth kernel source code, it is mostly assembler.   The FORTH words that rebuild the kernel generate the spin and assembler output that goes into this Proforth.SPIN file.   
+
+Typically, an implementation of forth will generate itself with no external program.  In the case of PropForth, Sal has chosen to use the PropTool as part of the development chain.  This makes life easier, as the PropTool: 1) already exists 2) works very well 3) is supported by Parallax 4) resolves forward references etc which are typically troublesome in a single pass compiler 5) ensures generic compatibility between a propforth system and any prop that can run spin. 
+
+So, propforth is written in FORTH, and the FORTH generates SPIN source code, that when loaded and executed, is the forth kernel. 
+
+= Why can't I find Forth definitions for each word?  = 
+
+During the course of development  (several years) many functions have been optimized in assembler.  These no longer decompile back into the original forth words, as some of the forth-ness was necessarily removed during optimization.  Examples are the cog 7 serial driver, and parts of the interpreter and dictionary manager.  For optimized functions, we generally have a description of what the pre-optimizd code did, but not always the code itself.  One would have to just dig in and analyse the code for these parts.  If one wished to rewrite parts of the kernel, this analysis would be mandatory in any case. 
+
+= Do we need to rebuild the kernel and reload it every time we change a program? =
+
+When a satisfactory kernel exists, the PropTool is only needed to load the kernel into Prop EEprom.  After the kernel is burned into EEprom, the PropTool is not needed.  If you trash the EEprom (this can happen if you make a mistake and write the EEprom incorrectly), you must reload the kernel using the PropTool.  If you don't overwirte or otherwise corrupt the EEprom, you need never rewrite the kernel.  I had a demo board running v3.5 for a couple YEARS with no issues. 
+
+Aside from initial loading, and occasional reloading the kernel, PropForth users seldom should need to run the prop tool.  All forth development is done directly on the prop.  Only folks that rebuild new kernels for testing and altering basic kernel features (Sal, Caskaz, Peter, etc) need the PropTool very often, as each new kernel must be loaded at least once. Most folks don't build new kernels. 
+
+Consider the Propforth.spin image in EEprom to be similar to "bios" on a PC.  After th BIOS boots, it loads whatever code you wish, either from the terminal, or high EEprom, or SD.   As long as you don't trash the bios, all you have to do is powercycle the prop to reload a clean kernel.  
+
+= How does one get started with Propforth?  = 
+
+  * Download the PropForthV5.5.zip
+  * extract the PropForthV5.5.zip to the location of your choice
+  * Find the standard Development Kernel (skip the EEprom and SD kernels till you get your sea legs) 
+  * Read the README.txt and GettingSTarted.txt files
+  * Load th Kernel onto the prop per the instructions
+  * Skim Propforth.htm (in the download archive) sections 1-4, and DO THE EXAMPLES as you go along
+  * Go back again and READ Propforth.htm a second time, this time experiment more.  
+
+When you go through Propforth.htm the second time, you should find more stuff is starting to make sense, and cool things are happening. 
+
+= How does one use Propforth?  = 
+
+There are a couple "rules of thumb" I use for forth: 
+ 1) write it (quick) in FORTH; make is FAST in assembler
+ 2) Do LOTS of LITTLE tests rather than a few BIG tests. 
+ 3) Each function should be SHORT, no more than a bout three to seven things should be happening
+ 4) Each function should be SHORT, if it goes longer than a page you are probably doing something wonky.
+ 5) Each word should have zero to three inputs
+ 6) Each word should have zero to three outputs
+ 7) Decide what each function should do BEFORE you write it, and make sure it does that before you finish writing it 
+ 8) test each new function THOROUGHLY before you move on, you won't be coming back this way.  If you do come back to the code, you will be looking for bugs, because you didn't test thoroughly.
+
+Of course these are rule of thumb,and you can do whatever you need to do to get it done.  Usually though, we have less problems when we stay within the guidelines.  Just sayin', ya know? 
+
+= How do folks join the community and contribute to the project?   = 
+
+Just write post on the parallax forums, or send a message any way you choose.  Say Hi, ask a question, make a suggestion, anything.  Most of the folks are mostly pretty nice and helpful, and are willing to help.  The better you do, the more likely your results will help us too.  And we like to see cool stuff. 
+
+= How to optimize a routine in assembler?  = 
+
+This is where is starts getting interesting.  This s like the bonus levels in you video games.  When you get your function implemented in a serial of forth words, it will execute in a given amount of time.  If this is not fast enough (or whatever) you can examine it and figure out where the slow parts are. Usually things like loop overhead, or forth dictionary overhead, or I/O processing or something will be a bottle neck, because forth is doing some "forth" things instead of your things.  At this point, you can rewrite the routine, so it doesn't do the "forth" things (that is don't need to be doing just now) and only does what you application needs.  Usually this is done with a small assembler routine.   But to do this you have to know what your routine is supposed to do and you must know something about assembler.    When you get to this point, ask.  We will make case by case documentation based on the questions that come in.    
+
+= How to talk to other devices?  = 
+
+Communication is done by listening and talking on I/O lines.  Talking is done by setting I/O lines high and low, and listening is done by monitoring pins as they go high and low.   Buttons and light change state infrequently.  Changing state frequently on one or two lines is usually called serial.  Listening and talking on several pins can be called parallel communication.   Start with a button and an LED, then look for the examples on serial.  As always, ask questions on the forums. 
+
+= What means "standard I/O"?
+
+Propforth is set up such that each processor or cog has standard interface.  The interface from one cog can "plug in" to the interface of another cog, and this looks transparent to the user and the application.  When we use the propforth command line, it appears we are talking to cog 6 by default.  Actually, we are talking to cog 7.  Cog seven listens to the serial terminal, and sends the key presses to cog 6.  Cog 6 sends its results out to cog 7, and cog 7 sends them back out to our terminal.  So really, cog 7 is doing most of the work when we use propforth, until we hit the enter key and execute our application word.  Nifty, huh?
+
+= How to "add addition propchips"? What is MCS?  = 
+
+Because of this standard I/O, one cog can be set up to jiggle an I/O line very fast using one of the cog's internal counters.  It can also b set to listen to another I/O line that is jiggling using the other counter.  This is what happens in Beau's Synchronous serial driver.  In PropForth, Sal does something similar, and adds some protocol.  The affect is that we can drop a byte into "this side" of the i/o stream, and it pops out of the other side of the i/o stream. And this happens at the max speed that the prop can jiggles the lines and interpret the jiggles.  The two ends can be on separate propchips. The result is that at the cost of one cog on this prop, and one cog on the othe prop, we can talk to the cogs on another chip, just the same as if cog 7 on our chip were talking to cog 6 on our chip.  But actually, it can be any of the available cogs on a remote chip.  The implementation of synchronous serial with  protocol is what we call Multi Channel Synchronous serial or MCS.   The transfer can lag about 1 cycle per interchip transition (I guess) but we don't have enough chips or other equipment to set up something we can measure, so I can't check if I understand this right yet.  In any case, its pretty fast. 
+
+= How to talk to linux/android/RaspbberryPi/smartphone?  What are Go-Channels?  = 
+
+OK, this is really neat.  The MCS is modeled after C.A.R. Hoare's CSP channels.  (Its NOT CSP channels, but its "plumbing LIKE CSP channels"). Google' Go Language ASLO has channels implemented similar to CAR Hoare's CSP channels. (I guess these aren't CSP channels either, but they are LIKE CSP channels).  In any case, MCS channels and Go channels can talk to each other.  The effect is that the application thinks it has a real time prop on one part and PC workstation on another part.  And the two parts just talk as fast as the channel permits! The prop running at 80Mhz is the limiting factor, as even the RPi runs at 700Mhz, but the prop runs about as fast as it is capable.  
+
+= How do I rebuild the kernel?  = 
+
+This has two parts, the workstation part and the prop part.
+
+ == Workstation Setup ==
+
+See the wiki page on setting up Go on the workstation.  The Workstation drives the automated build process. 
+
+ == Prop Setup ==
+
+In the download archive, find the HardwareTestBed.txt files.  This describes the test bed hardware. 
+
+= What is the "standard testbed hardware"?   = 
+
+At present, the testbed hardware need a protoboard, and bare prop chip and a spinneret board as described in HardwareTestBed.txt.  
+
+Recently, it has been determined that the spinneret board is less favourable than RaspberryPi + Prop, and/or many folk just don't have a spinneret/Wiznet5xxx. So the hardware test bed will be revised.   The hardware test bed will be upgraded to reflect these changes, and another propforth release (v5.6?) will be generated.   But the kernel is not expected to change, only the documentation and processes for the build and test automation. 
+
+= How do I run the build and test automation?  = 
+
+In the MISC directory is another zipfile named mygo-vXX-yyyymmdd.zip
+
+The mygo.zip contains the full snapshot of the automation.  Run the MAKE.bat script to run the build process.  Each step of the proforth source is build.  When the build completes, run TEST.bat.  The test.bat script compares the output of the run with the previous run. If an output does not match, it is flagged for human examination. The first time the software is changed, the output must be checked manually to determine that the results are correct.  The verified correct output is marked as correct and save for comparison against subsequent runs.  NOTE: certain items such as time stamps are NOT intended to match between runs, these can be marked as "ignore" in the automation.
+
+= I want to add/remove/change function X, how do I make custom kernel?  = 
+
+After the required functionality is implemented and tested thoroughly:
+
+Follow the build automation script to where SPINMAKER.F is used.  
+Load spinmaker on your kernel with its modifications. 
+Execute spinmaker per the example in the build scripts. The output will b spin code.
+
+Paste the spin code into the PropForth.spin file template. Save this files as your new kernel. 
+
+= How do I use the build and test automation with my custom kernel?   = 
+
+Load the new kernel and test it.  Structure your tests as scripts per the test automation example.  Capture the test results per the logging function of the automation. Thoroughly check that all the results, especially from the changed portions, are correct.  Save the logged test results as "referenceResults" per the automation example. 
+
+Subsequent runs can be automatically compared to the manually check results, and mismatches will be flagged.
+
+= These answers and instructions are pretty sketchy, how the heck am I supposed to do any of this? = 
+
+Take each step one at a time, and ask questions on the forums.  User questions will drive the documentation as always.  The propforth team will attempt to walk you thorough the process, and create adequate instruction for each item based on your questions.   Don't worry, we'll get you through it.  If I can get it to work, it not so hard.  Its just a matter of asking and answering each question until it runs. 
 
 = v5.3 =
 
