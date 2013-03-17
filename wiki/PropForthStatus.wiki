@@ -1,7 +1,22 @@
 #summary Status of PropForth kernel development
-#labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1,5.3
+#labels Phase-Design,Phase-QA,Phase-Support,v5.0,v5.1,5.3,v5.5
 
 <wiki:toc max_depth="9" />
+
+= 20130317 Propfothv5.5 RC1 released =
+
+The basic kernel is still the same as in 5.0 and very stable.  We haven't even seen intermittent errors.  We think the kernel may be complete, or at least suitable for the developer's intended purpose.  Primary objective: completed. 
+
+The recent changes have been packaging, addressing "How to arrange the material so it is complete, and easy for new users to get started".  Feedback will tell us our success. 
+
+Going forward: 
+
+The Hardware Test Bed has been prototype 0.1 for the entire propforth development cycles.  We thought the Spinneret would be everybody's favourite network interface, but other solutions like Raspberry Pi, PC Ethernet via Go Channels, and android via blue tooth have proven to be  equally useful options.  So the "standard" hardware test bed is being reconsidered.  How to make the test bed (and automation) apply to more users, what is the general case? In addition to testing the kernel during development, the build and test automation should also test application development.  There may be a v5.6 planned to release a new "standard" test bed. 
+
+Interface to propforth:  The command line via USB serial to a PC workstation is not always the best option.  Netbook and android device via wireless is proving to be very attractive and easy to use.  Future releases for either the entire package or just the extensions are likely.  Its looking like forth and javascript on an android device.  The android device is offloaded with all the GUI, touch screen, communication, storage,  and long term processing.  The prop continues as the real time, pre-filtering and preprocessing component. 
+
+We think we will continue focus on the LittleRobot demo project.  This allow a simple, inexpensive way to show concrete examples that are fun and useful, and can be applied to later projects. 
+
 
 = 20130207 =
 
