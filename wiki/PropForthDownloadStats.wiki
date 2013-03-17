@@ -19,7 +19,7 @@ Gaps between fractional release numbers indicate internal (development) releases
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-|| 2013MAR10 PropForth V5.5 RC1.zip ||  v5.5 || 20130317 || 1 download || 1 (at this writing) || bbbb ||  1 dl per day || 
+|| 2013MAR10 PropForth V5.5 RC1.zip ||  v5.5 || 20130317 || 1 download || 1 (at this writing) ||  1 dl per day || 
 || Propforth-V5.03-20120505.zip || v5.03 || 20120505 || 451 downloads  || 316 days (10 months, 12 days) || 1.4 dl per day || 
 || ~~Propforth-V5.03-20120505.zip~~ || ~~v5.03~~ || ~~20120505~~ || ~~22 downloads~~  || ~~9 days (at this writing)~~ || ~~2.4 dl per day~~ || 
 || Propforth-5.01-20120413.zip  || v5.01 || 20120413 || 2 downloads || 2 days ||  1 dl/day|| 
