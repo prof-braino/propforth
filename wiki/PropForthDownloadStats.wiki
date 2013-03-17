@@ -44,11 +44,14 @@ Gaps between fractional release numbers indicate internal (development) releases
 
 = Guesses =
 
- * There were about 16 PropForth releases made public from 2009 April to 2012 May
+ * There were about 17 PropForth releases made public from 2009 April to 2013 March
+ * ~~There were about 16 PropForth releases made public from 2009 April to 2012 May~~
  * Over 39 months, there has been average of 1 release every two and a half months 
- * There might be around 53 to 325 propforth users
+ * There might be around 53 to 451 propforth users
+ * ~~There might be around 53 to 325 propforth users~~
  * There are at least 8 propforth users
  * We might expect average of 1 to 2.6  downloads per day
+ * By 5.5, the release process and testing took longer (a freakin' YEAR) than development (no changes to kernel, much re-organization of packaging)
  * By 5.0, the release process and testing took longer (months) than development (weeks)
  * Release process was not well established in 3.x time frame
  * Record keep was not so accurate in the 2.x releases
@@ -66,3 +69,5 @@ Spinforth 1.1 to Propforth 2.x:  change from SPIN to Assembler
 3.x to 4.x: explore implementation options and demonstrate basic functions as a system.
 
 4.x to 5.x: final architecture.  User demos for functions. Possible user demos for systems. (in progress)
+
+5.0 to 5.5: packaging to include full suit for advanced developer, yet remain simple for a new user and beginner. 
