@@ -48,7 +48,7 @@ The last significant change was NUMBER FORMATTING.  Decimal values composed of d
 
 = new stuff with 5.5 =
 
-== Why is GoSetup20120422 deprecated? ==
+== Why is !GoSetup20120422 deprecated? ==
 
 The Go support is includes in the release as another archive in the /misc directory. Setup is a little more involved than the standard kernel command line via teraterm, but it is still the same as in the previous go setup.  You might have to recompile goterm (for OS provided support for command history, arrow keys etc) and GoMuxterm (for multiple channels across the physical link), same as before. 
 
