@@ -10,7 +10,7 @@ Each archive is identifed by ` PropForth+Version+Date+tag+.zip `
 
 For example ` Propforth-V5.03-20120505.zip `
 
-Archives named in the form `2013MAR10 !PropForth V5.5 RC1.zip` are internal developer packages.  As of v5.5, the developer package is included in the misc directory for users that wish to use the advanced functions. These include automated build and test, and Go channel support. The advanced functions are optional, are not required for using the pre-built propforth kernels.  
+Archives named in the form `2013MAR10 PropForth V5.5 RC1.zip` are internal developer packages.  As of v5.5, the developer package is included in the misc directory for users that wish to use the advanced functions. These include automated build and test, and Go channel support. The advanced functions are optional, are not required for using the pre-built propforth kernels.  
 
 Each previous release is deprecated by the current release
 
