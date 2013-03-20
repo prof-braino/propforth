@@ -48,6 +48,22 @@ The last significant change was NUMBER FORMATTING.  Decimal values composed of d
 
 = new stuff with 5.5 =
 
+== Where is the kernel source code?  ==
+
+In the extracted directories for Propforthv5.5, location the MISC directory.
+
+In the misc directory locate  2013FEB23mygo V5.5 RC1.zip
+
+== Where is all the Go Language support? ==
+
+The file 2013FEB23mygo V5.5 RC1.zip in the MISC directory is the internal release archive.  This have the full release configure for the automated build and test using Go-Language support. You don't need this to use the pre-built kernels, we only need this if we want to rebuild the kernels or use the Go Language support.  
+
+== Why is there a second zip included in the release? ==
+
+The file 2013FEB23mygo V5.5 RC1.zip in the MISC directory to keep the package complete. This is the development team's internal release package for the full release.  The advanced material is not used by the majority of users, and is confusing to newcomers.  So we moved the full release ( source + build automation ) to misc and put the pre-built kernels on top.  
+
+The intent is to make it easier for newcomers to get started.
+
 == Why is !GoSetup20120422 deprecated? ==
 
 The Go support is includes in the release as another archive in the /misc directory. Setup is a little more involved than the standard kernel command line via teraterm, but it is still the same as in the previous go setup.  You might have to recompile goterm (for OS provided support for command history, arrow keys etc) and GoMuxterm (for multiple channels across the physical link), same as before. 
