@@ -19,33 +19,33 @@ Gaps between fractional release numbers indicate internal (development) releases
 = Days between release dates =
 
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-|| PropForth-V5.5-20130317.zip ||  v5.5 || 20130317 || x download || x (at this writing) ||  x dl per day || 
-|| 2013MAR10 PropForth V5.5 RC1.zip ||  v5.5 || 20130317 || 4 download || 4  ||  4 dl per day || 
+|| !PropForth-V5.5-20130317.zip ||  v5.5 || 20130317 || x download || x (at this writing) ||  x dl per day || 
+|| 2013MAR10 !PropForth V5.5 RC1.zip ||  v5.5 || 20130317 || 4 download || 4  ||  4 dl per day || 
 || Propforth-V5.03-20120505.zip || v5.03 || 20120505 || 451 downloads  || 316 days (10 months, 12 days) || 1.4 dl per day || 
 || ~~Propforth-V5.03-20120505.zip~~ || ~~v5.03~~ || ~~20120505~~ || ~~22 downloads~~  || ~~9 days (at this writing)~~ || ~~2.4 dl per day~~ || 
-|| Propforth-5.01-20120413.zip  || v5.01 || 20120413 || 2 downloads || 2 days ||  1 dl/day|| 
-|| Propforth5.0-20120304.zip   || v5.0 || 20120304 || 164 downloads || 27+30+5 =  62 days || 2.6 || 
-|| PropForth4.6-20110725.zip  || v4.6 || 20110725 || 325 downloads ||  7 months 10 days (222 days)|| 1.4 dl/day || 
-|| PropForth4.5-20110614.zip ||  v4.5 || 20110614 ||  156 downloads || (30-14+25) = 41 days || 3.8 dl/day|| 
-|| Propforth4.0a-20101218.zip || v4.0a || 20101218 || 205 downloads || 178 days (6 months) || 1  dl/day ||
+|| !Propforth-5.01-20120413.zip  || v5.01 || 20120413 || 2 downloads || 2 days ||  1 dl/day|| 
+|| !Propforth5.0-20120304.zip   || v5.0 || 20120304 || 164 downloads || 27+30+5 =  62 days || 2.6 || 
+|| !PropForth4.6-20110725.zip  || v4.6 || 20110725 || 325 downloads ||  7 months 10 days (222 days)|| 1.4 dl/day || 
+|| !PropForth4.5-20110614.zip ||  v4.5 || 20110614 ||  156 downloads || (30-14+25) = 41 days || 3.8 dl/day|| 
+|| !Propforth4.0a-20101218.zip || v4.0a || 20101218 || 205 downloads || 178 days (6 months) || 1  dl/day ||
 || PropForth3.5e-20101019.zip ||  v3.5e || 20101019 || 182 downloads|| 60 days || 3 ||
-|| Propforth3.5c-20101017.zip ||  v3.5c || 20101017 || 19 downloads|| 2 days || 8 ||
-|| Propforth3.5b-20101017.zip ||  v3.5b || 20101017 || 10 downloads|| 1 || 10 ||
-|| Propforth3.5a-20101017.zip ||  v3.5a || 20101017 || 5 downloads|| 1  || 5 ||
-|| PropForth3.5-2010OCT09.zip ||  v3.5 || 2010OCT09 || 26 downloads|| 8  || 3   dl/day ||
-|| PropForth3.4-2010SEPT05.zip || v3.4 || 2010SEPT05 || 120 downloads || 34 days || 3.5   dl/day ||
-|| PropForth3.2 20100710 archive.zip  ||  v3.2 || 20100710 || 162 downloads || 57 days || 2.8  dl/day ||
-|| PropForth2.7-20100710 archive.zip  ||  v2.7 || 20100531 || 66 downloads ||  41 days || 1.6 dl/day ||
-|| PropForth2.6archive.zip 2010-july ||  v2.6 || (posted) 2010-july (10th?)|| 56 downloads ||  NA || NA dl/day ||
-|| PropForth2.4Archive.zip 2010-june || v2.4 || 2009-April-20 || 53 downloads || 1 year 3 months (465 days) || 0.11 dl/day ||
+|| !Propforth3.5c-20101017.zip ||  v3.5c || 20101017 || 19 downloads|| 2 days || 8 ||
+|| !Propforth3.5b-20101017.zip ||  v3.5b || 20101017 || 10 downloads|| 1 || 10 ||
+|| !Propforth3.5a-20101017.zip ||  v3.5a || 20101017 || 5 downloads|| 1  || 5 ||
+|| !PropForth3.5-2010OCT09.zip ||  v3.5 || 2010OCT09 || 26 downloads|| 8  || 3   dl/day ||
+|| !PropForth3.4-2010SEPT05.zip || v3.4 || 2010SEPT05 || 120 downloads || 34 days || 3.5   dl/day ||
+|| !PropForth3.2 20100710 archive.zip  ||  v3.2 || 20100710 || 162 downloads || 57 days || 2.8  dl/day ||
+|| !PropForth2.7-20100710 archive.zip  ||  v2.7 || 20100531 || 66 downloads ||  41 days || 1.6 dl/day ||
+|| !PropForth2.6archive.zip 2010-july ||  v2.6 || (posted) 2010-july (10th?)|| 56 downloads ||  NA || NA dl/day ||
+|| !PropForth2.4Archive.zip 2010-june || v2.4 || 2009-April-20 || 53 downloads || 1 year 3 months (465 days) || 0.11 dl/day ||
 || *Release* || *version* || *date* || *download count* || *days current* || *Downloads per day* ||
-|| Spinforth || v1.1 ||  2008 JAN 25 || 233 downloads ||  1 year 3 months (451 days) || 0.51 dl/day ||
-|| Spinforth || v1.0 ||  2007 DEC 12 || unknown downloads ||  44 days || NA ||
+|| S!pinforth || v1.1 ||  2008 JAN 25 || 233 downloads ||  1 year 3 months (451 days) || 0.51 dl/day ||
+|| !Spinforth || v1.0 ||  2007 DEC 12 || unknown downloads ||  44 days || NA ||
 
 = Guesses =
 
- * There were about 17 PropForth releases made public from 2009 April to 2013 March
- * ~~There were about 16 PropForth releases made public from 2009 April to 2012 May~~
+ * There were about 17 !PropForth releases made public from 2009 April to 2013 March
+ * ~~There were about 16 !PropForth releases made public from 2009 April to 2012 May~~
  * Over 39 months, there has been average of 1 release every two and a half months 
  * There might be around 53 to 451 propforth users
  * ~~There might be around 53 to 325 propforth users~~
@@ -62,7 +62,7 @@ Gaps between fractional release numbers indicate internal (development) releases
 
 Integer releases represent significant changes, fractional releases represent incremental changes:
 
-Spinforth 1.1 to Propforth 2.x:  change from SPIN to Assembler
+!Spinforth 1.1 to !Propforth 2.x:  change from SPIN to Assembler
 
 2.x to 3.x: refine architectural design
 
