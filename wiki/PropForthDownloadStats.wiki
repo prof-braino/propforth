@@ -32,7 +32,7 @@ Gaps between fractional release numbers indicate internal (development) releases
 || Propforth3.5c-20101017.zip ||  v3.5c || 20101017 || 19 downloads|| 2 days || 8 ||
 || Propforth3.5b-20101017.zip ||  v3.5b || 20101017 || 10 downloads|| 1 || 10 ||
 || Propforth3.5a-20101017.zip ||  v3.5a || 20101017 || 5 downloads|| 1  || 5 ||
-|| PropForth3.5-2010OCT09.zip ||  v3.5 || 2010OCT09 || 26 downloads|| 8  || 3   dl/day ||
+|| !PropForth3.5-2010OCT09.zip ||  v3.5 || 2010OCT09 || 26 downloads|| 8  || 3   dl/day ||
 || !PropForth3.4-2010SEPT05.zip || v3.4 || 2010SEPT05 || 120 downloads || 34 days || 3.5   dl/day ||
 || !PropForth3.2 20100710 archive.zip  ||  v3.2 || 20100710 || 162 downloads || 57 days || 2.8  dl/day ||
 || !PropForth2.7-20100710 archive.zip  ||  v2.7 || 20100531 || 66 downloads ||  41 days || 1.6 dl/day ||
