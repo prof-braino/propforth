@@ -14,7 +14,9 @@ Always use the the most recent public release.  Previous releases are not suppor
 
 * What special hardware do I need?
 
-Propforth runs on any propchip that can load a spin file.  If you need SD storage, you need an SD card. Please follow the instructions for adding SD. 
+Propforth runs on any propchip that can load a spin file.  To run propforth at power on, the prop needs to have EEprom (all parallax supplied have EEprom). The standard Devkernel.spin will run on any standard prop board with at least 32k EEprom. 
+
+If you need SD storage, you need an SD card. Please follow the instructions for adding SD. The SDKernel.spin kernel is a special version of the standard kernel, with optimized SD support built in. Note that the SD "file system" is NOT a FAT32 compatible files system.  The SD filesystems just associates a contiguous a text name (file name) with a serial of contiguous 512 byte BLOCKS on the SD. So we can use this as if it was a file system.  ITs NOT a real file system in the FAT32 sense, but it works the same and is very fast, but only with propforth. 
 
 * Where do I start?
 
