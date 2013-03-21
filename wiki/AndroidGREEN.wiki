@@ -15,6 +15,10 @@ This is just an arbitrary name.  RED and BLUE were already used for other projec
 
 GREEN is not documented yet, but stable. Sal is using GREEN for everything.
 
+Braino has it installed on Nexus 10
+
+Green will not run on Android 2.2 devices, or devices lacking blue tooth.
+
 = Requirements= 
 
 Android 3.0 and greater. Uses Java Script. 
