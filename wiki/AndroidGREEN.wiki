@@ -7,6 +7,39 @@ GREEN is an android app that is to provide an interface to propforth.
 
 A recently trend is for an application device to use a generic android device for display and input (for example the touch screen).  The android device also provide network connection, storage, processing, etc; rreducing the cost and effort on the application device. 
 
+=  Intended Use =
+
+GREEN  is the development prototype for an android user interface to propforth for the LittleRobot demo project.  After development, it should be suitable for any prop project the requires an interface over blue tooth. 
+
+= High level description of user facing functions =
+
+pivot left
+
+pivot right
+
+straight
+
+speed 
+
+accelerate
+
+measure distance
+
+calibrate (wheels)
+
+avoid close object
+
+seek far object
+
+retreat from closing object
+
+pursue retreating object
+
+circumnavigate area
+
+stop at origin
+
+
 == Why the name GREEN? ==
 
 This is just an arbitrary name.  RED and BLUE were already used for other projects, and yellow has more letters.
