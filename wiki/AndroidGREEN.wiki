@@ -47,9 +47,15 @@ Need to find out about signed app versus unsigned app. Any feedback?
 
 = Location = 
 
-GREEN_QSboot.f is in the download archive under misc directory
+GREEN_QSboot.f is in the download archive under misc directory.  This is the part that goes on the prop.
+
+The part that goes on the android device, GREEN.adb has not be prepared for distribution yet. Please contact Braino or Sal if you are interested in the development version. 
 
 = code =
+
+Notice that the lines of code can be truncated at the edge of the wiki page.  See the file in the download for the full text.
+
+
 
 {{{
 fl
