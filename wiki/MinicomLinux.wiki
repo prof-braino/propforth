@@ -94,7 +94,7 @@ In fact, it look like the `(ctl-z a)` help and configuration menu stops working 
 
 OK its `(ctl^A Z)`  .  I guess it works better when I use the correct key.
 
-= TRIGGER with <ENTER> =
+= TRIGGER with < ENTER > =
 
 By default, LAC triggers when you press the enter key
 
