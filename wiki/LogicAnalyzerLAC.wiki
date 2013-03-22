@@ -1,0 +1,29 @@
+#summary LAC is the software logic analyzer in propforth
+
+= Introduction =
+
+This a a suppliment for ./Propforth
+PROPFORTH.HTM section 5 LogicAnalyzer
+
+
+
+
+Logic Analyzer reports the pin states, hi or low.
+
+LAC is a software program that uses one or more cogs to report the state of the prop pins form a given time for a certain duration.  
+
+The sampling period can be triggered by pin transistion, or by an operator event. 
+
+
+
+= setup =
+
+== Load a kerenl =
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
