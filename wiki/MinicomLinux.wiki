@@ -100,7 +100,7 @@ By default, LAC triggers when you press the enter key
 
 Run LAC
 
-hit enter, and see the display get drawn.  If it scrolls of the bottom, adjust you window size. The output has a line for each I/O line, a command header, and intermediate haders for the I/O lines display. .   
+hit enter, and see the display get drawn.  If it scrolls of the bottom, adjust you window size. The output has a line for each I/O line, a command header, and intermediate headers for the I/O lines display. .   
 
 The display window needs at least 63 lines to full display with out scrolling.
 
@@ -112,17 +112,17 @@ Hit enter to see the LAC i/o lines dispay change to reflect the states of the pa
 
 == change sample frequency to a LONG interval ==
 
-The default sample frequency is 40 clocks per cycle. When tringgered, LAC samples at this rate until the buffer (free memory) is filled. 
+The default sample frequency is 40 clocks per cycle. When triggered, LAC samples at this rate until the buffer (free memory) is filled. 
 
 Change the sample frequency using the `ASDFG` keys (caps) to increase the sample time delta (by 1, 10, 100, 1000, 10000 cycles, respectively); and using the asdfg keys (lowercase) to decrease the sample time delta (by 1, 10, 100, 1000, 10000 cycles, respectively)
 
 touch pads and resample to see changes
 
-Notice is you set the sample rate to 40,000 cycles (G,G,G,G) this is about the highest it can go. It takes a long time (almost 2 seoncds to sample and display.  You can LIGHTLY lay your finger across several pad on the quickstart, some some of the LEDs flicker dimly. The sample will show the I/O lines toggling for the flickering LEDs. 
+Notice is you set the sample rate to 40,000 cycles (G,G,G,G) this is about the highest it can go. It takes a long time (almost 2 seconds) to sample and display.  You can LIGHTLY lay your finger across several pad on the quickstart, some some of the LEDs flicker dimly. The sample will show the I/O lines toggling for the flickering LEDs. 
 
 === change the sample frequency to a short interval ===
 
-The shortest sampling period we do with the default congfiguration is 40 cycles. 
+The shortest sampling period we do with the default configuration is 40 cycles. 
 
 NOTICE that you can set the sample frequency down to 1 cycle. BY DEFAULT, the lowest we can go is 40 cycles, this uses 1 cog to do the sample, and save the data to free hub memory.  It can't function reliably any faster in this configuration.
 
@@ -135,7 +135,7 @@ Setting the different capture configuration is beyond the scope of this exercise
 
 = TRIGGER  from PIN STATE TRANSITION =
 
-We can change the default so a pin state transistion cuases the sampling to trigger.
+We can change the default so a pin state transition causes the sampling to trigger.
 
 Lets make the sampling trigger when we touch button pad 4.
 
