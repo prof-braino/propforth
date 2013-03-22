@@ -43,7 +43,6 @@ it changes to the proper 230400
 
 == USB ==
 
-
 === find device ID ===
 
 In a terminal, determine which ID is the usb converter
@@ -67,11 +66,31 @@ So mine is on `ttyUSB0`
 ===  set serial port ===
 
   * sudo minicom -s
-   * serial port setup
+  * serial port setup
   * a -device: /ttyUSB0
 
-
 /dev/ttyusb0
+
+
+
+* If it gives an error message DEVICE NOT PRESENT, it can be that the virtual XP session still has the the USB to serial converter.  
+
+In virtualbox under 
+  * devices
+  * USB devices
+
+Un-check the USB to serial converter
+
+=== other settings ===
+
+The modem configuration settings in minicom are no needed, make these blanks:
+
+  * modem and dialing:
+     * init string - st? build?
+     * reset string - sc st?
+     * dialing prefix - blank
+     * hangup string - blank (hangup will try to exit but will just leave you with the form command line running, you have to kill the terminal to end
+
 
 
  < this is where I ended >
