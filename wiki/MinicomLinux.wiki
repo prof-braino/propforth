@@ -1,4 +1,5 @@
 #summary Using Minicon on Linux as termianl program
+#labels v5.5,terminal,linux,minicom
 
 = Introduction =
 
@@ -51,7 +52,7 @@ In a terminal, determine which ID is the usb converter
 dmesg | grep tty
 }}}
 
-Yoou should see and output the describes the USB device you are looking for
+You should see and output the describes the USB device you are looking for
 {{{
 braino@box0:~$ dmesg | grep tty
 [    0.000000] console [tty0] enabled
@@ -71,9 +72,7 @@ So mine is on `ttyUSB0`
 
 /dev/ttyusb0
 
-
-
-* If it gives an error message DEVICE NOT PRESENT, it can be that the virtual XP session still has the the USB to serial converter.  
+* If it gives an error message DEVICE NOT PRESENT, it can be that the virtual XP session is still running, and has control of the USB to serial converter.  To release the USB from virtualbox,
 
 In virtualbox under 
   * devices
@@ -90,6 +89,8 @@ The modem configuration settings in minicom are no needed, make these blanks:
      * reset string - sc st?
      * dialing prefix - blank
      * hangup string - blank (hangup will try to exit but will just leave you with the form command line running, you have to kill the terminal to end
+
+In fact, it look like the `(ctl-z a)` help and configuration menu stops working after a bit.  More if I figure that out...
 
 
 
