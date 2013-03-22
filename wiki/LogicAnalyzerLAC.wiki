@@ -25,8 +25,8 @@ After the device is registered, Use F7 to ensure the USB COM port is found.
 
 use the prop tool to open
 
-`PropForth-V5.5-20130317.zip/V5.5/CurrentRelease\CurrentRelease\PropForth\ 
-DevKernel.spin`
+`PropForth-V5.5-20130317.zip/V5.5/CurrentRelease\CurrentRelease\PropForth\` 
+`DevKernel.spin`
 
 Use F11 to compile and load the kernel into EEPROM
 
