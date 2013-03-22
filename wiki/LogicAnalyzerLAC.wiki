@@ -47,7 +47,7 @@ Read `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyz
 
 Do the examples
 
-The assumes you have already completed the examples in section 5
+The following assumes you have already completed the examples in section 5
 
 == load an application (Quickstart touch demo) ==
 
