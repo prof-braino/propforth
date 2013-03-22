@@ -43,25 +43,39 @@ it changes to the proper 230400
 
 == USB ==
 
-Change tt8 to USB
 
-OK this worked before, I just have to remember what the setting is
+=== find device ID ===
 
-/dev/tty8 - NO
+In a terminal, determine which ID is the usb converter
 
-/dev/usb0 - NO
+{{{
+dmesg | grep tty
+}}}
 
-/dev/usb1 - NO
+Yoou should see and output the describes the USB device you are looking for
+{{{
+braino@box0:~$ dmesg | grep tty
+[    0.000000] console [tty0] enabled
+[    1.301798] serial8250: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+[    1.324185] 00:08: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+[224734.385147] usb 5-2: FTDI USB Serial Device converter now attached to ttyUSB0
+[224736.280339] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+}}}
 
-/dev/usb - ??
+So mine is on `ttyUSB0`
+
+===  set serial port ===
+
+  * sudo minicom -s
+   * serial port setup
+  * a -device: /ttyUSB0
+
+
+/dev/ttyusb0
+
+
+ < this is where I ended >
 
 
 
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+- end 20130322 -
