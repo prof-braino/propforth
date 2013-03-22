@@ -2,11 +2,7 @@
 
 = Introduction =
 
-This a a suppliment for ./Propforth
-PROPFORTH.HTM section 5 LogicAnalyzer
-
-
-
+This a a supplement for PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM section 5 LogicAnalyzer
 
 Logic Analyzer reports the pin states, hi or low.
 
@@ -14,7 +10,7 @@ LAC is a software program that uses one or more cogs to report the state of the 
 
 The sampling period can be triggered by pin transistion, or by an operator event. 
 
-
+The forth script lac.f is located at PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f
 
 = setup =
 
