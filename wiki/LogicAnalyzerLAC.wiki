@@ -11,7 +11,7 @@ LAC is a software program that uses one or more cogs to report the state of the 
 
 The sampling period can be triggered by pin transition, or by an operator event. 
 
-The forth script lac.f is located at 'PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f'
+The forth script lac.f is located at `PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f`
 
 = setup =
 
