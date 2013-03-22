@@ -74,6 +74,8 @@ Load LAC into propforth as described above.
 
 set the trigger as the transition of one ot the buttons (pin 0-7) or for one of the LEDs (pins 16-23)
 
+First try button pins, then try LED pins, etc
+
 == set the sampling ==
 
 by default, LAC will sample xxxx bye at frequency xxxx
@@ -92,7 +94,7 @@ touching the button that you have set as trigger (or that triggers the LED you h
 
 Notice that the buttons and LEDs are refreshed at a rate of 22 ms (line xx in touch demo)
 
-Touching the trigger pin should capture a sample. In addition, the states of all other pins are displayed.  You should be alble to see the transitions of any pins touched during sampling.  Experiment with change the sample window till you can capture various samples ass you touch different buttons.
+Touching the trigger pin should capture a sample. In addition, the states of all other pins are displayed.  You should be able to see the transitions of any pins touched during sampling.  Experiment with change the sample window till you can capture various samples ass you touch different buttons.
 
 
 - End 20130321 -
