@@ -35,9 +35,9 @@ Use F11 to compile and load the kernel into EEPROM
 in your text editor, open
 `PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f`
 
-highlight the entire contents of the file (CTL^A)
+highlight the entire contents of the file `(CTL^A)`
 
-copy it (CTL^C)
+copy it `(CTL^C)`
 
 paste it into the teraterm window with the propforth command line (right mouse)
 
@@ -55,9 +55,9 @@ The assumes you have already completed the examples in section 5
   * Download the Quickstart Touch button demo 
   * http://propforth.googlecode.com/files/QuickstartTouchDemo20120611-1540.txt
   * Open it in your text editor
-  * highlight the entire contenst of `QuickstartTouchDemo20120611-1540.txt`
-  * copy th4 highlighted text with ctl^C
-  * paste it into tera term 
+  * highlight the entire contents of `QuickstartTouchDemo20120611-1540.txt`
+  * copy th4 highlighted text with `(ctl^C)`
+  * paste it into teraterm 
   * do saveforth (to write the the touch button demo to EEprom)
 
 NOTE: After your programs are loaded, you can do a saveforth to save the current dictionary image to eeprom. This way, the same image will persist after reboots and power cycling.   
@@ -86,7 +86,7 @@ Set the sampling such that the touch and release event can be captured, for exam
 
 Since the touch demo is set to run on reboot or power cycle, the demo should already be running. 
 
-touching the button that you have se as trigger (or that triggers the LED you have set as trigger) should cause LAC to capture a sample
+touching the button that you have set as trigger (or that triggers the LED you have set as trigger) should cause LAC to capture a sample
 
 == monitor application ==
 
