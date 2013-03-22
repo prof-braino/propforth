@@ -14,7 +14,22 @@ The forth script lac.f is located at PropForth-V5.5-20130317.zip/V5.5/CurrentRel
 
 = setup =
 
-== Load a kerenl =
+== Load a kerenl ==
+
+== Load lac.f ==
+
+= Using LAC =
+
+== load an application (Quickstart touch demo) ==
+
+== load lac.f after application ==
+
+== set triggers ==
+
+== execute application ==
+
+== monitor application ==
+
 
 
 = Details =
