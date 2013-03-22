@@ -14,9 +14,32 @@ The forth script lac.f is located at PropForth-V5.5-20130317.zip/V5.5/CurrentRel
 
 = setup =
 
-== Load a kerenl ==
+Connect the Quickstart to the PC with a USB cable
+
+After the device is registered, 
+
+== Load a kernel ==
+
+use the prop tool to open
+
+PropForth-V5.5-20130317.zip/V5.5/CurrentRelease\CurrentRelease\PropForth\ 
+DevKernel.spin
+
+Use F7 to ensure the USB COM port i found.
+
+Use F11 to compile and t load the kernel into EEPROM
+
 
 == Load lac.f ==
+
+in your text editor, open
+PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f
+
+highlight the entire contents of the files (CTL^A)
+
+copy it (CTL^C)
+
+paste it into the teraterm winodw with the propforth command line (right mouse)
 
 = Using LAC =
 
