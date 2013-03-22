@@ -5,7 +5,7 @@
 
 This a a supplement for `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
 
-Logic Analyzer reports the pin states, hi or low.
+Logic Analyzer reports the pin states, hi or low, for a specific time after a specific event.  This handy for real time control, where timing is critical. A logic analyzer is like very fancy expensive oscilloscope.  LAC is a little cheaper, and can be just as effective.
 
 LAC is a software program that uses one or more cogs to report the state of the prop pins form a given time for a certain duration.  
 
