@@ -1,0 +1,67 @@
+#summary Using Minicon on Linux as termianl program
+
+= Introduction =
+
+If one switches from Windows to Linux, Oracle Virtualbox is needed to run a virtual WindowsXP session, to initially run the Proptool.
+
+After that all we need is a terminal program to talk to the propforth command line over serial , directly from linux.
+
+One option for a terminal communication program is minicom
+
+= Install Minicom =
+
+{{{
+sudo apt-get minicom
+}}}
+
+after your administrator password, select the defaults for the options; it installs
+
+= Help for minicom =
+
+Look at the MAN  pages, they are pretty complete 
+
+{{{
+man minicom
+}}}
+
+
+= Setup Minicom =
+
+{{{
+sudo minicom -s
+}}}
+
+If you don't use sudo, it won't let you save your changes to the setup
+
+==  BAUD 230400 ==
+
+there isn't a specific selection for 230400, but by pressing 
+{{{
+A -<next> 
+}}}
+it changes to the proper 230400
+
+== USB ==
+
+Change tt8 to USB
+
+OK this worked before, I just have to remember what the setting is
+
+/dev/tty8 - NO
+
+/dev/usb0 - NO
+
+/dev/usb1 - NO
+
+/dev/usb - ??
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
