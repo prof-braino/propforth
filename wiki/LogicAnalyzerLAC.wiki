@@ -1,63 +1,98 @@
 #summary LAC is the software logic analyzer in propforth
+#labels v5.5,Quickstart,LAC,logicanalyzer
 
 = Introduction =
 
-This a a supplement for PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM section 5 LogicAnalyzer
+This a a supplement for `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
 
 Logic Analyzer reports the pin states, hi or low.
 
 LAC is a software program that uses one or more cogs to report the state of the prop pins form a given time for a certain duration.  
 
-The sampling period can be triggered by pin transistion, or by an operator event. 
+The sampling period can be triggered by pin transition, or by an operator event. 
 
-The forth script lac.f is located at PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f
+The forth script lac.f is located at `PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f`
 
 = setup =
 
+Install and launch the Proptool
+
 Connect the Quickstart to the PC with a USB cable
 
-After the device is registered, 
+After the device is registered, Use F7 to ensure the USB COM port is found.
 
 == Load a kernel ==
 
 use the prop tool to open
 
-PropForth-V5.5-20130317.zip/V5.5/CurrentRelease\CurrentRelease\PropForth\ 
-DevKernel.spin
+`PropForth-V5.5-20130317.zip/V5.5/CurrentRelease\CurrentRelease\PropForth\ 
+DevKernel.spin`
 
-Use F7 to ensure the USB COM port i found.
-
-Use F11 to compile and t load the kernel into EEPROM
-
+Use F11 to compile and load the kernel into EEPROM
 
 == Load lac.f ==
 
 in your text editor, open
-PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f
+`PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f`
 
-highlight the entire contents of the files (CTL^A)
+highlight the entire contents of the file (CTL^A)
 
 copy it (CTL^C)
 
-paste it into the teraterm winodw with the propforth command line (right mouse)
+paste it into the teraterm window with the propforth command line (right mouse)
 
 = Using LAC =
 
+Read `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
+
+Do the examples
+
+The assumes you have already completed the examples in section 5
+
 == load an application (Quickstart touch demo) ==
+
+  * In teraterm, run the `reboot` word to return to the original kernel state.
+  * Download the Quickstart Touch button demo 
+  * http://propforth.googlecode.com/files/QuickstartTouchDemo20120611-1540.txt
+  * Open it in your text editor
+  * highlight the entire contenst of `QuickstartTouchDemo20120611-1540.txt`
+  * copy th4 highlighted text with ctl^C
+  * paste it into tera term 
+  * do saveforth (to write the the touch button demo to EEprom)
+
+NOTE: After your programs are loaded, you can do a saveforth to save the current dictionary image to eeprom. This way, the same image will persist after reboots and power cycling.   
+
+NOTE:  You can load lac first, or you can load quickstart demo first. you can do saveforth after loading either to write the current image to EEPROM.
 
 == load lac.f after application ==
 
+Make sure the quickstart touch demo is present and running. 
+
+Load LAC into propforth as described above.
+
 == set triggers ==
+
+set the trigger as the transition of one ot the buttons (pin 0-7) or for one of the LEDs (pins 16-23)
+
+== set the sampling ==
+
+by default, LAC will sample xxxx bye at frequency xxxx
+
+The touch demo runs at xxx refreshes (line xx in touch demo)
+
+Set the sampling such that the touch and release event can be captured, for example nnnn
 
 == execute application ==
 
+Since the touch demo is set to run on reboot or power cycle, the demo should already be running. 
+
+touching the button that you have se as trigger (or that triggers the LED you have set as trigger) should cause LAC to capture a sample
+
 == monitor application ==
 
+Notice that the buttons and LEDs are refreshed at a rate of 22 ms (line xx in touch demo)
+
+Touching the trigger pin should capture a sample. In addition, the states of all other pins are displayed.  You should be alble to see the transitions of any pins touched during sampling.  Experiment with change the sample window till you can capture various samples ass you touch different buttons.
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+- End 20130321 -
