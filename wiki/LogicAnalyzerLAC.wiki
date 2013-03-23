@@ -198,7 +198,20 @@ I think that 11030 bytes divided by 4 equals 2757 longs free.  So I should have 
 
 Is it because this is all it can do before the next sample? 
 
-Investigate:    Change the clock cycles sample interval.  Change the trigger from pin to NONE.  Change the frequency of the trigger  pin toggle.
+   ==== Investigate ==== 
+  Change the clock cycles sample interval.  Change the trigger from pin to NONE.  Change the frequency of the trigger  pin toggle.
+
+ === The Logic Analyzer Display ====
+
+Along top of the display are eight column headers.  These are integer multiples of the sample interval clock cycles, in (prefix)seconds. The column headers automagically display prefixes for the seconds in nano seconds, microseconds, and milliseconds. (That's kind of cool, how does he do that?)
+
+Along the left side of the display are listed the I/O PIN numbers 31 down to 0.  
+
+The column headers are repeated every four I/O pin lines, and have a white space line above and a white space line below the interval headers.  (Can we remove the whitespace?  Can we change the number of times the column headers are displayed? I would want to t troy remopving the whitesapce, and only display the colume headers three times, once at the top, once in the middle, and once at the bottom. Then I would change my mind.) 
+
+Each column in the sample display is one long (two words) that contains the state of the pins at integer multiples of the sample interval clock cycles. Each horizontal demarcation has 16 samples, there are eight (8) demarcations in the sample display.  So there are 16 * 8 samples or 128 samples displayed. 
+
+
 
 ----------
 
