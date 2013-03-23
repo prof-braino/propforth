@@ -149,7 +149,7 @@ The ENTER key triggers sampling.
 
 That is, when the enter key is pressed, lac looks at the trigger pin and waits how the transition event, if specified; or begins sampling immediately if NONE is specified.  One sampling cycle consists of the trigger event, then one sample every N clock cycles as specified in sample interval.  This continues until the display is populated, or the buffer (all unallocated memory) is used up (Check if this is still the case?). 
 
- === Quit <ESC> ===
+ === Quit < ESC > ===
 
 Hit the ESCAPE key to exitt LAC. LAC will terminate immediately if it is not sampling.  If lac is in the process of sampling, for example a very long sample interval, and/or multuiple enter key presses in the keyboard input buffer, it not terminal until the sampling is complete.  This can take a very long time if you set it up correctly (or incorrectly depending on your intent). 
 
