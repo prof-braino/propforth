@@ -118,7 +118,11 @@ Selecting `e` set the interval back to 250ms (the default).
 If the trigger frequency displays NONE and will not change to the rising or falling glyph,  restart lac.  Also, the specified input pin might not be toggling fast enough for lac to register a frequency. Check that you are looking at the correct pin, and you've started it toggling. Also check the way you control the frequency. I find that often the problem is I didn't set it up right. 
 
 
-=== NI === 
+   === Sample Interval -asdfg +ASDFG: 500.0 nS             40 clock cycles === 
+
+OK, this one is a bit complex.  
+
+
 
 ----------
 
