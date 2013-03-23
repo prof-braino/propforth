@@ -160,6 +160,28 @@ Mess with this until you get a feel for when it quits quickly and when you have 
 
 What could this mean? 
 
+LAC samples the pins states, and stores these as LONG values in HUB ram (or COG RAM if set to 1 cycle).  So it dumps the sampes into unused memory until it runs out of memory, until it runs out of memory, or another sampling event begins. LAC only displays 128 samples on the display; otherwise the display would have to deal with scrolling left and right, and/or other complex and messing things.  So it just displays 128 samples, which is what we decided it could throw onto the display with no extra coding.  
+
+The keys zxcv and ZXCV control which samples we are looking at. 
+
+To look at the samples AFTER the first 128, 
+
+z - begin display one sample later (to the right)
+x - begin display ten samples later (to the right)
+c - begin display one hundred samples later (to the right)
+v - begin display one thousand samples later (to the right)
+
+V -  begin display one thousand samples earlier (to the left)
+C -  begin display one hundred samples earlier (to the left)
+X -  begin display ten samples earlier (to the left)
+Z -  begin display one sample earlier (to the left)
+
+So the window display shifts left or right through the sample set. 
+
+NOTICE that with just LAC loaded, there are 193 samples total. 
+
+193 samples total minus 128 samples displayed  equals 65 samples not displayed.  So the most the display can shift is 65 samples. 
+
 ----------
 
 = UNDER CONSTRUCTION FROM HERE =
