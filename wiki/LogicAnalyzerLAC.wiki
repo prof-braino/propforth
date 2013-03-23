@@ -101,6 +101,10 @@ This is for rising edge, fall edge, or NONE.
 
 SPACE selects NONE.  Just start collecting the sample when the ENTER key is pressed.  Used when the pin is changing from a manual or other external non frequency event. 
 
+=== Trigger Frequency         eE : NO TRIGGER FOUND  ===
+
+
+
 ----------
 
 = UNDER CONSTRUCTION FROM HERE =
