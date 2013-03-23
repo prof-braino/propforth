@@ -1,7 +1,7 @@
 #summary LAC is the software logic analyzer in propforth
 #labels v5.5,Quickstart,LAC,logicanalyzer
 
-= Introduction =
+= Logic Analyzer  =
 
 This a a supplement for `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
 
@@ -13,7 +13,11 @@ The sampling period can be triggered by pin transition, or by an operator event.
 
 The forth script lac.f is located at `PropForth-V5.5-20130317.zip/V5.5/CurrentRelease/Extensions/lac.f`
 
-= setup =
+= Setup =
+
+Summary: Load the propforth kernel, load the lac.f extension.
+
+== PC - Windos XP ==
 
 Install and launch the Proptool
 
@@ -41,11 +45,65 @@ copy it `(CTL^C)`
 
 paste it into the teraterm window with the propforth command line (right mouse)
 
+== save image to EEprom ==
+
+Use saveforth to save the current dictionary image (which now inclides LAC) to EEprom
+
+{{{
+Prop0 Cog6 ok
+saveforth
+}}}
+
+response will be
+{{{
+.............................................................................................................................................
+Prop0 Cog6 ok
+}}}
+
+When the prop is power cycled or rebooted, the LAC definitions will still be present.
+
+== To Remove LAC ==
+
+To get rid of LAC, use forget build_LogicAnalyzer and do saveforth again, or simple reburn devkernel.spin using proptool.   For now, leave lac in EEprom, as we will reboot several times during the investigation. 
+
 = Using LAC =
 
 Read `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
 
-Do the examples
+== LAC commands ==
+
+NOTE:  You can issue invalid command sequences to LAC.  There is no particular error checking on command input, it will perform what ever command(s) you issue. This makes it very powerful, but also easy to screw up.  It is the operators responsibility to issue correct commands.  If something goes wrong or starts acting strange, just reboot.  Typically, we reboot quite often during the investigation and development phase,  don't be afraid to reboot often. 
+
+=== Trigger Pin      -q    +Q: 0 ===
+
+LAC will look at this pin (can be 0 to 31) for a transition.  The transition will start the sampling process. 
+
+Pressing `q` will decrement the pin number
+
+Pressing `Q` will increment the pin number
+
+This field has limits of 0 and 31.   It also can display `NONE` after the SPACE key is pressed. 
+
+If the trigger pin displays as NONE and will not increment or decrement, restart lac. (LAC has to be small to fit in with an application, changing this would increase dicationary foot print, and would cost a lot of memory space)
+
+
+===  Trigger Edge -w +W SPACE ===
+
+This is for rising edge, fall edge, or NONE. 
+
+`w`  lowercase w selects rising edge.  
+
+`W` uppcase W selects falling edge
+
+SPACE selects NONE
+
+Do the examples:
+
+
+
+
+
+
 
 The following assumes you have already completed the examples in section 5
 
