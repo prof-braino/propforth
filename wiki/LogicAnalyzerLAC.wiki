@@ -91,11 +91,15 @@ If the trigger pin displays as NONE and will not increment or decrement, restart
 
 This is for rising edge, fall edge, or NONE. 
 
-`w`  lowercase w selects rising edge.  
+`w`  lowercase w selects rising edge.  Start collecting the sample when the pin transitions from LOW to high.  Used when a pin is changing at some frequency
 
-`W` uppcase W selects falling edge
+`W` uppcase W selects falling edge.  Start collectiong the sample whem the pin transitions from HIGH to low.  Used when a pin is changing at some frequency
 
-SPACE selects NONE
+SPACE selects NONE.  Just start collecting the sample when the ENTER key is pressed.  Used when the pin is changing from a manual or other external non frequency event. 
+
+----------
+
+= UNDER CONSTRUCTION FROM HERE =
 
 Do the examples:
 
