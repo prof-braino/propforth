@@ -155,6 +155,11 @@ Hit the ESCAPE key to exitt LAC. LAC will terminate immediately if it is not sam
 
 Mess with this until you get a feel for when it quits quickly and when you have to wait. 
 
+
+    ===  Sample Display  -zxcv  +ZXCV :      clock cycles of    193  ===
+
+What could this mean? 
+
 ----------
 
 = UNDER CONSTRUCTION FROM HERE =
