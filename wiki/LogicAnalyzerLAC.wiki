@@ -115,14 +115,37 @@ When `E~ upper case E is selected, it looks at the pin for about a second.  This
 
 Selecting `e` set the interval back to 250ms (the default). 
 
-If the trigger frequency displays NONE and will not change to the rising or falling glyph,  restart lac.  Also, the specified input pin might not be toggling fast enough for lac to register a frequency. Check that you are looking at the correct pin, and you've started it toggling. Also check the way you control the frequency. I find that often the problem is I didn't set it up right. 
-
+If the trigger frequency displays NONE and will not change to the rising or falling glyph,  restart lac.  Also, the specified input pin might not be toggling fast enough for lac to register a frequency. Check that you are looking at the correct pin, and you've started it toggling. Also check the way you control the frequency. I find that often the problem is I didn't set this part up correctly. 
 
    === Sample Interval -asdfg +ASDFG: 500.0 nS             40 clock cycles === 
 
-OK, this one is a bit complex.  
+OK, this one is a bit complex.
 
+The samples are taken every so many cycles. 
 
+a - decrement the cycles by 1
+s - decrement the cycles by 10
+d - decrement the cycles by 100
+f - decrement the cycles by 1000
+g - decrement the cycles by 10,000
+
+G - increment the cycles by 10,000
+F - increment the cycles by 1,000
+D - increment the cycles by 100
+S - increment the cycles by 10
+A - increment the cycles by 1
+
+If the sample is specified as 1 (one clock cycle, sample every clock cycle) lac has to shift into extreme  mode and do things differently:  It begins to use cogs 2, 3, 4 and 5 to collect the sample, and save these in cog memory.  If you (accidentally) hit any of the unshifted (lower-case) keys asdfg, you have a good change of forcing lac to shift to this mode.   This can really mess up lac if the other parameters are set for longer samples, etc.   BE CAREFUL.  If the display says 1 clock cycle, and you don't want one cycle, you need to reset and start over.  Until you get used to this, you might have to restart a few times.  (Don't even ASK me how I know). 
+
+We can also set the sample interval very long. Each column in the sample display is one long (two words) that contains the state of the pins at integer multiples of the sample interval clock cycles. Each horizontal demarcation has 16 samples, there are eight (8) demarcations in the sample display.  So there are 16 * 8 samples or 128 samples displayed.  At 40,000 cycles, it takes almost a full second to collect the sample (on a stock crystal running at 80Mhz).  
+
+If you set the clock cycles higher than 40,000,; and hit the enter key a bunch of times, you will have to wait oa long time for the samples to be collected and the display to update.  It looks like the screen has frozen, but its not, it just doing like you asked. 
+
+Mess around with this and get a feel for the impact of the various keys and settings. 
+
+  === Sample < ENTER > ===
+
+The ENTER key triggers sampling.  
 
 ----------
 
