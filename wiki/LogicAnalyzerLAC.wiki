@@ -182,6 +182,24 @@ NOTICE that with just LAC loaded, there are 193 samples total.
 
 193 samples total minus 128 samples displayed  equals 65 samples not displayed.  So the most the display can shift is 65 samples. 
 
+    ====  Question ====
+
+With devkernel.spin loaded, and lac.f loaded and save to EEprom with saveforth, I run `free`
+
+{{{
+Prop0 Cog6 ok
+free
+11030 bytes free - 176 cog longs free
+Prop0 Cog6 ok
+
+}}}
+
+I think that 11030 bytes divided by 4 equals 2757 longs free.  So I should have 2757 samples.  Why are there only 193?  
+
+Is it because this is all it can do before the next sample? 
+
+Investigate:    Change the clock cycles sample interval.  Change the trigger from pin to NONE.  Change the frequency of the trigger  pin toggle.
+
 ----------
 
 = UNDER CONSTRUCTION FROM HERE =
