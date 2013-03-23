@@ -96,5 +96,53 @@ Notice that the buttons and LEDs are refreshed at a rate of 22 ms (line xx in to
 
 Touching the trigger pin should capture a sample. In addition, the states of all other pins are displayed.  You should be able to see the transitions of any pins touched during sampling.  Experiment with change the sample window till you can capture various samples ass you touch different buttons.
 
+= ok =
+
+= TRIGGER with < ENTER > =
+
+By default, LAC triggers when you press the enter key
+
+Run LAC
+
+hit enter, and see the display get drawn.  If it scrolls of the bottom, adjust you window size. The output has a line for each I/O line, a command header, and intermediate headers for the I/O lines display. .   
+
+The display window needs at least 63 lines to full display with out scrolling.
+
+OPTIONALLY we can edit the LAC code to remove some intermediate headers to reduce the out put display size.  (do this later.
+
+Touch various quckstart pads to light LEDs.
+
+Hit enter to see the LAC i/o lines dispay change to reflect the states of the pads (on pin 0-7) and the LEDS (on pin 16-23)
+
+== change sample frequency to a LONG interval ==
+
+The default sample frequency is 40 clocks per cycle. When triggered, LAC samples at this rate until the buffer (free memory) is filled. 
+
+Change the sample frequency using the `ASDFG` keys (caps) to increase the sample time delta (by 1, 10, 100, 1000, 10000 cycles, respectively); and using the asdfg keys (lowercase) to decrease the sample time delta (by 1, 10, 100, 1000, 10000 cycles, respectively)
+
+touch pads and resample to see changes
+
+Notice is you set the sample rate to 40,000 cycles (G,G,G,G) this is about the highest it can go. It takes a long time (almost 2 seconds) to sample and display.  You can LIGHTLY lay your finger across several pad on the quickstart, some some of the LEDs flicker dimly. The sample will show the I/O lines toggling for the flickering LEDs. 
+
+=== change the sample frequency to a short interval ===
+
+The shortest sampling period we do with the default configuration is 40 cycles. 
+
+NOTICE that you can set the sample frequency down to 1 cycle. BY DEFAULT, the lowest we can go is 40 cycles, this uses 1 cog to do the sample, and save the data to free hub memory.  It can't function reliably any faster in this configuration.
+
+By changing the configuration in LAC, we have TWO more options:
+
+  * use more cogs to sample faster, capture to HUB memory
+  * use a single cog and sample VERY FAST, capture to COG memory.  The cog memory captures are much smaller.  But in this case we tend to be looking at very fast events, so this is enough.  (If its not use the other method, of course)
+
+Setting the different capture configuration is beyond the scope of this exercise, check the LAC source code for details.
+
+= TRIGGER  from PIN STATE TRANSITION =
+
+We can change the default so a pin state transition causes the sampling to trigger.
+
+Lets make the sampling trigger when we touch button pad 4.
+
+
 
 - End 20130321 -
