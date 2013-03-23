@@ -1,6 +1,10 @@
 #summary LAC is the software logic analyzer in propforth
 #labels v5.5,Quickstart,LAC,logicanalyzer
 
+
+<wiki:toc max_depth="9" />
+
+
 = Logic Analyzer  =
 
 This a a supplement for `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
