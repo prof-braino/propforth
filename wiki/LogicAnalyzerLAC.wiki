@@ -74,11 +74,11 @@ To get rid of LAC, use forget build_LogicAnalyzer and do saveforth again, or sim
 
 Read `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
 
-== LAC commands ==
+ == LAC commands ==
 
 NOTE:  You can issue invalid command sequences to LAC.  There is no particular error checking on command input, it will perform what ever command(s) you issue. This makes it very powerful, but also easy to screw up.  It is the operators responsibility to issue correct commands.  If something goes wrong or starts acting strange, just reboot.  Typically, we reboot quite often during the investigation and development phase,  don't be afraid to reboot often. 
 
-=== Trigger Pin      -q    +Q: 0 ===
+  === Trigger Pin      -q    +Q: 0 ===
 
 LAC will look at this pin (can be 0 to 31) for a transition.  The transition will start the sampling process. 
 
@@ -90,8 +90,7 @@ This field has limits of 0 and 31.   It also can display `NONE` after the SPACE 
 
 If the trigger pin displays as NONE and will not increment or decrement, restart lac. (LAC has to be small to fit in with an application, changing this would increase dicationary foot print, and would cost a lot of memory space)
 
-
-===  Trigger Edge -w +W SPACE ===
+  ===  Trigger Edge -w +W SPACE ===
 
 This is for rising edge, fall edge, or NONE. 
 
@@ -104,9 +103,22 @@ SPACE selects NONE.  Just start collecting the sample when the ENTER key is pres
 
 If trigger edge displays NONE and will not change to the rising or falling glyph,  restart lac.
 
-=== Trigger Frequency         eE : NO TRIGGER FOUND  ===
+  === Trigger Frequency         eE :  ===
+
+Before a trigger pin is sampled  or when no trigger pin is designated, the trigger frequency display is blank. 
+
+LAC attempts to determine the frequency of the input pin by detecting it for 250 milliseconds. This detects frequency below 1/250ms or 1/0.250 seconds.  So, `e` is for detecting signal below 4 Hz.
+
+When `E~ upper case E is selected, it looks at the pin for about a second.  This is used for detecting 1 Hz or below.  If signal changes slower than 1 time persecond, LAC treats it as if the trigger frequency were set to NONE. 
+
+`Trigger Frequency         eE : NO TRIGGER FOUND`
+
+Selecting `e` set the interval back to 250ms (the default). 
+
+If the trigger frequency displays NONE and will not change to the rising or falling glyph,  restart lac.  Also, the specified input pin might not be toggling fast enough for lac to register a frequency. Check that you are looking at the correct pin, and you've started it toggling. Also check the way you control the frequency. I find that often the problem is I didn't set it up right. 
 
 
+=== NI === 
 
 ----------
 
