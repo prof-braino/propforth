@@ -196,10 +196,13 @@ Prop0 Cog6 ok
 
 I think that 11030 bytes divided by 4 equals 2757 longs free.  So I should have 2757 samples.  Why are there only 193?  
 
-Is it because this is all it can do before the next sample? 
+Is it because this is all it can do before the next sample time? 
 
    ==== Investigate ==== 
-  Change the clock cycles sample interval.  Change the trigger from pin to NONE.  Change the frequency of the trigger  pin toggle.
+
+  * Change the clock cycles sample interval.  
+  * Change the trigger from pin to NONE.  
+  * Change the frequency of the trigger  pin toggle.
 
  === The Logic Analyzer Display ====
 
@@ -226,13 +229,15 @@ The function `crcl` clears to the end of line and prints a carriage return for h
 
 LAC.f Line 558 is the function  `_lac_h` which displays the lac header.
 
-This comment removes the blank line bfore the first parameter line
+This comment removes the blank line bfore the first parameter line.  I copy the original line, comment it out, and edit the copy.  
+
 {{{  
 \	hm crcl
 	hm 
 }}}
 
-This comment puts Trigger Pin and Trigger Edge on teh same line
+This comment puts Trigger Pin and Trigger Edge on th. same line.  Again, I copied the original line, commented out the oringinal line, and editied the copy.  Here I replaced `crcl` with `space`.
+
 {{{  
 \\	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then crcl
 	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then space
@@ -244,7 +249,7 @@ This saved me two lines, its a start. Play with the formatting of the remaining 
 
 lac.f line 636 is the main function.
 
-lines 655 and 662 (after I've been editing) put the column marker line in the display.  I commented out both ot these
+lines 655 and 662 (after I've been editing) put the column marker line in the display.  I commented out both out these
 
 {{{
 \				_lacv       \ white space
@@ -264,7 +269,7 @@ Lines 664 and 671 (after I've been editing) control the number of I/O lines that
 			h8 +loop
 }}}
 
-After making the changes, save the source file (with a new name if you want to retain the oringinal).  I saved it as `lac-whitespace.f`.
+After making the changes, save the source file (with a new name if you want to retain the original).  I saved it as `lac-whitespace.f`.
 
   ==== the reformatted display ====
 
@@ -317,6 +322,33 @@ Sample Display  -zxcv  +ZXCV :                 clock cycles of             193
 }}}
 
 Much more to my liking.  A little work, but at least I don't have to buy a new monitor. 
+
+= The Examples in PropForth.htm Section 5 =
+
+At this point, we have :
+ # `Devkernel.spin` loaded on the quickstart
+ # `lac.f` (or our modified version) loaded via pasting  the source code into the terminal. 
+ # 'ac.f' is saved to EEprom via `saveforth`, so it will still be available after `reboot` or powercycle
+ # !PropForth.htm  open in a browser window.
+
+ == The fist example ==
+
+Now load the example code from sectin 5:
+
+{{{
+\ pinIncrementer( n1 ) increment 8 pins starting at pin n1
+: pinIncrement
+  hFF over lshift dira COG!
+  0 begin
+    1+ 2dup swap lshift outa COG!
+  0 until
+;
+
+c" 0 pinIncrement" 0 cogx
+
+lac
+
+}}}
 
 ----------
 
