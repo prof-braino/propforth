@@ -222,6 +222,8 @@ This involves editing  and reloading the LAC source code.  Be sure to RE-BURN TH
 
 By default, the LAC top header display one parameter per line.  After we get used to this, we can try cramming multiple parameters on one line. 
 
+The function `crcl` clears to the end of line and prints a carriage return for hear formatting.  Find this and you can adjust the hear display. 
+
 LAC.f Line 558 is the function  `_lac_h` which displays the lac header.
 
 This comment removes the blank line bfore the first parameter line
@@ -236,9 +238,13 @@ This comment puts Trigger Pin and Trigger Edge on teh same line
 	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then space
 }}}
 
-
+This saved me two lines, its a start. Play with the formatting of the remaining header items. 
 
  ==== LAC intermediate column headers ====
+
+lac.f line 636 is the main function.
+
+
 
 ----------
 
