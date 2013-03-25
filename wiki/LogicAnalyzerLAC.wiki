@@ -224,13 +224,14 @@ By default, the LAC top header display one parameter per line.  After we get use
 
 LAC.f Line 558 is the function  `_lac_h` which displays the lac header.
 
-
-{{{  This comment removes the blank line bfore the first parameter line
+This comment removes the blank line bfore the first parameter line
+{{{  
 \	hm crcl
 	hm 
 }}}
 
-{{{  This comment puts Trigger Pin and Trigger Edge on teh same line
+This comment puts Trigger Pin and Trigger Edge on teh same line
+{{{  
 \\	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then crcl
 	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then space
 }}}
