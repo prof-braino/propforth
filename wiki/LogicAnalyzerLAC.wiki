@@ -321,7 +321,7 @@ Sample Display  -zxcv  +ZXCV :                 clock cycles of             193
 
 }}}
 
-Much more to my liking.  A little work, but at least I don't have to buy a new monitor. 
+Much more to my liking.  It fits on the minicom terminal display screen without scrolling off the edges, and the font can be big enough to be readable.  A little work, but at least I don't have to buy a new monitor just yet.
 
 = The Examples in `PropForth.htm` Section 5 =
 
