@@ -266,6 +266,8 @@ Lines 664 and 671 (after I've been editing) control the number of I/O lines that
 
 After making the changes, save the source file (with a new name if you want to retain the oringinal).  I saved it as `lac-whitespace.f`.
 
+  ==== the reformatted display ====
+
 Now my lac display looks like this:
 
 {{{
