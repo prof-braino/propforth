@@ -212,6 +212,32 @@ The column headers are repeated every four I/O pin lines, and have a white space
 Each column in the sample display is one long (two words) that contains the state of the pins at integer multiples of the sample interval clock cycles. Each horizontal demarcation has 16 samples, there are eight (8) demarcations in the sample display.  So there are `16 * 8 samples or 128 ` samples displayed. 
 
 
+  === Adjust the LAC display format ===
+
+My screen is too  small to display all the LAC lines on one screen. The font can be reduced, but then the characters are too small to read comfortably (my eyes are getting bad).  An option is to reduce the whitespace on the LAC display.
+
+This involves editing  and reloading the LAC source code.  Be sure to RE-BURN THE EEprom if you did SAVEFORTH, or you might get confused when you changes disappear. 
+
+ ==== LAC Parameter Header ====
+
+By default, the LAC top header display one parameter per line.  After we get used to this, we can try cramming multiple parameters on one line. 
+
+LAC.f Line 558 is the function  `_lac_h` which displays the lac header.
+
+
+{{{  This comment removes the blank line bfore the first parameter line
+\	hm crcl
+	hm 
+}}}
+
+{{{  This comment puts Trigger Pin and Trigger Edge on teh same line
+\\	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then crcl
+	."     Trigger Pin      -q    +Q: " _la_triggerEdge W@ 0= if ." NONE" else  _la_trigger L@ . then space
+}}}
+
+
+
+ ==== LAC intermediate column headers ====
 
 ----------
 
