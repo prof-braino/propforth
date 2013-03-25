@@ -323,7 +323,7 @@ Sample Display  -zxcv  +ZXCV :                 clock cycles of             193
 
 Much more to my liking.  A little work, but at least I don't have to buy a new monitor. 
 
-= The Examples in PropForth.htm Section 5 =
+= The Examples in `PropForth.htm` Section 5 =
 
 At this point, we have :
  # `Devkernel.spin` loaded on the quickstart
