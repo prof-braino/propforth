@@ -331,7 +331,7 @@ At this point, we have :
  # 'ac.f' is saved to EEprom via `saveforth`, so it will still be available after `reboot` or powercycle
  # !PropForth.htm  open in a browser window.
 
- == The fist example ==
+ == The first example ==
 
 Now load the example code from sectin 5:
 
