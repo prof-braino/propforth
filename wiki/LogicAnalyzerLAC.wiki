@@ -74,7 +74,7 @@ To get rid of LAC, use forget build_LogicAnalyzer and do saveforth again, or sim
 
 Read `PropForth-V5.5-20130317.zip/V5.5/doc/PROPFORTH.HTM` section 5 !LogicAnalyzer
 
- == LAC commands ==
+ == LAC Parameter control ==
 
 NOTE:  You can issue invalid command sequences to LAC.  There is no particular error checking on command input, it will perform what ever command(s) you issue. This makes it very powerful, but also easy to screw up.  It is the operators responsibility to issue correct commands.  If something goes wrong or starts acting strange, just reboot.  Typically, we reboot quite often during the investigation and development phase,  don't be afraid to reboot often. 
 
