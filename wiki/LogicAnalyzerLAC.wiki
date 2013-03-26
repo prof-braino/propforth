@@ -328,7 +328,7 @@ Much more to my liking.  It fits on the minicom terminal display screen without 
 At this point, we have :
  # `Devkernel.spin` loaded on the quickstart
  # `lac.f` (or our modified version) loaded via pasting  the source code into the terminal. 
- # 'ac.f' is saved to EEprom via `saveforth`, so it will still be available after `reboot` or powercycle
+ # 'lac' (the the routine defined in `lac.f`) is saved to EEprom via `saveforth`, so it will still be available after `reboot` or powercycle
  # !PropForth.htm  open in a browser window.
 
  == The first example ==
