@@ -350,6 +350,55 @@ lac
 
 }}}
 
+ === trace throught the example ===
+
+What is `pinIncrement` really doing? Lets look at the stack as each function executes.
+
+*start* \  this is what the stck looks like when the routine is first called
+  * Stack0: 0 \starting pin# to toggle
+
+*hFF* \   hFF is a literal in hexadecimal (h is the prefix)
+  * stack1: FF \ hFF is 255 decimal
+  * Stack0: 0 \starting pin# to toggle
+
+*over* \   copies the value BELOW the top of stack (and puts it on the top of the stack)
+  * Stack2: 0 \Stack0 copied to the Top Of Stack (TOS)
+  * stack1: FF \ hFF is 255 decimal
+  * Stack0: 0 \starting pin# to toggle
+
+*lshift* \  
+
+*dira*  \  
+
+*COG!* \  
+
+*0*  \  
+
+*begin*  \  
+    
+*1+*  \  
+
+*2dup*  \  
+
+*swap*  \  
+
+*lshift* \  
+
+*outa*  \  
+
+*COG!* \  
+
+*0*  \  
+
+*until*  \  
+
+*;*
+
+*c" 0 pinIncrement" 0 cogx*  \ 
+
+*lac*  \ 
+
+
 ----------
 
 = UNDER CONSTRUCTION FROM HERE =
