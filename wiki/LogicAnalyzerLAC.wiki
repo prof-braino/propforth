@@ -420,7 +420,7 @@ What is `pinIncrement` really doing? Lets look at the stack as each function exe
 
 *0*  \  The is the end flag for  loop (the end of the loop that started with `begin`.  Zero means "don't end", always have zero here means "never end",
 
-*until*  \  end of the loop.  Since zero is always going to be seen by until here,  the loop goes forever. 
+*until*  \  end of the loop.  Since zero is always going to be seen by until here,  the loop goes forever. The routine jumps back to the begin word, and the next time through it increments the `1` to `2` and so on...
 
 *;*  / The semicolon ends the definition starts by colon `:` and names pinIncrement. 
 
