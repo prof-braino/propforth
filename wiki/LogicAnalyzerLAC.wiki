@@ -428,7 +428,7 @@ What is `pinIncrement` really doing? Lets look at the stack as each function exe
 
 *lac*  \ The start the logic analyzer on THIS cog (cog6), this makes the output of LAC show up on the terminal (which is connected to cog6). 
 
- === POV with Quickstart ===
+ === Intro to POV with Quickstart ===
 
 If you are using the Quickstart, Here a modification to pinIncrement that might be helpful.
 
