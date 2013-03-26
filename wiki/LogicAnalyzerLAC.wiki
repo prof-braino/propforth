@@ -366,37 +366,68 @@ What is `pinIncrement` really doing? Lets look at the stack as each function exe
   * stack1: FF \ hFF is 255 decimal
   * Stack0: 0 \starting pin# to toggle
 
-*lshift* \  
+*lshift* \  shift 255 left 0 bits. Has no effect, but if the toggle pin were 8, it would shift 255 left 8, and the result would be a bit mask starting as pin 8.
+  * stack1: FF \ hFF is 255 decimal
+  * Stack0: 0 \starting pin# to toggle
 
-*dira*  \  
 
-*COG!* \  
+*dira*  \  this is the LOCATION of the register that specifies pin inputs and out puts.  1's are outputs, 0's are inputs.
+  * stack2: $dira (address of dira)
+  * stack1: FF \ hFF is 255 decimal
+  * Stack0: 0 \starting pin# to toggle
 
-*0*  \  
+*COG!* \  this stores a value at the location given.  In this case the location is dira, and the value is FF, the firs 8 pins are ONES
+  * Stack0: 0 \starting pin# to toggle
 
-*begin*  \  
+*0*  \  seed valut for the begin loop that's next
+  * Stack1: 0 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
+
+*begin*  \  start a unbounded loop. The LAC loop runs with no predetermined end
+  * Stack1: 0 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
     
-*1+*  \  
+*1+*  \  add one to the loop seed value. This is what does the incrementing (toggling) for the pinIncrement function.
+  * Stack1: 1 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
 
 *2dup*  \  
+  * Stack3: 1 \ begin loop seed value copy
+  * Stack2: 0 \starting pin# to toggle copy
+  * Stack1: 1 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
 
-*swap*  \  
+*swap*  \  switch the positions of the top two stack values
+  * Stack3: 0 \ starting pin# to toggle copy
+  * Stack2: 1 \ begin loop seed value copy
+  * Stack1: 1 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
 
-*lshift* \  
+*lshift* \  here, we shift counted number to the start pin number 
+  * Stack2: 1 \ toggle value for setting the bit patterns
+  * Stack1: 1 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
 
-*outa*  \  
+*outa*  \  this is the LOCATION of the register that specifies pin  output states.  1's are highs, 0's are lows. Pin must also be configured as outputs by the dira register (we did this before the loop started)
+  * Stack3: $outa1 \ address of the out resister
+  * Stack2: 1 \ toggle value for setting the bit patterns
+  * Stack1: 1 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
 
-*COG!* \  
+*COG!* \   this stores a value at the location given.  In this case the location is outa, and the value is [the output bit pattern]. 
+  * Stack1: 1 \ begin loop seed value
+  * Stack0: 0 \starting pin# to toggle
 
-*0*  \  
+*0*  \  The is the end flag for  loop (the end of the loop that started with `begin`.  Zero means "don't end", always have zero here means "never end",
 
-*until*  \  
+*until*  \  end of the loop.  Since zero is always going to be seen by until here,  the loop goes forever. 
 
-*;*
+*;*  / The semicolon ends the definition starts by colon `:` and names pinIncrement. 
 
-*c" 0 pinIncrement" 0 cogx*  \ 
+*c" 0 pinIncrement" 0 cogx*  \ This is a one line script. `C"` take a string of characters (in this case `0 pinIncrement` ) ending with the second `"`) and send it to the cog number (in this case zero).  cogx make s the cog execute the string just as if it were typed into the command line for that cog.   This is really a cool, powerful function of propforth.  So this line starts the pinIncrement function on cog0 and starts the specified I/O lines toggling. 
 
-*lac*  \ 
+*lac*  \ The start the logic analyzer on THIS cog (cog6), this makes the output of LAC show up on the terminal (which is connected to cog6). 
+
 
 
 ----------
