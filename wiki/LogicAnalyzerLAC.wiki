@@ -428,7 +428,36 @@ What is `pinIncrement` really doing? Lets look at the stack as each function exe
 
 *lac*  \ The start the logic analyzer on THIS cog (cog6), this makes the output of LAC show up on the terminal (which is connected to cog6). 
 
+ === POV with Quickstart ===
 
+If you are using the Quickstart, Here a modification to pinIncrement that might be helpful.
+
+TheQuickstart has LEDs on pins 16 - 23. We can use the exact same program, just use differnet starting pin (16).  Paste in the following:
+
+{{{
+\ pinIncrementer( n1 ) increment 8 pins starting at pin n1
+: pinIncrement
+  hFF over lshift dira COG!
+  0 begin
+    1+ 2dup swap lshift outa COG!
+  0 until
+;
+
+c" 16 pinIncrement" 0 cogx
+
+lac
+
+}}}
+
+Notice that the LEDs light up immediately.  
+
+Hold the quickstart near the USB connector.  LED P16 should be farthest away from you, and LED P23 should be closest to you.  
+
+Wave the quickstart side to side rapidly.
+
+Notice that the LED 16 makes a solid line in you fikled o vision, and LED pin 23 makes a long dashed line. The LEDs in between make progressivle horter lines the farther away from you. Neat!
+
+This is what the logic analyzer is displaying.  LAC displays a snapshot of ONE LOOP of the `pinIncrement` loop.  WOW!
 
 ----------
 
