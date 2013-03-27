@@ -540,9 +540,11 @@ But notice:   When the sample interval is below 41 clock cycles, there are only 
 
 Lets try 41 and 67
 
-At 41, we don't see a transistion on pins 22 or 23.
+At 41, we don't see a transistion on pins 22 or 23. Nor as 67. 
 
-At 67, 
+At 137 we get a transition on 22, but not 23 yet.  
+
+at 542 (33.9 times 16),  
 
 
 ----------
