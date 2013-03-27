@@ -544,8 +544,11 @@ At 41, we don't see a transistion on pins 22 or 23. Nor as 67.
 
 At 137 we get a transition on 22, but not 23 yet.  
 
-at 542 (33.9 times 16),  
+At 272 (33.9 time 8 ), there's a transition on pin 23 at sample 1597, but not a full cycle.
 
+At 542 (33.9 times 16),  The first full cycle of pin 23 ends at sample 1600. 
+
+OK, now I'm completely sick of calculations for sampling. But at least I have an idea what s going on. 
 
 ----------
 
