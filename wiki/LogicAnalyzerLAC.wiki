@@ -468,10 +468,10 @@ This is what the logic analyzer is displaying.  LAC displays a snapshot of ONE L
   0 begin
     1+ 2dup swap lshift outa COG!
 
-\\ 1000
-\\ 250 
-   25 
-\\ 1
+\ \ 1000
+\ \  250 
+\ \   25 
+ 1
  delms
  
   0 until
