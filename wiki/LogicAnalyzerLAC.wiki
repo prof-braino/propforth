@@ -515,6 +515,8 @@ As we look farther out into the sample set, we can notice if an error accumulate
 
  ==== All transition using all samples ====
 
+So what else can we do with this?  Lets stretch the sample over the entire available sample space. 
+
 LAC says my quickstart has 2746 total samples. Lets see if we can set LAC so the one cycle of pin 23 extends the full 2746 samples. 
 
 Recall the the lac sample display shows 128 ( `8 columns of 16 samples` ) 
