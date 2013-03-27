@@ -500,13 +500,20 @@ So its beginning to look like that begin loop is slightly longer than 43.0 uS.
 
 Increase the sample interval to 534.  At interval 534, pin 16 displays ten full cycles.  This takes 854.4 uS. So one cycle would be 85.44 uS,  and one transistion might be 42.72 uS, 
 
-There are 128 samples display on the LAC screen.  If we want pin 16 to display one transition per sample....  that would be 142.74 uS * 128 samples` or 5,468.16 uS  displayed. So bump up the cycles until the right most column header is 5468.16. Unfortunately, the display switches to milliseconds. The best we can get is 5.5 mS. Lets try it using clocks cycles instead of seconds....
- Let's seee... one transition is 42.72 uS was figured from 534 clock cycles displaying ten cycles.  So maybe 53.4 cycles is one sample? `53.4 * 128 = 6835.2` so lets try 6835 and 6836 cycles....
+There are 128 samples display on the LAC screen.  If we want pin 16 to display one transition per sample....  that would be `42.72 uS * 128 samples` or 5,468.16 uS  displayed. So bump up the cycles until the right most column header is 5468.16. Unfortunately, the display switches to milliseconds. The best we can get is 5.5 mS. Lets try it using clocks cycles instead of seconds....
+
+ Let's see... one transition is 42.72 uS was figured from 534 clock cycles displaying ten cycles.  So maybe 53.4 cycles should be one sample? `53.4 * 128 = 6835.2` so lets try 6835 or 6836 cycles....
 
 
 ==== 6835 ====
 
-==== 6836 ====
+6835 cycles display a solid line?  Aha! I bet my math is off by a factor of two.  Pin 17 looks more like what we want.   Lets try 3417 or 3418....
+
+==== 3417 ====
+
+3437 cycles sample time display pin 16 as alternating one dash and one underscore each sample. I think  its pretty close now. There is still one additional sample transition to high at the very end. 
+
+
 
 
 
