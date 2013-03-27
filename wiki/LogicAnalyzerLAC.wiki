@@ -550,13 +550,6 @@ At 542 (33.9 times 16),  The first full cycle of pin 23 ends at sample 1600.
 
 OK, now I'm completely sick of calculations for sampling. But at least I have an idea what s going on. 
 
-----------
-
-UNDER CONSTRUCTION FROM HERE 
-
-----------
-
-
  === another pinIncrement, slower ===
 
 Try adding the delays below.  Uncomment a value and the delms (or use any values).  Then adjust lac cycle sample period to match.  One millisecond needs about 20,000 cycles per sample. 
@@ -583,20 +576,15 @@ lac
 
 }}}
 
+Adding delay to the program is actually the opposite (inverse?) of LAC.  LAC captures a snapshot of the application state during execution, at full speed.   Adding a delay slow the execution itself down.  This could impact the rest of the system, for example when the events outside the program occur at a speed that cannot be controlled by software. 
 
 ----------
 
-= UNDER CONSTRUCTION FROM HERE =
+= LAC with an application =
 
-Do the examples:
+The following assumes familiarity with the examples in !PropForth.htm section 5
 
-
-
-
-
-
-
-The following assumes you have already completed the examples in section 5
+Now that we've done the examples and played with the parameters, we should have an idea whats going on with LAC.  Now we can try using the tool to examine an applications.
 
 == load an application (Quickstart touch demo) ==
 
@@ -609,9 +597,11 @@ The following assumes you have already completed the examples in section 5
   * paste it into teraterm 
   * do saveforth (to write the the touch button demo to EEprom)
 
-NOTE: After your programs are loaded, you can do a saveforth to save the current dictionary image to eeprom. This way, the same image will persist after reboots and power cycling.   
+NOTE 1: After your programs are loaded, you can do a saveforth to save the current dictionary image to eeprom. This way, the same image will persist after reboots and power cycling.   
 
-NOTE:  You can load lac first, or you can load quickstart demo first. you can do saveforth after loading either to write the current image to EEPROM.
+NOTE 2:  You can load lac first, or you can load quickstart demo first. you can do saveforth after loading either to write the current image to EEPROM.
+
+Note 3: LAC uses the current cog (cog6 by default) when sample interval is 40 cycles or greater.  When sample interval is 1 cycle (every cycle) LAC uses 4 cogs to do the sampleing (Cogs 2, 3, 4, 5). If your application uses these cogs, there may be problems with sample interval below 40 cycles, and will definitely  require some attention to sample at 1 cycle. Reboot often while sorting this out. 
 
 == load lac.f after application ==
 
@@ -644,8 +634,6 @@ touching the button that you have set as trigger (or that triggers the LED you h
 Notice that the buttons and LEDs are refreshed at a rate of 22 ms (line xx in touch demo)
 
 Touching the trigger pin should capture a sample. In addition, the states of all other pins are displayed.  You should be able to see the transitions of any pins touched during sampling.  Experiment with change the sample window till you can capture various samples ass you touch different buttons.
-
-= ok =
 
 = TRIGGER with < ENTER > =
 
@@ -694,4 +682,4 @@ Lets make the sampling trigger when we touch button pad 4.
 
 
 
-- End 20130321 -
+- End 20130327 -
