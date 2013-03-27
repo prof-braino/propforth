@@ -482,6 +482,33 @@ Setting the sample interval to 3,400 cycles captures the top half of the cycle f
 
 Left see if we can set LAC so the one cycle of pin 23 extends the full 2746 samples. 
 
+Recall the the lac sample display shows 128 ( `8 columns of 16 samples` ) 
+
+with trigger pin 23 and sample interval 40 cycles (and the sample window start is bvlank meaning the first sample in the buffer), we see One transistion on pin 16.   The sample is too small and too fast. (that's pretty nifty in itself!).  The transistion occures at sample 85, or 043.0 uS.  So LAC tells us that the begin loop of pinIncrement takes 043.0 uS to execute.  Execellent!
+
+Increase transitions stepwise at increasing size interval. Uppercase A increases the sample cycles by one cycle. Remember to hit < ENTER > to resample after changing the interval. Notice that the transition appears to move to the left, but the column header times also increase. Notice pins 17 to 20 start to change hi and low, but show no transistions yet. 
+
+At sample interval 54 cycles, one full full cycles of pin 16 is displayed. One full cycles of pin 16 takes two samples less than 086.4 uS.  Hey! This agrees with our last observation! It works! Maybe.   Lets check more....
+
+Increase the sample interval to 108 cycles. I went by 10's then 1's refreshing each step.  At interval 108, pin 16 displays two full cycles, and a tad  more. 
+
+Increase the sample interval to 400. I went by 100's, then 10's then 1's refreshing each step.  At interval 400, pin 16 displays seven full cycles, and maybe half of one more. 
+
+Increase the sample interval to 430.  At interval 430, pin 16 displays eight full cycles, and maybe one sample  more. 
+
+So its beginning to look like that begin loop is slightly longer than 43.0 uS.
+
+Increase the sample interval to 534.  At interval 534, pin 16 displays ten full cycles.  This takes 854.4 uS. So one cycle would be 85.44 uS,  and one transistion might be 42.72 uS, 
+
+There are 128 sampels display on the LAC screen.  If we want pin 16 to display one transition per sample....  that would be 142.74 uS * 128 samples` or 5,468.16 uS  displayed. So bump up the cycles until the right most column header is 5468.16. Unfortunately, the display switches to milliseconds. The best we can get is 5.5 mS. Lets try it using clocks cycles instead of seconds....
+
+
+
+----------
+
+UNDER CONSTRUCTION FROM HERE 
+
+----------
 
 
  === another pinIncrement, slower ===
