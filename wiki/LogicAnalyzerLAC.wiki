@@ -526,6 +526,10 @@ LAC reports 2746 total samples (the number of free longs in HUB memory that LAC 
 
 Sample interval of 3393 cycles interval displays one full cycle of pin 22, and a half cycle of pin 23.  So I think to fill the full memory with 0n cycle of pin 22 would be a smaple interval os 21.45 time more clock cycles, or 72790.xxx
 
+Well, that makes a mess.  The sample rate is so slow, that the data displays more or less random looking tranisitions. Maybve we nee to stick to integer numbers? 
+
+Try Sample interval 33930 clock cycles. Still looks funny. I see! I'm making the sample interval LONGER, I'm going the wrong direction!  It should b getting SMALLER!  Instead of 3393, I should try 339.
+
 
 
 
