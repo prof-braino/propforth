@@ -540,6 +540,10 @@ But notice:   When the sample interval is below 41 clock cycles, there are only 
 
 Lets try 41 and 67
 
+At 41, we don't see a transistion on pins 22 or 23.
+
+At 67, 
+
 
 ----------
 
