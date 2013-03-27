@@ -467,13 +467,21 @@ Now hit < ENTER > to sample and refresh the lac terminal display.  Notice that t
 
  === how do get a good snapshot of pinIncrement? ===
 
+
 Ok, we've experiments with the various timings.  How to get the clearest display of the pin tranistions?
 
 My suggestion is we want to see all the pin transitions.  
 
+ ==== All transistion on one screen ====
+
 If the trigger pin changes SLOWEST, the transition from the other pins will line up.  This would be pin 7 in the original example, or pin 23 using the LED example.
 
 Setting the sample interval to 3,400 cycles captures the top half of the cycle for pin 23, one full cycle for pin 22, and so on.  Use upper and lower case z x c znd v key to shift the sample window left and right. 
+
+ ==== All transition using all samples ====
+
+Left see if we can set LAC so the one cycle of pin 23 extends the full 2746 samples. 
+
 
 
  === another pinIncrement, slower ===
