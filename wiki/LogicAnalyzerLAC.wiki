@@ -511,11 +511,13 @@ There are 128 samples display on the LAC screen.  If we want pin 16 to display o
 
 ==== 3417 ====
 
-3437 cycles sample time display pin 16 as alternating one dash and one underscore each sample. I think  its pretty close now. There is still one additional sample transition to high at the very end. 
+3417 cycles sample time display pin 16 as alternating one dash and one underscore each sample. I think  its pretty close now. With 3419 there is still one additional sample transition to low at the very end. And you might notice that are one or two samples on pin 17 display that display as ONE dash or underscore instead of two (in the last 16 samples).  Bump this down until the final transition is the opposite of the first transition.
 
+==== 3392 to 3418 ====
 
+So it turns out that 3392 to 3418 cycles displays what we would expect, and interger number of cycles with one transistion per sample on pin 16. So I guess the transition are about every 3405 clock cycles. At 80 megahertz, this means if can capture a sample 23,494.8 times a second.  
 
-
+[ 1/80,000,000 (crystal frqency) ] * 3405 (cycles) = 23,494.8 samples per second.  (Its my math right?)
 
 ----------
 
