@@ -459,6 +459,31 @@ Notice that the LED 16 makes a solid line in you fikled o vision, and LED pin 23
 
 This is what the logic analyzer is displaying.  LAC displays a snapshot of ONE LOOP of the `pinIncrement` loop.  WOW!
 
+ === another pinIncrement, slower ===
+
+{{{
+\ pinIncrementer( n1 ) increment 8 pins starting at pin n1
+: pinIncrement
+  hFF over lshift dira COG!
+  0 begin
+    1+ 2dup swap lshift outa COG!
+
+\\ 1000
+\\ 250 
+   25 
+\\ 1
+ delms
+ 
+  0 until
+;
+
+c" 16 pinIncrement" 0 cogx
+
+lac
+
+}}}
+
+
 ----------
 
 = UNDER CONSTRUCTION FROM HERE =
