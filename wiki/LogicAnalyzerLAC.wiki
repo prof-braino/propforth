@@ -534,7 +534,12 @@ And I crashed the program with nonsense paramters.  No worries, reboot, reloaqd 
 
 At 339, pin 23 see its first transistion at sample 1281. 
 
-At 34, pin should see its first transition around sample 2462
+At 34, pin should see its first transition around sample 2462.  
+
+But notice:   When the sample interval is below 41 clock cycles, there are only 193 samples taken.   If the window is still looking at later samples (above sample 193) the result is undefined.  It looks like its all zeros (no transitions). 
+
+Lets try 41 and 67
+
 
 ----------
 
