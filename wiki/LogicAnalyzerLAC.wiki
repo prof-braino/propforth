@@ -465,6 +465,17 @@ The pattern of the LEDs in the air is the same patterh as the logic analyzer dis
 
 Now hit < ENTER > to sample and refresh the lac terminal display.  Notice that the when the trigger pin is set to 0 (the default), it can't lock to any of the LED pins.   Try changing the trigger pin from 0 the 16 and refresh.  Also try pin 23.
 
+ === how do get a good snapshot of pinIncrement? ===
+
+Ok, we've experiments with the various timings.  How to get the clearest display of the pin tranistions?
+
+My suggestion is we want to see all the pin transitions.  
+
+If the trigger pin changes SLOWEST, the transition from the other pins will line up.  This would be pin 7 in the original example, or pin 23 using the LED example.
+
+Setting the sample interval to 3,400 cycles captures the top half of the cycle for pin 23, one full cycle for pin 22, and so on.  Use upper and lower case z x c znd v key to shift the sample window left and right. 
+
+
  === another pinIncrement, slower ===
 
 Try adding the delays below.  Uncomment a value and the delms (or use any values).  Then adjust lac cycle sample period to match.  One millisecond needs about 20,000 cycles per sample. 
@@ -490,7 +501,6 @@ c" 16 pinIncrement" 0 cogx
 lac
 
 }}}
-
 
 
 ----------
