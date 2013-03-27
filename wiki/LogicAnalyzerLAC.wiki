@@ -478,12 +478,6 @@ If the trigger pin changes SLOWEST, the transition from the other pins will line
 
 Setting the sample interval to 3,400 cycles captures the top half of the cycle for pin 23, one full cycle for pin 22, and so on.  Use upper and lower case z x c znd v key to shift the sample window left and right. 
 
- ==== All transition using all samples ====
-
-Left see if we can set LAC so the one cycle of pin 23 extends the full 2746 samples. 
-
-Recall the the lac sample display shows 128 ( `8 columns of 16 samples` ) 
-
 with trigger pin 23 and sample interval 40 cycles (and the sample window start is bvlank meaning the first sample in the buffer), we see One transistion on pin 16.   The sample is too small and too fast. (that's pretty nifty in itself!).  The transistion occures at sample 85, or 043.0 uS.  So LAC tells us that the begin loop of pinIncrement takes 043.0 uS to execute.  Execellent!
 
 Increase transitions stepwise at increasing size interval. Uppercase A increases the sample cycles by one cycle. Remember to hit < ENTER > to resample after changing the interval. Notice that the transition appears to move to the left, but the column header times also increase. Notice pins 17 to 20 start to change hi and low, but show no transistions yet. 
@@ -511,13 +505,20 @@ There are 128 samples display on the LAC screen.  If we want pin 16 to display o
 
 ==== 3417 ====
 
-3417 cycles sample time display pin 16 as alternating one dash and one underscore each sample. I think  its pretty close now. With 3419 there is still one additional sample transition to low at the very end. And you might notice that are one or two samples on pin 17 display that display as ONE dash or underscore instead of two (in the last 16 samples).  Bump this down until the final transition is the opposite of the first transition.
+3417 cycles sample time display pin 16 as alternating one dash and one underscore each sample. I think  its pretty close now. With 3419 there is still one additional sample transition to low at the very end. And you might notice that are one or two samples on pin 17 display that display as ONE dash or underscore instead of two (in the last 16 samples).  Bump this down until the final transition on pin 16 is the opposite of the first transition
 
 ==== 3392 to 3418 ====
 
-So it turns out that 3392 to 3418 cycles displays what we would expect, and interger number of cycles with one transistion per sample on pin 16. So I guess the transition are about every 3405 clock cycles. At 80 megahertz, this means if can capture a sample 23,494.8 times a second.  
+So it turns out that 3392 to 3418 cycles displays what we would expect, and interger number of cycles with one transistion per sample on pin 16. So I guess the transition are about every 3405 clock cycles. At 80 megahertz, this means if can capture a sample 23,494.8 times a second.  (somebody check my math?)
 
-[ 1/80,000,000 (crystal frqency) ] * 3405 (cycles) = 23,494.8 samples per second.  (Its my math right?)
+As we look farther out into the sample set, we can notice if an error accumulates.  Looking at the samples starting at 1280, we can see that the display is not lined up correctly. Adjusting the cycles to 3393 cleans it up.  Now I think that the look takes 3393 cycles to do exactly 128 samples. Looking at sample 2560 confirms this. 
+
+ ==== All transition using all samples ====
+
+LAC says my quickstart has 2746 total samples. Lets see if we can set LAC so the one cycle of pin 23 extends the full 2746 samples. 
+
+Recall the the lac sample display shows 128 ( `8 columns of 16 samples` ) 
+
 
 ----------
 
