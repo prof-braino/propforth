@@ -661,7 +661,7 @@ touch pads and resample to see changes
 
 Notice is you set the sample rate to 40,000 cycles (G,G,G,G) this is about the highest it can go. It takes a long time (almost 2 seconds) to sample and display.  You can LIGHTLY lay your finger across several pad on the quickstart, some some of the LEDs flicker dimly. The sample will show the I/O lines toggling for the flickering LEDs. 
 
-=== change the sample frequency to a short interval ===
+== change the sample frequency to a short interval ==
 
 The shortest sampling period we do with the default configuration is 40 cycles. 
 
