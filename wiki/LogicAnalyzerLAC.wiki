@@ -333,7 +333,7 @@ At this point, we have :
 
  == The first example ==
 
-Now load the example code from sectin 5:
+Now load the example code from section 5:
 
 {{{
 \ pinIncrementer( n1 ) increment 8 pins starting at pin n1
@@ -356,7 +356,7 @@ What is `pinIncrement` really doing? Lets look at the stack as each function exe
 
 *: pinIncrement* \ the colon starts the definition.  colon takes a string, and uses that for the definition dictionary ID.  The definition continues until  the interpreter sees semi colon.  Colon and semicolon only run at compile time (when the definition is input). When the definition is called, the body (previously compiled into the dictionary by colon) executes. 
 
-Step throught the body of function !pinIncrement:
+Step through the body of function !pinIncrement:
 
 *start* \  this is what the stack looks like when the routine is first called
   * Stack0: 0 \starting pin# to toggle
@@ -383,7 +383,7 @@ Step throught the body of function !pinIncrement:
 *COG!* \  this stores a value at the location given.  In this case the location is dira, and the value is FF, the firs 8 pins are ONES
   * Stack0: 0 \starting pin# to toggle
 
-*0*  \  seed valut for the begin loop that's next
+*0*  \  seed value for the begin loop that's next
   * Stack1: 0 \ begin loop seed value
   * Stack0: 0 \starting pin# to toggle
 
@@ -436,7 +436,7 @@ Step throught the body of function !pinIncrement:
 
 If you are using the Quickstart, Here a modification to pinIncrement that might be helpful.
 
-TheQuickstart has LEDs on pins 16 - 23. We can use the exact same program, just use differnet starting pin (16).  Paste in the following:
+The Quickstart has LEDs on pins 16 - 23. We can use the exact same program, just use different starting pin (16).  Paste in the following:
 
 {{{
 \ pinIncrementer( n1 ) increment 8 pins starting at pin n1
@@ -459,13 +459,15 @@ Hold the quickstart near the USB connector.  LED P16 should be farthest away fro
 
 Wave the quickstart side to side rapidly.
 
-Notice that the LED 16 makes a solid line in you fikled o vision, and LED pin 23 makes a long dashed line. The LEDs in between make progressivle horter lines the farther away from you. Neat!
+Notice that the LED 16 makes a solid line in you field of vision, and LED pin 23 makes a long dashed line. The LEDs in between make progressively shorter lines the farther away from you. Neat!
 
-This is what the logic analyzer is displaying.  LAC displays a snapshot of ONE LOOP of the `pinIncrement` loop.  WOW!
+The pattern of the LEDs in the air is the same patterh as the logic analyzer display.  LAC displays a snapshot of ONE LOOP of the `pinIncrement` loop.  WOW!
 
-Now hit < ENTER > to sample and refresh the lac terminal display.  Notice that the when the trigger pin is set to 0 (the default), it can't lock to any of the LED pins.   Try changining the trigger pin from 0 the 16 and refresh.  Also try pin 23.
+Now hit < ENTER > to sample and refresh the lac terminal display.  Notice that the when the trigger pin is set to 0 (the default), it can't lock to any of the LED pins.   Try changing the trigger pin from 0 the 16 and refresh.  Also try pin 23.
 
  === another pinIncrement, slower ===
+
+Try adding the delays below.  Uncomment a value and the delms (or use any values).  Then adjust lac cycle sample period to match.  One millisecond needs about 20,000 cycles per sample. 
 
 {{{
 \ pinIncrementer( n1 ) increment 8 pins starting at pin n1
@@ -488,6 +490,7 @@ c" 16 pinIncrement" 0 cogx
 lac
 
 }}}
+
 
 
 ----------
