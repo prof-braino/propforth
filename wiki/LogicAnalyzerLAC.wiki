@@ -521,6 +521,13 @@ LAC says my quickstart has 2746 total samples. Lets see if we can set LAC so the
 
 Recall the the lac sample display shows 128 ( `8 columns of 16 samples` ) 
 
+LAC reports 2746 total samples (the number of free longs in HUB memory that LAC can use for storage). 2746 samples / 128 samples per screen = 21.45 screens of sample data.  
+
+
+Sample interval of 3393 cycles interval displays one full cycle of pin 22, and a half cycle of pin 23.  So I think to fill the full memory with 0n cycle of pin 22 would be a smaple interval os 21.45 time more clock cycles, or 72790.xxx
+
+
+
 
 ----------
 
