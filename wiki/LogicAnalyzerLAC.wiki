@@ -550,7 +550,7 @@ At 542 (33.9 times 16),  The first full cycle of pin 23 ends at sample 1600.
 
 OK, now I'm completely sick of calculations for sampling. But at least I have an idea what s going on. 
 
- === another pinIncrement, slower ===
+ == another pinIncrement, slower ==
 
 Try adding the delays below.  Uncomment a value and the delms (or use any values).  Then adjust lac cycle sample period to match.  One millisecond needs about 20,000 cycles per sample. 
 
