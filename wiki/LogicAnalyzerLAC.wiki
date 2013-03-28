@@ -600,7 +600,7 @@ Now that we've done the examples and played with the parameters, we should have 
 
 NOTE 1: After your programs are loaded, you can do a saveforth to save the current dictionary image to eeprom. This way, the same image will persist after reboots and power cycling.   
 
-NOTE 2:  You can load lac first, or you can load quickstart demo first. you can do saveforth after loading either to write the current image to EEPROM.
+NOTE 2:  You can load lac first, or you can load quickstart demo first. you can do saveforth after loading either to write the current image to EEPROM. Just done have the QS demo running when you load lac or do the saveforth. 
 
 Note 3: LAC uses the current cog (cog6 by default) when sample interval is 40 cycles or greater.  When sample interval is 1 cycle (every cycle) LAC uses 4 cogs to do the sampling (Cogs 2, 3, 4, 5). If your application uses these cogs, there may be problems with sample interval below 40 cycles, and will definitely  require some attention to sample at 1 cycle. The QSTouchDemo uses cogs 3 & 4, maybe these should be moved to  cogs 0 and 1?  Reboot often while sorting this out. 
 
@@ -610,15 +610,15 @@ Make sure the quickstart touch demo is present and running.
 
 Load LAC into propforth as described above.
 
-do Saveforth again so both lac and the touch demo are saved in EEprom. 
+do Saveforth again if you haven't already so both lac and the touch demo are saved in EEprom. 
 
 ==  REBOOT ==
 
-After you powercycle or type the REBOOT command, the quickstart touch demo should respond by lighting the LEDS when the botton pads are touched. If not, re-burn the devkernel to EEprom, reload the demo WITHOUT the reboot word at the end of the script file, reload lac, do saveforth, and reboot again.  
+After you powercycle or type the REBOOT command, the quickstart touch demo should respond by lighting the LEDS when the button pads are touched. If not, re-burn the devkernel to EEprom, reload the demo WITHOUT the reboot word at the end of the script file, reload lac, do saveforth, and reboot again.  
 
 == set triggers ==
 
-set the trigger as the transition of one ot the buttons (pin 0-7) or for one of the LEDs (pins 16-23)
+set the trigger as the transition of one of the buttons (pin 0-7) or for one of the LEDs (pins 16-23)
 
 First try button pins, then try LED pins, etc
 
@@ -630,9 +630,13 @@ touching the button that you have set as trigger (or that triggers the LED you h
 
 == monitor application ==
 
-Notice that the buttons and LEDs are refreshed at a rate of 22 ms (line xx in touch demo)
+~~Notice that the buttons and LEDs are refreshed at a rate of 22 ms (line 29 in touch demo)~~
+
+Notice that the buttons and LEDs are refreshed at full speed of the processor, and the LEDs are held lit for 22 ms (line 29 in touch demo) each pass of the loop. 
 
 Touching the trigger pin should capture a sample. In addition, the states of all other pins are displayed.  You should be able to see the transitions of any pins touched during sampling.  Experiment with change the sample window till you can capture various samples ass you touch different buttons.
+
+Why don't we see the button pin transition from High to Low when touched?  Nor the LED transition from low to high when it's button is touched?  The transition  event is very quick (tens of uS) while the LED on time is relatively very long (tens of milliseconds).  So for some reason, its no hitting the pin transition.  It hitting the LED on period instead, since this happens most of the time. 
 
 = TRIGGER with < ENTER > =
 
@@ -644,7 +648,7 @@ hit enter, and see the display get drawn.  If it scrolls of the bottom, adjust y
 
 The display window needs at least 63 lines to full display with out scrolling.
 
-OPTIONALLY we can edit the LAC code to remove some intermediate headers to reduce the out put display size.  (do this later.
+OPTIONALLY we can edit the LAC code to remove some intermediate headers to reduce the out put display size.  (do this later. -edit- this is now in the first part of this page.  We should determine if the modified code is more appropriate post it, or keep the original. There should on be one version posted on this wiki.)
 
 Touch various quckstart pads to light LEDs.
 
@@ -696,5 +700,4 @@ We can change the default so a pin state transition causes the sampling to trigg
 Lets make the sampling trigger when we touch button pad 4.
 
 
-
-- End 20130327 -
+- End 20130328 -
