@@ -592,17 +592,17 @@ Now that we've done the examples and played with the parameters, we should have 
   * Download the Quickstart Touch button demo 
   * http://propforth.googlecode.com/files/QuickstartTouchDemo20120611-1540.txt
   * Open it in your text editor
-~  * highlight the entire contents of `QuickstartTouchDemo20120611-1540.txt` ~
+  * ~highlight the entire contents of `QuickstartTouchDemo20120611-1540.txt`~
   * highlight the contents of `QuickstartTouchDemo20120611-1540.txt` EXCEPT FOR the last line that says REBOOT.  We DON'T want to reboot until both LAC and !QSTouchDemo are loaded and saved. 
-  * copy th4 highlighted text with `(ctl^C)`
+  * copy the highlighted text with `(ctl^C)`
   * paste it into teraterm 
-  * do saveforth (to write the the touch button demo to EEprom)
+  * do saveforth (to write the the touch button demo to EEprom) 
 
 NOTE 1: After your programs are loaded, you can do a saveforth to save the current dictionary image to eeprom. This way, the same image will persist after reboots and power cycling.   
 
 NOTE 2:  You can load lac first, or you can load quickstart demo first. you can do saveforth after loading either to write the current image to EEPROM.
 
-Note 3: LAC uses the current cog (cog6 by default) when sample interval is 40 cycles or greater.  When sample interval is 1 cycle (every cycle) LAC uses 4 cogs to do the sampleing (Cogs 2, 3, 4, 5). If your application uses these cogs, there may be problems with sample interval below 40 cycles, and will definitely  require some attention to sample at 1 cycle. Reboot often while sorting this out. 
+Note 3: LAC uses the current cog (cog6 by default) when sample interval is 40 cycles or greater.  When sample interval is 1 cycle (every cycle) LAC uses 4 cogs to do the sampling (Cogs 2, 3, 4, 5). If your application uses these cogs, there may be problems with sample interval below 40 cycles, and will definitely  require some attention to sample at 1 cycle. The QSTouchDemo uses cogs 3 & 4, maybe these should be moved to  cogs 0 and 1?  Reboot often while sorting this out. 
 
 == load lac.f after application ==
 
@@ -610,19 +610,17 @@ Make sure the quickstart touch demo is present and running.
 
 Load LAC into propforth as described above.
 
+do Saveforth again so both lac and the touch demo are saved in EEprom. 
+
+==  REBOOT ==
+
+After you powercycle or type the REBOOT command, the quickstart touch demo should respond by lighting the LEDS when the botton pads are touched. If not, re-burn the devkernel to EEprom, reload the demo WITHOUT the reboot word at the end of the script file, reload lac, do saveforth, and reboot again.  
+
 == set triggers ==
 
 set the trigger as the transition of one ot the buttons (pin 0-7) or for one of the LEDs (pins 16-23)
 
 First try button pins, then try LED pins, etc
-
-== set the sampling ==
-
-by default, LAC will sample xxxx bye at frequency xxxx
-
-The touch demo runs at xxx refreshes (line xx in touch demo)
-
-Set the sampling such that the touch and release event can be captured, for example nnnn
 
 == execute application ==
 
@@ -651,6 +649,22 @@ OPTIONALLY we can edit the LAC code to remove some intermediate headers to reduc
 Touch various quckstart pads to light LEDs.
 
 Hit enter to see the LAC i/o lines dispay change to reflect the states of the pads (on pin 0-7) and the LEDS (on pin 16-23)
+
+== set the sampling ==
+
+--------
+
+in progress here 
+
+---------
+
+by default, LAC will sample xxxx bye at frequency xxxx
+
+The touch demo runs at xxx refreshes (line xx in touch demo)
+
+Set the sampling such that the touch and release event can be captured, for example nnnn
+
+
 
 == change sample frequency to a LONG interval ==
 
