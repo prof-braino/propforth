@@ -592,7 +592,8 @@ Now that we've done the examples and played with the parameters, we should have 
   * Download the Quickstart Touch button demo 
   * http://propforth.googlecode.com/files/QuickstartTouchDemo20120611-1540.txt
   * Open it in your text editor
-  * highlight the entire contents of `QuickstartTouchDemo20120611-1540.txt`
+~  * highlight the entire contents of `QuickstartTouchDemo20120611-1540.txt` ~
+  * highlight the contents of `QuickstartTouchDemo20120611-1540.txt` EXCEPT FOR the last line that says REBOOT.  We DON'T want to reboot until both LAC and !QSTouchDemo are loaded and saved. 
   * copy th4 highlighted text with `(ctl^C)`
   * paste it into teraterm 
   * do saveforth (to write the the touch button demo to EEprom)
