@@ -732,7 +732,7 @@ fl
            
 \  A delay here light the LEDs dimly, also need one AFTER LED is lit
 \           11 delms   \ finger tip needs to be moist, and press harder
-             1 delms    \ finger tip needs to be moist, and press a little harder with 1 ms
+\             1 delms    \ finger tip needs to be moist, and press a little harder with 1 ms
            
 \ scan section
        h_FF outa COG!         \ prep first 8 pins Hi (1's) 3.3V
