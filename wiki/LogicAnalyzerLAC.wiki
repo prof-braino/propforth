@@ -708,11 +708,7 @@ LAC is modified to display the data in less screen real estate.
 
 Quickstart demo is modified to run the button scan AND the LED lighting in a single loop on a single cog, so we can see the button scan transition event first followed by the LED state transition. 
 
-Also, the touch button demo is loaed first, and LAC is loaded and saved after.  By default, the demop does saveforth and does a reboot, this cuases the demo to run; having a the demo run while we are still loaded the LAC code is not so good.  Also LAC works free memory, loading QST demo second changes the used memory start point, this seems to cause problems. 
-
-Anyway the following worked for me:
-
-
+Also, the touch button demo is loaded first, and LAC is loaded and saved after.  By default, the demo does saveforth and does a reboot, this cuases the demo to run; having a the demo run while we are still loaded the LAC code is not so good.  Also LAC works free memory, loading QST demo second changes the used memory start point, this seems to cause problems. 
 
 {{{
 \ 20130327 Braino
@@ -732,7 +728,7 @@ fl
            
 \  A delay here light the LEDs dimly, also need one AFTER LED is lit
 \           11 delms   \ finger tip needs to be moist, and press harder
-\             1 delms    \ finger tip needs to be moist, and press a little harder with 1 ms
+             1 delms    \ finger tip needs to be moist, and press a little harder with 1 ms
            
 \ scan section
        h_FF outa COG!         \ prep first 8 pins Hi (1's) 3.3V
@@ -743,8 +739,8 @@ fl
 
 \ a delay here leaves the LEDs in the ON state for this long, minimum 
 \       1 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
-\       11 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
-     111 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
+       11 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
+\     111 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
 
                 \ long enough to be seen, not long enough to flicker
   0 until       \ do this forever
