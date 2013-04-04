@@ -72,7 +72,26 @@ Close the defaults directory window.
 
 OK, the SimpleIDE window is up.  How to go about compiling a .spin file, and loading it onto the prop?   There was mention of a setup.txt file, I wonder if I can find this....
 
- 
+ == INSTALL.TXT ==
+
+ in the extraction idrectory, there is an INSTALL.TXT file.
+
+instruction is to use "lld SimpleIDE" 
+
+this gives respons `ldd: ./SimpleIDE: No such file or directory`
+
+This file says a bunch of "if this then this". I wonder if this is trying to tell something I need to know or do?
+
+It mentions "In SimpleIDE Compiler PRoperties" but I can find nothing like this...
+
+No demos visible... must not have worked...
+
+I'm going to hold off randomly clicking stuff, as that did not work last time I tried to set up SimpleIDE. 
+
+It mentions SimpleIDE User Guide on the web.  Maybe this is the key...
+
+ == SimpleIDEUSER Guide ==
+
 
 
 
