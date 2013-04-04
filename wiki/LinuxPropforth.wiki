@@ -21,17 +21,17 @@ This is the version userd for this test [https://propside.googlecode.com/files/S
 Per the instruction on the download page: 
 
 
-Unpack the tar.bz2 to your preferred directory, 
-cd to the new SimpleIDE folder, 
-and install by: 
+  * Unpack the tar.bz2 to your preferred directory, 
+  * cd to the new SimpleIDE folder, 
+  * and install by: 
 
-sudo ./setup.sh $USER `
+`sudo ./setup.sh $USER `
 
 or by root as 
 
 `./setup.sh username`
 
-What is the prefered directory?  I don't know, I'm just going to create one under my home directory until I find a reason to put it someplace else.  (Typically there should be someplace it "should" go, like under usr or share of etc or something, but I never figured that out yet.) 
+What is the prefered directory?  I don't know, I'm just going to create one  * under my home directory until I find a reason to put it someplace else.  (Typically there should be someplace it "should" go, like under usr or share of etc or something, but I never figured that out yet.) 
 
 So under home, I create a `PropSoftware` directory. 
 
