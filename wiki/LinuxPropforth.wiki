@@ -1,4 +1,5 @@
 #summary Using Propforth with Linux
+#labels v5.5,Linux
 
 <wiki:toc max_depth="9" />
 
@@ -93,8 +94,32 @@ It mentions SimpleIDE User Guide on the web.  Maybe this is the key...
  == SimpleIDEUSER Guide ==
 
 
+This is not in the Project Home page, download page. wiki, issues. 
+
+There is a file in source, _SimpleIDE_UserGuide_.txt
+
+This contains the text from the install.txt, and at line 62, some new information. 
+
+Its a little late to tell us that its OK to close the properties window, but at least it tells us it was OK to close. How does one check if these fields are filled in correctly? (At this point we can't, we have no idea, so maybe this window should not have been shown.  It might be a debug thing).
+
+OK, there's no demo in Linux, only in windows. 
+
+One of the 14 blue buttons is the PLAY button, this might be important.  It is the  "Run Console" button, this must be important. Do we need to run macros in order to compile?  (This would explain my problems last go round). 
+
+This says Board Type should be HUB.
+
+Must have prop plugged in to the USB port to be detected.  Nice to know. 
+
+Seems we need a new project to work. TEST20130404. Type SPIN.  SAVE paroject settings before close  NO is first, chose that.
+
+The BOARD TYPE  button has a little jigsaw puzzle peice on it, and is clickable, but does not do anything.  The options for board type and memory model are not available. 
 
 
+
+
+
+
+-------------------
 
 = OPTION: Run a WXP Virtual Machine =
 
@@ -107,6 +132,7 @@ It takes about the same time to boot the virtual machine as a physical machine (
 But at least it does the job. 
 
   == install Virtual Box ==
+
 
 In the Ubuntu software center, Oracle Virtual Box 4.1.12 is offered, but this doesn't work.
 
