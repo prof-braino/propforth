@@ -18,8 +18,9 @@ Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
 This is the version userd for this test [https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2 https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2]
 
-Per the instruction on the download page: 
+Downloaded this.
 
+Per the instruction on the download page: 
 
   * Unpack the tar.bz2 to your preferred directory, 
   * cd to the new SimpleIDE folder, 
@@ -38,6 +39,22 @@ So under home, I create a `PropSoftware` directory.
 cd to this 
 
 `cd ~/PropSoftware`
+
+Move the archive from Downloads to the Propfsoftware directory
+
+Open with  archive manager. (Reads for about a minute) 
+
+Extract (to this directory, also about a minute) 
+
+cd into this directory
+
+`sudo ./setup.sh userid`
+
+Message is  ` Found Users /opt/parallax/bin` . Does "users" mean the set of "userid"?  It looks like is created a directory, I wonder if this directory is still needed? 
+
+
+
+
 
 
 = OPTION: Run a WXP Virtual Machine =
