@@ -12,7 +12,22 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
-= install Virtual Box =
+= OPTION: under examination - SimpleIDE =
+
+[SimpleIDE https://sites.google.com/site/propellergcc/downloads] is part of the Prop GCC project.  The goal is to extend the GCC compiler tools to allow compilation to the prop chip as a target.   The project started on the prop 1 and should carry over to the Prop 2.  The guys working on this are very good at what they do.  Be aware that this is in development an may not be usable for beginners. 
+
+
+= OPTION: Run a WXP Virtual Machine =
+
+This is the brute force method.  It takes about an hour to set up the VirtualBox software. It takes about 10 Gig minimum to set up a virtual hard disk.  It takes about an hour to install WXP on the virtual machine. It takes about an hour to set up the anti-virus nonsense.   It takes about two days for all the windows update nonsense to download and install.   
+
+At the end of this time, the standard windows tools are available.  
+
+It takes about the same time to boot the virtual machine as a physical machine (slow).   The virtual machine fights the linux OS for the resources (USB,CD, etc) so you have to be careful of that.  You still should not leave the windows machine running for any length of time, just as with a physical windows machine (prone to virus, trojans, various other vulnerabilities).
+
+But at least it does the job. 
+
+  == install Virtual Box ==
 
 In the Ubuntu software center, Oracle Virtual Box 4.1.12 is offered, but this doesn't work.
 
@@ -24,7 +39,7 @@ and get 4.2 (4.2.4.2. 8 is what I used)
 
 http://download.virtualbox.org/virtualbox/4.2.8/virtualbox-4.2_4.2.8-83876~Ubuntu~precise_i386.deb
 
-= Install Windows =
+  == Install Windows ==
 
 Be sure you have a valid license
 
@@ -40,9 +55,7 @@ Notice: if you are coming from Windows, the keyboard numeric keypad might behave
 
 *Shift with Numeric keypad works as in MS Windows*
 
-
-
-= install Guest extensions = 
+  == install Guest extensions ==  
 
 Launch the Oracle Virtual Box application.
 
@@ -50,7 +63,7 @@ Under Devices, select Install Guest applications
 
 Allow the software to install, and reboot
 
- == Optional: 3D acceleration ==
+     === Optional: 3D acceleration ===
 
   Restart Windows virtual machine in !SafeMode
 
@@ -61,11 +74,11 @@ Allow the software to install, and reboot
   Allow the software to install and reboot
 
 
-= Allow USB =
+  == Allow USB ==
 
 You will have gotten a bunch of messages saying USB is not captured, and mouse is captured.   Now we set up USB and get rid of the nag screens.
 
-== add your login ID to vboxusers group ==
+    === add your login ID to vboxusers group ===
 
 You'll messages tell you to add your user to the vboxuser group
 
@@ -75,7 +88,7 @@ in a terminal (CTL+ALT+T) enter the command
 sudo adduser <myloggin> vboxusers
 }}}
 
-==  Allow virtual session to access USB == 
+    ===  Allow virtual session to access USB ===
 
 Notice that you have to shutdown the windows virtual machine for this step.
 
@@ -97,13 +110,13 @@ Another warning comes up about auto capture keyboard, check "Do not show this ag
 
 The virtual machine should now be able to see the USB device when you connect your propplug, Quickstart, etc.
 
-= Map linux directory so Windows can see it =
+  == Map linux directory so Windows can see it == 
 
 Devices > Shared Folders
 
 Navigate to your Public directory. Map it as Read Only
 
-== Optional: Writable ==
+     === Optional: Writable ===
 
 From Linux:
 
@@ -115,7 +128,7 @@ Give this one full access
 
 *This directory is so yu can send stuff back out to Linux from windows. The Public directory is read only in case something bad gets in through windows, it will limit its affect (maybe).* 
 
-= Install Proptool =
+  == Install Proptool ==
 
 Be sure to get version 1.3.  Note that Googling for parallax propeller proptool tends to bring up version 1.2.7 (R2) (or at least it used to, but its not the right version).
 
@@ -123,7 +136,7 @@ As of this writing, I notice there is a version 1.3.2, I will be trying that.
 
 http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1.3.2.zip
 
-= Download Propforth = 
+  == Download Propforth ==
 
 The propforth download archive is pretty much self contained and complete. 
 
@@ -137,22 +150,24 @@ READ doc/Propforth.htm sections 1 through 4 once more a little slower after your
 
 Now you know as much as I do about propforth for the most part. From here on out, you skill level is a function of the time you spend practising using propforth.  The more hours you accumulate, the more skill you will develop. 
 
-= Attempted setting up WINE =
+= NOT AN OPTION:  Attempted setting up WINE =
 
 I tried WINE windows emulator version 1.4 as included in Ubuntu 1.4
 
 I volunteered to update the WINEHQ database for the proptool as v1.3.2 is not listed yet.   I'll do more experiments if they get back to me. 
 
-== update drivers - NO - did not work ==
+  == update drivers - NO - did not work ==
 
 The installer ran.  I did NOT allow the installer to "update drivers" as I figured the windows drivers might be a problem in linux.  The result did not detect any USB port or quickstart. Uninstalled.
 
-== update drivers - YES - did not work ==
+  == update drivers - YES - did not work ==
 
 The installer ran again.  This time I allowed the installer to "update drivers".  The result did not detect any USB port or quickstart. 
 
-== Conclusion: Use Virtualbox ==
-
-WINE does not work with Propeller Tool, but a virtual machine session works pretty much the same as a regular windows session. 
+= Conclusion: Use Virtualbox =
 
 Use Oracle Virtualbox for now. 
+
+Currently testing SimpleIDE for the prop on linux 20130404
+
+WINE does not work with Propeller Tool, but a virtual machine session works pretty much the same as a regular windows session. 
