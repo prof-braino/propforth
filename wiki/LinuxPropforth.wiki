@@ -16,9 +16,13 @@ Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
 [https://sites.google.com/site/propellergcc/downloads SimpleIDE ] is part of the Prop GCC project.  The goal is to extend the GCC compiler tools to allow compilation to the prop chip as a target.   The project started on the prop 1 and should carry over to the Prop 2.  The guys working on this are very good at what they do.  Be aware that this is in development an may not be usable for beginners. 
 
+ == Download SimpleIDE ==
+
 This is the version userd for this test [https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2 https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2]
 
 Downloaded this.
+
+ == Install SimpleIDE ==
 
 Per the instruction on the download page: 
 
@@ -36,11 +40,11 @@ What is the prefered directory?  I don't know, I'm just going to create one unde
 
 So under home, I create a `PropSoftware` directory. 
 
-cd to this 
+Open a terminal window, cd to this 
 
 `cd ~/PropSoftware`
 
-Move the archive from Downloads to the Propfsoftware directory
+Move the archive from Downloads to the Propsoftware directory
 
 Open with  archive manager. (Reads for about a minute) 
 
@@ -52,7 +56,23 @@ cd into this directory
 
 Message is  ` Found Users /opt/parallax/bin` . Does "users" mean the set of "userid"?  It looks like is created a directory, I wonder if this directory is still needed? 
 
+final message is 
 
+`Setup complete. To run program use: ./simpleide`
+
+ == Run SimpleIDE ==
+
+After install, in a terminal window run 
+
+`./simpleide`
+
+Close the SimpleIDE Splash screen
+
+Close the defaults directory window.
+
+OK, the SimpleIDE window is up.  How to go about compiling a .spin file, and loading it onto the prop?   There was mention of a setup.txt file, I wonder if I can find this....
+
+ 
 
 
 
