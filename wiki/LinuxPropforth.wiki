@@ -19,7 +19,7 @@ Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
 = OPTION: Run a WXP Virtual Machine =
 
-This is the brute force method.  It takes about an hour to set up the VirtualBox software. It takes about 10 Gig minimum to set up a virtual hard disk.  It takes about an hour to install WXP on the virtual machine. It takes about an hour to set up the anti-virus nonsense.   It takes about two days for all the windows update nonsense to download and install.   
+This is the brute force method.  It takes about an hour to set up the [https://www.virtualbox.org/ VirtualBox] software. It takes about 10 Gig minimum to set up a virtual hard disk.  It takes about an hour to install WXP on the virtual machine. It takes about an hour to set up the anti-virus nonsense.   It takes about two days for all the windows update nonsense to download and install.   
 
 At the end of this time, the standard windows tools are available.  
 
