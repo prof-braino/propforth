@@ -112,10 +112,17 @@ Must have prop plugged in to the USB port to be detected.  Nice to know.
 
 Seems we need a new project to work. TEST20130404. Type SPIN.  SAVE paroject settings before close  NO is first, chose that.
 
-The BOARD TYPE  button has a little jigsaw puzzle peice on it, and is clickable, but does not do anything.  The options for board type and memory model are not available. 
+Trying OPTION 1
+
+The BOARD TYPE  button has a little jigsaw puzzle piece on it, and is clickable, but does not do anything.  The options for board type and memory model are not available. 
 
 
+Do we have to set something with `Menu->Project->Set Project `? What? Or is this still part of option 2? 
 
+Better ask for help.....
+
+
+How to load and run a known good, stand alone spin code file?
 
 
 
