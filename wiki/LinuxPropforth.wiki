@@ -31,7 +31,7 @@ or by root as
 
 `./setup.sh username`
 
-What is the prefered directory?  I don't know, I'm just going to create one  * under my home directory until I find a reason to put it someplace else.  (Typically there should be someplace it "should" go, like under usr or share of etc or something, but I never figured that out yet.) 
+What is the prefered directory?  I don't know, I'm just going to create one under my home directory until I find a reason to put it someplace else.  (Typically there should be someplace it "should" go, like under /usr or /share or /etc or something specific, but I haven't figured that out yet.  It might be different for each distribution, and we're supposed to know by magic where this is in Ubuntu. Anyways... ) 
 
 So under home, I create a `PropSoftware` directory. 
 
