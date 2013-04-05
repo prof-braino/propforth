@@ -63,13 +63,13 @@ Click on the archive in downloads, and extract it to this directory you created.
 Open a terminal window [ CTL + ALT + T ]
 
 Navigate to the directory with setup.sh
-
-`cd /home/braino/PropSoftware/SimpleIDE-0-8-5`
-
+{{{
+cd /home/braino/PropSoftware/SimpleIDE-0-8-5
+}}}
 Run the setup script
-
-`sudo ./setup.sh $USER `
-
+{{{
+sudo ./setup.sh $USER 
+}}}
 If successful, final message should be
 
 `Setup complete. To run program use: ./simpleide`
