@@ -19,57 +19,77 @@ Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
  == Download SimpleIDE ==
 
-This is the version userd for this test [https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2 https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2]
+On this page 
 
-Downloaded this.
+https://sites.google.com/site/propellergcc/downloads/linux-downloads
+
+Skip down to STEP 1 to choose the package that matches your install as displayed on 
+
+Applications > System > System Tools > Detail
+
+Click the package to automatically download to your downloads directory
+
+  === This test ===
+
+This is the version used for this test [https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2 https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2]
+
+Downloaded this. (to downloads directory)
 
  == Install SimpleIDE ==
 
-Per the instruction on the download page: 
+Need to extract the archive to adirectoy and run the install script
 
-  * Unpack the tar.bz2 to your preferred directory, 
-  * cd to the new SimpleIDE folder, 
-  * and install by: 
+  === Extract the Archive to a directory ===
+
+Create a directory to contain the software.  I made "PropSoftware" in my home directory
+
+`/home/braino/PropSoftware`
+
+Click on the archive in downloads, and extract it to this directory you created. 
+
+ NOTE: the tar.bz2 stuff is only if you prefer to work from the command line.  If you don't already know how to do this, you don't want to do this.
+
+ === Run the install script ===
+
+Open a terminal window [ CTL + ALT + T ]
+
+Navigate to the directory with setup.sh
+
+`cd /home/braino/PropSoftware/SimpleIDE-0-8-5`
+
+Run the setup script
 
 `sudo ./setup.sh $USER `
 
-or by root as 
-
-`./setup.sh username`
-
-What is the prefered directory?  I don't know, I'm just going to create one under my home directory until I find a reason to put it someplace else.  (Typically there should be someplace it "should" go, like under /usr or /share or /etc or something specific, but I haven't figured that out yet.  It might be different for each distribution, and we're supposed to know by magic where this is in Ubuntu. Anyways... ) 
-
-So under home, I create a `PropSoftware` directory. 
-
-Open a terminal window, cd to this 
-
-`cd ~/PropSoftware`
-
-Move the archive from Downloads to the Propsoftware directory
-
-Open with  archive manager. (Reads for about a minute) 
-
-Extract (to this directory, also about a minute) 
-
-cd into this directory
-
-`sudo ./setup.sh userid`
-
-Message is  ` Found Users /opt/parallax/bin` . Does "users" mean the set of "userid"?  It looks like is created a directory, I wonder if this directory is still needed? 
-
-final message is 
+If successful, final message should be
 
 `Setup complete. To run program use: ./simpleide`
 
  == Run SimpleIDE ==
 
-After install, in a terminal window run 
+After install, 
+
+in a terminal window,
+
+Navigate to the simpleIDE main directory 
+
+`cd /home/braino/PropSoftware/SimpleIDE-0-8-5`
+
+run 
 
 `./simpleide`
 
-Close the SimpleIDE Splash screen
+Unclick the SHOW SPLASH box, Close the SimpleIDE Splash screen
 
-Close the defaults directory window.
+Close the defaults directory window.  This is already set automatically  (its probably a debug thing left over from development).
+
+-------------------------------------------------------------------
+work in progress
+-------------------------------------------------------------------
+
+
+
+
 
 OK, the SimpleIDE window is up.  How to go about compiling a .spin file, and loading it onto the prop?   There was mention of a setup.txt file, I wonder if I can find this....
 
