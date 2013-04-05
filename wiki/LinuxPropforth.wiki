@@ -18,10 +18,6 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
-= OPTION: investigating - using raspberrypi hardware running debian wheezy =
-
-Didn't figure this out yet, maybe this will be next
-
 = OPTION: WORKS GREAT! - SimpleIDE =
 
 [https://sites.google.com/site/propellergcc/downloads SimpleIDE ] is part of the Prop GCC project.  The goal is to extend the GCC compiler tools to allow compilation to the prop chip as a target.   The project started on the prop 1 and should carry over to the Prop 2.  The guys working on this are very good at what they do.  Be aware that this is in development an may not be usable for beginners. 
