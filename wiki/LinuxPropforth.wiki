@@ -36,7 +36,7 @@ Click the package to automatically download to your downloads directory
 
   === This test ===
 
-This is the version used for this test [https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2 https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2]
+This is the version used for these  instructions was   [https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2 https://propside.googlecode.com/files/SimpleIDE-0-8-5-1.i686-debian-linux.tar.bz2]
 
 Downloaded this. (to downloads directory)
 
