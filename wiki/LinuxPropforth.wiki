@@ -18,7 +18,7 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
-= OPTION: investigating - on RaspberryPi =
+= OPTION: investigating - using raspberrypi hardware running debian wheezy =
 
 Didn't figure this out yet, maybe this will be next
 
