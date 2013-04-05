@@ -5,7 +5,12 @@
 
 = Introduction =
 
-There's a couple ways.  I use Ubuntu 12.04 and run a virtualbox windows xp session.
+There's a couple ways to get propforth onto a the quickstart under linux.  
+
+I use Ubuntu 12.04 and 
+
+ *  Newest way - fast! Compile & Load using SimpleIDE directly in Ubuntu
+ *  Old slow clunky way - run a virtualbox windows xp session.
 
 = Install Linux =
 
@@ -13,7 +18,11 @@ If you have an old PC, the hardware might not accept 12.04 directly.
 
 Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
-= OPTION: under examination - SimpleIDE =
+= OPTION: investigating - on RaspberryPi =
+
+Didn't figure this out yet, maybe this will be next
+
+= OPTION: WORKS GREAT! - SimpleIDE =
 
 [https://sites.google.com/site/propellergcc/downloads SimpleIDE ] is part of the Prop GCC project.  The goal is to extend the GCC compiler tools to allow compilation to the prop chip as a target.   The project started on the prop 1 and should carry over to the Prop 2.  The guys working on this are very good at what they do.  Be aware that this is in development an may not be usable for beginners. 
 
@@ -79,74 +88,104 @@ run
 
 `./simpleide`
 
+Three windows open
+
+   === Splash Screen ===
+
+The Splash Screen opens to remind you what application you typed in a half second ago
+
 Unclick the SHOW SPLASH box, Close the SimpleIDE Splash screen
 
-Close the defaults directory window.  This is already set automatically  (its probably a debug thing left over from development).
+   === Preferences Window ===
 
--------------------------------------------------------------------
-work in progress
--------------------------------------------------------------------
+Close the defaults directory window.  This is already set automatically  (its probably a debug thing left over from development).  
 
+   === SimpleIDE window ===
 
+The last window should the  simpleIDE main window.
 
-
-
-OK, the SimpleIDE window is up.  How to go about compiling a .spin file, and loading it onto the prop?   There was mention of a setup.txt file, I wonder if I can find this....
-
- == INSTALL.TXT ==
-
- in the extraction idrectory, there is an INSTALL.TXT file.
-
-instruction is to use "lld SimpleIDE" 
-
-this gives respons `ldd: ./SimpleIDE: No such file or directory`
-
-This file says a bunch of "if this then this". I wonder if this is trying to tell something I need to know or do?
-
-It mentions "In SimpleIDE Compiler PRoperties" but I can find nothing like this...
-
-No demos visible... must not have worked...
-
-I'm going to hold off randomly clicking stuff, as that did not work last time I tried to set up SimpleIDE. 
-
-It mentions SimpleIDE User Guide on the web.  Maybe this is the key...
-
- == SimpleIDEUSER Guide ==
+There will be no project and no source file displayed yet.
 
 
-This is not in the Project Home page, download page. wiki, issues. 
+  === setup a project to compile and load a spin program ===
 
-There is a file in source, _SimpleIDE_UserGuide_.txt
+You can navigate to a directory that contains a spin file.  But for the time being, copy the spin file to the top SimpleIDE directory, till youdecide how you want to do things.
 
-This contains the text from the install.txt, and at line 62, some new information. 
+In this case I copied  `devkernel.spin` from the Propforth directory to
 
-Its a little late to tell us that its OK to close the properties window, but at least it tells us it was OK to close. How does one check if these fields are filled in correctly? (At this point we can't, we have no idea, so maybe this window should not have been shown.  It might be a debug thing).
+`/home/braino/PropSoftware/SimpleIDE-0-8-5`
 
-OK, there's no demo in Linux, only in windows. 
+When the simpleIDE window opens, it should dispaly this source file. 
 
-One of the 14 blue buttons is the PLAY button, this might be important.  It is the  "Run Console" button, this must be important. Do we need to run macros in order to compile?  (This would explain my problems last go round). 
+Click on the file to open the source file, and create a Project.  The project should be spin, the memory models and other options get greyed out. 
 
-This says Board Type should be HUB.
+SAVE the project.
 
-Must have prop plugged in to the USB port to be detected.  Nice to know. 
+SET the project.  (This is important, the tool does not automatically set the project as 'active' or whatever unless you manually click this. I don't know why)
 
-Seems we need a new project to work. TEST20130404. Type SPIN.  SAVE paroject settings before close  NO is first, chose that.
+   === COMPILE 1 ===
 
-Trying OPTION 1
+Press the HAMMER Icon at the top of the screen.  It will compile the devkernel.spin file open in the source code window.
 
-The BOARD TYPE  button has a little jigsaw puzzle piece on it, and is clickable, but does not do anything.  The options for board type and memory model are not available. 
+Final message should be something like
 
+`  Compiled 1071 Lines of Code in 0.02 Seconds `
 
-Do we have to set something with `Menu->Project->Set Project `? What? Or is this still part of option 2? 
+  === FINAL HARDWARE AND OS SETUP ===
 
-Better ask for help.....
-
-
-How to load and run a known good, stand alone spin code file?
+Last step is to allow SimpleIDE access to the USB to Serial connection for the Quickstart.
 
 
+ ==== Physically connect the Quickstart ====
 
--------------------
+Connect the Quickstart to a USB port.  Make sure the Green power LED comes on.  the Red and blue LEDs will flicker, and the OS may do some setup stuff automatically in the background the first time. In any case it only takes a couple seconds. 
+
+ ==== Grant your USER ID access to the USB port ====
+
+In the example below, replace <MyUser> with your Linux login user id
+
+{{{
+sudo adduser <MyUser> dialout
+sudo reboot
+}}}
+
+sudo will ask you for your administrator password the first time. 
+
+Then it will reboot the system. Navigate back here if you still need help. 
+
+  === Compile 2 then load ===
+
+Ah! Your back.   Glad that worked. 
+
+OK, Open the simpleIDE window again. (Remind me to figure out how to add a link for simpleIDE to the Gui menus)
+
+Open the Devkernel project and compile devkernel.spin with the HAMMER icon again. Did it still work?  Good. 
+
+If the Quickstart is connected correctly, the SimpleIDE window should have a dropdown window in the upper left corner.  This should display 
+
+`/dev/ttyUSB0'
+
+This means that it sees the Quickstart (if  there are lots of usb devices on you r machine this might need to be changed, I only have the one so `/dev/ttyUSB0' worked on mine.)
+
+Next to the HAMMER icon, find the green down arrow icon (BURN to EEPROM).  Click this to download to EEPROM.  
+
+The Quickstart LEDs should flash, and the final message should be something like this:
+
+{{{
+Loading /home/braino/PropSoftware/SimpleIDE-0-8-5/DevKernel.binary to EEPROM via hub memory
+32704 bytes sent
+
+Verifying RAM ... 
+OK
+Programming EEPROM ... 
+OK
+Verifying EEPROM ... 
+OK
+}}}
+
+SUCCESS!!
+
+You are now able to compile and load a spin file from linux Ubuntu on a PC workstation
 
 = OPTION: Run a WXP Virtual Machine =
 
