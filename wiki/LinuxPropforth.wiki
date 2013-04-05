@@ -343,10 +343,16 @@ The installer ran.  I did NOT allow the installer to "update drivers" as I figur
 
 The installer ran again.  This time I allowed the installer to "update drivers".  The result did not detect any USB port or quickstart. 
 
-= Conclusion: Use Virtualbox =
 
-Use Oracle Virtualbox for now. 
+= Conclusion: Use SimpleIDE =
 
-Currently testing SimpleIDE for the prop on linux 20130404
+Use SimpleIDE if you can get it working. The included documentation is a little behind the development, and is not geared towards a new user. It took me a day to figure it out and write these note;  using these you should be able to get it set up in under an hour. 
+
+SimpleIDE is very fast once its working.  This tool is supported by Parallax, and the best folks are using and support this on the forums.  You can also compile C to the prop (C and C++ are beyond the scope ot this project).
+
+= Conclusion: Use Virtualbox as a last resort =
+
+
+Use Oracle Virtualbox if you cant get anything else to work.  
 
 WINE does not work with Propeller Tool, but a virtual machine session works pretty much the same as a regular windows session. 
