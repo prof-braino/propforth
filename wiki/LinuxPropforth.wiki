@@ -81,12 +81,14 @@ After install,
 in a terminal window,
 
 Navigate to the simpleIDE main directory 
-
-`cd /home/braino/PropSoftware/SimpleIDE-0-8-5`
+{{{
+cd /home/braino/PropSoftware/SimpleIDE-0-8-5
+}}}
 
 run 
-
-`./simpleide`
+{{{
+./simpleide
+}}}
 
 Three windows open
 
@@ -109,19 +111,19 @@ There will be no project and no source file displayed yet.
 
   === setup a project to compile and load a spin program ===
 
-You can navigate to a directory that contains a spin file.  But for the time being, copy the spin file to the top SimpleIDE directory, till youdecide how you want to do things.
+You can navigate to a directory that contains a spin file.  But for the time being, copy the spin file to the top SimpleIDE directory, till you decide how you want to do things.
 
 In this case I copied  `devkernel.spin` from the Propforth directory to
 
 `/home/braino/PropSoftware/SimpleIDE-0-8-5`
 
-When the simpleIDE window opens, it should dispaly this source file. 
+When the simpleIDE window opens, it should display this source file.  (I'm writing this after thafact and things can change after they are set up once, but you should get the general idea)
 
-Click on the file to open the source file, and create a Project.  The project should be spin, the memory models and other options get greyed out. 
+Click on the file to open the source file, and create a Project.  The project should be type `SPIN`, the memory models and other options get greyed out. 
 
-SAVE the project.
+SAVE the project.  (I think it asks in such a way to suggest you DON'T want to save.  You DO want to save or it doesn't work.  This seems to make sense to folks that are familiar with the tool, but it tripped me up the first couple times). 
 
-SET the project.  (This is important, the tool does not automatically set the project as 'active' or whatever unless you manually click this. I don't know why)
+SET the project.  (This is important, the tool does not automatically set the project as 'active' or whatever unless you manually click this. I don't know why.  This seems to make sense to folks that are familiar with the tool, but it tripped me up the first couple times)
 
    === COMPILE 1 ===
 
@@ -130,6 +132,8 @@ Press the HAMMER Icon at the top of the screen.  It will compile the devkernel.s
 Final message should be something like
 
 `  Compiled 1071 Lines of Code in 0.02 Seconds `
+
+It goes pretty quick.
 
   === FINAL HARDWARE AND OS SETUP ===
 
