@@ -67,8 +67,11 @@ In the example below, replace <MyUser> with your Linux login user id
 
 Run the setup script
 {{{
-sudo ./setup.sh $USER 
+sudo ./setup.sh <MyUser>
 }}}
+
+sudo will ask for you password if it has not been entered already un this session. 
+
 If successful, final message should be
 
 `Setup complete. To run program use: ./simpleide`
