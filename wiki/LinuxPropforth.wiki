@@ -62,6 +62,9 @@ Navigate to the directory with setup.sh
 {{{
 cd /home/braino/PropSoftware/SimpleIDE-0-8-5
 }}}
+
+In the example below, replace <MyUser> with your Linux login user id
+
 Run the setup script
 {{{
 sudo ./setup.sh $USER 
