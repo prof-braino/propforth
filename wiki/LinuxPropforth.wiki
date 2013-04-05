@@ -96,11 +96,13 @@ Three windows open
 
 The Splash Screen opens to remind you what application you typed in a half second ago
 
-Unclick the SHOW SPLASH box, Close the SimpleIDE Splash screen
+  * Unclick the SHOW SPLASH box, Close the SimpleIDE Splash screen
 
    === Preferences Window ===
 
-Close the defaults directory window.  This is already set automatically  (its probably a debug thing left over from development).  
+The Preferences window is opened automatically the first time the program is run.  DON'T TOUCH ANYTHING it is already set up automatically.  Only change this if you know exactly what you are changing and why, at this point you probably DON'T, so DON'T. (Its probably a debug thing left over from development, or needed on other versions of Linux that don't do the automatic stuff).  
+
+  * Close the defaults directory window.  
 
    === SimpleIDE window ===
 
@@ -111,7 +113,7 @@ There will be no project and no source file displayed yet.
 
   === setup a project to compile and load a spin program ===
 
-You can navigate to a directory that contains a spin file.  But for the time being, copy the spin file to the top SimpleIDE directory, till you decide how you want to do things.
+  * You can navigate to a directory that contains a spin file.  But for the time being, copy the spin file to the top SimpleIDE directory, till you decide how you want to do things.
 
 In this case I copied  `devkernel.spin` from the Propforth directory to
 
@@ -119,15 +121,15 @@ In this case I copied  `devkernel.spin` from the Propforth directory to
 
 When the simpleIDE window opens, it should display this source file.  (I'm writing this after thafact and things can change after they are set up once, but you should get the general idea)
 
-Click on the file to open the source file, and create a Project.  The project should be type `SPIN`, the memory models and other options get greyed out. 
+  * Click on the file to open the source file, and create a Project.  The project should be type `SPIN`, the memory models and other options get greyed out. 
 
-SAVE the project.  (I think it asks in such a way to suggest you DON'T want to save.  You DO want to save or it doesn't work.  This seems to make sense to folks that are familiar with the tool, but it tripped me up the first couple times). 
+  * SAVE the project.  (I think it asks in such a way to suggest you DON'T want to save.  You DO want to save or it doesn't work.  This seems to make sense to folks that are familiar with the tool, but it tripped me up the first couple times). 
 
-SET the project.  (This is important, the tool does not automatically set the project as 'active' or whatever unless you manually click this. I don't know why.  This seems to make sense to folks that are familiar with the tool, but it tripped me up the first couple times)
+  * SET the project.  (This is important, the tool does not automatically set the project as 'active' or whatever unless you manually click this. I don't know why.  This seems to make sense to folks that are familiar with the tool, but it tripped me up the first couple times)
 
    === COMPILE 1 ===
 
-Press the HAMMER Icon at the top of the screen.  It will compile the devkernel.spin file open in the source code window.
+  * Press the HAMMER Icon at the top of the screen.  It will compile the devkernel.spin file open in the source code window.
 
 Final message should be something like
 
@@ -142,11 +144,13 @@ Last step is to allow SimpleIDE access to the USB to Serial connection for the Q
 
  ==== Physically connect the Quickstart ====
 
-Connect the Quickstart to a USB port.  Make sure the Green power LED comes on.  the Red and blue LEDs will flicker, and the OS may do some setup stuff automatically in the background the first time. In any case it only takes a couple seconds. 
+  * Connect the Quickstart to a USB port.  Make sure the Green power LED comes on.  the Red and blue LEDs will flicker, and the OS may do some setup stuff automatically in the background the first time. In any case it only takes a couple seconds. 
 
  ==== Grant your USER ID access to the USB port ====
 
 In the example below, replace <MyUser> with your Linux login user id
+
+  * Add your user ID to the group that has permission to access the USB device
 
 {{{
 sudo adduser <MyUser> dialout
@@ -161,9 +165,9 @@ Then it will reboot the system. Navigate back here if you still need help.
 
 Ah! Your back.   Glad that worked. 
 
-OK, Open the simpleIDE window again. (Remind me to figure out how to add a link for simpleIDE to the Gui menus)
+  * OK, Open the simpleIDE window again. (Remind me to figure out how to add a link for simpleIDE to the Gui menus)
 
-Open the Devkernel project and compile devkernel.spin with the HAMMER icon again. Did it still work?  Good. 
+  * Open the Devkernel project and compile devkernel.spin with the HAMMER icon again. Did it still work?  Good. 
 
 If the Quickstart is connected correctly, the SimpleIDE window should have a dropdown window in the upper left corner.  This should display 
 
@@ -171,7 +175,7 @@ If the Quickstart is connected correctly, the SimpleIDE window should have a dro
 
 This means that it sees the Quickstart (if  there are lots of usb devices on you r machine this might need to be changed, I only have the one so `/dev/ttyUSB0' worked on mine.)
 
-Next to the HAMMER icon, find the green down arrow icon (BURN to EEPROM).  Click this to download to EEPROM.  
+  * Next to the HAMMER icon, find the green down arrow icon (BURN to EEPROM).  Click this to download to EEPROM.  
 
 The Quickstart LEDs should flash, and the final message should be something like this:
 
