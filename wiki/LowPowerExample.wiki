@@ -112,6 +112,130 @@ The prop is now in low power mode, until we hit a key.
 
 According to the specs, typical current consumption should be in the 25 micro-amp range. Will measure and update sometime.
 
+= Quickstart Touch Demo and Low Power Mode =
+
+Low power mode is achieved by slowing the clock. Power is drawn when the transistors switch state, when this happens less frequently, it draws less power. 
+
+In full speed, the prop operates at 5 megahertz (the crystal) times 16 (the phase lock loop or PPL).  5 mega hertx * 16 = 80,000,000 or 80 megahertz. 
+
+In low power mode, the internal slow (and low accuracy) clock is running. Is can be from 13 to 33 kilohertz.  
+
+The following can show the effect of the slow clock. 
+
+Here we change the original QST demo to run on one cog. The sleep command is modified to LEAVE the COGS RUNNING, and only resets tham at the last minute just before we come out of sleep mode.  
+
+{{{
+
+fl
+
+
+
+: QST                \ ( - )  no stack parameters
+\ LED section
+      16             \ pin 16 is first of 8 LEDS
+      8 0 do dup pinout 1+ loop drop \ set them to output
+      begin
+           ina COG@  \ get the current pins states
+           invert    \ This makes them off till touched, 
+                     \ comment out the invert to see "on till touched"  
+           h_FF and  \ filter for only buttons pins 0-7
+           16 lshift \ shift bits 0-7 left 16 places (to 16-23)
+           outa COG! \ set these as output states
+           
+\  A delay here light the LEDs dimly, also need one AFTER LED is lit
+\           11 delms   \ finger tip needs to be moist, and press harder
+             1 delms    \ finger tip needs to be moist, and press a little harder with 1 ms
+           
+\ scan section
+       h_FF outa COG!         \ prep first 8 pins Hi (1's) 3.3V
+       h_FF dira COG!         \ make first 8 pins outputs  (1's)
+                              \ so now pins are "Charged"
+       h_FF invert dira COG!  \ make first 8 pins inputs
+                              \ if pad is touched, it will discharge to low 
+
+\ a delay here leaves the LEDs in the ON state for this long, minimum 
+\       1 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
+       11 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
+\     111 delms \ 25 50 100 10  let it stay in this state for some milliseconds 
+
+                \ long enough to be seen, not long enough to flicker
+  0 until       \ do this forever
+; 
+
+: onreset1 onreset QST ; \ run LED demo on cog3 upon reset after onreset routine
+
+
+\ sleep ( -- ) go into low power mode until a transition is detected on the serial input line to the cog
+
+: sleep
+\ print out a message, and pause, this will allow the serial driver to output the message before we shut it down
+  ." ~h0D~h0DGOING TO SLEEP~h0D~h0D" 100 delms
+
+\ shut down all the cogs but this one
+\  8 0   do i cogid <> if i cogstop then   loop
+\ We DONT shut down the cog for the low power touch demo
+
+\ make sure the serial input pin is an input
+  $S_rxpin pinin
+\ n1 0 hubopr drop is the same as a clkset, which writes to the propeller CLK register
+\ setting the propeller CLK register to zero, sets the main clock to RCSLOW (13 - 33Khz)
+  0 0 hubopr drop
+\ wait for the serial line to be high
+  $S_rxpin >m dup waitpeq
+\ wait for the serial line to be lo
+  $S_rxpin >m dup waitpne
+\ turn on the oscillator and PLL, assumes we have a crystal/resonator of 4 - 16 Mhz
+  h_68 0 hubopr drop
+\ wait at least 10 millisec for the oscillator and pll to stabilize
+\ we are still running with a main clock of 13 - 33Khz, so this loop is longer than 10 ms
+  100 0 do loop
+
+\ shut down all the cogs but this one
+  8 0   do i cogid <> if i cogstop then   loop
+\ NOW we shut down the cogs, just before we com out of sleep mode
+
+\ set the clock to be 16x the crystal
+  h_6F 0 hubopr drop
+
+\ and execute the onboot word, this performs the initialization sequence
+  0 onboot drop
+
+  ." ~h0D~h0D AWAKE~h0D~h0D" 100 delms
+
+;
+
+saveforth 
+
+reboot
+
+}}}
+
+Load devkernel.soin on the quickstart
+
+Load the abot code on the quickstart
+
+Notice the rebot
+
+notice the touch bottom demo is running, the LEDs light when the  buttons are touched. 
+
+Type the sleep word in the command line on ethe terminal program.
+
+Notice the `going to sleep message`
+
+Notice the touch buttons flash like crazy!
+
+Notice the buttons gradually stop flashing on their own, or when you start touching the pads. 
+
+Notice when you touch the pads, the buttons flash rapidly rather than light continuously. 
+
+This is kind of cool. Recall that the Quickstart touch button demo is continuously scanning the touch pad stat, and illuminating the LEDs accordingly.  When they are actually flashing on an off very fast.  In low power mode, that are doing exactly the same thing, just a thousand times slower!  
+
+Now type a  key on the keyboard.  
+
+Notice there are some garbage characters displayed before and after the `AWAKE` message.  When the clock changes, it looks to the prop that there is some activity on the pins.   Just hit backspace and enter a few times to consume the garbage characters. 
+
+Notice touch buttons now resond with what apears to be continuously lit LED when a button is touched.  NOPE! They are still flashing, just a LOT faster.  NEAT!
+
 = Quickstart from Batteries =
 
 This describes connecting a 4 AA cell battery pack to the quickstart. 
