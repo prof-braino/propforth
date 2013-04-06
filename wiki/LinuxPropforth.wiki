@@ -44,7 +44,9 @@ This is the version used for these  instructions was   [https://propside.googlec
 
 Downloaded this. (to downloads directory)
 
-You should be able to use the LATEST release.  Avoid the development release, as that is usually to be the NEXT release, and still may have functions to be sorted out. 
+You should be able to use the LATEST release.  
+
+Avoid any DEVELOPMENT release, as that is the one they are still working on, usually to be the NEXT release, and still may have functions to be sorted out. 
 
  == Install SimpleIDE ==
 
