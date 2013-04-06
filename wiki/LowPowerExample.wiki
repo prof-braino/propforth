@@ -7,7 +7,186 @@ PropForth.htm Section 8 has an example of low power mode.  This turns off inacti
 
 Most of the time, PropForth tends to be waiting for you next key press.  So this method should put the prop back to sleep until the next character is sent.  When the input is a return character (causing a word to execute) the cog will run the word first,  then go back to sleep.   A well crafted application might be able to make the quickstart run for a time approaching the shelf life of the batteries!  (Of course, it would have to be sleeping most of the time, but that often tends to be the case). 
 
+The Low Power mode will work when the Quickstart is connected to the PC and powered over USB, but that is not a very interesting set up. A more interesting test would be to run from batteries, and communicate wirelessly, which draws a bunch of power to run the radio.
+
 In this example, the goal will be to configure the quickstart to communicate over bluetooth, and still attain a maximum operational life between battery changes. 
+
+To complete this example, you need a device that supports Blue Tooth pairing.
+
+I'm going to use a Samsung Captivate Glide smart phone, A Nexus 10 Tablet,  and an Acer Aspire 2410 laptop.  They SHOULD all work exactly the same as far as the HC05 and propforth are concerned.  The terminal Propgram on the PC will be TeraTerm under Windows XP, and the Android devices will use Blue Term.
+
+
+
+= Section 8 Code Example = 
+
+Here's Sal's example code
+
+{{{
+fl
+
+\ sleep ( -- ) go into low power mode until a transition is detected on the serial input line to the cog
+
+: sleep
+
+\ print out a message, and pause, this will allow the serial driver to output the message before we shut it down
+
+  ." ~h0D~h0DGOING TO SLEEP~h0D~h0D" 100 delms
+
+\ shut down all the cogs but this one
+
+  8 0
+
+  do
+
+    i cogid <>
+
+    if
+
+      i cogstop
+
+    then
+
+  loop
+
+\ make sure the serial input pin is an input
+
+  $S_rxpin pinin
+
+\ n1 0 hubopr drop is the same as a clkset, which writes to the propeller CLK register
+
+\ setting the propeller CLK register to zero, sets the main clock to RCSLOW (13 - 33Khz)
+
+  0 0 hubopr drop
+
+\ wait for the serial line to be high
+
+  $S_rxpin >m dup waitpeq
+
+\ wait for the serial line to be lo
+
+  $S_rxpin >m dup waitpne
+
+\ turn on the oscillator and PLL, assumes we have a crystal/resonator of 4 - 16 Mhz
+
+  h_68 0 hubopr drop
+
+\ wait at least 10 millisec for the oscillator and pll to stabilize
+
+\ we are still running with a main clock of 13 - 33Khz, so this loop is longer than 10 ms
+
+  100 0
+
+  do
+
+  loop
+
+\ set the clock to be 16x the crystal
+
+  h_6F 0 hubopr drop
+
+\ and execute the onboot word, this performs the initialization sequence
+
+  0 onboot drop
+
+  ." ~h0D~h0D AWAKE~h0D~h0D" 100 delms
+
+;
+
+}}}
+
+After the code is pasted into the terminal window,  the final messages should be:
+
+  `Prop0 Cog5 ok`
+
+  `Prop0 Cog6 ok`
+
+Execute the `sleep` word to start low power mode
+
+{{{
+sleep
+}}}
+
+We should see: 
+
+   `GOING TO SLEEP`
+
+The prop is now in low power mode, until we hit a key.
+
+ 
+  `CON:Prop0 Cog0 RESET - last status: 0 ok`
+  `CON:Prop0 Cog1 RESET - last status: 0 ok`
+  `CON:Prop0 Cog2 RESET - last status: 0 ok`
+  `CON:Prop0 Cog3 RESET - last status: 0 ok`
+  `CON:Prop0 Cog4 RESET - last status: 0 ok`
+
+  `AWAKE`
+
+  `CON:Prop0 Cog5 RESET - last status: 0 ok`
+
+   `Prop0 Cog6 ok`
+
+According to the specs, typical current consumption should be in the 25 micro-amp range. Will measure and update sometime.
+
+= Quickstart from Batteries =
+
+This describes connecting a 4 AA cell battery pack to the quickstart. 
+
+Connect a 4 AA cell battery pack to the quickstart. 
+
+= HC05 Bluetooth Module = 
+
+This describes connecting an HC05 Bluetooth cable replacement to the quickstart. 
+
+Connect the HC05 Bluetooth cable replacement to the quickstart per the diagram (add a diagram). 
+
+Be sure the Programming jumper is in place when initializing the module
+
+= Configure Propforth to use the HC05 pin as the serial connection =
+
+In additon to power and ground, the HC05 also requires connections for Tx, Rx, and Program Enable
+
+Pin 24 Program enable
+Pin 25 x
+Pin 26 x
+
+We just have to change the serial pin from 30 & 31 (default) to 25 & 26 
+
+Edit Devkernal.spin lins xxx - xxx
+
+from 
+
+{{{
+
+}}}
+
+to 
+
+{{{
+
+}}}
+
+Save the file as devkernel2425.spin and reload the modifed kernel to EEPROM.
+
+= initalizing th HC05 module =
+
+Be sure the Programming jumper is in place when initializing the module
+
+The following scrip is from the HC05 driver example in  
+
+
+{{{
+
+}}}
+
+change the lines 
+``
+
+to something meaningful to your project.
+
+= Pair the module with you Bluetooth device =
+
+
+
 
 
 = Details =
