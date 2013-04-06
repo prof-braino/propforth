@@ -72,13 +72,31 @@ So mine is on `ttyUSB0`
 
 /dev/ttyusb0
 
-* If it gives an error message DEVICE NOT PRESENT, it can be that the virtual XP session is still running, and has control of the USB to serial converter.  To release the USB from virtualbox,
+* If it gives an error message DEVICE NOT PRESENT, it can be that the virtual XP session (or something else that talks to the USB to serial converter) is still running, and has control of the USB to serial converter.  To release the USB from virtualbox,
 
 In virtualbox under 
   * devices
   * USB devices
 
 Un-check the USB to serial converter
+
+=== Grant your USER ID access to the USB port ===
+
+By default, your login user id may not have access to the USB serial converter.  This requires us to run minicom as super user with sudo.  To grant you user id permission to access teh USB to serial converter, simpler add your user id to the dialout group:
+
+In the example below, replace <MyUser> with your Linux login user id
+
+  * Add your user ID to the group that has permission to access the USB device
+
+{{{
+sudo adduser <MyUser> dialout
+sudo reboot
+}}}
+
+sudo will ask you for your administrator password the first time. 
+
+Then it will reboot the system. Navigate back here if you still need help. 
+
 
 === other settings ===
 
