@@ -79,7 +79,9 @@ fl
 After the code is pasted into the terminal window,  the final messages should be:
 
   `Prop0 Cog5 ok`
+
   `Prop0 Cog6 ok`
+
 Execute the `sleep` word to start low power mode
 
 {{{
@@ -91,12 +93,15 @@ We should see:
    `GOING TO SLEEP`
 
 The prop is now in low power mode, until we hit a key.
-
  
   `CON:Prop0 Cog0 RESET - last status: 0 ok`
+
   `CON:Prop0 Cog1 RESET - last status: 0 ok`
+
   `CON:Prop0 Cog2 RESET - last status: 0 ok`
+
   `CON:Prop0 Cog3 RESET - last status: 0 ok`
+
   `CON:Prop0 Cog4 RESET - last status: 0 ok`
 
   `AWAKE`
