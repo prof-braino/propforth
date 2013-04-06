@@ -20,7 +20,11 @@ Using a KT600a motherboard, I had to install 11.04 first, then upgrade.
 
 = OPTION: WORKS GREAT! - SimpleIDE =
 
-[https://sites.google.com/site/propellergcc/downloads SimpleIDE ] is part of the Prop GCC project.  The goal is to extend the GCC compiler tools to allow compilation to the prop chip as a target.   The project started on the prop 1 and should carry over to the Prop 2.  The guys working on this are very good at what they do.  Be aware that this is in development an may not be geared entirely for beginners. 
+[https://sites.google.com/site/propellergcc/downloads SimpleIDE ] is part of the Prop GCC project.  The goal is to extend the GCC compiler tools to allow compilation to the prop chip as a target.  
+
+This tool allows compiling any SPIN source code file, and loading it onto the prop. It also does lots of other stuff (most imp0ortantly comile C for the prop), but this instruction will focus on "load a SPIN file". 
+
+The project started on the prop 1 and should carry over to the Prop 2.  The guys working on this are very good at what they do.  Be aware that this is in development an may not be geared entirely for beginners, which is why I needed this step by step instruction. 
 
  == Download SimpleIDE ==
 
@@ -40,32 +44,36 @@ This is the version used for these  instructions was   [https://propside.googlec
 
 Downloaded this. (to downloads directory)
 
+You should be able to use the LATEST release.  Avoid the development release, as that is usually to be the NEXT release, and still may have functions to be sorted out. 
+
  == Install SimpleIDE ==
 
-Need to extract the archive to adirectoy and run the install script
+*Need to extract the archive to a directoy and run the install script*
 
   === Extract the Archive to a directory ===
 
-Create a directory to contain the software.  I made "PropSoftware" in my home directory
+  * Create a directory to contain the software.  I made "PropSoftware" in my home directory
 
 `/home/braino/PropSoftware`
 
-Click on the archive in downloads, and extract it to this directory you created. 
+  * Click on the archive in downloads, and extract it to this directory you created. 
 
  NOTE: the tar.bz2 stuff is only if you prefer to work from the command line.  If you don't already know how to do this, you don't want to do this.
 
  === Run the install script ===
 
-Open a terminal window [ CTL + ALT + T ]
+  * Open a terminal window [ CTL + ALT + T ]
 
-Navigate to the directory with setup.sh
+  * Navigate to the directory with setup.sh
+
 {{{
 cd /home/braino/PropSoftware/SimpleIDE-0-8-5
 }}}
 
 In the example below, replace <MyUser> with your Linux login user id
 
-Run the setup script
+  * Run the setup script
+
 {{{
 sudo ./setup.sh <MyUser>
 }}}
@@ -82,12 +90,13 @@ After install,
 
 in a terminal window,
 
-Navigate to the simpleIDE main directory 
+  * Navigate to the simpleIDE main directory 
+
 {{{
 cd /home/braino/PropSoftware/SimpleIDE-0-8-5
 }}}
 
-run 
+  * run 
 {{{
 ./simpleide
 }}}
@@ -112,6 +121,7 @@ The last window should the  simpleIDE main window.
 
 There will be no project and no source file displayed yet.
 
+No demos will be displayed (it looks like there are some included, try to navigate to them and try them out AFTER the tool is set up)
 
   === setup a project to compile and load a spin program ===
 
