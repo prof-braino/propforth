@@ -116,7 +116,7 @@ According to the specs, typical current consumption should be in the 25 micro-am
 
 Low power mode is achieved by slowing the clock. Power is drawn when the transistors switch state, when this happens less frequently, it draws less power. 
 
-In full speed, the prop operates at 5 megahertz (the crystal) times 16 (the phase lock loop or PPL).  5 mega hertx * 16 = 80,000,000 or 80 megahertz. 
+In full speed, the prop operates at 5 megahertz (the crystal) times 16 (the phase lock loop or PPL).  `5 mega hertx * 16 = 80,000,000 or 80 megahertz`. 
 
 In low power mode, the internal slow (and low accuracy) clock is running. Is can be from 13 to 33 kilohertz.  
 
@@ -125,10 +125,7 @@ The following can show the effect of the slow clock.
 Here we change the original QST demo to run on one cog. The sleep command is modified to LEAVE the COGS RUNNING, and only resets tham at the last minute just before we come out of sleep mode.  
 
 {{{
-
 fl
-
-
 
 : QST                \ ( - )  no stack parameters
 \ LED section
@@ -169,7 +166,7 @@ fl
 
 : sleep
 \ print out a message, and pause, this will allow the serial driver to output the message before we shut it down
-  ." ~h0D~h0DGOING TO SLEEP~h0D~h0D" 100 delms
+  ." ~h0D~h0DGOING TO SLEEP... Zzzzzzz....~h0D~h0D" 100 delms
 
 \ shut down all the cogs but this one
 \  8 0   do i cogid <> if i cogstop then   loop
@@ -177,21 +174,27 @@ fl
 
 \ make sure the serial input pin is an input
   $S_rxpin pinin
+
 \ n1 0 hubopr drop is the same as a clkset, which writes to the propeller CLK register
 \ setting the propeller CLK register to zero, sets the main clock to RCSLOW (13 - 33Khz)
   0 0 hubopr drop
+
 \ wait for the serial line to be high
   $S_rxpin >m dup waitpeq
+
 \ wait for the serial line to be lo
   $S_rxpin >m dup waitpne
+
 \ turn on the oscillator and PLL, assumes we have a crystal/resonator of 4 - 16 Mhz
   h_68 0 hubopr drop
 \ wait at least 10 millisec for the oscillator and pll to stabilize
 \ we are still running with a main clock of 13 - 33Khz, so this loop is longer than 10 ms
+
   100 0 do loop
 
 \ shut down all the cogs but this one
   8 0   do i cogid <> if i cogstop then   loop
+
 \ NOW we shut down the cogs, just before we com out of sleep mode
 
 \ set the clock to be 16x the crystal
