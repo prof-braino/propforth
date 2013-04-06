@@ -191,7 +191,9 @@ to something meaningful to your project.
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Work on this page is in progress
+  * 2013x - started long term low power test 1
+  * 2013x - started continuous transmit test (minimum battery life baseline)
+  * 2013x - Added adapter board for HC05 and Battery pack
+  * 201304xx - ran example code over USB
+  * 20130405 - started page
