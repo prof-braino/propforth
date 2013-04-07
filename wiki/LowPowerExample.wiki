@@ -215,15 +215,15 @@ reboot
 
 }}}
 
-Load devkernel.soin on the quickstart
+  * Load devkernel.spin on the quickstart
 
-Load the abot code on the quickstart
+  * Load the above code on the quickstart
 
-Notice the rebot
+Notice the reboot
 
 notice the touch bottom demo is running, the LEDs light when the  buttons are touched. 
 
-Type the sleep word in the command line on ethe terminal program.
+  * Type the sleep word in the command line on the terminal program.
 
 Notice the `going to sleep message`
 
@@ -235,7 +235,7 @@ Notice when you touch the pads, the buttons flash rapidly rather than light cont
 
 This is kind of cool. Recall that the Quickstart touch button demo is continuously scanning the touch pad stat, and illuminating the LEDs accordingly.  When they are actually flashing on an off very fast.  In low power mode, that are doing exactly the same thing, just a thousand times slower!  
 
-Now type a  key on the keyboard.  
+  * Now type a  key on the keyboard.  
 
 Notice there are some garbage characters displayed before and after the `AWAKE` message.  When the clock changes, it looks to the prop that there is some activity on the pins.   Just hit backspace and enter a few times to consume the garbage characters. 
 
@@ -246,6 +246,8 @@ Notice touch buttons now resond with what apears to be continuously lit LED when
 This describes connecting a 4 AA cell battery pack to the quickstart. 
 
 Connect a 4 AA cell battery pack to the quickstart. 
+
+(Should there be a jumper as on/off switch on a daughter board for the battery + HC05?)
 
 = HC05 Bluetooth Module = 
 
