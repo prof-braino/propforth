@@ -1,6 +1,9 @@
 #summary Using Minicon on Linux as termianl program
 #labels v5.5,terminal,linux,minicom
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 If one switches from Windows to Linux, Oracle Virtualbox is needed to run a virtual WindowsXP session, to initially run the Proptool.
