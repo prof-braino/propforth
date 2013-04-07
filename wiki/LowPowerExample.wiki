@@ -1,6 +1,8 @@
 #summary Low Power Example from PropForth.htm Section 8.
 #labels v5.5,LowPower
 
+<wiki:toc max_depth="9" />
+
 = Low Power, for running from batteries =
 
 PropForth.htm Section 8 has an example of low power mode.  This turns off inactive cogs to save power.  The monitoring cog looks for a transition on the serial input line.  When a transition is detected, the cog wakes up the prop chip.  
