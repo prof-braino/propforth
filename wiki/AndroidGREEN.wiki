@@ -1,6 +1,8 @@
 #summary GREEN is an Android App interface to PropForth - IN DEVELOPMENT
 #labels v5.5,GREEN,android
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 GREEN is an android app that is to provide an interface to propforth.
