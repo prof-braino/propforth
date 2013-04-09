@@ -33,7 +33,9 @@ Change the following parameters to use TeraTerm to access the standard PropForth
 
  Setup - > Serial Port Setup  -> Port COMx (what ever PropTool says when it finds your prop)
 
- Setup - > Serial Port Setup  -> Baud Rate 57600
+ Setup - > Serial Port Setup  -> Baud Rate 230400
+
+  ~~Setup - > Serial Port Setup  -> Baud Rate 57600~~ (57600 is only used on the non optimized boot kernels, which are only used as intermediate steps in custom kernel devlopment as or 5.x
 
  Setup - > Serial Port Setup  -> Data - 8 BIT
 
@@ -69,7 +71,5 @@ To use TeraTerm to access a Telnet Session over Ethernet:
  Setup - > Save Setup  -> TERATERM.INI -> SAVE (teraterm starts a telnet session)
 
 I tend to switch between telnet and serial, its not hard to do an keep track of after a while.
-
-
 
 
