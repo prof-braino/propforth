@@ -20,10 +20,30 @@ http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for
 Here are the archives per release
 
  == PF3.4_caskaz_20130410.zip‎ ==
+   === touch screen ===
+   === YHY024006A ===
 
   == PF3.5_caskaz_20130410.zip‎  == 
+   === touch screen ===
   ==  PF3.5e_caskaz_20130410.zip‎  == 
+
+In 3.5, caskaz started the propforth SD work.  This was moving towads FAT16/32 support as in Kye's SD spin object
+     === launcher ===
+     === SD_viewer_2.3 ===
+
   ==  PF4.0_caskaz_20130410.zip‎  == 
+
+     === 2-wire_LCD     === 
+     === 3-wire_LCD     === 
+     === Denpatokei     === 
+     === Dump_tool_1.1     === 
+     === dynamic_drive_7SEG-LED     === 
+     === Forth-SPI     === 
+     === IO_forth_master     === 
+     === Matrix(16x32)     === 
+     === pf40.txt     === 
+     === sd_loader_3.0     === 
+
   ==  PF4.5_caskaz_20130410.zip‎  == 
   ==  PF4.6_caskaz_20130410.zip‎  == 
    ==  PF5.0_caskaz_20130410.zip‎  == 
