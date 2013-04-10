@@ -19,11 +19,11 @@ http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for
 
 Here are the archives per release
 
- == PF3.4_caskaz_20130410.zip‎ ==
+== PF3.4_caskaz_20130410.zip‎ ==
    === touch screen ===
    === YHY024006A ===
 
-  == PF3.5_caskaz_20130410.zip‎  == 
+== PF3.5_caskaz_20130410.zip‎  == 
    === touch screen ===
   ==  PF3.5e_caskaz_20130410.zip‎  == 
 
@@ -31,7 +31,7 @@ In 3.5, caskaz started the propforth SD work.  This was moving towads FAT16/32 s
      === launcher ===
      === SD_viewer_2.3 ===
 
-  ==  PF4.0_caskaz_20130410.zip‎  == 
+==  PF4.0_caskaz_20130410.zip‎  == 
 
      === 2-wire_LCD     === 
      === 3-wire_LCD     === 
@@ -44,11 +44,51 @@ In 3.5, caskaz started the propforth SD work.  This was moving towads FAT16/32 s
      === pf40.txt     === 
      === sd_loader_3.0     === 
 
-  ==  PF4.5_caskaz_20130410.zip‎  == 
-  ==  PF4.6_caskaz_20130410.zip‎  == 
-   ==  PF5.0_caskaz_20130410.zip‎  == 
-  ==  PF5.2_caskaz_20130410.zip‎ == 
+==  PF4.5_caskaz_20130410.zip‎  == 
 
+     === 2-wire_LCD     === 
+     === 2_wire_LCD_1.5.f     === 
+     === DS1337_0.1.f     === 
+     === DS1337-DS1337C.pdf     === 
+     === graph.f     === 
+     === LED_sensor.f     === 
+     === RCtest.f     === 
+     === TouchSence_graph.f     === 
+     === TouchSense_demo_PF4.5.f     === 
+
+
+==  PF4.6_caskaz_20130410.zip‎  == 
+
+     === DPM_v2.0     === 
+     === MAX3241E     === 
+     === MAX3241E_doc     === 
+     === QuickStart     === 
+
+In 4.6, Caskaz did a propforth implementation of the quickstart touch button demo.  This is the one posted in the download section, but I have been hacking on it since.
+ 
+     === rtc     === 
+     === WiiNunchuck     === 
+
+==  PF5.0_caskaz_20130410.zip‎  == 
+
+     === DPM_v2.1     === 
+     === LCD     === 
+     === mcp3204_1.0.f     === 
+     === PulseMonitor_for_dog     === 
+     === stepmotor_1.0.f     === 
+
+==  PF5.2_caskaz_20130410.zip‎ == 
+
+     === 1_Wire     === 
+     === 2_wire_LCD_1.2     === 
+     === Delta_Forth     === 
+     === encoder_0.4.f     === 
+     === GraphicLCD     === 
+     === KMR-P4     === 
+     === max3421e_20121107     === 
+     === MPL115A1     === 
+     === POV     === 
+     === Tips     === 
 
 = Details =
 
