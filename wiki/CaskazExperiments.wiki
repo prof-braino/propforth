@@ -1,0 +1,31 @@
+#summary an Index to some of the stuff caskaz posted
+
+= Introduction =
+
+Caskaz is one of the first folks to join the team.  He tests stuff, tries things, and shares some of his code.  He has access to lots of cool stuff from Den Den Town in Nipponbashi, Osaka.  Some of the parts are harder to find elsewhere (they sure don't stock them at Radio Shack) for the basic idea should be the same for similar parts.
+
+This page is intended to be an index of the drivers and routines Caskaz has shared.  If you have similar pats and are interested, please make comments. If something doesn't work right, perhaps discussion and colaboration might move things forward.
+
+Anybody with permission can edit this, I'm just getting it started. 
+
+=  code according to release =
+
+Some stuff was done using a previous release release of Propforth, and may or may not be completely compatible with the current version
+
+ == PF3.4_caskaz_20130410.zip‎ ==
+
+  == PF3.5_caskaz_20130410.zip‎  == 
+  ==  PF3.5e_caskaz_20130410.zip‎  == 
+  ==  PF4.0_caskaz_20130410.zip‎  == 
+  ==  PF4.5_caskaz_20130410.zip‎  == 
+  ==  PF4.6_caskaz_20130410.zip‎  == 
+   ==  PF5.0_caskaz_20130410.zip‎  == 
+  ==  PF5.2_caskaz_20130410.zip‎ == 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
