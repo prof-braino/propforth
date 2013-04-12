@@ -2,15 +2,15 @@
 
 = Introduction =
 
-Caskaz is one of the first folks to join the team.  He tests stuff, tries things, and shares some of his code.  He has access to lots of cool stuff from Den Den Town in Nipponbashi, Osaka.  Some of the parts are harder to find elsewhere (they sure don't stock them at Radio Shack) for the basic idea should be the same for similar parts.
+Caskaz is one of the first folks to join the team.  He tests stuff, tries things, and shares some of his code.  He has access to lots of cool stuff from Den Den Town in Nipponbashi, Osaka.  Some of the parts are harder to find elsewhere (they sure don't stock them all at Radio Shack) but the basic idea should be the same for similar parts.
 
-This page is intended to be an index of the drivers and routines Caskaz has shared.  If you have similar pats and are interested, please make comments. If something doesn't work right, perhaps discussion and colaboration might move things forward.
+This page is intended to be an index of the drivers and routines Caskaz has shared.  If you have similar pats and are interested, please make comments. If something doesn't work right, perhaps discussion and collaboration might move things forward.
 
 Anybody with permission can edit this, I'm just getting it started. 
 
 =  code according to release =
 
-Some stuff was done using a previous release release of Propforth, and may or may not be completely compatible with the current version
+Some stuff was done using a previous release release of PropForth, and may or may not be completely compatible with the current version
 
 the summary archive http://code.google.com/p/propforth/downloads/detail?name=caskaz-PF-collection_20130410.zip
 
@@ -27,9 +27,19 @@ Here are the archives per release
    === touch screen ===
   ==  PF3.5e_caskaz_20130410.zip‎  == 
 
-In 3.5, caskaz started the propforth SD work.  This was moving towads FAT16/32 support as in Kye's SD spin object
+In 3.5, caskaz started the propforth SD work.  This was moving towads FAT16/32 support as in Kye's SD spin object.  NOTE: After looking at Caskaz's experiments, we considered the tradeoff between size and speed. 
+
+We decide in the standard propforth kernel, the bare support should emphasize small size and fast throughput.  The kernel support for SD implements only RAW BLOCK transfer as a result.  From the currrent standrat SD kernel, the design is for SD to be consider "internal Only" to the prop, it is not intended to be removed and put in for example a PC.  This is the what you get in the SDkernel.spin 
+
+However, it is still perfectly ok to implement full FAT16/32 support. It will just be larger and slower.  If FAT16/32 is really what you need, then Caskaz's code might be a good starting point.  The original work was on top of the 3.5 kernels, it should not be too much of a leap to bring this forward to 5.5 and finding the implementation. 
+
      === launcher ===
+
+Laucher does the basic drivers and does initialization (of the tiny microcontroller resident in the SD card).
+
      === SD_viewer_2.3 ===
+
+To view the contents of the SD.  Reads at least one of the file allocation tables and other header stuff. 
 
 ==  PF4.0_caskaz_20130410.zip‎  == 
 
