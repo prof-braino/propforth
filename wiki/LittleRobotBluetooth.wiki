@@ -160,6 +160,62 @@ hcProgPin pinlo
 
 }}}
 
+Notice that you may have to hit enter if the script appears to stall 
+(does the line `hcProgPin pinhi hcProgPin pinout` need to be 
+`hcProgPin pinhi hcProgPin pinout cr ` ?)
+
+Each line of the script above should response with an blank line and 
+
+{{{
+
+Prop0 Cog5 ok
+}}}
+
+== Check that the HC05 is visible fo blue tooth pairing ==
+
+If you saw OK after each line in the script, the HCo5 should be set up. The quickstart won't use it until reprogramed to use pins 26 & 27 for serial, but we can still test it.
+
+Using you r Blue tooth device (Cell phone, tablet, laptop, netbook, android device, what ever you plan to use as you wireless terminal for little robot). Attempt pairing 
+
+Example -Samsung Captivate Glide Android smart(ish) phone
+
+* Phone - ON
+* Blue tooth - ON
+* Applications - Settings - Wireless and Networks
+* Blue Tooth Settings
+* Blue Tooth (Checkbox is checked)
+* Search fo Devices
+-- Scanning --
+
+Nothing.  What Happened?  AH! Must power cycle the device!
+
+Unplug the USB cable from the quickstart (this cuts the power to the HC05 as well)
+
+Careful not to knock the H05 wires around
+
+Re plug the USB cable
+
+Still being care of the wires
+
+Minicom or tera term should notice the USB cable being unplugged, but still show the props boot messages
+
+STill no luck?  I forgot to unplug the green wire...
+
+
+Still no luck.  OK, time for some diagnostics.... 20130413
+
+
+
+== Disconnect P22 Green wire on Quickstart poition 23 ==
+
+After the script is run, the HC05 is configured.
+
+Disconnect the Green wire from Prop pin 24 (Quickstart connector postion 23)
+
+You will not need to reconnect this again, unless you want to change the ID of the HC05 or otherwise reconfigure it. 
+
+You can use the pin for another device if needed.  The suggestion is to leave this pin open until all the othe pins are consumed, just in case. 
+
 = Modify the DEVKERNEL.SPIN for Serial Pins 26 & 27 =
 
 To use the HC05 as cable replacement:
