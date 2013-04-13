@@ -55,7 +55,7 @@ It tells the HC05 to set its name (to whatever you want, I don't know many max  
 
 It also sets the HC05 to 230400 baud.  So the Config script  (at 9600) won't communicate a second time; to rerun the script you have to edit and set the right baud. 
 
-Last thing will be to change the PropForth Kerrnel to talk on P27 & P28, instead of P30 and P31. 
+Last thing will be to change the PropForth Kerrnel to talk on P26 & P27, instead of P30 and P31. 
 
 NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P276 & P27 kernel.
 
