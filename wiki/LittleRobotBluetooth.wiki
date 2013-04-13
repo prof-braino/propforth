@@ -7,15 +7,30 @@
 
 The HC05 and HC06  Bluetooth module allows communication with the prop via bluetooth.  No cables are needed after initial programming. 
 
+The HC05/HC06 do not have "PINS" per se.  It has teeny micro notches or scallops that are much closer together than the standard .1 inch spacing I usually work with.  But, you can solder a bit of wire to the notch, and make a connection to the prop. 
+
+You can put a pin on the other end of the wire, and jab it right into the bread board or 40 pin female connector on a Quickstart board.
+
+It is advisable to mount the soldered board, so the solder joints don't break; these are really hard to fix once they rip the solder pad off the scallop. 
+
+You can use any color wire you want, if you use the same color as we do yours will match the pictures. :)
+
+This source code is also included in the propforth download archive beginning with release v 5.3
+
+== HC05 KEY is Scallop 34 ==
+
 Connect:
 
 || HC05 Bluetooth module ||
 || HC05  || Prop || Wire Color||
 ||Pin 1 - TX  || P27 || Grey  ||
 ||Pin 2 - RX   || P26 || white||
-||Pin xx - Key || P22  || Green||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
+||Pin 34 - Key || P22  || Green||
+
+
+== HC06 KEY is Scallop 24
 
 Connect:
 
@@ -23,19 +38,33 @@ Connect:
 || HC06  || Prop || Wire Color||
 ||Pin 1 - TX  || P27 || Grey  ||
 ||Pin 2 - RX   || P26 || white||
-||Pin 34 - Key || P22  || Green||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
+||Pin 24 - Key || P22  || Green||
 
-The HC05 does not have "PINS" per se.  It has teeny micro notches that are much closer together than the standard .1 inch spacing I usually work with.  But, you can solder a bit of wire to the notch, and make a connection to the prop. You can put a pin on the other end of the wire, and jab it right into the bread board or 40 pin female connector on a Quickstart board.
-
-You can use any color wire you want, if you use the same color as we do yours will match the pictures. :)
-
-This source code is also included in the propforth download archive beginning with release v 5.3
 
 NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions.  The instruction Sal made for the download archive are for his Gadget Gangster board, these below are for the Quickstart.  You could use either for either, I find these pins are easier on the quickstart.
 
-HC05 comes with 9600 baud by default.  
+= What we do to set up the HC05 =
+
+Following the above, we have HC05 serial connected to Prop pins P26 & P27. (which are Quickstart connector locations 27 and 28). 
+
+HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05
+
+It tells the HC05 to set its name (to whatever you want, I don't know make charractes)
+
+It also sets the HC05 to 230400 baud.  So the Config script  (at 9600) won't communicate a second time; to rerun the script you have to edit and set the right baud. 
+
+Last thing will be to change the PropForth Kerrnel to talk on P27 & P28, instead of P30 and P31. 
+
+NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P276 & P27 kernel.
+
+ 
+  Propforth runs are 230400 by default, on pins 30 and 31
+
+== Inital Configuration of the HC05 ==
+
+Run the 9600 baud script to program the factory fresh HC05
 
 We run this script to 
  * give it a unique name (choose anything)
@@ -47,15 +76,10 @@ I set the unique name to LittleRobotYYYMMDDhhmm
 
 This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can somtimes tell when the bot came into service.
  
-NOTICE that after the script run successfully, the bad rate has been set from 9600 to 230400.  So the script won't run a second time.  If you with to re-run the script (and name your bot "JimmyJohinson") you must change the comments so the script is set to 230400 like the HC05.
+NOTICE that after the script run successfully, the baud rate has been set from 9600 to 230400.  So the script won't run a second time.  If you with to re-run the script (and name your bot "JimmyJohinson") you must change the comments so the script is set to 230400 like the HC05.
 
 Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
 
-= NOTICE NOTICE NOTICE =
-
-To use the HC05 as cable replacement:
-
-See the note at the bottom of this page!
 
 {{{
 
@@ -177,6 +201,12 @@ Fixed this page; previously the settings labeled HC05 were incorrect.  Those sho
 == NOTE ==
 
 The HC05 and HC06 modules look identical, I can't see any difference. They might be the same physical module with only the MODE set differently internally, but I did not check.  Did anyone use the HC06 settings on HC05 and have success?  I think  I may have, but my notes are incomplete. 
+
+= NOTICE NOTICE NOTICE =
+
+To use the HC05 as cable replacement:
+
+See the note at the bottom of this page!
 
 
 = Details =
