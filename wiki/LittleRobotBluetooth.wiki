@@ -30,7 +30,7 @@ Connect:
 ||Pin 34 - Key || P22  || Green||
 
 
-== HC06 KEY is Scallop 24
+== HC06 KEY is Scallop 26 ==
 
 Connect:
 
@@ -40,12 +40,12 @@ Connect:
 ||Pin 2 - RX   || P26 || white||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
-||Pin 24 - Key || P22  || Green||
+||Pin 26 - Key || P22  || Green||
 
 
 NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions.  The instruction Sal made for the download archive are for his Gadget Gangster board, these below are for the Quickstart.  You could use either for either, I find these pins are easier on the quickstart.
 
-= What we do to set up the HC05 =
+= Set up HC05 =
 
 Following the above, we have HC05 serial connected to Prop pins P26 & P27. (which are Quickstart connector locations 27 and 28). 
 
