@@ -51,7 +51,7 @@ Following the above, we have HC05 serial connected to Prop pins P26 & P27. (whic
 
 HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05
 
-It tells the HC05 to set its name (to whatever you want, I don't know make charractes)
+It tells the HC05 to set its name (to whatever you want, I don't know many max  characters)
 
 It also sets the HC05 to 230400 baud.  So the Config script  (at 9600) won't communicate a second time; to rerun the script you have to edit and set the right baud. 
 
@@ -59,8 +59,7 @@ Last thing will be to change the PropForth Kerrnel to talk on P27 & P28, instead
 
 NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P276 & P27 kernel.
 
- 
-  Propforth runs are 230400 by default, on pins 30 and 31
+FYI:  Propforth runs are 230400 by default, on pins 30 and 31
 
 == Inital Configuration of the HC05 ==
 
@@ -80,6 +79,11 @@ NOTICE that after the script run successfully, the baud rate has been set from 9
 
 Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
 
+== Paste the HC05 configuration script into the Terminal ==
+
+First edit the script to set
+ * The robot ID
+ * the Robot password pin
 
 {{{
 
@@ -90,26 +94,23 @@ fl
 
 \\ for the HC05
 
-\ REMEMBER! ONLY connect the KEY-GREEN-Prop24 wire when you run the programming script!
+\ REMEMBER! ONLY connect the KEY-GREEN-Prop P22 wire when you run the programming script!
 \ AFTER the script is run, disconnect the green wire!
-\ green wire            \ GREEN key - PROGRAM WHEN 3.3V - to prop 24
-\ 27 wconstant hcProgPin
+\ green wire \ GREEN key - PROGRAM WHEN 3.3V - to prop 22 | Quickstart postion23
+\ Raise P22 Hi when connected to HCo5-pin34 to program
   22 wconstant hcProgPin 
 
 \ after programming, disconnect the GREEN wire!
 
-\ white/orange wire    \ WHITE - HC05-2 Rx - to prop 26
-\ 26 wconstant hcRx
+\ white/orange wire    \ WHITE - HC05-pin02 Rx - to prop 26 | QuickStart position27
   26 wconstant hcRx
 
-\ white/green wire     \ GREY - HC05-1 Tx - to prop 27
-\ 25 wconstant hcTx
+\ white/green wire     \ GREY - HC05-pin01 Tx - to prop 27 | Quickstart position28
   27 wconstant hcTx
 
  9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
 \ the baud is set to a really fast speed, so you must change these comments
 \ 230400 4/ wconstant hcBaud  
-
 
 0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
 
@@ -138,7 +139,7 @@ c" AT+PSWD?~h0D~h0A" hcSend
 10000 delms \ 10 seconds to read the screen
 
 
-c" AT+NAME=LittleRobot201210022032~h0D~h0A" hcSend
+c" AT+NAME=LittleRobot20130413~h0D~h0A" hcSend
 c" AT+PSWD=1234~h0D~h0A" hcSend
 c" AT+UART=230400,0,0~h0D~h0A" hcSend
 c" AT+VERSION~h0D~h0A" hcSend
@@ -159,7 +160,7 @@ hcProgPin pinlo
 
 }}}
 
-= NOTICE NOTICE NOTICE =
+= Modify the DEVKERNEL.SPIN for Serial Pins 26 & 27 =
 
 To use the HC05 as cable replacement:
 
