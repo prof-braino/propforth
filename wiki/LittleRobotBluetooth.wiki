@@ -1,16 +1,26 @@
-#summary HC05 Bluetooth for Little Robot(tm)
-#labels v5.3,LittleRobot,bluetooth
+#summary HC05 and HC06 Bluetooth for Little Robot(tm)
+#labels v5.3,LittleRobot,bluetooth,v5.5
 
 <wiki:toc max_depth="9" />
 
 = Introduction =
 
-The HC05 Bluetooth module allows communication with the prop via bluetooth.  No cables are needed after initial programming. 
+The HC05 and HC06  Bluetooth module allows communication with the prop via bluetooth.  No cables are needed after initial programming. 
 
 Connect:
 
 || HC05 Bluetooth module ||
 || HC05  || Prop || Wire Color||
+||Pin 1 - TX  || P27 || Grey  ||
+||Pin 2 - RX   || P26 || white||
+||Pin xx - Key || P22  || Green||
+||Pin 12 - 3.3v ||3.3v || Orange||
+||Pin 13 - GND  || GND || Blue||
+
+Connect:
+
+|| HC06 Bluetooth module ||
+|| HC06  || Prop || Wire Color||
 ||Pin 1 - TX  || P27 || Grey  ||
 ||Pin 2 - RX   || P26 || white||
 ||Pin 34 - Key || P22  || Green||
@@ -157,6 +167,16 @@ Load it onto the prop EEPROM
 The USB serial will no longer connect to propforth until the prop is reloaded with a standard kernel. 
 
 Propforth will come up looking for the virtual Bluetooth com port.
+
+= NOTES =
+
+== Note: 20130413 ==
+
+Fixed this page; previously the settings labeled HC05 were incorrect.  Those should have been labeled HC06.  Now, the page contains separate (correct) instructions for both.
+
+== NOTE ==
+
+The HC05 and HC06 modules look identical, I can't see any difference. They might be the same physical module with only the MODE set differently internally, but I did not check.  Did anyone use the HC06 settings on HC05 and have success?  I think  I may have, but my notes are incomplete. 
 
 
 = Details =
