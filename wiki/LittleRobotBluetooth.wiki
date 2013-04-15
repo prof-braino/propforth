@@ -19,18 +19,23 @@ This source code is also included in the propforth download archive beginning wi
 
 == HC05 KEY is Scallop 34 ==
 
+This is the one at new the antenna, opposite pin 1
+
 Connect:
 
 || HC05 Bluetooth module ||
-|| HC05  || Prop || Wire Color||
-||Pin 1 - TX  || P27 || Grey  ||
-||Pin 2 - RX   || P26 || white||
+|| HC05  || Prop || Wire Color|| 
+||Pin 1 - hcTX  || P25 || Grey/Orange  ||
+||Pin 2 - hcRX   || P26 || white||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
-||Pin 34 - Key || P22  || Green||
+||Pin 34 - Key || P27  || Green||
 
+The HC05 connections to prop pins are the same as in the code.
 
 == HC06 KEY is Scallop 26 ==
+
+WE don't use HC06.  
 
 Connect:
 
@@ -42,24 +47,73 @@ Connect:
 ||Pin 13 - GND  || GND || Blue||
 ||Pin 26 - Key || P22  || Green||
 
-
-NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions.  The instruction Sal made for the download archive are for his Gadget Gangster board, these below are for the Quickstart.  You could use either for either, I find these pins are easier on the quickstart.
+NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions, to remind me that HC06 is different, we won't be using it. 
 
 = Set up HC05 =
 
-Following the above, we have HC05 serial connected to Prop pins P26 & P27. (which are Quickstart connector locations 27 and 28). 
+Following the above, we have HC05 serial connected to Prop pins P25 & P26. (which are Quickstart header connector locations 26 and 27). 
 
-HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05
+HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05.  THIS WAS THE TRICKY PART!  It SAYS it will talk at 9600, but mine didn't.  When we run the script, we expect to see 
+
+{{{
+<command>
+<response>
+OK
+
+Prop0 Cog6 ok
+}}}
+
+If instead you see
+
+{{{
+<command>
+
+Prop0 Cog6 ok
+}}}
+
+The communication isn't working.  Maybe the part is programmed for something other than 9600,N,1 like it says.  (Maybe that's why its so cheap?) .  Even so, no problem.
+
+TO FIX:  KEY HIGH AT POWER UP 38400 BAUD
+
+If you run the script and you don't get then responses expected:
+
+Unplug the RED v3.3 wire for a few seconds, then plug it back in again. Per the datasheet, this is "Set KEY pin 34 high, then apply power.  This sets mode to 38400N1" (38400 baud, no parity,1 stop bit). 
+
+In the Hc05-06.f file, in the HC05 section, around the 17th line, 
+
+Edit the script from:
+
+{{{
+9600 4/ constant hcBaud
+}}}
+
+To:
+
+{{{
+\ 9600 4/ constant hcBaud
+
+38400 4/ constant hcBaud
+
+}}}
+
+and re-run the script.  NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
+
+
+BACK TO WHAT THE SCRIPT DOES:
 
 It tells the HC05 to set its name (to whatever you want, I don't know many max  characters)
 
-It also sets the HC05 to 230400 baud.  So the Config script  (at 9600) won't communicate a second time; to rerun the script you have to edit and set the right baud. 
+It also sets the HC05 to 230400 baud.  So the Config script  (at 9600) won't communicate a second time (or the first time, if we have a batch of reprogrammed parts like I got); to rerun the script you have to edit and set the right baud. (Or do the "KEY High at power on" step described above) 
 
-Last thing will be to change the PropForth Kerrnel to talk on P26 & P27, instead of P30 and P31. 
+Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31. (Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
 
-NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P276 & P27 kernel.
+NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P25 & P26 kernel.
 
-FYI:  Propforth runs are 230400 by default, on pins 30 and 31
+FYI once more:  Propforth runs are 230400 by default, on pins 30 and 31
+
+-----
+
+OK, I'm still editing from here after fixing the initialization steps above. 20130415.  Procede with caution, I don't know when I'll get back to this.....
 
 == Inital Configuration of the HC05 ==
 
