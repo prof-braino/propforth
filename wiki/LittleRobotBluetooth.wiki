@@ -47,7 +47,7 @@ Connect:
 ||Pin 13 - GND  || GND || Blue||
 ||Pin 26 - Key || P22  || Green||
 
-NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions, to remind me that HC06 is different, we won't be using it. 
+NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions and code, to remind me that HC06 is different, we won't be using it. 
 
 = Set up HC05 =
 
@@ -103,11 +103,11 @@ BACK TO WHAT THE SCRIPT DOES:
 
 It tells the HC05 to set its name (to whatever you want, I don't know many max  characters)
 
-It also sets the HC05 to 230400 baud.  So the Config script  (at 9600) won't communicate a second time (or the first time, if we have a batch of reprogrammed parts like I got); to rerun the script you have to edit and set the right baud. (Or do the "KEY High at power on" step described above) 
+It also sets the HC05 to 230400 baud (from whatever it may have been).  So the  Config script set for the "default" 9600 baud won't communicate after the power is cycled.  To rerun the script, ensure the correct baud. (Or do the "KEY High at power on" step described above) 
 
 Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31. (Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
 
-NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P25 & P26 kernel.
+NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P25 & P26 kernel.  This step might be a little tricky, don't be alarmed if you have to try is a couple times until you get the hang of it. 
 
 FYI once more:  Propforth runs are 230400 by default, on pins 30 and 31
 
@@ -117,7 +117,7 @@ OK, I'm still editing from here after fixing the initialization steps above. 201
 
 == Inital Configuration of the HC05 ==
 
-Run the 9600 baud script to program the factory fresh HC05
+Run the initialization script in BluetoothHCo5-06.f to program the factory fresh HC05
 
 We run this script to 
  * give it a unique name (choose anything)
@@ -127,9 +127,9 @@ We run this script to
 
 I set the unique name to LittleRobotYYYMMDDhhmm
 
-This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can somtimes tell when the bot came into service.
+This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can sometimes tell when the bot came into service from the date.
  
-NOTICE that after the script run successfully, the baud rate has been set from 9600 to 230400.  So the script won't run a second time.  If you with to re-run the script (and name your bot "JimmyJohinson") you must change the comments so the script is set to 230400 like the HC05.
+NOTICE that after the script run successfully, the baud rate has been set from 9600 (or 38400) to 230400.  If you with to re-run the script (to rename your bot) you must change the baud to 230400 like the HC05, or use the KEY-Hi-POWER for 38400 baud.
 
 Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
 
@@ -150,21 +150,22 @@ fl
 
 \ REMEMBER! ONLY connect the KEY-GREEN-Prop P22 wire when you run the programming script!
 \ AFTER the script is run, disconnect the green wire!
-\ green wire \ GREEN key - PROGRAM WHEN 3.3V - to prop 22 | Quickstart postion23
-\ Raise P22 Hi when connected to HCo5-pin34 to program
-  22 wconstant hcProgPin 
+\ green wire \ GREEN key - PROGRAM WHEN 3.3V - to prop 27 | Quickstart postion28
+\ Raise P27 Hi when connected to HCo5-pin34 to program
+  27 wconstant hcProgPin 
 
 \ after programming, disconnect the GREEN wire!
 
-\ white/orange wire    \ WHITE - HC05-pin02 Rx - to prop 26 | QuickStart position27
+\ white/orange wire \ WHITE - HC05-pin02 Rx - to prop 26 | QuickStart position27
   26 wconstant hcRx
 
-\ white/green wire     \ GREY - HC05-pin01 Tx - to prop 27 | Quickstart position28
-  27 wconstant hcTx
+\ white/green wire  \ GREY - HC05-pin01 Tx - to prop 25 | Quickstart position26
+  25 wconstant hcTx
 
  9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
 \ the baud is set to a really fast speed, so you must change these comments
 \ 230400 4/ wconstant hcBaud  
+\ 38400 4/ wconstant hcBaud \ or use this line for the KEY-HI-POWERON method for 38400 baud  
 
 0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
 
@@ -214,57 +215,11 @@ hcProgPin pinlo
 
 }}}
 
-Notice that you may have to hit enter if the script appears to stall 
-(does the line `hcProgPin pinhi hcProgPin pinout` need to be 
-`hcProgPin pinhi hcProgPin pinout cr ` ?)
-
-Each line of the script above should response with an blank line and 
-
-{{{
-
-Prop0 Cog5 ok
-}}}
-
-== Check that the HC05 is visible fo blue tooth pairing ==
-
-If you saw OK after each line in the script, the HCo5 should be set up. The quickstart won't use it until reprogramed to use pins 26 & 27 for serial, but we can still test it.
-
-Using you r Blue tooth device (Cell phone, tablet, laptop, netbook, android device, what ever you plan to use as you wireless terminal for little robot). Attempt pairing 
-
-Example -Samsung Captivate Glide Android smart(ish) phone
-
-* Phone - ON
-* Blue tooth - ON
-* Applications - Settings - Wireless and Networks
-* Blue Tooth Settings
-* Blue Tooth (Checkbox is checked)
-* Search fo Devices
--- Scanning --
-
-Nothing.  What Happened?  AH! Must power cycle the device!
-
-Unplug the USB cable from the quickstart (this cuts the power to the HC05 as well)
-
-Careful not to knock the H05 wires around
-
-Re plug the USB cable
-
-Still being care of the wires
-
-Minicom or tera term should notice the USB cable being unplugged, but still show the props boot messages
-
-STill no luck?  I forgot to unplug the green wire...
-
-
-Still no luck.  OK, time for some diagnostics.... 20130413
-
-
-
 == Disconnect P22 Green wire on Quickstart poition 23 ==
 
 After the script is run, the HC05 is configured.
 
-Disconnect the Green wire from Prop pin 24 (Quickstart connector postion 23)
+Disconnect the Green wire from Prop pin 27 (Quickstart connector postion 28)
 
 You will not need to reconnect this again, unless you want to change the ID of the HC05 or otherwise reconfigure it. 
 
@@ -282,11 +237,7 @@ By default, propforth talks on pins 30 and 31.
 
 we have to change the spin file that creates the kernel to use pins 26 and 27 that connect to the HC05
 
-In the proforth spin ource file
-
-{{{
-PropForthDevFastSerialKernel.spin
-}}}
+In the proforth spin source file 'PropForthDevFastSerialKernel.spin'
 
 Edit lines 116 and 117:
 
@@ -305,24 +256,34 @@ Propforth will come up looking for the virtual Bluetooth com port.
 
 = NOTES =
 
-== Note: 20130413 ==
+In progress 20130415
 
-Fixed this page; previously the settings labeled HC05 were incorrect.  Those should have been labeled HC06.  Now, the page contains separate (correct) instructions for both.
+== Note: 20130415 ==
+
+The instructions appeared to work fine when I wrote them, but now when I go back to use them things are strange.  I may have missed a critical set in the set up.  I get as far as programming the HC05, and can get the correct response. I used the KEY-HI-POWERON-38400 method on this batch of parts.   
+
+At this time, the  Bluetooth Master (PC, android) does NOT see the HC05 slave. 
+
+== Check that the HC05 is visible for blue tooth pairing ==
+
+If you saw OK after each line in the script, the HCo5 should be set up. The quickstart won't use it until reprogramed to use pins 26 & 27 for serial, but we can still test it.
+
+Using you r Blue tooth device (Cell phone, tablet, laptop, netbook, android device, what ever you plan to use as you wireless terminal for little robot). Attempt pairing 
+
+Example -Samsung Captivate Glide Android smart(ish) phone
+
+* Phone - ON
+* Blue tooth - ON
+* Applications - Settings - Wireless and Networks
+* Blue Tooth Settings
+* Blue Tooth (Checkbox is checked)
+* Search fo Devices
+-- Scanning --
+
+(Stopping for now, please check back again)
 
 == NOTE ==
 
 The HC05 and HC06 modules look identical, I can't see any difference. They might be the same physical module with only the MODE set differently internally, but I did not check.  Did anyone use the HC06 settings on HC05 and have success?  I think  I may have, but my notes are incomplete. 
 
-= NOTICE NOTICE NOTICE =
-
-To use the HC05 as cable replacement:
-
-See the note at the bottom of this page!
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+- end -
