@@ -225,6 +225,46 @@ You will not need to reconnect this again, unless you want to change the ID of t
 
 You can use the pin for another device if needed.  The suggestion is to leave this pin open until all the othe pins are consumed, just in case. 
 
+== Power Cycle the HC05 ==
+
+This allows the changes (baud rate, name, etc) to "take". 
+
+= Pair the devices =
+
+The HC05 should be visible as a slave (pairable) device when re-powered
+
+== Windows XP ==
+
+Run Blue Tooth Wizard 
+
+The wizard should find a device, and display the name you provided in the the script. 
+
+Enter your pin (as you assigned in the script, or 1234 if you left the default)
+
+XP will add two COM ports, on incoming and one out going. 
+
+The outgoing port is the one you will use with Teraterm.  The incoming port doesn't do anything, but has to be there. 
+
+== Android ==
+
+  * Select Settings.  
+  * Under (or near) WiFi find Bluetooth. 
+  * select "Search for Devices" (upper right corner on Nexus)
+
+You should see an eight(?) hex value address displayed very quickly. 
+
+A short time later this will change to the name you assigned in the script.
+
+Select this, and enter your pin you define in the script, or 1234 if you left the default.
+
+=== Blueterm ===
+
+You can now connect to this device using Blue term (the three dots in the lower right corner is the secret!)
+
+=== SENA BTerm ===
+
+SENA BTerm also works.  But you have to do some configuration.  More details will be posted when we can some particulars.  For now, just play
+
 = Modify the DEVKERNEL.SPIN for Serial Pins 26 & 27 =
 
 To use the HC05 as cable replacement:
@@ -235,7 +275,7 @@ BUT you must also change the PROPFROTH KERNEL!
 
 By default, propforth talks on pins 30 and 31.  
 
-we have to change the spin file that creates the kernel to use pins 26 and 27 that connect to the HC05
+we have to change the spin file that creates the kernel to use pins 26 and 25 that connect to the HC05
 
 In the proforth spin source file 'PropForthDevFastSerialKernel.spin'
 
@@ -243,7 +283,7 @@ Edit lines 116 and 117:
 
 {{{
   dlrS_txpin = 26 ' 30           ' $S_txpin forth word 
-  dlrS_rxpin=  27 ' 31            ' $S_rxpin forth word 
+  dlrS_rxpin=  25 ' 31            ' $S_rxpin forth word 
 }}}
 
 Save the file as PropforthBluetooth.spin
@@ -262,11 +302,15 @@ In progress 20130415
 
 The instructions appeared to work fine when I wrote them, but now when I go back to use them things are strange.  I may have missed a critical set in the set up.  I get as far as programming the HC05, and can get the correct response. I used the KEY-HI-POWERON-38400 method on this batch of parts.   
 
-At this time, the  Bluetooth Master (PC, android) does NOT see the HC05 slave. 
+At this time, the  Bluetooth Master (PC, android) does NOT see the HC05 slave.  There may be additional setting on this batch of HC05's that need attention.  
+
+It does see the HC06 I used last time.  Therefore, I think the instructions are (mostly) correct.  
+
+The suspicion is that there is something different about this particular batch of HC05
 
 == Check that the HC05 is visible for blue tooth pairing ==
 
-If you saw OK after each line in the script, the HCo5 should be set up. The quickstart won't use it until reprogramed to use pins 26 & 27 for serial, but we can still test it.
+If you saw OK after each line in the script, the HC05 should be set up. The quickstart won't use it until reprogramed to use pins 26 & 27 for serial, but we can still test it.
 
 Using you r Blue tooth device (Cell phone, tablet, laptop, netbook, android device, what ever you plan to use as you wireless terminal for little robot). Attempt pairing 
 
