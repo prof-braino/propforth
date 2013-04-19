@@ -1,4 +1,4 @@
-#summary Little Robot™ project index page
+#summary Little Robot™ project SUMMARY page
 #labels v5.3,LittleRobot,Featured
 
 <wiki:toc max_depth="9" />
@@ -17,22 +17,21 @@ Here is a list of links to the LittleRobot(tm) Project
 
 http://code.google.com/p/propforth/wiki/LittleRobotLinks
 
-
-
+The rest of this page is background and high level discussion. 
 
 = Target Audience =
 
 Kids, older and younger siblings, parents, teachers.  Lend me  your ears!
 
-The Little Robot™ project is a demo for the Propforth™ software project. The intent is to develop a package simple enough so "non-techie™" parents can help the kids learn about cool stuff like building robots from scratch.  It also might include math, physics, mechanics, etc, but these will be hidden and nobody will know, it can be our little secret. 
+The Little Robot™ project is a demo for the Propforth™ software project. The same hardware and algorithms may be used with any other software development environment, feel free to do so.  We plan to work towards an end to end solution using PropForth, this may be a handy reference point for other implementations.  
+
+The intent is to develop a package simple enough so "non-techie™" parents can help the kids learn about cool stuff like building robots from scratch.  It also might include math, physics, mechanics, etc, but these will be hidden and nobody will know, it can be our little secret. 
 
 = Simple Enough for Parents™? =
 
 So how is this possible?  If it is possible, why hasn't it been done before?
 
-Actually, its done all the time.  In the past, there have been various "simple" programming environments that use BASIC programming language. There have been assorted kits that use micro controllers.  There have been countless kits for building robots. 
-
-In the past, offerings have been too specialized, too complex, too simplistic, too expensive, or insufficiently marketed.  Many have had some degree of success, but few enjoy widespread, enduring popularity.
+Actually, its done all the time, with varying degrees of success.  In the past, there have been various "simple" programming environments that use BASIC programming language. There have been assorted kits that use micro controllers.  There have been countless kits for building robots. In the past, offerings have been too specialized, too complex, too simplistic, too expensive, or insufficiently marketed.  Many have had some degree of success, but few enjoy widespread, enduring popularity.
 
 In recent months, several factors have changed, making this project attractive and promising.  Cheap equipment from China, 3D printing, the prop chip and this software project seem to point towards a "Little Robot" as a timely effort.
 
@@ -42,11 +41,13 @@ FORTH is a neat language.  It is as easy as BASIC, but as powerful and fast as a
 
 FORTH is all about using numbers on a stack.  Folks familiar with other programming environments may find this unusual.  But kids have not prior experience.  They can learn anything, from Mario Karts to iPhones, if given the chance.  Nothing is any more unusual than anything else they've never seen before. 
 
+Kids tend to figure out extremely complex systems such as playing thorugh a Mario world.  All we have to do is a structure like a video game (many rounds of practice for some gratification/goal, and a "boss challenge" at the end of the unit/chapter).   So the intent is to teach  how to view the "problem" as a collections of interesting puzzles to be solved (at least that's how I do it). 
+
 = Easy to Start =
 
 The main premise of this project is its easy to start. 
 
-The special robot parts for the basic unit can be obtain directly from sources in China for under $20.
+The special robot parts for the basic unit can be obtain directly from sources in China for under $20.  We have at least one party that will source the parts and send them out as "kits", saving us the problems of buying one parts from many different vendors.  You can go with either lowest cost or convenience, depending on you r budget and preferences. 
 
 The micro controller is $8 by itself, although it needs some additional support circuitry.  But this is minimal, and can be easily obtained and built for a few dollars. 
 
@@ -62,9 +63,7 @@ To define how the robot interface should look, we starter with the User Guide. t
 
 http://code.google.com/p/propforth/wiki/LittleRobotUserGuide
 
-
-   
---
+-----
 
 = Type 1 - 20120818 "Cheapest Possible" configuration example =
 
@@ -73,6 +72,8 @@ http://code.google.com/p/propforth/wiki/LittleRobotUserGuide
 [http://code.google.com/p/propforth/wiki/LittleRobotBOM LittleRobotBOM]
 
 == Driver Software: ==
+
+These are either included in the Propfroth download archive, or are posted on the downloads pages as they are introduced.    This is also a WIKI page for each that is updated as question come in. 
 
 LittleRobotSteppers
 
@@ -88,7 +89,7 @@ LittleRobotChassis
 
 LittleRobotWheels
 
-
+-----
 
 = Type 2 - YYYMMDD - "Additional Sensors" Example =
 
@@ -104,7 +105,6 @@ NOTE: I got mine for $29 about six months ago
 
 == DS00 Laser Range finder ==
 
-
 = Type 3 - YYYMMDD - "OutDoor" model =
 
 The "outdoor modele"  has not been implemented yet.  We plan to go outdoors (wireless) when the weather gets nice, and we have enough users to warrant this.
@@ -117,6 +117,7 @@ If uit ever gets this far I have dreams of all kinds of air bots.
 
 == Quadcopter type ==
 
+== Tricopter type ==
 
 = Details =
 
