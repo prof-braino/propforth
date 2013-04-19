@@ -83,11 +83,13 @@ LittleRobotUltraSonic
 
 == User Created Parts: ==
 
-Please create pages as more parts come available.  I'm not able to keep up on this myself. - braino
+Some pats are not included in the kit.  It is not possible to supply a standard part that fits every need.  All parts in the bot are changeable/upgradable, these parts are best sized depending on the intended use of the bot.  In the common case of the intended use of the bot is "general experimenting", then designing and build these is part of the plan. 
 
 LittleRobotChassis
 
 LittleRobotWheels
+
+Of course, these parts can also be purchased from various sources, but that tend to be too expensive and less fun that DIY solutions. 
 
 -----
 
