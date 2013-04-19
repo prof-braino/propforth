@@ -1,0 +1,48 @@
+#summary Options for user created LittleRobot(tm) CHASSIS.
+#labels LittleRobot,v5.5
+
+= Introduction =
+
+The Chassic of the Little Robot(tm) or ANY differential steering simple robot needs to do a couple things:
+  * Hold the motors
+  * hold up the Wheels
+  * carry the electronics (micro controller and associated components)
+  * carry the sensors
+  * carry the batteries
+  * carry the communications
+
+Everything else is a matter of preference:
+  * how rugged and durable must the device be?
+  * how fancy/flashy does it need to be?
+  * What size does it need to be? 
+
+So we have a lot of leeway, we can do pretty much what we want, according to conditions. 
+
+= Styrofoam = 
+
+One of the cheapest and easiest chassis materrial is styrofoam.  4 Foot by eight sheets can be obtained cheaply from the local home center.  These will not be the TOUGHEST bots in the world, but they will allow one to get started with experiments to determine what constitutes "tough enough". 
+
+= Scrap wood =
+
+My first prototype was made from a chunk of 2x4 that happend to be the first thing I tripped over i9n the shop when I was looking for chassis material.  In fact, I was about to throw it away while I was clearing out a workspace.  
+
+If suitable tools are available, wood is an excellent choice.  Particularly if it is scrap, and free. 
+
+= 3D printed =
+
+After we determined basic parameters for the prototype, we experimented with 3D printing parts on various RepRap.  These work great, (we will post the result evebntually, possibly on request if you need it sooner). 
+
+ If a particular application needs a custom part, this is the way to go.
+
+However, the plastic is not free, machine time is not free, and operator time is not free.  Consider these costs.  Until you determine that you absolutely NEED a custom part, you probably don't need a custom part just yet.  Just sayin'. 
+
+= Anything Else =
+
+Anything that works, works.  Use it. The cheaper, the better.  The weirder, the better. The sillier, the better.  Any attempt will usually result in learning of some kind, and fun of some kind.  This is the main objective. 
+
+= Your Suggestions =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
