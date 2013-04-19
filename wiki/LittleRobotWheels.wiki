@@ -1,0 +1,45 @@
+#summary Soem options for user provided WHEELS for the LittleRobot
+#labels Wheels,v5.5
+
+= Introduction =
+
+Wheels.  All the wheels really have to do is reach the ground.  Everything else is up to you.
+
+Wheels are not necessarily included in the kits.  The reason is two fold: One it save costs to you; two, half the fun is figuring out a cool solution.  
+
+As long as the the hole accommodate the shaft with two flats found on the stepper motors, you are good to go. 
+
+The diameter, thickness, weight, and material is all variable according to your needs. 
+
+Try many things, and find out what works well (in what cases) and what doesn't work well (in what cases).  Notice how your results change as your skill improves.  This is what makes you an engineer!
+
+= Peanut Butter Jar lids =
+
+Don't laugh, this actually works pretty well. Google "Peanut Butter Jar lid wheels"  and get some ideas. 
+
+= Chunks of Plywood = 
+
+YES!  There is at least one guy that makes robots entirely out of plywood. (How he makes the batteries and wires out of plywood I don't know, but I hear he is very clever). 
+
+= 3D printer wheels =
+
+The PLA 3D printer wheels on the prototypes work really well.  If you have access to someone with a 3D printer, defineitiely check out this option. 
+
+= Laser Cutter Acrylic =
+
+The laser cut acrylic wheels in the first kits are really nice.  If you have access to someone with a laser cutter, this is a nice solution. 
+
+= Git' Cuttin' =
+
+Start with anything, and give it a try. It will either work, or it won't.  If it doesn't, you learn something.  Then try something else. Have Fun!
+
+= Buy something =
+
+Buy something only as a last resort.  Its less fun, and possibly expensive, but its quick.  Usually a purchased item will reflect the skill and experience of the supplier.  But at least give making something a try first.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
