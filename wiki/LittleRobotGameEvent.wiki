@@ -87,6 +87,12 @@ Participants upload programming to a bot.  Can be in peson, or over the internet
 
 Event staff required to oversee these units.
 
+= Limits on Robots =
+
+There need be no limits on the robot participation.  Home built custom robots need only be checked for safety, etc. 
+
+Concept is cooperation. Interaction between different classes of units (custom versus store-bought) would be interesting.  Comparison of performance of expensive versus cheap would be informative. 
+
 = Details =
 
 Add your content here.  Format your content with:
