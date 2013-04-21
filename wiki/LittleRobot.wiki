@@ -12,7 +12,17 @@ LittleRobot™ - index
 
 = HARDWARE Links =
 
+http://code.google.com/p/propforth/wiki/LittleRobotBOM
+
+The BOM Linked above does not (yet) include the kits that we sourced from Jeff (OBC) at Propeller Powered.
+
+http://propellerpowered.com/shop/
+
+Propeller Powered may elect to source kits for us; by buying the parts in bulk at a discount from suppliers (in China, etc) and packaging them into kits.  The small make up is well worth the convenience. But we have not verified that this fits his business model.  The first round of kits went very  smoothly.  Now we are looking into a custom electronic board for the little robot that contains all the necessary parts in a least cost and least size package.   
+
 == from the BOM ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotSteppers
 
 http://code.google.com/p/propforth/wiki/LittleRobotUltraSonic
 
@@ -113,6 +123,10 @@ http://code.google.com/p/propforth/wiki/LittleRobotUserGuide
 -----
 
 = Type 1 - 20120818 "Cheapest Possible" configuration example =
+
+There was/is a separate discussion for the cheapest possible robot. This was before we chose the name Little Robot.
+
+http://code.google.com/p/propforth/wiki/CheapestPossibleRobot
 
 == Purchasable Parts: ==
 
