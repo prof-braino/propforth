@@ -7,6 +7,47 @@
 
 LittleRobot™ - index
 
+
+
+
+= HARDWARE Links =
+
+== from the BOM ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotUltraSonic
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
+
+
+== user created parts ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotChassis
+
+http://code.google.com/p/propforth/wiki/LittleRobotWheels
+
+= User Guide =
+
+The User Guide is intended to define how a user will interact with the bot; this serves as a guideline for the code we need to write. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotUserInterface
+
+The user guide is to be updated as we learn more about how folks REALLY use the bot.  The code is to be updated to reflect the current user needs. 
+
+In any case, the high level user requirement drives the software requirements.  The degree to which we meet the requirements is what we measure. 
+
+= External Links = 
+
+This is supposed to contain links to the external pages.  It might be out of date or need re-organization 
+
+http://code.google.com/p/propforth/wiki/LittleRobotLinks
+
+
+---------------
+
+= Initial project info =
+
+This stuff from this point on may be outdated.  Its what we started with. 
+
 The Little Robot™ project has been refer to by various names: The Demo™, Football Bot™, [http://code.google.com/p/propforth/wiki/CheapestPossibleRobot Cheapest Possible Robot™], Complex Datastreams and Filtering experiment™.  We decided to try "Little Robot™" since it lexically complete, sounds better and is less threatening than some of the other choices.  The target audience does not particularly care that complex data streams are filtered in real time, so long as it moves and looks cool.
 
 The goal is to develop a compete, kid centric mobile robotics platform for under $20.  
