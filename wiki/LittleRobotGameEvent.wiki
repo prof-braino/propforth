@@ -41,11 +41,13 @@ Uniform blocks or various composition are randomly placed in the area.  Bot inte
 
 = MODES of Operation =
 
+The initial project is targeted the youngest children possible for introduction to robots.  The first iteration will focus on the simplest options.  As the kids gain experience, there is the possibility they will grow into more advanced methods. 
+
 == RC mode ==
 
 RC mode is "radio controlled vehicle mode". The operator directly controls the bot with simple commands (foreward, left, etc).  The operator visually monitors the bot. The operator makes all decisions in real time. 
 
-This is the expected initial mode.
+RC mode is the expected initial mode.  The methods are well known and equipment is common. 
 
 == Teleprescense Mode ==
 
@@ -53,21 +55,21 @@ The operator "sees what the bot sees".   The operator has no or limited visual a
 
 The operator makes all desisions in real time.
 
-This is not expected to be used due to the expense of additional sensors.  But userr may find ways to benefit from existing sensors. 
+This is not expected to be used due to the expense of additional sensors. In particular, wirless link with sufficent bandwidth may be equal in cost to the entire remainder of the project.  However, users may find ways to benefit from existing sensors, or have additional budget.  Telepresence capabilities would be an asset to a team. 
 
 == Full Autonomous Mode ==
 
-The bot makes all desicons based on prior programming and senso input.  
+The bot makes all decisions based on prior programming and sensor input.  
 
-This is nort expected to be used in the inital rounds. 
+This is not expected to be used in the initial rounds. Any autonomous capability would be a welcome surprise. 
 
 == Hybrid Mode ==
 
 Some combination of the other modes.
 
 Operators will likely employ progressively more autonomous or automatic behaviours based on the successes of other entrants. 
- 
-For example automatically avoiding areas too narrow for the wheel base.
+
+Partial implementation of autonomous behavior is encouraged.  For example automatically avoiding areas too narrow for the wheel base, automatically return to point of origin if communications are lost. 
 
 
 = Options for Participation =
