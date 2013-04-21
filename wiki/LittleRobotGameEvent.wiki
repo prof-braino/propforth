@@ -1,0 +1,95 @@
+#summary Designing a game for Little Robot and others
+#labels v5.5,LittleRobot
+
+= Introduction =
+
+A request came in for an activity at a large public event. We get these periodically. In this case it was for National Robotics Week.  There are the standard activities, robot sumo, robot judo, RoboMagellan; but these tend to be expensive, involved, and very specific.   
+
+The goal is for something along the lines of  "a general purpose robot activity".  This could provide the basis for other projects or applications. 
+
+= Cooperative Events =
+
+== Laser Tanks ==
+
+Cool, yet lame.  Yes, blasting each others tanks with lasers is fun and simple.  LASER + SENSOR  on each bot,  simple scoring program;  add damage calculation.   But this sends the wrong message.  
+
+Can we do something less destructive, that has a positive outcome? 
+
+== Rescue Cute Little Animals From the Natural Disaster ==
+
+The bots work together to save puppies and kittens from the flood.  I talk to the animal shelters, they could arrange so that each successful rescue allows the participant to go home with a real puppy or kitten.  Several parents voiced concern on this activity. 
+
+== Flat Tetris ==
+
+Cut a 4' by 8' sheet of styrofoam (or plywood) into tetris like jigsaw puzzle pieces.  The bots work together to place them in the least space. 
+
+== Uphill Pinball ==
+
+The field is a structure similar to a skate board ramp.  Holes for scoring are at various heights on the ramp.  More points for the hardest to reach. Eventually the ramp is too steep for a lone bot to reach the highest holes.  Bots must cooperate to achieve a winning score. 
+
+== Physical 'MineCraft' ==
+
+Uniform blocks or various composition are randomly placed in the area.  Bot interact with these and each other to build or remove structures, etc.
+
+= MODES of Operation =
+
+== RC mode ==
+
+RC mode is "radio controlled vehicle mode". The operator directly controls the bot with simple commands (foreward, left, etc).  The operator visually monitors the bot. The operator makes all decisions in real time. 
+
+This is the expected initial mode.
+
+== Teleprescense Mode ==
+
+The operator "sees what the bot sees".   The operator has no or limited visual access to the bot.  The operator relies on the inputs recieved from the bot. Th sensors could be anything available:  ultrasonic distance, IR proximity (or inductive or capacitve), video camera, audio, etc.
+
+The operator makes all desisions in real time.
+
+This is not expected to be used due to the expense of additional sensors.  But userr may find ways to benefit from existing sensors. 
+
+== Full Autonomous Mode ==
+
+The bot makes all desicons based on prior programming and senso input.  
+
+This is nort expected to be used in the inital rounds. 
+
+== Hybrid Mode ==
+
+Some combination of the other modes.
+
+Operators will likely employ progressively more autonomous or automatic behaviours based on the successes of other entrants. 
+ 
+For example automatically avoiding areas too narrow for the wheel base.
+
+
+= Options for Participation =
+
+== Obtain a Kit ==
+
+Participants "get a kit" to take away.  Cost and past list TBD.
+
+
+== Build a Kit ==
+
+Participants attend a workshop to construct the kit. Tool, equipment, and mentoring provided.
+
+== Drive a Bot (in Person) ==
+
+Participants drive a completed robot on the activity course.  The bot might be one build at home, built in the workshop, or provided by the event.
+
+== Drive a Bot (over the net) ==
+
+Participants drive a completed robot on the activity course.  The bot is a generic unit provided by the event.  The operator receives a video and/or sensor feed over the internet. 
+
+== Program a bot ==
+
+Participants upload programming to a bot.  Can be in peson, or over the internet.
+
+Event staff required to oversee these units.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
