@@ -13,6 +13,10 @@ http://oyc.yale.edu/economics/econ-159
 
 = Cooperative Events =
 
+A single robot is cool, and a whole bunch of robots working together is awesome. 
+
+Here are some high level suggestions for events intended to involve a large number of participants with comparatively low cost.  
+
 == Laser Tanks ==
 
 Cool, yet lame.  Yes, blasting each others tanks with lasers is fun and simple.  LASER + SENSOR  on each bot,  simple scoring program;  add damage calculation.   But this sends the wrong message.  
