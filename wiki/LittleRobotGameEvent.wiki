@@ -7,6 +7,10 @@ A request came in for an activity at a large public event. We get these periodic
 
 The goal is for something along the lines of  "a general purpose robot activity".  This could provide the basis for other projects or applications. 
 
+The suggestion is to refer to Yale University online lectures for ECON 159 Game Theory. 
+
+http://oyc.yale.edu/economics/econ-159
+
 = Cooperative Events =
 
 == Laser Tanks ==
