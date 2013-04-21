@@ -35,6 +35,12 @@ The user guide is to be updated as we learn more about how folks REALLY use the 
 
 In any case, the high level user requirement drives the software requirements.  The degree to which we meet the requirements is what we measure. 
 
+= User Interface =
+
+The user interface is intended to describe the "nuts and bolts" of using the bot per the user interface.   The user guide and use interface pages may overlap or need to be combined into a single item. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotUserInterface
+
 = External Links = 
 
 This is supposed to contain links to the external pages.  It might be out of date or need re-organization 
