@@ -23,7 +23,7 @@ Science: Anything where we have a very good idea how to do it, or at least  beli
 
 Automagically:  Something automatic but we don't understood all the details how it works yet, but we can still USE it. 
 
-Hardware:   The physical (touchable) bits of the project. When we decide how the physical parts are to be arranged, we want to stop touching them. 
+Hardware:   The physical (touchable) bits of the project. When we decide how the physical parts are to be arranged, we want to stop touching them. This saves work and helps keep things from breaking.
 
 Software:  The the organized instruction parts of the project.  Software is the parts that is easier to change than the hardware,  but we still want to stop touching the parts that we feel are organized. 
 
@@ -71,6 +71,7 @@ Vdd: the operatins voltage of the prop, 3.3 volts
 
 Vss: the Ground of the prop, 0 volts
 
+Design: The plan for what the project is intended to do, and how its supposed to work.  If ANY part of the plan is changed, all other parts must be checked to see it they must change as well. 
 
 = Details =
 
