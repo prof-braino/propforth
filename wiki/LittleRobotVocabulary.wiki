@@ -9,21 +9,31 @@ Some term being used are similar but different in other contexts. This page is a
 
 = Terms =
 
-New-Guy Notes: A summary given to the new participant.  The summary contain all the material we currently believe the new participant needs to get started.  The participant uses the material, and finds errors and deficiencies, and makes corrections and updates. [The updated notes are reviewed and corrected by the previous maintainers]. The Next new participant becomes the next maintainer of the notes.
+New-Guy Notes: The summary given to the new participant.  The summary contains the necessary and available material we currently believe the new participant needs to get started.  The participant uses the material, and finds errors and deficiencies, and makes corrections and updates. The updated notes are reviewed by the previous maintainers. The each new participant becomes the next maintainer of the notes.
 
-Manual:  By hand, you have to to do it you own self
+Manual:  By hand, you have to to do it your own self
 
 Automatic: By machine, you just have to start it, and it goes by itself after that, until done. 
 
 Magic:  Anything where we don't know how to do it, or don't understand well.
 
-Science: Anything where we have a very good idea how to do it, or at least  believe we understand something important about it. 
+Science: Anything where we have a very good idea how to do it, or at least  believe we understand something important to the extent we can use it. 
 
 Automagically:  Something that automatic, but we haven't understood all the details how it works yet, but we can just USE it. 
 
 Hardware:   The physical (touchable) bits of the project. When we decide how the physical parts are to be arranged, we want to stop touching them. 
 
 Software:  The the organized instruction parts of the project.  Software is the parts that is easier to change than the hardware,  but we still want to stop touching the parts that we feel are organized. 
+
+experiment: try something, to see if it gives the result we expect
+
+test: a particular experiment that shows a particular item does what we expect
+
+requirement:  the list of things to play with;  what we expect from our task.  Each big difficult task gets broken into small easy tasks, until we have lot of easy tasks instead of a few difficult tasks.  We end up with LOTS of requirements. A requirement is "done" when we have a test that shows it does what we expect.  Any task that idoes not do what we expect is not "done".
+
+Monkey's Paw: The effect where the complex requirements is NOT broken into specific, easy requirements; and result is not what we want.   Short for "You can get what you want unless you can ASK for it specifically".  This indicates that the requirements need attention, and development is NOT complete. 
+
+development:  the "play-time" where we break difficult tasks into easy tasks; and do experiments until we have particular tests that show all tasks are performed as expected.
 
 program:  The organized instructions for the project IN THE BEST ORDER.  This includes DECIDING what the best order is, and having reasons for the decisions.
 
