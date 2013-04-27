@@ -9,6 +9,8 @@ Some term being used are similar but different in other contexts. This page is a
 
 = Terms =
 
+New-Guy Notes: A summary given to the new participant.  The summary contain all the material we currently believe the new participant needs to get started.  The participant uses the material, and finds errors and deficiencies, and makes corrections and updates. [The updated notes are reviewed and corrected by the previous maintainers]. The Next new participant becomes the next maintainer of the notes.
+
 Manual:  By hand, you have to to do it you own self
 
 Automatic: By machine, you just have to start it, and it goes by itself after that, until done. 
@@ -19,14 +21,25 @@ Science: Anything where we have a very good idea how to do it, or at least  beli
 
 Automagically:  Something that automatic, but we haven't understood all the details how it works yet, but we can just USE it. 
 
+Hardware:   The physical (touchable) bits of the project. When we decide how the physical parts are to be arranged, we want to stop touching them. 
+
+Software:  The the organized instruction parts of the project.  Software is the parts that is easier to change than the hardware,  but we still want to stop touching the parts that we feel are organized. 
+
+program:  The organized instructions for the project IN THE BEST ORDER.  This includes DECIDING what the best order is, and having reasons for the decisions.
+
+code:  Source code, this can be any collection of source code.  This will talk about the WRITING aspect of the program, as in "typing in the source code".
+
 Robot: Any machine that does a task automatic
 
 Prop:  The Parallax Propeller Microcontroller 
 
 FORTH:  The forth programming language
 
-
 !PropForth::  FORTH on the Prop
+
+word:  A program or functional software routine in forth.  Usually a forth words starts with a colon `:` and ends with a semicolon `;`
+
+
 
 
 = Details =
