@@ -9,7 +9,7 @@ Some term being used are similar but different in other contexts. This page is a
 
 = Terms =
 
-New-Guy Notes: The summary given to the new participant.  The summary contains the necessary and available material we currently believe the new participant needs to get started.  The participant uses the material, and finds errors and deficiencies, and makes corrections and updates. The updated notes are reviewed by the previous maintainers. The each new participant becomes the next maintainer of the notes.
+New-Guy Notes: The summary given to the new participant.  The summary contains the necessary and available material we currently believe the new participant needs to get started.  The participant uses the material, and finds errors and deficiencies, and makes corrections and updates. The updated notes are reviewed by the previous maintainers. The each new participant becomes the next maintainer of the notes.  Each new participant demonstrates mastery of the material by teaching it to the next.
 
 Manual:  By hand, you have to to do it your own self
 
