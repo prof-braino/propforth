@@ -19,7 +19,7 @@ Magic:  Anything where we don't know how to do it, or don't understand well.
 
 Science: Anything where we have a very good idea how to do it, or at least  believe we understand something important to the extent we can use it. 
 
-Automagically:  Something that automatic, but we haven't understood all the details how it works yet, but we can just USE it. 
+Automagically:  Something automatic but we don't understood all the details how it works yet, but we can still USE it. 
 
 Hardware:   The physical (touchable) bits of the project. When we decide how the physical parts are to be arranged, we want to stop touching them. 
 
