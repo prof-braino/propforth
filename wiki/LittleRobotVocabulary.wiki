@@ -1,0 +1,37 @@
+#summary Defining some terms used with LittlRobot(tm) Project
+#labels v5.5,LittleRobot
+
+= Introduction =
+
+The LittleRobot Project pilot session has launched at a school.  The kids are 3rd to 8th grade.  
+
+Some term being used are similar but different in other contexts. This page is an attempt to get us all using the same words in the same way.
+
+= Terms =
+
+Manual:  By hand, you have to to do it you own self
+
+Automatic: By machine, you just have to start it, and it goes by itself after that, until done. 
+
+Magic:  Anything where we don't know how to do it, or don't understand well.
+
+Science: Anything where we have a very good idea how to do it, or at least  believe we understand something important about it. 
+
+Automagically:  Something that automatic, but we haven't understood all the details how it works yet, but we can just USE it. 
+
+Robot: Any machine that does a task automatic
+
+Prop:  The Parallax Propeller Microcontroller 
+
+FORTH:  The forth programming language
+
+
+!PropForth::  FORTH on the Prop
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
