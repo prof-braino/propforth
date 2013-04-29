@@ -1,5 +1,5 @@
 #summary BEGINNERS START HERE
-#labels v5.3,Featured
+#labels v5.3,Featured,v5.5
 
 FIRST THING:  STACKS! http://www.forth.org/svfig/Len/softstak.htm
 
@@ -9,12 +9,13 @@ The "stack".  Once you figure this out, you are golden.
 
 
 = Simple Instructions =
-
+ 
 You should be able to get up to speed in an afternoon. 
 
 == first Pass 20 minutes ==
 
   * Read this page
+  * download and instal the PropTool http://www.parallax.com/ProductInfo/Microcontrollers/PropellerDownloads/tabid/442/Default.aspx
   * Download and extract the archive PropForthv5.x-20130xxx.zip
   * Find PropForthDevkernel.spin (the program) in the extracted files
   * Find PropForth.htm (the reference manual) in the extracted files
