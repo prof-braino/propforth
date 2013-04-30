@@ -1,0 +1,83 @@
+#summary The first session had five kids
+
+= Introduction =
+
+We were advised that the kids should start playing as soon as possible.
+
+To do this, we skipped showing the boring set up stuff, and went directly to the experiments
+
+The setup was:
+
+Window Laptop with PropTool, Mac Laptiop with BST
+
+Download propforth archive
+
+Load Devkernel.spin
+
+Download teraterm (Windows), coolterm (mac)
+
+Connect the Quickstart to the USB port on the laptop (notice the first time drive install)
+
+verify the green LED lights, and teh propforth command prompt dispays
+
+= Start =
+
+Show the kids how to connect the quickstart (with devkernel.soin loaded into EEPROM) to  the USB port
+
+Verify the Green LED
+
+Verify the propforth command pompt
+
+= Hello World =
+
+Instruct the kids to type in:
+
+{{{
+: greet ." Hello World " ;
+
+greet
+}}}
+
+The kids all did something like
+
+{{{ 
+: tommy ." I like mcdonalds " ; 
+: billy ." burritos give me gas ooh yeah " ;
+}}}
+
+Success!
+
+To  move on, have the kid teach the next kid to do the same
+
+=  LED 1 =
+
+Point out the LEDs are by P16 through P23
+
+Instruct the kids to play with:
+
+{{{
+16 pinout
+16 pinhi
+16 pinlo
+16 pinin
+}}}
+
+Have them turn on various combinations of LEDs
+
+Success!
+
+To  move on, have the kid teach the next kid to do the same
+
+= Notes =
+
+For this session, all the kids had to work from one PC
+
+After 45 minutes, some of the kids started to drift away, starting with the youngest more or less.  Take a break after 45 minutes.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
