@@ -1,0 +1,49 @@
+#summary Wednesday is Just Flying solo
+
+= Introduction =
+
+Hopefully, we have prepared the instruction for session without developer support
+
+Jimmy has most of what we think he needs:
+
+  * Windows laptop
+  * proptool installed
+  * propforthv5.5 downloaded and unzipped
+  * USB cable
+  * devkernel.spin loaded to EEPROM
+  * completed Hello World 
+  * completed LED01
+
+Jimmy does NOT have:
+
+ * video conference software properly configured on laptop (maybe its just too old and broken?)
+ * voice chat software properly configured on laptop 
+
+WE need to fix this Friday
+
+We have not completed the arrangements for one laptop per robot; there are some complications as laptops are not usually assigned to the younger students.
+
+= Review =
+
+Ensure everyone has complete Hello world, and trained anther;  then practice
+
+Ensure everyone has completed pinhi, and trained another;  then practice
+
+Ensure everyone has completed ascending descending LEDs, and trained another;  then practice
+
+= new material =
+
+AFTER BREAK consider starting  IF...THEN
+
+= words up till today =
+
+These are the FORTH words introduced so far:
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
