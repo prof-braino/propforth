@@ -77,6 +77,15 @@ For this session, all the kids had to work from one PC
 
 After 45 minutes, some of the kids started to drift away, starting with the youngest more or less.  Take a break after 45 minutes.
 
+= FORTH PROGRAM SYNTAX =
+
+When we make our own programs:
+  * Each forth word starts with colon `:`
+  * The new word has a unique name identifier
+  * Each forth word ends with a semicolon `;`
+  * If the word does more than about 7 things, its probably too long.
+  * If the word does less than about too things, it might be too short
+
 = words up till today =
 
 These are the FORTH words introduced so far:
