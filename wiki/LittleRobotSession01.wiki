@@ -81,6 +81,8 @@ After 45 minutes, some of the kids started to drift away, starting with the youn
 
 These are the FORTH words introduced so far:
 
+session 01
+
 || word || name || stack note || used for || terminator ||
 || pinout || pin-out || ( n - )||  make a pin an output || space ||
 || pinhi || pin-high || ( n - )||  make a pin a logically high Vdd || space ||
