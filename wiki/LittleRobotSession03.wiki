@@ -1,4 +1,5 @@
 #summary Wednesday is Just Flying solo
+#labels LittleRobot,v5.5
 
 = Introduction =
 
@@ -38,6 +39,38 @@ AFTER BREAK consider starting  IF...THEN
 = words up till today =
 
 These are the FORTH words introduced so far:
+
+= words =
+
+session 03
+
+|| word || name || stack note || used for || terminator ||
+|| if || if || ( t/f - )||  if condition flag is tru, do the following, otherwise skip to after the THEN || then ||
+|| then || then  || ( - )||  this is the end of the stuff the if does when it see true;  execution continues with the next word after THEN|| space ||
+
+
+session 02
+
+|| word || name || stack note || used for || terminator ||
+|| delms || delay for milliseconds || ( n - )||  pause fo so many milliseconds || space ||
+|| i || iteration counter || ( - n )||  the number of this loop, beteen N1 and N2off the do...loop || space ||
+|| do || do repeatedly || ( N1 N2 - )||  Do this following starting wilth N2, and stop when it reaches N1 || space ||
+|| loop || end of the repeated loop  || ( - )||  when we reach here, go back to the do and see if we still need to repat || space ||
+|| +   || plus || (n1 n2  - n3 ) || add n1 and n2 and leave the result n3 on the top of the stack || space ||
+|| - || minus || ( n1 n2  - n3 ) || start with n1, subtract n2, leave the result n3 on the top of the stack || space ||
+
+
+session 01
+
+|| word || name || stack note || used for || terminator ||
+|| pinout || pin-out || ( n - )||  make a pin an output || space ||
+|| pinhi || pin-high || ( n - )||  make a pin a logically high Vdd || space ||
+|| pinhi || pin-low || ( n - )||  make a pin a logically low Vss || space ||
+|| pinin || pin-in || ( n - )||  make a pin an input || space ||
+|| :   || colon || (identifer - ) || starts a new word definition || semi colon ; ||
+|| ; || semicolon || ( - ) || ends a new word definition started by colon || space ||
+
+
 
 
 
