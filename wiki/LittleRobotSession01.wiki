@@ -1,4 +1,5 @@
 #summary The first session had five kids
+#labels LittleRobot,v5.5
 
 = Introduction =
 
@@ -21,6 +22,8 @@ Connect the Quickstart to the USB port on the laptop (notice the first time driv
 verify the green LED lights, and teh propforth command prompt dispays
 
 = Start =
+
+20130426
 
 Show the kids how to connect the quickstart (with devkernel.soin loaded into EEPROM) to  the USB port
 
