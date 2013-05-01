@@ -81,13 +81,13 @@ After 45 minutes, some of the kids started to drift away, starting with the youn
 
 These are the FORTH words introduced so far:
 
-| word | name | stack note | used for | terminator |
-| pinout | pin-out | ( n - )|  make a pin an output | space |
-| pinhi | pin-high | ( n - )|  make a pin a logically high Vdd | space |
-| pinhi | pin-low | ( n - )|  make a pin a logically low Vss | space |
-| pinin | pin-in | ( n - )|  make a pin an input | space |
-| :   | colon | (identifer - ) | starts a new word definition | semi colon ; |
-| ; | semicolon | ( - ) | ends a new word definition started by colon | space |
+|| word || name || stack note || used for || terminator ||
+|| pinout || pin-out || ( n - )||  make a pin an output || space ||
+|| pinhi || pin-high || ( n - )||  make a pin a logically high Vdd || space ||
+|| pinhi || pin-low || ( n - )||  make a pin a logically low Vss || space ||
+|| pinin || pin-in || ( n - )||  make a pin an input || space ||
+|| :   || colon || (identifer - ) || starts a new word definition || semi colon ; ||
+|| ; || semicolon || ( - ) || ends a new word definition started by colon || space ||
 
 
 = Details =
