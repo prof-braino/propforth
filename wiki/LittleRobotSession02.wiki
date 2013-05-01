@@ -1,0 +1,44 @@
+#summary For the second session we had seven kids
+#labels LittleRobot,v5.5
+
+20130429
+
+At least one has schedule conflict interferes with Moday session, but they will be back on Wednesday).  We gained a couple older kids (seventh grade?  I was too busy talking to take proper notes).
+
+= Intro and Review =
+
+New kids, intros; name and favorite fruit.
+
+Review Hello World - Last class' kids teach new kids
+
+Review pinhi pinlo - Last class' kids teach new kids
+
+= do loop =
+
+Using pinout pinhi pinlo delms i +
+
+Have kids make an LED flash on for 100 ms, and flash on for 500 ms, using do loop
+
+Leader decided to make LEDs flsh once in increasing order ` i 16 +`
+
+Second leaded decided to make them flash again in decreasing order `23 i - `
+
+Not all students made it this far by the end of this session
+
+Remember to include ascending and descending LEDs for the rest of the class
+
+= NOTES = 
+
+Many kids have brought samrt phone (in preparation for bluetooth terminal and GREEN  support. However, ehy end up palying phone games instead of paying attention.  This is ok for today, since we did not have one PC for each kit yet. 
+
+WE forgot to have a break at 45 minutes, so had one at 75 minutes.  Some kids got picked up to go home at this break.
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
