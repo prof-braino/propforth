@@ -47,7 +47,7 @@ The suggestion is to
 
 Yo - Jimmy! Copy this to another page, or make something from scratch.  Either way, I was think we would want to see something like this:
 
-|| -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon ||
+|| -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon || Dina ||
 || * || Meeting01 || ok || + || + || + || ok || + || - ||
 || * || Meeting02 || +  || + || + || + || + || + || ok ||
 || * || Meeting03 || + || - || - || - || - || - || - ||
