@@ -15,13 +15,13 @@ The READER is expected to know nothing about the subject (propforth) but the rea
 
 == Project Home ==
 
-A summary for you parents, this is how folks first encounter the propforth materials.
+A summary for your parents, this is how folks first encounter the propforth materials.
 
 `FEATURED` section on the left usually has the main material, for example the link to the Propforth download
 
 == Downloads ==
 
-Materials you can download to your machine.  In addition to the propforth archive, there are instructions and help files that other users have contributed.  Student developmed materials also go here.
+Materials you can download to your machine.  In addition to the propforth archive, there are instructions and help files that other users have contributed.  Student developed materials also go here.
 
 == wiki ==
 
@@ -34,7 +34,7 @@ Student questions and answers also go on the wiki pages.
 
 Policy is that anybody can edit any of the wiki pages.  However, you have to send me a email request first, so we don't get vandalism and spam.   Ask you parents permission first, they have to talk to me personally if you are under 18. 
 
-For the time being, Professor Braino edits most of the wiki pages.  The plan is to turn this over to other people before I die or otherwise leave the project. Story of Sagrada Família http://en.wikipedia.org/wiki/Antoni_Gaudi
+For the time being, Professor Braino edits most of the wiki pages.  The plan is to turn this over to other people before I die or otherwise leave the project. Story of Sagrada Família http://en.wikipedia.org/wiki/Antoni_Gaudi is an extreme example of not leaving notesto urn over the project to subsequent leaders.
 
 = Navigate to propeller datasheet = 
 
