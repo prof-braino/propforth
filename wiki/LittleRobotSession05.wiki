@@ -13,6 +13,29 @@ The READER is expected to know nothing about the subject (propforth) but the rea
 
 = Navigate to code.google.propforth =
 
+== Project Home ==
+
+A summary for you parents, this is how folks first encounter the propforth materials.
+
+`FEATURED` section on the left usually has the main material, for example the link to the Propforth download
+
+== Downloads ==
+
+Materials you can download to your machine.  In addition to the propforth archive, there are instructions and help files that other users have contributed.  Student developmed materials also go here.
+
+== wiki ==
+
+Each time a question arises that is not covered in PROPFORTH.htm, we make a wiki page for the question and answer.  We figure if one person has this question, other folks may have the same or similar question. 
+
+We DON'T try to guess each question in advance.  Some folks tried that, and end up going crazy.  So we say the wiki is "driven by user questions". 
+
+
+Student questions and answers also go on the wiki pages. 
+
+Policy is that anybody can edit any of the wiki pages.  However, you have to send me a email request first, so we don't get vandalism and spam.   Ask you parents permission first, they have to talk to me personally if you are under 18. 
+
+For the time being, Professor Braino edits most of the wiki pages.  The plan is to turn this over to other people before I die or otherwise leave the project. 
+
 = Navigate to propeller datasheet = 
 
 
