@@ -45,7 +45,14 @@ The suggestion is to
 
 = Jimmy's chart of class progress =
 
-Yo - Jimmy! Copy this to another page, or make something from scratch.  Either way, I was think we would want to see something like this:
+Yo - Jimmy! Copy this to another page, or make something from scratch.  Either way, I was think we would want to see something like this-
+
+The chart shows each student at each session.  Each student is to demonstrate the objective for each session. Jimmy (or TA) ask each student individually to demonstrate the tasks, and record completion. 
+
+`+` indicates that all activities have be complete
+`-` indicates that all activities have NOT been complete
+
+Any further detail should be send to the team in an email.  For example "Dina join late and missed the first session. We need to remember to go back and do Sessiont01 with her". 
 
 || -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon || Dina ||
 || * || Meeting01 || ok || + || + || + || ok || + || - ||
