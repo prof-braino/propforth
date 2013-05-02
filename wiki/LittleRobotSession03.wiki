@@ -1,9 +1,13 @@
-#summary Wednesday is Just Flying solo
+#summary Wednesday is Jimmy Flying solo
 #labels LittleRobot,v5.5
 
 = Introduction =
 
+Wednesday is instructor Jimmy conducting Lab and Review. 
+
 Hopefully, we have prepared the instruction for session without developer support
+
+Wednesday 20130501 was to be Jimmy's first session on his own, but this was overcome by events. The following session, Friday, we will try Lab and Review.   Professor Braino and Boy Chance will be present, but we will refrain from leading and observe how the lab might be conducted in our absence. 
 
 Jimmy has most of what we think he needs:
 
