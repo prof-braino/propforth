@@ -38,7 +38,9 @@ For the time being, Professor Braino edits most of the wiki pages.  The plan is 
 
 = Navigate to propeller datasheet = 
 
+http://www.parallax.com/Portals/0/Downloads/docs/prod/prop/Propeller-P8X32A-Datasheet-v1.4.0.pdf
 
+http://www.parallax.com/tabid/832/default.aspx
 
 
 = Details =
