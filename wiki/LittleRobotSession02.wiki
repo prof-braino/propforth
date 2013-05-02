@@ -3,7 +3,7 @@
 
 20130429
 
-At least one has schedule conflict interferes with Moday session, but they will be back on Wednesday).  We gained a couple older kids (seventh grade?  I was too busy talking to take proper notes).
+At least one participant has schedule conflict interferes with Monday session, but those missing Monday plan to be back on Wednesday.  We gained a couple older kids (seventh grade?  I was too busy talking to take proper notes).
 
 = Intro and Review =
 
@@ -19,7 +19,7 @@ Using pinout pinhi pinlo delms i +
 
 Have kids make an LED flash on for 100 ms, and flash on for 500 ms, using do loop
 
-Leader decided to make LEDs flsh once in increasing order ` i 16 +`
+Leader decided to make LEDs flash once in increasing order ` i 16 +`
 
 Second leaded decided to make them flash again in decreasing order `23 i - `
 
@@ -29,7 +29,7 @@ Remember to include ascending and descending LEDs for the rest of the class
 
 = NOTES = 
 
-Many kids have brought samrt phone (in preparation for bluetooth terminal and GREEN  support. However, ehy end up palying phone games instead of paying attention.  This is ok for today, since we did not have one PC for each kit yet. 
+Many kids have brought smart phone (in preparation for blue-tooth terminal and GREEN  support. However, they end up playing phone games instead of paying attention.  This is ok for today, since we did not have one PC for each kit yet. 
 
 WE forgot to have a break at 45 minutes, so had one at 75 minutes.  Some kids got picked up to go home at this break.
 
@@ -40,9 +40,9 @@ session 02
 
 || word || name || stack note || used for || terminator ||
 || delms || delay for milliseconds || ( n - )||  pause fo so many milliseconds || space ||
-|| i || iteration counter || ( - n )||  the number of this loop, beteen N1 and N2off the do...loop || space ||
-|| do || do repeatedly || ( N1 N2 - )||  Do this following starting wilth N2, and stop when it reaches N1 || space ||
-|| loop || end of the repeated loop  || ( - )||  when we reach here, go back to the do and see if we still need to repat || space ||
+|| i || iteration counter || ( - n )||  the number of this loop, between N1 and N2off the do...loop || space ||
+|| do || do repeatedly || ( N1 N2 - )||  Do this following starting with N2, and stop when it reaches N1 || space ||
+|| loop || end of the repeated loop  || ( - )||  when we reach here, go back to the do and see if we still need to repeat || space ||
 || +   || plus || (n1 n2  - n3 ) || add n1 and n2 and leave the result n3 on the top of the stack || space ||
 || - || minus || ( n1 n2  - n3 ) || start with n1, subtract n2, leave the result n3 on the top of the stack || space ||
 
@@ -54,7 +54,7 @@ session 01
 || pinhi || pin-high || ( n - )||  make a pin a logically high Vdd || space ||
 || pinhi || pin-low || ( n - )||  make a pin a logically low Vss || space ||
 || pinin || pin-in || ( n - )||  make a pin an input || space ||
-|| :   || colon || (identifer - ) || starts a new word definition || semi colon ; ||
+|| :   || colon || (identifier - ) || starts a new word definition || semi colon ; ||
 || ; || semicolon || ( - ) || ends a new word definition started by colon || space ||
 
 
