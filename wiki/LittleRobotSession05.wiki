@@ -1,0 +1,25 @@
+#summary References and Datasheets
+#labels LittleRobot,v5.5
+
+= Introduction =
+
+References are the materials to use when a teacher is not available. Examples are the dictionary for word meanings, wikipedia broad topics.
+
+Datasheets are the references electronic parts.  If you can read a datasheet, you can master any part.  Anyone can read any datasheet, but sometimes it takes a bit of practice to get used to it.
+
+PROPFORTH.htm is the datasheet for the propforth programming language and environment.  It is very short, but it might be strange the first time through.  This is how a very wise and experienced old man explains a project to other very wise and experienced people. 
+
+The READER is expected to know nothing about the subject (propforth) but the reader is expected to know a bunch of particular stuff about the world. He doesn't know what you DON't know.  So expect to ask ask questions.  We want to hear you questions, and write the answers in these pages.
+
+= Navigate to code.google.propforth =
+
+= Navigate to propeller datasheet = 
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
