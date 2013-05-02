@@ -1,0 +1,67 @@
+#summary Lab and Review, working from web pages.
+
+= Introduction =
+
+One of the issue with the class is getting the proper equipment.  This is because we do not know the minimum necessary and sufficient to achieve the goal. 
+
+== WE THOUGHT: ==
+
+Ten kits (one quickstart each) 
+Ten Laptops
+Ten students
+
+== NOW we observe: ==
+
+Nine kits (gave one to instructor Jimmy to prepare and practice)
+Seven student (one for each student, but...)
+Two Laptops.  Turns out these are only assigned to the older kids, and so we are short by exactly the number of younger kids. 
+
+== Modified plan: ==
+
+Kids will share - pair program,
+
+Kids with no keyboard will watch buddies
+
+First kid will program with help of second kid, then first kids will move on to help other having trouble, and second kid begins working 
+
+Braino brings his laptop (XP)
+
+Boy Chance bring his laptop (iOS)
+
+Allen brings TWO laptops (on the bus? We'll see) 
+
+Jimmy will use the classroom Mac for video? 
+
+=  REVIEW based on web pages from previous sessions =
+
+The suggestion is to 
+
+ * Have the STUDENTS navigate to the session web pages
+ * read the page as needed
+ * repeat the examples as needed
+ * DEMONSTRATE the use of the FORTH words as LISTED
+ * show one of the instructors mastery has be achived
+ * JIMMY to maintain a list of the kids that completed each activity
+
+= Jimmy's chart of class progress =
+
+Yo - Jimmy! Copy this to another page, or make something from scratch.  Either way, I was think we would want to see something like this:
+
+|| -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon ||
+|| * || Meeting01 || ok || + || + || + || ok || + || - ||
+|| * || Meeting02 || +  || + || + || + || + || + || ok ||
+|| * || Meeting03 || + || - || - || - || - || - || - ||
+|| * || Meeting04 || + || - || - || - || - || - || - ||
+|| * || Meeting05 || - || - || - || - || - || - || - ||
+|| * || Meeting06 || - || - || - || - || - || - || - ||
+|| * || Meeting07 || - || - || - || - || - || - || - ||
+|| * || Meeting08 || - || - || - || - || - || - || - ||
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
