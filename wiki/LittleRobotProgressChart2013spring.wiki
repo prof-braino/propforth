@@ -1,0 +1,26 @@
+#summary Chart which participants have completed activities.
+#labels LittleRobot,v5.5
+
+= Introduction =
+
+This is a chart for the spring 2013 pilot session for the little robot project
+
+DASH `-` designates activity not started
+PLUS `+` designates activity have been started
+OK `OK` designates the student s demonstrated the activity
+
+= Details =
+
+
+
+|| -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon || Dina ||
+|| * || Meeting00 || + || - || - || - || - || - || - ||
+|| * || Meeting01 || + || - || - || - || - || - || - ||
+|| * || Meeting02 || + || - || - || - || - || - || - ||
+|| * || Meeting03 || + || - || - || - || - || - || - ||
+|| * || Meeting04 || + || - || - || - || - || - || - ||
+|| * || Meeting05 || - || - || - || - || - || - || - ||
+|| * || Meeting06 || - || - || - || - || - || - || - ||
+|| * || Meeting07 || - || - || - || - || - || - || - ||
+|| * || Meeting08 || - || - || - || - || - || - || - ||
+
