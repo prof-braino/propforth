@@ -13,13 +13,6 @@ OK `OK` designates the student s demonstrated the activity
 
 = Details =
 
-20130422 - M
-20130424 - w
-20130426 - f
-20130429 - M
-20130501 - no jimmy 
-20130503 - anica
-
 || -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon || Dina ||
 || 20130422 Meeting00 || LittleRobotSession01 || + || - || - || - || - || - || - ||
 || 20130424 Meeting01 || Lab ||+ || - || - || - || - || - || - ||
@@ -30,3 +23,30 @@ OK `OK` designates the student s demonstrated the activity
 || Meeting06 || || - || - || - || - || - || - || - ||
 || Meeting07 || || - || - || - || - || - || - || - ||
 || Meeting08 || || - || - || - || - || - || - || - ||
+
+==  some notes ==
+
+  * 20130422 - Monday - start, Braino, Boy Chance, Jimmy
+  * 20130424 - Wednesday - Allen, lab
+  * 20130426 - Friday -  Braino, Boy Chance, Jimmy,  (Anica)
+  * 20130429 - Monday -  Braino, Boy Chance, Jimmy, (Anica)
+  * 20130501 - Wednesday - no jimmy, no lab
+  * 20130503 - Friday Braino, Boy Chance, Anica, (Allen)
+  * 20130506 - Monday
+  * 20130508 - Wednesday - LAB
+  * 20130510 - Friday
+  * 20130513 - Monday
+  * 20130515 - Wednesday - LAB
+  * 20130517 - Friday
+  * 20130520 - Monday
+  * 20130522 - Wednesday - LAB
+  * 20130524 - Friday
+  * 20130527 - Monday
+  * 20130529 - Wednesday - LAB
+  * 20130531 - Friday
+  * 20130603 - Monday - Scheduled LAST day of Class
+  * 20130505 - Wednesday - LAB - Make up 1 for 20130501
+  * 20130506 - Friday - no class scheduled
+  * 20130506 - Monday - no class scheduled
+  * 20130506 - Wednesday - LAB - no class scheduled
+  * 20130506 - Friday - no class scheduled
