@@ -16,7 +16,7 @@ OK `OK` designates the student s demonstrated the activity
 
 
 || -> || Student: || Alex || Alicia || Bobby || Betty || Charlie || Charon || Dina ||
-|| Meeting00 || + || - || - || - || - || - || - ||
+|| Meeting00 || LittleRobotSession01 || + || - || - || - || - || - || - ||
 || Meeting01 || + || - || - || - || - || - || - ||
 || Meeting02 || + || - || - || - || - || - || - ||
 || Meeting03 || + || - || - || - || - || - || - ||
