@@ -19,8 +19,8 @@ OK `OK` designates the student s demonstrated the activity
 || 20130426 Meeting02 || LittleRobotSession02 ||+ || - || - || - || - || - || - ||
 || 20130429 Meeting03 || LittleRobotSession03 ||+ || - || - || - || - || - || - ||
 || 20130501  || -cancelled- ||+ || - || - || - || - || - || - ||
-|| 20130503 Meeting05 || lab || - || - || - || - || - || - || - ||
-|| Meeting06 || || - || - || - || - || - || - || - ||
+|| 20130503 Meeting05 || lab|| - || - || - || - || - || - || - ||
+|| 20130506 Meeting06 ||  Setup kids laptops || - || - || - || - || - || - || - ||
 || Meeting07 || || - || - || - || - || - || - || - ||
 || Meeting08 || || - || - || - || - || - || - || - ||
 
