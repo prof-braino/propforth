@@ -50,3 +50,14 @@ OK `OK` designates the student s demonstrated the activity
   * 20130506 - Monday - no class scheduled
   * 20130506 - Wednesday - LAB - no class scheduled
   * 20130506 - Friday - no class scheduled
+
+student grade
+Peyton 4th 
+Ellis 3rd
+Michael 3rd
+Rikesh 4th
+Gracian 4th
+Jadyn 4th
+Grant 4th
+Miles 5th
+Daryl 6th
