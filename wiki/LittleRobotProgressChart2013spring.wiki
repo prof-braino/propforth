@@ -20,8 +20,8 @@ OK `OK` designates the student s demonstrated the activity
 || 20130429 Meeting03 || LittleRobotSession03 || - || - || - || - || - || - || - ||
 || 20130501  || -cancelled- || - || - || - || - || - || - || - ||
 || 20130503 Meeting05 || lab|| - || - || - || - || - || - || - ||
-|| 20130506 Meeting06 ||  Setup kids laptops || - || - || - || - || - || - || - ||
-|| Meeting07 || || - || - || - || - || - || - || - ||
+|| 20130506 Meeting06 ||  Setup ~~kids~~ spare laptops || - || - || - || - || - || - || - ||
+|| 20130508 Meeting07 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
 || Meeting08 || || - || - || - || - || - || - || - ||
 
 ==  some notes ==
