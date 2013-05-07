@@ -1,0 +1,44 @@
+#summary Notes on Preparations for a LittleRobot session
+#labels v5.5,LittleRobot
+
+= Do In Advance =
+
+In the case of Ancona, the school agreed to provide laptops or PCs for the kids to use on the project.  The school assigns laptops to the kids, so this would not be an issue.
+
+However, 
+  * the school only assigns laptops to the older kids. We had two older kids.  We were short by exactly the amount of younger kids, which was FIVE.   
+  * We tried to double or triple up the kids, and do pair/group programming.  
+  * Another issue (policy or security) prevented us from using the assigned laptops.  
+  * We determined the kids ALL have laptops of there own at home (most newer and fancier than mine, they would have worked fine).  Unfortunately, there was significant push-back from the parents, (the kids were not permitted to bring there person laptops to school), and the IT department (the kids laptops were not permitted to enter the secure network). 
+   
+Midway through the  course, we found a stack of obsolete laptops in the IT storage room. These were more than adequate for running propforth terminal session.  
+
+= NOTE FOR FUTURE SESSIONS = 
+
+Inform the school/venue that the following MUST be completed in order for the class to be productive.  The school must agree to provide the following and ensure it is in place in order for the session to operate. 
+
+  * SEVEN DAYS before a class is scheduled to meet for the first time, visit the establishment as part of the course set up.  
+
+  * Have the laptop brought to the room.
+
+  * Plug in the laptops, turrn them on, verify access permission, verify internet access.
+
+  * Create links to Propforth, Parallax, BST, forums. 
+
+  * Download PropTool/BST & driver; teraterm/coolterm
+
+  * Install all the software
+
+  * Connect the USB to the PC and the Quickstart on each station
+
+  * Burn the Dev kernel to EEPROM on each quickstart.
+
+  * Create desktop linkg for the terminal program, the proptool, and the Propforth extensions directory
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
