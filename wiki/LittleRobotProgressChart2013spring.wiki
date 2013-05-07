@@ -28,11 +28,11 @@ OK `OK` designates the student s demonstrated the activity
 
   * 20130422 - Monday - start, Braino, Boy Chance, Jimmy
   * 20130424 - Wednesday - Allen, lab
-  * 20130426 - Friday -  Braino, Boy Chance, Jimmy,  (Anica)
-  * 20130429 - Monday -  Braino, Boy Chance, Jimmy, (Anica)
+  * 20130426 - Friday -  Braino, Boy Chance, Jimmy,  (Anika)
+  * 20130429 - Monday -  Braino, Boy Chance, Jimmy, (Anika)
   * 20130501 - Wednesday - no jimmy, no lab
-  * 20130503 - Friday Braino, Boy Chance, Anica, (Allen)
-  * 20130506 - Monday
+  * 20130503 - Friday Braino, Boy Chance, Anika, (Allen)
+  * 20130506 - Monday Braino, Boy Chance, Anika, Allen, Bilas, Faith
   * 20130508 - Wednesday - LAB
   * 20130510 - Friday
   * 20130513 - Monday
