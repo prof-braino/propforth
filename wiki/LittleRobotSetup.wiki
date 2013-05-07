@@ -6,18 +6,20 @@
 In the case of Ancona, the school agreed to provide laptops or PCs for the kids to use on the project.  The school assigns laptops to the kids, so this would not be an issue.
 
 However, 
-  * the school only assigns laptops to the older kids. We had two older kids.  We were short by exactly the amount of younger kids, which was FIVE.   
+  * the school only assigns laptops to the older kids. We had two older kids.  We were short by exactly the amount of younger kids, which was FIVE.   This was not appearant until the third session.
   * We tried to double or triple up the kids, and do pair/group programming.  
   * Another issue (policy or security) prevented us from using the assigned laptops.  
   * We determined the kids ALL have laptops of there own at home (most newer and fancier than mine, they would have worked fine).  Unfortunately, there was significant push-back from the parents, (the kids were not permitted to bring there person laptops to school), and the IT department (the kids laptops were not permitted to enter the secure network). 
    
 Midway through the  course, we found a stack of obsolete laptops in the IT storage room. These were more than adequate for running propforth terminal session.  
 
+ROOT Cause:  While we told the school what we needed, and the school agreed in advance, there were still issues.  This was due to the technical support people having a specific idea of what the agreement means, and the school staff having a sketchy idea of the agreement.  In particular, the school staff did not realize the actions they must take.  We did not realise the lapse in communication until after the issue was solved. The actual detail missing was the LittleRobot staff need to talk DIRECTLY with the IT staff with the school management authority present to state the intent and agree on a solution. 
+
 = NOTE FOR FUTURE SESSIONS = 
 
-Inform the school/venue that the following MUST be completed in order for the class to be productive.  The school must agree to provide the following and ensure it is in place in order for the session to operate. 
+Inform the school/venue that the following prerequisites MUST be completed in order for the class to be productive.  The school must agree to provide the following and ensure it is in place in order for the session to operate. 
 
-LAPTOP SETUP CONSUMES TWO HOURS, give or take
+LAPTOP SETUP CONSUMES TWO HOURS, give or take.
 
   * SEVEN DAYS before a class is scheduled to meet for the first time, visit the establishment as part of the course set up.  
 
@@ -35,8 +37,11 @@ LAPTOP SETUP CONSUMES TWO HOURS, give or take
 
   * Burn the Dev kernel to EEPROM on each quickstart.
 
-  * Create desktop linkg for the terminal program, the proptool, and the Propforth extensions directory
+  * Create desktop links for the terminal program, the proptool, and the Propforth extensions directory
 
+  * ensure there are the proper number of stations for the number of participants, and negotiate adjustments if the agrred number do not match.  (one student per station, two or three students per station).
+
+Any issues not resolved at this setup session will have a week to be resolved. Any issues must be assigned to an individual responsible for resolution, and resolution needs to be verified before the start of the session. 
 
 = Details =
 
