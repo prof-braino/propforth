@@ -1,0 +1,31 @@
+#summary Notes on the Little Robot kits from PropellerPowered for Ancona.
+#labels v5.5,LittleRobot
+
+= Kits for the Pilot Run from PropellerPowered =
+
+Jeff (OBC) Ledger agreed to source LittleRobot Kits for the spring 2013 pilot at Ancona School.  These are Braino's notes.
+
+  The kits included "Proto an More board" as normally included in the Quickstart bundle from PropellerPoowered.  These are great, but the kids cannot solder (school rules, no equipment present).
+
+  * Instead, we went with the mid size breadboards. Nnot the tiny 170 pin, and not the normal size.  Get the correct description and record results.
+
+  * With the Bread board, we also needed jumpers.  I ordered the bundle of 65 jumper in assorted colors with the molded pins on two ends.  
+
+  * For the stepper driver boards, which has header pins not sockets; I ordered a flat cable strip with 40 conductor, and individual sockets on each end.  
+
+_These were ordered midway through the session, I don't know if they will reach the school in time.  They were cheap, we will use them next time._
+
+_If it comes down to it, I can rip the bread boards out of the lab and bring these, and use solid core hook-up wire for jumpers. I have rolls of four different colors.  However, we have doubts about some of the kids inserting the wires correctly. Also, I'll have to manually do something (wire-wrap?) for the stepper driver board which have pins instead of sockets_
+
+  The kits from PropellerPowered did NOT contain the USB mini B cable for connecting the quickstart to the PC.  The assumption was that everybody has a zillion of these just laying around, we'd use those.  In fact, None of the kids had any to bring in.  The school did not produce any in preparation for the class. I found SEVEN cables in the Braino lab, and brought these; as a result all the test stations in the lab are disabled until the end of class. 
+
+  * I ordered ten 18 inch USB mini B cables from NewEgg for a dollar each and $2.99 4day shipping, these should arrive in time.
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
