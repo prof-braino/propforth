@@ -73,6 +73,14 @@ Vss: the Ground of the prop, 0 volts
 
 Design: The plan for what the project is intended to do, and how its supposed to work.  If ANY part of the plan is changed, all other parts must be checked to see it they must change as well. 
 
+= other terms we might use =
+
+  * Right and wrong: these are SUBJECTIVE, the meaning can change depending on who is doing the talking and who is doing the listening. 
+    - Right: We think something is "right" if we have seem this to work well in the past.  We think that this might continue to work, until somebody shows us different.
+    - Wrong:  We think something is "wrong" if we have seen that this does not do what we need it to do.  We think this "wrong" until somebody shows us different. 
+
+Anything we call WRONG may turn out to be right, and anything right may later turn out to be wrong.  BE CARE, let things change when you have evidence!
+
 = Details =
 
 Add your content here.  Format your content with:
