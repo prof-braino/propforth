@@ -9,6 +9,8 @@ Some terms being used are similar but different in other contexts. This page is 
 
 Clarity is one key to success.
 
+This page is in response to Jimmy's comment about "jargon", he did not understand what we wanted words to mean.  these are common and normal meaning for these terms in the world of computer context.    
+
 = Terms =
 
 New-Guy Notes: The summary given to the new participant.  The summary contains the necessary and available material we currently believe the new participant needs to get started.  The participant uses the material, and finds errors and deficiencies, and makes corrections and updates. The updated notes are reviewed by the previous maintainers. The each new participant becomes the next maintainer of the notes.  Each new participant demonstrates mastery of the material by teaching it to the next.
