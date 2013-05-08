@@ -14,7 +14,7 @@ OK `OK` designates the student s demonstrated the activity
 = Details =
 
 || -> || Student: || Ellis 3rd|| Michael 3rd|| Peyton 4th || Rikesh 4th|| Gracian 4th|| Jadyn 4th || Grant 4th ||  Miles 5th  || Daryl 6th ||
-|| 20130422 Meeting00 || LittleRobotSession01 || - || - || + || + || - || - || - ||
+|| 20130422 Meeting00 || LittleRobotSession01 || - || + || + || + || - || - || - ||
 || 20130424 Meeting01 || Lab || - || - || - || - || - || - || - ||
 || 20130426 Meeting02 || LittleRobotSession02 || - || - || - || - || - || - || - ||
 || 20130429 Meeting03 || LittleRobotSession03 || - || - || - || - || - || - || - ||
