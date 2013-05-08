@@ -41,7 +41,7 @@ program:  The organized instructions for the project IN THE BEST ORDER.  This in
 
 code:  Source code, this can be any collection of source code.  This will talk about the WRITING aspect of the program, as in "typing in the source code".
 
-Robot: Any machine that does a task automatic
+Robot: Any machine that does a task automaticly
 
 Prop:  The Parallax Propeller Microcontroller 
 
@@ -49,21 +49,23 @@ FORTH:  The forth programming language
 
 !PropForth:  FORTH on the Prop
 
-word:  A program or functional software routine in forth.  Usually a forth words starts with a colon `:` and ends with a semicolon `;`
+word:  A program or functional software routine in forth.  Usually a forth word definitions starts with a colon `:` and ends with a semicolon `;`
 
 dictionary: the list of words in the forth dictionary
 
-words: a PROPFORTH instruction that lists all the words in the propforth dictionary 
+`words`: a PROPFORTH instruction that lists all the words in the propforth dictionary 
+
+stack notes:   See below 
 
 pin: one of the 32 i/o pins on the prop chip. the pins are NUMBERED 0 TO 31 
 
-pinin:  Makes the pin an input so it "listens" to signals on the pin
+`pinin`:  Makes the pin an input so it "listens" to signals on the pin
 
-pinout: Makes the pin an output so it "talks" to external devices.
+`pinout`: Makes the pin an output so it "talks" to external devices.
 
-pinhi:  sets the pin to the TRUE or HI state (3.3 volts)
+`pinhi`:  sets the pin to the TRUE or HI state (3.3 volts)
 
-pinlo: sets the pin to the FALSE or LOW state (0 volts or ground).
+`pinlo`: sets the pin to the FALSE or LOW state (0 volts or ground).
 
 Vin:  the input voltage from USB or Battery pack.  In our case it 4.8 to 5.0 volts; but BE CAREFUL; in some cases it can be as high as 12 volts and and this could damage things not properly connected
 
@@ -76,10 +78,23 @@ Design: The plan for what the project is intended to do, and how its supposed to
 = other terms we might use =
 
   * Right and wrong: these are SUBJECTIVE, the meaning can change depending on who is doing the talking and who is doing the listening. 
-    - Right: We think something is "right" if we have seem this to work well in the past.  We think that this might continue to work, until somebody shows us different.
-    - Wrong:  We think something is "wrong" if we have seen that this does not do what we need it to do.  We think this "wrong" until somebody shows us different. 
+    * Right: We think something is "right" if we have seem this to work well in the past.  We think that this might continue to work, until somebody shows us different.
+    * Wrong:  We think something is "wrong" if we have seen that this does not do what we need it to do.  We think this "wrong" until somebody shows us different. 
 
 Anything we call WRONG may turn out to be right, and anything right may later turn out to be wrong.  BE CARE, let things change when you have evidence!
+
+== STACK NOTE ==
+
+The note that says what a propforth function takes from the stack as input, and what it leave on the stack as output. Ususally the stack note has zero or more numbers that represent the inputs, a dash, and zero or more numbers that represent the ouputs.
+
+` ( inputs - outputs) `
+
+ * `n` - n means and integer number
+ * `f` - means a flag, 1 or zero,  0 means FALSE and not zero means TRUE.  Usually -1 is TRUE, but any non zero number can also be true
+ * `A` - alpha character.  This would be any letter.
+ * `alphanumeric` - any letter that can be typed from the keyboard
+
+
 
 = Details =
 
