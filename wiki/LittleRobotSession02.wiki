@@ -33,6 +33,12 @@ Many kids have brought smart phone (in preparation for blue-tooth terminal and G
 
 WE forgot to have a break at 45 minutes, so had one at 75 minutes.  Some kids got picked up to go home at this break.
 
+{{{
+: outs 8 0 do i 16 + dup . pinout loop ;
+
+: forward 8 0 do i 16 + pinhi 200 delms  i 16 + pinlo loop ;
+}}}
+
 = words =
 
 
