@@ -37,6 +37,7 @@ WE forgot to have a break at 45 minutes, so had one at 75 minutes.  Some kids go
 : outs 8 0 do i 16 + dup . pinout loop ;
 
 : forward 8 0 do i 16 + pinhi 200 delms  i 16 + pinlo loop ;
+: backward 8 0 do 23 i -  pinhi 500 delms  23 i - pinlo  loop ;
 }}}
 
 = words =
