@@ -57,6 +57,8 @@ dictionary: the list of words in the forth dictionary
 
 `words`: a PROPFORTH instruction that lists all the words in the propforth dictionary 
 
+stack:  See below
+
 stack notes:   See below 
 
 pin: one of the 32 i/o pins on the prop chip. the pins are NUMBERED 0 TO 31 
