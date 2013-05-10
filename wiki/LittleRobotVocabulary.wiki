@@ -90,6 +90,19 @@ Work and play can be the same thing. When you practice a video game,to get past 
 
 Anything we call WRONG may turn out to be right, and anything right may later turn out to be wrong.  BE CARE, let things change when you have evidence!
 
+= The STACK =
+
+The stack is a key part of forth, and of many micro controllers.  If you don't get the stack, ask. This is very good to know. 
+
+The stack is like a stack of plates.  You can stack the plates pretty, high, but eventually the stack gets too high and it falls over.  You can usually only see whats on the top plate. If you put an item on the stack, the stackincreases by one member.  When you take somthing off the stack, the stack decreases by one member.
+
+FORTH words take numbers off the stack as inputs, and place other numbers on the stack as out puts.
+
+A forth word usually takes zero to three items as inputs.  A forth word usually leaves zero to three items on the stack as outputs.  There are exceptions, where words take or leave more than the usualy number of items, but we'll talk about these as we see them. 
+
+
+
+
 == STACK NOTE ==
 
 The note that says what a propforth function takes from the stack as input, and what it leave on the stack as output. Ususally the stack note has zero or more numbers that represent the inputs, a dash, and zero or more numbers that represent the ouputs.
