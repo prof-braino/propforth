@@ -1,4 +1,4 @@
-#summary Wednesday is Jimmy Flying solo
+#summary Wednesday was Jimmy Flying solo.
 #labels LittleRobot,v5.5
 
 = Introduction =
@@ -36,9 +36,109 @@ Ensure everyone has completed pinhi, and trained another;  then practice
 
 Ensure everyone has completed ascending descending LEDs, and trained another;  then practice
 
+= review materioal that was not covered properly when introduced =
+
+We used these, but did not explain them. My bad. Upthe earlier lessons after the pilot session ends, and put these where they belong.
+  * sc 
+  * st? 
+  * . 
+
+== word sc ==
+  
+sc is STACK CLEAR.  This deletes all the items on the stack, and tells you how many it got rid off. This is very useful in debug and test, when things might be acting different than you expect. It cleans up the stack.
+
+== word st? ==
+
+st? is "display the contents of the stack".  The numbers are formatted as 32 bit longs, such that we can always see every bit represented.  Explain what this means, it might be too much for the kids.  And teachers. 
+
+== word - . (dot) ==
+
+The period or dot takes a number off the stack, and puts it on the display as a number. 
+
+Type the following 
+
+{{{
+1 45 87 34 99 
+. . . . .
+}}}
+
+Only the non zero bits are displayed, the number is NOT padded with zeros.
+
 = new material =
 
-AFTER BREAK consider starting  IF...THEN
+Today we will use fkey?, if, and then.  Introduce FLAGS. More character I/O words. Add explanation of some words we didn't explain properly.
+
+I/O means Input and Output.  Discuss I/O
+
+== New Word - emit == 
+
+The stack note for emit is:
+
+{{{
+\ emit ( char - )  \ type a single character to the display
+}}}
+
+Emit takes a number off the stack, and tries to display it as an alphanumeric on the display.   Try the following:
+
+{{{
+55 emit
+76 emit
+33 emit
+255 emit
+256 emit
+}}}
+
+Here's something neat and scary.  IF YOU EMIT  the proper sequence of numbers, YOU  can reprogram the PC!!!!!!!!!!!!  YES!!!! Muhuhahahahahaha!  This is tons of fun, folks can never figure out that you pranked them!!!  Also, you can sometimes prank yourself!!! For HOURS!!! Hahahahahaha!
+
+Remember, if you prank yourself, and reprogram the PC terminal program, exit the terminal program (teraterm or cool term) and restart it. 
+
+If you deprogram the quickstart, , press the reset button. If that doesn't work, ask the teacher, perhaps the Propforth kernel needs to be re-burned into EEPROM (we'll explain that later). 
+
+== New Word - ." (dot-double-quote) ==
+
+Dot-double-quote begins a string literal
+
+== New Word - "  (double-quote) ==
+
+double-quote terminates a string literal
+
+== FLAG ==
+
+A *FLAG* is a value where zero `0` means NO or FALSE; and anything that not zero like 1, -1, 17, a million, are all considered to mean TRUE or YES
+
+Flags are a big deal, we will use these again. 
+
+Putting a zero on the stack is used to tell the next routine NO
+
+Putting a non zero 1, -1  etc on the stack tells the next routing YES
+
+This is really cool, its the essence of how computers talk.
+
+== New Word - fkey? ==
+
+`fkey?` is the coolest function.  When this word is executed, it preforms:
+
+  * Was a key Pressed?
+and
+  * What key was pressed?
+
+`fkey?` has the following stack note:
+
+` \ fkey? ( - char t/f )  `
+
+The parts before the DASH says what it consumes from the stack, and the part after the dash says what it depsoits on the stack. 
+
+This says, ( `fkey?` takes no items from the stack.  - `fkey? leaves a character, and a flag )
+
+If a key on the keyboard was press, the stack will have number that represents the key that was pressed, and a TRUE flag.
+
+If the a key was NOT pressed, the stack will have a number that would be impossible to get from a key, and a FALSE or zero flag
+
+
+== New Word - if ==
+
+== New Word - then ==
+
 
 = words up till today =
 
