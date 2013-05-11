@@ -134,8 +134,13 @@ If a key on the keyboard was press, the stack will have number that represents t
 
 If the a key was NOT pressed, the stack will have a number that would be impossible to get from a key, and a FALSE or zero flag
 
+== word pair: if...then ==
+
+If and then go together as a pair.  the pair needs to match; otherwise behavior is undefined.  This means things can get strange and unpredictable, which is what we DN'T want.  
 
 == New Word - if ==
+
+
 
 == New Word - then ==
 
