@@ -126,7 +126,7 @@ and
 
 ` \ fkey? ( - char t/f )  `
 
-The parts before the DASH says what it consumes from the stack, and the part after the dash says what it depsoits on the stack. 
+The parts before the DASH says what it consumes from the stack, and the part after the dash says what it deposits on the stack. 
 
 This says, ( `fkey?` takes no items from the stack.  - `fkey? leaves a character, and a flag )
 
@@ -136,14 +136,18 @@ If the a key was NOT pressed, the stack will have a number that would be impossi
 
 == word pair: if...then ==
 
-If and then go together as a pair.  the pair needs to match; otherwise behavior is undefined.  This means things can get strange and unpredictable, which is what we DN'T want.  
+If and then go together as a pair.  the pair needs to match; otherwise behavior is undefined.  This means things can get strange and unpredictable, which is what we DON'T want.  
 
 == New Word - if ==
 
+`if` consumes a value of the stack.  The value is used as a flag.  
 
+  * For value zero (0) propforth will jump the first word after `then`
+  * For values non-zero (1, -1, 40672, etc) propforth continues exectuion with the word after `if`
 
 == New Word - then ==
 
+`then` marks the end of `if`.  When `if` encounters a FALSE, execution jumps to after the `then`
 
 = words up till today =
 
@@ -157,6 +161,10 @@ session 03
 || if || if || ( t/f - )||  if condition flag is tru, do the following, otherwise skip to after the THEN || then ||
 || then || then  || ( - )||  this is the end of the stuff the if does when it see true;  execution continues with the next word after THEN|| space ||
 
+add these
+
+|| emit || fkey? ||
+
 
 session 02
 
@@ -168,6 +176,12 @@ session 02
 || +   || plus || (n1 n2  - n3 ) || add n1 and n2 and leave the result n3 on the top of the stack || space ||
 || - || minus || ( n1 n2  - n3 ) || start with n1, subtract n2, leave the result n3 on the top of the stack || space ||
 
+Add these to session 2
+
+
+||. ||
+
+
 
 session 01
 
@@ -178,6 +192,12 @@ session 01
 || pinin || pin-in || ( n - )||  make a pin an input || space ||
 || :   || colon || (identifer - ) || starts a new word definition || semi colon ; ||
 || ; || semicolon || ( - ) || ends a new word definition started by colon || space ||
+
+
+Add these to session 01
+
+|| ." || "||
+
 
 
 
