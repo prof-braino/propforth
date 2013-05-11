@@ -35,7 +35,7 @@ Verify the propforth command pompt
 
 Now we are going to write a program.  A program routine in FORTH is called a "word".  Defining the "word" puts your "word" in the FORTH "dictionary".  
 
-Type the following example, stating with the COLON `:` and ending with the semicolon `;`
+Type the following example, stating with the COLON `:` and ending with the second "greet".  You MUST include the semicolon `;` and blank line 
 
 Instruct the kids to type in:
 
@@ -47,7 +47,7 @@ greet
 
 EXPLANATION:
 
-Defining a "word" beigns with a COLON `:`
+Defining a "word" begins with a COLON `:`
 
 After the colon is a blank space.  Colon means "take the letters after the space, until the next space, and make that the name of my routine". 
 
