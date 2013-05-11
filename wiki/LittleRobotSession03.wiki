@@ -42,16 +42,19 @@ We used these, but did not explain them. My bad. Upthe earlier lessons after the
   * sc 
   * st? 
   * . 
+  * ."
+  * "
 
-== word sc ==
+
+== forth word sc ==
   
 sc is STACK CLEAR.  This deletes all the items on the stack, and tells you how many it got rid off. This is very useful in debug and test, when things might be acting different than you expect. It cleans up the stack.
 
-== word st? ==
+== forth word st? ==
 
 st? is "display the contents of the stack".  The numbers are formatted as 32 bit longs, such that we can always see every bit represented.  Explain what this means, it might be too much for the kids.  And teachers. 
 
-== word - . (dot) ==
+== forth word - . (dot) ==
 
 The period or dot takes a number off the stack, and puts it on the display as a number. 
 
@@ -63,6 +66,14 @@ Type the following
 }}}
 
 Compare dot to `st?`, where the values are padded with leading zeros.  When dot executes, only the non zero bits are displayed, the number is NOT padded with zeros.
+
+== forth word  ." (dot-double-quote) ==
+
+Dot-double-quote begins a string literal
+
+== forth word  "  (double-quote) ==
+
+double-quote terminates a string literal
 
 = new material =
 
@@ -93,14 +104,6 @@ Here's something neat and scary.  IF YOU EMIT  the proper sequence of numbers, Y
 Remember, if you prank yourself, and reprogram the PC terminal program, exit the terminal program (teraterm or cool term) and restart it. 
 
 If you deprogram the quickstart, , press the reset button. If that doesn't work, ask the teacher, perhaps the Propforth kernel needs to be re-burned into EEPROM (we'll explain that later). 
-
-== New Word - ." (dot-double-quote) ==
-
-Dot-double-quote begins a string literal
-
-== New Word - "  (double-quote) ==
-
-double-quote terminates a string literal
 
 == FLAG ==
 
