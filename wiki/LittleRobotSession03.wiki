@@ -62,7 +62,7 @@ Type the following
 . . . . .
 }}}
 
-Only the non zero bits are displayed, the number is NOT padded with zeros.
+Compare dot to `st?`, where the values are padded with leading zeros.  When dot executes, only the non zero bits are displayed, the number is NOT padded with zeros.
 
 = new material =
 
