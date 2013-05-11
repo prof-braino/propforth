@@ -47,7 +47,7 @@ greet
 
 EXPLANATION:
 
-Defining a "word" begins with a COLON `:`
+Defining a "word" begins with a COLON *`:`*
 
 After the colon is a blank space.  Colon means "take the letters after the space, until the next space, and make that the name of my routine". 
 
@@ -55,18 +55,17 @@ The "word", in this case `greet`, is the name or identifier for the word.
 
 The definition of what the word does is any sequence of valid forth words.  
 
-The first FORTH word is dot-double-quote `."`
+The first FORTH word is dot-double-quote *`."`*
 
-`."` (dot-double-quote) says "start making some text".  AFter `."` (dot-double-quote) is a space, and then a bunch of text. 
+*`."`* (dot-double-quote) says "start making some text".  After `."` (dot-double-quote) is a space, and then a bunch of text. 
 
-`."` (dot-double-quote) is ended by one double quote `"`
+`."` (dot-double-quote) is ended by one double quote *`"`*
 
+One double quote `"` says " I'm done making text".
 
-One double quote `"` says " I'm done making text.
+The semi-colon *`;`* ends the word definition.  This marked the end of the definition started by the colon. 
 
-The semi-colon `;` ends the word definition.  This marked the endo of the definition started by the colon. 
-
-NOTICE!!!!! If you make a typo, FORTH DOESN'T try to guess that its a mistake.  FORTH is not smart, and trusts you to tell it to do what you want.  IF YOU MAKE A TYPO, hit the black reset button on the quickstart and start again.  This might seem awkward at first, but later it becomes very powerful. 
+NOTICE!!!!! If you make a typo, FORTH DOESN'T try to guess that its a mistake.  FORTH is not smart, and trusts you to tell it to do what you want.  IF YOU MAKE A TYPO, hit the *black reset button* on the quickstart and start again.  This might seem awkward at first, but later it becomes very powerful. 
 
 
 The kids all did something like
