@@ -152,6 +152,25 @@ If and then go together as a pair.  the pair needs to match; otherwise behavior 
 
 `then` marks the end of `if`.  When `if` encounters a FALSE, execution jumps to after the `then`
 
+= TASK - ESCAPE KEY =
+
+Often, we want to run a program and control when it stops by hitting a key.  Traditionally, we use the escape key (ESC) to escape from an executing program.
+
+
+{{{
+
+
+\ : test \ ( N - )  N = number of time to loop during testing
+
+: test 
+
+      0 do i . 
+           fkey? if h_1B = if leave else  emit then else drop then 
+      loop ; 
+           
+}}}
+
+
 = words up till today =
 
 These are the FORTH words introduced so far:
