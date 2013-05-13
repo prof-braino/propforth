@@ -178,7 +178,12 @@ Often, we want to run a program and control when it stops by hitting a key.  Tra
                  then 
                  500 delms
       loop ; 
-           
+
+st?
+
+99 test  st?
+
+st?            
 }}}
 
 
