@@ -173,8 +173,7 @@ Often, we want to run a program and control when it stops by hitting a key.  Tra
                            else  
                              emit 
                            then 
-                 else 
-                     drop 
+                 
                  then 
                  500 delms
       loop ; 
