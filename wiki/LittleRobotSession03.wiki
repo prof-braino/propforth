@@ -165,7 +165,18 @@ Often, we want to run a program and control when it stops by hitting a key.  Tra
 : test 
 
       0 do i . 
-           fkey? if h_1B = if leave else  emit then else drop then 
+           fkey? 
+                 if 
+                     h_1B = 
+                           if
+                             leave 
+                           else  
+                             emit 
+                           then 
+                 else 
+                     drop 
+                 then 
+                 500 delms
       loop ; 
            
 }}}
