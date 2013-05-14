@@ -1,0 +1,396 @@
+#summary Sal's demo software for LittleRobot Demo
+#labels LittleRobot,v5.5
+= Introduction =
+
+This is contents of BOT.F in the extensions directory of the download archive.
+
+= bot.f =
+
+{{{
+fl
+
+\\ fswrite 4step.f
+
+1 wconstant step_test 
+{
+Drives a 4 phase stepper motor, tested with 28byj stepper motor wth a uln2003 driver
+Create a structure, either a halfstep, or full step, specify the pins, 16 17 18 & 19 in this case
+
+\ 8 9 10 11
+\ For half stepping      16 17 18 19 step_create_halfstep moth
+\ Initialize      moth step_init
+\ Step forward     4096 moth step
+\ Step reverse     -4096 moth step
+\ Turn off drivers      moth step_sleep
+\ Turn on drivers       moth step_active
+\ Set the step speed - (1100 for test motor) setting too fast a speed will cause it to skip steps 
+                       1100 moth step_setspeed
+\ or \ For full stepping      16 17 18 19 step_create_fullstep motf
+\ Initialize      motf step_init
+\ Step forward      2048 motf step
+\ Step reverse      -2048 motf step
+\ Turn off drivers      motf step_sleep
+\ Turn on drivers      motf step_active
+\ Set the step speed - (550 for test motor)   setting too fast a speed will cause it to skip steps 
+                       550 motf step_setspeed
+step structure
+00 - 04 -- step delay
+04 - 05 -- step position 
+05 - 06 -- step position mask
+06 - 07 -- step acceleration 
+08 - 12 -- step mask
+12 - 44 -- 8 longs - step values
+}
+
+\ step_sleep ( addr -- )
+: step_sleep
+        d_8 + L@ outa COG@ swap andn outa COG! 
+;
+
+\ step_active( addr -- )
+: step_active
+        outa COG@ over d_8 + L@ andn
+        swap dup d_12 + swap 4 + C@ 4* + L@
+        or outa COG!
+;
+
+\ step_setspeed ( n1 addr -- ) - n1 steps / second
+: step_setspeed
+        clkfreq rot u/ swap L!
+;
+
+\ step_accel ( n1 addr -- ) - 1 - 11
+: step_accel
+        swap 0 max d_11 min swap 6 + C!
+;
+
+\ step_init ( addr -- )
+: step_init
+        dup d_8 + L@ dira COG@ or dira COG!
+        step_sleep       
+;
+
+: _step_create1
+        lockdict variable d_40 allot lastnfa nfa>pfa 2+ alignl freedict
+        dup d_44 0 fill
+        4 ST@ >m 4 ST! 3 ST@ >m 3 ST! 2 ST@ >m  2 ST! 1 ST@ >m 1 ST!
+;
+
+: _step_create2
+        rot2 or rot or rot or over d_8 + L!
+        0 over 4+ C!
+;
+
+\ create a step structure
+\ step_create_halfstep name ( n1 n2 n3 n4 -- )
+: step_create_halfstep
+        _step_create1
+\ pin 1
+        4 ST@ over d_12 + L!
+\ pin 1 2
+        4 ST@ 4 ST@ or over d_16 + L!
+\ pin 2
+        3 ST@ over d_20 + L!
+\ pin 2 3
+        3 ST@ 3 ST@ or over d_24 + L!
+\ pin 3
+        2 ST@ over d_28 + L!
+\ pin 3 4 
+        2 ST@ 2 ST@ or over d_32 + L!
+\ pin 4
+        1 ST@ over d_36 + L!
+\ pin 4 1
+        1 ST@ 5 ST@ or over d_40 + L!
+        _step_create2
+        d_1000 over step_setspeed
+        d_4 over step_accel
+        5 + h_7 swap C!
+;
+
+
+\ step_create_fullstep name ( n1 n2 n3 n4 -- )
+: step_create_fullstep
+        _step_create1
+\ pin 1 2
+        4 ST@ 4 ST@ or over d_12 + L!
+\ pin 2 3
+        3 ST@ 3 ST@ or over d_16 + L!
+\ pin 3 4 
+        2 ST@ 2 ST@ or over d_20 + L!
+\ pin 4 1
+        1 ST@ 5 ST@ or over d_24 + L!
+        _step_create2
+        d_500 over step_setspeed
+        d_3 over step_accel
+        5 + 3 swap C!
+;
+
+
+\ _step ( n addr -- )
+: _step
+[ifdef step_debug
+." step / delay / steps/sec: " swap .long space L@ dup .long space clkfreq swap u/ .word cr
+]
+[ifndef step_debug
+        over 0<
+        if
+                -1
+        else
+                over 0>
+                if
+                        1
+                else
+                        0
+                then
+        then
+\ n addr step
+        dup 0<>
+        if
+                swap rot abs
+\ +-1 addr n 
+                over L@ cnt COG@ +
+                swap 0
+                do
+                        over L@ waitcnt
+\ +-1 addr cnt
+                        over 4+ dup C@ 4 ST@ + over 1+ C@ and swap C!
+                        over step_active
+                loop
+        then
+        3drop
+]
+; 
+
+\ afunc ( n p -- n1 )
+
+: afunc
+        dup  0 = if drop d_7_500 d_10_000 u*/ else
+        dup  1 = if drop d_8_750 d_10_000 u*/ else
+        dup  2 = if drop d_9_375 d_10_000 u*/ else
+        dup  3 = if drop d_9_900 d_10_000 u*/ else
+        dup  4 = if drop d_9_900 d_10_000 u*/ else
+        dup  5 = if drop d_9_900 d_10_000 u*/ else
+        dup  6 = if drop d_9_900 d_10_000 u*/ else
+        dup  7 = if drop d_9_900 d_10_000 u*/ else
+        dup  8 = if drop d_9_900 d_10_000 u*/ else
+        dup  9 = if drop d_9_900 d_10_000 u*/ else
+        dup 10 = if drop d_9_900 d_10_000 u*/ else
+                drop
+        thens   
+;
+
+\ afunc-1 ( n p -- n1 )
+
+: afunc-1
+        dup  0 = if drop d_13_333 d_10_000 u*/ else
+        dup  1 = if drop d_11_429 d_10_000 u*/ else
+        dup  2 = if drop d_10_667 d_10_000 u*/ else
+        dup  3 = if drop d_10_101 d_10_000 u*/ else
+        dup  4 = if drop d_10_101 d_10_000 u*/ else
+        dup  5 = if drop d_10_101 d_10_000 u*/ else
+        dup  6 = if drop d_10_101 d_10_000 u*/ else
+        dup  7 = if drop d_10_101 d_10_000 u*/ else
+        dup  8 = if drop d_10_101 d_10_000 u*/ else
+        dup  9 = if drop d_10_101 d_10_000 u*/ else
+        dup 10 = if drop d_10_101 d_10_000 u*/ else
+                drop
+        thens   
+;
+
+[ifdef step_debug
+: dump_accel
+        L@ dup .long space clkfreq over / .word cr
+        d_15 0
+        do
+                i afunc dup .long space clkfreq over / .word cr
+        loop
+        cr cr
+        dup . space clkfreq over / .word
+        cr cr
+        
+        d_15 0
+        do
+                i afunc-1 dup .long space clkfreq over / .word cr
+        loop
+        . cr
+;
+]
+
+\ step ( n addr -- )
+: step
+        over 0< rot abs rot
+\ flag u addr
+        dup L@ >r
+\ flag u addr --     delay
+
+        over d_8 rshift over 6 + C@ min dup >r
+\ flag u addr loopcount  --       delay loopcount
+        dup 0>
+        if
+                0
+                                     do
+\ flag u addr -- delay loopcount
+                                       d_128 3 ST@ if negate then
+\ flag u addr +-128 -- delay loopcount 
+                                       over _step
+\ flag u addr -- delay loopcount 
+                                       dup L@ i
+                                                         afunc
+                                       over L!
+\ flag u addr -- delay loopcount 
+                                   loop
+                             else
+                                             drop
+                                   then
+                             swap 
+\ flag addr u -- delay loopcount 
+                                       r> dup >r
+\ flag addr u loopcount -- delay loopcount
+                                          8 lshift
+                                                 -
+\ flag addr u- -- delay loopcount
+                                        dup 0>
+                                      if
+                                        2 ST@ if negate then
+                                        over _step
+                                    else
+                                        drop
+                                        then
+\ flag addr -- delay loopcount
+                                        r>
+\ flag addr loopcount -- delay
+                                   dup 0>
+                                       if
+                                   0
+                                     do
+\ flag addr -- delay 
+                                                   dup L@ over 6 + C@ 1- i - afunc-1 over L!
+                                 d_128 2 ST@ if negate then
+\
+\ flag addr +-128 --       delay
+                                 over _step
+\ flag addr --       delay 
+                                        loop
+                                      else
+                                    drop
+                                then 
+\
+\ flag addr --       delay 
+                                r> swap L!
+                                drop
+; 
+
+
+[ifdef step_test
+\ d_16 d_17 d_18 d_19 step_create_halfstep moth
+\ d_16 d_17 d_18 d_19 step_create_fullstep motf
+d_8 d_9 d_10 d_11 step_create_halfstep lmoth
+d_8 d_9 d_10 d_11  step_create_fullstep lmotf
+
+d_12 d_13 d_14 d_15 step_create_halfstep rmoth
+d_12 d_13 d_14 d_15  step_create_fullstep rmotf
+
+\ _tstep ( steps addr -- )
+: _tstep
+        cnt COG@ >r
+        2dup step
+        cnt COG@ r> -
+\ steps addr ticks
+        2 ST@ abs
+        u/
+        d_1000_000 clkfreq u*/
+\ steps addr usec/step
+        ." step:: steps: " rot .
+\ addr usec/step
+        over 5 + C@ 3 = if ." fullstep " then
+        over 5 + C@ 7 = if ." halfstep " then
+        over 6 + C@ ." accel: " .
+        ." usec/step: " dup .
+        ." steps/sec: " d_1_000_000 swap u/ . cr
+        step_sleep
+;
+
+\ _step_test ( addr -- )
+: _step_test
+        dup step_init
+        
+        ." Hit a key to terminate tests~h0D~h0D"
+
+        fkey? nip 0=
+        if
+                d_12 0
+                do
+                        i over step_accel
+                        fkey? nip 0=
+                        if
+\                               d_8192 over _tstep d_1000 delms
+                                        d_1819 over _tstep d_1000 delms
+                                fkey? nip 0=
+                                if
+\                                       d-8192 over _tstep d_1000 delms
+                                                d-1819 over _tstep d_1000 delms
+                                else
+                                        leave
+                                then
+                        else
+                                leave
+                        then
+                loop
+        then
+        drop
+;
+
+: lstep_testh
+        lmoth _step_test
+;
+
+: lstep_testf
+        lmotf _step_test
+;
+: rstep_testh
+        rmoth _step_test
+;
+
+: rstep_testf
+        rmotf _step_test
+;
+]
+
+
+8 pinout 8 pinhi 2000 delms 8 pinlo
+9 pinout 9 pinhi 2000 delms 9 pinlo
+10 pinout 10 pinhi 2000 delms 10 pinlo
+11 pinout 11 pinhi 2000 delms 11 pinlo
+
+1000 delms 2000 delms 
+
+c" lstep_testf  lstep_testh " 3 cogx
+
+12 pinout 12 pinhi 2000 delms 12 pinlo
+13 pinout 13 pinhi 2000 delms 13 pinlo
+14 pinout 14 pinhi 2000 delms 14 pinlo
+15 pinout 15 pinhi 2000 delms 15 pinlo
+
+\  hit a key to starrt the full stp test
+
+2000 delms 
+
+c" rstep_testf  rstep_testh " 4 cogx
+
+\  hit a key to starrt the full stp test
+ 
+\\ step_testh
+ 
+\\ key drop 
+
+
+...
+
+}}}
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
