@@ -12,14 +12,14 @@ Besdies cost, this item has four pins instead of three as on the PING))).
 = Four Pins =
 
 The four pions are:
-POWER (3.3v)
-Groung
-Trigger (set this high for XXX millseconds to start measuingg)
-Recive - listen to this pin to read back the average of ten samples
+POWER ~~(3.3v)~~  5 volts (Vin, Vcc)
+Ground
+Trigger - (set this high for XXX millseconds to start measuingg)
+Echo - listen to this pin to read back the average of ten samples
 
 == Power Pin == 
 
-This unit takes 3.3v (check, is it really 5v?) 
+This unit takes ~~3.3v~~ checked, its really 5v 
 It draws xx milliamps.  Size you batteries accordingly. 
 
 == Ground Pin ==
@@ -28,14 +28,150 @@ This is the common circuit ground.  Does this unit need decoupling capacitors?  
 
 == Trigger Pin ==
 
-Connect this pin to a Prop I/O pin.  Does this need a resistor?  Propbabl;y not, check. 
+Connect this pin to a Prop I/O pin.  Does this need a resistor?  Probably not, check. 
 
 Raise this pin to trigger a sample.  It needs aminimum pulse width of xx milliseconds to trigger. 
 
 == Recieve Pin ==
 
-Connect this pin to another Prop I/O pin.  This will send the sample results as xxx Baud.   The result is and average of ten samples.  The time from trigger to sending the sample is about xxx milliseconds.  The maximum sample rate is XXX samples per second. 
+Connect this pin to another Prop I/O pin.  This DOES need a resistor. 
 
+The output of the SR04 is 5 volts, we need to limit the prop input to less than 40 milliamps. Ohms law V/I = R  and V/R = I tells us 5 volts / 0.040 mA is 125 ohms, so anything over 125 ohms would be ok.
+
+So we will try for 20 mA to be safe so 5 volts / 0.020 mA is 250  ohms.
+
+I found some 220 ohm resistors, I used one of those.
+
+This will send a return pulse, the length of which gives the round trip travel time for the pulse.
+
+The result is an average of ten samples.  
+
+The time from trigger to sending the sample is about xxx milliseconds.  The maximum sample rate is XXX samples per second. 
+
+=  connect the sr04 and run the test program =
+
+  * Connect a 220 ohmresitor between the echo pin and P23 on the prop
+  * Connect Trigger to P22 on the prop
+  * Connect Vcc to Vin (+5 volts) on the quickstart
+  * Connect GND to Vss (Ground) on the prop
+
+
+= sr04.f =
+
+Here is the body of the sample program sr04.f
+
+Paste this into the terminal window to load the code into the prop.
+
+{{{
+fl
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+	d_22 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+	d_23 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+: _sr04_measure
+	c" MEASURE" cds W!
+	4 state andnC!
+
+	_sr04_trig pinlo _sr04_trig pinout
+	_sr04_echo >m
+	_sr04_trig >m
+	begin
+		dup _maskouthi dup dup drop _maskoutlo
+
+		over dup dup dup
+
+		waitpeq
+		cnt COG@
+		rot2
+
+		waitpne
+		cnt COG@ swap -
+		d_170_000 clkfreq */
+
+
+		_sr04_distance L!
+		
+		100 delms
+	0 until
+;
+
+[ifdef sr04_test
+: sr04_test
+	begin
+		_sr04_distance L@ . cr
+		fkey? nip
+	until
+;
+]
+
+c" _sr04_measure" 0 cogx
+
+
+
+}}}
+
+Notice: I think `[ifdef sr04_test ` is incorrect, it should be 
+
+{{{
+\ [ifdef sr04_test 
+[ifndef sr04_test
+: sr04_test
+	begin
+		_sr04_distance L@ . cr
+		fkey? nip
+	until
+;
+]
+
+}}}
+
+Changing the ifdef to indef would make the test program load if it was not already defined.
+
+Loading the code causes the line 
+
+`c" _sr04_measure" 0 cogx`
+
+to be loaded and bebegin executing. Do cog? to see that cog 0 is running MEASURE
+
+{{{
+Prop0 Cog6 ok
+cog?
+Cog:0  #io chan:1                          MEASURE
+Cog:1  #io chan:1 PropForth v5.0 2012JAN09 14:30 0
+Cog:2  #io chan:1 PropForth v5.0 2012JAN09 14:30 0
+Cog:3  #io chan:1 PropForth v5.0 2012JAN09 14:30 0
+Cog:4  #io chan:1 PropForth v5.0 2012JAN09 14:30 0
+Cog:5  #io chan:1 PropForth v5.0 2012JAN09 14:30 0
+Cog:6  #io chan:1 PropForth v5.0 2012JAN09 14:30 0  6(0)->7(0)
+Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
+Prop0 Cog6 ok
+}}}
+
+
+Load sr04_test, and xcute this word.  Measurements vaules will start scrolling down the screen
+
+{{{
+: sr04_test
+	begin
+		_sr04_distance L@ . cr
+		fkey? nip
+	until
+;
+
+sr04_test
+
+}}}
+
+= Get a Ruler =
+
+Get a ruler or yard stick. Lay this on the table and aim the SR04 along it.  Place an object at various points and compare the readings. How close is it?
 
 
 = Details =
