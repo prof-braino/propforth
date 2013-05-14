@@ -118,7 +118,7 @@ c" _sr04_measure" 0 cogx
 
 }}}
 
-Notice: I think `[ifdef sr04_test ` is incorrect, it should be 
+Notice: I think `[ifdef sr04_test ` is incorrect, it should be ifndef
 
 {{{
 \ [ifdef sr04_test 
