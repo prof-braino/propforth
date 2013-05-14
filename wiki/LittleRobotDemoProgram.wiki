@@ -11,7 +11,9 @@ Paste the entire contents of the code box below to load the LittleRobot demo sof
 
 Or copy it to you own editor, make changes, then paste it in.
 
-Note: I commented out the fswrite steps, we are not using an SD in the Ancona pilot
+Note: I started to commented out the fswrite steps, we are not using an SD in the Ancona pilot.  But there a little more to do to change it to no SD.
+
+
 
 {{{
 fl
