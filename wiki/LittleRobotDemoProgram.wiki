@@ -452,6 +452,7 @@ d_60 delms
 
 ...
 
+{
 \ fswrite boot.f
 
 hA state orC! version W@ .cstr cr cr cr
@@ -479,9 +480,9 @@ fsload bot.f
 c" boot.f - Loaded bot.f~h0D~h0D" .cstr hA state andnC!
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 ...
+}
 
-
-fswrite bot.f
+\ fswrite bot.f
 
 
 2 px? 27 px? 0= and
@@ -636,7 +637,7 @@ c" onreset6" (forget)
 
 
 
-fswrite btstat.f
+\ fswrite btstat.f
 
 
 230400 4/ wconstant hcBaud
