@@ -14,7 +14,7 @@ Or copy it to you own editor, make changes, then paste it in.
 {{{
 fl
 
-fswrite 4step.f
+\ fswrite 4step.f
 {
 
 Drives a 4 phase stepper motor, tested with 28byj stepper motor wth a uln2003 driver
