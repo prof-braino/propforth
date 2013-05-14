@@ -1,4 +1,5 @@
 #summary The ultrasonic Range finder
+#labels LittleRobot,v5.5
 
 <wiki:toc max_depth="9" />
 
@@ -169,10 +170,18 @@ sr04_test
 
 }}}
 
+The measurements values represent millimeters.
+
 = Get a Ruler =
+
 
 Get a ruler or yard stick. Lay this on the table and aim the SR04 along it.  Place an object at various points and compare the readings. How close is it?
 
+= Notice = 
+
+The pulse length represents the round trip time.  So this means the round trip is TWICE the distance we want to measure.  Recall that the speed of sound is about 340 meters per second.  This is the same as 340,000 millimeters.
+
+Notice the number in the source code is d_170_000.  This means decimal 170,000 (comma mean something else in forth, so we allow underline character to be used instead of comma in numbers, it is just ignored.)  170,000 is 340,000 divided by two, this give us half the round trip, or just the distance we want. 
 
 = Details =
 
