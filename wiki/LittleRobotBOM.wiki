@@ -63,6 +63,27 @@ We have discovered we need solderless solutions for kids.  We made these changes
   * USB cable, host to mini B 5 conductor (NOTE: the 4 conductor mini B won't work)
 
  
+= alternative =
+
+Use 21 M-F instead of breadboard
+
+{{{
+40 Pin Male to Female Color Ribbon Solderless Breadboard Jumper Cable 
+}}}
+ http://www.ebay.com/itm/40-Pin-Male-to-Female-Color-Ribon-Solderless-Breadboard-Jumper-Cable-/300902799057?pt=LH_DefaultDomain_0&hash=item460f3456d1
+
+Cost is about $3.00 for the M-F connections
+
+Need extra Vdd connections 
+
+Need extra Vss connections
+
+{{{
+NEW 5Pcs 2.54mm 40 Pin Female Single Row Pin Header Strip
+}}}
+http://www.ebay.com/itm/NEW-5Pcs-2-54mm-40-Pin-Female-Single-Row-Pin-Header-Strip-/271193853513?pt=LH_DefaultDomain_0&hash=item3f2469ce49
+
+5 peices of 40x1 pins for $1.29
 
 
 
