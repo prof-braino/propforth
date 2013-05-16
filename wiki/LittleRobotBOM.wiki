@@ -72,9 +72,11 @@ Use 21 M-F instead of breadboard
 }}}
  http://www.ebay.com/itm/40-Pin-Male-to-Female-Color-Ribon-Solderless-Breadboard-Jumper-Cable-/300902799057?pt=LH_DefaultDomain_0&hash=item460f3456d1
 
+1 peice of 40 connectors for $5.99
+
 Cost is about $3.00 for the M-F connections
 
-Need extra Vdd connections 
+Need extra Vin connections 
 
 Need extra Vss connections
 
@@ -85,7 +87,13 @@ http://www.ebay.com/itm/NEW-5Pcs-2-54mm-40-Pin-Female-Single-Row-Pin-Header-Stri
 
 5 peices of 40x1 pins for $1.29
 
+Vss Needs 2 motors, 1 ultra sonic, 1 battery case, 1 Quick start, 1 blue tooth
+    * Vss needs six (6) positions total
 
+Vin needs 2 motors, 1 ultra sonic, 1 battery case, 1 Quick start
+
+Vdd needs 1 blue tooth
+  * remember, bluetooth is 3.3 volts, a SECOND Vdd is needed for 1 time reprogramming
 
 = Details =
 
