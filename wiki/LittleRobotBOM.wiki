@@ -91,9 +91,12 @@ Vss Needs 2 motors, 1 ultra sonic, 1 battery case, 1 Quick start, 1 blue tooth
     * Vss needs six (6) positions total
 
 Vin needs 2 motors, 1 ultra sonic, 1 battery case, 1 Quick start
+    * Vin needs five (5) positions total
 
 Vdd needs 1 blue tooth
   * remember, bluetooth is 3.3 volts, a SECOND Vdd is needed for 1 time reprogramming
+
+Total 6 + 5 extra connection strips (plus a reusable "Y" connector for bluetooth reprogramming)
 
 = Details =
 
