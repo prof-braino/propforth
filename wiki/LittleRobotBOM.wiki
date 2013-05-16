@@ -45,7 +45,24 @@ http://jaktek.com/wp-content/uploads/2011/12/HC-SR04.pdf
 http://www.ti.com/lit/ds/symlink/uln2003a.pdf
 
 
+=  updates 20130515 - need changes =
 
+The original kits sourced from propellerpowered included:
+ * "proto and more" board (kit that requires soldering)
+
+We jave dioscovered we need solderless solutions for kids.  We made these changes to the LittleRobot BOM:
+ 
+  * 270 tie point bread booard
+  * Male to Female jumper wires (12) six per stepper motor
+  * male to male jumper wires (9) 4 for ultrasonic, 5 for bluetooth
+  * resistor 220-330 Ohms (for bluetooth echo pin output)
+  * Batteries 4*AA
+  * screws (8) two for each ot two motors, two for castor, remainder for other attachments 
+  * castor wheel
+  * Pink foam sheet from home store for chassis
+  * USB cable, host to mini B 5 conductor (NOTE: the 4 conductor mini B won't work)
+
+ 
 
 
 
