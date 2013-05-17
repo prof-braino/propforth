@@ -9,7 +9,15 @@ Add your content here.
 
 The stepper section of the bot.f program
 
-LittleRobotDemoSteppers
+This is linked from the page LittleRobotDemo
+
+= instructions =
+
+To check that the steppers are connected correctly: 
+
+Copy And Paste the following code into the terminal program window.
+
+Be sure to include the `fl~ at the beginning and the `...` at the end
 
 
 {{{
@@ -805,4 +813,3 @@ step structure
 
 
 }}}
-
