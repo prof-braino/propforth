@@ -13,7 +13,11 @@ This is linked from the page LittleRobotDemo
 
 = instructions =
 
+This is the code that shows whether the stepper stepper hardware is connected correctly
+
 To check that the steppers are connected correctly: 
+
+== Load the Program ==
 
 Copy And Paste the following code into the terminal program window.
 
@@ -742,7 +746,18 @@ d_16 d_17 d_18 d_19 step_create_fullstep motf
 
 }}}
 
+After the program source code is loaded, the proforth command prompt should say 
+
+`Prop0 Cog6 OK`
+
+as it usually does.
+
+
 == The stepper initialiation ==
+
+The second part is to run the stepper initialization
+
+FROM the code below, CHOOSE either HALF stepping or FULL stepping (one or the other but not both.)
 
 {{{
 
@@ -752,17 +767,20 @@ Drives a 4 phase stepper motor, tested with 28byj stepper motor wth a uln2003 dr
 
 Create a structure, either a halfstep, or full step, specify the pins, 16 17 18 & 19 in this case
 
-
+\ DEFINE STEPPER PINS
 \ For half stepping
      16 17 18 19 step_create_halfstep moth
 
-
+\ INITALIZE STEPPER DATASTRUCTURE
 \ Initialize
      moth step_init
+
+\ THIS IS WHAT MAKES THE STEPPER MOVE!!!!!!!
 
 \ Step forward
      4096 moth step
 
+\ This makes the stepper move the other way
 \ Step reverse
      -4096 moth step
 
@@ -798,7 +816,8 @@ Create a structure, either a halfstep, or full step, specify the pins, 16 17 18 
 \ Set the step speed - setting too fast a speed will cause it to skip steps (550 for test motor)
      550 motf step_setspeed
 
-
+\ When you have done the above, try to figure out the following
+\ ASK if you get stuck
 
 step structure
 00 - 04 -- current step position - steps
