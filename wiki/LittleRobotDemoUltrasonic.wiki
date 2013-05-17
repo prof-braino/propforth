@@ -1,0 +1,92 @@
+#summary One-sentence summary of this page.
+#labels LittleRobot,Ultrasonic,SR04,v5.5,demo
+
+= Introduction =
+
+The SR04 Ultrasonic Rangefinder drver from the LittleRobotDemo
+
+
+Paste the following from the `fl~ to the `...`
+
+into the terminal program window
+
+
+{{{
+
+fl
+
+\ fswrite sr04.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+16 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+17 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+
+: _sr04_measure
+c" MEASURE" cds W!
+4 state andnC!
+
+_sr04_trig pinlo _sr04_trig pinout
+_sr04_echo >m
+_sr04_trig >m
+begin
+dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+
+over dup dup dup
+
+waitpeq
+cnt COG@
+rot2
+
+waitpne
+cnt COG@ swap -
+d_170_000 clkfreq */
+
+
+_sr04_distance L!
+d_60 delms
+0 until
+;
+
+...
+}}}
+
+After the source code is loaded:
+
+To Run the driver demo type
+
+{{{
+
+_sr04_measure
+}}}
+
+
+The evice should start measuring, and you should see numbers scoll acroos thedisplay screen.
+
+These number represent thedisance in millimeters the senosr detects.
+
+USE A  RULER:
+
+ # how consistent arethe numbers?
+ # how accuracte are the numbers?
+ # What is the SMALLEST distance it reports?
+ # What's the BIGGEST distance it reports?
+
+Now the real fun begins?
+
+  # how can you "trick" of "fool" the sensor into reporting the wrong value?
+   # how can you determine if the sensor is reporting a good value or a bad value?
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
