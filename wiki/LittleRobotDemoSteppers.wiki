@@ -9,7 +9,7 @@ Add your content here.
 
 The stepper section of the bot.f program
 
-This is linked from the page LittleRobotDemo
+This is linked from the page LittleRobotDemoProgram
 
 = instructions =
 
