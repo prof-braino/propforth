@@ -4,7 +4,7 @@
 = Introduction =
 
 This is contents of BOT.F in the extensions directory of the download archive.
-= the stepper section =
+== the stepper section ==
 
 The stepper section of the bot.f program
 
