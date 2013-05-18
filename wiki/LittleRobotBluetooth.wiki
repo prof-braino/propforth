@@ -19,9 +19,13 @@ This source code is also included in the propforth download archive beginning wi
 
 = datasheets =
 
+== HC05 master/slave ==
+
 ftp://imall.iteadstudio.com/Modules/IM120723009/DS_IM120723009.pdf
 
 http://www.mcu-turkey.com/wp-content/uploads/2013/01/HC-Serial-Bluetooth-Products-201104.pdf
+
+== HC06 slave only ==
 
 
 == HC05 KEY is Scallop 34 ==
