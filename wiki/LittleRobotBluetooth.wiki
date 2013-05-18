@@ -36,11 +36,11 @@ Connect:
 
 || HC05 Bluetooth module ||
 || HC05  || Prop || Wire Color|| 
-||Pin 1 - hcTX  || P25 || Grey/Orange  ||
+||Pin 1 - hcTX  || P25 || Grey/Orange  || closest to Antenna ||
 ||Pin 2 - hcRX   || P26 || white||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
-||Pin 34 - Key || P27  || Green||
+||Pin 34 - Key || P27  || Green|| closest to Antenna ||
 
 The HC05 connections to prop pins are the same as in the code.
 
@@ -52,11 +52,11 @@ Connect:
 
 || HC06 Bluetooth module ||
 || HC06  || Prop || Wire Color||
-||Pin 1 - TX  || P27 || Grey  ||
+||Pin 1 - TX  || P27 || Grey  || closest to Antenna ||
 ||Pin 2 - RX   || P26 || white||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
-||Pin 26 - Key || P22  || Green||
+||Pin 26 - Key || P22  || Green|| closest to Antenna ||
 
 NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions and code, to remind me that HC06 is different, we won't be using it. 
 
