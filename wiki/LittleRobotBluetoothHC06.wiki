@@ -32,6 +32,8 @@ http://propellerpowered.com/shop/?page_id=1748
 
 http://propellerpowered.com/forum/index.php?topic=386.0
 
+*NOTE:* Be careful, you MUST set the BAUD Rate LAST.  After you change the baud rate, it stops talking at the current baud rate.  So your automatically done, whether you are or not. Don't even ask me how I know this. 
+
 = setup HC06 (bare module, not carrier) =
 
 Follow the instructions in Bluetooth-HC05-HC06.f
