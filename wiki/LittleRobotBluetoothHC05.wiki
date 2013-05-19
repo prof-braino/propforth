@@ -83,15 +83,19 @@ I set the unique name to
 This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can sometimes tell when the bot came into service from the date.
 
 
-== Its configured using 38400, but runs at 230400 ==
+== Using slow baud, we configure to run fast baud ==
 
-NOTICE that after the script run successfully, the baud rate has been set from 9600 (or 38400) to 230400.  If you with to re-run the script (to rename your bot) you must change the baud on the HC05, the quickstart, and the terminal program, must all match. 
+NOTICE that after the script run successfully, the baud rate has been set from 9600 (or 38400) to 230400.  If you with to re-run the script (to rename your bot, etc) you must change so the baud on the HC05, the quickstart, and the terminal program, all match. 
 
-== Paste the HC05 configuration script into the Terminal ==
+== EDIT the HC05 configuration script into the Terminal ==
 
 First edit the script to set
  * The robot ID
  * the Robot password pin
+
+== Paste the HC05 configuration script into the Terminal ==
+
+After you've edited the script paste it in the terminal 
 
 {{{
 
@@ -148,7 +152,7 @@ c" AT+PSWD?~h0D~h0A" hcSend
 10000 delms \ 10 seconds to read the screen
 
 
-c" AT+NAME=LittleRobot20130413~h0D~h0A" hcSend
+c" AT+NAME=HC05-230400-B~h0D~h0A" hcSend
 c" AT+PSWD=1234~h0D~h0A" hcSend
 c" AT+UART=230400,0,0~h0D~h0A" hcSend
 c" AT+VERSION~h0D~h0A" hcSend
@@ -159,13 +163,12 @@ c" AT+PSWD?~h0D~h0A" hcSend
 
 hcProgPin pinlo 
 
-\ after the hc05 is power cycled, the baud rate will change, not like the hc06
+\ after the hc05 is power cycled, the baud rate will change 
 
 \ REMEMBER! HC05 Rx goes to PROP Tx
 \ REMEMBER! HC05 Tx goes to PROP Rx
 
 \ they have to criss-cross, the talker from one goes to the listener from the other
-
 
 }}}
 
