@@ -57,18 +57,6 @@ It tells the HC05 to set its name (to whatever you want, I don't know many max  
 
 It also sets the HC05 to 230400 baud (from whatever it may have been).  So the  Config script set for the "default" 9600 baud won't communicate after the power is cycled.  To rerun the script, ensure the correct baud. (Or do the "KEY High at power on" step described above) 
 
-= set the DEVKERNEL to 25 2and 26 =
-
-Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31.  Usually, the Quickstart talks on pins 30 & 31, so propforth uses pins 30 and 31; we don't have to move any wires to burn the eeprom and to use teraterm.  Now we want Propforth to talk on pins 25 and 26, and use the HC05.  All we need to do is change   
-
-(Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
-
-NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P25 & P26 kernel.  This step might be a little tricky, don't be alarmed if you have to try is a couple times until you get the hang of it. 
-
-FYI once more:  Propforth runs are 230400 by default, on pins 30 and 31
-
------
-
 == Inital Configuration of the HC05 ==
 
 Run the initialization script in BluetoothHCo5-06.f to program the factory fresh HC05
@@ -79,13 +67,21 @@ We run this script to
  * set (this one) to SLAVE mode
  * set the password (each kid connects to the correct bot)
 
-I set the unique name to LittleRobotYYYMMDDhhmm
+I set the unique name to 
+
+  * LittleRobotYYYMMDDhhmm
 
 This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can sometimes tell when the bot came into service from the date.
- 
-NOTICE that after the script run successfully, the baud rate has been set from 9600 (or 38400) to 230400.  If you with to re-run the script (to rename your bot) you must change the baud to 230400 like the HC05, or use the KEY-Hi-POWER for 38400 baud.
 
-Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
+It may be useful to try 
+
+  * HC05-38400-A 
+
+for a problem device, for example the HC05 that would communicate and program at only 38400 baud, instead of 230400. 
+
+== Its configured using 38400, but runs at 230400 ==
+
+NOTICE that after the script run successfully, the baud rate has been set from 9600 (or 38400) to 230400.  If you with to re-run the script (to rename your bot) you must change the baud on the HC05, the quickstart, and the terminal program, must all match. 
 
 == Paste the HC05 configuration script into the Terminal ==
 
