@@ -388,5 +388,21 @@ To:
 
 }}}
 
-and re-run the script.  NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
+and re-run the script. 
 
+== Set the HC05 baud ==
+
+If 230400 does not work, try 38400, that worked for me. 
+
+== Set the DevKernel Baud ==
+
+Burn the Quickstart EEprom with Devkernel set to the same baud rate as the HC05.  I used 38400, that worked for me.
+
+== Set the terminal Program baud ==
+
+I set Teraterm to 38400 to match the HC05 and the quickstart.  Now it works fine. 
+
+== Finally working ==
+
+
+ NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
