@@ -165,10 +165,7 @@ hcProgPin pinlo
 
 \ after the hc05 is power cycled, the baud rate will change 
 
-\ REMEMBER! HC05 Rx goes to PROP Tx
-\ REMEMBER! HC05 Tx goes to PROP Rx
 
-\ they have to criss-cross, the talker from one goes to the listener from the other
 
 }}}
 
