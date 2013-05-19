@@ -34,34 +34,6 @@ Take the HC06 specific instructions out of this page and put them here
 http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
 
-= datasheets =
-
-== HC05 master/slave ==
-
-ftp://imall.iteadstudio.com/Modules/IM120723009/DS_IM120723009.pdf
-
-http://www.mcu-turkey.com/wp-content/uploads/2013/01/HC-Serial-Bluetooth-Products-201104.pdf
-
-== HC06 slave only ==
-
-
-== HC05 KEY is Scallop 34 ==
-
-This is the one at new the antenna, opposite pin 1
-
-Connect:
-
-|| HC05 Bluetooth module ||
-|| HC05  || Prop || Wire Color|| 
-||Pin 1 - hcTX  || P25 || Grey/Orange  || closest to Antenna ||
-||Pin 2 - hcRX   || P26 || white||
-||Pin 12 - 3.3v ||3.3v || Orange||
-||Pin 13 - GND  || GND || Blue||
-||Pin 34 - Key || P27  || Green|| closest to Antenna ||
-
-The HC05 connections to prop pins are the same as in the code.
-
-
 == HC06 KEY is Scallop 26 ==
 
 Sal didn't  use HC06.   Ancona uses Jeff's HC06 
@@ -78,75 +50,6 @@ Connect:
 
 NOTICE that for this Little Robot instruction page, I changed the pin assignment from Sal's instructions and code, to remind me that HC06 is different, we won't be using it. 
 
-= Set up HC05 =
-
-Following the above, we have HC05 serial connected to Prop pins P25 & P26. (which are Quickstart header connector locations 26 and 27). 
-
-We are going to talk to the Quickstart in Teraterm, and the Quickstarrt is going to talk to the HC05 on pins 25 and 26.  This is for programming the HC05 configuration.
-
-HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05.  THIS WAS THE TRICKY PART!  It SAYS it will talk at 9600, but mine didn't.  When we run the script, we expect to see 
-
-{{{
-<command>
-<response>
-OK
-
-Prop0 Cog6 ok
-}}}
-
-If instead you see
-
-{{{
-<command>
-
-Prop0 Cog6 ok
-}}}
-
-The communication isn't working.  Maybe the part is programmed for something other than 9600,N,1 like it says.  (Maybe that's why its so cheap?) .  Even so, no problem.
-
-TO FIX:  KEY HIGH AT POWER UP 38400 BAUD
-
-If you run the script and you don't get then responses expected:
-
-Unplug the RED v3.3 wire for a few seconds, then plug it back in again. Per the datasheet, this is "Set KEY pin 34 high, then apply power.  This sets mode to 38400N1" (38400 baud, no parity,1 stop bit). 
-
-In the Hc05-06.f file, in the HC05 section, around the 17th line, 
-
-Edit the script from:
-
-{{{
-9600 4/ constant hcBaud
-}}}
-
-To:
-
-{{{
-\ 9600 4/ constant hcBaud
-
-38400 4/ constant hcBaud
-
-}}}
-
-and re-run the script.  NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
-
-
-BACK TO WHAT THE SCRIPT DOES:
-
-It tells the HC05 to set its name (to whatever you want, I don't know many max  characters)
-
-It also sets the HC05 to 230400 baud (from whatever it may have been).  So the  Config script set for the "default" 9600 baud won't communicate after the power is cycled.  To rerun the script, ensure the correct baud. (Or do the "KEY High at power on" step described above) 
-
-
-== One HC05 had problems ==
-
-One HC05 would not respond at any baud except 38400, and only using the key HIGH at power up.  
-
-I had to set to baud to 38400 using the scripts, then program the part to talk at 38400, then make a special Devlernel.spin that uses 38400 instead of 230400.  
-
-So even though I got a funk HC05, I was still able to get it going. 
-
-But I'm getting ahead of myself.  We didn't cover changing the devkernel pins for normal parts, so here goes... 
-
 = set the DEVKERNEL to 25 2and 26 =
 
 Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31.  Usually, the Quickstart talks on pins 30 & 31, so propforth uses pins 30 and 31; we don't have to move any wires to burn the eeprom and to use teraterm.  Now we want Propforth to talk on pins 25 and 26, and use the HC05.  All we need to do is change   
@@ -158,229 +61,6 @@ NOTE: If something goes really wrong, you can flash the Quickstart back to a sta
 FYI once more:  Propforth runs are 230400 by default, on pins 30 and 31
 
 -----
-
-== Inital Configuration of the HC05 ==
-
-Run the initialization script in BluetoothHCo5-06.f to program the factory fresh HC05
-
-We run this script to 
- * give it a unique name (choose anything)
- * set baud to 230400
- * set (this one) to SLAVE mode
- * set the password (each kid connects to the correct bot)
-
-I set the unique name to LittleRobotYYYMMDDhhmm
-
-This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can sometimes tell when the bot came into service from the date.
- 
-NOTICE that after the script run successfully, the baud rate has been set from 9600 (or 38400) to 230400.  If you with to re-run the script (to rename your bot) you must change the baud to 230400 like the HC05, or use the KEY-Hi-POWER for 38400 baud.
-
-Later we can use this same script to add another bluetooth as MASTER, and make the bots talk over bluetooth, but that is a future exercise.
-
-== Paste the HC05 configuration script into the Terminal ==
-
-First edit the script to set
- * The robot ID
- * the Robot password pin
-
-{{{
-
-\ REMEMBER set pins in PROPFORTH as below!!!! 
-\ Im USING quickstart
-
-fl
-
-\\ for the HC05
-
-\ REMEMBER! ONLY connect the KEY-GREEN-Prop P22 wire when you run the programming script!
-\ AFTER the script is run, disconnect the green wire!
-\ green wire \ GREEN key - PROGRAM WHEN 3.3V - to prop 27 | Quickstart postion28
-\ Raise P27 Hi when connected to HCo5-pin34 to program
-  27 wconstant hcProgPin 
-
-\ after programming, disconnect the GREEN wire!
-
-\ white/orange wire \ WHITE - HC05-pin02 Rx - to prop 26 | QuickStart position27
-  26 wconstant hcRx
-
-\ white/green wire  \ GREY - HC05-pin01 Tx - to prop 25 | Quickstart position26
-  25 wconstant hcTx
-
- 9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
-\ the baud is set to a really fast speed, so you must change these comments
-\ 230400 4/ wconstant hcBaud  
-\ 38400 4/ wconstant hcBaud \ or use this line for the KEY-HI-POWERON method for 38400 baud  
-
-0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
-
-hcSerialCog cogreset 100 delms
-c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
-1 hcSerialCog sersetflags
-
-
-: hcSend
-	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
-;
-
-hcProgPin pinhi hcProgPin pinout
-
-\\ sometimes Teraterm hangs here until you press enter key
-
-c" AT+VERSION~h0D~h0A" hcSend
-c" AT+ROLE?~h0D~h0A" hcSend
-c" AT+UART?~h0D~h0A" hcSend
-c" AT+NAME?~h0D~h0A" hcSend
-c" AT+PSWD?~h0D~h0A" hcSend
-
-
-             \ make sure these display 'OK' 
-             \ otherwise it isnt working, powercycle to fix
-10000 delms \ 10 seconds to read the screen
-
-
-c" AT+NAME=LittleRobot20130413~h0D~h0A" hcSend
-c" AT+PSWD=1234~h0D~h0A" hcSend
-c" AT+UART=230400,0,0~h0D~h0A" hcSend
-c" AT+VERSION~h0D~h0A" hcSend
-c" AT+ROLE?~h0D~h0A" hcSend
-c" AT+UART?~h0D~h0A" hcSend
-c" AT+NAME?~h0D~h0A" hcSend
-c" AT+PSWD?~h0D~h0A" hcSend
-
-hcProgPin pinlo 
-
-\ after the hc05 is power cycled, the baud rate will change, not like the hc06
-
-\ REMEMBER! HC05 Rx goes to PROP Tx
-\ REMEMBER! HC05 Tx goes to PROP Rx
-
-\ they have to criss-cross, the talker from one goes to the listener from the other
-
-
-}}}
-
-=== the correct output ===
-
-If the HC05 communicates correctly, you see see this output on the terminal display:
-
-{{{
-Prop0 Cog6 ok
-fl
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-27 wconstant hcProgPin
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-26 wconstant hcRx
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-25 wconstant hcTx
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-38400 4/ wconstant hcBaud \ or use this line for the KEY-HI-POWERON method for 38400 baud
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-hcSerialCog cogreset 100 delms
-
-CON:Prop0 Cog0 RESET - last status: 0 ok
-Prop0 Cog5 ok
-c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
-Prop0 Cog5 ok
-1 hcSerialCog sersetflags
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-: hcSend
-cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
-;
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-hcProgPin pinhi hcProgPin pinout
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-c" AT+VERSION~h0D~h0A" hcSend
-+VERSION:2.0-20100601
-
-OK
-
-
-Prop0 Cog5 ok
-c" AT+ROLE?~h0D~h0A" hcSend
-+ROLE:0
-
-OK
-
-
-Prop0 Cog5 ok
-c" AT+UART?~h0D~h0A" hcSend
-+UART:9600,0,0
-
-OK
-
-
-Prop0 Cog5 ok
-c" AT+NAME?~h0D~h0A" hcSend
-+NAME:HC-05
-
-OK
-
-
-Prop0 Cog5 ok
-c" AT+PSWD?~h0D~h0A" hcSend
-+PSWD:1234
-
-OK
-
-
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-\ make sure these display 'OK'
-Prop0 Cog5 ok
-\ otherwise it isnt working, powercycle to fix
-Prop0 Cog5 ok
-10000 delms \ 10 seconds to read the screen
-Prop0 Cog5 ok
-
-Prop0 Cog5 ok
-
-Prop0 Cog6 ok
-
-}}}
-
-
-== Disconnect P22 Green wire on Quickstart poition 23 ==
-
-After the script is run, the HC05 is configured.
-
-Disconnect the Green wire from Prop pin 27 (Quickstart connector postion 28)
-
-You will not need to reconnect this again, unless you want to change the ID of the HC05 or otherwise reconfigure it. 
-
-You can use the pin for another device if needed.  The suggestion is to leave this pin open until all the othe pins are consumed, just in case. 
-
-== Power Cycle the HC05 ==
-
-This allows the changes (baud rate, name, etc) to "take". 
 
 = Pair the devices =
 
@@ -435,8 +115,8 @@ In the proforth spin source file 'PropForthDevFastSerialKernel.spin'
 Edit lines 116 and 117:
 
 {{{
-  dlrS_txpin = 26 ' 30           ' $S_txpin forth word 
-  dlrS_rxpin=  25 ' 31            ' $S_rxpin forth word 
+  dlrS_txpin = 25 ' 30           ' $S_txpin forth word 
+  dlrS_rxpin=  26 ' 31            ' $S_rxpin forth word 
 }}}
 
 Save the file as PropforthBluetooth.spin
@@ -449,17 +129,9 @@ Propforth will come up looking for the virtual Bluetooth com port.
 
 = NOTES =
 
-In progress 20130415
-
 == Note: 20130415 ==
 
-The instructions appeared to work fine when I wrote them, but now when I go back to use them things are strange.  I may have missed a critical set in the set up.  I get as far as programming the HC05, and can get the correct response. I used the KEY-HI-POWERON-38400 method on this batch of parts.   
-
-At this time, the  Bluetooth Master (PC, android) does NOT see the HC05 slave.  There may be additional setting on this batch of HC05's that need attention.  
-
-It does see the HC06 I used last time.  Therefore, I think the instructions are (mostly) correct.  
-
-The suspicion is that there is something different about this particular batch of HC05
+The instructions appeared to work fine when I wrote them, but now when I go back to use them things are strange.  It may be that I have a marginal or defective HC05 part.  I used the KEY-HI-POWERON-38400 method on this part.   
 
 == Check that the HC05 is visible for blue tooth pairing ==
 
@@ -477,10 +149,10 @@ Example -Samsung Captivate Glide Android smart(ish) phone
 * Search fo Devices
 -- Scanning --
 
-(Stopping for now, please check back again)
+
 
 == NOTE ==
 
-The HC05 and HC06 modules look identical, I can't see any difference. They might be the same physical module with only the MODE set differently internally, but I did not check.  Did anyone use the HC06 settings on HC05 and have success?  I think  I may have, but my notes are incomplete. 
+The HC05 and HC06 modules look identical, I can't see any difference. They might be the same physical module with only the MODE set differently internally, perhaps there is only a  firmware change.
 
 - end -
