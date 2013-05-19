@@ -17,6 +17,14 @@ You can use any color wire you want, if you use the same color as we do yours wi
 
 This source code is also included in the propforth download archive beginning with release v 5.3
 
+= HC05 page =
+
+LittleRobotBluetoothHC05
+
+= HC06 page =
+
+LittleRobotBluetoothHC06
+
 = datasheets =
 
 == HC05 master/slave ==
