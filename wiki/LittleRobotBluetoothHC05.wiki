@@ -47,33 +47,7 @@ If instead you see
 Prop0 Cog6 ok
 }}}
 
-The communication isn't working.  Maybe the part is programmed for something other than 9600,N,1 like it says.  (Maybe that's why its so cheap?) .  Even so, no problem.
-
-TO FIX:  KEY HIGH AT POWER UP 38400 BAUD
-
-If you run the script and you don't get then responses expected:
-
-Unplug the RED v3.3 wire for a few seconds, then plug it back in again. Per the datasheet, this is "Set KEY pin 34 high, then apply power.  This sets mode to 38400N1" (38400 baud, no parity,1 stop bit). 
-
-In the Hc05-06.f file, in the HC05 section, around the 17th line, 
-
-Edit the script from:
-
-{{{
-9600 4/ constant hcBaud
-}}}
-
-To:
-
-{{{
-\ 9600 4/ constant hcBaud
-
-38400 4/ constant hcBaud
-
-}}}
-
-and re-run the script.  NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
-
+The communication isn't working.  Maybe the part is programmed for something other than 9600,N,1 like it says.  (Maybe that's why its so cheap?) .  If so, see below, "A Difficult HC05" at the bottom of the page.
 
 BACK TO WHAT THE SCRIPT DOES:
 
@@ -387,6 +361,32 @@ One HC05 would not respond at any baud except 38400, and only using the key HIGH
 
 I had to set to baud to 38400 using the scripts, then program the part to talk at 38400, then make a special Devlernel.spin that uses 38400 instead of 230400.  
 
-So even though I got a funk HC05, I was still able to get it going. 
+So even though I got a funky HC05, I was still able to get it going. 
 
-But I'm getting ahead of myself.  We didn't cover changing the devkernel pins for normal parts, so here goes... 
+== The Fix ==
+
+TO FIX:  KEY HIGH AT POWER UP 38400 BAUD
+
+If you run the script and you don't get then responses expected:
+
+Unplug the RED v3.3 wire for a few seconds, then plug it back in again. Per the datasheet, this is "Set KEY pin 34 high, then apply power.  This sets mode to 38400N1" (38400 baud, no parity,1 stop bit). 
+
+In the Hc05-06.f file, in the HC05 section, around the 17th line, 
+
+Edit the script from:
+
+{{{
+9600 4/ constant hcBaud
+}}}
+
+To:
+
+{{{
+\ 9600 4/ constant hcBaud
+
+38400 4/ constant hcBaud
+
+}}}
+
+and re-run the script.  NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
+
