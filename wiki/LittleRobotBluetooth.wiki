@@ -21,11 +21,18 @@ This source code is also included in the propforth download archive beginning wi
 
 LittleRobotBluetoothHC05
 
+Take the HC05 specific instructions out of this page and put them here
+
 http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
 
 = HC06 page =
 
 LittleRobotBluetoothHC06
+
+Take the HC06 specific instructions out of this page and put them here
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
+
 
 = datasheets =
 
