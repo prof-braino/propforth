@@ -23,15 +23,20 @@ Connect:
 ||Pin 13 - GND  ||Blue or BLACK || GND || 
 ||Pin 34 - Key || Green|| P27  || closest to Antenna ||
 
-The HC05 connections to prop pins are the same as in the code.
+Notice that the Tx of one device connects to the Rx of the other, they criss-cross.
+
 
 = Set up HC05 =
 
-Following the above, we have HC05 serial connected to Prop pins P25 & P26. (which are Quickstart header connector locations 26 and 27). 
+To start with, we are going to use the quickstart to program the HC05 configuration using the HC05 physical connection. 
 
-We are going to talk to the Quickstart in Teraterm, and the Quickstarrt is going to talk to the HC05 on pins 25 and 26.  This is for programming the HC05 configuration.
+From following the above, we have HC05 Tx and Rx serial connected to Prop pins P25 & P26, and HC05 KEY (program enable) connected to Prop pin 27.  
 
-HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05.  THIS WAS THE TRICKY PART!  It SAYS it will talk at 9600, but mine didn't.  When we run the script, we expect to see 
+HC05 is configured to 9600 baud by default. 
+
+The following scripts will set the HC05 name and baud from the slow 9600 to the fast 230400. 
+
+We expect to see our command, followed by a response, followed by a bllank line, and finally OK.
 
 {{{
 <command>
@@ -49,13 +54,17 @@ If instead you see
 Prop0 Cog6 ok
 }}}
 
-The communication isn't working.  Maybe the part is programmed for something other than 9600,N,1 like it says.  (Maybe that's why its so cheap?) .  If so, see below, "A Difficult HC05" at the bottom of the page.
+The communication isn't working.  Maybe the part is programmed for something other than the default 9600,N,1
+
+If so, see below, "A Difficult HC05" at the bottom of the page.
 
 BACK TO WHAT THE SCRIPT DOES:
 
 It tells the HC05 to set its name (to whatever you want, I don't know many max  characters)
 
-It also sets the HC05 to 230400 baud (from whatever it may have been).  So the  Config script set for the "default" 9600 baud won't communicate after the power is cycled.  To rerun the script, ensure the correct baud. (Or do the "KEY High at power on" step described above) 
+Notice that the baud will get changed to 230400 baud , so the  Config script set for the "default" 9600 baud won't communicate after the power is cycled.  
+
+To rerun the script, ensure the correct baud. (Or do the "KEY High at power on" step described elsewhere) 
 
 == Inital Configuration of the HC05 ==
 
@@ -73,11 +82,6 @@ I set the unique name to
 
 This way, each kid, in each class, gets a unique number.  When I meet with the robots again, I can sometimes tell when the bot came into service from the date.
 
-It may be useful to try 
-
-  * HC05-38400-A 
-
-for a problem device, for example the HC05 that would communicate and program at only 38400 baud, instead of 230400. 
 
 == Its configured using 38400, but runs at 230400 ==
 
@@ -343,6 +347,15 @@ Burn the Quickstart EEprom with Devkernel set to the same baud rate as the HC05.
 == Set the terminal Program baud ==
 
 I set Teraterm to 38400 to match the HC05 and the quickstart.  Now it works fine. 
+
+== device name ==
+
+It may be useful to try device name 
+
+  * HC05-38400-A 
+
+for a problem device.  For example the HC05 that would communicate and program at only 38400 baud, instead of 230400. 
+
 
 == Finally working ==
 
