@@ -20,7 +20,11 @@ Connect:
 ||Pin 2 - RX   || P26 || white||
 ||Pin 12 - 3.3v ||3.3v || Orange||
 ||Pin 13 - GND  || GND || Blue||
-||Pin 26 - Key || P22  || Green|| closest to Antenna ||
+||Pin 26 - Key || P22  || Green|| ~~closest to Antenna~~ halfway up the side ||
+
+Jeff's module implement n LED that flashed when unpaired and is lit when paired.  We can do this in software on propforth, aand/or do a discrete LED.  Also do this on HC05...
+
+
 
 = PropellerPowered HC06 module setup =
 
