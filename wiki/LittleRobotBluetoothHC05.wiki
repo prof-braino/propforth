@@ -14,12 +14,12 @@ This is the one near the antenna, opposite pin 1
 Connect:
 
 || HC05 Bluetooth module ||
-|| HC05  || Prop || Wire Color|| 
-||Pin 1 - hcTX  || P25 || Grey/Orange  || closest to Antenna ||
-||Pin 2 - hcRX   || P26 || white||
-||Pin 12 - 3.3v ||3.3v || Orange||
-||Pin 13 - GND  || GND || Blue||
-||Pin 34 - Key || P27  || Green|| closest to Antenna ||
+|| HC05  ||  Wire Color|| Prop ||
+||Pin 1 - hcTX  || Grey/Orange || P26 dlrS_rxpin=26  || closest to Antenna ||
+||Pin 2 - hcRX   || white || P25 dlrS_txpin=25 || 
+||Pin 12 - 3.3v ||Orange||3.3v || 
+||Pin 13 - GND  ||Blue|| GND || 
+||Pin 34 - Key || Green|| P27  || closest to Antenna ||
 
 The HC05 connections to prop pins are the same as in the code.
 
@@ -390,4 +390,3 @@ I had to set to baud to 38400 using the scripts, then program the part to talk a
 So even though I got a funk HC05, I was still able to get it going. 
 
 But I'm getting ahead of myself.  We didn't cover changing the devkernel pins for normal parts, so here goes... 
-
