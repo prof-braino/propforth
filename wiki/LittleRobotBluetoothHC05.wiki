@@ -15,10 +15,10 @@ Connect:
 
 || HC05 Bluetooth module ||
 || HC05  ||  Wire Color|| Prop ||
-||Pin 1 - hcTX  || Grey/Orange || P26 dlrS_rxpin=26  || closest to Antenna ||
-||Pin 2 - hcRX   || white || P25 dlrS_txpin=25 || 
-||Pin 12 - 3.3v ||Orange||3.3v || 
-||Pin 13 - GND  ||Blue|| GND || 
+||Pin 1 - hcTX  || Orange/white or GEY || P26 dlrS_rxpin=26  || closest to Antenna ||
+||Pin 2 - hcRX   || green/white or WHITE || P25 dlrS_txpin=25 || 
+||Pin 12 - 3.3v ||Orange or RED ||3.3v || 
+||Pin 13 - GND  ||Blue or BLACK || GND || 
 ||Pin 34 - Key || Green|| P27  || closest to Antenna ||
 
 The HC05 connections to prop pins are the same as in the code.
