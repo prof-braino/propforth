@@ -21,6 +21,8 @@ This source code is also included in the propforth download archive beginning wi
 
 LittleRobotBluetoothHC05
 
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
+
 = HC06 page =
 
 LittleRobotBluetoothHC06
