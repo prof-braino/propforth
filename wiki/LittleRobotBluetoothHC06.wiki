@@ -6,6 +6,22 @@
 Add your content here.
 
 
+== HC06 KEY is Scallop 26 ==
+
+ Ancona uses Jeff's HC06. The HC06 is slave only, this is sufficient for Ancona's current needs. 
+
+Connect:
+
+|| HC06 Bluetooth module ||
+|| HC06  || Prop || Wire Color||
+||Pin 1 - TX  || P27 || Grey  || closest to Antenna ||
+||Pin 2 - RX   || P26 || white||
+||Pin 12 - 3.3v ||3.3v || Orange||
+||Pin 13 - GND  || GND || Blue||
+||Pin 26 - Key || P22  || Green|| closest to Antenna ||
+
+
+
 = Details =
 
 Add your content here.  Format your content with:
