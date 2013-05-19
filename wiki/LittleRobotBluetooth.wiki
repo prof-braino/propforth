@@ -44,6 +44,7 @@ Connect:
 
 The HC05 connections to prop pins are the same as in the code.
 
+
 == HC06 KEY is Scallop 26 ==
 
 Sal didn't  use HC06.   Ancona uses Jeff's HC06 
@@ -63,6 +64,8 @@ NOTICE that for this Little Robot instruction page, I changed the pin assignment
 = Set up HC05 =
 
 Following the above, we have HC05 serial connected to Prop pins P25 & P26. (which are Quickstart header connector locations 26 and 27). 
+
+We are going to talk to the Quickstart in Teraterm, and the Quickstarrt is going to talk to the HC05 on pins 25 and 26.  This is for programming the HC05 configuration.
 
 HC05 comes with 9600 baud by default.  We run a configuration script that talks on P26 & P27 to the HC05.  THIS WAS THE TRICKY PART!  It SAYS it will talk at 9600, but mine didn't.  When we run the script, we expect to see 
 
@@ -116,15 +119,28 @@ It tells the HC05 to set its name (to whatever you want, I don't know many max  
 
 It also sets the HC05 to 230400 baud (from whatever it may have been).  So the  Config script set for the "default" 9600 baud won't communicate after the power is cycled.  To rerun the script, ensure the correct baud. (Or do the "KEY High at power on" step described above) 
 
-Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31. (Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
+
+== One HC05 had problems ==
+
+One HC05 would not respond at any baud except 38400, and only using the key HIGH at power up.  
+
+I had to set to baud to 38400 using the scripts, then program the part to talk at 38400, then make a special Devlernel.spin that uses 38400 instead of 230400.  
+
+So even though I got a funk HC05, I was still able to get it going. 
+
+But I'm getting ahead of myself.  We didn't cover changing the devkernel pins for normal parts, so here goes... 
+
+= set the DEVKERNEL to 25 2and 26 =
+
+Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31.  Usually, the Quickstart talks on pins 30 & 31, so propforth uses pins 30 and 31; we don't have to move any wires to burn the eeprom and to use teraterm.  Now we want Propforth to talk on pins 25 and 26, and use the HC05.  All we need to do is change   
+
+(Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
 
 NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P25 & P26 kernel.  This step might be a little tricky, don't be alarmed if you have to try is a couple times until you get the hang of it. 
 
 FYI once more:  Propforth runs are 230400 by default, on pins 30 and 31
 
 -----
-
-OK, I'm still editing from here after fixing the initialization steps above. 20130415.  Procede with caution, I don't know when I'll get back to this.....
 
 == Inital Configuration of the HC05 ==
 
