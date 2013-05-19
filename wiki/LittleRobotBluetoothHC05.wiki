@@ -290,72 +290,16 @@ You can use the pin for another device if needed.  The suggestion is to leave th
 
 == Power Cycle the HC05 ==
 
-This allows the changes (baud rate, name, etc) to "take". 
+This allows the changes (baud rate, name, etc) to "take".
 
-= Pair the devices =
 
-The HC05 should be visible as a slave (pairable) device when re-powered
+= Continue the Bluetooth setup =
 
-== Windows XP ==
+Return to the LittleRobotBluetooth page  to finish setting up the bluetooth link.
 
-Run Blue Tooth Wizard 
 
-The wizard should find a device, and display the name you provided in the the script. 
+LittleRobotBluetooth
 
-Enter your pin (as you assigned in the script, or 1234 if you left the default)
-
-XP will add two COM ports, on incoming and one out going. 
-
-The outgoing port is the one you will use with Teraterm.  The incoming port doesn't do anything, but has to be there. 
-
-== Android ==
-
-  * Select Settings.  
-  * Under (or near) WiFi find Bluetooth. 
-  * select "Search for Devices" (upper right corner on Nexus)
-
-You should see an eight(?) hex value address displayed very quickly. 
-
-A short time later this will change to the name you assigned in the script.
-
-Select this, and enter your pin you define in the script, or 1234 if you left the default.
-
-=== Blueterm ===
-
-You can now connect to this device using Blue term (the three dots in the lower right corner is the secret!)
-
-=== SENA BTerm ===
-
-SENA BTerm also works.  But you have to do some configuration.  More details will be posted when we can some particulars.  For now, just play
-
-= Modify the DEVKERNEL.SPIN for Serial Pins 26 & 27 =
-
-To use the HC05 as cable replacement:
-
-After you have run the above script in propforth, and gotten the OK response for each configuration command, the HC05 is ready for use.
-
-BUT you must also change the PROPFROTH KERNEL!
-
-By default, propforth talks on pins 30 and 31.  
-
-we have to change the spin file that creates the kernel to use pins 26 and 25 that connect to the HC05
-
-In the proforth spin source file 'PropForthDevFastSerialKernel.spin'
-
-Edit lines 116 and 117:
-
-{{{
-  dlrS_txpin = 26 ' 30           ' $S_txpin forth word 
-  dlrS_rxpin=  25 ' 31            ' $S_rxpin forth word 
-}}}
-
-Save the file as PropforthBluetooth.spin
-
-Load it onto the prop EEPROM
-
-The USB serial will no longer connect to propforth until the prop is reloaded with a standard kernel. 
-
-Propforth will come up looking for the virtual Bluetooth com port.
 
 = A difficult HC05 =
 
