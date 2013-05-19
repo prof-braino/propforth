@@ -226,6 +226,115 @@ hcProgPin pinlo
 
 }}}
 
+=== the correct output ===
+
+If the HC05 communicates correctly, you see see this output on the terminal display:
+
+{{{
+Prop0 Cog6 ok
+fl
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+27 wconstant hcProgPin
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+26 wconstant hcRx
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+25 wconstant hcTx
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+38400 4/ wconstant hcBaud \ or use this line for the KEY-HI-POWERON method for 38400 baud
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+hcSerialCog cogreset 100 delms
+
+CON:Prop0 Cog0 RESET - last status: 0 ok
+Prop0 Cog5 ok
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+Prop0 Cog5 ok
+1 hcSerialCog sersetflags
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+: hcSend
+cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+hcProgPin pinhi hcProgPin pinout
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+c" AT+VERSION~h0D~h0A" hcSend
++VERSION:2.0-20100601
+
+OK
+
+
+Prop0 Cog5 ok
+c" AT+ROLE?~h0D~h0A" hcSend
++ROLE:0
+
+OK
+
+
+Prop0 Cog5 ok
+c" AT+UART?~h0D~h0A" hcSend
++UART:9600,0,0
+
+OK
+
+
+Prop0 Cog5 ok
+c" AT+NAME?~h0D~h0A" hcSend
++NAME:HC-05
+
+OK
+
+
+Prop0 Cog5 ok
+c" AT+PSWD?~h0D~h0A" hcSend
++PSWD:1234
+
+OK
+
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+\ make sure these display 'OK'
+Prop0 Cog5 ok
+\ otherwise it isnt working, powercycle to fix
+Prop0 Cog5 ok
+10000 delms \ 10 seconds to read the screen
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+Prop0 Cog6 ok
+
+}}}
+
+
 == Disconnect P22 Green wire on Quickstart poition 23 ==
 
 After the script is run, the HC05 is configured.
