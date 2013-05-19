@@ -10,6 +10,8 @@ Add your content here.
 
  Ancona uses Jeff's HC06. The HC06 is slave only, this is sufficient for Ancona's current needs. 
 
+These connections are already done when using the PropellerPowered HC06 modules, as they come mounted on a carrier board. Convenient!  
+
 Connect:
 
 || HC06 Bluetooth module ||
@@ -20,6 +22,19 @@ Connect:
 ||Pin 13 - GND  || GND || Blue||
 ||Pin 26 - Key || P22  || Green|| closest to Antenna ||
 
+= PropellerPowered HC06 module setup =
+
+Use the instructions and Bluetooth Helper from ProleelerPowered
+
+https://www.dropbox.com/s/mm5b663t5u9w7k6/Bluetooth_Helper.zip
+
+http://propellerpowered.com/shop/?page_id=1748
+
+http://propellerpowered.com/forum/index.php?topic=386.0
+
+= setup HC06 (bare module, not carrier) =
+
+Follow the instructions in Bluetooth-HC05-HC06.f
 
 
 = Details =
