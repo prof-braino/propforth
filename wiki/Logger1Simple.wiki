@@ -16,7 +16,7 @@ The logger is presented in four modules.
   * Double Math
   * Time
   * Logger Init
-  * LoggerBoot
+  * Logger Boot
 
 == Logger init ==
 
