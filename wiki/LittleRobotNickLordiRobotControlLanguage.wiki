@@ -9,6 +9,8 @@ He made this for us as an easier alternative to Sal's demo.
 
 As of this writing, he hasn't tried it on a bot yet, but it looks like it will work just fine.  We should give feedback when we use it. 
 
+Download the file here http://code.google.com/p/propforth/downloads/detail?name=NickLordiRobotControlLanguage20130520.txt
+
 = The Code =
 
 {{{
