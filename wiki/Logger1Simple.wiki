@@ -13,6 +13,17 @@ The logger package is available as a downloadable archive in the downloads secti
 
 http://code.google.com/p/propforth/downloads/detail?name=Logger-2013-05-12.zip
 
+= Requirements =
+
+To use the logger, all that is needed are:
+
+  * a prop board with an SD slot
+  * an SD card - see
+    * http://code.google.com/p/propforth/wiki/PropToSDconnection
+    * http://code.google.com/p/propforth/wiki/SDsetupREVISITED
+  * the propforth SD file system kernel (SDKernel.spin in the propforth download)
+  * some data to log
+
 = the sections =  
 
 The logger is presented in four modules.
