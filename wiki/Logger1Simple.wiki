@@ -5,6 +5,18 @@
 
 This page presents an inital logging package for propforth v5.5
 
+This package does not include queues
+
+= the sections =  
+
+The logger is presented in four modules.
+
+  * Double Math
+  * Time
+  * Logger Init
+  * LoggerBoot
+
+
 
 = Details =
 
