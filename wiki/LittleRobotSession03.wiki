@@ -97,6 +97,8 @@ Emit takes a number off the stack, and tries to display it as an alphanumeric on
 
 Here's something neat and scary.  IF YOU EMIT  the proper sequence of numbers, YOU  can reprogram the PC!!!!!!!!!!!!  YES!!!! Muhuhahahahahaha!  This is tons of fun, folks can never figure out that you pranked them!!!  Also, you can sometimes prank yourself!!! For HOURS!!! Hahahahahaha!
 
+Actually, you just send characters, and certain sequence can for example change the character set to graphics mode. Just close and restart the terminal program to fix this. 
+
 Remember, if you prank yourself, and reprogram the PC terminal program, exit the terminal program (teraterm or cool term) and restart it. 
 
 If you deprogram the quickstart, , press the reset button. If that doesn't work, ask the teacher, perhaps the Propforth kernel needs to be re-burned into EEPROM (we'll explain that later). 
