@@ -11,11 +11,13 @@ There are two version:
 
 = Two Programs Choices =
 
-There are slight differences in the programs, to privide different examples of the same thing. 
+There are slight differences in the programs, to provide different examples of the same thing. 
 
-The driver for testing uses one set of pins
+START with the stand alone drive to prove that the sensor is set up correctly, and operates properly. 
 
-The actual robot demo program selected between teo different options for pins. 
+The driver for testing uses a particular set of pins
+
+The actual robot demo program has two options for pins, depending on your configuration. After you know you can set up the pins, and the sensor opwerates correctly, change the pins to the final configuration you'll use, from BOT.F
 
 (The goal here is to teach us not to be afraid of move the pins to a better placem,and to check the pins when some thing doesn't work)
 
