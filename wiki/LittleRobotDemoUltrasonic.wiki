@@ -93,6 +93,8 @@ c" _sr04_measure" 0 cogx
 ]
 }}}
 
+
+
 AFter the test display prgram is loaded launch it by tyoping:
 
 {{{
@@ -100,8 +102,35 @@ AFter the test display prgram is loaded launch it by tyoping:
 c" _sr04_measure" 0 cogx
 }}}
 
+
+Skip to verify sensor accuracy if you use the above. 
+
+
 = old =
 
+
+=== the code snippet from BOT.f === 
+
+
+{{{
+
+fl
+
+\ fswrite sr04.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+16 wconstant _sr04_trig
+]
+
+
+gfhdghgfhhdfh
+
+
+}}}
+
+
+After the source code is loaded you can run the driver demo. 
 
 
 === Runthe driver demo ===
@@ -123,8 +152,6 @@ These number represent the distance in millimeters the sensor detects.
 This is a code snippet from the BOT.F program, it is the actual code that runs in the robot .
 
 You have to check the pinouts
-
-=== the code snippet from BOT.f === 
 
 
 
@@ -158,53 +185,3 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
-
-
-{{{
-
-fl
-
-\ fswrite sr04.f
-
-1 wconstant build_sr04
-[ifndef _sr04_trig
-16 wconstant _sr04_trig
-]
-[ifndef _sr04_echo
-17 wconstant _sr04_echo
-]
-
-variable _sr04_distance
-
-
-: _sr04_measure
-c" MEASURE" cds W!
-4 state andnC!
-
-_sr04_trig pinlo _sr04_trig pinout
-_sr04_echo >m
-_sr04_trig >m
-begin
-dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
-
-over dup dup dup
-
-waitpeq
-cnt COG@
-rot2
-
-waitpne
-cnt COG@ swap -
-d_170_000 clkfreq */
-
-
-_sr04_distance L!
-d_60 delms
-0 until
-;
-
-...
-}}}
-
-
-After the source code is loaded you can run the driver demo. 
