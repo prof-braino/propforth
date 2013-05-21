@@ -85,8 +85,8 @@ Choose one, and set your pins accordingly.
 || -- || 16 trig ||
 || -- || 17 echo ||
 || Ready LED || 3 || ||
-|| MotorA || || ||
-|| MotorB || || ||
+|| MotorA || d_24 d_25 d_26 d_27 || ||
+|| MotorB || d_20 d_21 d_22 d_23|| ||
 || HC05/HC06 || 2, 0, 1 || 27, x1, x2 ||
 || --   || 2 = bt Tx || 27 bt Tx ||
 || --   || 0 = bt Rx || X1 bt Rx ||
