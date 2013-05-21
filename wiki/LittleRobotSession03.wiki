@@ -1,4 +1,4 @@
-#summary Wednesday was Jimmy Flying solo.
+#summary The Third session covered additional programming, this was a bit much
 #labels LittleRobot,v5.5
 
 = Introduction =
