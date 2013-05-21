@@ -57,7 +57,10 @@ d_60 delms
 ...
 }}}
 
-After the source code is loaded:
+
+After the source code is loaded you can run the driver demo. 
+
+= Runthe driver demo =
 
 To Run the driver demo type
 
@@ -67,9 +70,11 @@ _sr04_measure
 }}}
 
 
-The evice should start measuring, and you should see numbers scoll acroos thedisplay screen.
+The evice should start measuring, and you should see numbers scroll across the display screen.
 
-These number represent thedisance in millimeters the senosr detects.
+These number represent the distance in millimeters the sensor detects.
+
+= VERIFY THE SENSOR ACCURACY =
 
 USE A  RULER:
 
@@ -78,10 +83,12 @@ USE A  RULER:
  # What is the SMALLEST distance it reports?
  # What's the BIGGEST distance it reports?
 
+= Experiment =
+
 Now the real fun begins?
 
   # how can you "trick" of "fool" the sensor into reporting the wrong value?
-   # how can you determine if the sensor is reporting a good value or a bad value?
+  # how can you determine if the sensor is reporting a good value or a bad value?
 
 
 = Details =
