@@ -1,12 +1,12 @@
-#summary One-sentence summary of this page.
+#summary Driver for SR04 unltrasonic rangefinder
 #labels LittleRobot,Ultrasonic,SR04,v5.5,demo
 
 = Introduction =
 
-The SR04 Ultrasonic Rangefinder drver from the LittleRobotDemo
+The SR04 Ultrasonic Rangefinder driver from the LittleRobotDemo
 
 
-Paste the following from the `fl~ to the `...`
+Paste the following from the *`fl`*  to the *`...`*
 
 into the terminal program window
 
