@@ -86,19 +86,19 @@ Choose one, and set your pins accordingly.
 || -- || P17 echo || P25 echo ||
 || Ready LED || P3 || P23 ||
 || MotorA || d_24 d_25 d_26 d_27 || d_15 d_14 d_13 d_12||
-|| -- || d_24 = IN1 || d_15  = IN1 || 
-|| -- ||  d_25 = IN2 || d_14  = IN2  || 
-|| -- ||  d_26 =  IN3 || d_13  = IN3 || 
-|| -- ||  d_27 =  IN4 ||  d_12 = IN4 || 
-|| MotorB || d_20 d_21 d_22 d_23||d_11 d_10 d_9 d_8  ||
-|| -- ||  d_20 =  IN1 || d_11 = IN1  || 
-|| -- ||  d_21 =  IN2 || d_10 = IN2  || 
-|| -- ||  d_22 =  IN3 || d_9  = IN3  || 
-|| -- ||  d_23 =  IN4 ||  d_8 = IN4  || 
+|| -- ||  P24 = IN1 || P15 = IN1 || 
+|| -- ||  P25 = IN2 || P14 = IN2 || 
+|| -- ||  P26 = IN3 || P13 = IN3 || 
+|| -- ||  P27 = IN4 || P12 = IN4 || 
+|| MotorB || d_20 d_21 d_22 d_23 || d_11 d_10 d_9 d_8  ||
+|| -- ||  P20 = IN1 || P11 = IN1  || 
+|| -- ||  P21 = IN2 || P10 = IN2  || 
+|| -- ||  P22 = IN3 || P9  = IN3  || 
+|| -- ||  P23 = IN4 || P8  = IN4  || 
 || HC05/HC06 || P2, P0, P1 || P27, P26, P22 ||
-|| --   || P2 = bt Tx || P27 = bt Tx ||
-|| --   || P0 = bt Rx || P26 bt Rx ||
-|| --   || P1 = bt KEY  || 22 bt KEY || (KEY is not used on HC06 carrier board version) ||
+|| --   || P2 = bt Tx  || P27 = bt Tx ||
+|| --   || P0 = bt Rx  || P26 = bt Rx ||
+|| --   || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
 
 These pins are the same on all configurations
 
