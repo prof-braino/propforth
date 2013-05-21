@@ -72,7 +72,7 @@ variable _sr04_distance
 
 }}}
 
-=== START the SR04 driver ==
+=== START the SR04 driver ===
 
 This line starts the SR04 measuring on cog 0
 
