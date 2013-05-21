@@ -177,17 +177,7 @@ USE A  RULER:
 
 = Experiment =
 
-Now the real fun begins?
+Now the real fun begins!
 
   # how can you "trick" of "fool" the sensor into reporting the wrong value?
   # how can you determine if the sensor is reporting a good value or a bad value?
-
-
-= OLD = 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
