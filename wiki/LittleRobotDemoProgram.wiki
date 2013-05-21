@@ -84,6 +84,7 @@ Choose one, and set your pins accordingly.
 || SR04  || 16 trig, 17 echo || ||
 || -- || 16 trig ||
 || -- || 17 echo ||
+|| Ready LED || 3 || ||
 || MotorA || || ||
 || MotorB || || ||
 || HC05/HC06 || 2, 0, 1 || 27, x1, x2 ||
