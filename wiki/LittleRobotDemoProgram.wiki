@@ -9,6 +9,81 @@ This is contents of BOT.F in the extensions directory of the download archive.
 
 The BOT.F program below has two options for connecting the pins for the peripherals (these are the sensors and actuators, the motors and range finder).
 
+= SELECT 1 or 2 =
+
+{{{
+
+
+2 px? 27 px? 0= and
+[if
+	1 wconstant build_bot1
+]
+
+27 px? 2 px? 0= and
+[if
+	1 wconstant build_bot2
+]
+
+
+}}}}
+
+= BOT1 =
+
+{{{
+
+[ifdef build_bot1
+\ for the HC05
+
+1 wconstant hcProgPin
+0 wconstant hcRx
+2 wconstant hcTx
+
+16 wconstant _sr04_trig
+17 wconstant _sr04_echo
+
+3 wconstant _ready_led
+
+: _mota_pins d_24 d_25 d_26 d_27 ;
+: _motb_pins d_20 d_21 d_22 d_23 ;
+
+263 wconstant _distance_cal
+6052 wconstant _right_cal
+c" BOT " prop W@ ccopy
+1 propid W!
+]
+)))
+
+= BOT2 =
+
+(((
+
+[ifdef build_bot2
+\ for the HC05
+\ green wire
+	22 wconstant hcProgPin
+\ white/orange wire
+	26 wconstant hcRx
+\ white/green wire
+	27 wconstant hcTx
+
+24 wconstant _sr04_trig
+25 wconstant _sr04_echo
+
+23 wconstant _ready_led
+
+: _mota_pins d_15 d_14 d_13 d_12 ;
+: _motb_pins d_11 d_10 d_9 d_8 ;
+
+263 wconstant _distance_cal
+6052 wconstant _right_cal
+c" BOT " prop W@ ccopy
+2 propid W!
+]
+
+}}}
+
+
+
 Choose one, and set your pins accordingly.
 
 || || Bot1 || Bot2 ||
