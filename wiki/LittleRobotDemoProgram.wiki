@@ -78,7 +78,7 @@ c" BOT " prop W@ ccopy
 
 
 
-Choose one, and set your pins accordingly.
+Choose one configuration, either BOT1 or BOT2, and set your pins accordingly.
 
 || || Bot1 || Bot2 ||
 || SR04  || 16 trig, 17 echo || P24 trig, P25 echo  ||
