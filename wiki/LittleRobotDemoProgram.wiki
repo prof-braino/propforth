@@ -11,21 +11,15 @@ The BOT.F program below has two options for connecting the pins for the peripher
 
 = SELECT 1 or 2 =
 
+The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held high.  So the program can find where the Bluetooth is by looking for the Blue tooth Tx line. 
+
 {{{
-
-
-2 px? 27 px? 0= and
-[if
-	1 wconstant build_bot1
-]
-
-27 px? 2 px? 0= and
-[if
-	1 wconstant build_bot2
-]
-
-
+2 px? 27 px? 0= and [if 1 wconstant build_bot1 ]
+27 px? 2 px? 0= and [if 1 wconstant build_bot2 ]
 }}}
+
+  * If 2 is high ( bt Tx ) and 27 is low use  BOT1 pinout
+  * If 27 is high ( bt Tx ) and 2 is low use  BOT2 pinout
 
 = BOT1 =
 
@@ -90,7 +84,10 @@ Choose one, and set your pins accordingly.
 || SR04  || || ||
 || MotorA || || ||
 || MotorB || || ||
-|| HC05/HC06 || || ||
+|| HC05/HC06 || 2, 4, 0 || 27, x1, x2 ||
+|| --   || 2 = bt Tx || 27 bt Tx ||
+|| --   || 4 = bt Rx || X1 bt Rx ||
+|| --   || 0 = bt KEY || X2 bt KEY ||
 
 These pins are the same on all configurations
 
