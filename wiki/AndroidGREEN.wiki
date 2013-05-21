@@ -13,6 +13,13 @@ A recently trend is for an application device to use a generic android device fo
 
 GREEN  is the development prototype for an android user interface to propforth for the LittleRobot demo project.  After development, it should be suitable for any prop project the requires an interface over blue tooth. 
 
+= Download and Install =
+
+GREEN is an unsigned app.  Therefore, it cannot be downloaded from the App Store, you need to download the file, and install it yourself.  There are many sources on the web for instructions how to do this. I just did it, I did not write down the steps. 
+
+The file GREEN.apk is posted here: 
+http://code.google.com/p/propforth/downloads/detail?name=Green.apk
+
 = High level description of user facing functions =
 
 pivot left
