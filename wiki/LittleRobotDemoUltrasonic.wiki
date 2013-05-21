@@ -9,7 +9,7 @@ There are two version:
   * The SR04 driver program for testing
   * The SR04 section from the LittleRobotDemoProgram
 
-= Two Programs Choises =
+= Two Programs Choices =
 
 There are slight differences in the programs, to privide different examples of the same thing. 
 
@@ -76,7 +76,7 @@ variable _sr04_distance
 
 This line starts the SR04 measuring on cog 0
 
-}}}
+{{{
 c" _sr04_measure" 0 cogx
 }}}
 
