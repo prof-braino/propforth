@@ -81,18 +81,18 @@ c" BOT " prop W@ ccopy
 Choose one, and set your pins accordingly.
 
 || || Bot1 || Bot2 ||
-|| SR04  || 16 trig, 17 echo || ||
-|| -- || 16 trig ||
-|| -- || 17 echo ||
-|| Ready LED || 3 || ||
-|| MotorA || d_24 d_25 d_26 d_27 || ||
-|| -- || d_24 = IN1 ||  || 
-|| -- ||  d_25 = IN2 ||  || 
-|| -- ||  d_26 =  IN3 ||  || 
-|| -- ||  d_27 =  IN4 ||   || 
+|| SR04  || 16 trig, 17 echo || P24 trig, P25 echo  ||
+|| -- || P16 trig || P24 trig ||
+|| -- || P17 echo || P25 echo ||
+|| Ready LED || P3 || P23 ||
+|| MotorA || d_24 d_25 d_26 d_27 || d_15 d_14 d_13 d_12||
+|| -- || d_24 = IN1 || d_15  = IN1 || 
+|| -- ||  d_25 = IN2 || d_14  = IN2  || 
+|| -- ||  d_26 =  IN3 || d_13  = IN3 || 
+|| -- ||  d_27 =  IN4 ||  d_12 = IN4 || 
 
 
-|| MotorB || d_20 d_21 d_22 d_23|| ||
+|| MotorB || d_20 d_21 d_22 d_23||d_11 d_10 d_9 d_8  ||
 || -- ||  d_20 =  IN1 ||   || 
 || -- ||  d_21 =  IN2 ||   || 
 || -- ||  d_22 =  IN3 ||   || 
