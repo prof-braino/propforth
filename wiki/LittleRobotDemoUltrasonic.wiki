@@ -3,12 +3,161 @@
 
 = Introduction =
 
-The SR04 Ultrasonic Rangefinder driver from the LittleRobotDemo
+The SR04 Ultrasonic Rangefinder driver
 
+There are two version:
+  * The SR04 driver program for testing
+  * The SR04 section from the LittleRobotDemoProgram
+
+= Two Programs Choises =
+
+There are slight differences in the programs, to privide different examples of the same thing. 
+
+The driver for testing uses one set of pins
+
+The actual robot demo program selected between teo different options for pins. 
+
+(The goal here is to teach us not to be afraid of move the pins to a better placem,and to check the pins when some thing doesn't work)
+
+
+== The stand alone driver program SR04.f ==
+
+The is the code from the standalone driver program SR04.f from the extensions directory
 
 Paste the following from the *`fl`*  to the *`...`*
 
 into the terminal program window
+
+
+{{{
+
+fl
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+	d_22 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+	d_23 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+: _sr04_measure
+	c" MEASURE" cds W!
+	4 state andnC!
+
+	_sr04_trig pinlo _sr04_trig pinout
+	_sr04_echo >m
+	_sr04_trig >m
+	begin
+		dup _maskouthi dup dup drop _maskoutlo
+
+		over dup dup dup
+
+		waitpeq
+		cnt COG@
+		rot2
+
+		waitpne
+		cnt COG@ swap -
+		d_170_000 clkfreq */
+
+
+		_sr04_distance L!
+		
+		100 delms
+	0 until
+;
+
+}}}
+
+=== START the SR04 driver ==
+
+This line starts the SR04 measuring on cog 0
+
+}}}
+c" _sr04_measure" 0 cogx
+}}}
+
+=== This is the test program that runs on you terminal display ===
+
+{{{
+[ifndef sr04_test
+: sr04_test
+	begin
+		_sr04_distance L@ . cr
+		fkey? nip
+	until
+;
+]
+}}}
+
+AFter the test display prgram is loaded launch it by tyoping:
+
+{{{
+
+c" _sr04_measure" 0 cogx
+}}}
+
+= old =
+
+
+
+=== Runthe driver demo ===
+
+To Run the driver demo type
+
+{{{
+
+_sr04_measure
+}}}
+
+
+The device should start measuring, and you should see numbers scroll across the display screen.
+
+These number represent the distance in millimeters the sensor detects.
+
+== The sr04 driver from the BOT.F demo program ==
+
+This is a code snippet from the BOT.F program, it is the actual code that runs in the robot .
+
+You have to check the pinouts
+
+=== the code snippet from BOT.f === 
+
+
+
+
+ 
+
+
+= VERIFY THE SENSOR ACCURACY =
+
+USE A  RULER:
+
+ # how consistent arethe numbers?
+ # how accuracte are the numbers?
+ # What is the SMALLEST distance it reports?
+ # What's the BIGGEST distance it reports?
+
+= Experiment =
+
+Now the real fun begins?
+
+  # how can you "trick" of "fool" the sensor into reporting the wrong value?
+  # how can you determine if the sensor is reporting a good value or a bad value?
+
+
+= OLD = 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
 
 
 {{{
@@ -59,41 +208,3 @@ d_60 delms
 
 
 After the source code is loaded you can run the driver demo. 
-
-= Runthe driver demo =
-
-To Run the driver demo type
-
-{{{
-
-_sr04_measure
-}}}
-
-
-The evice should start measuring, and you should see numbers scroll across the display screen.
-
-These number represent the distance in millimeters the sensor detects.
-
-= VERIFY THE SENSOR ACCURACY =
-
-USE A  RULER:
-
- # how consistent arethe numbers?
- # how accuracte are the numbers?
- # What is the SMALLEST distance it reports?
- # What's the BIGGEST distance it reports?
-
-= Experiment =
-
-Now the real fun begins?
-
-  # how can you "trick" of "fool" the sensor into reporting the wrong value?
-  # how can you determine if the sensor is reporting a good value or a bad value?
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
