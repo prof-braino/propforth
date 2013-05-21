@@ -97,10 +97,10 @@ Choose one, and set your pins accordingly.
 || -- ||  d_21 =  IN2 ||   || 
 || -- ||  d_22 =  IN3 ||   || 
 || -- ||  d_23 =  IN4 ||   || 
-|| HC05/HC06 || 2, 0, 1 || 27, x1, x2 ||
+|| HC05/HC06 || 2, 0, 1 || 27, 26, 22 ||
 || --   || 2 = bt Tx || 27 bt Tx ||
-|| --   || 0 = bt Rx || X1 bt Rx ||
-|| --   || 1 = bt KEY || X2 bt KEY ||
+|| --   || 0 = bt Rx || 26 bt Rx ||
+|| --   || 1 = bt KEY || 22 bt KEY ||
 
 These pins are the same on all configurations
 
