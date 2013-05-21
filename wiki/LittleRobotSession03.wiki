@@ -3,13 +3,9 @@
 
 = Introduction =
 
-Wednesday is instructor Jimmy conducting Lab and Review. 
+NOTE: We tried to cover the material listed here, but this was the LAST session that we focused on programming and forth words.  So the kids saw these functions and we talked about them, but they started to drift away.  This is also the point where we lost our instructor that had been hired to specifically run this class.
 
-Hopefully, we have prepared the instruction for session without developer support
-
-Wednesday 20130501 was to be Jimmy's first session on his own, but this was overcome by events. The following session, Friday, we will try Lab and Review.   Professor Braino and Boy Chance will be present, but we will refrain from leading and observe how the lab might be conducted in our absence. 
-
-Jimmy has most of what we think he needs:
+Materials that should be in place at this point:
 
   * Windows laptop
   * proptool installed
@@ -19,7 +15,7 @@ Jimmy has most of what we think he needs:
   * completed Hello World 
   * completed LED01
 
-Jimmy does NOT have:
+These are the items that have yet to be arranged:
 
  * video conference software properly configured on laptop (maybe its just too old and broken?)
  * voice chat software properly configured on laptop 
