@@ -6,8 +6,8 @@
 The SR04 Ultrasonic Rangefinder driver
 
 There are two version:
-  * The SR04 driver program for testing
-  * The SR04 section from the LittleRobotDemoProgram
+  * The SR04 driver program for testing SR04.F
+  * The SR04 section from the LittleRobotDemoProgram BOT.F
 
 = Two Programs Choices =
 
