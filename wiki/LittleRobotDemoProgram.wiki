@@ -103,9 +103,9 @@ Choose one configuration, either BOT1 or BOT2, and set your pins accordingly.
 These pins are the same on all configurations
 
 || || || ||
-|| Battery pack || Vin  || Vss/GND ||
-|| || Vin - RED wire|| ||
-|| || Vss/GND - BLACK wire|| ||
+|| Battery pack || Vin   Vss/GND ||
+|| || Vin = RED wire|| 
+|| || Vss/GND = BLACK wire|| 
 
 
 
