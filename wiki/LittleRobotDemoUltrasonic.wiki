@@ -112,51 +112,56 @@ Skip to verify sensor accuracy if you use the above.
 === the code snippet from BOT.f === 
 
 
+The BOT.f program has two options for pin outs.  Be sure you know which set of pin outs you are using. 
+
 {{{
 
-fl
 
-\ fswrite sr04.f
+fswrite sr04.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
 16 wconstant _sr04_trig
 ]
+[ifndef _sr04_echo
+17 wconstant _sr04_echo
+]
+
+variable _sr04_distance
 
 
-gfhdghgfhhdfh
+: _sr04_measure
+c" MEASURE" cds W!
+4 state andnC!
+
+_sr04_trig pinlo _sr04_trig pinout
+_sr04_echo >m
+_sr04_trig >m
+begin
+dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+
+over dup dup dup
+
+waitpeq
+cnt COG@
+rot2
+
+waitpne
+cnt COG@ swap -
+d_170_000 clkfreq */
+
+
+_sr04_distance L!
+d_60 delms
+0 until
+;
+
+...
 
 
 }}}
 
 
-After the source code is loaded you can run the driver demo. 
-
-
-=== Runthe driver demo ===
-
-To Run the driver demo type
-
-{{{
-
-_sr04_measure
-}}}
-
-
-The device should start measuring, and you should see numbers scroll across the display screen.
-
-These number represent the distance in millimeters the sensor detects.
-
-== The sr04 driver from the BOT.F demo program ==
-
-This is a code snippet from the BOT.F program, it is the actual code that runs in the robot .
-
-You have to check the pinouts
-
-
-
-
- 
 
 
 = VERIFY THE SENSOR ACCURACY =
@@ -184,4 +189,3 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-
