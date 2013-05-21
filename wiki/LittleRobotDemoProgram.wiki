@@ -81,13 +81,15 @@ c" BOT " prop W@ ccopy
 Choose one, and set your pins accordingly.
 
 || || Bot1 || Bot2 ||
-|| SR04  || || ||
+|| SR04  || 16 trig, 17 echo || ||
+|| -- || 16 trig ||
+|| -- || 17 echo ||
 || MotorA || || ||
 || MotorB || || ||
-|| HC05/HC06 || 2, 4, 0 || 27, x1, x2 ||
+|| HC05/HC06 || 2, 0, 1 || 27, x1, x2 ||
 || --   || 2 = bt Tx || 27 bt Tx ||
-|| --   || 4 = bt Rx || X1 bt Rx ||
-|| --   || 0 = bt KEY || X2 bt KEY ||
+|| --   || 0 = bt Rx || X1 bt Rx ||
+|| --   || 1 = bt KEY || X2 bt KEY ||
 
 These pins are the same on all configurations
 
