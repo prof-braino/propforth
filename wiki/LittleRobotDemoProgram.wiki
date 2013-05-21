@@ -97,10 +97,10 @@ Choose one, and set your pins accordingly.
 || -- ||  d_21 =  IN2 ||   || 
 || -- ||  d_22 =  IN3 ||   || 
 || -- ||  d_23 =  IN4 ||   || 
-|| HC05/HC06 || 2, 0, 1 || 27, 26, 22 ||
-|| --   || 2 = bt Tx || 27 bt Tx ||
-|| --   || 0 = bt Rx || 26 bt Rx ||
-|| --   || 1 = bt KEY || 22 bt KEY ||
+|| HC05/HC06 || P2, P0, P1 || P27, P26, P22 ||
+|| --   || P2 = bt Tx || P27 = bt Tx ||
+|| --   || P0 = bt Rx || P26 bt Rx ||
+|| --   || P1 = bt KEY  || 22 bt KEY || (KEY is not used on HC06 carrier board version) ||
 
 These pins are the same on all configurations
 
