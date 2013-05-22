@@ -18,7 +18,7 @@ Thanks to Boy Chance (Vic) for helping figure out the HC06.
 These are the command I used in Bluetooth Helper (copy and paste to teraterm):
   * AT
   * AT+VERSION
-  * AT+NAMEAnconaHC06-8
+  * AT+NAMEAnconaHC06-X
   * AT+PIN9999
   * AT+BAUD9
  
@@ -26,7 +26,7 @@ AT command produces  `ATOK` when it executes correctly
 
 AT+VERSION comand procudes ` LinvorV1.5`  when it executes correctly
 
-AT+NAMEAnconaHC06-8 produces  `nameset` when it executes correctly
+AT+NAMEAnconaHC06-X produces  `nameset` when it executes correctly
 
 AT+PIN9999 produces  `setPIN` when it executes correctly
 
