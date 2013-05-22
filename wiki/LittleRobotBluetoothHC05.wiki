@@ -1,6 +1,8 @@
 #summary HC05 bluetooth cable replacement - master or slave
 #labels LittleRobot,v5.5,HC05,Bluetooth,SerialCableReplacement
 
+<wiki:toc max_depth="9" />
+
 = HC05 master/slave =
 
 == Datasheet ==
