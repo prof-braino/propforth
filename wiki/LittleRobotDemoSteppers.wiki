@@ -1,7 +1,7 @@
 #summary Use this to get the steppers going
 #labels LittleRobot,demo,stepper,v5.5
 
-
+<wiki:toc max_depth="9" />
 
 = stepper code =
 
