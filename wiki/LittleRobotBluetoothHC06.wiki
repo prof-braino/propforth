@@ -9,7 +9,9 @@ FIRST: The RED LED must be flashing in order to talk to it. If the RED LED is NO
 
 SECOND: CYCLE THE POWER. Pull the GND wire, and reconnect it.  Every other time, it goes into flashing (PAIRING) mode.  The HC06 needs to be in PAIRING mode to program it  
 
-Third: Baud changes Immediately on HC06!!! Change baud LAST!!!
+Third: Use the BlueTooth Helper from Propeller Powered.  When it works, its easy.  When it doesn't work, something else is the problem. Prably the Red LED isn't blinking.  Pull the GND wire and reconnect it , and try again. 
+
+Fourth: Baud changes Immediately on HC06!!! Change baud LAST!!!
 
 Thanks to Boy Chance (Vic) for helping figure out the HC06.
 
