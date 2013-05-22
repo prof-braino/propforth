@@ -173,6 +173,30 @@ hcProgPin pinlo
 }}}
 
 
+IF you've configurred as BOT1 (hcTx is on P2, and Prop dsl_Rx is also P2), the quickstart LEDs will flash with motor B. TEST:
+
+If your Propforth Prompt says 
+
+{{{
+BOT1 Cog6
+}}}
+
+Paste these line into the terminal program: 
+ 
+{{{
+
+init_motorB
+
+12345 forwardb
+
+500 delms
+
+12345 reverseb
+
+st? 
+sc
+}}}
+
 
 === BOT2 ===
 
