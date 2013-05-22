@@ -1,6 +1,8 @@
 #summary Sal's demo software for LittleRobot Demo
 #labels LittleRobot,v5.5
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 This is contents of BOT.F in the extensions directory of the download archive.
