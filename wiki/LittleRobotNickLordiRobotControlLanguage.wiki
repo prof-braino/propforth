@@ -1,13 +1,15 @@
 #summary Note on Nick's Robot Control Language.
 #labels LittleRobot,v5.5,NickLordi
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Nick Lordi Knows something about forth, microcontrolers, and computing in general. 
 
-He made this for us as an easier alternative to Sal's demo. 
+He made the Robot Control Language for us as an easier alternative to Sal's demo.  Try them both, givr commrnts and frrdback, and we'll get even better!
 
-As of this writing, he hasn't tried it on a bot yet, but it looks like it will work just fine.  We should give feedback when we use it. 
+As of this writing, Nick hasn't tried it on a bot yet, but it looks like it will work just fine.  We should give feedback when we use it. 
 
 Download the file here http://code.google.com/p/propforth/downloads/detail?name=NickLordiRobotControlLanguage20130520.txt
 
