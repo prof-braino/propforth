@@ -1,11 +1,9 @@
-#summary One-sentence summary of this page.
+#summary Use this to get the steppers going
 #labels LittleRobot,demo,stepper,v5.5
 
-= Introduction =
 
-Add your content here.
 
-= the stepper section =
+= stepper code =
 
 The stepper section of the bot.f program
 
