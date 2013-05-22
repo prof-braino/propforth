@@ -1,6 +1,8 @@
 #summary HC06 bluetooth cable replacement - slave only
 #labels LittleRobot,v5.5,HC06,Bluetooth,SerialCableReplacement
 
+<wiki:toc max_depth="9" />
+
 = Summary =
 
 So, these can be a little funky until you get used to them. Some don't seem to come up at 9600. 
