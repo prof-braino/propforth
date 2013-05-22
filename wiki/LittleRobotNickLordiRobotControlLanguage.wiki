@@ -343,7 +343,4 @@ wvariable sec() 1 w, 2 w, 5 w, 10 w, 20 w, 30 w, 40 w, 60 w, 90 w, 120 w,
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The first version was published 2013, may 20
