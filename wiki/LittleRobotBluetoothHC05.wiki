@@ -106,7 +106,7 @@ After you've edited the script paste it in the terminal
 
 fl
 
-\\ for the HC05
+\ for the HC05
 
 \ REMEMBER! ONLY connect the KEY-GREEN-Prop P1 wire when you run the programming script!
 \ AFTER the script is run, disconnect the green wire!
@@ -124,8 +124,9 @@ fl
 
 \ 9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
 \ the baud is set to a really fast speed, so you must change these comments
- 230400 4/ wconstant hcBaud  
 \ 38400 4/ wconstant hcBaud \ or use this line for the KEY-HI-POWERON method for 38400 baud  
+
+ 230400 4/ wconstant hcBaud  
 
 0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
 
@@ -140,7 +141,7 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
 
 hcProgPin pinhi hcProgPin pinout
 
-\\ sometimes Teraterm hangs here until you press enter key
+\ sometimes Teraterm hangs here until you press enter key
 
 c" AT+VERSION~h0D~h0A" hcSend
 c" AT+ROLE?~h0D~h0A" hcSend
