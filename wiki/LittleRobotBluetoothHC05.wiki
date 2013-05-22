@@ -97,6 +97,84 @@ First edit the script to set
 
 After you've edited the script paste it in the terminal 
 
+=== BOT1 ===
+
+{{{
+
+\ REMEMBER set pins in PROPFORTH as below!!!! 
+\ Im USING quickstart
+
+fl
+
+\\ for the HC05
+
+\ REMEMBER! ONLY connect the KEY-GREEN-Prop P1 wire when you run the programming script!
+\ AFTER the script is run, disconnect the green wire!
+\ green wire \ GREEN key - PROGRAM WHEN 3.3V - to prop 1 
+\ Raise P1 Hi when connected to HCo5-pin34 (key) to program
+  1 wconstant hcProgPin 
+
+\ after programming, disconnect the GREEN wire!
+
+\ white/orange wire \ WHITE - HC05-pin02 Rx - to prop 26 | QuickStart position27
+  0 wconstant hcRx
+
+\ white/green wire  \ GREY - HC05-pin01 Tx - to prop 25 | Quickstart position26
+  2 wconstant hcTx
+
+\ 9600 4/ wconstant hcBaud       \ REMEMBER! AFTER you run this once,
+\ the baud is set to a really fast speed, so you must change these comments
+ 230400 4/ wconstant hcBaud  
+\ 38400 4/ wconstant hcBaud \ or use this line for the KEY-HI-POWERON method for 38400 baud  
+
+0 wconstant hcSerialCog \ cog0 will talk to the HC05 for programming
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+1 hcSerialCog sersetflags
+
+
+: hcSend
+	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+
+hcProgPin pinhi hcProgPin pinout
+
+\\ sometimes Teraterm hangs here until you press enter key
+
+c" AT+VERSION~h0D~h0A" hcSend
+c" AT+ROLE?~h0D~h0A" hcSend
+c" AT+UART?~h0D~h0A" hcSend
+c" AT+NAME?~h0D~h0A" hcSend
+c" AT+PSWD?~h0D~h0A" hcSend
+
+
+             \ make sure these display 'OK' 
+             \ otherwise it isnt working, powercycle to fix
+10000 delms \ 10 seconds to read the screen
+
+
+c" AT+NAME=HC05-230400-B~h0D~h0A" hcSend
+c" AT+PSWD=1234~h0D~h0A" hcSend
+c" AT+UART=230400,0,0~h0D~h0A" hcSend
+c" AT+VERSION~h0D~h0A" hcSend
+c" AT+ROLE?~h0D~h0A" hcSend
+c" AT+UART?~h0D~h0A" hcSend
+c" AT+NAME?~h0D~h0A" hcSend
+c" AT+PSWD?~h0D~h0A" hcSend
+
+hcProgPin pinlo 
+
+\ after the hc05 is power cycled, the baud rate will change 
+
+
+
+}}}
+
+
+
+=== BOT2 ===
+
 {{{
 
 \ REMEMBER set pins in PROPFORTH as below!!!! 
