@@ -15,7 +15,7 @@ Fourth: Baud changes Immediately on HC06!!! Change baud LAST!!!
 
 Thanks to Boy Chance (Vic) for helping figure out the HC06.
 
-These are the command I used:
+These are the command I used in Bluetooth Helper (copy and paste to teraterm):
   * AT
   * AT+VERSION
   * AT+NAMEAnconaHC06-8
