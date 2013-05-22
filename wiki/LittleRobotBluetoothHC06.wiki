@@ -1,10 +1,15 @@
 #summary HC06 bluetooth cable replacement - slave only
 #labels LittleRobot,v5.5,HC06,Bluetooth,SerialCableReplacement
 
-= Introduction =
+= Summary =
 
-Add your content here.
+So, these can be a little funky until you get used to them. Some don't seem to come up at 9600. 
 
+FIRST: The RED LED must be flashing in order to talk to it. If the RED LED is NOT flashing, pull the ground wire and reconnect it.  
+
+Thanks to Boy Chance (Vic) for helping me figure out the HC06.
+
+ 
 
 == HC06 KEY is Scallop 26 ==
 
