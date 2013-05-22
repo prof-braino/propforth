@@ -24,7 +24,7 @@ These are the command I used in Bluetooth Helper (copy and paste to teraterm):
  
 AT command produces  `ATOK` when it executes correctly
 
-AT+VERSION comand procudes ` Linvor`  when it executes correctly
+AT+VERSION comand procudes ` LinvorV1.5`  when it executes correctly
 
 AT+NAMEAnconaHC06-8 produces  `nameset` when it executes correctly
 
