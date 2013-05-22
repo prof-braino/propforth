@@ -13,7 +13,26 @@ Third: Baud changes Immediately on HC06!!! Change baud LAST!!!
 
 Thanks to Boy Chance (Vic) for helping figure out the HC06.
 
+These are the command I used:
+  * AT
+  * AT+VERSION
+  * AT+NAMEAnconaHC06-8
+  * AT+PIN9999
+  * AT+BAUD9
  
+AT command produces  `ATOK` when it executes correctly
+
+AT+VERSION comand procudes ` Linvor`  when it executes correctly
+
+AT+NAMEAnconaHC06-8 produces  `nameset` when it executes correctly
+
+AT+PIN9999 produces  `setPIN` when it executes correctly
+
+AT+BAUD9 produces  `230400` when it executes correctly
+
+AFTER THE BAUD COMMAND, it stops restonding, as the baud changed to 230400 on the HC06, but the Bluetooth Helper is still at 9600.  CHANGE BAUD LAST!!!
+
+
 
 == HC06 KEY is Scallop 26 ==
 
