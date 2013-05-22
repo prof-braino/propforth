@@ -16,6 +16,12 @@ The logger package is available as a downloadable archive in the downloads secti
 
 http://code.google.com/p/propforth/downloads/detail?name=Logger-2013-05-12.zip
 
+= Braino's Note =
+
+This logging package seems like it might be kind of important.  Its very simple, very accurate, and very high resolution. It does not require any special hardware or circuitry, aside from the SD slot.
+
+This is on the list as the center an activity after Little Robot get stabilized.  I think the logging package is going to be really big in terms of popularity and usefulness.  Get started now!
+
 = Requirements =
 
 To use the logger, all that is needed are:
