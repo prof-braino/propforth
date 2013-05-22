@@ -45,6 +45,10 @@ The HC06 from proleer Powered is mounted on a carrier board.  we might not have 
 
 These connections are already done when using the PropellerPowered HC06 modules, as they come mounted on a carrier board. Convenient!  
 
+= HC06 module, unmounted =
+
+Before we found the HC06 mounted on carrier at propeller powered, we used bare modules, and fashions our own carries.  This is much more fun, I was stuck for about two weeks. 
+
 Connect:
 
 || HC06 Bluetooth module ||
