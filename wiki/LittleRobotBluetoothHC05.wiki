@@ -155,7 +155,7 @@ c" AT+PSWD?~h0D~h0A" hcSend
 10000 delms \ 10 seconds to read the screen
 
 
-c" AT+NAME=HC05-230400-B~h0D~h0A" hcSend
+c" AT+NAME=HC05-230400-A~h0D~h0A" hcSend
 c" AT+PSWD=1234~h0D~h0A" hcSend
 c" AT+UART=230400,0,0~h0D~h0A" hcSend
 c" AT+VERSION~h0D~h0A" hcSend
