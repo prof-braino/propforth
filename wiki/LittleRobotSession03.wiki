@@ -1,6 +1,8 @@
 #summary The Third session covered additional programming, this was a bit much
 #labels LittleRobot,v5.5
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 NOTE: We tried to cover the material listed here, but this was the LAST session that we focused on programming and forth words.  So the kids saw these functions and we talked about them, but they started to drift away.  This is also the point where we lost our instructor that had been hired to specifically run this class.
