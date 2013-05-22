@@ -7,6 +7,8 @@ So, these can be a little funky until you get used to them. Some don't seem to c
 
 FIRST: The RED LED must be flashing in order to talk to it. If the RED LED is NOT flashing, pull the ground wire and reconnect it.  
 
+SECOND: Baud changes Immediately on HC06!!! Change baud LAST!!!
+
 Thanks to Boy Chance (Vic) for helping me figure out the HC06.
 
  
