@@ -1,6 +1,9 @@
 #summary Micro-second time stamps, logging to SD.
 #labels v5.5,Logger
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 This page presents an inital logging package for propforth v5.5
