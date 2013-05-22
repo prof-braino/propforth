@@ -1,6 +1,8 @@
 #summary References and Datasheets
 #labels LittleRobot,v5.5
 
+<wiki:toc max_depth="9" />
+
 = Rework this session =
 
 Need a better way to introduce using references and data sheets.  The kids seems lost.  We did not press this material onto them, instead we tried to jump forward to building the bot.  The idea is, the kids would ask questions about "how to find stuff out" when they are ready for it. 
