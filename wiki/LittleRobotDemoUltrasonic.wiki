@@ -1,6 +1,8 @@
 #summary Driver for SR04 unltrasonic rangefinder
 #labels LittleRobot,Ultrasonic,SR04,v5.5,demo
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 The SR04 Ultrasonic Rangefinder driver
