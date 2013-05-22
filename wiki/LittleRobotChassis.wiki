@@ -1,6 +1,9 @@
 #summary Options for user created LittleRobot(tm) CHASSIS.
 #labels LittleRobot,v5.5
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 The Chassic of the Little Robot(tm) or ANY differential steering simple robot needs to do a couple things:
