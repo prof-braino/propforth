@@ -19,6 +19,9 @@ Thanks to Boy Chance (Vic) for helping figure out the HC06.
 
  Ancona uses Jeff's HC06. The HC06 is slave only, this is sufficient for Ancona's current needs. 
 
+The HC06 from proleer Powered is mounted on a carrier board.  we might not have KEY brought out to a connection.  I think either STATE or WAKEUP might be KEY, so we could try the 3.3 before Vcc trick to get the default 38400 baud. 
+
+
 These connections are already done when using the PropellerPowered HC06 modules, as they come mounted on a carrier board. Convenient!  
 
 Connect:
