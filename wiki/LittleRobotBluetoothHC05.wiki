@@ -16,7 +16,7 @@ This is the one near the antenna, opposite pin 1
 Connect:
 
 || HC05 Bluetooth module ||
-|| HC05  ||  Wire Color|| Prop ||
+|| HC05  ||  Wire Color|| Prop Bot1 || Prop Bot2 ||
 ||Pin 1 - hcTX  || Orange/white or GEY || P26 dlrS_rxpin=26  || closest to Antenna ||
 ||Pin 2 - hcRX   || green/white or WHITE || P25 dlrS_txpin=25 || 
 ||Pin 12 - 3.3v ||Orange or RED ||3.3v || 
