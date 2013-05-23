@@ -402,9 +402,7 @@ This allows the changes (baud rate, name, etc) to "take".
 
 Return to the LittleRobotBluetooth page  to finish setting up the bluetooth link.
 
-
 LittleRobotBluetooth
-
 
 = A difficult HC05 =
 
@@ -466,3 +464,41 @@ for a problem device.  For example the HC05 that would communicate and program a
 
 
  NOW it works! Whew! that was tough.  Good thing to read the datasheet when things don't go exactly as hoped. 
+
+= List of HC05 Commands =
+
+Heres the commands that we used, there are more on the datasheet. 
+
+  *  AT+VERSION
+  * AT+ROLE?
+  * AT+UART?
+  * AT+NAME?
+  * AT+PSWD?
+
+
+\ inquere number of device pairing 
+  * AT+ADCN?
+
+\ delete device assoiactions
+  * AT+RMAAD
+
+
+\ set robot name
+  * AT+NAME=MyLittleRobot-HC05-1
+\set Password
+  * AT+PSWD=1111
+\ set serial settings, baud parity, stop bits
+  * AT+UART=230400,0,0
+\ show HC05 firmware version
+  * AT+VERSION
+\ show HC05 0=slave, 1=master
+  * AT+ROLE?
+\ show serial settings, baud parity, stop bits
+  * AT+UART?
+\ SHOW BT ID string
+  * AT+NAME?
+\ Show BT pairing PIN
+  * AT+PSWD?
+
+\ set programming pin low to disable programming mode and enter communication mode
+  * hcProgPin pinlo 
