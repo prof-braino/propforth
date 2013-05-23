@@ -476,29 +476,35 @@ Heres the commands that we used, there are more on the datasheet.
   * AT+PSWD?
 
 
-\ inquere number of device pairing 
+inquere number of device pairing 
   * AT+ADCN?
 
-\ delete device assoiactions
+delete device assoiactions
   * AT+RMAAD
 
-
-\ set robot name
+set robot name
   * AT+NAME=MyLittleRobot-HC05-1
-\set Password
+
+set Password
   * AT+PSWD=1111
-\ set serial settings, baud parity, stop bits
+
+set serial settings, baud parity, stop bits
   * AT+UART=230400,0,0
-\ show HC05 firmware version
+
+show HC05 firmware version
   * AT+VERSION
-\ show HC05 0=slave, 1=master
+
+show HC05 0=slave, 1=master
   * AT+ROLE?
-\ show serial settings, baud parity, stop bits
+
+show serial settings, baud parity, stop bits
   * AT+UART?
-\ SHOW BT ID string
+
+SHOW BT ID string
   * AT+NAME?
-\ Show BT pairing PIN
+
+Show BT pairing PIN
   * AT+PSWD?
 
-\ set programming pin low to disable programming mode and enter communication mode
+set programming pin low to disable programming mode and enter communication mode
   * hcProgPin pinlo 
