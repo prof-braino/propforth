@@ -167,11 +167,58 @@ The project is designed to use NO TOOL.  We came close, but we still need:
  
 ----
 
-= Getting started =
+= The ACTIVITIES =
 
 Prerequisites:
   * The PC is set up
   * PC software is installed
+  * the serial drivers were successfully installed
+  * the PC is connected to the internet  and you are reading this page :)
+  
+
+# connect the Quickstart to the PC
+# load the devkernel.spin to the Quickstart EEprom
+# connect to Propforth with the terminal program
+
+== Hello World - serial text driver ==
+
+== Blinky LED - PIO driver ==
+
+=== On OFF ===
+
+=== Sequence - Loops ===
+
+== Stepper driver ==
+
+== Range finder driver ==
+
+== blue tooth driver ==
+
+= BOT.F =
+
+== Pin Configuration ==
+
+=== BOT1 ===
+
+=== BOT2 ===
+
+== EEprom.spin ==
+
+= ROBOT CONTROL LANGUAGE =
+
+Nick Lordi's Robot control language
+
+http://code.google.com/p/propforth/wiki/LittleRobotNickLordiRobotControlLanguage
+
+
+
+
+
+
+
+
+
+  
   
 
 
