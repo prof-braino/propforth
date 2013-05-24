@@ -1,0 +1,34 @@
+#summary a single session 4 hour workshop for intro to embedded control systems
+#labels LittleRobot,Workshop,v5.5
+
+= LittleRobot(tm) Workshop =
+
+LittleRobot(tm) Workshop is a single 4 hour session.  This presents the intro to embedded control systems material.  This session uses the Parallax Propeller microcontroller, the LittleRobot(tm) kit, and a PC.  
+
+The goal is to have participants assemble the kits and the expected result is a mobile roboitc platform that moves and can sensor the environment in a simple fashion.
+
+= Preparation =
+
+Required for the event are:
+
+   * Internet Access
+   * Electrical Power
+   * sufficient workspace (two seats per participant)
+   * LittleRobot(tm) kits
+   * Parallax Propeller Quickstart board (or equivalent)
+   * Optional: Bluetooth device:
+     * Blue tooth equipped PC or Laptop
+     * Blue tooth equipped smartphone
+     * Bluetooth equipped tablet
+
+The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capabile of running a Bluetooth terminal application as descripbed below in "software".
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
