@@ -263,11 +263,24 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
 ----
 
+= Build Robot Chassis =
+
+Foloow notes here
+
+http://code.google.com/p/propforth/wiki/LittleRobotChassis
+
+----
+
+
 = BOT.F =
 
 Now that all the parts have been deomnstrated to function, the completed robot can operate. 
 
 == Pin Configuration ==
+
+see the pin configuration section on this page
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram
 
 === BOT1 ===
 
