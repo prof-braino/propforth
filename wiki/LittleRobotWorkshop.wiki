@@ -182,19 +182,90 @@ Prerequisites:
 
 == Hello World - serial text driver ==
 
+
+{{{
+
+: greet  cr cr ." Hello Robotics Engineer! " cr cr ;
+
+greet 
+
+}}}
+
 == Blinky LED - PIO driver ==
+
 
 === On OFF ===
 
+
+{{{
+
+16 pin out
+1000 delms
+16 pinhi
+1000 delms
+16 pinlo
+1000 pinin
+
+
+}}}
+
 === Sequence - Loops ===
+
+{{{
+
+: Outs  8 0 do i  16 + pinout i . loop ;
+
+1000 delms 
+
+: forward 8 0 do 
+                 i 16 + pinhi 200 delms 
+                 i 16 + dup . pinlo 200 delms
+               loop 
+;
+
+forward
+
+3000 delms 
+
+: reverse  8 0 do 
+                 23 i - pinhi 200 delms 
+                 23 i - dup . pinlo 200 delms
+               loop 
+;
+
+reverse 
+
+5000 delms
+
+forward reverse forward reverse
+forward forward forward forward 
+ reverse reverse reverse reverse
+forward reverse forward reverse
+forward reverse forward reverse
+
+}}}
 
 == Stepper driver ==
 
+http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
+
 == Range finder driver ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic
 
 == blue tooth driver ==
 
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
+
+----
+
 = BOT.F =
+
+Now that all the parts have been deomnstrated to function, the completed robot can operate. 
 
 == Pin Configuration ==
 
@@ -204,6 +275,8 @@ Prerequisites:
 
 == EEprom.spin ==
 
+----
+
 = ROBOT CONTROL LANGUAGE =
 
 Nick Lordi's Robot control language
@@ -212,7 +285,15 @@ http://code.google.com/p/propforth/wiki/LittleRobotNickLordiRobotControlLanguage
 
 
 
+----
 
+= ADVANCED - GREEN =
+
+http://code.google.com/p/propforth/wiki/AndroidGREEN
+
+This is still in development. 
+
+It totally works and is awesome, but you have to be able to install and unsigned android app. 
 
 
 
