@@ -39,7 +39,7 @@ The bluetooth connection is for wireless communication with the LittleRobot.  Th
  
 User must have permissions to install the required software and drivers on the PC.
 
-== PropForth ==
+== Propforth ==
 
 The primary software tool for this project is PropForth. PropForth is an implementation of the FORTH language and development environment for the Parallax Propeller micro controller. Please location the downloadable archive for propforth on the sites download section at:
 
