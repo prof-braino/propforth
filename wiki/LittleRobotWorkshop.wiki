@@ -126,14 +126,61 @@ The LittleRobot(tm) KIT is designed to be the lowest cost set of parts that can 
 
 
 
-== LittleRobot Kit ==
+== LittleRobot BASIC Kit (without micro controler) BOM ==
 
-The KIT is a set of parts to be added to a micro controller. The COST of the basic kit does not include the micro controller, as many micro controller options exist, and thisproject is designed for maximum flexility. 
+The KIT is a set of parts to be added to a micro controller. The COST of the basic kit does not include the micro controller, as many micro controller options exist, and this project is designed for maximum flexibility. 
+
+Participants can obtain these on there own (search EBAY for suppliers from China, that's what we do) if there are participating independently; or the pre assembled kits can be obtained through the workshop for a nominal mark up. Because of our volume purchases we can generally get you a better price than you can on your own, and we do all the work for you, so the kits are most convenient all the way around. 
+
+The Bill of Materials (BOM)  is the list of parts needed.  This list is intended to be the complete set. It is a living list, and is updated as we discover better options.  The current stat as of this writing is:
+ 
+  * SR04 Ultrasonic Range Finder
+  * HC05/HC06 Bluetooth serial cable replacement
+  * (2) mini stepper motor
+  * (2) ULN2003 stepper motor driver
+  * USB Host to mini-B 5 conductor cable
+  * Jumper WIRES
+    * 20 M-F
+    * 1 F-F
+  * Battery PACK (4*AA), with wires and ON/OFF switch
+  * Batteries (4*AA)
+  * (2) Wheels 
+  * (2) rubber bands (to provide traction for the wheels)
+  * Velcro
+  * (10) #4 machine screws, 1 inch
+  * painter's tape (Blue or green)
+  * DUCT tape
+  
+
+We don't specifically need the Duct tape or painters tape, but life is easier when these are handy, so we keep them for luck. 
+
+== LittleRobot Microcontroler ==
+
+The document will secify the Parallax Propeller Quick start. This can be purchased locally for under $35, or directly from parallax for $25 + shipping. 
+
+= Tools = 
+
+The project is designed to use NO TOOL.  We came close, but we still need: 
+
+  * screw driver for the machine screws.  We are trying a box of disposable Phillips head (+) bits from the home center, 10 for $1.
+
+ 
+----
+
+= Getting started =
+
+Prerequisites:
+  * The PC is set up
+  * PC software is installed
+  
+
+
+
 
 
 == LittleRobot Microcontroller ==
 
-While the basic kit does not specific the micro controller, this project does requires a specific microcontroller, this ibeing the Parallax Propeller, in particular the Propeller Quickstart board.  This was suelected for maximum bang for the buxck andbecause it the the most fun in my opinion. 
+While the basic kit does not specific the micro controller, this project does requires a specific microcontroller, this ibeing the Parallax Propeller, in particular the Propeller Quickstart board.  This was suelected for maximum bang for the buck and because it the the most fun in my opinion. 
 
 
 = Details =
