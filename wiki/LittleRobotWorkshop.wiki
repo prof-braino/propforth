@@ -23,6 +23,39 @@ Required for the event are:
 
 The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capabile of running a Bluetooth terminal application as descripbed below in "software".
 
+= SOFTWARE =
+ 
+User must have permissions to install the required software and drivers on the PC.
+
+== PC OS ==
+  
+A suitable PC operating system must be loaded. Current options are Windows, Mac, and Linux.  Participants are responsible for familliarity fwith their operationing system of choice. 
+
+=== Windows ===
+
+The primary choice is  Windows XP.  Other version of windows also work. 
+The software required for windows systems are:
+    * Proptool v1.3.2 (link)
+    * Teraterm 4.77 or higher (link)
+    
+
+=== Mac OS ===
+ 
+Mac OSX is recommended for Mac users.  Other version may work but have not been tested.
+     * Brad's Spin Tool (link)
+     * Cool_term (link)
+
+=== Linux ===
+
+Ubuntu 12.04 is recommended for Linux users.  Linux users are required to know how to "get it working" on there own system.  Typically, anyone that uses linux is able to do this. Minimal support for linux operating system will be provided. 
+    * SimpleIDE (beta)
+    * minicon (link)
+
+
+
+
+
+= SETUP =
 
 
 
