@@ -1,11 +1,21 @@
 #summary a single session 4 hour workshop for intro to embedded control systems
 #labels LittleRobot,Workshop,v5.5
 
+<wiki:toc max_depth="9" />
+
 = LittleRobot(tm) Workshop =
 
 LittleRobot(tm) Workshop is a single 4 hour session.  This presents the intro to embedded control systems material.  This session uses the Parallax Propeller microcontroller, the LittleRobot(tm) kit, and a PC.  
 
 The goal is to have participants assemble the kits and the expected result is a mobile roboitc platform that moves and can sensor the environment in a simple fashion.
+
+= The LittleRobot Project =
+
+The LittleRobot project is the DEMO for Propforth v5.5
+
+The intent is to provide a lowest cost "starter" option to embedded control systems (robots).  
+
+If the experience is positive, participants are encouraged to upgrade to more capable parts, create giant robots, and take over the world, etc, as desired. 
 
 = Preparation =
 
@@ -22,6 +32,8 @@ Required for the event are:
      * Bluetooth equipped tablet
 
 The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capabile of running a Bluetooth terminal application as descripbed below in "software".
+
+----
 
 = SOFTWARE =
  
@@ -70,6 +82,8 @@ To use the wireless communication on an IOS device, and suitable bluetooth termi
 
 (none specified) is the recommend IOS bluetooth terminal application. (none specified) is available via the App store. The user is responsible for installing  the bluetooth application on the IOS device of choice. 
 
+----
+
 = SETUP =
 
 Install teh PC software per your operating system as describled above. The installation process will install teh proper drivers for connecting the Prop Quickstart. 
@@ -104,8 +118,22 @@ Before blueterm can communicate with the LittleRobot, the proper blue tooth modu
 
 We have not determined the IOS bluetooth terminal application to recommend as of this writing 20130524.  This item is still under test. ANY Bluetooth terminal program should be sufficient. We just haven't decied which to recommend. 
 
+----
+
+= The LittleRobot(tm) KIT =
+
+The LittleRobot(tm) KIT is designed to be the lowest cost set of parts that can provide a complete, functional, mobile robotic development platform. For background see here:  CheapestPossibleRobot
 
 
+
+== LittleRobot Kit ==
+
+The KIT is a set of parts to be added to a micro controller. The COST of the basic kit does not include the micro controller, as many micro controller options exist, and thisproject is designed for maximum flexility. 
+
+
+== LittleRobot Microcontroller ==
+
+While the basic kit does not specific the micro controller, this project does requires a specific microcontroller, this ibeing the Parallax Propeller, in particular the Propeller Quickstart board.  This was suelected for maximum bang for the buxck andbecause it the the most fun in my opinion. 
 
 
 = Details =
