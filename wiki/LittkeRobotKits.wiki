@@ -1,6 +1,8 @@
 #summary About Getting Parts for LittleRobot(tm)
 #labels LittleRobot,v5.5,Kits,BOM
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 We found what we believe is the least expensive set of parts necessary and sufficient to build the LittleRobot. 
