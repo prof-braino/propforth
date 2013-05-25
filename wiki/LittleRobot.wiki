@@ -8,7 +8,15 @@
 LittleRobot™ - index
 
 
+= LittleRobot as a one day workshop =
 
+http://code.google.com/p/propforth/wiki/LittleRobotWorkshop
+
+= LittleRobot as a Classroom ACtivity =
+
+http://code.google.com/p/propforth/wiki/LittleRobotProgressChart2013spring
+
+----
 
 = HARDWARE Links =
 
