@@ -42,7 +42,7 @@ Contact Jeff if you choose this option.
 
 == KITS from Braino Institute of Brainology ==
 
-*RECOMMENDED*  at least until the BOM is stable
+*RECOMMENDED*  for sessions presented by Professor Braino,  since I'm going to be there anyway, its just easier if I bring them. 
 
 We discovered that we have to make changes to the kit of parts. In fact, we are constantly tweaking the parts as we progress in the project.  Its not far to Jeff to make him change mid-order, as he would get stuck with unused inventory. 
 
@@ -55,6 +55,8 @@ We are setting up an orderable kit that cover cost shipping handling and a margi
 So far, 
   * everyone interested in ONE kit orders individual parts  direct
   * everyone that is interested in MORE THAN one orders prepackaged kits
+  * Everyone that has gotten third party kits has had changes to the BOM handled by Professor Braino
+  * everyone that had Braino conduct a workshop has gotten kits through Braino Institute of Brainology. 
 
 Until the BOM is stablized, please contact me via the Parallax Forums
 
