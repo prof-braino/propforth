@@ -1,0 +1,74 @@
+#summary About Getting Parts for LittleRobot(tm)
+#labels LittleRobot,v5.5,Kits,BOM
+
+= Introduction =
+
+We found what we believe is the least expensive set of parts necessary and sufficient to build the LittleRobot. 
+
+The final step is purchasing the parts.   Done properly, the cost can be reduced further through volume purchase and shipping.
+
+= Sourcing the Kits =
+
+A potential user can can the kits several ways:
+   * Purchase the parts individually from suppliers in China, etc (listed on the BOM)
+   * Purchase third party pre-packaged kits
+   * Purchase directly from the Braino Institute of Brainology (me)
+
+== Direct Purchase Individual parts ==
+
+This is what we did to start, it works. 
+
+We quickly noticed that we could get a much better deal buying bulk. 
+
+At first we didn't want to spend tons of money on tons of parts that might not get used, so we looked for somebody that might already be doing this buying and packaging, we turned to Propeller Powered. 
+
+== Pre-packaged third party kits ==
+
+The original pilot source kits through Jeff (OBC) at PropellerPowered.  
+
+These kits exactly met our specifications, included additional parts to help us, arrived qucker than expected and were cheaper than we estimated. He's great!
+
+Since them we have changed and refined the BOM. The new BOM more exactly matches our need, and so the cost can be reduces further. 
+
+If you wish to source the kits through Jeff, he will likely set up a good deal. We just have to tell him the new (current) BOM.  
+
+THIS IS NOT A STANDARD ORDERABLE PART YET at PropellerPowered.  
+
+Contact Jeff if you choose this option. 
+
+== KITS from Braino Institute of Brainology ==
+
+We discovered that we have to make changes to the kit of parts. In fact, we are constantly tweaking the parts as we progress in the project.  Its not far to Jeff to make him change mid-order, as he would get stuck with unused inventory. 
+
+So we decided just buy the stuff directly.  After the BOM becomes stable, we can turn it over to Jeff and/or others.
+
+We are setting up an orderable kit that cover cost shipping handling and a marginal markup so I can pay the minions. 
+
+= Which OPTION for ODERING PARTS? =
+
+So far, 
+  * everyone interested in ONE kit orders individual parts  direct
+  * everyone that is interested in MORE THAN one orders prepackaged kits
+
+Until the BOM is stablized, please contact me via the Parallax Forums
+
+http://forums.parallax.com/showthread.php/147883-LittleRobot(tm)-project
+
+or via this site or any other means.
+
+When PropellerPowered creates an orderable part, please explore that option.
+
+
+= The Bill of Material =
+
+The page link below may be out of date, please verify that the parts are correct if you are buy direct from suppliers in china. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotBOM
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
