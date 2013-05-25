@@ -28,6 +28,8 @@ At first we didn't want to spend tons of money on tons of parts that might not g
 
 The original pilot source kits through Jeff (OBC) at PropellerPowered.  
 
+http://propellerpowered.com/
+
 These kits exactly met our specifications, included additional parts to help us, arrived qucker than expected and were cheaper than we estimated. He's great!
 
 Since them we have changed and refined the BOM. The new BOM more exactly matches our need, and so the cost can be reduces further. 
