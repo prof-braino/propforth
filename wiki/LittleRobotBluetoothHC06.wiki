@@ -15,6 +15,8 @@ Third: Use the BlueTooth Helper from Propeller Powered.  When it works, its easy
 
 Fourth: Baud changes Immediately on HC06!!! Change baud LAST!!!
 
+FIFTH: The HC06 does NOT auto-reconnected at power up.  After you power down, or disconnect the Quickstart, the HC06 FORGETS that it was connected to you android device.  You have to pull the ground wire to get the red LED to flash again in order to reconnect.  
+
 Thanks to Boy Chance (Vic) for helping figure out the HC06.
 
 These are the command I used in Bluetooth Helper (copy and paste to teraterm):
