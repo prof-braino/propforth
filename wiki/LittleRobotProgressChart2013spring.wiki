@@ -28,7 +28,8 @@ We are having trouble updating the progress chart.  This need to be asigned to o
 || 20130513 Meeting09 ||  review || - || - || - || - || - || - || - ||
 || 20130515 Meeting10 || Stepper Software (with LEDs))  || - || - || - || - || - || - || - ||
 || 20130517 Meeting11 || Stepper Hardware  || - || - || - || - || - || - || - ||
-|| 20130520 Meeting12 || SR04 http://code.google.com/p/propforth/wiki/LittleRobotUltraSonic http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic   || - || - || - || - || - || - || - ||
+|| 20130520 Meeting12 || SR04    || - || - || - || - || - || - || - ||
+|| http://code.google.com/p/propforth/wiki/LittleRobotUltraSonic ||http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic ||
 || 20130522 Meeting13 || Begin CHASSIS  || - || - || - || - || - || - || - ||
 || 20130524 no school || 
 || 20130527 no school  || 
