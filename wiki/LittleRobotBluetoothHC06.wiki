@@ -36,7 +36,12 @@ AT+BAUD9 produces  `230400` when it executes correctly
 
 AFTER THE BAUD COMMAND, it stops restonding, as the baud changed to 230400 on the HC06, but the Bluetooth Helper is still at 9600.  CHANGE BAUD LAST!!!
 
+= Diagnostic AFTER HC06 is set up for propforth =
 
+
+= HC06 unmounted, no carrier board =
+
+The original HC06 modules we used we not from PropellerPowered and were not mounted on carrirer boards.  Here's my notes.
 
 == HC06 KEY is Scallop 26 ==
 
