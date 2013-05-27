@@ -27,6 +27,9 @@ We are having trouble updating the progress chart.  This need to be asigned to o
 || 20130510 Meeting08 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
 || 20130513 Meeting09 ||  review || - || - || - || - || - || - || - ||
 || 20130515 Meeting10 || Stepper Software (with LEDs))  || - || - || - || - || - || - || - ||
+
+ * http://code.google.com/p/propforth/wiki/LittleRobotSteppers
+
 || 20130517 Meeting11 || Stepper Hardware  || - || - || - || - || - || - || - ||
 || 20130520 Meeting12 || SR04    || - || - || - || - || - || - || - ||
 
