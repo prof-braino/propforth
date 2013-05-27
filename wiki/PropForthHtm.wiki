@@ -1,20 +1,31 @@
 #summary Propforth.htm from the download archive.
 
-!PropForth.htm is the primary reference for learning and using propforth.  It contains explanation and examples for all the functions of propforth.    
-
-!PropForth.htm is included in the propforht doawnload archive, in the `/doc` directory
 
 <wiki:toc max_depth="9" />
 
- = NOTICE =
+= What It Is =
 
-This is a COPY. The version in the current download is the correct version.
+!PropForth.htm is the primary reference for learning and using propforth.  It contains explanation and examples for all the functions of propforth.    
 
-Notice:  Making Propfoth.htm appear in the google code wiki is problematic.  It takes a bunch of tedious editing that consumes valuable time.  Must find a better way to do this. 
+!PropForth.htm is where you start.
 
-OK, I just put the file as another download
+= Where to get it = 
+
+!PropForth.htm is included in the propforth doawnload archive.  
+
+http://code.google.com/p/propforth/downloads/detail?name=PropForth-V5.5-20130317.zip
+
+Download the above file, and extract its contents to you PC.
+
+!PropForth.htm  is in the `/doc` directory
+
+= A copy to look at on the web =
+
+The version in the current download is the correct version.
+
+Below is a link to a copy, but the copy doesn't show up correctly for various reasons.  You can look at this version here as a reference, but you REALLY want to work from the version locally on you PC. Really.  
+
 
 http://code.google.com/p/propforth/downloads/detail?name=PropForth.htm
-
 
 NOTICE that the graphics from section 5 do not display.  This is just for reference, please download the Propforthv5.5.zip archive and extract the file from there to you PC, to display the file correctly. 
