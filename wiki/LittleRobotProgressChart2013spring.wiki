@@ -5,13 +5,15 @@
 
 This is a chart for the spring 2013 pilot session for the little robot project
 
-DASH `-` designates activity not started
+DASH `-` designates activity not started (or has not been updated)
 
 PLUS `+` designates activity have been started
 
 OK `OK` designates the student s demonstrated the activity
 
-= Details =
+= A Progress Chart =
+
+We are having trouble updating the progress chart.  This need to be asigned to one specific individual responsible.  The Management must also read the chart, and verify that the information is correct and acceptable. Otherwise it won't get done.   
 
 || -> || Student: || Ellis 3rd|| Michael 3rd|| Peyton 4th || Rikesh 4th|| Gracian 4th|| Jadyn 4th || Grant 4th ||  Miles 5th  || Daryl 6th ||  Luke 5th (spencer) ||
 || 20130422 Meeting00 || LittleRobotSession01 || + || OK || OK || OK || OK || OK || OK || + || OK || + ||
@@ -22,7 +24,18 @@ OK `OK` designates the student s demonstrated the activity
 || 20130503 Meeting05 || lab|| - || - || - || - || - || - || - ||
 || 20130506 Meeting06 ||  Setup ~~kids~~ spare laptops || - || - || - || - || - || - || - ||
 || 20130508 Meeting07 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
-|| Meeting08 || || - || - || - || - || - || - || - ||
+|| 20130510 Meeting08 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
+|| 20130513 Meeting09 ||  review || - || - || - || - || - || - || - ||
+|| 20130515 Meeting10 || Stepper Software (with LEDs))  || - || - || - || - || - || - || - ||
+|| 20130517 Meeting11 || Stepper Hardware  || - || - || - || - || - || - || - ||
+|| 20130520 Meeting12 || SR04    || - || - || - || - || - || - || - ||
+|| 20130522 Meeting13 || Begin CHASSIS  || - || - || - || - || - || - || - ||
+|| 20130524 no school || 
+|| 20130527 no school  || 
+|| 20130529Meeting14 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
+|| 20130531 Meeting15 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
+|| 20130603 Meeting16 || FINAL SCHEDULED SESSION  || - || - || - || - || - || - || - ||
+|| Meetingxx || || - || - || - || - || - || - || - ||
 
 ==  some notes ==
 
@@ -35,21 +48,18 @@ OK `OK` designates the student s demonstrated the activity
   * 20130506 - Monday Braino, Boy Chance, Anika, Allen, Bilas, Faith
   * 20130508 - Wednesday - Braino, Boy Chance, Anika, (Allen), Hana 
   * 20130510 - Friday - Braino, Anika
-  * 20130513 - Monday
-  * 20130515 - Wednesday - LAB
-  * 20130517 - Friday
-  * 20130520 - Monday
-  * 20130522 - Wednesday - LAB
-  * 20130524 - Friday
-  * 20130527 - Monday
-  * 20130529 - Wednesday - LAB
+  * 20130513 - Monday - review
+  * 20130515 - Wednesday - Stepper Driver Software
+  * 20130517 - Friday - Stepper Driver Hardware
+  * 20130520 - Monday - SR04
+  * 20130522 - Wednesday - Begin CHASSIS 
+  * 20130524 - Friday - holiday, no school
+  * 20130527 - Monday - holiday, no school
+  * 20130529 - Wednesday - LAB - no Braino
   * 20130531 - Friday
   * 20130603 - Monday - Scheduled LAST day of Class
-  * 20130505 - Wednesday - LAB - Make up 1 for 20130501
-  * 20130506 - Friday - no class scheduled
-  * 20130506 - Monday - no class scheduled
-  * 20130506 - Wednesday - LAB - no class scheduled
-  * 20130506 - Friday - no class scheduled
+  * 20130605 - Wednesday - LAB - Make up 1 for 20130501
+  * 20130607 - Friday - Make up if needed 
 
 student grade
 Ellis 3rd
