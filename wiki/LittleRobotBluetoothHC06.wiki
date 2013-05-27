@@ -40,6 +40,97 @@ AFTER THE BAUD COMMAND, it stops restonding, as the baud changed to 230400 on th
 
 = Diagnostic AFTER HC06 is set up for propforth =
 
+So, you set up the HC06 using Bluetooth helper, set the name and the baud to 230400.  Now it won't connect to a new device. Maybe the number of devices (6) is already used up? Try deleteing all the old device paring as follows- - - 
+
+== Set up a quick start ==
+
+Load a Quickstat with the regular DEVkernel, so you can talk from the PC using teraterm. 
+
+Set the HC06 forth scripts to run at 230400.
+
+{{{ 
+fl
+
+\ for the HC06
+
+\ green wire - this is not used on the carrier mounted modules
+27 wconstant hcProgPin
+
+\ white/orange wire - BOT1
+0 wconstant hcRx
+
+\ white/green wire - BOT1
+2 wconstant hcTx
+
+\ 9600 4/ wconstant hcBaud
+230400 4/ wconstant hcBaud
+
+
+0 wconstant hcSerialCog
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+
+: hcSend
+	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+
+hcProgPin pinhi hcProgPin pinout
+
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't , disconnect Gnd, and reconnect. It will blink
+
+c" AT" hcSend
+c" AT+VERSION" hcSend
+c" AT+NAME?" hcSend
+
+\ note baud change immediately on hc06!!!!!
+\ don't do this until you've set everything else.
+\ c" AT+BAUD9" hcSend
+
+hcProgPin pinlo 
+
+1000 delms
+
+hcSerialCog cogreset 100 delms
+
+
+
+hcProgPin pinlo
+
+
+}}}
+
+{{{
+
+\ now set the baud to 230400 and see if it talks
+
+230400 4/ wconstant hcBaud
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+\ c" AT+BAUD9" hcSend
+
+hcProgPin pinhi hcProgPin pinout
+
+\ c" AT+NAMEAnconaHC06-AA" hcSend
+\ c" AT+PIN1234" hcSend
+\ c" AT+PN" hcSend
+\ c" AT" hcSend
+\ c" AT+VERSION" hcSend
+\ c" AT+NAMESanciHC06-0" hcSend
+\ c" AT+PIN1111" hcSend
+\ c" AT+PN" hcSend
+\ c" AT+BAUD4" hcSend \ sets back to 9600 baud
+\ 
+
+}}}
+
+
+
+== Run the scripts, get the HC06 into programming mode ==
+
+
 
 = HC06 unmounted, no carrier board =
 
