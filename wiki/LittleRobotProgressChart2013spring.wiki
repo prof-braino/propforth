@@ -35,7 +35,8 @@ We are having trouble updating the progress chart.  This need to be asigned to o
 || 20130522 Meeting13 || Begin LittleRobotChassis  || - || - || - || - || - || - || - ||
 || 20130524 no school || 
 || 20130527 no school  || 
-|| 20130529Meeting14 ||  LittleRobotBluetoothHC06  || - || - || - || - || - || - || - ||
+|| 20130529Meeting14 ||  [LittleRobotBluetoothHC06  http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06]  || - || - || - || - || - || - || - ||
+
 || 20130531 Meeting15 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
 || 20130603 Meeting16 || FINAL SCHEDULED SESSION  || - || - || - || - || - || - || - ||
 || Meetingxx || || - || - || - || - || - || - || - ||
