@@ -48,6 +48,8 @@ Load a Quickstat with the regular DEVkernel, so you can talk from the PC using t
 
 Set the HC06 forth scripts to run at 230400.
 
+== Run the scripts, get the HC06 into programming mode ==
+
 {{{ 
 fl
 
@@ -102,6 +104,23 @@ hcProgPin pinlo
 
 }}}
 
+== Get Authenticated Device Count ==
+
+Use Get Authenticated Device Count to see if maybe there were too many pairings already. Even if there is only one, resetting this seems to have made some units pair.
+
+{{{
+AT+ADCN?
+}}}
+
+== Delete all previously used device parings ==
+
+Delete All Authenticated Device
+{{{
+AT+ RMAAD 
+}}}
+
+== reset any needed parametes ==
+
 {{{
 
 \ now set the baud to 230400 and see if it talks
@@ -126,11 +145,18 @@ hcProgPin pinhi hcProgPin pinout
 
 }}}
 
+== PAIR the HC06 with you  blue tooth device ==
+
+Get your bluettoth device into scan (pairing) mode
+
+get the HC06 RED LED to flash (pull the black wire if needed)
+
+Pair as normal
 
 
-== Run the scripts, get the HC06 into programming mode ==
+= DATA SHHET =
 
-
+ftp://imall.iteadstudio.com/Modules/IM120723009/DS_IM120723009.pdf
 
 = HC06 unmounted, no carrier board =
 
