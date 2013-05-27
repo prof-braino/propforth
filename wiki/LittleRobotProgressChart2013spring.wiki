@@ -26,20 +26,16 @@ We are having trouble updating the progress chart.  This need to be asigned to o
 || 20130508 Meeting07 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
 || 20130510 Meeting08 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
 || 20130513 Meeting09 ||  review || - || - || - || - || - || - || - ||
-|| 20130515 Meeting10 || Stepper Software (with LEDs))  || - || - || - || - || - || - || - ||
-
- * http://code.google.com/p/propforth/wiki/LittleRobotSteppers
-
+|| 20130515 Meeting10 || LittleRobotSteppers Software  || - || - || - || - || - || - || - ||
 || 20130517 Meeting11 || Stepper Hardware  || - || - || - || - || - || - || - ||
-|| 20130520 Meeting12 || SR04    || - || - || - || - || - || - || - ||
+|| 20130520 Meeting12 || SR04 LittleRobotUltraSonic    || - || - || - || - || - || - || - ||
 
-  * http://code.google.com/p/propforth/wiki/LittleRobotUltraSonic 
   * http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic 
 
-|| 20130522 Meeting13 || Begin CHASSIS  || - || - || - || - || - || - || - ||
+|| 20130522 Meeting13 || Begin LittleRobotChassis  || - || - || - || - || - || - || - ||
 || 20130524 no school || 
 || 20130527 no school  || 
-|| 20130529Meeting14 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
+|| 20130529Meeting14 ||  LittleRobotBluetoothHC06  || - || - || - || - || - || - || - ||
 || 20130531 Meeting15 || LAB - UPDATE THIS CHART  || - || - || - || - || - || - || - ||
 || 20130603 Meeting16 || FINAL SCHEDULED SESSION  || - || - || - || - || - || - || - ||
 || Meetingxx || || - || - || - || - || - || - || - ||
