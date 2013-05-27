@@ -157,9 +157,9 @@ Pair as normal
 
 Almost forgot!  Now that the module is paried with you device, we have to put the EEprom kernel back on! AND be sure you are using the EEprom kernel with the pins such that 
 
-  *the HC06 Rx pin P0 is defined as the  Propforth Tx pin 0; 
-  *and 
-  *the HC06 Tx pin P2 is defined as the Propforth Rx pin P2
+  * the HC06 Rx pin P0 is defined as the  Propforth Tx pin 0; 
+  * and 
+  * the HC06 Tx pin P2 is defined as the Propforth Rx pin P2
 
 
 = DATA SHHET =
