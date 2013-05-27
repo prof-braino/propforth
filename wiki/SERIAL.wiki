@@ -14,6 +14,12 @@ http://forums.parallax.com/showthread.php?138399-Propforth-5.0-is-available-for-
 
 This draft will go into PROPFORTH.html when complete
 
+= new info 20130527 =
+
+Propforth 6  will implement serial with flow control. There are many types of flow control, some of these are contradictory or incompatible with each other.  propforth will implement a SPECIFY scheme that will function properly. 
+
+Testing has demonstrated that this scheme delivers about 20k character per second.  Compare to Bluetooth which delivers about 5k character per second as 230400 baud. 
+
 = About SERIAL = 
 
 SERIAL is necessarily built into the kernel, but we tend to use it all over the place in various (modified) forms. To allow the default SERIAL to be present in the kernel , and to allow modification to the kernel default at the same time, SERIAL is a loadable module.
