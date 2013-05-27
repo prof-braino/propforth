@@ -153,6 +153,14 @@ get the HC06 RED LED to flash (pull the black wire if needed)
 
 Pair as normal
 
+== LAST - reburn the Propforth EEprom kernel with pin 0 for Rx and 2 fo Tx ==
+
+Almost forgot!  Now that the module is paried with you device, we have to put the EEprom kernel back on! AND be sure you are using the EEprom kernel with the pins such that 
+
+  *the HC06 Rx pin P0 is defined as the  Propforth Tx pin 0; 
+  *and 
+  *the HC06 Tx pin P2 is defined as the Propforth Rx pin P2
+
 
 = DATA SHHET =
 
