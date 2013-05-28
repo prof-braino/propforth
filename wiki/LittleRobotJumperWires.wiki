@@ -17,19 +17,18 @@ We need 21 conductors to connect the base configuration of the LittleRobot:
 
 = by vertical columns =
 
-|| Prop PIO || motorA || motorB || HC06    || SR04 || 
-||    P0    ||    .   ||    .   || hcRx P0 ||   .  ||
-||    P1    ||    .   ||    .   || key  P1 ||   .  ||
-||    P2    ||    .   ||    .   || hcTx P2 ||   .  ||
-
-||    P20    ||    .   || in1 P20 ||    .  ||   .  ||
-||    P21    ||    .   || in1 P21 ||    .  ||   .  ||
-||    P22    ||    .   || in1 P22 ||    .  ||   .  ||
-||    P23    ||    .   || in1 P23 ||    .  ||   .  ||
-||    P24    || in1 P24 ||    .   || . ||   .  ||
-||    P25    || in1 P25 ||    .   || . ||   .  ||
-||    P26    || in1 P26 ||    .   || . ||   .  ||
-||    P27    || in1 P27 ||    .   || . ||   .  ||
+|| Prop PIO || motorA   || motorB  || HC06    || SR04 || 
+||    P0    ||    .     ||    .    || hcRx P0 ||   .  ||
+||    P1    ||    .     ||    .    || key  P1 ||   .  ||
+||    P2    ||    .     ||    .    || hcTx P2 ||   .  ||
+||    P20    ||    .    || in1 P20 ||    .    ||   .  ||
+||    P21    ||    .    || in1 P21 ||    .    ||   .  ||
+||    P22    ||    .    || in1 P22 ||    .    ||   .  ||
+||    P23    ||    .    || in1 P23 ||    .    ||   .  ||
+||    P24    || in1 P24 ||    .    ||    .    ||   .  ||
+||    P25    || in1 P25 ||    .    ||    .    ||   .  ||
+||    P26    || in1 P26 ||    .    ||    .    ||   .  ||
+||    P27    || in1 P27 ||    .    ||    .    ||   .  ||
 
 
 = by Horizontal rows =
