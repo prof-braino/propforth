@@ -39,11 +39,11 @@ We need 21 conductors to connect the base configuration of the LittleRobot:
 ||    P8    || in1 P8 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
 ||    P9    || in1 P9 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
 ||    P10    || in1 P10 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
-||    P11    || in1 P11 ||    .    ||    .    ||   .  ||    .    || MOTB  || GND || 
+||    P11    || in1 P11 ||    .    ||    .    ||   .  ||    .    || MOTA  || GND || 
 ||    P12    ||    .    || in1 P12 ||    .    ||   .  ||    .    ||   .   || GND || 
 ||    P13    ||    .    || in1 P13 ||    .    ||   .  ||    .    ||   .   || GND || 
 ||    P14    ||    .    || in1 P14 ||    .    ||   .  ||    .    ||   .   || GND || 
-||    P15    ||    .    || in1 P15 ||    .    ||   .  ||    .    ||  MOTA || GND || 
+||    P15    ||    .    || in1 P15 ||    .    ||   .  ||    .    ||  MOTB || GND || 
 ||    P24   ||    .    ||    .    ||    .    || trig P24 ||   .   || SR04 || GND || 
 ||    P25   ||  .  ||  .  ||  .  || echo P25 (+ 330 ohm) ||  .  ||  .  || GND || 
 ||    P22 hc06   ||    .     ||    .    || hc06 key  P22 ||   .  ||    .    ||   .   || GND || 
