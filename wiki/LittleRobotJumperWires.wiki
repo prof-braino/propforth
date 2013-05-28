@@ -33,6 +33,29 @@ We need 21 conductors to connect the base configuration of the LittleRobot:
 ||    P27    || in1 P27 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
 
 
+= BOT2 by vertical columns =
+
+|| Prop PIO || motorA   || motorB  || HC06    || SR04 || Vdd 3.3 || Vcc 5v || GND ||
+
+P27, P26, P22 
+||    P26    ||    .     ||    .    || hcRx P26 ||   .  || HC06 || .   || GND || 
+||    P22    ||    .     ||    .    || key  P22 ||   .  ||    .    ||   .   || GND || 
+||    P27    ||    .     ||    .    || hcTx P27 ||   .  ||    .    ||   .   || GND || 
+||    P24   ||    .    ||    .    ||    .    || trig P24 ||   .   || SR04 || GND || 
+||    P25   ||  .  ||  .  ||  .  || echo P25 (+ 330 ohm) ||  .  ||  .  || GND || 
+||    P15    ||    .    || in1 P15 ||    .    ||   .  ||    .    ||  MOTA || GND || 
+||    P14    ||    .    || in1 P14 ||    .    ||   .  ||    .    ||   .   || GND || 
+||    P13    ||    .    || in1 P13 ||    .    ||   .  ||    .    ||   .   || GND || 
+||    P12    ||    .    || in1 P12 ||    .    ||   .  ||    .    ||   .   || GND || 
+
+d_11 d_10 d_9 d_8 
+||    P11    || in1 P11 ||    .    ||    .    ||   .  ||    .    || MOTB  || GND || 
+||    P10    || in1 P10 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
+||    P9    || in1 P9 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
+||    P8    || in1 P8 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
+
+
+
 = BOT1 by Horizontal rows =
 
 This is getting hard to edit as it doesn't fit in the edit box
