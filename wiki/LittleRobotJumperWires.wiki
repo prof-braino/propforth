@@ -15,7 +15,7 @@ We need 21 conductors to connect the base configuration of the LittleRobot:
 
 1 additional connection is needed for the SR04.  The SR04 is a 5 volt part, and needs a 220 - 330 ohm resistor to prevent damage to the Prop 3.3 volt input pins. So we need ONE Male to Male connector to run from the SR04 ECHO pin to the 330 ohm resistor. Already present is the M-F connection , so connect this to the other lead of the 330 ohm resistor.
 
-= by vertical columns =
+= BOT1 by vertical columns =
 
 || Prop PIO || motorA   || motorB  || HC06    || SR04 || Vdd 3.3 || Vcc 5v || GND ||
 ||    P0    ||    .     ||    .    || hcRx P0 ||   .  || HC06 || .   || GND || 
@@ -33,7 +33,7 @@ We need 21 conductors to connect the base configuration of the LittleRobot:
 ||    P27    || in1 P27 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
 
 
-= by Horizontal rows =
+= BOT1 by Horizontal rows =
 
 This is getting hard to edit as it doesn't fit in the edit box
 
