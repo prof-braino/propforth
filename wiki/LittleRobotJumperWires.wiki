@@ -19,7 +19,7 @@ The LittleRobotDemoProgram has two configurations, BOT1 and BOT2.
 
 If you connect the wires as shown, the software will detect the configuration. 
 
-= BOT1 by vertical columns =
+= BOT1 PIO connections =
 
 || Prop PIO || motorA   || motorB  || HC06    || SR04 || Vdd 3.3 || Vcc 5v || GND ||
 ||    P0    ||    .     ||    .    || hcRx P0 ||   .  || HC06 || .   || GND || 
@@ -37,7 +37,7 @@ If you connect the wires as shown, the software will detect the configuration.
 ||    P27    || in4 P27 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
 
 
-= BOT2 by vertical columns =
+= BOT2 PIO connections =
 
 || Prop PIO || motorA   || motorB  || HC06    || SR04 || Vdd 3.3 || Vcc 5v || GND ||
 ||    P8    || in1 P8 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
