@@ -17,6 +17,18 @@ You can use any color wire you want, if you use the same color as we do yours wi
 
 This source code is also included in the propforth download archive beginning with release v 5.3
 
+= Discoveries =
+
+Some of the parts doesn't come up at 9600 (specificied default).  They DO come up at 38400 when power is applied to key first; then they can be programmed normally. 
+
+When parts don't pair rigth away, cycle the power.  They usually work the next time. 
+
+When paired parts don't connect right away, cycle the power. Paired parts usually connect the second time. 
+
+The parts only allow a limited number of pairings at a given time. Use the commands to clear previous pairing if you have trouble.
+
+IOS (iPhone, iPad, iTouch) DON'T allow seem to allow a serial terminal via bluetooth.  BUMMER.  Apple can be annoying like that.  Perhaps Boy Chance will port GREEN to IOS? 
+
 = HC05 page =
 
 LittleRobotBluetoothHC05
