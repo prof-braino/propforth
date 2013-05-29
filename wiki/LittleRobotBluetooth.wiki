@@ -33,7 +33,7 @@ IOS (iPhone, iPad, iTouch) DON'T allow seem to allow a serial terminal via bluet
 
 LittleRobotBluetoothHC05
 
-Take the HC05 specific instructions out of this page and put them here
+Take the HC05 specific instructions have been place in the following page.
 
 http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
 
@@ -41,7 +41,7 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
 
 LittleRobotBluetoothHC06
 
-Take the HC06 specific instructions out of this page and put them here
+Take the HC06 specific instructions have been place in the following page.
 
 http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
