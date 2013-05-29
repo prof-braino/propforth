@@ -21,6 +21,8 @@ If you connect the wires as shown, the software will detect the configuration.
 
 = BOT1 PIO connections =
 
+Use Bot1 configuration to see the motors and SR04 are responding.
+
 || Prop PIO || motorA   || motorB  || HC06    || SR04 || Vdd 3.3 || Vcc 5v || GND ||
 ||    P0    ||    .     ||    .    || hcRx P0 ||   .  || HC06 || .   || GND || 
 ||    P1    ||    .     ||    .    || key  P1 ||   .  ||    .    ||   .   || GND || 
@@ -38,6 +40,13 @@ If you connect the wires as shown, the software will detect the configuration.
 
 
 = BOT2 PIO connections =
+
+Use Bot 2 configuration if you want to custom program the buttons and LEDs on the quickstart.   
+
+
+For example, use the LED to shown object detect, too close, too far, drawing nearer, or getting farther away.
+
+Use the buttons to program "map perimieter", "explore", "wall follow",  "chase".  
 
 || Prop PIO || motorA   || motorB  || HC06    || SR04 || Vdd 3.3 || Vcc 5v || GND ||
 ||    P8    || in1 P8 ||    .    ||    .    ||   .  ||    .    ||   .   || GND || 
