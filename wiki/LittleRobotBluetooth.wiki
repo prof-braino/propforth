@@ -47,7 +47,9 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
 = set the DEVKERNEL to 25 and 26 =
 
-Last thing will be to change the PropForth Kerrnel to talk on P25 & P26, instead of P30 and P31.  Usually, the Quickstart talks on pins 30 & 31, so propforth uses pins 30 and 31; we don't have to move any wires to burn the eeprom and to use teraterm.  Now we want Propforth to talk on pins 25 and 26, and use the HC05.  All we need to do is change   
+After the BT module has been programmed, it must be tested using the Bluetooth05-06.f routine to prove its working as a cable replacement for propforth. 
+
+Last thing will be to change the PropForth Kernel to talk on P25 & P26, instead of P30 and P31.  Usually, the Quickstart talks on pins 30 & 31, so propforth uses pins 30 and 31; we don't have to move any wires to burn the eeprom and to use teraterm.  Now we want Propforth to talk on pins 25 and 26, and use the HC05.  All we need to do is change   
 
 (Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
 
