@@ -5,11 +5,11 @@
 
 = Summary =
 
-So, these can be a little funky until you get used to them. Some don't seem to come up at 9600. 
+So, these can be a little funky until you get used to them. Some don't seem to come up at 9600. Once they get programmed, they work.  Sometimes I've had to cycle the power a couple times if it doesn't connect right away, but they all work. 
 
 FIRST: The RED LED must be flashing in order to talk to it. If the RED LED is NOT flashing, pull the ground wire and reconnect it.  
 
-SECOND: CYCLE THE POWER. Pull the GND wire, and reconnect it.  Every other time, it goes into flashing (PAIRING) mode.  The HC06 needs to be in PAIRING mode to program it  
+SECOND: CYCLE THE POWER. Pull the GND wire, and reconnect it.  Every other time, it goes into flashing (PAIRING) mode.  The HC06 needs to be in PAIRING mode to program it. AND it needs to be flashing to connect to it.   
 
 Third: Use the BlueTooth Helper from Propeller Powered.  When it works, its easy.  When it doesn't work, something else is the problem. Prably the Red LED isn't blinking.  Pull the GND wire and reconnect it , and try again. 
 
