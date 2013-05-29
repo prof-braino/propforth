@@ -2,7 +2,7 @@
 
 = Alternative: No Breadboards =
 
-We need jumper wires.  Try using Male to Female jumper wires to eliminate the cost of the Bread Board.
+We need jumper wires in any case.  Try using Male to Female jumper wires to eliminate the cost of the Bread Board.
 
 = 21 conductors =
 
