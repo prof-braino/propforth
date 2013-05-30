@@ -1,0 +1,25 @@
+#summary We need the following to use an IOS device as a terminal interface for Propforth and the LittleRobot.
+#labels v5.5,GREEN,IOS
+
+= Introduction =
+
+We need:
+
+one or more IOS apps the duplicate our Android apps, which provide simple serial text interface (to an external microcontroller which contains our prooject).
+
+Our Android apps allow communication over bluetooth from the device to the HC05 and HC06 bluetooth serial cable replacement.
+
+On the PC, the HC04  and HC06 appear as another COM port. COM4, etc on windows or USBtty on linux.  The micro controller can then be accessed via a generic terminal emulation program such as Teraterm.
+
+On android, the paired device(s)  appear as a named, paired device.  On Android the terminal applications BlueTerm and  SENA Blue Terminal connect and provide a text serial terminal interface. The termianl application send characters to the microscontroller.  The terminal application displays any character(s) sent from the microcontroller.  This is simple a basic text serial interface. REQUEST 1:  We would like a simple IOS app that talks via simple serial over the bluetooth serial cable replacement to the external micro controller containing out project.
+
+A custom application is on the propforth wiki.  This is arbitrarily named GREEN.apk. GREEN is similar to the terminal interfaces.  It adds basic touch screen functionality to the simple text interface. The user may define named button macros.  When the button is pressed, the text string associated with that name is sent via bluetooth to the HC05/HC06  to the micro controller.  GREEN also displays any character sent back on the android device display.   The major feature addition of green is an initialization sequence.  When GREEN connects to the microcontroller, it asks for a config file ("Send me config.txt").  The config file contail button macro definitions (possibly related to the microcontroller's application, but GREEN does not particularly care).  GREEN recives the macro definitions, and displays the macro buttons on the screen.  When a macro button is activated the associated text is sent to the microcontroller, and any results are displayed. REQUEST 2:  we would like an IOS application that displays "buttons".  When pressed, these buttons send predefined  text to the external micro controller containong our project. The Touch screen should aslo display any character sent by the micro controller.
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
