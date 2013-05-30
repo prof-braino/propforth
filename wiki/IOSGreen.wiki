@@ -1,7 +1,9 @@
 #summary We need the following to use an IOS device as a terminal interface for Propforth and the LittleRobot.
 #labels v5.5,GREEN,IOS
 
-= Introduction =
+= High Level Requirements (initial) =
+
+20130529
 
 We need:
 
@@ -15,7 +17,67 @@ On android, the paired device(s)  appear as a named, paired device.  On Android 
 
 A custom application is on the propforth wiki.  This is arbitrarily named GREEN.apk. GREEN is similar to the terminal interfaces.  It adds basic touch screen functionality to the simple text interface. The user may define named button macros.  When the button is pressed, the text string associated with that name is sent via bluetooth to the HC05/HC06  to the micro controller.  GREEN also displays any character sent back on the android device display.   The major feature addition of green is an initialization sequence.  When GREEN connects to the microcontroller, it asks for a config file ("Send me config.txt").  The config file contail button macro definitions (possibly related to the microcontroller's application, but GREEN does not particularly care).  GREEN recives the macro definitions, and displays the macro buttons on the screen.  When a macro button is activated the associated text is sent to the microcontroller, and any results are displayed. REQUEST 2:  we would like an IOS application that displays "buttons".  When pressed, these buttons send predefined  text to the external micro controller containong our project. The Touch screen should aslo display any character sent by the micro controller.
 
+= response to High level requirements (initial) =
 
+Let me reiterate what I think you are asking, to make sure we are on the same page:
+
+You need two android apps ported:
+Both apps connect via bluetooth to the same "blackbox" hardware which you are calling a microcontroller.
+
+A) The first app is a terminal application much like 'Terminal' for macOS.  Displays what the user is typing and displays any responses from the microcontroller.
+
+B) The second app has some graphical user interface in the form of buttons.  The number of buttons and how the buttons are labeled are determined by a config file sent from the microcontroller.  Tthe app requests this file when it connects.  I would guess that you would want to display both (1) what macro was sent to the microcontroller from the button press and (2) the microcontroller's response to each macro command.  A portion of the app screen would need to be a browse-only terminal view that is scrollable.
+
+Questions:
+1) Can we combine the 2 apps into one iOS app and have tabs to access each one?
+
+2) Feature: Would it be helpful for the app to keep a log of the current session for debugging purposes, and email the log to the user?
+
+3) Is there a graceful logout routine that needs to be implemented?
+
+
+Right now, I would guess a very rough ball park estimate of 1 to 1.5 weeks to implement both apps combined.  I would probably charge roughly $xxx to $xxx.     
+a) I would need to look at your android app's code before committing to an accurate estimate.  That would help me to understand what needs to happen to make the connection to the microcontroller and determine how much effort was put originally into the android apps themselves.  
+
+b) I would need a test microcontroller and any documentation in order to complete this project successfully.
+
+= Clarification to first response =
+
+Let me add some details I missed:
+
+The micro-controller at this time is the Parallax Propeller P8X32A.  This is similar to Arduino, with the difference being the P8X32A has eight CPU cores and does not use intereupts, and peripheral are implemented in software instead of dedicated hardware on chip.
+
+Right now we are using two apps on Android, one is a simple terminal and one is the touch button GUI.  On IOS, BOTH functions should be combined into a single app.
+A) displaying what the user types may be optionally turned on or off, as the micro controller can be set to echo that characters it sees.
+B) The buttons may defined in two ways: By the user via the app, and via the config file sent by the micro controller. On Android, the same mechanism is used for both, as both streams are just strings of characters and this was easiest. You are free to do what ever is easiest and still gets the job done.  Also buttons may be saves in two ways:  Button defineions may be save on the Android device, and the button definition file may be sent to the micro controller.  Sending the button definition files is simply sending the proper sequence of text commands, and the text of the file.
+
+At this time, their is a text input box on the android display, and the returned text is simply displayed in the next available location below the text input box.  The buttons are also displayed in the next available location, we don't care about any particular grouping so far. I don't recall if the screen is scrollable, right now when the screen fills up we het clear display and the display is cleared, the input box and the buttons are re-drawn, and the remainder  of the display is blank for further input.
+Answer 1) Yes, please combine the apps if this is easier.
+Answer 2) log that is automagically emailed to the user would be great. The default case of no user email would have to be handled gracefully.
+Answer 3) Graceful log out:  No graceful log out is expected. The systems is used for microcontroller development, so we expect the microcontroller to crash due to programming errors during any development.  If power is lost, the bluetooth connection is lost. The Android device detects this, and reports "connecion lost".   When power is applied, the android device display the bluetooth device as available to connect, and the user reconnected.  Of course, the Bluetooth device must have been previously paired with the android device.
+The android apps are:
+
+blue term -
+https://play.google.com/store/apps/details?id=es.pymasde.blueterm&hl=en
+
+Any equivalent bluetooth gerneric VT100-VT320 terminal emulator equivalent should behave the same.
+
+GREEN -
+
+The custom app with the touch button macro associations is GREEN -
+
+http://propforth.googlecode.com/files/Green.apk
+
+The sketchy instructions and explanation is here
+
+http://code.google.com/p/propforth/wiki/AndroidGREEN
+The GREEN app is rough,  just a prototype to show proof of concept; we have not recieved feedback on further refinements yet.
+I have test hardware available. It is known good, set up, and working with android.  
+You schedule and fees seem reasonable. We can discuss schedule and fees further when your estimate has been refined.
+
+THANKS!
+
+= end of discussion 20130530 =
 
 = Details =
 
