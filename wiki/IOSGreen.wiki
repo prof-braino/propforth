@@ -43,6 +43,8 @@ b) I would need a test microcontroller and any documentation in order to complet
 
 = Clarification to first response =
 
+20130530
+
 Let me add some details I missed:
 
 The micro-controller at this time is the Parallax Propeller P8X32A.  This is similar to Arduino, with the difference being the P8X32A has eight CPU cores and does not use intereupts, and peripheral are implemented in software instead of dedicated hardware on chip.
