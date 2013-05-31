@@ -79,7 +79,30 @@ You schedule and fees seem reasonable. We can discuss schedule and fees further 
 
 THANKS!
 
-= end of discussion 20130530 =
+
+
+= More 20130531 =
+
+= developer questions ==
+
+A) If the estimate is for porting an existing app, then I will need to see the actual code for GREEN.  The apk is not helpful at this point since I do not have a test kit to use with the apk. It does not give me much understanding of the low-level transactions.  The whole microcontroller environment is just a black box to me, so it's hard to determine how many hours I will spend, to digest the technical knowledge that you guys know.  Looking at the code will give me a much better understanding of the environment.
+
+B) That said, I don't want to haggle over the exact number of hours on the estimate since there are quite a few unknowns for me.  
+Since I am curious about learning this robotic environment, I am open to taking on this project at a flat fee of $1800, if your group is flexible on the project deadline--knowing that it's going to take me some time to get up-to-speed on the microcontroller technical knowledge, and my part-time availability.
+
+C) If hired for the project, I can work up to 15 hours per week until the contract is completed in the month of June.  My availability will be more limited in July--possibly down to 5 hours per week.
+
+D) Due to backward compatability issues with older devices and the current Xcode, I will support iOS 4.3 and up.  That means iphone models 3GS and lower will not be supported, and ipod touch models 2nd generation and lower will not be supported.
+
+== clarification ==
+
+You can learn about the robotics environment regardless of iOS app development.  When we meet I will bring you a kit and show you how to set it up on your PC and android device. It takes about 10 minutes. Its totally fun and cheap enough that we can give it to folks to mess with. 
+
+Learning about the robotic environment, however, is not required or in scope for this task. You only have to (1) get iOS internal bluetooth talking to an external blue tooth module and (2) establish a serial character stream connection.  The only thing we need are concerned with is "the bluetooth is a serial cable replacement". This is simply a character stream.  Any software then uses it as another serial device. ALL the low level transactions are defined in the HC05-HC06 datasheet.  Anything else is iOS internal. IF iOS CANNOT TALK NON iOS devices, please discuss Apple approved bluetooth connections.
+
+Bluetooth  "just works" in linux and windows, something in iOS appears to actively prevents pairing and linking to non apple devices.   Right now we need to determine whether iOS is capable of talking to non Apple external bluetooth module, or if an approved Apple module that does this already exists. The important part of this step is to determine if we have enough to move forward.
+
+= end of discussion 20130531 =
 
 = Details =
 
