@@ -7,7 +7,9 @@
 
 We need:
 
-one or more IOS apps the duplicate our Android apps, which provide simple serial text interface (to an external microcontroller which contains our prooject).
+one or more IOS apps the ~~duplicate~~ _approximate_ our Android apps, which provide simple serial text interface (to an external microcontroller which contains our prooject).
+
+*NOTE: Notice the error in the original statement.  We don't want an exact duplicate of every detail of the prototype.  We want similar approximate functionality, that is serial text over bluetooth.  This is "serial terminal interface" and "touch buttons the send text (scripts)".
 
 Our Android apps allow communication over bluetooth from the device to the HC05 and HC06 bluetooth serial cable replacement.
 
