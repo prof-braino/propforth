@@ -14,9 +14,8 @@ Check the notes to mod the software for you bot!
 
 The BOT.F program below has two options for connecting the pins for the peripherals (these are the sensors and actuators, the motors and range finder).
 
-= SELECT 1 or 2 =
 
-*SELECT BOT1*
+*Ancona is using BOT1*
 
 The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held high.  So the program can find where the Bluetooth is by looking for the Blue tooth Tx line. 
 
@@ -28,7 +27,7 @@ The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held
   * If 2 is high ( bt Tx ) and 27 is low use  BOT1 pinout ( *USE BOT1* )
   * If 27 is high ( bt Tx ) and 2 is low use  BOT2 pinout
 
-= BOT1 =
+== BOT1 ==
 
 We are using BOT 1 for the time being, it flashes the Quickstart LEDs
 
@@ -56,40 +55,11 @@ c" BOT " prop W@ ccopy
 ]
 )))
 
-= BOT2 =
+== BOT2 ==
 
 Bot 2 uses the LEDs differently.  We'll try this next time. 
 
-(((
-
-[ifdef build_bot2
-\ for the HC05
-\ green wire
-	22 wconstant hcProgPin
-\ white/orange wire
-	26 wconstant hcRx
-\ white/green wire
-	27 wconstant hcTx
-
-24 wconstant _sr04_trig
-25 wconstant _sr04_echo
-
-23 wconstant _ready_led
-
-: _mota_pins d_15 d_14 d_13 d_12 ;
-: _motb_pins d_11 d_10 d_9 d_8 ;
-
-263 wconstant _distance_cal
-6052 wconstant _right_cal
-c" BOT " prop W@ ccopy
-2 propid W!
-]
-
-}}}
-
-
-
-Choose one configuration, either BOT1 or BOT2, and set your pins accordingly.
+== Connect the wires per the chart ==
 
 Choose BOT 1 if you are Ancona Spring 2013
 
@@ -120,26 +90,11 @@ These pins are the same on all configurations
 || || Vin = RED wire|| 
 || || Vss/GND = BLACK wire|| 
 
-
-
-== the stepper section ==
-
-The stepper section of the bot.f program
-
-LittleRobotDemoSteppers
-
-Use this for initial hook up and trouble shooting
-
-== SR04 Ultrasonic Rangefinder section ==
-
-LittleRobotDemoUltrasonic
-
-Use this for initial hook up and trouble shooting
-
-
 = bot.f =
 
-Paste the entire contents of the code box below to load the LittleRobot demo software
+START WITH THE EEpron KERNEL.  Load the EEprom kernel to the Quickstart using the PRopeller Tool software on the PC.  
+
+Paste the entire contents of the code box below into the terminal program window to load the LittleRobot demo software
 
 Or copy it to you own editor, make changes, then paste it in.
 
