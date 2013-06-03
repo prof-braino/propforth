@@ -55,9 +55,11 @@ c" BOT " prop W@ ccopy
 ]
 )))
 
+}}}
+
 == BOT2 ==
 
-Bot 2 uses the LEDs differently.  We'll try this next time. 
+Bot 2 uses the LEDs differently.  We'll try this in a later session. 
 
 == Connect the wires per the chart ==
 
