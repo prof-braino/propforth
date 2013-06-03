@@ -6,6 +6,9 @@
 = Introduction =
 
 This is contents of BOT.F in the extensions directory of the download archive.
+It is MODIFIED for the particulars of the Ancona robot kits, with notes.
+
+Check the notes to mod the software for you bot!
 
 = PIN configuration = 
 
@@ -24,6 +27,8 @@ The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held
   * If 27 is high ( bt Tx ) and 2 is low use  BOT2 pinout
 
 = BOT1 =
+
+We are using BOT 1 for the time being, it flashes the Quickstart LEDs
 
 {{{
 
@@ -50,6 +55,8 @@ c" BOT " prop W@ ccopy
 )))
 
 = BOT2 =
+
+Bot 2 uses the LEDs differently.  We'll try this next time. 
 
 (((
 
@@ -81,6 +88,8 @@ c" BOT " prop W@ ccopy
 
 
 Choose one configuration, either BOT1 or BOT2, and set your pins accordingly.
+
+Choose BOT 1 if you are Ancona Spring 2013
 
 || || Bot1 || Bot2 ||
 || SR04  || 16 trig, 17 echo || P24 trig, P25 echo  ||
@@ -117,10 +126,14 @@ The stepper section of the bot.f program
 
 LittleRobotDemoSteppers
 
+Use this for initial hook up and trouble shooting
 
 == SR04 Ultrasonic Rangefinder section ==
 
 LittleRobotDemoUltrasonic
+
+Use this for initial hook up and trouble shooting
+
 
 = bot.f =
 
@@ -128,14 +141,13 @@ Paste the entire contents of the code box below to load the LittleRobot demo sof
 
 Or copy it to you own editor, make changes, then paste it in.
 
-Note: I started to commented out the fswrite steps, we are not using an SD in the Ancona pilot.  But there a little more to do to change it to no SD.
-
-
+This has modification to use the Laser Cut Acrylic wheels and the 4x8 pink foam chassis.
 
 {{{
+
 fl
 
-\ fswrite 4step.f
+fswrite 4step.f
 {
 
 Drives a 4 phase stepper motor, tested with 28byj stepper motor wth a uln2003 driver
@@ -530,7 +542,7 @@ d_16 d_17 d_18 d_19 step_create_fullstep motf
 
 
 
-\ fswrite sr04.f
+fswrite sr04.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
@@ -571,8 +583,7 @@ d_60 delms
 
 ...
 
-{
-\ fswrite boot.f
+fswrite boot.f
 
 hA state orC! version W@ .cstr cr cr cr
 : findEETOP
@@ -599,9 +610,9 @@ fsload bot.f
 c" boot.f - Loaded bot.f~h0D~h0D" .cstr hA state andnC!
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 ...
-}
 
-\ fswrite bot.f
+
+fswrite bot.f
 
 
 2 px? 27 px? 0= and
@@ -615,7 +626,7 @@ c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 ]
 
 [ifdef build_bot1
-\ for the HC05
+\ for the HC05     \ \ BOT 1  \ \ BOT 1 \ \ BOT 1 \ \ BOT 1 \ \ BOT 1  
 
 1 wconstant hcProgPin
 0 wconstant hcRx
@@ -629,14 +640,57 @@ c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 : _mota_pins d_24 d_25 d_26 d_27 ;
 : _motb_pins d_20 d_21 d_22 d_23 ;
 
-263 wconstant _distance_cal
-6052 wconstant _right_cal
+\ 263 wconstant _distance_cal  \ Sal's
+\ 229 wconstant _distance_cal  \ laser cut acrylic 20130601 73 * pi = 229.33
+\ 6052 wconstant _right_cal    \ Sal's
+
+\  The 4x6 inch wide pink foam blocks with wheels are 119 mm wide so
+\ The body radius (wheel base/2) = 59.5
+\ body_radius * wheel_radius * pi = _right_cal
+\ 59.75 * 36.5 * pi = 6851  
+\ practical body radius (wheel base/2) = 58.865 
+\ 6750 wconstant _right_cal \ for 4x6 foam chassic (with acrilic wheels)
+
+\ 253 wconstant _distance_cal  \ braino's 3d printed wheels 82 * pi = 257.8
+\ 253 - 600 mm goes 7 long
+255 wconstant _distance_cal  \ braino's 3d printed wheels 82 * pi = 257.8
+\ 255 - 600 mm goes perfect
+\ 257 wconstant _distance_cal  \ braino's 3d printed wheels 82 * pi = 257.8
+\ 257 - 600 mm goes 7 short
+\258 wconstant _distance_cal  \ braino's 3d printed wheels 82 * pi = 257.8
+\ 258 - 600 mm goes 4 short
+\ 260 wconstant _distance_cal  \ braino's 3d printed wheels 82 * pi = 257.8
+\ 260 - 600 mm goes 15 short
+
+\  The 6x8 inch wide pink foam blocks with wheels are 165 mm wide so
+\ The body radius (wheel base/2) = 82.5
+\ body_radius * wheel_radius * pi = _right_cal
+\ 82.5 * 82.0 * pi = 21252
+\ 8480 wconstant _right_cal \ for 6x8 foam chassic (w/ 3D printer wheels) 
+
+\ Ancona uses acrylic wheels and 6x8 foam 
+
+229 wconstant _distance_cal  \ laser cut acrylic 20130601 73 * pi = 229.33
+8480 wconstant _right_cal \ for 6x8 foam chassic (w/ 3D printer wheels) 
+
+
+{
+\ debug *********************************************************************
+wvariable right_cal 
+: !right_cal right_cal W! ; : @right_cal right_cal W@ ;
+21252 !right_cal 
+: _right_cal @right_cal ;
+: !rc  cr ." 6851 6822 6836 " cr  
+  @right_cal . dup !right_cal ." RC to " . ;    
+\ debug *********************************************************************
+}
+
 c" BOT " prop W@ ccopy
 1 propid W!
 ]
 
 [ifdef build_bot2
-\ for the HC05
+\ for the HC05        -- bot 2  -- bot 2  -- bot 2  -- bot 2  -- bot 2 
 \ green wire
 	22 wconstant hcProgPin
 \ white/orange wire
@@ -652,8 +706,15 @@ c" BOT " prop W@ ccopy
 : _mota_pins d_15 d_14 d_13 d_12 ;
 : _motb_pins d_11 d_10 d_9 d_8 ;
 
-263 wconstant _distance_cal
-6052 wconstant _right_cal
+\ 263 wconstant _distance_cal
+\ 254 wconstant _distance_cal  \ laser cut acrylic 20130601 81 * pi
+229 wconstant _distance_cal  \ laser cut acrylic 20130601 73 * pi
+
+\ 6052 wconstant _right_cal
+\ 6880 wconstant _right_cal
+\ 6851 wconstant _right_cal \ for 4x6 foam chassic        no
+6822 wconstant _right_cal \ for 4x6 foam chassic        
+
 c" BOT " prop W@ ccopy
 2 propid W!
 ]
@@ -738,16 +799,34 @@ rot + 2/ swap - .
 
 
 : onreset6
+cr ." INITALIZING motors and sensor (cogs 0, 1, 2) in 1 second...." cr 1000 delms
+
+fkey? and fkey? and or h1B <>
+if
+c" init_motorA" 0 cogx
+c" init_motorB" 1 cogx
+c" _sr04_measure" 2 cogx
+ ."  motors and sensors initialized ... " cr cr
+cog? 
+then
+
+cr ." Switch to Bluetoot HC05  in 5 seconds...."  cr 5000 delms
+
+
 fkey? and fkey? and or h1B <>
 if
 $S_con iodis $S_con cogreset 100 delms
 c" _ready_led dup pinout pinhi" $S_con cogx
 c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
 cogid >con
-c" init_motorA" 0 cogx
-c" init_motorB" 1 cogx
-c" _sr04_measure" 2 cogx
+
+."  Bluetooth initialized "   cr cr
+cog? 
 then
+
+
+cr ." RESETING on cog6 now ....  "  cr  
+
 c" onreset6" (forget)
 ;
 
@@ -756,7 +835,7 @@ c" onreset6" (forget)
 
 
 
-\ fswrite btstat.f
+fswrite btstat.f
 
 
 230400 4/ wconstant hcBaud
@@ -788,8 +867,8 @@ fswrite btinit.f
 
 hcProgPin pinhi hcProgPin pinout
 
-c" AT+NAME=SanciBOT-2~h0D~h0A" hcSend
-c" AT+PSWD=1111~h0D~h0A" hcSend
+c" AT+NAME=BrainoBOT-4x6~h0D~h0A" hcSend
+c" AT+PSWD=1234~h0D~h0A" hcSend
 c" AT+UART=230400,0,0~h0D~h0A" hcSend
 c" AT+VERSION~h0D~h0A" hcSend
 c" AT+ROLE?~h0D~h0A" hcSend
@@ -925,8 +1004,10 @@ fl
 	d128 1
 	do
 		i _dmon1 cr
-	loop
+	loop                                                                                                                    
 ;
+
+
 
 : dm
 	d32 1
@@ -937,13 +1018,8 @@ fl
 
 : m 3 cogreset 100 delms c" stepmon" 3 cogx ;
 
-...
+
 
 }}}
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= end of demo program page =
