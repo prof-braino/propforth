@@ -84,7 +84,7 @@ Choose BOT 1 if you are Ancona Spring 2013
 || --   || P2 = bt Tx  || P27 = bt Tx ||
 || --   || P0 = bt Rx  || P26 = bt Rx ||
 || --   || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
-|| || || REMEMBER HC05/HC06 uses Vdd 3.3 volts!!! The rest use Vin!!!!||
+|| || || || REMEMBER HC05/HC06 uses Vdd 3.3 volts!!! The rest use Vin!!!!||
 
 These pins are the same on all configurations
 
