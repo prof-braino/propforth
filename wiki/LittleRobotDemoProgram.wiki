@@ -16,6 +16,8 @@ The BOT.F program below has two options for connecting the pins for the peripher
 
 = SELECT 1 or 2 =
 
+*SELECT BOT1*
+
 The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held high.  So the program can find where the Bluetooth is by looking for the Blue tooth Tx line. 
 
 {{{
@@ -23,7 +25,7 @@ The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held
 27 px? 2 px? 0= and [if 1 wconstant build_bot2 ]
 }}}
 
-  * If 2 is high ( bt Tx ) and 27 is low use  BOT1 pinout
+  * If 2 is high ( bt Tx ) and 27 is low use  BOT1 pinout ( *USE BOT1* )
   * If 27 is high ( bt Tx ) and 2 is low use  BOT2 pinout
 
 = BOT1 =
