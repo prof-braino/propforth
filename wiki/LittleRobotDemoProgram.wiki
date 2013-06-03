@@ -988,6 +988,12 @@ When the Quickstat boots the propforth EEprom Kernel, Propforth runs the boot.f 
 
 If you DON'T want the autoboot to run *hold down* the *ESC* key. 
 
+NOTE: HOLD DOWN THE ESC key to stop the autoboot!!!
+
+= EEpom file system commands =
+
+Propforth writes files to the EEprom chip on the Quickstart, and uses it like a mini disk drive. 
+
 If you want to see the list of files on the EEprom, type File System List command
 {{{
 fsls
