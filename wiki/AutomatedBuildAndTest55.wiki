@@ -1,4 +1,5 @@
 #summary Instructions for Automated Build and Test in Propforth v5.5.
+#labels v5.5,build,test,automation
 
 = Introduction =
 
