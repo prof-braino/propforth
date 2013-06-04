@@ -11,7 +11,6 @@ Sal intends to make this less "magic" and more "documented"
 = Preparation =
 
   * Setup the PC for Propforth
-
     * Download the Proptool
     * install the proptool
     * install the USB drivers
