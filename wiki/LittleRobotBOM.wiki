@@ -59,6 +59,12 @@ Also, the unmounted HC05 and HC06 are cheaper, but need to be solderd to carrier
 
 == Shopping List ==
 
+Need to order 40 pin M-F (did it go through?)
+
+and 
+
+ULN2003 + 28BYJ-48
+
 (need) (ordered)
 
  * (25) (25) Processor Board:  [http://www.parallax.com/Store/Microcontrollers/PropellerDevelopmentBoards/tabid/514/ProductID/748/List/0/Default.aspx?SortField=ProductName,ProductName Propeller Quickstart] $
