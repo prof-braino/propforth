@@ -19,7 +19,7 @@ Each kit consists of :
   * [http://www.ebay.com/itm/Stepper-Step-Motor-DC-28BYJ-48-5V-ULN2003-Driver-Test-Module-Board-5-Line-4-/370817548738?pt=LH_DefaultDomain_2&hash=item565672c1c2stepper motor + Driver]  $2.58   (times two)
   * [http://www.ebay.com/itm/200927863479 HC05 (Blue Tooth Serial Cable Replacement)] $2.00 + $1.98 shipping each
   * [http://www.ebay.com/itm/280883290187 SR04 (Ultrasonic Range Finder)] 10 pieces for $15.85
-  * 20 M-F jumpers (half of 40 pin ribbon) 
+  * [http://www.ebay.com/itm/40pcs-20cm-Male-to-Female-Color-Breadboard-Cable-Jump-Wire-Jumper-For-Arduino-XD-/360636878801?pt=LH_DefaultDomain_2&hash=item53f7a20fd1 20 M-F jumpers (half of 40 pin ribbon) ] $2.22 US 40 conductors
   * 1 F-F jumper (one of a forty pin ribbon)
   * 1 resistor 220-330 ohms (one of a pack a 500)
   * Two Wheels
