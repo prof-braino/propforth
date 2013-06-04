@@ -27,15 +27,11 @@ Sal intends to make this less "magic" and more "documented"
  * Configure the automation
   * Set up the environment variables
   * ensure the correct starting directory
-
-  # Run the automation
- 
+ * Run the automation
   * Verify the build automation (make.bat)
   * Verify the test automation (test.bat)
   * Run the full automation (maketest.bat)
-
-  # Check the logs for Errors
-
+ * Check the logs for Errors
   * if error level is not 0 something did not match
   * back trace to determine the cause of the error. 
   * correct the cause of the error, and update any tests. 
