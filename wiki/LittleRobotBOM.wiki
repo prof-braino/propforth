@@ -13,9 +13,45 @@ The user may purchase the recommended parts, or replace any parts with custom se
 
 Bill of Materials as of ordering 20130604
 
- * Processor Board:  [http://www.parallax.com/Store/Microcontrollers/PropellerDevelopmentBoards/tabid/514/ProductID/748/List/0/Default.aspx?SortField=ProductName,ProductName Propeller Quickstart]
+Each kit consists of :
 
-  * 2 stepper motor + Driver 
+  * processor
+  * stepper motor + driver (times two)
+  * HC05 (Blue Tooth Serial Cable Replacement)
+  * SR04 (Ultrasonic Range Finder)
+  * 20 M-F jumpers (half of 40 pin ribbon)
+  * 1 M-M jumper (one of a forty pin ribbon)
+  * 1 resistor 220-330 ohms (one of a pack a 500)
+  * Two Wheels
+  * two rubber bands
+  * 2x4x6 (inches) foam block with 1 inch holes
+  * 4xAA batteries
+  
+
+== Today's Order  ==
+
+  * Library: 12 kits
+  * Ancona: 5 kits
+  * High School: 4 kits
+  * Private Parties:  4 kits
+
+*Total Oder: 25 kits* 
+
+== Shopping List ==
+
+ * (25) Processor Board:  [http://www.parallax.com/Store/Microcontrollers/PropellerDevelopmentBoards/tabid/514/ProductID/748/List/0/Default.aspx?SortField=ProductName,ProductName Propeller Quickstart]
+
+  * (50) stepper motor + Driver 
+
+  * (25) HC05
+ 
+  * (25) SR04
+
+  * (20)
+
+  * (25) battery case with switch 4xAA
+
+  * 
 
 = BOM as of 20120819 =
 
