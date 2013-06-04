@@ -15,22 +15,16 @@ Sal intends to make this less "magic" and more "documented"
     * install the proptool
     * install the USB drivers
     * verify the USB drivers are working (by loading and executing a spin program)
-
-  * Find the build automation
-
+ * Find the build automation
     * download the propforth 5.5 archive
     * extract the archive
     * find the mygo.zip
     * extract the mygo.zip
-  
-  # Set up the automation
-
-  * Install the Go Language support
-  * rebuild GoTerm 
-  * rebuild GoMuxTerm
-
-  # Configure the automation
-  
+ * Set up the automation
+   * Install the Go Language support
+   * rebuild GoTerm 
+   * rebuild GoMuxTerm
+ * Configure the automation
   * Set up the environment variables
   * ensure the correct starting directory
 
