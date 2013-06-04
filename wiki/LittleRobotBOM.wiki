@@ -20,7 +20,7 @@ Each kit consists of :
   * [http://www.ebay.com/itm/200927863479 HC05 (Blue Tooth Serial Cable Replacement)] $2.00 + $1.98 shipping each
   * [http://www.ebay.com/itm/280883290187 SR04 (Ultrasonic Range Finder)] 10 pieces for $15.85
   * [http://www.ebay.com/itm/40pcs-20cm-Male-to-Female-Color-Breadboard-Cable-Jump-Wire-Jumper-For-Arduino-XD-/360636878801?pt=LH_DefaultDomain_2&hash=item53f7a20fd1 20 M-F jumpers (half of 40 pin ribbon) ] $2.22 US 40 conductors
-  * 1 F-F jumper (one of a forty pin ribbon)
+  * 1 [http://www.ebay.com/itm/290920457422 F-F jumper] (one of a forty pin ribbon)  $2.34
   * 1 resistor 220-330 ohms (one of a pack a 500)
   * Two Wheels
   * two rubber bands
