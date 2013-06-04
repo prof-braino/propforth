@@ -36,7 +36,7 @@ Each kit consists of:
 
 == Locally available materials ==
 
-  * Two Wheels [not orderable until I get the source arranged, please purchase or fabricate locally]
+  * Two Wheels are not orderable until I get the source arranged, please purchase or fabricate locally]
   * two #6 rubber bands [also cut 1 inch wide sections of a bike inner tube, this works well 
   * 4xAA batteries.  Get them at the home center in a pack of 40.  there MAY be a issue with over voltage with alkaline,, might need to use NiMH.
 
