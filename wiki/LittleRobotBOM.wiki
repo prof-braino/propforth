@@ -21,7 +21,7 @@ Each kit consists of :
   * HC05 (Blue Tooth Serial Cable Replacement)
   * SR04 (Ultrasonic Range Finder)
   * 20 M-F jumpers (half of 40 pin ribbon)
-  * 1 M-M jumper (one of a forty pin ribbon)
+  * 1 F-F jumper (one of a forty pin ribbon)
   * 1 resistor 220-330 ohms (one of a pack a 500)
   * Two Wheels
   * two rubber bands
@@ -46,7 +46,7 @@ Each kit consists of :
 
   * (50) (50) [http://www.ebay.com/itm/Stepper-Step-Motor-DC-28BYJ-48-5V-ULN2003-Driver-Test-Module-Board-5-Line-4-/370817548738?pt=LH_DefaultDomain_2&hash=item565672c1c2stepper motor + Driver] 
 
-  * (25) ( ) HC05
+  * (25) (25) HC05
  
   * (25) (30) SR04
 
@@ -59,6 +59,14 @@ Each kit consists of :
   * (25) (25) battery case with switch 4xAA
 
   * 
+
+We can only get an even multiple of all parts (except resistors) if we order 40 kits
+
+We can only get an even multiple of all parts (including resistors) if we order 1000 kits
+
+Resistors are cheap enough, we can afford extras.
+
+F-F Ribbon cables are cheap enough, SR04 are not so cheap, but extras are cheaper than getting one-offs.
 
 = BOM as of 20120819 =
 
