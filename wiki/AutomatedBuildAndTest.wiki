@@ -1,113 +1,29 @@
-#summary Instructions for Automated Build and Test in Propforth v5.3.
-#labels v5.3,automation,build,make,test
+#summary Instructions for Automated Build and Test in Propforth
+#labels v5.5,automation,build,make,test
 
 <wiki:toc max_depth="9" />
 
 = Automated Build and Test =
 
-This is to be covered in Propforth.htm in the download archive.   This wiki page is just a placeholder for the draft notes in preparation for the release.
+This is to be covered in Propforth.htm in the download archive.   
 
 The Automated Build and Test functionality introduced in Propforth v5.3 uses a PC workstation to exercise the interactive propforth system.  The workstation will generate the propforth kernels from source, load each kernel in turn onto the propforth standard testbed, and execute the regression test suite. 
 
-= Preparation =
+The intent is to allow EVERYTHING to be tested every time a change is made. 
 
-If you've already run all the parts, you should already be set up.
+Any change to the kernel requires that every known test be run to check if something got broken. This s the only way to ensure that it will behave the same way.  Even so, somethingg can still get broken, this will help catch the most obvious errors.
 
-Jump down to `Launching the Automation` to fire off the automation.
+The automation can create a complete set of kernels in under an hour.  The test suite can execute in under two hours. Compare to doing this process manually, which takes a skilled and experienced operator a couple weeks. 
 
-== Required hardware ==
- 
-  * A PC workstation running windows or Linux (or a Mac, you should ask Brian Riley if these instructions don't cover your rig)
-  * standard testbed as described in download archive, which should end up on your PC someplace like: 
+= AutomatedBuildAndTest55 =
 
-{{{
-C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\kernels\doc\
+The  automated build and test suite in version 5.5 is  a more little involved than previous versions. 
 
-MultiPropReferenceSystemHardware.txt
-}}}
-== Required Software ==
-
-  * Go Language must be correctly installed.  SEE http://code.google.com/p/propforth/wiki/GoSetup20120511 ask Rick to verify that these instructions still make sense
-  * you need the current kernel BURNED INTO EEPROM on both:
-    * the master (protoboard/shmart board/C3/quickstart)
-    * the SNET slave (spinneret/wiznet5100)
-
-The file you want on there is
-
-{{{
-C:\Documents and Settings\<username>\My Documents\Go-files\mygo\V5.3\CurrentRelease\PropForth
-
-PropForthDevFastSerialKernel.spin
-}}}
-
-Notice:  I had an OLD kernel on the spinneret, which ran at the old 57600 baud, instead of the current 230400 baud.  And of course everything came out junk.  If you get FAIL on SNET tests, check for this; its easy to fix.
-
-= Configure for testing =
-
-Edit the GOSHELL.bat file.  
-
-  * Make sure the COMPORT is set to the standard testbed Master ! !
-  * Make sure the baud is set to 230400 (or whatever crazy speed we are running at today)
-  * Make sure your IP addresses are set up for you local network (post a message if you have trouble, this was a bit stick when I first went through it, expect to have questions if this is your first time dealing with a router.
-  * Make sure the Go Environment variable are set up (IE the go stuff was set up and the tests executed)
-
-There was a bunch of stuff to set up, but if you followed the instruction for all the individual bit and they worked, they will still be set up fine.
-
-= Launching the Automation =
-
-OK, this is the reason I wrote this page.  When I can back to re-execute the tests 3 weeks later, I forgot how to start it off. :)
-
-Navigate to your Go directory and find goshell.bat
-
-{{{
-C:\Documents and Settings\<username>\My Documents\Go-files\mygo
-
-goshell.bat
-}}}
-
-Click to execute if youing a GUI, or run from the command line as you prefer. 
+AutomatedBuildAndTest55
 
 
-GoShell.bat sets up a bunch of environment variable so the automation can run.  Don't close this window, you need to run the automation commands here. 
+= AutomatedBuildAndTest53 =
 
-In the command window where Goshell.bat executed, execute the scrpt maketest.bat
+The previous version is 
 
-{{{
-C:\Documents and Settings\Braino\My Documents\Go-files\mygo\V5.3\kernels
-
-maketest.bat
-}}}
-
-This runs the automated build, and runs the automated regression test.  It does this by calling the other scripts in this directory.  You can trace through the script files if you wish to run individual scripts or tests manually. 
-
-The build portion takes about 45 minutes
-
-The regression takes about 2 hours.  
-
-Maybe the whole thing takes two hours, I always wander off before it finishes.  I could check the logs, but I'm sitting at another station.  If somebody reads this, please update with the correct information.  Written 20120923, please delete this sentence when the correction is made.   
-
-= Verifying the Results =
-
-The automation check if the run produces the EXACT results as the baseline.   Any difference to the baseline must be checked by a person.
-
-Some things are expected to be different. 
-  * Time and Date stamps
-  * undefined pin states
-  * free disk space
-  * time deltas dependent on the PC workstation clock speed
-
-These items are mostly collected in a few areas, after you see them once, you can recognize that those always get flagged but are not errors. 
-
-Some items change on occasion.  For example, if one makes changes to the source code, the resultant image will be different.  You should expect you change to get flagged when the new image is run the first time.  After you satisfy yourself the change is correct, that result become the new baseline. 
-
-Some items must never be different.  For example, if you rebuild the same source code,  you must get the same result every time.  If you don't you have detected an instability, and this should be looking into. 
-
-Sal uses Windiff for compare the baseline and the result directories. He also uses the same Windiff to compare individual files.  I have not nailed down the process for doing the compare.  If these notes are not sufficient (I expect they are not), please make a request in the forums or by email and we will start in on this based on you request.   I'm not sure exactly which direction we want to go with this, so user input will be valuable. 
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+AutomatedBuildAndTest53
