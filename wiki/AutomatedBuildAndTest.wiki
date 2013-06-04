@@ -15,14 +15,14 @@ Any change to the kernel requires that every known test be run to check if somet
 
 The automation can create a complete set of kernels in under an hour.  The test suite can execute in under two hours. Compare to doing this process manually, which takes a skilled and experienced operator a couple weeks. 
 
-= AutomatedBuildAndTest55 =
+= Automated Build And Test in Propforth version 5.5 =
 
 The  automated build and test suite in version 5.5 is  a more little involved than previous versions. 
 
 AutomatedBuildAndTest55
 
 
-= AutomatedBuildAndTest53 =
+= Automated Build And Test in Propforth version 5.3 =
 
 The previous version is 
 
