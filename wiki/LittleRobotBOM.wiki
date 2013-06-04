@@ -15,6 +15,8 @@ Bill of Materials as of ordering 20130604
 
  * Processor Board:  [http://www.parallax.com/Store/Microcontrollers/PropellerDevelopmentBoards/tabid/514/ProductID/748/List/0/Default.aspx?SortField=ProductName,ProductName Propeller Quickstart]
 
+  * 2 stepper motor + Driver 
+
 = BOM as of 20120819 =
 
 We ordered these off of eBay, Proudly American Made by Chinese folks in China. 
