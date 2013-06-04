@@ -8,7 +8,7 @@ In v5.5, certain steps still have to be done by hand, by Sal.  These are creatin
 
 Sal intends to make this less "magic" and more "documented"
 
-= Preparation1 =
+= Preparation =
 
 # Setup the PC for Propforth
 
