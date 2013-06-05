@@ -9,6 +9,33 @@ Little Robot is an example of a mobile robotic platform for embedded systems exp
 
 The user may purchase the recommended parts, or replace any parts with custom selections.  The design is indented to be upgradable.  As the project evolves and users become more capable, the complexity of the system will increase, and allow upgrades and enhancements. 
 
+= Theoretical Kit versus Actual Kit =
+
+Theoretically, all one needs are the key part, which can usually be obtained for under $20. In reality, one also need all the non-key parts as well, and these bear significant cost.
+
+== Key Parts ==
+
+The key parts are:
+  * HC05/HC06 Blue Tooth serial cable replacement
+  * SR04 ultrasonic range finder
+  * ULN2003 stepper driver and 28BYJ-48 stepper motor (pair)
+
+These can usually be obtained for under $20
+
+== the rest of the parts ==
+
+Notice the above assumes the user already has a Quickstart,  a battery case, a chassis, some wheels, resistors, the ability to solder surface mount parts, assorted wires and/or breadboards and/or prototyping solder boards, fasteners, glue, machine shop equipment, assorted hand tools. 
+
+While all members of the Parallax forum have this material readily available, we found that the schools and NEW participants generally do not, hence the kits. 
+
+== Order the kit or the individual parts ==
+
+If you continue with your pursuit of robotics, eventually, you will want a complete shop and a full inventory of parts and equipment.  However, if you do not continue in electronics, robotics etc, you will not want this extra expense.
+
+Before you commit, try the kit.  
+
+This is the least cost exploration of robotics, by design.  All the parts are reusable, and will serve as an excellent foundation for your adventure. 
+
 = Ordering the BOM =
 
 The Bill of Materials is (supposed to be) updated each time we find a better way to meet the needs at lowest cost and effort. 
@@ -58,7 +85,11 @@ Also, the unmounted HC05 and HC06 are cheaper, but need to be solderd to carrier
 
 == Shopping List ==
 
-Need to order 40 pin M-F (did it go through?)
+Need to order 
+
+*USB HOST to MINI B* Don't forget this again!!!!!!
+
+40 pin M-F (did it go through?)
 
 and 
 
