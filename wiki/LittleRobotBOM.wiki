@@ -28,7 +28,7 @@ These can usually be obtained for under $20
 
 Notice the above assumes the user already has a Quickstart,  a battery case, a chassis, some wheels, resistors, the ability to solder surface mount parts, assorted wires and/or breadboards and/or prototyping solder boards, fasteners, glue, machine shop equipment, assorted hand tools. 
 
-While all members of the Parallax forum have this material readily available, we found that the schools and NEW participants generally do not, hence the kits. 
+While all members of the Parallax forum have these materials readily available, we found that the schools and NEW participants generally do not, hence the kits. 
 
 == Order the kit or the individual parts ==
 
