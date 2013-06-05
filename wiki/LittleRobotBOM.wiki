@@ -65,17 +65,15 @@ and
 [http://www.ebay.com/itm/230911436376  ULN2003 + 28BYJ-48 ] $2.72
 
 || (need)  ||  (ordered)  || item  || price  || 
-||  (25)  || (25) ||  Processor Board: Propeller Quickstart  || $  || 
-||  (50)  || (50)  || stepper motor + Driver  || $  || 
-||  (25)  || (25)  || HC05 || $  || 
-||  (25)   || (30)  ||  SR04 || $  || 
-||  (20)  ||  (10)   || 20 M-F jumpers (half of 40 conductor ribbon) || $  || 
-||  (20)   || (1)   ||  1 F-F jumper (one of 40 conductor ribbon)  || $  || 
-|| (20)  || (1)   || resistor 220-330 ohms (one of a pack a 500) || $  || 
-|| (25)   || (25)   || battery case with switch 4xAA || $  || 
-
-  * 
-
+||  (25)  || (25) ||  Processor Board: Propeller Quickstart  || $25  || 
+||  (50)  || (50)  || stepper motor + Driver  || $2.72 8 2 = $5.14  || 
+||  (25)  || (25)  || HC05 - changed to mounted hc06 slave only || $8.98  || 
+||  (25)   || (30)  ||  SR04 || 15.80  || 
+||  (20)  ||  (10)   || 20 M-F jumpers (half of 40 conductor ribbon) || $2.22  || 
+||  (20)   || (1)   ||  1 F-F jumper (one of 40 conductor ribbon)  || $2.34  || 
+|| (20)  || (1)   || resistor 220-330 ohms (one of a pack a 1000) || $6.01  || 
+|| (25)   || (25)   || battery case with switch 4xAA || $8.00  || 
+ 
 We can only get an even multiple of all parts (except resistors) if we order 40 kits
 
 We can only get an even multiple of all parts (including resistors) if we order 1000 kits
@@ -83,6 +81,10 @@ We can only get an even multiple of all parts (including resistors) if we order 
 Resistors are cheap enough, we can afford extras.
 
 F-F Ribbon cables are cheap enough, SR04 are not so cheap, but extras are cheaper than getting one-offs.
+
+The real killer is the HC05 or HC06.  The unmounted part is cheap, but the price for the mounted version went up as they became popular. 
+
+FUTURE PLAN:  HAVE A CLASS in surface mount soldering, and have the ~~slaves~~ students make up their own batch for the class. Maybe they can solder my parts, in exchange for me supplying the practice materials? 
 
 = BOM as of 20120819 =
 
