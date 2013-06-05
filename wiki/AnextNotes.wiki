@@ -25,12 +25,12 @@ rdword tregone,IP ' the next word
 test tregone, fMask wz
 if_z add IP, #2 ' if the one of the hi bits is not set, it is an assembler word, inc IP
 if_z jmp tregone
-rdword tregone, IP ' otherwise it is a forth word
-mov tregfive, IP
-add tregfive, #2
-mov IP, tregone
-call #a_rsPush
-jmp #a_next
+     rdword tregone, IP ' otherwise it is a forth word
+     mov tregfive, IP
+     add tregfive, #2
+     mov IP, tregone
+     call #a_rsPush
+     jmp #a_next
 }}}
 
 Code after.
@@ -44,18 +44,18 @@ rdword tregone,IP ' the next word
 test tregone, fMask wz
 if_z add IP, #2 ' if the one of the hi bits is not set, it is an assembler word, inc IP
 if_z jmp tregone
-'fjernet instr !PBP 'rdword tregone, IP ' otherwise it is a forth word
-mov tregfive, IP
-add tregfive, #2
-mov IP, tregone
-call #a_rsPush
-jmp #a_next
+     'fjernet instr !PBP 'rdword tregone, IP ' otherwise it is a forth word
+     mov tregfive, IP
+     add tregfive, #2
+     mov IP, tregone
+     call #a_rsPush
+     jmp #a_next
 a__maskin
 and stTOS, ina wz
 muxnz stTOS, fLongMask
 jmp # a_next
-'nop, der ikke betyder noget, men skal være der, for at det virker
-'fordi jeg har fjernet rdword tregone, IP !PBP
+    'nop, der ikke betyder noget, men skal være der, for at det virker
+    'fordi jeg har fjernet rdword tregone, IP !PBP
 nop
 ''''''''''''''''''''''''''''''''''''''''''!PBP
 
