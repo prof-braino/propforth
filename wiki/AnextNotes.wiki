@@ -1,6 +1,10 @@
 #summary Use contributed Enhancements to a_next.
 #labels v5.5
 
+
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 *`a_next`* is an assembler word in the kernel. It is part of the dictionary search, and gets executed very often.  Small improvements to this function lead to large increases in overall performance.
