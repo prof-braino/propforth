@@ -30,7 +30,7 @@ Notice the above assumes the user already has a Quickstart,  a battery case, a c
 
 While all members of the Parallax forum have these materials readily available, we found that the schools and NEW participants generally do not, hence the kits. 
 
-== Order the kit or the individual parts ==
+== Order the kit or the individual parts (?) ==
 
 If you continue with your pursuit of robotics, eventually, you will want a complete shop and a full inventory of parts and equipment.  However, if you do not continue in electronics, robotics etc, you will not want this extra expense.
 
