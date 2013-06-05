@@ -1,0 +1,117 @@
+#summary Use contributed Enhancements to a_next.
+
+= Introduction =
+
+a_next is an assembler word in the kernel. It is part of the dictionary search, and gets executed very often.  Small improvements to this funtion lead to large increases in overall performance.
+
+= Initial Report =
+
+Hi there!
+
+I have made a change in "a_next" which provides 30% faster throughput of Forth high level words.  But there is something I do not understand, I need to insert a "nop", instead of the instruction I have removed?
+
+Code before.
+
+{{{
+a_next
+a_debugonoff
+if_never jmpret a_dum_ret, # a_dum ' when debug is loaded this address will be patched
+
+rdword tregone,IP ' the next word
+test tregone, fMask wz
+if_z add IP, #2 ' if the one of the hi bits is not set, it is an assembler word, inc IP
+if_z jmp tregone
+rdword tregone, IP ' otherwise it is a forth word
+mov tregfive, IP
+add tregfive, #2
+mov IP, tregone
+call #a_rsPush
+jmp #a_next
+}}}
+
+Code after.
+
+(((
+a_next
+a_debugonoff
+if_never jmpret a_dum_ret, # a_dum ' when debug is loaded this address will be patched
+
+rdword tregone,IP ' the next word
+test tregone, fMask wz
+if_z add IP, #2 ' if the one of the hi bits is not set, it is an assembler word, inc IP
+if_z jmp tregone
+'fjernet instr !PBP 'rdword tregone, IP ' otherwise it is a forth word
+mov tregfive, IP
+add tregfive, #2
+mov IP, tregone
+call #a_rsPush
+jmp #a_next
+a__maskin
+and stTOS, ina wz
+muxnz stTOS, fLongMask
+jmp # a_next
+'nop, der ikke betyder noget, men skal være der, for at det virker
+'fordi jeg har fjernet rdword tregone, IP !PBP
+nop
+''''''''''''''''''''''''''''''''''''''''''!PBP
+
+
+: tt sc cnt COG@ words cnt COG@ swap - . ;
+}}}
+
+I did run both programs, which ran "words" and got 56ms. faster drive. 
+
+= Comment 1 =
+
+Posted on parallax forum by
+
+forum user: frida
+Location     Denmark
+Posts     3	
+
+= comment 2 = 
+
+marco says:
+
+Looks like the dictionary has been generated for the before code. As it is just a dump it doesn't get updated automatically for your after changes. That said, the nop - if used - should appear before a__maskin but an updated dictionary would be the right solution.
+
+= Comment 3 =
+
+Thank you, you are right. I have looked at the code and it makes sense. I will incorporate into PropForth6. 
+
+The noop is necessary in your code because changes in the assembler kernel requires that the PropForth image needs to be updated to reflect the changes.
+
+This involves a rebuild from StartKernel forward. Mostly automated, but a little tricky. Will try to improve this process in 6.
+
+
+= Comment 4 =
+
+While you're at it, get rid of fMask too. I don't know how important kernel size is but its single use can easily be rewritten with either a cmp wc or a testn wz.
+
+= Comment 7 =
+
+Further loop improvement. Currently IP is only incremented when it's not a FORTH word. Subsequently tregfive is loaded with IP and then incremented then IP reused. IOW IP can always be incremented.
+
+a_next
+a_debugonoff        
+        if_never        jmpret a_dum_ret, # a_dum
+                                                
+                        rdword  tregone,IP
+                        add     IP, #2
+                        testn   tregone, #$1FF    wz
+        if_z            jmp     tregone
+
+                        mov     tregfive, IP
+                        mov     IP, tregone       
+                        call    #a_rsPush
+                        jmp     #a_next
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
