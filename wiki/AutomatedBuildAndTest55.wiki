@@ -1,6 +1,8 @@
 #summary Instructions for Automated Build and Test in Propforth v5.5.
 #labels v5.5,build,test,automation
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 The Automated Build and Test will be improved to make more parts automatic.
