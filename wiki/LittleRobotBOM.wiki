@@ -34,9 +34,11 @@ While all members of the Parallax forum have these materials readily available, 
 
 If you continue with your pursuit of robotics, eventually, you will want a complete shop and a full inventory of parts and equipment.  However, if you do not continue in electronics, robotics etc, you will not want this extra expense.
 
+Historically only 10% of the poular becomes engineers.  If this hold true (maybe it won't) a portion of you will NOT want to invest in a mountain of equipment and inventory.  Try it out before you spend all you folks dough. 
+
 Before you commit, try the kit.  
 
-This is the least cost exploration of robotics, by design.  All the parts are reusable, and will serve as an excellent foundation for your adventure. 
+This is the least cost exploration of robotics, by design.  All the parts are reusable, and will serve as an excellent foundation for your adventure. If you decide not to continue, the cost is no more than one of those dozen unplayed video games sitting in the drawer.
 
 = Ordering the BOM =
 
