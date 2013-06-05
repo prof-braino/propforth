@@ -80,7 +80,7 @@ marco says:
 
 Looks like the dictionary has been generated for the before code. As it is just a dump it doesn't get updated automatically for your after changes. That said, the nop - if used - should appear before a__maskin but an updated dictionary would be the right solution.
 
-= Comment 3 =
+= Comment 3 Sal =
 
 Thank you, you are right. I have looked at the code and it makes sense. I will incorporate into PropForth6. 
 
@@ -88,7 +88,7 @@ The noop is necessary in your code because changes in the assembler kernel requi
 
 This involves a rebuild from StartKernel forward. Mostly automated, but a little tricky. Will try to improve this process in 6.
 
-*NOTE* _This response indicates a major effort to address the kernel build process and automation in Propforth 6.  Thanks for this question! User questions drive development, and the build process and associated docs have been wanting attention for some time now._ 
+*NOTE* from braino- _This response indicates a major effort to address the kernel build process and automation in Propforth 6.  Thanks for this question! User questions drive development, and the build process and associated docs have been wanting attention for some time now._ 
 
 = Comment 4 =
 
@@ -116,7 +116,7 @@ a_debugonoff
 }}}
 
 
-= comment 8 =
+= comment 8 Sal=
 
 Agreed, will update 6, and make sure regression tests pass. (do not see why they would not)
 
@@ -128,10 +128,13 @@ If I understand it correctly, the IP must not be updated if it is a Forth word, 
 
 frida
 
-= comment 10 =
+= comment 10 Sal =
  
 Yes, the operation is as follows. 
-The IP is pointing to the next word to be executed. After the word is fetched, the IP is incremented to point to the next word. If it is an assembler word, we simply jump to the address. If it is a forth word, we push the IP onto the return stack, and start fetching the contents of the word.
+  * The IP is pointing to the next word to be executed. 
+  * After the word is fetched, the IP is incremented to point to the next word. 
+  * If it is an assembler word, we simply jump to the address. 
+  * If it is a forth word, we push the IP onto the return stack, and start fetching the contents of the word.
   
 
 
