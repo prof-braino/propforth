@@ -13,7 +13,9 @@ The user may purchase the recommended parts, or replace any parts with custom se
 
 Theoretically, all one needs are the key part, which can usually be obtained for under $20. In reality, one also need all the non-key parts as well, and these bear significant cost.
 
-This learning cost me about a year, and cash price of all the parts I had to buy. There were several iterations.  You can avoid this extra cost by reading this page. 
+This learning cost me about a year, and cash price of all the parts I had to buy. There were several iterations.  
+
+  *You can avoid this extra cost by reading this page.* 
 
 == Key Parts ==
 
