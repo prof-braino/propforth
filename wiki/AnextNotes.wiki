@@ -2,7 +2,7 @@
 
 = Introduction =
 
-a_next is an assembler word in the kernel. It is part of the dictionary search, and gets executed very often.  Small improvements to this function lead to large increases in overall performance.
+*'a_next'* is an assembler word in the kernel. It is part of the dictionary search, and gets executed very often.  Small improvements to this function lead to large increases in overall performance.
 
 Sal explains the operation in comment 10
 
