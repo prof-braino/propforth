@@ -2,9 +2,13 @@
 
 = Introduction =
 
-a_next is an assembler word in the kernel. It is part of the dictionary search, and gets executed very often.  Small improvements to this funtion lead to large increases in overall performance.
+a_next is an assembler word in the kernel. It is part of the dictionary search, and gets executed very often.  Small improvements to this function lead to large increases in overall performance.
+
+Sal explains the operation in comment 10
 
 = Initial Report =
+
+This was entered in issue 194
 
 Hi there!
 
@@ -31,7 +35,7 @@ jmp #a_next
 
 Code after.
 
-(((
+{{{
 a_next
 a_debugonoff
 if_never jmpret a_dum_ret, # a_dum ' when debug is loaded this address will be patched
@@ -92,6 +96,7 @@ While you're at it, get rid of fMask too. I don't know how important kernel size
 
 Further loop improvement. Currently IP is only incremented when it's not a FORTH word. Subsequently tregfive is loaded with IP and then incremented then IP reused. IOW IP can always be incremented.
 
+{{{
 a_next
 a_debugonoff        
         if_never        jmpret a_dum_ret, # a_dum
@@ -106,7 +111,26 @@ a_debugonoff
                         call    #a_rsPush
                         jmp     #a_next
 
+}}}
 
+
+= comment 8 =
+
+Agreed, will update 6, and make sure regression tests pass. (do not see why they would not)
+
+Thank you.
+
+= comment 9 = 
+
+If I understand it correctly, the IP must not be updated if it is a Forth word, but it is the content of IP, which is updated.
+
+frida
+
+= comment 10 =
+ 
+Yes, the operation is as follows. 
+The IP is pointing to the next word to be executed. After the word is fetched, the IP is incremented to point to the next word. If it is an assembler word, we simply jump to the address. If it is a forth word, we push the IP onto the return stack, and start fetching the contents of the word.
+  
 
 
 = Details =
