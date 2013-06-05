@@ -42,6 +42,8 @@ Before you commit, try the kit.
 
 This is the least cost exploration of robotics, by design.  All the parts are reusable, and will serve as an excellent foundation for your adventure. If you decide not to continue, the cost is no more than one of those dozen unplayed video games sitting in the drawer.
 
+-----
+
 = Ordering the BOM =
 
 The Bill of Materials is (supposed to be) updated each time we find a better way to meet the needs at lowest cost and effort. 
@@ -122,6 +124,10 @@ F-F Ribbon cables are cheap enough, SR04 are not so cheap, but extras are cheape
 The real killer is the HC05 or HC06.  The unmounted part is cheap, but the price for the mounted version went up as they became popular. 
 
 FUTURE PLAN:  HAVE A CLASS in surface mount soldering, and have the ~~slaves~~ students make up their own batch for the class. Maybe they can solder my parts, in exchange for me supplying the practice materials? 
+
+-----
+
+OK, you can stop reading here.  Below is the old material from the OLD BOM(s). T
 
 = BOM as of 20120819 =
 
