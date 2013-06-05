@@ -140,11 +140,3 @@ Yes, the operation is as follows.
   * If it is an assembler word, we simply jump to the address. 
   * If it is a forth word, we push the IP onto the return stack, and start fetching the contents of the word.
   
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
