@@ -1,4 +1,5 @@
 #summary Use contributed Enhancements to a_next.
+#labels v5.5
 
 = Introduction =
 
@@ -87,6 +88,7 @@ The noop is necessary in your code because changes in the assembler kernel requi
 
 This involves a rebuild from StartKernel forward. Mostly automated, but a little tricky. Will try to improve this process in 6.
 
+*NOTE* _This response indicates a major effort to address the kernel build process and automation in Propforth 6.  Thanks for this question, use questions drive development, and the build process and associated docs have been wanting attention for some time now._ 
 
 = Comment 4 =
 
