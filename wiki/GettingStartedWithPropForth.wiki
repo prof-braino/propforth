@@ -16,6 +16,8 @@ PropForth is an interactive development environment for the Parallax micro contr
 
 Propforth is a very powerful, profession development tool.  Don't be fooled by the way it makes embedded systems look easy and fun. Embedded systems are SUPPOSED to be easy and fun, that's why we choose this as a career or hobby.  This tool seeks  to enhance the fun parts, rather than "get in the way". 
 
+The goal is to create realtime, embedded control systems for robots and industrial control, and spend minimum effort on the tool itself, and allow focus on the engineering effort.
+
 = Outline and Overview =
 
 Overview outline:
