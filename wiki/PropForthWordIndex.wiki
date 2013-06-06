@@ -1,5 +1,5 @@
 #summary Index of Forth words for V5.0
-#labels v5.0,Featured
+#labels v5.0
 
 <wiki:toc max_depth="9" />
 
