@@ -1,5 +1,5 @@
 #summary Do the required steps first
-#labels v5.5,Featured
+#labels v5.5,Deprecated
 
 = What's the LittleRobot again?  =
 
