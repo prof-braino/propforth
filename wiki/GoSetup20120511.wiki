@@ -1,5 +1,5 @@
 #summary Using Go1.0.1 from 2012 April 26
-#labels v5.2BETA,Featured,v5.0
+#labels v5.2BETA,v5.0
 
 <wiki:toc max_depth="9" />
 
