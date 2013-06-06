@@ -27,6 +27,8 @@ The only really unusual aspect of propforth is the "stack".  Once you figure thi
 
 == download and install ==
 
+=== PropTool ===
+
 download and install proptool to  your PC.  It will automatically install the proper USB drivers.  
 
 The version used at this writing is Proptool v1.3.2.  You should usually use the lasted if a newer version is available. 
@@ -35,8 +37,36 @@ http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1
 
 http://www.parallax.com/tabid/832/Default.aspx
 
+=== TERAMTERM ===
 
+Download and install Teraterm
 
+http://ttssh2.sourceforge.jp/index.html.en
+
+Tera term is a VT100 terminal emulation program.  Any VT series terminal emulation program should work, we use this one as it is the most well know and best established.  It just works. 
+
+===  PropForth ===
+
+Download and extract the Propforth archive.  This has ALL the software and source code you need to become and absolute ninja with propforth.  
+
+http://propforth.googlecode.com/files/PropForth-V5.5-20130317.zip
+
+http://code.google.com/p/propforth/downloads/detail?name=PropForth-V5.5-20130317.zip
+
+Extract this to a convenient place on your PC.  Make it easy to find, you will be going here often. 
+
+In the extracted archive, find the Current Release directory.
+
+In this directory, find the Propforth directory.
+
+In here find Propforth.spin.  Propforth.spin is the simple development kernel, you want this to start.  
+
+  * Load this kernel using the prop tool
+  * After its loaded, play with it using teraterm 
+
+ 
+
+-----
 
 = The old page =
 
