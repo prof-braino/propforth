@@ -8,11 +8,15 @@ The "stack".  Once you figure this out, you are golden.
 <wiki:toc max_depth="9" />
 
 
-= Simple Instructions =
+= The old page =
+
+Tell me itf you prefer this old page better than the above.
+
+== Simple Instructions ==
  
 You should be able to get up to speed in an afternoon. 
 
-== first Pass 20 minutes ==
+=== first Pass 20 minutes ===
 
   * Read this page
   * download and instal the PropTool http://www.parallax.com/ProductInfo/Microcontrollers/PropellerDownloads/tabid/442/Default.aspx
@@ -26,7 +30,7 @@ You are now ready to get started.
 
 REMEMBER:  Just skim the reference manual the first time through.  It should take no more than 20 minutes (otherwise you are not skimming enough).  
 
-== Second pass 2 hours ==
+=== Second pass 2 hours ===
 
   * READ (not just skim) the first for sections of PropForth.htm (the reference manual) doing the examples as you go
 
@@ -35,7 +39,7 @@ REMEMBER:  After your SKIMMED the first four sections, go back and read it again
 
 
 
-= Whats all the rest? =
+== Whats all the rest? ==
 
 Some folks might notice that there is more material beyond  !PropForth.spin and !PropForth.htm 
 
@@ -43,7 +47,7 @@ In fact, there is a TON more stuff.  EVERYTHING is included, to the extent that 
 
 YOU DON'T want to do this just yet!  There are only about five people in the world that can use the extra stuff, and I'm not even one of them. Sal is very thorough.  He knows that if we did our job right, somebody will eventually learn enough and want to use the full power of Propforth.  But this is the long term use, we need to focus on the immediate needs of the beginners. 
 
-= What do I really want to do? =
+== What do I really want to do? ==
 
 Fist thing you want to do is try all the examples.  
 
