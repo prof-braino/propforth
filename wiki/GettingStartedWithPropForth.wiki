@@ -27,7 +27,7 @@ The only really unusual aspect of propforth is the "stack".  Once you figure thi
 
 == download and install ==
 
-=== PropTool ===
+=== !PropTool ===
 
 download and install proptool to  your PC.  It will automatically install the proper USB drivers.  
 
@@ -45,7 +45,7 @@ http://ttssh2.sourceforge.jp/index.html.en
 
 Tera term is a VT100 terminal emulation program.  Any VT series terminal emulation program should work, we use this one as it is the most well know and best established.  It just works. 
 
-===  PropForth ===
+===  !PropForth ===
 
 Download and extract the Propforth archive.  This has ALL the software and source code you need to become and absolute ninja with propforth.  
 
