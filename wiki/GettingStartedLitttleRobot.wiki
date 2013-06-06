@@ -1,14 +1,93 @@
 #summary Do the required steps first
 #labels v5.5
 
-= Introduction =
+= What's the LittleRobot again?  =
 
-Add your content here.
+The LittleRobot Project is the demo for Propforth v5.5
+
+There are about a zillion pages on this wiki with LittleRobot in the title, refer to those for anything you wish to know.  For anything else, please ask; if you have a question, others do too, and I can't answer if you don't ask. 
 
 
-= Details =
+= Prerequisites =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Not kidding, if you haven't done these set up steps, do them now or it won't work. 
+
+The following needs to be in place to play this game: 
+
+   * PC
+   * Proptool
+   * tereaterm
+   * propforth
+
+See GettingStartedWithPropForth
+
+http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth
+   
+= Start =
+
+After you have followed the instruction in GettingStartedWithPropForth,  you should understand and perform the  following 
+
+  * Turnon the PC
+  * Connect the Qucikstart 
+  * Start Teraterm 
+  * Verify the Green LED on the Quickstart board
+  * Verify the propforth command prompt
+
+= Load EEprom Kermel =
+
+From the download archive find
+
+`../ Current Release / PropForthEEprom  / EEkernel.spin`
+
+Load this to the Quickstart using the Proptool. 
+
+NOTICE: the eeprom kerenl automatically tries to load a configuration file if one is present.  To boot without auto loading the config file, simply hold down the ESC key until the cursor moves across the screen.  If propforth sees the ESC key is down during boot, it skips the autoboot. 
+
+How long do you have from hitting the reset button until you have to press the ESC key to prevent autoboot?
+
+= Load Bot.f = 
+ 
+In the extensions directory
+
+` .. \ Current Release \ Extesnions \ `
+
+Find the bot.f program
+
+` .. \ Current Release \ Extesnions \ bot.f`
+
+Open this with and editor and paste it into the teraterm window. 
+
+This creates a bunch of file on the Quickstart EEprom.
+
+To see the list of files, do file system list command 
+
+{{{
+fsls
+}}}
+
+
+If the file need to be erased, do the clear file system command
+
+{{{
+fsclear
+}}}
+
+To read a file from eeprom (display it on the teraterm screen) do the read file command using the file name
+
+{{{
+fsread bot.f
+}}}
+
+To write a file to eeprom, use the write file command (see the example of this in action in bot.f on the PC).  Notice that the file is terminaled when the input stream sees  `...`
+
+{{{
+fswrite myfile
+
+<some lines>
+
+...
+}}}
+
+=  Build the bot =
+
+Build the LittleRobot according to the instructions.  The instructions are basically put the parts together the way you think it will work the best, and/or change this until you are happy.  The way I did it was just an example and has a couple silly mistakes which you are expected to spot and improve.
