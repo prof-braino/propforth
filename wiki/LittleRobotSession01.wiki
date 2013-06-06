@@ -1,5 +1,5 @@
 #summary Blinky LED is traditionally the second program
-#labels LittleRobot,v5.5
+#labels LittleRobot,v5.5,Deprecated
 
 = Why Blinky LED =
 
