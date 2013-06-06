@@ -1,0 +1,110 @@
+#summary Blinky LED is traditionally the second program
+
+= Why Blinky LED =
+
+The most difficult part about getting stated is simply controlling an IO pin. In the old days this way a big deal. 
+
+= Prerequisites =
+
+The following needs to be in place to play this game: 
+
+   * PC
+   * Proptool
+   * tereaterm
+   * propforth
+
+See GettingStartedWithPropForth
+
+http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth
+   
+= Start =
+
+After you have followed the instruction in GettingStartedWithPropForth,  you should understand and perform the  following 
+
+  * Turnon the PC
+  * Connect the Qucikstart 
+  * Start Teraterm 
+  * Verify the Green LED on the Quickstart board
+  * Verify the propforth command prompt
+
+= Blinky LED =
+
+Point out the LEDs are by P16 through P23
+
+== a single LED ==
+
+Instruct the kids to play with:
+
+{{{
+16 pinout
+16 pinhi
+}}}
+
+CHECK - DID the blue LED by P16 turn on after you typed `16 pinhi`?
+
+{{{
+16 pinlo
+16 pinin
+}}}
+
+Have them turn on various combinations of LEDs
+
+== Sequence of LEDs ==
+
+*do ... loop* 
+
+Using pinout pinhi pinlo delms i +
+
+Have kids make an LED flash on for 100 ms, and flash on for 500 ms, using do loop
+
+Leader decided to make LEDs flash once in increasing order ` i 16 +`
+
+Second leaded decided to make them flash again in decreasing order `23 i - `
+
+Remember to include ascending and descending LEDs for the rest of the class
+
+
+{{{
+: outs 8 0 do i 16 + dup . pinout loop ;
+
+: forward 8 0 do i 16 + pinhi 200 delms  i 16 + pinlo loop ;
+
+: backward 8 0 do 23 i -  pinhi 500 delms  23 i - pinlo  loop ;
+
+}}}
+
+
+-----
+
+
+= EXPLANATION:=
+
+`delms` is DELAY for MILLISECONDS.  Milliseconds is represented by the value on the stack.  100  milliseconds is 1 seocnd, 1 millisecond is too quick to see. 
+
+What is the smallest number of milliseconds you can see? 
+
+What is the Largest number of milliseconds you can use? How long does THAT take? 
+
+How to stop the delms early? Hint: its easier than you thought.
+
+-----
+
+Defining a "word" begins with a COLON *`:`*
+
+After the colon is a blank space.  Colon means "take the letters after the space, until the next space, and make that the name of my routine". 
+
+The "word", in this case `greet`, is the name or identifier for the word.
+
+The definition of what the word does is any sequence of valid forth words.  
+
+The first FORTH word is dot-double-quote *`."`*
+
+*`."`* (dot-double-quote) says "start making some text".  After `."` (dot-double-quote) is a space, and then a bunch of text. 
+
+`."` (dot-double-quote) is ended by one double quote *`"`*
+
+One double quote `"` says " I'm done making text".
+
+The semi-colon *`;`* ends the word definition.  This marked the end of the definition started by the colon. 
+
+NOTICE!!!!! If you make a typo, FORTH DOESN'T try to guess that its a mistake.  FORTH is not smart, and trusts you to tell it to do what you want.  IF YOU MAKE A TYPO, hit the *black reset button* on the quickstart and start again.  This might seem awkward at first, but later it becomes very powerful. 
