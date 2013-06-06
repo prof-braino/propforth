@@ -5,6 +5,8 @@
 
 The LittleRobot Project is the demo for Propforth v5.5
 
+The goal is to built a robot for the least possible cost, with the least required  effort, and still get functional robot that moves and senses the environment in some way.  This mobile robotic computing platform can be upgraded in any way, and still use the same micro control and software.  
+
 There are about a zillion pages on this wiki with LittleRobot in the title, refer to those for anything you wish to know.  For anything else, please ask; if you have a question, others do too, and I can't answer if you don't ask. 
 
 
