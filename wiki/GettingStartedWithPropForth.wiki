@@ -81,11 +81,9 @@ Now the fun part begins.  Do the following and you are well on you way to becomi
 
 ===  Hello World ===
 
-Do the hello workd activity, then come back here.
+Do the hello world activity, then come back here.
 
 http://code.google.com/p/propforth/wiki/GettingStartedHelloWord
-
-
 
 === Blinky LED ===
 
@@ -118,7 +116,7 @@ Please continue with the Little Robot instructions here (add link)
 
 = The old page =
 
-Tell me itf you prefer this old page better than the above.
+Tell me if you prefer this old page better than the above.
 
 == Simple Instructions ==
  
