@@ -1,11 +1,41 @@
 #summary BEGINNERS START HERE
 #labels v5.3,Featured,v5.5
 
-FIRST THING:  STACKS! http://www.forth.org/svfig/Len/softstak.htm
 
-The "stack".  Once you figure this out, you are golden. 
 
 <wiki:toc max_depth="9" />
+
+
+= the New version of this page 20130606 =
+
+Here's the TO DO to get started. Just DO these to get started playing, detailed explanations  will follow according to questions you ask. 
+
+Overview outline:
+
+  * Download and install the proptool + drivers, and teraterm 
+  * download and extract the Propforth archive
+  * connect the Quickstart board to the PC with the USB cable
+  * load the propforth kernel to the quickstart using Proptool
+  * connect to the quickstart using teraterm and see the propforth prompt
+  * load the LittleRobot program bot.f
+  * built the bot and play. 
+
+
+About Stacks!  STACKS! http://www.forth.org/svfig/Len/softstak.htm
+
+The only really unusual aspect of propforth is the "stack".  Once you figure this out, you are golden. 
+
+== download and install ==
+
+download and install proptool to  your PC.  It will automatically install the proper USB drivers.  
+
+The version used at this writing is Proptool v1.3.2.  You should usually use the lasted if a newer version is available. 
+
+http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1.3.2.zip
+
+http://www.parallax.com/tabid/832/Default.aspx
+
+
 
 
 = The old page =
