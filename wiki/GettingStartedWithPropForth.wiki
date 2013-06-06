@@ -10,6 +10,14 @@
 
 Here's the TO DO to get started. Just DO these to get started playing, detailed explanations  will follow according to questions you ask. 
 
+= About Propforth =
+
+PropForth is an interactive development environment for the Parallax micro controller.  This tool allow one to perform LOTS or small experiment quickly, rather than the traditional method of creating one large experiment slowly.  The result is that one encounters fewer, smaller problem at a time.  A fewer small issues are easier to resolve than one giant issue, this lead to faster development and more fun more quickly. 
+
+
+
+= Outline and Overview =
+
 Overview outline:
 
   * Download and install the proptool + drivers, and teraterm 
