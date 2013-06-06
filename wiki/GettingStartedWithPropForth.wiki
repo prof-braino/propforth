@@ -71,7 +71,17 @@ Now the fun part begins.  Do the following and you are well on you way to becomi
 
 ===  Hello World ===
 
+Do the hello workd activity, then come back here.
+
+http://code.google.com/p/propforth/wiki/GettingStartedHelloWord
+
+
+
 === Blinky LED ===
+
+Do the blink LED activity, then come back here.
+
+
 
 === BOT.F === 
  
