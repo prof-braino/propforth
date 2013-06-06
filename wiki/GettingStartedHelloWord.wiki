@@ -1,0 +1,91 @@
+#summary The Hello World program is traditionally the first program
+#labels v5.5
+
+= Why Hello world?  =
+
+In the old days, the first task was to show that we could actually talk to the micro controller, and show that it responds to commands.  So we woke it up and asked it to say Hello!  
+
+= Prerequisites =
+
+The following needs to be in place to play this game: 
+
+   * PC
+   * Proptool
+   * tereaterm
+   * propforth
+
+See GettingStartedWithPropForth
+
+http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth
+   
+= Start =
+
+After you have followed the instruction in GettingStartedWithPropForth,  you should understand and perform the  following 
+
+  * Turnon the PC
+  * Connect the Qucikstart 
+  * Start Teraterm 
+  * Verify the Green LED on the Quickstart board
+  * Verify the propforth command prompt
+
+= Hello World =
+
+Now we are going to write a program.  A program routine in FORTH is called a "word".  Defining the "word" puts your "word" in the FORTH "dictionary".  
+
+Type the following example, starting with the COLON `:` and ending with the second "greet".  You MUST include the semicolon `;` and blank line 
+
+REMBMER!!! If you leave off the colon, the spaces or the semi colon, it won't work right!  Tr is and see if yo don't believe it!  
+
+* Hit the reset if you make a mistake and start over.*
+
+Instruct the kids to type in:
+
+{{{
+: greet ." Hello World " ;
+
+greet
+}}}
+
+EXPLANATION:
+
+Defining a "word" begins with a COLON *`:`*
+
+After the colon is a blank space.  Colon means "take the letters after the space, until the next space, and make that the name of my routine". 
+
+The "word", in this case `greet`, is the name or identifier for the word.
+
+The definition of what the word does is any sequence of valid forth words.  
+
+The first FORTH word is dot-double-quote *`."`*
+
+*`."`* (dot-double-quote) says "start making some text".  After `."` (dot-double-quote) is a space, and then a bunch of text. 
+
+`."` (dot-double-quote) is ended by one double quote *`"`*
+
+One double quote `"` says " I'm done making text".
+
+The semi-colon *`;`* ends the word definition.  This marked the end of the definition started by the colon. 
+
+NOTICE!!!!! If you make a typo, FORTH DOESN'T try to guess that its a mistake.  FORTH is not smart, and trusts you to tell it to do what you want.  IF YOU MAKE A TYPO, hit the *black reset button* on the quickstart and start again.  This might seem awkward at first, but later it becomes very powerful. 
+
+
+The kids all did something like
+
+{{{ 
+: tommy ." I like mcdonalds " ; 
+: billy ." burritos give me gas ooh yeah " ;
+}}}
+
+Success!
+
+To  move on, have the kid teach the next kid to do the same
+
+= New Guy Notes =
+
+To demonstrate understanding, each participant must teach the task to the next participant. 
+
+Demonstrate the task until at least one kid gets it.  Have that kid teach any kid that s have problems.  The "mentor" may NOT touch the equipment in any way, only talk.  The kid having question gets to drive, only the person being taught gets to touch and do.  
+
+As each participant grasps the material, they teach others until the entire class has succeeded. 
+
+
