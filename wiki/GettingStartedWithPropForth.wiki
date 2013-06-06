@@ -20,11 +20,6 @@ Overview outline:
   * load the LittleRobot program bot.f
   * built the bot and play. 
 
-
-About Stacks!  STACKS! http://www.forth.org/svfig/Len/softstak.htm
-
-The only really unusual aspect of propforth is the "stack".  Once you figure this out, you are golden. 
-
 == download and install ==
 
 === !PropTool ===
@@ -64,7 +59,38 @@ In here find Propforth.spin.  Propforth.spin is the simple development kernel, y
   * Load this kernel using the prop tool
   * After its loaded, play with it using teraterm 
 
+== Mention STACKS ==
+
+About Stacks!  STACKS! http://www.forth.org/svfig/Len/softstak.htm
+
+The only really unusual aspect of propforth is the "stack".  Once you figure this out, you are golden.  The numbers are treated like a stack of plates, that is all.  
+
+== START PLAYING ==
+
+Now the fun part begins.  Do the following and you are well on you way to becoming an embedded systems micro controller guru.
+
+===  Hello World ===
+
+=== Blinky LED ===
+
+=== BOT.F === 
  
+BOT.F is the program for the PropForth demo, the LittleRobot project. 
+
+This project introduces the next kernel, 
+
+../Current Release/ PropforthEEprom / EEpromKernmel.spin
+
+Load this kernel using the prop tool.
+
+Paste the bot.f program into the teraterm terminal window.
+
+When you reboot, the PropForth will configure it to the hardware configutration you built, either BOT1 or BOT2 as explained in the next page. 
+
+
+The Getting Started instructions end here. 
+
+Please continue with the Little Robot instructions here (add link)
 
 -----
 
