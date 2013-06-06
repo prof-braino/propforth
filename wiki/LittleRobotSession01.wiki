@@ -1,49 +1,64 @@
-#summary The first session had five kids
+#summary Blinky LED is traditionally the second program
 #labels LittleRobot,v5.5
 
-= Introduction =
+= Why Blinky LED =
 
-We were advised that the kids should start playing as soon as possible.
+The most difficult part about getting stated is simply controlling an IO pin. In the old days this way a big deal. 
 
-To do this, we skipped showing the boring set up stuff, and went directly to the experiments
+= Prerequisites =
 
-The setup was:
+The following needs to be in place to play this game: 
 
-Window Laptop with PropTool, Mac Laptiop with BST
+   * PC
+   * Proptool
+   * tereaterm
+   * propforth
 
-Download propforth archive
+See GettingStartedWithPropForth
 
-Load Devkernel.spin
-
-Download teraterm (Windows), coolterm (mac)
-
-Connect the Quickstart to the USB port on the laptop (notice the first time drive install)
-
-verify the green LED lights, and teh propforth command prompt dispays
-
+http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth
+   
 = Start =
 
-20130426
+After you have followed the instruction in GettingStartedWithPropForth,  you should understand and perform the  following 
 
-Show the kids how to connect the quickstart (with devkernel.soin loaded into EEPROM) to  the USB port
+  * Turnon the PC
+  * Connect the Qucikstart 
+  * Start Teraterm 
+  * Verify the Green LED on the Quickstart board
+  * Verify the propforth command prompt
 
-Verify the Green LED
+= Blinky LED =
 
-Verify the propforth command pompt
+Point out the LEDs are by P16 through P23
 
-= Hello World =
+== a single LED ==
 
-Now we are going to write a program.  A program routine in FORTH is called a "word".  Defining the "word" puts your "word" in the FORTH "dictionary".  
-
-Type the following example, starting with the COLON `:` and ending with the second "greet".  You MUST include the semicolon `;` and blank line 
-
-Instruct the kids to type in:
+Instruct the kids to play with:
 
 {{{
-: greet ." Hello World " ;
-
-greet
+16 pinout
+16 pinhi
 }}}
+
+CHECK - DID the blue LED by P16 turn on after you typed `16 pinhi`?
+
+{{{
+16 pinlo
+16 pinin
+}}}
+
+Have them turn on various combinations of LEDs
+
+== Sequnce of LEDs ==
+
+
+
+
+-----
+
+-----
+
 
 EXPLANATION:
 
@@ -66,76 +81,3 @@ One double quote `"` says " I'm done making text".
 The semi-colon *`;`* ends the word definition.  This marked the end of the definition started by the colon. 
 
 NOTICE!!!!! If you make a typo, FORTH DOESN'T try to guess that its a mistake.  FORTH is not smart, and trusts you to tell it to do what you want.  IF YOU MAKE A TYPO, hit the *black reset button* on the quickstart and start again.  This might seem awkward at first, but later it becomes very powerful. 
-
-
-The kids all did something like
-
-{{{ 
-: tommy ." I like mcdonalds " ; 
-: billy ." burritos give me gas ooh yeah " ;
-}}}
-
-Success!
-
-To  move on, have the kid teach the next kid to do the same
-
-=  LED 1 =
-
-Point out the LEDs are by P16 through P23
-
-Instruct the kids to play with:
-
-{{{
-16 pinout
-16 pinhi
-}}}
-
-CHECK - DID the blue LED by P16 turn on after you typed `16 pinhi`?
-
-{{{
-16 pinlo
-16 pinin
-}}}
-
-Have them turn on various combinations of LEDs
-
-Success!
-
-To  move on, have the kid teach the next kid to do the same
-
-= Notes =
-
-For this session, all the kids had to work from one PC
-
-After 45 minutes, some of the kids started to drift away, starting with the youngest more or less.  Take a break after 45 minutes.
-
-= FORTH PROGRAM SYNTAX =
-
-When we make our own programs:
-  * Each forth word starts with colon `:`
-  * The new word has a unique name identifier
-  * Each forth word ends with a semicolon `;`
-  * If the word does more than about 7 things, its probably too long.
-  * If the word does less than about too things, it might be too short
-
-= words up till today =
-
-These are the FORTH words introduced so far:
-
-session 01
-
-|| word || name || stack note || used for || terminator ||
-|| pinout || pin-out || ( n - )||  make a pin an output || space ||
-|| pinhi || pin-high || ( n - )||  make a pin a logically high Vdd || space ||
-|| pinlo || pin-low || ( n - )||  make a pin a logically low Vss || space ||
-|| pinin || pin-in || ( n - )||  make a pin an input || space ||
-|| :   || colon || (identifer - ) || starts a new word definition || semi colon ; ||
-|| ; || semicolon || ( - ) || ends a new word definition started by colon || space ||
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
