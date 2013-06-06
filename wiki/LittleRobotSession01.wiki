@@ -50,17 +50,45 @@ CHECK - DID the blue LED by P16 turn on after you typed `16 pinhi`?
 
 Have them turn on various combinations of LEDs
 
-== Sequnce of LEDs ==
+== Sequence of LEDs ==
+
+*do ... loop* 
+
+Using pinout pinhi pinlo delms i +
+
+Have kids make an LED flash on for 100 ms, and flash on for 500 ms, using do loop
+
+Leader decided to make LEDs flash once in increasing order ` i 16 +`
+
+Second leaded decided to make them flash again in decreasing order `23 i - `
+
+Remember to include ascending and descending LEDs for the rest of the class
 
 
+{{{
+: outs 8 0 do i 16 + dup . pinout loop ;
+
+: forward 8 0 do i 16 + pinhi 200 delms  i 16 + pinlo loop ;
+
+: backward 8 0 do 23 i -  pinhi 500 delms  23 i - pinlo  loop ;
+
+}}}
 
 
 -----
 
+
+= EXPLANATION:=
+
+`delms` is DELAY for MILLISECONDS.  Milliseconds is represented by the value on the stack.  100  milliseconds is 1 seocnd, 1 millisecond is too quick to see. 
+
+What is the smallest number of milliseconds you can see? 
+
+What is the Largest number of milliseconds you can use? How long does THAT take? 
+
+How to stop the delms early? Hint: its easier than you thought.
+
 -----
-
-
-EXPLANATION:
 
 Defining a "word" begins with a COLON *`:`*
 
