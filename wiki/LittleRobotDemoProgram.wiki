@@ -88,8 +88,8 @@ Choose BOT 1 if you are Ancona Spring 2013
 
 These pins are the same on all configurations
 
-|| || || ||
-|| Battery pack || Vin   Vss/GND ||
+||POWER || 5 volts || Vss/GND ||3.3v || 
+|| Battery pack || Vin ||  Vss/GND ||
 || || Vin = RED wire|| 
 || || Vss/GND = BLACK wire|| 
 
