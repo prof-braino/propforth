@@ -5,7 +5,7 @@
 
 The LittleRobot Project is the demo for Propforth v5.5
 
-There are about a zillion pages on this wiki with LittleRobot in the title, refer to those for anything you wish to know.  For anything else, please ask; if you have a question, others do too, and I can't answer if you don't ask. 
+There are several pages on this wiki with LittleRobot in the title, refer to those for anything you wish to know.  For anything not covered, please ask; if you have a question, others do too, and I can't answer if you don't ask. 
 
 
 = Prerequisites =
