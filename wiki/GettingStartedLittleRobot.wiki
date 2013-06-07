@@ -91,3 +91,7 @@ fswrite myfile
 =  Build the bot =
 
 Build the LittleRobot according to the instructions.  The instructions are basically put the parts together the way you think it will work the best, and/or change this until you are happy.  The way I did it was just an example and has a couple silly mistakes which you are expected to spot and improve.
+
+The main concern is getting the pin assignments correct. Follow the instructions in:
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram
