@@ -63,6 +63,8 @@ Bot 2 uses the LEDs differently.  We'll try this in a later session.
 
 == Connect the wires per the chart ==
 
+=== PIO - Pin Assignments to the Prop 40 pin connector ===
+
 Choose BOT 1 if you are Ancona Spring 2013
 
 || || Bot1 || Bot2 ||
@@ -86,12 +88,17 @@ Choose BOT 1 if you are Ancona Spring 2013
 || --   || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
 || || || || REMEMBER HC05/HC06 uses Vdd 3.3 volts!!! The rest use Vin!!!!||
 
+=== POWER - Connections from the Battery pack to all the devices ===
+
 These pins are the same on all configurations
 
-||POWER || 5 volts || Vss/GND ||3.3v || 
-|| Battery pack || Vin ||  Vss/GND ||
-|| || Vin = RED wire|| 
-|| || Vss/GND = BLACK wire|| 
+||POWER || 5v Vin || Vss/GND ||3.3v Vdd || 
+|| Battery pack || Vin = RED wire ||  Vss/GND = BLACK wire || - ||
+|| Prop || Vin || Vss/GND || HC05/HC06 ||
+|| HC05/HC06 || - || Vss/GND || Vdd/3.3v || 
+|| MotorA || Vin || Vss/GND ||  - ||
+|| MotorB || Vin || Vss/GND ||  - ||
+|| SR04 || Vin || Vss/GND ||  - ||
 
 = bot.f =
 
