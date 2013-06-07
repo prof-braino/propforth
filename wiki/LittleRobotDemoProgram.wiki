@@ -94,11 +94,17 @@ These pins are the same on all configurations
 
 ||POWER || 5v Vin || Vss/GND ||3.3v Vdd || 
 || Battery pack || Vin = RED wire ||  Vss/GND = BLACK wire || - ||
-|| Prop || Vin || Vss/GND || HC05/HC06 ||
-|| HC05/HC06 || - || Vss/GND || Vdd/3.3v || 
 || MotorA || Vin || Vss/GND ||  - ||
 || MotorB || Vin || Vss/GND ||  - ||
 || SR04 || Vin || Vss/GND ||  - ||
+|| Prop || Vin || Vss/GND || HC05/HC06 ||
+|| HC05/HC06 || - || Vss/GND || Vdd/3.3v || 
+
+REMEMBER:
+  * Only HC05/HC06 connects to Vdd (3.3 volts)
+  * The remaining parts connect to Vin 5.0 volts)
+  * The SR04 MUST have the 330 ohm resistor between ECHO and P17, or the prop input will be damaged!
+
 
 = bot.f =
 
