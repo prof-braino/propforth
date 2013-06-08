@@ -5,6 +5,21 @@
 
 = Introduction =
 
+Goal:
+
+How to Start: 
+
+Goal: Setup the PropQuickstart, and build the LittleRobots, a lowest-cost mobile robotic platform, that moves and senses the environment.  FAST and FUN!
+
+How To Get Started: See the FEATURED column on the main pages and find:
+
+  * Free download of the latest propforth firmware and source code, including extensions ( PropForth v5.5 )
+  * Instruction for getting propforth set up ( GettingStartedWithPropforth )
+  * Instructions for builing the low cost LittleRobot (tm) demo project ( GettingStartedLittleRobot )
+  * Explanation of the pin connections and demo program ( LittleRobotDemoProgram ) 
+
+= Lots of stuff to look at, if you are so inclined =
+
 LittleRobot™ - index
 
 
