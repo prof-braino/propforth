@@ -5,11 +5,11 @@
 
 = Introduction =
 
-Goal:
-
-How to Start: 
+*Goal*
 
 Goal: Setup the PropQuickstart, and build the LittleRobots, a lowest-cost mobile robotic platform, that moves and senses the environment.  FAST and FUN!
+
+*How to Start*
 
 How To Get Started: See the FEATURED column on the main pages and find:
 
