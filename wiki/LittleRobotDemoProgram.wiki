@@ -26,12 +26,14 @@ The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held
 27 px? 2 px? 0= and [if 1 wconstant build_bot2 ]
 }}}
 
-  * If 2 is high ( bt Tx ) and 27 is low use  BOT1 pinout ( *USE BOT1* )
-  * If 27 is high ( bt Tx ) and 2 is low use  BOT2 pinout
+  * If 2 is high ( bt Tx ) and 27 is low use  BOT1 pinout ( ~~USE BOT1~~ )
+  * If 27 is high ( bt Tx ) and 2 is low use  BOT2 pinout ( trying bot 2 due to SR04 )
 
 == BOT1 ==
 
-We are using BOT 1 for the time being, it flashes the Quickstart LEDs
+~~We are using BOT 1 for the time being, it flashes the Quickstart LEDs~~
+
+The SR04 on pins 16 and 17 might have a problem, try bot2
 
 {{{
 
@@ -67,7 +69,7 @@ Bot 2 uses the LEDs differently.  We'll try this in a later session.
 
 === PIO - Pin Assignments to the Prop 40 pin connector ===
 
-Choose BOT 1 if you are Ancona Spring 2013
+We used BOT 1 in class Ancona Spring 2013.  But now try BOT2.
 
 || || Bot1 || Bot2 ||
 || SR04  || 16 trig, 17 echo || P24 trig, P25 echo  || Vin ||
