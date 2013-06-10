@@ -801,7 +801,11 @@ rot + 2/ swap - .
 
 : dd _sr04_distance L@ . ; 
 
-:  SR04 cls ." sr04 test "  begin 10 10 AT dd  1 delms fkey? swap drop until ; 
+:  sr04 cls ." sr04 test " 
+
+0 10 AT ." SR04 mm= ...." 
+
+ begin 10 10 AT dd ."    " 1 delms fkey? swap drop until ; 
 
 \ braino debug 20130610
 
