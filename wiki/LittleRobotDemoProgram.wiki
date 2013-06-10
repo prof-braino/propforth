@@ -15,7 +15,9 @@ Check the notes to mod the software for you bot!
 The BOT.F program below has two options for connecting the pins for the peripherals (these are the sensors and actuators, the motors and range finder).
 
 
-*Ancona is using BOT1*
+*Ancona ~~is~~ WAS using BOT1*
+
+There may be an issue with Quickstart pins 16 and 17 for SR04 due to the LEDs and drivers.  TRYING BOT2, just shift the wires.
 
 The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held high.  So the program can find where the Bluetooth is by looking for the Blue tooth Tx line. 
 
