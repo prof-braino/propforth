@@ -774,6 +774,37 @@ _sr04_distance L@
 rot + 2/ swap - .
 ;
 
+\ braino debug 20130610
+
+
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
+
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+: dd _sr04_distance L@ . ; 
+
+:  SR04 cls ." sr04 test "  begin 10 10 AT dd  1 delms fkey? swap drop until ; 
+
+\ braino debug 20130610
+
 
 : onreset6
 cr ." INITALIZING motors and sensor (cogs 0, 1, 2) in 1 second...." cr 1000 delms
