@@ -5,6 +5,10 @@
 
 The Full year class for Fall 2013 to Spring 2014 is the first attempt at a full school year duration class for LittleRobot. This is a follow on for the LittleRobot Pilot, find that page by filtering fo "deprecated" in this wiki. 
 
+The intend is to establish a class that can be administered by school staff directly, and involve little or no direct participation from the propforth team (if possible).
+
+It tentatively looks like the propforth team will have to give at least internet based support to the teaching staff.
+
 
 = Preparation = 
 
