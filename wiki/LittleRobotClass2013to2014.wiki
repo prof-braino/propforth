@@ -1,0 +1,66 @@
+#summary A full school year class using LittleRobot
+
+= Introduction =
+
+Add your content here.
+
+
+= Preparation = 
+
+order kits
+train teachers
+test teleconference 
+set up equipment
+inform parents
+
+= setup =
+
+room
+storage
+laptops
+kid equipment
+
+= Play Activity 1 - quickstart =
+
+Command line
+Hello Worlds
+Blinky LED
+loops
+
+= Play Activity 2 - mechanics =
+
+Broken wind up clock
+
+= Plays Activity 3 - Build the Bot =
+
+breakable parts - only get to do this ONCE
+
+LAYOUT
+TEST parts individually
+TEST PARTS together
+PUT WHEELS ON LAST
+TEST Fully assembled system
+
+= Play Activity 4 - Programming =
+
+Each sub activity here would take one or more weeks
+
+Auto Calibration.
+Close by not Too Close
+Find and object
+Circle around an object
+Wall following
+Once around the room (Direction and Delta)
+
+= Play Activity 5 - Complex Behaviors =
+
+Using simple activities, we can simiulate something that might look like complex, intelligent activities.
+
+Swarming
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
