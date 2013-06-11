@@ -1,8 +1,9 @@
 #summary A full school year class using LittleRobot
+#labels v5.5
 
 = Introduction =
 
-Add your content here.
+The Full year class for Fall 2013 to Spring 2014 is the first attempt at a full school year duration class for LittleRobot. This is a follow on for the LittleRobot Pilot, find that page by filtering fo "deprecated" in this wiki. 
 
 
 = Preparation = 
