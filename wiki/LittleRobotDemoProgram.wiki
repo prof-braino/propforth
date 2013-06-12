@@ -74,7 +74,7 @@ We used BOT 1 in class Ancona Spring 2013.  But now try BOT2.
 || || Bot1 || Bot2 ||
 || SR04  || 16 trig, 17 echo || P24 trig, P25 echo  || Vin ||
 || -- || P16 trig || P24 trig ||
-|| -- || P17 echo || P25 echo || BE SURE ECHO HAS 330 ohm resistor! ||
+|| -- || P17 echo || P25 echo || ~~BE SURE ECHO HAS 330 ohm resistor!~~ see note below ||
 || Ready LED || P3 || P23 ||
 || MotorA || d_24 d_25 d_26 d_27 || d_15 d_14 d_13 d_12|| Vin ||
 || -- ||  P24 = IN1 || P15 = IN1 || 
@@ -91,6 +91,26 @@ We used BOT 1 in class Ancona Spring 2013.  But now try BOT2.
 || --   || P0 = bt Rx  || P26 = bt Rx ||
 || --   || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
 || || || || REMEMBER HC05/HC06 uses Vdd 3.3 volts!!! The rest use Vin!!!!||
+
+  ==== UPDATE SR04 RESISTORS ====
+
+* UPDATE SR04 RESISTORS*
+
+Turns out there were at least two issues:
+
+  # the resistor on SR04 echo is 3.9 K ohms, NOT 330 ohms.
+  # The 330 ohm resistor may have cause a problem to corrected thus:
+
+If you tried the 330  ohm resistor, and now the 3.9 K ohm resistor does not work, you need to use a more robust solution.  This is a voltage divider, and was to be a later lesson.  But we can use it now, its great!
+
+  * Get two resistors 1.7 K and 3.3 K ohms, for the voltage divider
+  * connect one leg of each of the two resistors together, leaving the "tails" long to use as a connection.  You only need one connection here. This connection goes to P17 (or which ever pin you are using for prop input for SR04 echo)
+   * connect the other leg of the 3.3 k ohm resistor to ground
+   * connect the other leg of the 1.7 k ohm resistor to SR04 echo.
+
+When the bot is powered on, the SR04 works correctly.
+
+Note that the SR04 only reads correctly when the motors are stopped. This will be addressed later. 
 
 === POWER - Connections from the Battery pack to all the devices ===
 
