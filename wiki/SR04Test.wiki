@@ -61,7 +61,42 @@ Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should b
 = TEST CODE SR04test.f =
 
 {{{
+
 fl
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+0
+h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+fsload SR04test.f
+c" boot.f - Loaded SR04test.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
+fsls
+
+...
+
+\ ------------------------------------------------------------
+
 fswrite SR04test.f
 
 1 wconstant build_sr04
@@ -102,38 +137,67 @@ d_200 delms
 0 until
 ;
 
-...
+\ braino debug 20130610
 
-fswrite boot.f
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
 
-hA state orC! version W@ .cstr cr cr cr
-: findEETOP
-0
-h100000 h8000
-do
-i t0 2 eereadpage
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+: dd _sr04_distance L@ . ; 
+
+:  sr04 cls ." sr04 test " 
+
+0 10 AT ." SR04 mm= ...." 
+
+ begin 10 10 AT dd ."    " 1 delms fkey? swap drop until ; 
+
+: Message ."  Type sr04 dd or d to start the test, esc to exit " cr cr ;
+
+
+\ braino debug 20130610
+
+
+: onreset6
+cr ." INITALIZING SR04 sensor (cogs 2) in 2 second...." cr 2000 delms
+
+fkey? and fkey? and or h1B <>
 if
-leave
-else
-i h7FFE + t0 3 eereadpage
-if
-leave
-else
-drop i h8000 +
+\ c" init_motorA" 0 cogx
+\ c" init_motorB" 1 cogx
+c" _sr04_measure" 2 cogx
+ ."  motors and sensors initialized ... " cr cr
+cog? 
 then
-then
-h8000 +loop
+
+cr ." RESETING on cog6 now ....  "  cr  
+
+c" onreset6" (forget)
+
+
 ;
 
-c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
-c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
-fsload SR04test.f
-c" boot.f - Loaded SR04test.f~h0D~h0D" .cstr hA state andnC!
-c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 
-fsls
 
 ...
+
 
 }}}
 
