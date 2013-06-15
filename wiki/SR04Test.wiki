@@ -17,7 +17,11 @@ The SR04 output (echo pin) is at 5 volts. This is too high for the Prop, which u
 
 = The CORRECT SOLUTION(s)=
 
-The textbook solution is a voltage divider.  
+== The textbook solution is a voltage divider.  ==
+
+=== 1.7k and 3.3k ===
+
+This worked but the resistors might need to be changed again 
 
   * Use a 1.7k ohm resistor at the echo pin from the SRO4
   * use a 3.3k ohm resistor at the Prop input (pin 17 in Spring 2013 session)
@@ -25,7 +29,12 @@ The textbook solution is a voltage divider.
   
 I haven;'t figured out how to attach a picture here, but is you google for "5volt to 3.3volt voltage divider", you should get and image with correct connections.
 
-I tested this and the S04 began to function, even on units that I thought may have been damaged. 
+I tested this and the S04 began to functihttp://www.parallaxsemiconductor.com/an010on, even on units that I thought may have been damaged. 
+
+THIS STILL MIGHT BE TOO LOW!! 1.2 mA is too much!!
+It needs to be 500 uA!!!
+
+So 0.0012 A is too high, we want 0.0005 Amps maximum! 
 
 
 = From that Parallax App 10 Note = 
@@ -34,10 +43,11 @@ Parallax appnote (#10) "Low-cost Bidirectional Mixed-voltage Interfacing" - inte
 
 http://www.parallaxsemiconductor.com/an010
 
+A single resitor inline should do the trick.
+
 They calculate 4.6k as the minimum resistor value for 5 volt signals.
-100k resistors on 5V inputs from operator buttons. The frequencies aren't very high...
 
-
+Test 4.6 K !!!!
 
 = checking for damage =
 
