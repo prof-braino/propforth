@@ -1,0 +1,58 @@
+#summary Testing the SR04 with New Knowledge.
+
+= Introduction =
+
+Initially, the LittleRobot BOM specificed a 220-330 ohm resistor.  This was incorrect.  The new information is at:
+
+http://forums.parallax.com/showthread.php/148489-SR04-5-volt-to-3.3-volt
+
+and
+
+http://forums.parallax.com/showthread.php/148527-Input-clamping-diode-5v-to-3.3-volt-Max-and-Min-resistors
+
+
+= SR04 output issue =
+
+The SR04 output (echo pin) is at 5 volts. This is too high for the Prop, which uses 3.3 volts.  A directly connection would very quickly damage the prop input. 
+
+= The CORRECT SOLUTION(s)=
+
+The textbook solution is a voltage divider.  
+
+  * Use a 1.7k ohm resistor at the echo pin from the SRO4
+  * use a 3.3k ohm resistor at the Prop input (pin 17 in Spring 2013 session)
+  * connect the OTHER side of the 1.7k and 3.3k ohm resistors TOGETHER,  attach THE JUNCTION to ground.
+  
+I haven;'t figured out how to attach a picture here, but is you google for "5volt to 3.3volt voltage divider", you should get and image with correct connections.
+
+I tested this and the S04 began to function, even on units that I thought may have been damaged. 
+
+
+= From that Parallax App 10 Note = 
+
+Parallax appnote (#10) "Low-cost Bidirectional Mixed-voltage Interfacing" - interfacing 5V signals to the Prop using a resistor.
+
+http://www.parallaxsemiconductor.com/an010
+
+They calculate 4.6k as the minimum resistor value for 5 volt signals.
+100k resistors on 5V inputs from operator buttons. The frequencies aren't very high...
+
+
+
+= checking for damage =
+
+At least 4 of the ten Ancona Bots from Spring 2013 had the incorrect resistor. Here is how we check the imputs
+
+{{{
+How can we test if the protection diode is damaged?
+Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should be around 3.9V if the diode is intact and functioning properly. 
+}}}
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
