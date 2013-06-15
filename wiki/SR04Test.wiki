@@ -87,8 +87,8 @@ h8000 +loop
 
 c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
 c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
-fsload SR04test.f
-c" boot.f - Loaded SR04test.f~h0D~h0D" .cstr hA state andnC!
+fsload sr04test.f
+c" boot.f - Loaded sr04test.f~h0D~h0D" .cstr hA state andnC!
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 
 fsls
@@ -97,7 +97,7 @@ fsls
 
 \ ------------------------------------------------------------
 
-fswrite SR04test.f
+fswrite sr04test.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
@@ -132,8 +132,8 @@ d_170_000 clkfreq */
 
 
 _sr04_distance L!
-\ d_60 delms
-d_200 delms
+ d_60 delms
+\d_200 delms
 0 until
 ;
 
