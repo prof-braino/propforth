@@ -58,6 +58,84 @@ How can we test if the protection diode is damaged?
 Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should be around 3.9V if the diode is intact and functioning properly. 
 }}}
 
+= TEST CODE SR04test.f =
+
+{{{
+fl
+fswrite SR04test.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+16 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+17 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+
+: _sr04_measure
+c" MEASURE" cds W!
+4 state andnC!
+
+_sr04_trig pinlo _sr04_trig pinout
+_sr04_echo >m
+_sr04_trig >m
+begin
+dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+
+over dup dup dup
+
+waitpeq
+cnt COG@
+rot2
+
+waitpne
+cnt COG@ swap -
+d_170_000 clkfreq */
+
+
+_sr04_distance L!
+\ d_60 delms
+d_200 delms
+0 until
+;
+
+...
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+0
+h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+fsload sr04test.f
+c" boot.f - Loaded sr04test.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
+fsls
+
+...
+
+}}}
 
 
 = Details =
