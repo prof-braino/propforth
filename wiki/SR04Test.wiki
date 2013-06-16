@@ -167,7 +167,7 @@ _sr04_distance L!
 
 0 10 AT ." SR04 mm= ...." 
 
- begin 10 10 AT dd ."    " 1 delms fkey? swap drop until ; 
+ begin 10 10 AT dd ."    " 100 delms fkey? swap drop until ; 
 
 : Message ."  Type sr04 dd or d to start the test, esc to exit " cr cr ;
 
@@ -187,17 +187,15 @@ c" _sr04_measure" 2 cogx
 cog? 
 then
 
+Message 
+
 cr ." RESETING on cog6 now ....  "  cr  
 
 c" onreset6" (forget)
 
-
 ;
 
-
-
 ...
-
 
 }}}
 
