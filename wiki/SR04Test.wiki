@@ -130,7 +130,7 @@ begin
 
      _sr04_distance L!
      d_60 delms
-     \d_200 delms
+     \ d_200 delms
 0 until
 ;
 
