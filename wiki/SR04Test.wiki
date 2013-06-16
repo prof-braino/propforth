@@ -118,22 +118,19 @@ _sr04_trig pinlo _sr04_trig pinout
 _sr04_echo >m
 _sr04_trig >m
 begin
-dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
 
-over dup dup dup
+     dup _maskouthi dup dup drop _maskoutlo
+     over dup dup dup
+     cnt COG@
+     rot2
 
-waitpeq
-cnt COG@
-rot2
+     waitpne
+     cnt COG@ swap -
+     d_170_000 clkfreq */
 
-waitpne
-cnt COG@ swap -
-d_170_000 clkfreq */
-
-
-_sr04_distance L!
- d_60 delms
-\d_200 delms
+     _sr04_distance L!
+     d_60 delms
+     \d_200 delms
 0 until
 ;
 
