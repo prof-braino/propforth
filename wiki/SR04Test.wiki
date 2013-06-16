@@ -169,7 +169,7 @@ _sr04_distance L!
 
  begin 10 10 AT dd ."    " 100 delms fkey? swap drop until ; 
 
-: Message ."  Type sr04 dd or d to start the test, esc to exit " cr cr ;
+: Message cr cr ."  Type sr04 dd or d to start the test, esc to exit " cr cr ;
 
 
 \ braino debug 20130610
