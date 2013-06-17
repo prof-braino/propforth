@@ -1,0 +1,60 @@
+#summary Files specifying bot chassis and Wheels.
+
+= Introduction =
+
+The Files can view viewed and modified with OpenSCAD, a free open source 3D modeling  program.
+
+http://www.openscad.org/
+
+= LittleRobot.SCAD =
+
+The file LittleRobot.SCAD in the downloads section of this  wiki is the model Sal created, and is what appears in the Bot2Intro.mp4  video.
+
+= Wheels-max72-20130527.zip =
+
+Massimo (max72) posted his wheels for us.  
+
+Wheels-max72-20130527.zip
+
+= Making the PARTS =
+
+You can make there parts youself using the posted files.
+
+== Manually ==
+
+You can do this the hard way, read the files, check the measurements, do a layout, and cut the pieces by hand. 
+
+== 3D Printing ==
+
+A 3 D printer is another type of Robot.  You can build a RepRap for under $400 (last time I tried) or buy one for a little more. 
+
+Here's my notes, just to get you started
+
+http://reprap.org/wiki/PrusaBuildNotesBraino
+
+The current state of reprap changes almost daily, please search the newest, best options before beginning.  Last I heard, Mendel90 was the best. 
+
+== Laser Cutter ==
+
+Flat pieces can be laser cut.  To make the wheels, use Massimo's wheel file.  You can also laser cut Sal's wheels, but you have to dig through the file to find it , and Sal's wheels are designed for printing, and have compensation for thermal shrinkage.  But if you go this route, you'll be doing some tweaking, a couple small adjustments should not slow you down. 
+
+= FINDING EQUIPMENT =
+
+Look for a local hacker space or club. Those folks are usually very helpful to new members.  In Chicago, we have
+
+PS1 - PumpingStation1.org - oldest and best in Chicago.  Great folks.
+
+W88 - Workshop 88 - Way out in the Western suburbs.  Smaller than PS1, but has some VERY top notch engineers. 
+
+S67 - Sector67 - Actually in Wisconsin, its close enough to drive from Chicago. 
+
+If there isn't a hacker space near you, one will start as soon as you begin building your bot. Get two friends interested and boom! a hackerspace has begun. :)
+
+Also check out local universities and community colleges.  Also High Schools and Libraries  may have this equipment.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
