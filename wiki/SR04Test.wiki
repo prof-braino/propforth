@@ -60,6 +60,57 @@ Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should b
 
 = TEST CODE =
 
+== sr04 bot 2 ==
+
+this works in the bot with 1.8 and 3.3k
+
+{{{
+\ fsread sr04.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+16 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+17 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+
+: _sr04_measure
+c" MEASURE" cds W!
+4 state andnC!
+
+_sr04_trig pinlo _sr04_trig pinout
+_sr04_echo >m
+_sr04_trig >m
+begin
+dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+
+over dup dup dup
+
+waitpeq
+cnt COG@
+rot2
+
+waitpne
+cnt COG@ swap -
+d_170_000 clkfreq */
+
+
+_sr04_distance L!
+d_200 delms
+0 until
+;
+
+\ BOT 2 Cog6 ok
+
+
+}}}
+
+
+
 == SR04 without autoboot ==
 
 This worked with the 1.8k and 3.3k voltage divider, on batteries, on the bots
