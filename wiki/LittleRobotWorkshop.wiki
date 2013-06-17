@@ -323,6 +323,25 @@ It totally works and is awesome, but you have to be able to install and unsigned
 
 While the basic kit does not specific the micro controller, this project does requires a specific microcontroller, this ibeing the Parallax Propeller, in particular the Propeller Quickstart board.  This was suelected for maximum bang for the buck and because it the the most fun in my opinion. 
 
+= Notes =
+
+Voltage regulator and a second resistor (for the voltage divider) could be for the upgraded model, if we ever get that far.  as it is, we can only keep the price under $50 by volume buying. Even with out regulator, ( and certainly not with  LiPo and charger)  I don't think the price limit can be met by a one-off purchase, even directly from the cheapest source for each part from china. 
+
+The plan is to follow through with at least one iteration per the original constraints:
+
+ * No tools are required. (no soldering, no way to connect the regulator)
+ * No parts beyond what's in the box (can't even get something from the workbench, we're at the client site) 
+ * cost has to be under $50, including mark up for shipping and handling etc. (folks complain even this is too high)
+ * participants must be able to assemble and test the entire bot in under 2 hours, 
+ * must not require instructor to "do magic" on the boards (skilled operation like soldering, special programming, etc)
+ * must allow the last two hours for intro to programming
+
+if there is enough interest to justify an upgrade, I would definitely pursue a properly designed and assembled board. 
+
+Again the goals is to allow the kids to make a START.  They should be able to decide "this X is crap, I want to upgrade"
+
+The goal of this experiment is to see if we can find who interested and who's not, with risk to the least resources.   Parents MIGHT risk $50 on Billy's bot project, but event the rich families have trouble risking more than that on some stranger's untried odd-ball scheme. 
+
 
 = Details =
 
