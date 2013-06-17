@@ -58,7 +58,138 @@ How can we test if the protection diode is damaged?
 Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should be around 3.9V if the diode is intact and functioning properly. 
 }}}
 
-= TEST CODE SR04test.f =
+= TEST CODE =
+
+== SR04 without autoboot ==
+
+This worked with the 1.8k and 3.3k voltage divider, on batteries, on the bots
+
+{{{
+fl
+
+\ ascii code for red text      " ESC[31m "
+\ hex character codes            1b 5b 33 31 6d
+\ forth code for ascii red text v4.0: 1b emit 5b emit 33 emit 31 emit 6d emit          
+\ forth code for ascii red text v5.0: h_1B emit h_5B emit h_33 emit h_31 emit h_6D emit          
+
+\ ascii escape sequence start with ESC
+
+\ second char of two character is 64 to 95   (@ to _)  40h to 5Fh
+\ multi char are esc + [ + (@ to ~) 64 to 126  40h to  7Eh
+\ next is [   5Bh
+\ m is for graphics mode colors attributes
+{ : to57 csi ." 5;7f" ;  : to2010 csi ." 20;10f" ; }
+\ f is for position, needs character not value           
+
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
+
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+\  sr04
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+\	d_22 wconstant _sr04_trig
+	d_16 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+\	d_17 wconstant _sr04_echo
+	d_23 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+: _sr04_measure
+	c" MEASURE" cds W!
+	4 state andnC!
+
+	_sr04_trig pinlo _sr04_trig pinout
+	_sr04_echo >m     \ 32 bit mask for echo pin is 65536
+	_sr04_trig >m     \ 32 bit mask for trigger pin is 131_072
+	begin
+		dup _maskouthi dup dup drop _maskoutlo \ trigger hi, delay 30 cycles, trigger lo
+		over dup dup dup \ echo on top, 3 copies, 4 total
+		waitpeq \ wait till echo goes hi 
+		cnt COG@ \ get count reg rollover will give bad value
+		rot2     \    two more echo on top
+		waitpne \ wait till echo goes low
+		cnt COG@ swap -  \ delta of cnt
+		d_170_000 clkfreq */   \ delta 340ms/2 80mhz 
+                           \  ( n1 n2 n3 -- n4 ) n4 = (n1*n2)/n3.
+                           \  so its cnt nicroseconds divided by 361.25 
+                          \ ( integer with 64 bit intermediate result))
+                          \ give mm
+		_sr04_distance   L!
+		
+\		1000 delms
+			60 delms
+
+	0 until
+;
+
+\  [ifdef sr04_test
+
+: sr04_test
+	begin
+		_sr04_distance L@ . ."     "
+		fkey? nip
+	until
+;
+
+\  clear screen 
+\  pre stack at  C=5 Row= 6
+\  distance at C= 7  Row = 8
+\ post stack at C=5 = row =10
+
+: sr_loop 	
+          begin
+               3 4 AT cnt COG@ dup . st? drop
+               7 8 AT
+      		     _sr04_distance L@ . ."     "      		     
+		           fkey? nip
+		           10 delms
+	until
+; 
+
+: sr cls 
+        5 6 AT  st? 
+        sr_loop
+        5 10 AT st?      
+;
+
+\   ]
+
+: sr-init
+           c" _sr04_measure" 0 cogx
+;
+c" _sr04_measure" 0 cogx
+
+sr
+
+}}}
+
+
+== SR04test.f ==
+
+This should work, but did not work on the SR04 test bed
 
 {{{
 
