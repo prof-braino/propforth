@@ -26,7 +26,7 @@ You can do this the hard way, read the files, check the measurements, do a layou
 
 == 3D Printing ==
 
-A 3 D printer is another type of Robot.  You can build a RepRap for under $400 (last time I tried) or buy one for a little more. 
+A 3 D printer is another type of Robot.  You can build a RepRap for under $400 (my last build) or buy one for a little more. 
 
 Here's my notes, just to get you started
 
