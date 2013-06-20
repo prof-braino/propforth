@@ -1061,55 +1061,6 @@ fl
 
 }}}
 
-= AUTOBOOT =
-
-When the Quickstat boots the propforth EEprom Kernel, Propforth runs the boot.f if it is present.  This automagically configures and starts the bot. 
-
-If you DON'T want the autoboot to run *hold down* the *ESC* key. 
-
-NOTE: HOLD DOWN THE ESC key to stop the autoboot!!!
-
-= EEpom file system commands =
-
-Propforth writes files to the EEprom chip on the Quickstart, and uses it like a mini disk drive. 
-
-If you want to see the list of files on the EEprom, type File System List command
-{{{
-fsls
-}}}
-
-If you want to clear the files (remove then so you can put the riht one in ) type
-
-{{{
-fsclear
-
-}}}
-
-To get rid of the LAST file type
-
-{{{ 
-fsdrop 
-
-}}}
-
-To display the contents of file boot.f on the screen type, this will work with any file name in the list
-
-{{{
-fsread boot.f
-}}}
-
-To make a new file type fswrite filename.  There are examples of this in the bot.f code above. fswrite ends with the three periods
-
-{{{
-
-fswrite myfilename
-
-<your stuff goes here>
-
-...
-
-}}}
-
 == bot-fixed.f ==
 
 Adds ability to esape out of autoboot behavior. Hadly for testing when connected to PC, rather than rely on blue tooth and batteries.
@@ -1975,6 +1926,57 @@ sc
 
 
 }}}
+
+= AUTOBOOT =
+
+When the Quickstat boots the propforth EEprom Kernel, Propforth runs the boot.f if it is present.  This automagically configures and starts the bot. 
+
+If you DON'T want the autoboot to run *hold down* the *ESC* key. 
+
+NOTE: HOLD DOWN THE ESC key to stop the autoboot!!!
+
+= EEpom file system commands =
+
+Propforth writes files to the EEprom chip on the Quickstart, and uses it like a mini disk drive. 
+
+If you want to see the list of files on the EEprom, type File System List command
+{{{
+fsls
+}}}
+
+If you want to clear the files (remove then so you can put the riht one in ) type
+
+{{{
+fsclear
+
+}}}
+
+To get rid of the LAST file type
+
+{{{ 
+fsdrop 
+
+}}}
+
+To display the contents of file boot.f on the screen type, this will work with any file name in the list
+
+{{{
+fsread boot.f
+}}}
+
+To make a new file type fswrite filename.  There are examples of this in the bot.f code above. fswrite ends with the three periods
+
+{{{
+
+fswrite myfilename
+
+<your stuff goes here>
+
+...
+
+}}}
+
+
 
 
 = end of demo program page =
