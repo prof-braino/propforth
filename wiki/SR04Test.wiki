@@ -13,9 +13,17 @@ http://forums.parallax.com/showthread.php/148527-Input-clamping-diode-5v-to-3.3-
 
 = SR04 output issue =
 
-The SR04 output (echo pin) is at 5 volts. This is too high for the Prop, which uses 3.3 volts.  A directly connection would very quickly damage the prop input. 
+The SR04 output (echo pin) is at 5 volts. This is too high for the Prop, which uses 3.3 volts.  A directly connection would damage the prop input. 
 
 = The CORRECT SOLUTION(s)=
+
+== An in line, current limiting resistor ==
+
+The app note (see below) state 4.6 k ohms MINIMUM. 
+
+But I don't have any of those.  However I DO have a boat load of 10k resistors. Since 10k is above the minimum, these might work. Some applications could go up to the MEGAOHMS range, depending on the frequency.  Here, we just want square edges (not rounded) on our signal. 
+
+*10K ohm resistor works, but there is another issue with the BATTERY VOLTAGE.*
 
 == The textbook solution is a voltage divider.  ==
 
@@ -59,6 +67,12 @@ Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should b
 }}}
 
 = TEST CODE =
+
+== sr04_display ==
+
+This test code includes using the Quickstart LEDs to display the current range measurement.  Looks nifty!
+
+
 
 == sr04 bot 2 ==
 
