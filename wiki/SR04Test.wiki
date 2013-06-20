@@ -55,11 +55,11 @@ A single resitor inline should do the trick.
 
 They calculate 4.6k as the minimum resistor value for 5 volt signals.
 
-Test 4.6 K !!!!
+Test 4.6 K !!!! edit - No 4.6 k in the bin! Make do with another value?
 
-TEST 10K!!!
+TEST 10K!!! edit - WORKS!
 
-= The 4 AA Battery pack issue =
+= The 4 AA Battery pack voltage issue =
 
 This issue was hiding behind the SR04 5volt output to Prop 3.3volt input issue.  After we tried fixing the issue with a voltage divide AND inline current limiting resistor, there we still problems.  The SRR04 would "lock up"  after a bit, but not in all cases.  This was the clue. 
 
