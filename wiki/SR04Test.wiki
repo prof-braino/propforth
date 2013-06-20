@@ -57,6 +57,43 @@ They calculate 4.6k as the minimum resistor value for 5 volt signals.
 
 Test 4.6 K !!!!
 
+TEST 10K!!!
+
+= The 4 AA Battery pack issue =
+
+This issue was hiding behind the SR04 5volt output to Prop 3.3volt input issue.  After we tried fixing the issue with a voltage divide AND inline current limiting resistor, there we still problems.  The SRR04 would "lock up"  after a bit, but not in all cases.  This was the clue. 
+
+We check the voltages. The USB on my main computer puts out  about 4.8 volts, and 4.53 volts when the LittleRobot is connected and Teraterm is the terminal emulator. The changes checked out fine here. 
+
+The USB on the second computer (an old Dell) is about 4.3 volts when the bot is running. This worked sometimes, but not others. 
+
+The stand alone USB charger from an old cell phone 4.6 and 4.58 volts under load from the bot.  This worked fine.
+
+So here the issue:   AA bateries are 1.5 volts.  Four AA batteris in the battery pack make 6.0 volts. New batteries are HIGHER, I measure 6.13 volts.  Turns out running the bot off the batteries was the case giving us problems.
+
+So the REALLY problem was tha the SR04 was seriously OVER-VOLTED.   No wonder it was giving funky reading and locking up!  The quickstart has a regulator, that ensure it sees 3.3 volts whatever is coming in, the HC05/HC06 runs off the regulated 3.3 also, so they are both happy.  The steppers can run 5 to 12 volts, so like the honey badger they just don't care and eat it up. Only the SR04 is affected by the over voltage.
+
+== Battery pack solutions == 
+
+  #) use 4 NiMH - these cells also run 1.2 volts, four would be 4.8 volts, fixed!
+  #) use 3 alkaline - these cell are 1.5 volts, four would be 4.5 volts, fixed!
+
+If you are going to use the bot for an extended time, use the NiMH. They are cheaper for multiple use as they can be recharged, and hold a charge better.   
+
+If you are goin to use the bot for testing and experiments, use 3 alkalines. They are cheaper for single use. Use a 1-3/4 bolt in place of the four cell. I found a 1/4 by 1-2/4 machine bolt in the bin, it worked fine. 
+
+== use a proper power regulator ==
+
+Consider a proper power regulation circuit.  Duane and Erco recommended these found these on Ebay, they are only $1.75 at this writing. However, they are not standard in the third batch of kits.   Maybe if interest picks up and we get a volume buy.....
+
+
+http://www.ebay.com/itm/1pcs-DC-DC-Buck-Converter-Step-Down-Module-LM2596-Power-Supply-Output-1-23V-30V-/251066005460?ssPageName=ADME:L:OC:US:3160
+
+Using these or similar, one could have a battery pack up to 30 volts, and still get the correct 5 volts for the devices, which could also be use to feed the regulator for the 3.3 volt devices. 
+
+This is the recommended solution for those that wish to continue with the project.
+
+
 = checking for damage =
 
 At least 4 of the ten Ancona Bots from Spring 2013 had the incorrect resistor. Here is how we check the imputs
