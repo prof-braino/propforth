@@ -1,13 +1,90 @@
-#summary One-sentence summary of this page.
+#summary fl is fast load
+
+<wiki:toc max_depth="9" />
 
 = Introduction =
 
-Add your content here.
+fl (fastload) allow source code text to be pasted into the terminal window.  Fastload  bufferes the text in an available cog (usually cog5).  This allows the interpreter to run at its best speed, and eliminated the issue of buffer over runs without the over head of flow control.  
+
+This page replaces the the old page from 3.2  which has been deprecated. 
+
+http://code.google.com/p/propforth/wiki/flfastloadword 
+
+== Using fl ==
+
+Look in the Extesnsions directory for examples.
+
+Put `fl` at the begining of a file of forth source code
+
+Highlight the entire file, and paste into the teraterm window. 
+
+fl buffers the datastream to the next available cog (usually cog5)
+
+The buffer cog interprets the data stream.
+
+== What it does ==
+
+When the interpreter encounters a semicolon, propforth writes the new forth definition to the dictionary.  This takes a bit of time, this would eventually cause a buffer overrun were this to happen in the serial cog (cog6).  fl allows the interpreter to run at it own best speed.  When finshed, control returns to cog 6. 
 
 
-= Details =
+= Things to watch out for = 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+From caskz' post
+http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for-download?p=1191034&viewfull=1#post1191034
+
+Maybe known problem, but someone might not know. There is mistake I often have.
+
+Copy/paste to TeraTerm code below;
+
+{{{
+fl
+
+wvariable buffer d830 allot
+}}}
+
+Error happen.
+
+{{{
+Prop0 Cog6 ok
+CON:Prop0 Cog5 RESET - last status:94 UNKNOWN ERROR
+}}}
+
+Word"fl" use free-area to compile source. So buffer reserve 832bytes and "fl" can't operate. [It's cog5, not cog6]
+
+To prevent this, you write codes between "fl" and "wvariable buffer d830 allot"
+Reserve-bytes depend on codes-amount. 
+
+Sal's response in issue 196:
+
+"fl allocates all free memory except 128 bytes, and buffers the incoming code in that memory. The memory is "freed" as the characters are interpreted. So if you use fl, memory will be limited to the number of characters interpreted so far +128 - dictionary use. Usually this is ok, but in cases as above it becomes a problem."
+
+
+
+ = old =
+
+#summary fl is the FAST-LOAD word
+
+
+
+
+
+== The ALLOT word ==
+
+The fl word uses RAM starting at 128 bytes past the end of the dictionary.  This means if something is defined greater than about 100 bytes (due to overhead, etc) the dictionary will overwrite the RAM that fl is using as its buffer. This will likely cause a failure or error.  
+
+There are two suggestions from Sal how to work with this:
+
+1. From the ethernet driver (which is not posted as of v3.4 but should be out in v3.6)
+
+{{{
+lockdict wvariable myarray 10 allot freedict
+}}}
+
+The lockdict and freedict keep the code contiguous.  (I have not tried this, place provide feedback with your results)
+
+2. don't allocate at the beginning, at the end use a word to allocate the buffers.
+Example to follow - sorry I didn't get the example code yet
+
+Since the issue is with trying to allocte within the fl word, consider arranging the code so the ALLOT is performed in a separate step, and the rest of the code is loaded with the fl word as a separate step. 
+
+= END of fl word instructions 20100912 =
