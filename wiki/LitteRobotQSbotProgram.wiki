@@ -72,38 +72,40 @@ fswrite sr04.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
-16 wconstant _sr04_trig
+                   16 wconstant _sr04_trig
 ]
 [ifndef _sr04_echo
-17 wconstant _sr04_echo
+                   17 wconstant _sr04_echo
 ]
 
 variable _sr04_distance
 
-
 : _sr04_measure
-c" MEASURE" cds W!
-4 state andnC!
+               c" MEASURE" cds W! \ for cog? display
+               4 state andnC!
 
-_sr04_trig pinlo _sr04_trig pinout
+_sr04_trig pinlo  _sr04_trig pinout
+
 _sr04_echo >m
 _sr04_trig >m
+
 begin
-dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+\      dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+       dup _maskouthi dup dup drop  _maskoutlo       \ dup drop for 10 uS pulse
 
-over dup dup dup
+       over dup dup dup  
 
-waitpeq
-cnt COG@
-rot2
+       waitpeq     \ wait till echo pin goes hi
+       cnt COG@    \ get 32 bit counter
+       rot2   
 
-waitpne
-cnt COG@ swap -
-d_170_000 clkfreq */
+       waitpne               \ wait till echo pin goes lo
+       cnt COG@ swap -       \ get the difference
+       d_170_000 clkfreq */  \ convert to mm
 
 
-_sr04_distance L!
-d_60 delms
+       _sr04_distance L!     \  save the measurement (it in mm)
+       d_60 delms            \ SR04 recovery time 
 0 until
 ;
 
