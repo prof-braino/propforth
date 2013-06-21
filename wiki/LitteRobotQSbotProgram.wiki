@@ -34,9 +34,9 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
 || -- ||  P13 = IN2 || P21 = IN2 || P10 = IN2  || 
 || -- ||  P14 = IN3 || P22 = IN3 || P9  = IN3  || 
 || -- ||  P15 = IN4 || P23 = IN4 || P8  = IN4  || 
-|| HC05/HC06 ||  xx || P2, P0, P1 || P27, P26, P22 || Vdd ||
-|| --   ||  xx || P2 = bt Tx  || P27 = bt Tx ||
-|| --   ||  xx || P0 = bt Rx  || P26 = bt Rx ||
+|| HC05/HC06 ||  26-27 || P2, P0, P1 || P27, P26, P22 || Vdd ||
+|| --   ||  p26 = HC06-Tx || P2 = bt Tx  || P27 = bt Tx ||
+|| --   ||  P27 = HC06-Rx || P0 = bt Rx  || P26 = bt Rx ||
 || --   ||  xx || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
 || || || || REMEMBER HC05/HC06 uses Vdd 3.3 volts!!! The rest use Vin!!!!||
 
