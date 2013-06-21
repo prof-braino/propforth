@@ -7,11 +7,11 @@
 
 This page is created in response to Loopy's question in issue 197
 
-There are two types of reset on the prop:  hrad reset and soft reset.
+There are two types of reset on the prop:  hard reset and soft reset.
 
-Hard reset ocures when the reset line is brought low.  this is almost the same as powering off and powering back on.  The hard reset activity happens at the end of the power cycle.
+Hard reset occurs when the reset line is brought low.  this is almost the same as powering off and powering back on.  The hard reset activity happens at the end of the power cycle.
 
-Soft reset is initated via software.  This is alomst the same as a hard reset. the soft reset activity happens at the end of the hard reset. 
+Soft reset is initiated via software.  This is almost the same as a hard reset. the soft reset activity happens at the end of the hard reset. 
 
 = onreset =
 
@@ -21,14 +21,14 @@ Soft reset is initated via software.  This is alomst the same as a hard reset. t
 
 Each cog can have separate reset behavior defined.  Each cog can have different behavior.  
 
-  * `onreset0` = reset bahvior for cog0
-  * `onreset1` = reset bahvior for cog1
-  * `onreset2` = reset bahvior for cog2
-  * `onreset3` = reset bahvior for cog3
-  * `onreset4` = reset bahvior for cog4
-  * `onreset5` = reset bahvior for cog5
-  * `onreset6` = reset bahvior for cog6
-  * `onreset7` = reset bahvior for cog7
+  * `onreset0` = reset behavior for cog0
+  * `onreset1` = reset behavior for cog1
+  * `onreset2` = reset behavior for cog2
+  * `onreset3` = reset behavior for cog3
+  * `onreset4` = reset behavior for cog4
+  * `onreset5` = reset behavior for cog5
+  * `onreset6` = reset behavior for cog6
+  * `onreset7` = reset behavior for cog7
 
 
 = using on reset =
@@ -44,14 +44,14 @@ You can add behavior either befor or after the default behavior, or both
 {{{
 : onreset \ ( - )
           onreset \ call previous onreset behavior
-          myreset \ call whatever you define for addtional rest behavior
+          myreset \ call whatever you define for additional rest behavior
          ; 
 }}}
 
 
 {{{
 : onreset \ ( - )
-          myreset \ call whatever you define for addtional rest behavior
+          myreset \ call whatever you define for additional rest behavior
           onreset \ call previous onreset behavior
          ; 
 }}}
@@ -59,25 +59,25 @@ You can add behavior either befor or after the default behavior, or both
 
 == new behavior ==
 
-You can eliminate the defautl behavior completely if needed.   (Note: figure out what the default behavior actually does and note it in here someplace)
+You can eliminate the default behavior completely if needed.   (Note: figure out what the default behavior actually does and note it in here someplace)
 
 {{{
 : onreset \ ( - )
-          myreset \ call whatever you define for addtional rest behavior
+          myreset \ call whatever you define for additional rest behavior
          ; 
 }}}
 
 == change behavior for individual cogs ==
 
-We can define and controlreset behavior for individual cogs.
+We can define and control reset behavior for individual cogs.
 
 {{{
 : onreset2 \ ( - )
           onreset \ call previous onreset behavior
-          myreset \ call whatever you define for addtional rest behavior
+          myreset \ call whatever you define for additional rest behavior
          ; 
 }}}
 
 
 
-= end onrest 20130621 =
+= end onreset 20130621 =
