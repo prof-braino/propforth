@@ -17,6 +17,10 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
  * pinout - Use pin 26 for blue tooth Tx
  * pinout - Use pin 27 for blue tooth Rx
 
+= Physical connections =
+
+Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for comparison. 
+
 || || QSbot || Bot1 || Bot2 ||
 || SR04  || 24 trig, 25 echo ||16 trig, 17 echo || P24 trig, P25 echo  || Vin *SR04 must have no more than 5.0v Vin* ||
 || -- || P24 trig ||  P16 trig || P24 trig ||
@@ -36,6 +40,27 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
 || --   ||  p26 = HC06-Tx || P2 = bt Tx  || P27 = bt Tx ||
 || --   ||  P27 = HC06-Rx || P0 = bt Rx  || P26 = bt Rx ||
 || --   ||  xx || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
+
+= QSbot.f =
+
+QSbot.f includes a couple additions.
+
+  * The QS LEDs are used to visually represent the current distance measurement.  This also serves as a "Ready" indicator. 
+  * SR04_display routine shows the numeric value for the distance measurement without scrolling 
+  * The extra `dup drop` pairs are removed from the SR04 trigger pulse routine
+  * The SR04 driver includes a 60 ms recovery time per the data sheet.
+
+On the list:
+  * SR04 -Add a flag to control measurement ON/OFF
+  * SR04 -Add variance
+  * SR04 -Add running average, 
+  * SR04 -Add recent min and max, 
+  * SR04 -Add detect receding/closing, 
+  * SR04 -Add detect too close/too far
+
+{{{
+
+}}}
 
 = Details =
 
