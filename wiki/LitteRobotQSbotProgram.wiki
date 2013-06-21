@@ -19,6 +19,30 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
 
 
 
+|| || QSbot || Bot1 || Bot2 ||
+|| SR04  || 24 trig, 25 echo ||16 trig, 17 echo || P24 trig, P25 echo  || Vin ||
+|| -- || xx ||  P16 trig || P24 trig ||
+|| -- ||  xx || P17 echo || P25 echo || ~~BE SURE ECHO HAS ~~330~~ 10k ohm resistor!~~  ||
+|| Ready LED ||  xx || P3 || P23 ||
+|| MotorA ||  xx || d_24 d_25 d_26 d_27 || d_15 d_14 d_13 d_12|| Vin ||
+|| -- ||   xx || P24 = IN1 || P15 = IN1 || 
+|| -- ||   xx || P25 = IN2 || P14 = IN2 || 
+|| -- ||   xx || P26 = IN3 || P13 = IN3 || 
+|| -- ||   xx || P27 = IN4 || P12 = IN4 || 
+|| MotorB ||  xx || d_20 d_21 d_22 d_23 || d_11 d_10 d_9 d_8  || Vin ||
+|| -- ||   xx || P20 = IN1 || P11 = IN1  || 
+|| -- ||   xx || P21 = IN2 || P10 = IN2  || 
+|| -- ||   xx || P22 = IN3 || P9  = IN3  || 
+|| -- ||   xx || P23 = IN4 || P8  = IN4  || 
+|| HC05/HC06 ||  xx || P2, P0, P1 || P27, P26, P22 || Vdd ||
+|| --   ||  xx || P2 = bt Tx  || P27 = bt Tx ||
+|| --   ||  xx || P0 = bt Rx  || P26 = bt Rx ||
+|| --   ||  xx || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
+|| || || || REMEMBER HC05/HC06 uses Vdd 3.3 volts!!! The rest use Vin!!!!||
+
+
+
+
 
 = Details =
 
