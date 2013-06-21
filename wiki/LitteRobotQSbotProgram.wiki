@@ -27,7 +27,7 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
 || -- ||  P09 = IN2 || P12 = IN2 || P14 = IN2 || 
 || -- ||  P10 = IN3 || P13 = IN3 || P13 = IN3 || 
 || -- ||  P11 = IN4 || P14 = IN4 || P12 = IN4 || 
-|| MotorB ||  12-15 || d_20 d_21 d_22 d_23 || d_11 d_10 d_9 d_8  || Motors Can be 5-12v  ||
+|| MotorB ||  12-15 || d_20 d_21 d_22 d_23 || d_11 d_10 d_9 d_8  || Vin Motors Can be 5-12v  ||
 || -- ||  P12 = IN1 || P20 = IN1 || P11 = IN1  || 
 || -- ||  P13 = IN2 || P21 = IN2 || P10 = IN2  || 
 || -- ||  P14 = IN3 || P22 = IN3 || P9  = IN3  || 
