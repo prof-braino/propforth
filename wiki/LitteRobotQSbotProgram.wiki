@@ -1,0 +1,28 @@
+#summary Refined Program for Quickstart bot
+#labels v5.5
+
+= Overview =
+
+Sal's demo program bot.f was first pass at brining together several drivers o test the LittleRobot proof of concept prototype.  Now that we've been using it, there are a couple inprovemnt we can make right off the bat. 
+
+ * SR04 resistor - 10k
+ * pinout - Don't use the pins already used by buttons 0-7 for peripherals
+ * pinout - Use the pins already used by buttons 0-7 for input 
+ * pinout - Use pins 8 to 15 for motors
+ * pinout - Don't use the pins already used by LED on 16-23 for our drivers
+ * pinout - Use the pins with LED 16-23 to display the distance measurement
+ * pinout - Use pins 24 to 27, as these are not assigned
+ * pinout - Use pin 24 for SR04 trigger
+ * pinout - Use pin 25 for SR04 echo
+ * pinout - Use pin 26 for blue tooth Tx
+ * pinout - Use pin 27 for blue tooth Rx
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
