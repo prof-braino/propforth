@@ -1,7 +1,12 @@
 #summary fl is the FAST-LOAD word
-#labels v3.2
+#labels v3.2,Deprecated
 
 <wiki:toc max_depth="9" />
+
+This page has been replaced by
+
+http://code.google.com/p/propforth/wiki/flfastload
+
 
 = Method to load FORTH source to Propforth =
 
