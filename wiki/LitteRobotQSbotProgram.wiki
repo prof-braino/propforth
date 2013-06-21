@@ -46,17 +46,19 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 QSbot.f includes a couple additions.
 
   * The QS LEDs are used to visually represent the current distance measurement.  This also serves as a "Ready" indicator. 
+  * QS LED count increments of 15 mm
   * SR04_display routine shows the numeric value for the distance measurement without scrolling 
   * The extra `dup drop` pairs are removed from the SR04 trigger pulse routine
   * The SR04 driver includes a 60 ms recovery time per the data sheet.
 
 On the list:
-  * SR04 -Add a flag to control measurement ON/OFF
-  * SR04 -Add variance
-  * SR04 -Add running average, 
-  * SR04 -Add recent min and max, 
-  * SR04 -Add detect receding/closing, 
-  * SR04 -Add detect too close/too far
+  * SR04 - Add a flag to control measurement ON/OFF
+  * SR04 - add timeout for too long measurement (?)
+  * SR04 - Add variance
+  * SR04 - Add running average, 
+  * SR04 - Add recent min and max, 
+  * SR04 - Add detect receding/closing, 
+  * SR04 - Add detect too close/too far
 
 {{{
 
