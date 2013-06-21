@@ -27,7 +27,7 @@ The buffer cog interprets the data stream.
 When the interpreter encounters a semicolon, propforth writes the new forth definition to the dictionary.  This takes a bit of time, this would eventually cause a buffer overrun were this to happen in the serial cog (cog6).  fl allows the interpreter to run at it own best speed.  When finshed, control returns to cog 6. 
 
 
-= Things to watch out for = 
+= "fl" and "allot" = 
 
 From caskz' post
 http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for-download?p=1191034&viewfull=1#post1191034
@@ -59,22 +59,17 @@ Sal's response in issue 196:
 "fl allocates all free memory except 128 bytes, and buffers the incoming code in that memory. The memory is "freed" as the characters are interpreted. So if you use fl, memory will be limited to the number of characters interpreted so far +128 - dictionary use. Usually this is ok, but in cases as above it becomes a problem."
 
 
-
- = old =
-
-#summary fl is the FAST-LOAD word
-
-
-
-
-
-== The ALLOT word ==
+== Working with "allot"  ==
 
 The fl word uses RAM starting at 128 bytes past the end of the dictionary.  This means if something is defined greater than about 100 bytes (due to overhead, etc) the dictionary will overwrite the RAM that fl is using as its buffer. This will likely cause a failure or error.  
 
 There are two suggestions from Sal how to work with this:
 
-1. From the ethernet driver (which is not posted as of v3.4 but should be out in v3.6)
+1. lockdict and freedict
+
+lockdict locks the dictionary, so another task does not write to it while this one does.
+
+freedict sets the dictionary as free again 
 
 {{{
 lockdict wvariable myarray 10 allot freedict
@@ -83,8 +78,11 @@ lockdict wvariable myarray 10 allot freedict
 The lockdict and freedict keep the code contiguous.  (I have not tried this, place provide feedback with your results)
 
 2. don't allocate at the beginning, at the end use a word to allocate the buffers.
-Example to follow - sorry I didn't get the example code yet
+
+ * So, paste in so code using fl, let it finish.
+ * paste in another file, that just contains the allot for the buffers
+ * paste in another file with the remainder of you code, if any
 
 Since the issue is with trying to allocte within the fl word, consider arranging the code so the ALLOT is performed in a separate step, and the rest of the code is loaded with the fl word as a separate step. 
 
-= END of fl word instructions 20100912 =
+= END of fl word instructions 20130621 =
