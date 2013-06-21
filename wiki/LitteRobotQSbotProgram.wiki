@@ -66,6 +66,78 @@ QSbot.f is based on [http://code.google.com/p/propforth/wiki/LittleRobotDemoProg
 {{{
 fl
 
+
+
+fswrite sr04.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+16 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+17 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+
+: _sr04_measure
+c" MEASURE" cds W!
+4 state andnC!
+
+_sr04_trig pinlo _sr04_trig pinout
+_sr04_echo >m
+_sr04_trig >m
+begin
+dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+
+over dup dup dup
+
+waitpeq
+cnt COG@
+rot2
+
+waitpne
+cnt COG@ swap -
+d_170_000 clkfreq */
+
+
+_sr04_distance L!
+d_60 delms
+0 until
+;
+
+
+: sr04_display
+c" LED" cds W!
+4 state andnC!
+
+  7 0 do i 17 + pinout  loop
+
+        begin
+                _sr04_distance L@ 
+\ 16 is sr04 echo 
+    dup 50 125 between if 17 pinhi else 17 pinlo then 
+    dup 125 250 between if 18 pinhi else 18 pinlo then 
+    dup 250 500 between if 19 pinhi else 19 pinlo then 
+    dup 500 1000 between if 20 pinhi else 20 pinlo then 
+    dup 1000 2000 between if 21 pinhi else 21 pinlo then 
+    dup 2000 4000 between if 22 pinhi else 22 pinlo then 
+     4000 >  if 23 pinhi else 23 pinlo then 
+    
+                fkey? nip
+\    80 delms
+        until
+;
+
+
+
+...
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
 fswrite 4step.f
 {
 
@@ -458,74 +530,9 @@ d_16 d_17 d_18 d_19 step_create_fullstep motf
  
 ...
 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
-
-fswrite sr04.f
-
-1 wconstant build_sr04
-[ifndef _sr04_trig
-16 wconstant _sr04_trig
-]
-[ifndef _sr04_echo
-17 wconstant _sr04_echo
-]
-
-variable _sr04_distance
-
-
-: _sr04_measure
-c" MEASURE" cds W!
-4 state andnC!
-
-_sr04_trig pinlo _sr04_trig pinout
-_sr04_echo >m
-_sr04_trig >m
-begin
-dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
-
-over dup dup dup
-
-waitpeq
-cnt COG@
-rot2
-
-waitpne
-cnt COG@ swap -
-d_170_000 clkfreq */
-
-
-_sr04_distance L!
-d_60 delms
-0 until
-;
-
-
-: sr04_display
-c" LED" cds W!
-4 state andnC!
-
-  7 0 do i 17 + pinout  loop
-
-        begin
-                _sr04_distance L@ 
-\ 16 is sr04 echo 
-    dup 50 125 between if 17 pinhi else 17 pinlo then 
-    dup 125 250 between if 18 pinhi else 18 pinlo then 
-    dup 250 500 between if 19 pinhi else 19 pinlo then 
-    dup 500 1000 between if 20 pinhi else 20 pinlo then 
-    dup 1000 2000 between if 21 pinhi else 21 pinlo then 
-    dup 2000 4000 between if 22 pinhi else 22 pinlo then 
-     4000 >  if 23 pinhi else 23 pinlo then 
-    
-                fkey? nip
-\    80 delms
-        until
-;
-
-
-
-...
 
 fswrite boot.f
 
@@ -554,6 +561,8 @@ fsload bot.f
 c" boot.f - Loaded bot.f~h0D~h0D" .cstr hA state andnC!
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 ...
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 fswrite bot.f
@@ -718,6 +727,7 @@ c" onreset6" (forget)
 
 ...
 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 fswrite btstat.f
@@ -766,6 +776,12 @@ hcProgPin pinlo
 \ after the hc05 is power cycled, the baud rate will change, not like the hc06
 
 ...
+
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 {
 \ fl
 
@@ -838,6 +854,10 @@ _sr04_distance L@ . cr
 
 }
 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 fl
 
 wvariable _mon 0 _mon W!
@@ -902,6 +922,10 @@ fl
 : m 3 cogreset 100 delms c" stepmon" 3 cogx ;
 
 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 {
 init_motorB
 12345 forwardb
@@ -919,6 +943,10 @@ sc
 \ HC Rx to P25
 
 }
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 
 }}}
 
