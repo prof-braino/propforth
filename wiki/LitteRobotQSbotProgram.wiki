@@ -101,7 +101,7 @@ begin
 
        waitpne               \ wait till echo pin goes lo
        cnt COG@ swap -       \ get the difference
-       d_170_000 clkfreq */  \ convert to mm
+       d_170_000 clkfreq */  \ convert to mm /
 
 
        _sr04_distance L!     \  save the measurement (it in mm)
