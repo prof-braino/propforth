@@ -63,6 +63,8 @@ On the list:
 QSbot.f is based on [http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram#bot-fixed.f bot-fixed.f], which is base on the original bot.f from the Extensions directory in the Propforth-v5.5 download.
 
 
+The code is being changed to match the pinout above.
+
 {{{
 fl
 
