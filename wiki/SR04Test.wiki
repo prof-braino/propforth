@@ -111,6 +111,34 @@ This test code includes using the Quickstart LEDs to display the current range m
 
 {{{
 
+fswrite ANSI.f
+
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
+
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+
+...
+
+
 fswrite sr04-testbed.f
 
 1 wconstant build_sr04
@@ -150,8 +178,10 @@ begin
 ;
 
 : sr04_test
+cls
 	begin
-		_sr04_distance L@ . cr
+               1 5 AT st? ."                  "
+		_sr04_distance L@ . ."              "
 		fkey? nip
     80 delms
 	until
@@ -207,10 +237,18 @@ h8000 +loop
 c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
 c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
 cr cr cr 
-c" boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
 
+
+c" boot.f - Loading ANSI.f~h0D~h0D" .cstr hA state andnC!
+fsload  ANSI.f
+c" boot.f - Loaded ANSI.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
 fsload  sr04-testbed.f
 c" boot.f - Loaded sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 
 : onreset6
