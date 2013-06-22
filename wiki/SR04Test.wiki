@@ -150,10 +150,9 @@ begin
 ;
 
 : sr04_test
-cls
-	begin
-               1 5 AT st? ."                  "
-		_sr04_distance L@ . ."              "
+begin
+               
+		_sr04_distance L@ . 
 		fkey? nip
     80 delms
 	until
