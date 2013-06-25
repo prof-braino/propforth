@@ -86,4 +86,12 @@ The lockdict and freedict keep the code contiguous.  (I have not tried this, pla
 
 Since the issue is with trying to allocte within the fl word, consider arranging the code so the ALLOT is performed in a separate step, and the rest of the code is loaded with the fl word as a separate step. 
 
+=  Dave Hein Explanation = 
+
+From Forum Post http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for-download?p=1191763&viewfull=1#post1191763
+
+prof_braino, the description for fl should explicitly state that the data that is buffered in hub RAM in the unused area after the dictionary. It currently says that it is buffered in a cog, which would imply that it's buffered in the cog's RAM. Also, the description should state that the amount of data pasted in the serial terminal should be less than the unused space - 128 bytes. Does PropForth support the unused word? If so, the user can be instructed to type "unused" to see how much space is available for buffering.
+
+It would also be good to document the fact that the fastload mode is exited when there is a gap of N msecs in the serial data. I don't know what the value of N is, but it's basically the amount of time it takes for PropForth to call key? and decrement a timeout count 8192 times in a begin loop. I guessing the timeout time is on the order of 10 to 100 msecs.
+
 = END of fl word instructions 20130621 =
