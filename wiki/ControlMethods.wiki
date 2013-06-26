@@ -1,4 +1,5 @@
 #summary Control Methods to use with Microcontrollers
+#labels v5.5
 
 = Introduction =
 
@@ -32,6 +33,18 @@ http://code.google.com/p/propforth/wiki/PID
 = Kalman Filter =
 
 http://forums.parallax.com/showthread.php/145120-Filtering-Sensor-Readings-%28Kalman-Filter%29
+
+= Fuzzy Logic =
+
+WE can do a si9mple type of fuzzy logic in propforth.  
+
+Logical FALSE is defined as ZERO. (All bits zero)
+
+Logical TRUE is defined as -1 . (All bits ONE)
+
+Any non-zero values alue evaluates as True. 
+
+We can use this for fuzzy logic.  For example, by assigning the most influential factors to higher bit positions,  we do GREAT-THAN and LESS-THAN COMPARISON instead of just EQUALS comparison.    This comes out like  "more true" and "less true".  You get the idea. 
 
 = Details =
 
