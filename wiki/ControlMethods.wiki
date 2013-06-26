@@ -1,0 +1,41 @@
+#summary Control Methods to use with Microcontrollers
+
+= Introduction =
+
+DRAFT - please add comments and update content.
+
+ * State machine
+ * PID 
+ * Kalman Filter
+ * Fuzzy Logic
+
+= State Machine =
+
+When the inputs are in this state, set the outputs to this state.
+
+Account for all the states that will happen. 
+
+Some state MIGHT happen but don't.
+
+Some states SHOULDN'T happen but DO 
+
+= PID =
+
+Smoothly adjust to avoid over shoot and oscillation
+
+Google: Proportion Integral Derivative
+
+Nick Lordi presented us with this work in forth.
+
+http://code.google.com/p/propforth/wiki/PID
+
+= Kalman Filter =
+
+http://forums.parallax.com/showthread.php/145120-Filtering-Sensor-Readings-%28Kalman-Filter%29
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
