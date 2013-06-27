@@ -45,6 +45,11 @@ It needs to be 500 uA!!!
 So 0.0012 A is too high, we want 0.0005 Amps maximum! 
 
 
+=== 10k and 15k === 
+
+I found this suggested in my searches, but did not try it.  I'm going with the single 10k in - line, since it appears to work. 
+
+
 = From that Parallax App 10 Note = 
 
 Parallax appnote (#10) "Low-cost Bidirectional Mixed-voltage Interfacing" - interfacing 5V signals to the Prop using a resistor.
@@ -102,6 +107,9 @@ At least 4 of the ten Ancona Bots from Spring 2013 had the incorrect resistor. H
 How can we test if the protection diode is damaged?
 Apply 5V through a 3.3K resistor and measure the voltage on the pin. It should be around 3.9V if the diode is intact and functioning properly. 
 }}}
+
+I did this test, it check out.  A later exaplnation was the LED DRIVER BUFFER is very sensitive, and the cause of the neighboring LEDs to light.  Nothing appears damaged!
+
 
 = TEST CODE =
 
