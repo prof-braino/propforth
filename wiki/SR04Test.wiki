@@ -312,7 +312,7 @@ use the above version
 
 -----
 
-The old version below has been corrected - remove after above version is verified
+The old version below - remove after above version is verified
 
 {{{
 
