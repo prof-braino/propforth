@@ -47,7 +47,7 @@ So 0.0012 A is too high, we want 0.0005 Amps maximum!
 
 === 10k and 15k === 
 
-I found this suggested in my searches, but did not try it.  I'm going with the single 10k in - line, since it appears to work. 
+10k and 15k might be more appropriate values for a voltage divider, but ths is not tested. For now, the single 10k in-line is recommended. 
 
 
 = From that Parallax App 10 Note = 
@@ -113,9 +113,15 @@ I did this test, it check out.  A later exaplnation was the LED DRIVER BUFFER is
 
 = TEST CODE =
 
-== sr04_display ==
+== sr04_testbed with sr04_display ==
+
+SR04_test is stand alone measurement app.  All we need is 4.5 to 5.0 volts, and a correctly connected SR04.
 
 This test code includes using the Quickstart LEDs to display the current range measurement.  Looks nifty!
+
+The method used scales the value to fit in 8 bits, and display a value in binary.  I use 20 or 16 as a scaling factor.  16 is closer to the max range of the SR04, but 20 is easier to figure the actual distance measurement. 
+
+Walk around with this app and notice the pattern of the LEDs.  When squarely facing facing a large flat wall, the reading is very accurate.  When facing a barstool of bush from far away, or any collection of small objects at an angle gives very jumpy and noiy readings.   This will give you a feel for the type of processing we will need to perform to build maps etc. 
 
 {{{
 fl
