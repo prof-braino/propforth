@@ -1,7 +1,7 @@
 #summary Refined Program for Quickstart bot
 #labels v5.5
 
-= Overview =
+= I. Overview =
 
 Sal's demo program bot.f was first pass at brining together several drivers o test the LittleRobot proof of concept prototype.  Now that we've been using it, there are a couple inprovemnt we can make right off the bat. 
 
@@ -17,7 +17,7 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
  * pinout - Use pin 26 for blue tooth Tx
  * pinout - Use pin 27 for blue tooth Rx
 
-= Physical connections =
+= II. Physical connections =
 
 Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for comparison. 
 
@@ -41,7 +41,34 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 || --   ||  P27 = HC06-Rx || P0 = bt Rx  || P26 = bt Rx ||
 || --   ||  xx || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
 
-= QSbot.f =
+= III. Test Individual Parts =
+
+* Quickstart
+* Stepper Drivers
+* SR04 
+* Blue Tooth
+
+== 1. Quickstart == 
+=== Hello World ===
+=== Blinky LED ===
+
+== 2. Stepper Drivers == 
+===Blinky LED again ===
+=== MotorA or MotorB? ===
+
+== 3. SR04  == 
+=== 3.3v NOT 5.0 ===
+=== 10K on ECHO ===
+=== Good Data ===
+
+=== Noisy Data ===
+
+== 4. Blue Tooth == 
+
+ 
+
+
+= IV. QSbot.f =
 
 QSbot.f includes a couple additions.
 
