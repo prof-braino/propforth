@@ -27,8 +27,7 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 || SR04  || 24 trig, 25 echo ||16 trig, 17 echo || P24 trig, P25 echo  || Vin *SR04 must have no more than 5.0v Vin* ||
 || -- || P24 trig ||  P16 trig || P24 trig ||
 || -- ||  P25 echo || P17 echo || P25 echo || BE SURE ECHO HAS ~~330~~ 10k ohm resistor! ||
-|| Ready LED ||  No Ready LED on QSbo#sidebar TableOfContents
-t || P3 || P23 ||
+|| Ready LED ||  No Ready LED on QSbot || P3 || P23 ||
 || MotorA ||  8-11 || d_24 d_25 d_26 d_27 || d_15 d_14 d_13 d_12|| Vin Motors Can be 5-12v ||
 || -- ||  P08 = IN1 || P11 = IN1 || P15 = IN1 || 
 || -- ||  P09 = IN2 || P12 = IN2 || P14 = IN2 || 
