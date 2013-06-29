@@ -66,8 +66,28 @@ Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparis
  * Blue Tooth
 
  == 1. Quickstart == 
+
+ First we see the Quickstart microcontroller board, what it does, and check that  works. 
+
+ Using the PropTool, LOAD the EEpromkernel.spin firmware into the quickstart board eeprom memory.
+
+ Use the EEprom kernel instead of the DevKernel.spin
+
+ http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth  
+
   === a. Hello World ===
+
+  See the page for Hello World,  then return to this page. 
+
+  http://code.google.com/p/propforth/wiki/GettingStartedHelloWord
+
   === b. Blinky LED ===
+
+  See the page for Blinky LED, then return to this page
+
+  http://code.google.com/p/propforth/wiki/GettingStartedBlinkyLED
+
+
  == 2. Stepper Drivers == 
   === a. Blinky LED again ===
   === b. MotorA or MotorB? ===
