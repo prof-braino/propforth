@@ -19,29 +19,34 @@ Sal's demo program bot.f was first pass at brining together several drivers o te
  * pinout - Use pin 26 for blue tooth Tx
  * pinout - Use pin 27 for blue tooth Rx
 
+-----
+
 = II. Physical connections =
 
 Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for comparison. 
 
-|| || QSbot || Bot1 || Bot2 ||
-|| SR04  || 24 trig, 25 echo ||16 trig, 17 echo || P24 trig, P25 echo  || Vin *SR04 must have no more than 5.0v Vin* ||
-|| -- || P24 trig ||  P16 trig || P24 trig ||
-|| -- ||  P25 echo || P17 echo || P25 echo || BE SURE ECHO HAS ~~330~~ 10k ohm resistor! ||
-|| Ready LED ||  No Ready LED on QSbot || P3 || P23 ||
-|| MotorA ||  8-11 || d_24 d_25 d_26 d_27 || d_15 d_14 d_13 d_12|| Vin Motors Can be 5-12v ||
-|| -- ||  P08 = IN1 || P11 = IN1 || P15 = IN1 || 
-|| -- ||  P09 = IN2 || P12 = IN2 || P14 = IN2 || 
-|| -- ||  P10 = IN3 || P13 = IN3 || P13 = IN3 || 
-|| -- ||  P11 = IN4 || P14 = IN4 || P12 = IN4 || 
-|| MotorB ||  12-15 || d_20 d_21 d_22 d_23 || d_11 d_10 d_9 d_8  || Vin Motors Can be 5-12v  ||
-|| -- ||  P12 = IN1 || P20 = IN1 || P11 = IN1  || 
-|| -- ||  P13 = IN2 || P21 = IN2 || P10 = IN2  || 
-|| -- ||  P14 = IN3 || P22 = IN3 || P9  = IN3  || 
-|| -- ||  P15 = IN4 || P23 = IN4 || P8  = IN4  || 
-|| HC05/HC06 ||  26-27 || P2, P0, P1 || P27, P26, P22 || Vdd 3.3v||
-|| --   ||  p26 = HC06-Tx || P2 = bt Tx  || P27 = bt Tx ||
-|| --   ||  P27 = HC06-Rx || P0 = bt Rx  || P26 = bt Rx ||
+|| || QSbot || ~~Bot1~~ || ~~Bot2~~ ||
+|| SR04  || 24 trig, 25 echo || ~~16 trig, 17 echo~~ || ~~P24 trig, P25 echo~~  || Vin *SR04 must have no more than 5.0v Vin* ||
+|| -- || P24 trig ||  ~~P16 trig~~ || ~~P24 trig~~ ||
+|| -- ||  P25 echo || ~~P17 echo~~ || ~~P25 echo~~ || BE SURE ECHO HAS ~~330~~ 10k ohm resistor! ||
+|| Ready LED ||  No Ready LED on QSbot || ~~P3~~ || ~~P23~~ ||
+|| MotorA ||  8-11 || ~~d_24 d_25 d_26 d_27~~ || ~~d_15 d_14 d_13 d_12~~ || Vin Motors Can be 5-12v ||
+|| -- ||  P08 = IN1 || ~~P11 = IN1~~ || ~~P15 = IN1~~ || 
+|| -- ||  P09 = IN2 || ~~P12 = IN2~~ || ~~P14 = IN2~~ || 
+|| -- ||  P10 = IN3 || ~~P13 = IN3~~ || ~~P13 = IN3~~ || 
+|| -- ||  P11 = IN4 || ~~P14 = IN4~~ || ~~P12 = IN4~~ || 
+|| MotorB ||  12-15 || ~~d_20 d_21 d_22 d_23~~ || ~~d_11 d_10 d_9 d_8~~  || Vin Motors Can be 5-12v  ||
+|| -- ||  P12 = IN1 || ~~P20 = IN1~~ || ~~P11 = IN1~~  || 
+|| -- ||  P13 = IN2 || ~~P21 = IN2~~ || ~~P10 = IN2~~  || 
+|| -- ||  P14 = IN3 || ~~P22 = IN3~~ || ~~P9  = IN3~~  || 
+|| -- ||  P15 = IN4 || ~~P23 = IN4~~ || ~~P8  = IN4~~  || 
+|| HC05/HC06 ||  26-27 || ~~P2, P0, P1~~ || ~~P27, P26, P22~~ || Vdd 3.3v||
+|| --   ||  p26 = HC06-Tx || ~~P2 = bt Tx~~  || ~~P27 = bt Tx~~ ||
+|| --   ||  P27 = HC06-Rx || ~~P0 = bt Rx~~  || ~~P26 = bt Rx~~ ||
 || --   ||  xx || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
+
+-----
+
 
 = III. Test Individual Parts =
 
@@ -51,18 +56,18 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
  * Blue Tooth
 
  == 1. Quickstart == 
-  === III.1.a. Hello World ===
-  === III.1.b. Blinky LED ===
+  === a. Hello World ===
+  === b. Blinky LED ===
  == 2. Stepper Drivers == 
-  === III.2.a. Blinky LED again ===
-  === III.2.b. MotorA or MotorB? ===
-
+  === a. Blinky LED again ===
+  === b. MotorA or MotorB? ===
  == 3. SR04  == 
-  === 3.3v NOT 5.0 ===
-  === 10K on ECHO ===
-  === Good Data ===
+  === a. 3.3v NOT 5.0 ===
+  === b. 10K on ECHO ===
+  === c. Good Data ===
+  === d. SR04 test program ===
 
-  === SR04 test program ===
+  Be sure the pin assignments match the chart above.
 
 {{{
 fl
@@ -217,7 +222,8 @@ hA state orC! version W@ .cstr cr cr cr
 ;
 
 c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
-c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Loading bot.f~h0-----
+D~h0D" .cstr hA state andnC!
 cr cr cr 
 
 
@@ -257,7 +263,7 @@ c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 == 4. Blue Tooth == 
 
  
-
+-----
 
 = IV. QSbot.f =
 
