@@ -273,10 +273,9 @@ sr04_test
 
 cr
 
-
-
-
 }}}
+
+NOTICE! You must highlight all the way to the cr if you copy from this web page. Otherwise, copy  the code to your text editor, and work from your edited copy.
 
 REBOOT to see the above programs load and run.  The Quickstart LEDs should flash in relation to the distance.  Each LED represents 20 cm counting in binary. Talk about binary with the group until you understand. 
   
