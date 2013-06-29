@@ -63,6 +63,196 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 === 10K on ECHO ===
 === Good Data ===
 
+=== SR04 test program ===
+
+{{{
+fl
+
+\ 20130626 Quickstart LEDs represent the distance measured
+
+fswrite ansi.f
+
+\ ascii code for red text      " ESC[31m "
+\ hex character codes            1b 5b 33 31 6d
+\ forth code for ascii red text v4.0: 1b emit 5b emit 33 emit 31 emit 6d emit          
+\ forth code for ascii red text v5.0: h_1B emit h_5B emit h_33 emit h_31 emit h_6D emit          
+
+\ ascii escape sequence start with ESC
+
+\ second char of two character is 64 to 95   (@ to _)  40h to 5Fh
+\ multi char are esc + [ + (@ to ~) 64 to 126  40h to  7Eh
+\ next is [   5Bh
+\ m is for graphics mode colors attributes
+{ : to57 csi ." 5;7f" ;  : to2010 csi ." 20;10f" ; }
+\ f is for position, needs character not value           
+
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
+
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+
+...
+
+
+
+fswrite sr04-testbed.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+                  \ 16 wconstant _sr04_trig
+                    15 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+                  \ 17 wconstant _sr04_echo
+                    14 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+
+: _sr04_measure
+c" MEASURE" cds W!
+4 state andnC!
+
+_sr04_trig pinlo _sr04_trig pinout
+_sr04_echo >m
+_sr04_trig >m
+begin
+      dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+      over dup dup dup
+      waitpeq
+      cnt COG@
+      rot2
+
+      waitpne
+      cnt COG@ swap -
+      d_170_000 clkfreq */
+
+      _sr04_distance L!
+      d_60 delms
+0 until
+;
+
+: sr04_test
+  clear \ clear the screen
+  begin
+       home st?   
+       _sr04_distance L@  dup
+      5 3 AT ."  SR04 measurement = "  .  ." millimeters               "
+      5 7 AT ."  LED pattern " 20 / 2 base W! . decimal ."             "
+      80 delms
+      fkey? nip
+ until
+;
+
+: sr04_display
+c" LED" cds W!
+4 state andnC!
+
+  8 0 do i 16 + pinout  loop
+
+  clear
+  begin
+        home st?   
+        _sr04_distance L@ 
+
+\ max is 4000 mm (datasheet) 
+ 
+        dup 
+        4000 > if drop 255 else 20 / then   \ 20 or 16
+
+
+      16 lshift \ slide it up to the LED bits 16-23
+      0 >m _maskoutlo  \ turn out all LEDs 
+      \ >m _maskouthi    \ display value on LEDs
+
+      outa COG!
+
+      20 delms     \ wait so they can light
+
+                fkey? nip
+\    80 delms
+        until
+;
+
+...
+
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+  0
+  h100000 h8000
+  do
+     i t0 2 eereadpage
+     if
+         leave
+     else
+         i h7FFE + t0 3 eereadpage
+         if
+              leave
+         else
+             drop i h8000 +
+         then
+     then
+   h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+cr cr cr 
+
+
+c" boot.f - Loading ansi.f~h0D~h0D" .cstr hA state andnC!
+fsload  ansi.f
+c" boot.f - Loaded ansi.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+fsload  sr04-testbed.f
+c" boot.f - Loaded sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
+: onreset6
+          fkey? and fkey? and or h1B <>
+  if
+    \ c" 23 dup pinout pinhi" 1 cogx
+    \ cogid >con
+    c" _sr04_measure" 2 cogx
+    c" sr04_display" 3 cogx
+  then
+
+  cog? 
+
+  c" onreset6" (forget)
+  sr04_test
+;
+
+...
+
+}}}
+
 === Noisy Data ===
 
 == 4. Blue Tooth == 
