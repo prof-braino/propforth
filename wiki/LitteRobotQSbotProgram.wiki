@@ -145,10 +145,13 @@ _sr04_trig pinlo _sr04_trig pinout
 _sr04_echo >m
 _sr04_trig >m
 
-begin \ begin the main loop for this task
+begin 
+      \ begin the main loop for this task
       \ send trigger pulse, 
       \ rraise the trigger pin for 10uS, than set it lo again
+
       dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+
       \ the three extra dup and three extra drop above take about 10uS
       \ this is one way to time a very short pulse,
       \ which we need to triggger the SR04 (per the datashheet)
@@ -271,6 +274,8 @@ c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 ;
 
 ...
+
+cr
 
 }}}
 
