@@ -74,7 +74,6 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
   Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
 
 {{{
-
 fl
 
 \ 20130626 Quickstart LEDs represent the distance measured
@@ -186,29 +185,40 @@ c" LED" cds W!
   begin
         home st?   
         _sr04_distance L@ 
-
-\ max is 4000 mm (per datasheet) 
+\ 16 is sr04 echo 
+\    dup 50 125 between if 17 pinhi else 17 pinlo then 
+\    dup 125 250 between if 18 pinhi else 18 pinlo then 
+\    dup 250 500 between if 19 pinhi else 19 pinlo then 
+\    dup 500 1000 between if 20 pinhi else 20 pinlo then 
+\    dup 1000 2000 between if 21 pinhi else 21 pinlo then 
+\    dup 2000 4000 between if 22 pinhi else 22 pinlo then 
+\    4000 >  if 23 pinhi else 23 pinlo then 
+\    
+\ max is 4000 mm (datasheet) 
  
-       dup 
-       4000 > if drop 255 else 20 / then   \ 20 or 16
+        dup 
+        4000 > if drop 255 else 20 / then   \ 20 or 16
 
-       16 lshift        \ slide it up to the LED bits 16-23
-       0 >m _maskoutlo  \ turn out all LEDs 
-       \ >m _maskouthi  \ display value on LEDs
-       outa COG!
- 
+
+      16 lshift \ slide it up to the LED bits 16-23
+      0 >m _maskoutlo  \ turn out all LEDs 
+      \ >m _maskouthi    \ display value on LEDs
+      outa COG!
+
       20 delms     \ wait so they can light
 
-             fkey? nip
-  until
+                fkey? nip
+\    80 delms
+        until
 ;
 
 ...
 
+
+
 fswrite boot.f
 
 hA state orC! version W@ .cstr cr cr cr
-
 : findEETOP
 0
 h100000 h8000
@@ -227,18 +237,22 @@ then
 h8000 +loop
 ;
 
-c" ***boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
-c" ***boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
-cr 
-c" ***boot.f - Loading ansi.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+cr cr cr 
+
+
+c" boot.f - Loading ansi.f~h0D~h0D" .cstr hA state andnC!
 fsload  ansi.f
-c" ***boot.f - Loaded ansi.f~h0D~h0D" .cstr hA state andnC!
-cr
-c" ***boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Loaded ansi.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
 fsload  sr04-testbed.f
-c" ***boot.f - Loaded sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
-cr
-c" ***boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Loaded sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 
 : onreset6
 fkey? and fkey? and or h1B <>
@@ -256,6 +270,10 @@ sr04_test
 ;
 
 ...
+
+cr
+
+
 
 
 }}}
