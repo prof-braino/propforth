@@ -1,5 +1,7 @@
 #summary Testing the SR04 with New Knowledge.
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Initially, the LittleRobot BOM specificed a 220-330 ohm resistor.  This was incorrect.  The new information is at:
