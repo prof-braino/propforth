@@ -74,6 +74,7 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
   Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
 
 {{{
+
 fl
 
 \ 20130626 Quickstart LEDs represent the distance measured
@@ -125,55 +126,46 @@ fswrite sr04-testbed.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
-                  \ 16 wconstant _sr04_trig
-                    25 wconstant _sr04_trig
+\ 16 wconstant _sr04_trig
+\ 15 wconstant _sr04_trig
+ 25 wconstant _sr04_trig
+
 ]
 [ifndef _sr04_echo
-                  \ 17 wconstant _sr04_echo
-                    24 wconstant _sr04_echo
+\ 17 wconstant _sr04_echo
+\ 14 wconstant _sr04_echo
+ 24 wconstant _sr04_echo
 ]
 
 variable _sr04_distance
 
 
 : _sr04_measure
-  \ this make the cog display MEASURE when cog?  is run from the command line
-  c" MEASURE" cds W!
-  4 state andnC!
+c" MEASURE" cds W!
+4 state andnC!
 
 _sr04_trig pinlo _sr04_trig pinout
 _sr04_echo >m
 _sr04_trig >m
-
-begin 
-      \ begin the main loop for this task
-      \ send trigger pulse, 
-      \ rraise the trigger pin for 10uS, than set it lo again
-
+begin
       dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
-
-      \ the three extra dup and three extra drop above take about 10uS
-      \ this is one way to time a very short pulse,
-      \ which we need to triggger the SR04 (per the datashheet)
-
       over dup dup dup
-
-      waitpeq  \ wait till the pin goes lo
-      cnt COG@ \ get the counter
+      waitpeq
+      cnt COG@
       rot2
 
-      waitpne  \ wait till the 
-      cnt COG@ swap -      \ get the new counter , and figure the delta
-      \ notice we get a bad reading every minute when the counter rolls over
-      d_170_000 clkfreq */  \ convert the time into distance 
+      waitpne
+      cnt COG@ swap -
+      d_170_000 clkfreq */
 
-      _sr04_distance L!  \ save the calculated distance where the other task can find it
-      d_60 delms  \ wait 60 ms for the SR04 to recover (per datasheet)
-0 until           \ 0 until means "do this forever"
+      _sr04_distance L!
+      d_60 delms
+0 until
 ;
 
 : sr04_test
   clear \ clear the screen
+  0 9 AT cog?
   begin
        home st?   
        _sr04_distance L@  dup
@@ -185,64 +177,69 @@ begin
 ;
 
 : sr04_display
-  \ this make the cog display "LED" when cog? is run from the command line
-  c" LED" cds W!
-  4 state andnC!
+c" LED" cds W!
+4 state andnC!
 
-  \ make the LED pins outputs
   8 0 do i 16 + pinout  loop
 
-  clear  \ clear what ever is on the screen
-  begin  \ the main loo for this task
-        
-        home st?           \ home postion, display the stack (should be empty)
-        _sr04_distance L@  \ get the recent measurement
-
-       \ max is 4000 mm (datasheet) 
+  clear
+  begin
+        home st?   
+        _sr04_distance L@ 
+\ 16 is sr04 echo 
+\    dup 50 125 between if 17 pinhi else 17 pinlo then 
+\    dup 125 250 between if 18 pinhi else 18 pinlo then 
+\    dup 250 500 between if 19 pinhi else 19 pinlo then 
+\    dup 500 1000 between if 20 pinhi else 20 pinlo then 
+\    dup 1000 2000 between if 21 pinhi else 21 pinlo then 
+\    dup 2000 4000 between if 22 pinhi else 22 pinlo then 
+\    4000 >  if 23 pinhi else 23 pinlo then 
+\    
+\ max is 4000 mm (datasheet) 
  
         dup 
         4000 > if drop 255 else 20 / then   \ 20 or 16
 
 
-      16 lshift        \ slide it up to the LED bits 16-23
+      16 lshift \ slide it up to the LED bits 16-23
       0 >m _maskoutlo  \ turn out all LEDs 
-      \ >m _maskouthi  \ display value on LEDs but not like this
+      \ >m _maskouthi    \ display value on LEDs
+      outa COG!
 
-      outa COG!        \ this puts our scaled distance on the LED's
+      20 delms     \ wait so they can light
 
-      20 delms     \ wait so they can light,  LEDs take 10-50 ms
-
-                fkey? nip \ fkey? returns a key and a flag, drop the key
-  until
+                fkey? nip
+\    80 delms
+        until
 ;
 
 ...
+
 
 
 fswrite boot.f
 
 hA state orC! version W@ .cstr cr cr cr
 : findEETOP
-  0
-  h100000 h8000
-  do
-     i t0 2 eereadpage
-     if
-         leave
-     else
-         i h7FFE + t0 3 eereadpage
-         if
-              leave
-         else
-             drop i h8000 +
-         then
-     then
-   h8000 +loop
+0
+h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
 ;
 
 c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
-c" boot.f - Loading bot.f~h0-----
-D~h0D" .cstr hA state andnC!
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
 cr cr cr 
 
 
@@ -259,23 +256,22 @@ cr cr
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 
 : onreset6
-          fkey? and fkey? and or h1B <>
-  if
-    \ c" 23 dup pinout pinhi" 1 cogx
-    \ cogid >con
-    c" _sr04_measure" 2 cogx
-    c" sr04_display" 3 cogx
-  then
+fkey? and fkey? and or h1B <>
+if
+\ c" 23 dup pinout pinhi" 1 cogx
+\ cogid >con
+c" _sr04_measure" 2 cogx
+c" sr04_display" 3 cogx
 
-  cog? 
 
-  c" onreset6" (forget)
-  sr04_test
+then
+
+c" onreset6" (forget)
+sr04_test
 ;
 
 ...
 
-cr
 
 }}}
 
