@@ -1,6 +1,8 @@
 #summary Refined Program for Quickstart bot
 #labels v5.5
 
+<wiki:toc max_depth="9" />
+
 = I. Overview =
 
 Sal's demo program bot.f was first pass at brining together several drivers o test the LittleRobot proof of concept prototype.  Now that we've been using it, there are a couple inprovemnt we can make right off the bat. 
