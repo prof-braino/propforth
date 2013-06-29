@@ -66,11 +66,10 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
   === a. 3.3v NOT 5.0 ===
   The SR04 connects to 3.3 volts on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to 5.0 Vin.
   === b. 10K on ECHO ===
-  The 10k ohm resistor goes between the SR04 echo pin and the Quickstart input pin Pxx
-  === c. Good Data ===
-  === d. SR04 test program ===
+  The 10k ohm resistor goes between the SR04 echo pin and the Quickstart input pin P25.  The extra Female to Female jumper wire is for this.  Slide one end of the F-F on the SR04 echo pin; slide the other F connector onto tone leg of the resistor.  The remaining leg of the resistor goes in the F side of the M-F jumper, and the Male Pin of the jumper plugs into P25. 
+  === c. SR04 test program ===
 
-  Be sure the pin assignments match the chart above.
+  Be sure the pin assignments match the chart above.  Sometimes I forget to change them in the code, better check!
 
 {{{
 fl
@@ -261,7 +260,15 @@ c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
 
 }}}
 
-=== Noisy Data ===
+REBOOT to see the above programs load and run.  The Quickstart LEDs should flash in relation to the distance.  Each LED represents 20 cm counting in binary. Talk about binary with the group until you understand. 
+  
+  === d. Good Data ===
+
+  When the sensor starts running,  point the sensor at a large flat object  close to the sensor,  like a wall.  Notice that the sensor give a single continuous reading. This is a "good" reading.  Only one single comes back, the sound that bounced of the wall. 
+
+  === e. Noisy Data ===
+
+  Now point the sensor at a bunch of small things a little bit far away.  This could be a bunch of chair and table legs. notice that the measurements tend to jump around.  This is because the signals are coming from a whole bunch of objects at different distances.  This is a noisy reading. We can use this too, but we have to be a little clever.  We'll get to using noisy data in an advanced session. 
 
 == 4. Blue Tooth == 
 
