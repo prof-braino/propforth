@@ -126,37 +126,47 @@ fswrite sr04-testbed.f
 1 wconstant build_sr04
 [ifndef _sr04_trig
                   \ 16 wconstant _sr04_trig
-                    15 wconstant _sr04_trig
+                    25 wconstant _sr04_trig
 ]
 [ifndef _sr04_echo
                   \ 17 wconstant _sr04_echo
-                    14 wconstant _sr04_echo
+                    24 wconstant _sr04_echo
 ]
 
 variable _sr04_distance
 
 
 : _sr04_measure
-c" MEASURE" cds W!
-4 state andnC!
+  \ this make the cog display MEASURE when cog?  is run from the command line
+  c" MEASURE" cds W!
+  4 state andnC!
 
 _sr04_trig pinlo _sr04_trig pinout
 _sr04_echo >m
 _sr04_trig >m
-begin
+
+begin \ begin the main loop for this task
+      \ send trigger pulse, 
+      \ rraise the trigger pin for 10uS, than set it lo again
       dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+      \ the three extra dup and three extra drop above take about 10uS
+      \ this is one way to time a very short pulse,
+      \ which we need to triggger the SR04 (per the datashheet)
+
       over dup dup dup
-      waitpeq
-      cnt COG@
+
+      waitpeq  \ wait till the pin goes lo
+      cnt COG@ \ get the counter
       rot2
 
-      waitpne
-      cnt COG@ swap -
-      d_170_000 clkfreq */
+      waitpne  \ wait till the 
+      cnt COG@ swap -      \ get the new counter , and figure the delta
+      \ notice we get a bad reading every minute when the counter rolls over
+      d_170_000 clkfreq */  \ convert the time into distance 
 
-      _sr04_distance L!
-      d_60 delms
-0 until
+      _sr04_distance L!  \ save the calculated distance where the other task can find it
+      d_60 delms  \ wait 60 ms for the SR04 to recover (per datasheet)
+0 until           \ 0 until means "do this forever"
 ;
 
 : sr04_test
@@ -172,33 +182,35 @@ begin
 ;
 
 : sr04_display
-c" LED" cds W!
-4 state andnC!
+  \ this make the cog display "LED" when cog? is run from the command line
+  c" LED" cds W!
+  4 state andnC!
 
+  \ make the LED pins outputs
   8 0 do i 16 + pinout  loop
 
-  clear
-  begin
-        home st?   
-        _sr04_distance L@ 
+  clear  \ clear what ever is on the screen
+  begin  \ the main loo for this task
+        
+        home st?           \ home postion, display the stack (should be empty)
+        _sr04_distance L@  \ get the recent measurement
 
-\ max is 4000 mm (datasheet) 
+       \ max is 4000 mm (datasheet) 
  
         dup 
         4000 > if drop 255 else 20 / then   \ 20 or 16
 
 
-      16 lshift \ slide it up to the LED bits 16-23
+      16 lshift        \ slide it up to the LED bits 16-23
       0 >m _maskoutlo  \ turn out all LEDs 
-      \ >m _maskouthi    \ display value on LEDs
+      \ >m _maskouthi  \ display value on LEDs but not like this
 
-      outa COG!
+      outa COG!        \ this puts our scaled distance on the LED's
 
-      20 delms     \ wait so they can light
+      20 delms     \ wait so they can light,  LEDs take 10-50 ms
 
-                fkey? nip
-\    80 delms
-        until
+                fkey? nip \ fkey? returns a key and a flag, drop the key
+  until
 ;
 
 ...
