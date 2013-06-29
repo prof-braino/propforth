@@ -45,10 +45,10 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 
 = III. Test Individual Parts =
 
-* Quickstart
-* Stepper Drivers
-* SR04 
-* Blue Tooth
+ * Quickstart
+ * Stepper Drivers
+ * SR04 
+ * Blue Tooth
 
 == 1. Quickstart == 
 === Hello World ===
