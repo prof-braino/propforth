@@ -36,7 +36,7 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 || -- ||  P10 = IN3 || ~~P13 = IN3~~ || ~~P13 = IN3~~ || 
 || -- ||  P11 = IN4 || ~~P14 = IN4~~ || ~~P12 = IN4~~ || 
 || MotorB ||  12-15 || ~~d_20 d_21 d_22 d_23~~ || ~~d_11 d_10 d_9 d_8~~  || Vin Motors Can be 5-12v  ||
-|| -- ||  P12 = IN1 || ~~P20 = IN1~~ || ~~P11 = IN1~~  || 
+|| -- ||  P12 = IN1 || ~~P20 = IN1~~ || ~~P11  close to the senosor = IN1~~  || 
 || -- ||  P13 = IN2 || ~~P21 = IN2~~ || ~~P10 = IN2~~  || 
 || -- ||  P14 = IN3 || ~~P22 = IN3~~ || ~~P9  = IN3~~  || 
 || -- ||  P15 = IN4 || ~~P23 = IN4~~ || ~~P8  = IN4~~  || 
@@ -46,7 +46,7 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 || --   ||  xx || ~~P1 = bt KEY~~ || ~~P22 = bt KEY~~ || (KEY is not used on HC06 carrier board version) ||
 
 -----
-
+ close to the senosor 
 
 = III. Test Individual Parts =
 
@@ -70,6 +70,8 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
   === c. SR04 test program ===
 
   Be sure the pin assignments match the chart above.  Sometimes I forget to change them in the code, better check!
+
+  Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
 
 {{{
 fl
