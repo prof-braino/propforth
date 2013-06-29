@@ -43,7 +43,7 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 || HC05/HC06 ||  26-27 || ~~P2, P0, P1~~ || ~~P27, P26, P22~~ || Vdd 3.3v||
 || --   ||  p26 = HC06-Tx || ~~P2 = bt Tx~~  || ~~P27 = bt Tx~~ ||
 || --   ||  P27 = HC06-Rx || ~~P0 = bt Rx~~  || ~~P26 = bt Rx~~ ||
-|| --   ||  xx || P1 = bt KEY || P22 = bt KEY || (KEY is not used on HC06 carrier board version) ||
+|| --   ||  xx || ~~P1 = bt KEY~~ || ~~P22 = bt KEY~~ || (KEY is not used on HC06 carrier board version) ||
 
 -----
 
