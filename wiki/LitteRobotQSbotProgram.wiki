@@ -50,20 +50,19 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
  * SR04 
  * Blue Tooth
 
-== 1. Quickstart == 
-=== Hello World ===
-=== Blinky LED ===
+ == 1. Quickstart == 
+ === Hello World ===
+ === Blinky LED ===
+ == 2. Stepper Drivers == 
+ ===Blinky LED again ===
+ === MotorA or MotorB? ===
 
-== 2. Stepper Drivers == 
-===Blinky LED again ===
-=== MotorA or MotorB? ===
+ == 3. SR04  == 
+ === 3.3v NOT 5.0 ===
+ === 10K on ECHO ===
+ === Good Data ===
 
-== 3. SR04  == 
-=== 3.3v NOT 5.0 ===
-=== 10K on ECHO ===
-=== Good Data ===
-
-=== SR04 test program ===
+ === SR04 test program ===
 
 {{{
 fl
