@@ -3,7 +3,7 @@
 
 <wiki:toc max_depth="9" />
 
-#sidebar toc 
+#sidebar wiki:toc 
 
 = I. Overview =
 
