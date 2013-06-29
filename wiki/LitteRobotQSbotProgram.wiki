@@ -62,8 +62,11 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
   === a. Blinky LED again ===
   === b. MotorA or MotorB? ===
  == 3. SR04  == 
+ The SR04 is the Ultrasonic Range finder.
   === a. 3.3v NOT 5.0 ===
+  The SR04 connects to 3.3 volts on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to 5.0 Vin.
   === b. 10K on ECHO ===
+  The 10k ohm resistor goes between the SR04 echo pin and the Quickstart input pin Pxx
   === c. Good Data ===
   === d. SR04 test program ===
 
