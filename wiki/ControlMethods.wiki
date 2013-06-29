@@ -1,6 +1,8 @@
 #summary Control Methods to use with Microcontrollers
 #labels v5.5
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 DRAFT - please add comments and update content.
