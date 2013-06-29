@@ -3,16 +3,36 @@
 
 <wiki:toc max_depth="9" />
 
+-----
+
 = I. Overview =
 
 There is a version of bot.f in the PropForth-V5.5-20130317.zip that we have CHANGED into QSbot.f, shown on this page.  
 
+QSbot.f is the modified program to use for the QUickstart version of the LittleRobot.  We will use this in our workshop session today. 
+
+Using these instructions, we will:
+
+  * Connect each components for the bot
+  * Test each components for the bot
+  * Build the bot
+  * Program the bot
+  * Test the assembled bot
 
 -----
 
 = II. Physical connections =
 
-Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for comparison. 
+
+The following chat is the reference for how the connection are made. 
+
+Don't worry, we don't have to do them all just yet. 
+
+We will connect each part one at a time, and test it to show how it works
+
+When you make the connections, use the pin number from the QSbot column. 
+
+Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparison. You won't care about these until later. 
 
 || || QSbot || ~~Bot1~~ || ~~Bot2~~ ||
 || SR04  || 24 trig, 25 echo || ~~16 trig, 17 echo~~ || ~~P24 trig, P25 echo~~  || Vin *SR04 must have no more than 5.0v Vin* ||
@@ -34,8 +54,9 @@ Connect the pins for QSbot as shown. Bot 1 and Bot 2 pinouts are included for co
 || --   ||  P27 = HC06-Rx || ~~P0 = bt Rx~~  || ~~P26 = bt Rx~~ ||
 || --   ||  xx || ~~P1 = bt KEY~~ || ~~P22 = bt KEY~~ || (KEY is not used on HC06 carrier board version) ||
 
+
 -----
- close to the senosor 
+
 
 = III. Test Individual Parts =
 
