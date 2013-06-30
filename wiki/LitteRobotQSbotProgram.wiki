@@ -365,9 +365,20 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
 
 REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect these to 5.0 volts. The 3.3 volt connection is the second from the right on the top, on the Quickstart 40 pin connector. Refer to the PinFinder, it printed right in there. 
  
-   === Bluetooth Ground ===
+   === c. Bluetooth Ground ===
 
 The bluetooth module connects to the same black wire (-) negative connection on the battery pack as as do all the other components. 
+
+   === d. blue tooth program ===
+
+The the program boots, it looks for the Bluetooth Tx pin.  The HC05 and HC06 bluetooth modules we use hold the Tx line hi.  Normally all the lines are low. So, if the pin wherre we expect a Tx is held hi, we probably has a BT module, and prpbably want to use it.  So, iwhen the program detects the T hi at boot, it switches to use the Tc pins.  The regular terminal doesn't respond as its no longerr needed.
+
+If you wish to skip the boot behavio (to use the regular PC terminal), you can use either of these methods, depenedin on your needs: 
+
+  * hold down the ESC key during boot. This prevents the autoboot from rrunning, and so prevents the drivers from starting.  The stepper, LED, and BT programs are loaded and available, but do not start by themselves.
+
+  * unplug the BT Tx line.  The autoboot will run, and launch all the drivers.  But since it doesn't see the Tx high, it does not switch to BT pin, and the regular terminal will work. 
+
 -----
 
 = IV. QSbot.f =
