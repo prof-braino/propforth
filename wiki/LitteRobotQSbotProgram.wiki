@@ -458,7 +458,33 @@ fsload sr04.f
 
 }}}
 
+After the above section is edited, put the same in QSbot.f below.
 
+Next, the boot.f program reassigns the serial pins at boot time:
+
+{{{
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" _ready_led dup pinout pinhi" $S_con cogx
+c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+cogid >con
+c" init_motorA" 0 cogx
+c" init_motorB" 1 cogx
+c" _sr04_measure" 2 cogx
+c" sr04_display" 3 cogx
+then
+c" onreset6" (forget)
+;
+
+
+}}}
+
+Note that the baud rate is four time that listed; 57600 * 4 = 230400
+
+These changes must also be made to QSbot.f
 
 -----
 
