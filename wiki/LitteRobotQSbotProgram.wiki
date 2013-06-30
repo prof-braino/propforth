@@ -484,7 +484,7 @@ c" onreset6" (forget)
 
 Note that the baud rate is four time that listed; 57600 * 4 = 230400
 
-These changes must also be made to QSbot.f
+These lines are the same as in the original, and must be present in QSbot.f
 
 -----
 
