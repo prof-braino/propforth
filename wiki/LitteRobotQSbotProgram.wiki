@@ -349,23 +349,27 @@ REBOOT to see the above programs load and run.  The Quickstart LEDs should flash
 
    Now point the sensor at a bunch of small things a little bit far away.  This could be a bunch of chair and table legs. notice that the measurements tend to jump around.  This is because the signals are coming from a whole bunch of objects at different distances.  This is a noisy reading. We can use this too, but we have to be a little clever.  We'll get to using noisy data in an advanced session. 
 
-== 4. Blue Tooth == 
+== 4. HC06 Blue Tooth == 
 
-  The blue tooth module is a little bit tricky the first time through, so we have pre-programmed the modules.  
+The blue tooth module is a little bit tricky the first time through, so we have pre-programmed the modules.  
 
 If you try to program or reprogram modules on your own, refer to 
 
 http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
 
-  === a. Bluetooth connections ===
+  === a. blue tooth prop connections ===
 
-  === b. Bluetooth POWER is 3.3 ===
+  HC06 Tx goes to the prop quickstart pin 26
+
+  HC06 Rx goes to the prop quickstart pin 26
+
+  === b. blue tooth POWER is 3.3 ===
 
 3.3 volts is provided on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to the 5volt Vin.
 
-REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect these to 5.0 volts. The 3.3 volt connection is the second from the right on the top, on the Quickstart 40 pin connector. Refer to the PinFinder, it printed right in there. 
+REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect the HC06 to 5.0 volts. The 3.3 volt connection is the second from the right on the top, on the Quickstart 40 pin connector. Refer to the PinFinder, its printed right on there. 
  
-   === c. Bluetooth Ground ===
+   === c. blue tooth ground ===
 
    The bluetooth module connects to the same black wire (-) negative connection on the battery pack as as do all the other components. 
 
