@@ -121,9 +121,9 @@ x pinout x pinhi x pinlo
 
   The SR04 is the Ultrasonic Range finder.
 
-   === a. 3.3v NOT 5.0 ===
+   === a. 5.0 volts power ===
 
-   The SR04 connects to 3.3 volts on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to 5.0 Vin.
+   The SR04 connects to 5.0 V on the red (+) battery connector. 
 
    === b. 10K on ECHO ===
 
@@ -360,6 +360,8 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
   === a. Bluetooth connections ===
 
   === b. Bluetooth POWER is 3.3 ===
+
+3.3 volts is provided on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to the 5volt Vin.
 
 REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect these to 5.0 volts. The 3.3 volt connection is the second from the right on the top, on the Quickstart 40 pin connector. Refer to the PinFinder, it printed right in there. 
  
