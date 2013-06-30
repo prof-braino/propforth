@@ -9,7 +9,7 @@
 
 There is a version of bot.f in the PropForth-V5.5-20130317.zip that we have CHANGED into QSbot.f, shown on this page.  
 
-QSbot.f is the modified program to use for the QUickstart version of the LittleRobot.  We will use this in our workshop session today. 
+QSbot.f is the modified program to use for the Quickstart version of the LittleRobot.  We will use this in our workshop session today. 
 
 Using these instructions, we will:
 
@@ -65,7 +65,7 @@ Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparis
  * SR04 
  * Blue Tooth
 
- == 1. Quickstart == 
+== 1. Quickstart == 
 
  First we see the Quickstart microcontroller board, what it does, and check that  works. 
 
@@ -87,7 +87,7 @@ Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparis
 
   http://code.google.com/p/propforth/wiki/GettingStartedBlinkyLED
 
- == 2. Stepper Drivers == 
+== 2. Stepper Drivers == 
 
  The stepper motors are driven by the little hardware board they are connected to.  Four control lines run from the quickstart to the motor driver, and two wires run from power and ground;  and five wires run from the driver to the motor itself.  The fifth wire to the motor is ground.  The other four wires send power to th motor coils, and the prop controls when they are on and off. 
 
@@ -117,7 +117,7 @@ x pinout x pinhi x pinlo
 
    http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
 
-  == 3. SR04  == 
+== 3. SR04  == 
 
   The SR04 is the Ultrasonic Range finder.
 
@@ -349,7 +349,7 @@ REBOOT to see the above programs load and run.  The Quickstart LEDs should flash
 
    Now point the sensor at a bunch of small things a little bit far away.  This could be a bunch of chair and table legs. notice that the measurements tend to jump around.  This is because the signals are coming from a whole bunch of objects at different distances.  This is a noisy reading. We can use this too, but we have to be a little clever.  We'll get to using noisy data in an advanced session. 
 
-  == 4. Blue Tooth == 
+== 4. Blue Tooth == 
 
   The blue tooth module is a little bit tricky the first time through, so we have pre-programmed the modules.  
 
@@ -367,13 +367,13 @@ REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect these to 5.0
  
    === c. Bluetooth Ground ===
 
-The bluetooth module connects to the same black wire (-) negative connection on the battery pack as as do all the other components. 
+   The bluetooth module connects to the same black wire (-) negative connection on the battery pack as as do all the other components. 
 
    === d. blue tooth program ===
 
-The the program boots, it looks for the Bluetooth Tx pin.  The HC05 and HC06 bluetooth modules we use hold the Tx line hi.  Normally all the lines are low. So, if the pin wherre we expect a Tx is held hi, we probably has a BT module, and prpbably want to use it.  So, iwhen the program detects the T hi at boot, it switches to use the Tc pins.  The regular terminal doesn't respond as its no longerr needed.
+   The the program boots, it looks for the Bluetooth Tx pin.  The HC05 and HC06 bluetooth modules we use hold the Tx line hi.  Normally all the lines are low. So, if the pin wherre we expect a Tx is held hi, we probably has a BT module, and prpbably want to use it.  So, iwhen the program detects the T hi at boot, it switches to use the Tc pins.  The regular terminal doesn't respond as its no longerr needed.
 
-If you wish to skip the boot behavio (to use the regular PC terminal), you can use either of these methods, depenedin on your needs: 
+   If you wish to skip the boot behavio (to use the regular PC terminal), you can use either of these methods, depenedin on your needs: 
 
   * hold down the ESC key during boot. This prevents the autoboot from rrunning, and so prevents the drivers from starting.  The stepper, LED, and BT programs are loaded and available, but do not start by themselves.
 
