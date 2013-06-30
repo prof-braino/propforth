@@ -89,48 +89,53 @@ Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparis
 
  == 2. Stepper Drivers == 
 
-The stepper motors are driven by the little hardware board they are connected to.  Four control lines run from the quickstart to the motor driver, and two wires run from power and ground;  and five wires run from the driver to the motor itself.  The fifth wire to the motor is ground.  The other four wires send power to th motor coils, and the prop controls when they are on and off. 
+ The stepper motors are driven by the little hardware board they are connected to.  Four control lines run from the quickstart to the motor driver, and two wires run from power and ground;  and five wires run from the driver to the motor itself.  The fifth wire to the motor is ground.  The other four wires send power to th motor coils, and the prop controls when they are on and off. 
 
  The stepper drivers are actually ULN2004 darlington transistor arrays.  We can use then as stepper drivers since the current and voltage are low. The same code we are using now with BIG STEPPERS and other general stepper driver hardware.  
 
-  === a. Blinky LED again ===
+   === a. Blinky LED again ===
 
-  Connect each motor's in1 to in4 to the Quickstart header per the chat above.  Also connect the (+) from the ULN2003 to the battery (+) red wire connector, and the (-) to the battery (-) black wire connector.
+   Connect each motor's in1 to in4 to the Quickstart header per the chat above.  Also connect the (+) from the ULN2003 to the battery (+) red wire connector, and the (-) to the battery (-) black wire connector.
 
-  After the connections are made, test them using the same code as blinky LED.  For each stepper, start with pin x and type
+   After the connections are made, test them using the same code as blinky LED.  For each stepper, start with pin x and type
 
-{{{ 
+   {{{ 
 
 x pinout x pinhi x pinlo
 
 }}}
 
-You will see each pin light if the connections are correct.  
+   You will see each pin light if the connections are correct.  
 
-If the pins do NOT light, or if you smell something, PLUG immediately.  If these burn, they will no longer work.  Check the connection, and start again. 
+   If the pins do NOT light, or if you smell something, PLUG immediately.  If these burn, they will no longer work.  Check the connection, and start again. 
 
-  === b. MotorA or MotorB? ===
+   === b. MotorA or MotorB? ===
 
-After the LED all light properly, try to run code. 
+   After the LED all light properly, try to run code. 
 
-Copy the code from the file linked below to a text file.  CHANGE THE PINS in the file to the ones listed in the cart above. 
+   Copy the code from the file linked below to a text file.  CHANGE THE PINS in the file to the ones listed in the cart above. 
 
-http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
+   http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
 
- == 3. SR04  == 
+  == 3. SR04  == 
 
- The SR04 is the Ultrasonic Range finder.
-  === a. 3.3v NOT 5.0 ===
-  The SR04 connects to 3.3 volts on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to 5.0 Vin.
-  === b. 10K on ECHO ===
-  The 10k ohm resistor goes between the SR04 echo pin and the Quickstart input pin P25.  The extra Female to Female jumper wire is for this.  Slide one end of the F-F on the SR04 echo pin; slide the other F connector onto tone leg of the resistor.  The remaining leg of the resistor goes in the F side of the M-F jumper, and the Male Pin of the jumper plugs into P25. 
-  === c. SR04 test program ===
+  The SR04 is the Ultrasonic Range finder.
 
-  Be sure the pin assignments match the chart above.  Sometimes I forget to change them in the code, better check!
+   === a. 3.3v NOT 5.0 ===
 
-  Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
+   The SR04 connects to 3.3 volts on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to 5.0 Vin.
 
-{{{
+   === b. 10K on ECHO ===
+
+   The 10k ohm resistor goes between the SR04 echo pin and the Quickstart input pin P25.  The extra Female to Female jumper wire is for this.  Slide one end of the F-F on the SR04 echo pin; slide the other F connector onto tone leg of the resistor.  The remaining leg of the resistor goes in the F side of the M-F jumper, and the Male Pin of the jumper plugs into P25. 
+
+   === c. SR04 test program ===
+
+   Be sure the pin assignments match the chart above.  Sometimes I forget to change them in the code, better check!
+
+   Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
+
+   {{{
 fl
 
 \ 20130626 Quickstart LEDs represent the distance measured
@@ -336,17 +341,31 @@ NOTICE! You must highlight all the way to the cr if you copy from this web page.
 
 REBOOT to see the above programs load and run.  The Quickstart LEDs should flash in relation to the distance.  Each LED represents 20 cm counting in binary. Talk about binary with the group until you understand. 
   
-  === d. Good Data ===
+   === d. Good Data ===
 
-  When the sensor starts running,  point the sensor at a large flat object  close to the sensor,  like a wall.  Notice that the sensor give a single continuous reading. This is a "good" reading.  Only one single comes back, the sound that bounced of the wall. 
+   When the sensor starts running,  point the sensor at a large flat object  close to the sensor,  like a wall.  Notice that the sensor give a single continuous reading. This is a "good" reading.  Only one single comes back, the sound that bounced of the wall. 
 
-  === e. Noisy Data ===
+   === e. Noisy Data ===
 
-  Now point the sensor at a bunch of small things a little bit far away.  This could be a bunch of chair and table legs. notice that the measurements tend to jump around.  This is because the signals are coming from a whole bunch of objects at different distances.  This is a noisy reading. We can use this too, but we have to be a little clever.  We'll get to using noisy data in an advanced session. 
+   Now point the sensor at a bunch of small things a little bit far away.  This could be a bunch of chair and table legs. notice that the measurements tend to jump around.  This is because the signals are coming from a whole bunch of objects at different distances.  This is a noisy reading. We can use this too, but we have to be a little clever.  We'll get to using noisy data in an advanced session. 
 
-== 4. Blue Tooth == 
+  == 4. Blue Tooth == 
 
+  The blue tooth module is a little bit tricky the first time through, so we have pre-programmed the modules.  
+
+If you try to program or reprogram modules on your own, refer to 
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
+
+  === a. Bluetooth connections ===
+
+  === b. Bluetooth POWER is 3.3 ===
+
+REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect these to 5.0 volts. The 3.3 volt connection is the second from the right on the top, on the Quickstart 40 pin connector. Refer to the PinFinder, it printed right in there. 
  
+   === Bluetooth Ground ===
+
+The bluetooth module connects to the same black wire (-) negative connection on the battery pack as as do all the other components. 
 -----
 
 = IV. QSbot.f =
