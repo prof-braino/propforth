@@ -107,15 +107,18 @@ x pinout x pinhi x pinlo
 
    You will see each pin light if the connections are correct.  
 
-   If the pins do NOT light, or if you smell something, PLUG immediately.  If these burn, they will no longer work.  Check the connection, and start again. 
+   If the pins do NOT light, or if you smell something, UNPLUG the USB immediately. TURN OFF the battery switch.  If these burn, they will no longer work.  Check the connection, and start again. 
 
    === b. MotorA or MotorB? ===
 
    After the LED all light properly, try to run code. 
 
-   Copy the code from the file linked below to a text file.  CHANGE THE PINS in the file to the ones listed in the cart above. 
+   MotorA is the first one, and should be on the left. MotorB is the other one, and should be on the right.  If this is not so, the bot will run backwards.  No biggie, just switch the wires that are easiest. You can either unplug and replug the four wires for each motor at the quickstat; or you can unplug the bundle of wires from the motor to the ULN2003 board, and swap those. 
+
+   Copy the code from the file linked below to a text file.  CHANGE THE PINS in the file to the ones listed in the chart above. 
 
    http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
+
 
 == 3. SR04  == 
 
@@ -288,7 +291,8 @@ do
 i t0 2 eereadpage
 if
 leave
-else
+else   MotorA is the first one, and should be on the left. MotorB is the other one, and should be on the right.  If this is not so, the bot will run backwards.  No biggie, just switch the wires that are easiest. You can either unplug and replug the four wires for each motor at the quickstat; or you can unplug the bundle of wires from the motor to the ULN2003 board, and swap those. 
+
 i h7FFE + t0 3 eereadpage
 if
 leave
