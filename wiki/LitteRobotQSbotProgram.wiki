@@ -87,11 +87,38 @@ Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparis
 
   http://code.google.com/p/propforth/wiki/GettingStartedBlinkyLED
 
-
  == 2. Stepper Drivers == 
+
+The stepper motors are driven by the little hardware board they are connected to.  Four control lines run from the quickstart to the motor driver, and two wires run from power and ground;  and five wires run from the driver to the motor itself.  The fifth wire to the motor is ground.  The other four wires send power to th motor coils, and the prop controls when they are on and off. 
+
+ The stepper drivers are actually ULN2004 darlington transistor arrays.  We can use then as stepper drivers since the current and voltage are low. The same code we are using now with BIG STEPPERS and other general stepper driver hardware.  
+
   === a. Blinky LED again ===
+
+  Connect each motor's in1 to in4 to the Quickstart header per the chat above.  Also connect the (+) from the ULN2003 to the battery (+) red wire connector, and the (-) to the battery (-) black wire connector.
+
+  After the connections are made, test them using the same code as blinky LED.  For each stepper, start with pin x and type
+
+{{{ 
+
+x pinout x pinhi x pinlo
+
+}}}
+
+You will see each pin light if the connections are correct.  
+
+If the pins do NOT light, or if you smell something, PLUG immediately.  If these burn, they will no longer work.  Check the connection, and start again. 
+
   === b. MotorA or MotorB? ===
+
+After the LED all light properly, try to run code. 
+
+Copy the code from the file linked below to a text file.  CHANGE THE PINS in the file to the ones listed in the cart above. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
+
  == 3. SR04  == 
+
  The SR04 is the Ultrasonic Range finder.
   === a. 3.3v NOT 5.0 ===
   The SR04 connects to 3.3 volts on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to 5.0 Vin.
