@@ -35,6 +35,11 @@ Buy the parts yourself if you are just doing one for yourself.  You are responsi
 Buy the kits from me if you are having me do a class or a workshop.  This way I can ensure everything is right. 
 
 == * Quickstart (1x) == 
+
+http://www.parallaxsemiconductor.com/quickstart
+
+http://www.parallax.com/quickstart
+
 ==  * pinfinder (1x) == 
 ==  * HC06 (1x) == 
 ==  * SR04 (1x) == 
