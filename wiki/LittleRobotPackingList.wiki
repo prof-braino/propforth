@@ -1,4 +1,5 @@
 #summary The Contents of the LittleRobot Kit configuration 20130622
+#labels v5.5,LittleRobot
 
 = Packing List =
 
@@ -100,7 +101,11 @@ The kids usually gouge a slot in the base of the hole, to pass the motor wires o
 
 These wires should be as short as possible and have about 3/8 inch or 3 mm stripped at the end.  It goes from the battery pack to the quickstart. Vin and GND.
 
-==  * Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x) == 
+== Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x) == 
+
+Eddy Wright of Wright Hobbies is milling the wheels out of acrylic sheet for us.  In exchange,  he has asked that I put one of his business card in the package.  This is a good idea, anyone that likes building a bot would likely wish to upgrade, and Wright Hobbies is a good source for a lot of the parts we tend to need.  Of course, you should always shop around and choose for yourself, but Eddy is good to work with, so its useful to use him when possible. 
+
+
 
 
 = End OF VERSION 20130622 Kit =
