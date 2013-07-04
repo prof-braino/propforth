@@ -1,0 +1,52 @@
+#summary The Contents of the LittleRobot Kit configuration 20130622
+
+= Packing List =
+
+In the interest of PAPERLESS office efforts, the LittleRobot Packing list will NOT be included in each kit.  
+
+The packing List will be this web page.  If the kit changes, the contents of this pages is to be renamed to LittleRobotPackingListYYYMMDD according to the issue date, and the old version deprecated. 
+
+= Version 201306022 = 
+
+This version is modified from the kit provided by Propeller Powered January 2013.
+
+= Version 20130622 contents =
+
+ * Quickstart (1x)
+ * pinfinder (1x)
+ * HC06 (1x)
+ * SR04 (1x)
+ * 28BYJ + ULN2003 (2x)
+ * 10k ohm resistor (1x)
+ * M-F jumper wires (20x)
+ * F-F Jumper wire (1x)
+ * Battery pack with switch and CUSTOM CONNECTOR (1x)
+ * Chassis (pink Foam Block with 1/2 inch holes) (1x)
+ * Red wire (1x)
+ * Black wire  (1x)
+ * Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)
+
+= Parts Details =
+
+You can get the parts yourself (to try and save money) or you can order prepackaged kits (to try and save money).  I get a volume discount (therefore and additional break on shipping).  But its a pain in the @$$ and a lot of work and costs money to make these kits.  So I priced it so is just a TAD more expensive if you buy just one kit, and tad less expensive if you buy a whole bunch of kits. 
+
+Buy the parts yourself if you are just doing one for yourself.  You are responsible for getting everything right. 
+
+Buy the kits from me if you are having me do a class or a workshop.  This way I can ensure everything is right. 
+
+== * Quickstart (1x) == 
+==  * pinfinder (1x) == 
+==  * HC06 (1x) == 
+==  * SR04 (1x) == 
+==  * 28BYJ + ULN2003 (2x) == 
+==  * 10k ohm resistor (1x) == 
+==  * M-F jumper wires (20x) == 
+==  * F-F Jumper wire (1x) == 
+==  * Battery pack with switch and CUSTOM CONNECTOR (1x) == 
+==  * Chassis (pink Foam Block with 1/2 inch holes) (1x) == 
+==  * Red wire (1x) == 
+==  * Black wire  (1x) == 
+==  * Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x) == 
+
+
+= End OF VERSION 20130622 Kit =
