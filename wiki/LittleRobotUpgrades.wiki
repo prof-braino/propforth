@@ -1,0 +1,49 @@
+#summary Upgrades for the LittleRobot.
+#labels v5.5
+
+= Introduction =
+
+The original kit for LittleRobot is designed to be the CHEAPEST set of parts, so you can see if you are interested.  If you are interested, you will eventually want to make changes. 
+
+You can change, add remove, or re-purpose any part on the LitttleRobot.  You just have to change the software to match your new part.  This is the intent of the propforth project, to teach about complete mastery of the system, and the ability to change anything to meet your intended purpose. 
+
+-----
+= SENSORS =
+
+The SRO4 ultrasonic range finder is the cheapest thing we could find.  It does well for what it it. 
+
+== Laser Range Finder ==
+
+The DS00 laser range finder is expensive at $350 US, but is accurrate to a couple centimeters at  350 meters.  Other members of this family are cheaper with shorter range. 
+
+== Vision ==
+
+OpenCV vision add ons are in the development. 
+
+== Bump/Touch  sensor ==
+
+== Flex Sensor ==
+
+-----
+= ACTUATORS =
+
+
+
+== Motors ==
+
+The original steppers are cheapest. They are slow at 6RPM.
+
+== DC Motors ==
+
+DC motors can be used with H-brdige circuit. These may require some feedback if accuracy is required.
+
+=== Continuous Rotation Servo ===
+
+http://www.parallax.com/StoreSearchResults/tabid/768/txtSearch/Servo/List/0/SortField/4/ProductID/916/Default.aspx
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
