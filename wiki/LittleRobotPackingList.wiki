@@ -34,23 +34,72 @@ Buy the parts yourself if you are just doing one for yourself.  You are responsi
 
 Buy the kits from me if you are having me do a class or a workshop.  This way I can ensure everything is right. 
 
-== * Quickstart (1x) == 
+== Quickstart (1x) == 
 
 http://www.parallaxsemiconductor.com/quickstart
 
 http://www.parallax.com/quickstart
 
-==  * pinfinder (1x) == 
-==  * HC06 (1x) == 
-==  * SR04 (1x) == 
-==  * 28BYJ + ULN2003 (2x) == 
-==  * 10k ohm resistor (1x) == 
-==  * M-F jumper wires (20x) == 
-==  * F-F Jumper wire (1x) == 
-==  * Battery pack with switch and CUSTOM CONNECTOR (1x) == 
-==  * Chassis (pink Foam Block with 1/2 inch holes) (1x) == 
-==  * Red wire (1x) == 
-==  * Black wire  (1x) == 
+==  pinfinder (1x) == 
+
+This is a little clip that goes on the quickstart 40 pin connector.  It provides an indication of what each pin is for.  This makes it easy to find P0-p31, Vin, 3.3, GND.  
+
+If you don't have a pin finder, put painters tape on the sides of the 40 pin connector.  Use a fine point indelible marker to mark the connections. It takes a slightly steady hand to write so small, and you need little kid eyes to read it, but this is what I used to do before I discovered the pin finder.
+
+==  HC06 (1x) == 
+
+The HC06 (or HC05) blue tooth need to be mounted on a carrier board so you can connect to the pins.  If no carrier board is available, solder stiff wire directly to the correct scallops and use those.  Soldering so small a part is a real challenge, but this is what we did before we discovered the carrier board versions and decided that 4x the cost was worth it over the hassle of soldering tiny boards. 
+
+== SR04 (1x) == 
+
+About 1 in 20 of the SR04 ultrasonic range finders is bad. Sometimes they can be resoldered.  Usually its better to just get another one. 
+
+These use 5 volts, the 5 volt output would damage the prop input. 
+
+BE SURE to put the 10K ohms resistor between the ECHO pin on the SR04 and the imnput on the prop chip.
+
+== 28BYJ + ULN2003 (2x) == 
+
+Using the ULN2003 is the same a turning on an LED on the quickstart. 
+
+Test that they work by doing 'X pinout X pinhi' to see the red LED light for an IN1 pin on the ULN2003 board. Be sure to say 'x pinlo'  befor moving on to the next IN2.
+
+==  10k ohm resistor (1x) == 
+
+As stated above, the 10k ohm resistor MUST be between the ECHO out pin on the SR04 and the prop input pin.
+
+One end of the resistor goes in the end of the M-F jumper, the other goes in one end of the F-F jumper.
+
+==  M-F jumper wires (20x) == 
+
+All connections use a Male to Female jumper wire. 
+
+==  F-F Jumper wire (1x) == 
+
+The Female to Female jumper wire goes between the SR04 echo pin and the one end of the 10k ohm resistor.
+
+==  Battery pack with switch and CUSTOM CONNECTOR (1x) == 
+
+The battery pack has an on/off switch.
+
+Use 4 AA NiMH (nickel metal hydride) batteries.  These are 1.2 volts each for a total of 4.8 volts.  You must get you own charger. 
+
+DO NOT USE 4 ALKALINE BATTERIES!!!! Alkaline batteries are 1.5 volts; this will screw up the SR04 and it won't measure correctly, and might damage it. 
+
+IN A PINCH you can use THREE (3) alkaline batteries, and a dummy battery in the fourth position.  The dummy battery can be a 1-3/4 inch machine bolt, a peice of wire, anything that completes the circuit.  Three alkaline batteries do not last as long as 4 NiMH batteries, but at least you could do some testing and run for a short time. 
+
+The CUSTOM CONNECTOR has about five (some had four, some has six) female connectors.  The red side is all the +5volt Vin connections; the black side is all the 0volt ground (GND) connections.
+
+==  Chassis (pink Foam Block with 1/2 inch holes) (1x) == 
+
+I drive 1/2 inch holes on either side of the block, for the motors to press in.  
+
+The kids usually gouge a slot in the base of the hole, to pass the motor wires out.  Putting the slot on the FRONT off the bot has worked in the past; putting th slot on the top of the bot has interfered with the battery pack.  Putting the slot on the bottom of the bot might cause the wires to catch on something, but give it a try if you think it will work better, and let us know the results. 
+
+==  Red wire (1x) and Black wire  (1x) == 
+
+These wires should be as short as possible and have about 3/8 inch or 3 mm stripped at the end.  It goes from the battery pack to the quickstart. Vin and GND.
+
 ==  * Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x) == 
 
 
