@@ -1,13 +1,36 @@
 #summary 16-bit token threaded assembler for prop architecture.
-#labels v2.7
+#labels v2.7,v5.5
 
 = !PropForth Dictionary Structure =
 
 The !PropForth Dictionary is located in hub memory. Before a cog is started with the !PropForth interpreter, the forth 16 bit word variables mswDictend and and mswMemend should be set to the top of memory which should be used by !PropForth. This is done by the following spin code:
+
 {{{
-  WORD[ @mswDictendPFA + 2] := @ForthDictEnd
-  WORD[ @mswMemendPFA + 2] := @ForthMemoryEnd
+  WORD[ here ]
 }}}
+
+
+{{{
+  WORD[ Dictend + 2] := @ForthDictEnd
+  WORD[ Memend + 2] := @ForthMemoryEnd
+}}}
+
+
+These tell you memory boundry
+{{{
+here W@
+DictEnd W@
+MemEnd W@
+}}}
+
+Usually DictEnd and MemEnd are the same.
+-----
+IF You WANT TO put a table outside of fort memory, reduce DictEnd by Table size, and put it between DictEnd and MemEnd. 
+
+But this doesn't really make sense, you should just define this in the regular forth dictionary, as the dictionary entry gives a method to access the table by name, and handles it automatically. 
+
+-----
+
 The labels !ForthDictEnd and !ForthMemoryEnd are set at the end of an array of longs. This array size can be adjusted by removing / adding declarations of longs.
 
 The dictionary is a series of Dictionary Entries. The last entry in the dictionary is always pointed to by the word variable mswlastnfa. The !LinkField points to the previous entry in the dictionary. If the !LinkField is 0, there are no other entries.
