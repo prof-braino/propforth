@@ -14,6 +14,8 @@ The top of the data stack is actually buffered by the cog long variable stTOS. T
 
 Both stacks are checked for over/underflow every time data is pushed or popped.
 
+The TOP OF STACK is a special case.  Action that affect ONLY the top stack item are NOT checked for overflow and underflow; the value is only checked when the item GETS USED.   IF YOU ENCOUNTER AN ISSUE with this, please post on the forums.  More detail can be provided for the particular case. 
+
 There is an additional cog long variable IP. This variable points to the current forth word that is currently being executed.
 
 === Example Code and Trace ===
