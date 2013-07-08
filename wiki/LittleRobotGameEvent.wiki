@@ -66,13 +66,13 @@ RC mode is the expected initial mode.  The methods are well known and equipment 
 
 The operator "sees what the bot sees".   The operator has no or limited visual access to the bot.  The operator relies on the inputs recieved from the bot. Th sensors could be anything available:  ultrasonic distance, IR proximity (or inductive or capacitve), video camera, audio, etc.
 
-The operator makes all desisions in real time.
+The operator makes all decisions in real time.
 
-This is not expected to be used due to the expense of additional sensors. In particular, wirless link with sufficent bandwidth may be equal in cost to the entire remainder of the project.  However, users may find ways to benefit from existing sensors, or have additional budget.  Telepresence capabilities would be an asset to a team. 
+This is not expected to be used due to the expense of additional sensors. In particular, wireless link with sufficient bandwidth may be equal in cost to the entire remainder of the project.  However, users may find ways to benefit from existing sensors, or have additional budget.  Telepresence capabilities would be an asset to a team. 
 
 == Full Autonomous Mode ==
 
-The bot makes all decisions based on prior programming and sensor input.  
+The bot makes all decisions based on realtime sensor input and prior programming.  
 
 This is not expected to be used in the initial rounds. Any autonomous capability would be a welcome surprise. 
 
