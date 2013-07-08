@@ -44,32 +44,23 @@ http://code.google.com/p/propforth/downloads/detail?name=Green.apk
 
 = High level description of user facing functions =
 
-pivot left
+These are the high level requirements for the LittleRobot interface. The task (for the workshop and class room participants) is to define macros to perform:
 
-pivot right
+ * pivot left
+ * pivot right
+ * straight
+ * speed 
+ * accelerate
+ * measure distance
+ * calibrate (wheels)
+ * avoid close object
+ * seek far object
+ * retreat from closing object
+ * pursue retreating object
+ * circumnavigate area
+ * stop at origin
 
-straight
-
-speed 
-
-accelerate
-
-measure distance
-
-calibrate (wheels)
-
-avoid close object
-
-seek far object
-
-retreat from closing object
-
-pursue retreating object
-
-circumnavigate area
-
-stop at origin
-
+These will be posted as they are developed. 
 
 == Why the name GREEN? ==
 
@@ -85,19 +76,36 @@ Green will not run on Android 2.2 devices, or devices lacking blue tooth.
 
 Samsung Captivate Glide (in the Galaxy family) shipped with Android 2.3.6 and would not accept GREEN; but this device is upgradeable to Android 4.0.4 and works fine after the upgrade.
 
-= Requirements= 
+= Requirements for GREEN Android App prototype = 
 
-Android 3.0 and greater. Uses Java Script. 
 
-Supports touch screen and Blue Tooth.
 
-Supports creation of MACROS.
+== Android Device Requirements ==
 
-Supports associating MACROS with touch screen buttons.
+ * Android 3.0 and greater. Uses Java Script. 
+ * Supports touch screen and Blue Tooth.
+
+== LittleRobot Interface Requirements ==
+
+ * Supports creation of MACROS.
+ * Supports modification of MACROS.
+ * Supports associating MACROS with touch screen buttons.
+ * Support writing macro file to prop device
+ * Support reading macro file from prop device
+ * support input of arbitrary text 
+ * support display of arbitrary text output from prop device.
+
+secondary requirements
+
+ * Send text to remote IP address (i.e. propforth output to a home server)
+ * Receive text from remote IP address (i.e. propforth commands from a home server)
+ * preform preliminary logging on the android device
+ * perform preliminary processing on the android device
+ 
 
 = How to release GREEN =
 
-Need to find out about signed app versus unsigned app. Any feedback?
+Need to find out about signed app versus unsigned app. Any feedback?  We need an experienced android developer to help on this. 
 
 =  Functions =
 
@@ -117,9 +125,11 @@ Need to find out about signed app versus unsigned app. Any feedback?
 
 = Location = 
 
-GREEN_QSboot.f is in the download archive under misc directory.  This is the part that goes on the prop.
+GREEN_QSboot.f is in the download archive under misc directory.  This is the part that goes on the prop. This is still in development and has not been intergrated into the LittleRobot circulum at this writing (20130708) so don't worry about it just yet. 
 
 The part that goes on the android device, GREEN.apk has not be prepared for general distribution yet. Please see the link above to find GREEN.apk in the downloads section 
+
+You don't need to worry about the physical location of the green.apk on your device.  The install from gmail listed above handles it automatically. 
 
 = code =
 
@@ -127,9 +137,9 @@ DON'T USE CODE DIRECTLY FROM THE WEB PAGE!
 
 Notice that the lines of code can be truncated at the edge of the wiki page.  See the file in the download for the full text.
 
-IF you must use the code from this web page, copy and paste it into your text editor first!
+IF you must use the code from this web page, copy and paste it into your text editor first!  THEN copy and paste from the text editor! 
 
-The editor will not cludge the page with truncations and non printable characters, etc. 
+The editor will not cludge the page with truncations and non printable characters, etc. Copy and paste from this page and you are on your own!   You have been warned!
 
 {{{
 fl
