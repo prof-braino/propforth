@@ -39,6 +39,19 @@ The field is a structure similar to a skate board ramp.  Holes for scoring are a
 
 Uniform blocks or various composition are randomly placed in the area.  Bot interact with these and each other to build or remove structures, etc.
 
+= Dynamic Obstacle Course =
+
+Bot starts out at an arbitrary location on a playing field. Bot must navigate to another arbitrary location.
+
+The game may have tiers of progressive complexity.
+
+  # aside from bot, play field is empty 
+  # a small number of Blocks of arbitrary size are scattered at random on the play field
+  # a larger number of blocks are scattered on the play field
+  # multiple bots are present, all with different start and end locations. Bots provide dymanic obstacles for other bots.  Bot may move blocks. 
+
+------
+
 = MODES of Operation =
 
 The initial project is targeted the youngest children possible for introduction to robots.  The first iteration will focus on the simplest options.  As the kids gain experience, there is the possibility they will grow into more advanced methods. 
