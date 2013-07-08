@@ -29,7 +29,7 @@ The bots work together to save puppies and kittens from the flood, lava, etc.  I
 
 == Flat Tetris ==
 
-Cut a 4' by 8' sheet of styrofoam (or plywood) into tetris like jigsaw puzzle pieces.  The bots work together to place them in the least space. 
+Cut a 4' by 8' sheet of styrofoam (or plywood) into tetris shaped  pieces.  The bots work together to place them in the least space. 
 
 == Uphill Pinball ==
 
