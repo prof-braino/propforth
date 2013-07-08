@@ -7,15 +7,28 @@
 
 GREEN is an android app that is to provide an interface to propforth.
 
-A recently trend is for an application device to use a generic android device for display and input (for example the touch screen).  The android device also provide network connection, storage, processing, etc; rreducing the cost and effort on the application device. 
+A recently trend is for an application device to use a generic android device for display and input (for example the touch screen).  The android device also provide network connection, storage, processing, etc; reducing the cost and effort on the application device. 
 
 =  Intended Use =
 
-GREEN  is the development prototype for an android user interface to propforth for the LittleRobot demo project.  After development, it should be suitable for any prop project the requires an interface over blue tooth. 
+GREEN  is the development prototype for an android user interface to propforth for the LittleRobot demo project.  After development, it should lead to a set of functionality suitable for any prop project the requires an interface over blue tooth. 
+
+GREEN itself is a prototype for testing functionality during this development period.  It will not be supported as an ongoing app. 
 
 = Download and Install =
 
-GREEN is an unsigned app.  Therefore, it cannot be downloaded from the App Store, you need to download the file, and install it yourself.  There are many sources on the web for instructions how to do this. I just did it, I did not write down the steps. 
+Ensure your Android Device is Android 3.0 or greater. Earlier version of android, such as 2.3.6, will not work.  If you are using an old discarded phone, often these can be upgraded.  
+
+GREEN is an unsigned app.  Therefore, it cannot be downloaded from the App Store, you need to download the file, and install it yourself. 
+
+To install an unsigned app, go to:
+ * Settings
+ * Security
+ * Device Administration
+ * Find and check "Unknown Source - Allow installation of non-market apps" 
+ * Be sure to UNCHECK this AFTER the app as installed, you don't want to leave this open. 
+
+* Simply email the file to yourself. Open the email on the android device, and it will give the option to install. You must ensure that you are running android 3.0 or higher and that "Unknown Source" is checked.
 
 The file GREEN.apk is posted here: 
 http://code.google.com/p/propforth/downloads/detail?name=Green.apk
@@ -61,6 +74,8 @@ Braino has it installed on Nexus 10
 
 Green will not run on Android 2.2 devices, or devices lacking blue tooth.
 
+Samsung Captivate Glide (in the Galaxy family) shipped with Android 2.3.6 and would not accept GREEN; but this device is upgradeable to Android 4.0.4 and works fine after the upgrade.
+
 = Requirements= 
 
 Android 3.0 and greater. Uses Java Script. 
@@ -95,13 +110,17 @@ Need to find out about signed app versus unsigned app. Any feedback?
 
 GREEN_QSboot.f is in the download archive under misc directory.  This is the part that goes on the prop.
 
-The part that goes on the android device, GREEN.apk has not be prepared for distribution yet. ~~Please contact Braino or Sal if you are interested in the development version.~~  Please see the link above to find GREEN.apk in the downloads section 
+The part that goes on the android device, GREEN.apk has not be prepared for general distribution yet. Please see the link above to find GREEN.apk in the downloads section 
 
 = code =
 
+DON'T USE CODE DIRECTLY FROM THE WEB PAGE! 
+
 Notice that the lines of code can be truncated at the edge of the wiki page.  See the file in the download for the full text.
 
+IF you must use the code from this web page, copy and paste it into your text editor first!
 
+The editor will not cludge the page with truncations and non printable characters, etc. 
 
 {{{
 fl
@@ -625,7 +644,6 @@ fswrite term.html
 
 Need info on:
 
-  * Signed app versus unsigned app
   * java script
   * need users conversant in java script and forth
 
