@@ -5,7 +5,7 @@
 
 = Introduction =
 
-GREEN is an android app that is to provide an interface to propforth.
+GREEN is an android app that is to provide a touch button interface to propforth.
 
 A recently trend is for an application device to use a generic android device for display and input (for example the touch screen).  The android device also provide network connection, storage, processing, etc; reducing the cost and effort on the application device. 
 
@@ -14,6 +14,15 @@ A recently trend is for an application device to use a generic android device fo
 GREEN  is the development prototype for an android user interface to propforth for the LittleRobot demo project.  After development, it should lead to a set of functionality suitable for any prop project the requires an interface over blue tooth. 
 
 GREEN itself is a prototype for testing functionality during this development period.  It will not be supported as an ongoing app. 
+
+= funtionality =
+
+Green provides a simple terminal interface, a touch screen interface,  a macro editor, and bunch of other stuff Sal is experimenting with. 
+
+This functionallity can change at any new release, and/or its behavior may not remain consistent from release to release,as it is a prototype in development.  
+
+If something changes for the worse, or you would like to change something for the better, please post or send email.  The intent is to eventually produce final applications that do exactly what we want. 
+
 
 = Download and Install =
 
