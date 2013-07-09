@@ -139,6 +139,7 @@ x pinout x pinhi x pinlo
    Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
 
    {{{
+
 fl
 
 \ 20130626 Quickstart LEDs represent the distance measured
@@ -291,8 +292,7 @@ do
 i t0 2 eereadpage
 if
 leave
-else   MotorA is the first one, and should be on the left. MotorB is the other one, and should be on the right.  If this is not so, the bot will run backwards.  No biggie, just switch the wires that are easiest. You can either unplug and replug the four wires for each motor at the quickstat; or you can unplug the bundle of wires from the motor to the ULN2003 board, and swap those. 
-
+else
 i h7FFE + t0 3 eereadpage
 if
 leave
@@ -337,9 +337,8 @@ sr04_test
 
 ...
 
-cr
 
-}}}
+   }}}
 
 NOTICE! You must highlight all the way to the cr if you copy from this web page. Otherwise, copy  the code to your text editor, and work from your edited copy.
 
