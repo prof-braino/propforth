@@ -3,6 +3,9 @@
 
 <wiki:toc max_depth="9" />
 
+= This page should be updated and/or deprecated 20130709 =
+
+
 = stepper code =
 
 The stepper section of the bot.f program
