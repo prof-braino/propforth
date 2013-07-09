@@ -173,34 +173,32 @@ Of course, these parts can also be purchased from various sources, but that tend
 
 -----
 
-= Type 2 - YYYMMDD - "Additional Sensors" Example =
+= Type 2 - YYYMMDD - Upgraded Parts =
 
-Additional Sensor will go here.  These have not been implemented yet
+All parts of the bot can be upgraded according to the user's needs and abilities. 
 
-== 10DOF INU ==
 
-for example 20130214 - this unit is $13 + $2 shipping
+The sensors and actuators can be upgraded by adding a suitable drive circuit and driver software.  Upgrades will be driven by user demand. 
 
- http://www.ebay.com/itm/10DOF-L3G4200D-ADXL345-HMC5883L-BMP085-Nine-Axis-IMU-Module-ge-/281043201090?pt=LH_DefaultDomain_0&hash=item416f7aec42
+= Type 3 - YYYMMDD - Cam driven Spider Bot =
 
-NOTE: I got mine for $29 about six months ago
+A six legged cam driven spider design is available on theinternet, and is targeted as an upgrade.  It may even be able to use the default cheap steppers.
 
-== DS00 Laser Range finder ==
 
-= Type 3 - YYYMMDD - "OutDoor" model =
+= Type 4 - Servo Spider bot = 
 
-The "outdoor modele"  has not been implemented yet.  We plan to go outdoors (wireless) when the weather gets nice, and we have enough users to warrant this.
+There are many examples hexapod and octopod bots based on servos, with three or more degrees of freedom for each leg. 
 
-= Type 4 - air ships = 
+A design that uses the 9g servos may be affordable if the servos are purchased on bulk.
 
-If uit ever gets this far I have dreams of all kinds of air bots.
+= Type 5 - Air Swimmer = 
 
-== Blimp type ==
+The main technical problem is the sensors. 
 
-== Quadcopter type ==
+= Type 6 - Tricopter =
 
-== Tricopter type ==
+These get expensive.  They require advanced sensors and filtering, such as the 10DOF IMU and Kalman filter.  This would be a fun project for an advanced high school class. 
 
-= Details =
+= End =
 
 This is in progress.  Please follow the links above to the work in progress.
