@@ -89,14 +89,26 @@ IF one orders bulk parts, about 25 or more, the price may drop by half.
 
 The above prices do not include shipping.  
 
-I think that if I order in bulk and split the difference between the bulk kit price and the single kit price, I can offer kits cheaper than the one-off price, and still make enough to cover expenses. 
+*I think that if I order in bulk and split the difference between the bulk kit price and the single kit price, I can offer kits cheaper than the one-off price, and still make enough to cover expenses. I would have to order 50 to 100 kits at a time*
 
+-----
+
+= datasheets =
+http://mbed.org/users/edodm85/notebook/HC-05-bluetooth/
+
+http://jaktek.com/wp-content/uploads/2011/12/HC-SR04.pdf
+
+http://www.ti.com/lit/ds/symlink/uln2003a.pdf
+
+-----
+
+= Old BOM versions = 
 
 -----
 
 OK, you can stop reading here.  Below is the old material from the OLD BOM(s). 
 
-= BOM as of 20120819 =
+ == BOM as of 20120819 ==
 
 We ordered these off of eBay, Proudly American Made by Chinese folks in China. 
 
@@ -124,15 +136,9 @@ http://www.ebay.com/itm/1pcs-Wireless-Bluetooth-Transceiver-Module-RS232-TTL-HC-
 ||           ||   -----|| 
 || Total    ||  $14.26|| 
 
-= datasheets =
-http://mbed.org/users/edodm85/notebook/HC-05-bluetooth/
-
-http://jaktek.com/wp-content/uploads/2011/12/HC-SR04.pdf
-
-http://www.ti.com/lit/ds/symlink/uln2003a.pdf
 
 
-=  updates 20130515 - need changes =
+ ==  updates 20130515 - need changes ==
 
 The original kits sourced from propellerpowered included:
  * "proto and more" board (kit that requires soldering)
@@ -150,7 +156,7 @@ We have discovered we need solderless solutions for kids.  We made these changes
   * USB cable, host to mini B 5 conductor (NOTE: the 4 conductor mini B won't work)
 
  
-= alternative =
+ == alternative ==
 
 Use 21 M-F instead of breadboard
 
@@ -185,9 +191,4 @@ Vdd needs 1 blue tooth
 
 Total 6 + 5 extra connection strips (plus a reusable "Y" connector for bluetooth reprogramming)
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= End =
