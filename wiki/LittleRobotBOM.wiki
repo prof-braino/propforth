@@ -63,13 +63,15 @@ Each kit consists of:
 || stepper motor + Driver || [http://www.ebay.com/itm/230911436376 ULN2003 + 28BYJ-48 stepper motor + Driver] || $2.72 (times two) || $5.44 ||
 || M-F jumpers || [http://www.ebay.com/itm/40pcs-20cm-Male-to-Female-Color-Breadboard-Cable-Jump-Wire-Jumper-For-Arduino-XD-/360636878801?pt=LH_DefaultDomain_2&hash=item53f7a20fd1 || $2.22 US 40 conductors || $1.11 ||
 || SR04 || [http://www.ebay.com/itm/280883290187 SR04 (Ultrasonic Range Finder)] || 10 pieces for $15.85 || $1.59 ||
-|| F-F jumper ||  [http://www.ebay.com/itm/290920457422 F-F jumper] (one of a forty pin ribbon)  $2.34 || $0.06 ||
-
+|| F-F jumper ||  [http://www.ebay.com/itm/290920457422 F-F jumper] (one of a forty pin ribbon)  || $2.34 || $0.06 ||
 || 10k ohm ||  [http://www.ebay.com/itm/181091306672 1 resistor 220-330 ohms (one of a pack a 1000)]  $6.01 ||  $0.60 ||
 
-  * [http://www.ebay.com/itm/261081930209 MOUNTED HC06] $8.98
-  * [http://www.ebay.com/itm/180907110359 4aa Battery case with switch] 10 pieces for $8.00
-  * 2x4x6 (inches) foam block with 1 inch holes [these are 4 foot by 8 foot panels from the home center cut into 4"x6" blocks.  Cutting the foam make a BIG mess, and the you get a zillion extras out of one sheet. 
+|| HC06  || [http://www.ebay.com/itm/261081930209 MOUNTED HC06 blue tooth] || $8.98 || $8.98 ||
+|| Battery Case || [http://www.ebay.com/itm/180907110359 4aa Battery case with switch] || 10 pieces for $8.00 || $0.80 ||
+|| Chassis Foam 2"x4"x6"  || 4x2 (feet) foam sheet || $30.00 || $0.63||
+
+Purchase Price $
+Bulk order price $
 
 == Locally available materials ==
 
