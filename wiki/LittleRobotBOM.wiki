@@ -81,38 +81,20 @@ Bulk order price $47.34
   * 4xAA batteries NiHM. Alkaline Batteries are too high at 1.5 volts, use NiMH.
 
 
-== Today's Order  ==
+== Summary ==
 
-*Total Oder: 25 kits* 
+IF one orders parts for one kit, the price is about $100 (depending on Ebay)
 
-== Shopping List ==
+IF one orders bulk parts, about 25 or more, the price may drop by half. 
 
+The above prices do not include shipping.  
 
-|| (need)  ||  (ordered)  || item  || price  || 
-||  (25)  || (25) ||  Processor Board: Propeller Quickstart  || $25  || 
-||  (50)  || (50)  || stepper motor + Driver  || $2.72 8 2 = $5.14  || 
-||  (25)  || (25)  || HC05 - changed to mounted hc06 slave only || $8.98  || 
-||  (25)   || (30)  ||  SR04 || 15.80  || 
-||  (20)  ||  (10)   || 20 M-F jumpers (half of 40 conductor ribbon) || $2.22  || 
-||  (20)   || (1)   ||  1 F-F jumper (one of 40 conductor ribbon)  || $2.34  || 
-|| (20)  || (1)   || resistor 220-330 ohms (one of a pack a 1000) || $6.01  || 
-|| (25)   || (25)   || battery case with switch 4xAA || $8.00  || 
- 
-We can only get an even multiple of all parts (except resistors) if we order 40 kits
+I think that if I order in bulk and split the difference between the bulk kit price and the single kit price, I can offer kits cheaper than the one-off price, and still make enough to cover expenses. 
 
-We can only get an even multiple of all parts (including resistors) if we order 1000 kits
-
-Resistors are cheap enough, we can afford extras.
-
-F-F Ribbon cables are cheap enough, SR04 are not so cheap, but extras are cheaper than getting one-offs.
-
-The real killer is the HC05 or HC06.  The unmounted part is cheap, but the price for the mounted version went up as they became popular. 
-
-FUTURE PLAN:  HAVE A CLASS in surface mount soldering, and have the ~~slaves~~ students make up their own batch for the class. Maybe they can solder my parts, in exchange for me supplying the practice materials? 
 
 -----
 
-OK, you can stop reading here.  Below is the old material from the OLD BOM(s). T
+OK, you can stop reading here.  Below is the old material from the OLD BOM(s). 
 
 = BOM as of 20120819 =
 
