@@ -18,16 +18,15 @@ How To Get Started: See the FEATURED column on the main pages and find:
   * Instructions for builing the low cost LittleRobot (tm) demo project ( GettingStartedLittleRobot )
   * Explanation of the pin connections and demo program ( LittleRobotDemoProgram ) 
 
-= Lots of stuff to look at, if you are so inclined =
+= Lots to look at =
 
-LittleRobot™ - index
+LittleRobot™ - index - this page
 
-
-= LittleRobot as a one day workshop =
+= !LittleRobot as a one day workshop =
 
 http://code.google.com/p/propforth/wiki/LittleRobotWorkshop
 
-= LittleRobot as a Classroom ACtivity =
+= !LittleRobot as a Classroom Activity =
 
 http://code.google.com/p/propforth/wiki/LittleRobotProgressChart2013spring
 
