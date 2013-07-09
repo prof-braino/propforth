@@ -59,11 +59,9 @@ Bill of Materials as of the order placed 20130604
 Each kit consists of:
 
 || *item* || *link * || *unit cost* || *line total* ||
-
 ||  processor || [http://www.parallax.com/Store/Microcontrollers/PropellerDevelopmentBoards/tabid/514/ProductID/748/List/0/Default.aspx?SortField=ProductName,ProductName Propeller Quickstart] || $25 || $25 ||
+||   *stepper motor + Driver* || [http://www.ebay.com/itm/230911436376 ULN2003 + 28BYJ-48 stepper motor + Driver] || $2.72 (times two) || $5.44 ||
 
-
-  * [http://www.ebay.com/itm/230911436376 ULN2003 + 28BYJ-48 stepper motor + Driver]  $2.72   (times two)
   * [http://www.ebay.com/itm/40pcs-20cm-Male-to-Female-Color-Breadboard-Cable-Jump-Wire-Jumper-For-Arduino-XD-/360636878801?pt=LH_DefaultDomain_2&hash=item53f7a20fd1 20 M-F jumpers (half of 40 pin ribbon) ] $2.22 US 40 conductors
   * [http://www.ebay.com/itm/280883290187 SR04 (Ultrasonic Range Finder)] 10 pieces for $15.85
   * 1 [http://www.ebay.com/itm/290920457422 F-F jumper] (one of a forty pin ribbon)  $2.34
