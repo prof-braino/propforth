@@ -1,5 +1,5 @@
 #summary Refined Program for Quickstart bot
-#labels v5.5
+#labels v5.5,Deprecated
 
 <wiki:toc max_depth="9" />
 
