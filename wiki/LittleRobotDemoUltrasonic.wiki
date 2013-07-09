@@ -242,10 +242,10 @@ autoboot.f will load the test driver.
 After the test display prgram is loaded launch it by tyoping:
 
 {{{
-c" _sr04_measure" 0 cogx
+c" _sr04_measure" 2 cogx
 }}}
 
-This line starts the SR04 measuring on cog 0
+This line starts the SR04 measuring on cog 2
 
 === This is the test program that runs on you terminal display ===
 
@@ -253,9 +253,6 @@ This line starts the SR04 measuring on cog 0
  sr04_test
 }}}
 
-
-
-Skip to verify sensor accuracy if you use the above. 
 
 = VERIFY THE SENSOR ACCURACY =
 
