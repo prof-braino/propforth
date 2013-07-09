@@ -1,5 +1,5 @@
 #summary About Getting Parts for LittleRobot(tm)
-#labels LittleRobot,v5.5,Kits,BOM
+#labels LittleRobot,v5.5,Kits,BOM,Deprecated
 
 <wiki:toc max_depth="9" />
 
