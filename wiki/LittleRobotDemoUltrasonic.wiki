@@ -7,128 +7,85 @@
 
 The SR04 Ultrasonic Rangefinder driver
 
-There are two version:
+There are two SR04 versions in the propforth download:
   * The SR04 driver program for testing SR04.F
   * The SR04 section from the LittleRobotDemoProgram BOT.F
 
-= Two Programs Choices =
+For the workshop, we modified the BOT.F program to use a different pin configuration.
 
-There are slight differences in the programs, to provide different examples of the same thing. 
+See the LittleRobotQSbotProgram page
+
+= Stand-Alone SR04 =
+
+The following a stand alone driver for testing the SR04 on its own.  It uses the same pin configuration as described in LittleRobotQSbotProgram
 
 START with the stand alone drive to prove that the sensor is set up correctly, and operates properly. 
 
-The driver for testing uses a particular set of pins
 
-The actual robot demo program has two options for pins, depending on your configuration. After you know you can set up the pins, and the sensor opwerates correctly, change the pins to the final configuration you'll use, from BOT.F
-
-(The goal here is to teach us not to be afraid of move the pins to a better placem,and to check the pins when some thing doesn't work)
-
-
-== The stand alone driver program SR04.f ==
-
-The is the code from the standalone driver program SR04.f from the extensions directory
-
-Paste the following from the *`fl`*  to the *`...`*
-
-into the terminal program window
-
+Paste the following from the *`fl`*  to the *`...`*  into your text editor.  NOTE:  The brwoser may render the page with non-printable characters, and/or may cut off the end of long lines of code, etc.  You really should paste the source code into you editor and work from there. 
 
 {{{
 
 fl
 
-1 wconstant build_sr04
-[ifndef _sr04_trig
-	d_22 wconstant _sr04_trig
-]
-[ifndef _sr04_echo
-	d_23 wconstant _sr04_echo
-]
+\ 20130626 Quickstart LEDs represent the distance measured
 
-variable _sr04_distance
+fswrite ansi.f
 
-: _sr04_measure
-	c" MEASURE" cds W!
-	4 state andnC!
+\ ascii code for red text      " ESC[31m "
+\ hex character codes            1b 5b 33 31 6d
+\ forth code for ascii red text v4.0: 1b emit 5b emit 33 emit 31 emit 6d emit          
+\ forth code for ascii red text v5.0: h_1B emit h_5B emit h_33 emit h_31 emit h_6D emit          
 
-	_sr04_trig pinlo _sr04_trig pinout
-	_sr04_echo >m
-	_sr04_trig >m
-	begin
-		dup _maskouthi dup dup drop _maskoutlo
+\ ascii escape sequence start with ESC
 
-		over dup dup dup
+\ second char of two character is 64 to 95   (@ to _)  40h to 5Fh
+\ multi char are esc + [ + (@ to ~) 64 to 126  40h to  7Eh
+\ next is [   5Bh
+\ m is for graphics mode colors attributes
+{ : to57 csi ." 5;7f" ;  : to2010 csi ." 20;10f" ; }
+\ f is for position, needs character not value           
 
-		waitpeq
-		cnt COG@
-		rot2
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
 
-		waitpne
-		cnt COG@ swap -
-		d_170_000 clkfreq */
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
 
 
-		_sr04_distance L!
-		
-		100 delms
-	0 until
-;
-
-}}}
-
-=== START the SR04 driver ===
-
-This line starts the SR04 measuring on cog 0
-
-{{{
-c" _sr04_measure" 0 cogx
-}}}
-
-=== This is the test program that runs on you terminal display ===
-
-{{{
-[ifndef sr04_test
-: sr04_test
-	begin
-		_sr04_distance L@ . cr
-		fkey? nip
-	until
-;
-]
-}}}
+...
 
 
 
-AFter the test display prgram is loaded launch it by tyoping:
-
-{{{
-
-c" _sr04_measure" 0 cogx
-}}}
-
-
-Skip to verify sensor accuracy if you use the above. 
-
-
-= old =
-
-
-=== the code snippet from BOT.f === 
-
-
-The BOT.f program has two options for pin outs.  Be sure you know which set of pin outs you are using. 
-
-{{{
-
-
-fswrite sr04.f
+fswrite sr04-testbed.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
-16 wconstant _sr04_trig
+\ 16 wconstant _sr04_trig
+\ 15 wconstant _sr04_trig
+ 25 wconstant _sr04_trig
+
 ]
 [ifndef _sr04_echo
-17 wconstant _sr04_echo
+\ 17 wconstant _sr04_echo
+\ 14 wconstant _sr04_echo
+ 24 wconstant _sr04_echo
 ]
 
 variable _sr04_distance
@@ -142,31 +99,163 @@ _sr04_trig pinlo _sr04_trig pinout
 _sr04_echo >m
 _sr04_trig >m
 begin
-dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+      dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+      over dup dup dup
+      waitpeq
+      cnt COG@
+      rot2
 
-over dup dup dup
+      waitpne
+      cnt COG@ swap -
+      d_170_000 clkfreq */
 
-waitpeq
-cnt COG@
-rot2
-
-waitpne
-cnt COG@ swap -
-d_170_000 clkfreq */
-
-
-_sr04_distance L!
-d_60 delms
+      _sr04_distance L!
+      d_60 delms
 0 until
+;
+
+: sr04_test
+  clear \ clear the screen
+  0 9 AT cog?
+  begin
+       home st?   
+       _sr04_distance L@  dup
+      5 3 AT ."  SR04 measurement = "  .  ." millimeters               "
+      5 7 AT ."  LED pattern " 20 / 2 base W! . decimal ."             "
+      80 delms
+      fkey? nip
+ until
+;
+
+: sr04_display
+c" LED" cds W!
+4 state andnC!
+
+  8 0 do i 16 + pinout  loop
+
+  clear
+  begin
+        home st?   
+        _sr04_distance L@ 
+\ 16 is sr04 echo 
+\    dup 50 125 between if 17 pinhi else 17 pinlo then 
+\    dup 125 250 between if 18 pinhi else 18 pinlo then 
+\    dup 250 500 between if 19 pinhi else 19 pinlo then 
+\    dup 500 1000 between if 20 pinhi else 20 pinlo then 
+\    dup 1000 2000 between if 21 pinhi else 21 pinlo then 
+\    dup 2000 4000 between if 22 pinhi else 22 pinlo then 
+\    4000 >  if 23 pinhi else 23 pinlo then 
+\    
+\ max is 4000 mm (datasheet) 
+ 
+        dup 
+        4000 > if drop 255 else 20 / then   \ 20 or 16
+
+
+      16 lshift \ slide it up to the LED bits 16-23
+      0 >m _maskoutlo  \ turn out all LEDs 
+      \ >m _maskouthi    \ display value on LEDs
+      outa COG!
+
+      20 delms     \ wait so they can light
+
+                fkey? nip
+\    80 delms
+        until
 ;
 
 ...
 
 
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+0
+h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+cr cr cr 
+
+
+c" boot.f - Loading ansi.f~h0D~h0D" .cstr hA state andnC!
+fsload  ansi.f
+c" boot.f - Loaded ansi.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+fsload  sr04-testbed.f
+c" boot.f - Loaded sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+\ c" 23 dup pinout pinhi" 1 cogx
+\ cogid >con
+c" _sr04_measure" 2 cogx
+c" sr04_display" 3 cogx
+
+
+then
+
+c" onreset6" (forget)
+sr04_test
+;
+
+...
+
+
+cr
+
+}}}
+
+The final cr is added to ensure a newline is after *`...`* when pasted from the browser 
+ 
+
+=== START the SR04 driver ===
+
+Reboot after the above has been pasted into the terminal window.
+
+autoboot.f will load the test driver. 
+
+*EXPLANATION*
+
+After the test display prgram is loaded launch it by tyoping:
+
+{{{
+c" _sr04_measure" 0 cogx
+}}}
+
+This line starts the SR04 measuring on cog 0
+
+=== This is the test program that runs on you terminal display ===
+
+{{{
+ sr04_test
 }}}
 
 
 
+Skip to verify sensor accuracy if you use the above. 
 
 = VERIFY THE SENSOR ACCURACY =
 
