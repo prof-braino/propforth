@@ -68,10 +68,11 @@ Each kit consists of:
 || HC06  || [http://www.ebay.com/itm/261081930209 MOUNTED HC06 blue tooth] || $8.98 || $8.98 ||
 || Battery Case || [http://www.ebay.com/itm/180907110359 4aa Battery case with switch] || 10 pieces for $8.00 || $0.80 ||
 || Chassis Foam 2"x4"x6"  || 4x2 (feet) foam sheet || $30.00 || $0.63||
+|| rubber bands || http://www.staples.com/Staples-Economy-Rubber-Bands-Size-64-1-4-lb/product_143297 || $2.79 || $0.54 ||
 
-Purchase Price $101.62
+Purchase Price $104.41
 
-Bulk order price $43.61
+Bulk order price $44.15
 
 == Locally available materials ==
 
