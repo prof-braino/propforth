@@ -138,12 +138,7 @@ x pinout x pinhi x pinlo
 
    Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
 
-
-
-   {{{
-
-
-   }}}
+http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic
 
 NOTICE! You must highlight all the way to the cr if you copy from this web page. Otherwise, copy  the code to your text editor, and work from your edited copy.
 
