@@ -1,0 +1,1226 @@
+#summary Refined Program for Quickstart bot
+#labels v5.5
+
+<wiki:toc max_depth="9" />
+
+-----
+
+= I. Overview =
+
+There is a version of bot.f in the PropForth-V5.5-20130317.zip that we have CHANGED into QSbot.f, shown on this page.  
+
+QSbot.f is the modified program to use for the Quickstart version of the LittleRobot.  We will use this in our workshop session today. 
+
+Using these instructions, we will:
+
+  * Connect each components for the bot
+  * Test each components for the bot
+  * Build the bot
+  * Program the bot
+  * Test the assembled bot
+
+-----
+
+= II. Physical connections =
+
+
+The following chat is the reference for how the connection are made. 
+
+Don't worry, we don't have to do them all just yet. 
+
+We will connect each part one at a time, and test it to show how it works
+
+When you make the connections, use the pin number from the QSbot column. 
+
+Ignore the crossed out Bot 1 and Bot 2 pinouts.  Those are included for comparison. You won't care about these until later. 
+
+|| || QSbot || ~~Bot1~~ || ~~Bot2~~ ||
+|| SR04  || 24 trig, 25 echo || ~~16 trig, 17 echo~~ || ~~P24 trig, P25 echo~~  || Vin *SR04 must have no more than 5.0v Vin* ||
+|| -- || P24 trig ||  ~~P16 trig~~ || ~~P24 trig~~ ||
+|| -- ||  P25 echo || ~~P17 echo~~ || ~~P25 echo~~ || BE SURE ECHO HAS ~~330~~ 10k ohm resistor! ||
+|| Ready LED ||  No Ready LED on QSbot || ~~P3~~ || ~~P23~~ ||
+|| MotorA ||  8-11 || ~~d_24 d_25 d_26 d_27~~ || ~~d_15 d_14 d_13 d_12~~ || Vin Motors Can be 5-12v ||
+|| -- ||  P08 = IN1 || ~~P11 = IN1~~ || ~~P15 = IN1~~ || 
+|| -- ||  P09 = IN2 || ~~P12 = IN2~~ || ~~P14 = IN2~~ || 
+|| -- ||  P10 = IN3 || ~~P13 = IN3~~ || ~~P13 = IN3~~ || 
+|| -- ||  P11 = IN4 || ~~P14 = IN4~~ || ~~P12 = IN4~~ || 
+|| MotorB ||  12-15 || ~~d_20 d_21 d_22 d_23~~ || ~~d_11 d_10 d_9 d_8~~  || Vin Motors Can be 5-12v  ||
+|| -- ||  P12 = IN1 || ~~P20 = IN1~~ || ~~P11  close to the senosor = IN1~~  || 
+|| -- ||  P13 = IN2 || ~~P21 = IN2~~ || ~~P10 = IN2~~  || 
+|| -- ||  P14 = IN3 || ~~P22 = IN3~~ || ~~P9  = IN3~~  || 
+|| -- ||  P15 = IN4 || ~~P23 = IN4~~ || ~~P8  = IN4~~  || 
+|| HC05/HC06 ||  26-27 || ~~P2, P0, P1~~ || ~~P27, P26, P22~~ || Vdd 3.3v||
+|| --   ||  p26 = HC06-Tx || ~~P2 = bt Tx~~  || ~~P27 = bt Tx~~ ||
+|| --   ||  P27 = HC06-Rx || ~~P0 = bt Rx~~  || ~~P26 = bt Rx~~ ||
+|| --   ||  xx || ~~P1 = bt KEY~~ || ~~P22 = bt KEY~~ || (KEY is not used on HC06 carrier board version) ||
+
+
+-----
+
+
+= III. Test Individual Parts =
+
+ * Quickstart
+ * Stepper Drivers
+ * SR04 
+ * Blue Tooth
+
+== 1. Quickstart == 
+
+ First we see the Quickstart microcontroller board, what it does, and check that  works. 
+
+ Using the PropTool, LOAD the EEpromkernel.spin firmware into the quickstart board eeprom memory.
+
+ Use the EEprom kernel instead of the DevKernel.spin
+
+ http://code.google.com/p/propforth/wiki/GettingStartedWithPropForth  
+
+  === a. Hello World ===
+
+  See the page for Hello World,  then return to this page. 
+
+  http://code.google.com/p/propforth/wiki/GettingStartedHelloWord
+
+  === b. Blinky LED ===
+
+  See the page for Blinky LED, then return to this page
+
+  http://code.google.com/p/propforth/wiki/GettingStartedBlinkyLED
+
+== 2. Stepper Drivers == 
+
+ The stepper motors are driven by the little hardware board they are connected to.  Four control lines run from the quickstart to the motor driver, and two wires run from power and ground;  and five wires run from the driver to the motor itself.  The fifth wire to the motor is ground.  The other four wires send power to th motor coils, and the prop controls when they are on and off. 
+
+ The stepper drivers are actually ULN2004 darlington transistor arrays.  We can use then as stepper drivers since the current and voltage are low. The same code we are using now with BIG STEPPERS and other general stepper driver hardware.  
+
+   === a. Blinky LED again ===
+
+   Connect each motor's in1 to in4 to the Quickstart header per the chat above.  Also connect the (+) from the ULN2003 to the battery (+) red wire connector, and the (-) to the battery (-) black wire connector.
+
+   After the connections are made, test them using the same code as blinky LED.  For each stepper, start with pin x and type
+
+   {{{ 
+
+x pinout x pinhi x pinlo
+
+}}}
+
+   You will see each pin light if the connections are correct.  
+
+   If the pins do NOT light, or if you smell something, UNPLUG the USB immediately. TURN OFF the battery switch.  If these burn, they will no longer work.  Check the connection, and start again. 
+
+   === b. MotorA or MotorB? ===
+
+   After the LED all light properly, try to run code. 
+
+   MotorA is the first one, and should be on the left. MotorB is the other one, and should be on the right.  If this is not so, the bot will run backwards.  No biggie, just switch the wires that are easiest. You can either unplug and replug the four wires for each motor at the quickstat; or you can unplug the bundle of wires from the motor to the ULN2003 board, and swap those. 
+
+   Copy the code from the file linked below to a text file.  CHANGE THE PINS in the file to the ones listed in the chart above. 
+
+   http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
+
+
+== 3. SR04  == 
+
+  The SR04 is the Ultrasonic Range finder.
+
+   === a. 5.0 volts power ===
+
+   The SR04 connects to 5.0 V on the red (+) battery connector. 
+
+   === b. 10K on ECHO ===
+
+   The 10k ohm resistor goes between the SR04 echo pin and the Quickstart input pin P25.  The extra Female to Female jumper wire is for this.  Slide one end of the F-F on the SR04 echo pin; slide the other F connector onto tone leg of the resistor.  The remaining leg of the resistor goes in the F side of the M-F jumper, and the Male Pin of the jumper plugs into P25. 
+
+   === c. SR04 test program ===
+
+   Be sure the pin assignments match the chart above.  Sometimes I forget to change them in the code, better check!
+
+   Also, notice that there is MORE TO THIS SECTION after the code, check the end after the code is loaded!!!!
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic
+
+NOTICE! You must highlight all the way to the cr if you copy from this web page. Otherwise, copy  the code to your text editor, and work from your edited copy.
+
+REBOOT to see the above programs load and run.  The Quickstart LEDs should flash in relation to the distance.  Each LED represents 20 cm counting in binary. Talk about binary with the group until you understand. 
+  
+   === d. Good Data ===
+
+   When the sensor starts running,  point the sensor at a large flat object  close to the sensor,  like a wall.  Notice that the sensor give a single continuous reading. This is a "good" reading.  Only one single comes back, the sound that bounced of the wall. 
+
+   === e. Noisy Data ===
+
+   Now point the sensor at a bunch of small things a little bit far away.  This could be a bunch of chair and table legs. notice that the measurements tend to jump around.  This is because the signals are coming from a whole bunch of objects at different distances.  This is a noisy reading. We can use this too, but we have to be a little clever.  We'll get to using noisy data in an advanced session. 
+
+== 4. HC06 Blue Tooth == 
+
+The blue tooth module is a little bit tricky the first time through, so we have pre-programmed the modules.  
+
+If you try to program or reprogram modules on your own, refer to 
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
+
+  === a. blue tooth prop connections ===
+
+  HC06 Tx goes to the prop quickstart pin 26
+
+  HC06 Rx goes to the prop quickstart pin 26
+
+  === b. blue tooth POWER is 3.3 ===
+
+3.3 volts is provided on the QUICKSTART  40 pin header. 3.3v is the SECOND FROM THE RIGHT ON THE TOP. Be careful, it is right next to the 5volt Vin.
+
+REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect the HC06 to 5.0 volts. The 3.3 volt connection is the second from the right on the top, on the Quickstart 40 pin connector. Refer to the PinFinder, its printed right on there. 
+ 
+   === c. blue tooth ground ===
+
+   The bluetooth module connects to the same black wire (-) negative connection on the battery pack as as do all the other components. 
+
+   === d. blue tooth program ===
+
+   The the program boots, it looks for the Bluetooth Tx pin.  The HC05 and HC06 bluetooth modules we use hold the Tx line hi.  Normally all the lines are low. So, if the pin wherre we expect a Tx is held hi, we probably has a BT module, and prpbably want to use it.  So, iwhen the program detects the T hi at boot, it switches to use the Tc pins.  The regular terminal doesn't respond as its no longerr needed.
+
+   If you wish to skip the boot behavio (to use the regular PC terminal), you can use either of these methods, depenedin on your needs: 
+
+  * hold down the ESC key during boot. This prevents the autoboot from rrunning, and so prevents the drivers from starting.  The stepper, LED, and BT programs are loaded and available, but do not start by themselves.
+
+  * unplug the BT Tx line.  The autoboot will run, and launch all the drivers.  But since it doesn't see the Tx high, it does not switch to BT pin, and the regular terminal will work. 
+
+BELOW IS THE PORTION OF THE CODE THAT DETERMINES the bot configuration.
+
+By checking which pin is held high, we can determine where the BT is, an thus which config. 
+
+Edit this to look at the QSbot BT Tx pin on P26
+
+{{{
+
+fswrite bot.f
+
+
+2 px? 27 px? 0= and
+[if
+        1 wconstant build_bot1
+]
+
+27 px? 2 px? 0= and
+[if
+        1 wconstant build_bot2
+]
+
+[ifdef build_bot1
+\ for the HC05
+
+1 wconstant hcProgPin
+0 wconstant hcRx
+2 wconstant hcTx
+
+16 wconstant _sr04_trig
+17 wconstant _sr04_echo
+
+3 wconstant _ready_led
+
+: _mota_pins d_24 d_25 d_26 d_27 ;
+: _motb_pins d_20 d_21 d_22 d_23 ;
+
+263 wconstant _distance_cal
+6052 wconstant _right_cal
+c" BOT " prop W@ ccopy
+1 propid W!
+]
+
+[ifdef build_bot2
+\ for the HC05
+\ green wire
+        22 wconstant hcProgPin
+\ white/orange wire
+        26 wconstant hcRx
+\ white/green wire
+        27 wconstant hcTx
+
+24 wconstant _sr04_trig
+25 wconstant _sr04_echo
+
+23 wconstant _ready_led
+
+: _mota_pins d_15 d_14 d_13 d_12 ;
+: _motb_pins d_11 d_10 d_9 d_8 ;
+
+263 wconstant _distance_cal
+6052 wconstant _right_cal
+c" BOT " prop W@ ccopy
+2 propid W!
+]
+
+fsload 4step.f
+fsload sr04.f
+
+
+}}}
+
+After the above section is edited, put the same in QSbot.f below.
+
+Next, the boot.f program reassigns the serial pins at boot time:
+
+{{{
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" _ready_led dup pinout pinhi" $S_con cogx
+c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+cogid >con
+c" init_motorA" 0 cogx
+c" init_motorB" 1 cogx
+c" _sr04_measure" 2 cogx
+c" sr04_display" 3 cogx
+then
+c" onreset6" (forget)
+;
+
+
+}}}
+
+Note that the baud rate is four time that listed; `57600 * 4 = 230400`
+
+These lines are the same as in the original, and must be present in QSbot.f
+
+-----
+
+= IV. QSbot.f =
+
+QSbot.f includes a couple additions compared to the bot.f program contained in the propforth doanload archive. .
+
+  * The QS LEDs are used to visually represent the current distance measurement.  This also serves as a "Ready" indicator. 
+  * QS LED count increments of 20 (15) mm
+  * SR04_display routine shows the numeric value for the distance measurement without scrolling 
+  * The extra `dup drop` pairs are removed from the SR04 trigger pulse routine
+  * The SR04 driver includes a 60 ms recovery time per the data sheet.
+
+On the list:
+  * SR04 - Add a flag to control measurement ON/OFF
+  * SR04 - add timeout for too long measurement (?)
+  * SR04 - Add variance
+  * SR04 - Add running average, 
+  * SR04 - Add recent min and max, 
+  * SR04 - Add detect receding/closing, 
+  * SR04 - Add detect too close/too far
+
+QSbot.f is based on [http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram#bot-fixed.f bot-fixed.f], which is base on the original bot.f from the Extensions directory in the Propforth-v5.5 download.
+
+
+The code is being changed to match the pinout above.
+
+{{{
+fl
+
+
+
+fswrite sr04.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+                   16 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+                   17 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+: _sr04_measure
+               c" MEASURE" cds W! \ for cog? display
+               4 state andnC!
+
+_sr04_trig pinlo  _sr04_trig pinout
+
+_sr04_echo >m
+_sr04_trig >m
+
+begin
+\      dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
+       dup _maskouthi dup dup drop  _maskoutlo       \ dup drop for 10 uS pulse
+
+       over dup dup dup  
+
+       waitpeq     \ wait till echo pin goes hi
+       cnt COG@    \ get 32 bit counter
+       rot2   
+
+       waitpne               \ wait till echo pin goes lo
+       cnt COG@ swap -       \ get the difference
+       d_170_000 clkfreq */  \ convert to mm /
+
+
+       _sr04_distance L!     \  save the measurement (it in mm)
+       d_60 delms            \ SR04 recovery time 
+0 until
+;
+
+
+: sr04_display
+c" LED" cds W!
+4 state andnC!
+
+  7 0 do i 17 + pinout  loop
+
+        begin
+                _sr04_distance L@ 
+\ 16 is sr04 echo 
+    dup 50 125 between if 17 pinhi else 17 pinlo then 
+    dup 125 250 between if 18 pinhi else 18 pinlo then 
+    dup 250 500 between if 19 pinhi else 19 pinlo then 
+    dup 500 1000 between if 20 pinhi else 20 pinlo then 
+    dup 1000 2000 between if 21 pinhi else 21 pinlo then 
+    dup 2000 4000 between if 22 pinhi else 22 pinlo then 
+     4000 >  if 23 pinhi else 23 pinlo then 
+    
+                fkey? nip
+\    80 delms
+        until
+;
+
+
+
+...
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+fswrite 4step.f
+{
+
+Drives a 4 phase stepper motor, tested with 28byj stepper motor wth a uln2003 driver
+
+Create a structure, either a halfstep, or full step, specify the pins, 16 17 18 & 19 in this case
+
+
+\ For half stepping
+     16 17 18 19 step_create_halfstep moth
+
+
+\ Initialize
+     moth step_init
+
+\ Step forward
+     4096 moth step
+
+\ Step reverse
+     -4096 moth step
+
+\ Turn off drivers
+     moth step_sleep
+
+\ Turn on drivers
+     moth step_active
+
+\ Set the step speed - setting too fast a speed will cause it to skip steps (1100 for test motor)
+     1100 moth step_setspeed
+
+\ or
+\ For full stepping
+     16 17 18 19 step_create_fullstep motf
+
+
+\ Initialize
+     motf step_init
+
+\ Step forward
+     2048 motf step
+
+\ Step reverse
+     -2048 motf step
+
+\ Turn off drivers
+     motf step_sleep
+
+\ Turn on drivers
+     motf step_active
+
+\ Set the step speed - setting too fast a speed will cause it to skip steps (550 for test motor)
+     550 motf step_setspeed
+
+
+
+step structure
+00 - 04 -- current step position - steps
+04 - 08 -- current step velocity - steps / sec
+08 - 0C -- max step velocity - steps / sec (should be a multiple of step acceleration)
+0C - 10 -- step acceleration - steps / sec / sec (min 2)
+10 - 14 -- step mask
+14 - 34 -- 8 longs - step values
+34 - 38 -- steps to speed
+38 - 39 -- step position mask
+}
+
+
+\ 1 wconstant step_debug
+
+h0  wconstant _step_position
+h4  wconstant _step_current_velocity
+h8  wconstant _step_max_velocity
+hC  wconstant _step_accel
+h10 wconstant _step_mask
+h14 wconstant _step_bits
+h34 wconstant _steps_to_speed
+h38 wconstant _step_position_mask
+h39 wconstant _step_size
+
+[ifdef step_debug
+\ step_dump ( addr -- )
+: step_dump
+        ." current_position: " dup L@ . cr
+        ." current_velocity: " dup _step_current_velocity + L@ . cr
+        ."     max_velocity: " dup _step_max_velocity + L@ . cr
+        ."            accel: " dup _step_accel + L@ . cr
+        ."   steps to speed: " dup _steps_to_speed + L@ . cr
+        ."    position_mask: " dup _step_position_mask + C@ . cr
+        base W@ swap hex
+        ."             mask: " dup _step_mask + L@ .long cr
+        ."             bits: "
+        _step_bits + h20 bounds
+        do
+                i L@ .long space
+        4 +loop
+        base W!
+        cr
+;
+
+\ step_dump1 ( addr -- )
+: step_dump1
+        ." current_position: " dup L@ . 
+        ." current_velocity: " dup _step_current_velocity + L@ .
+        ."     max_velocity: " dup _step_max_velocity + L@ .
+        ."            accel: " _step_accel + L@ .
+;
+]
+
+\ step_sleep ( addr -- )
+: step_sleep
+        _step_mask + L@ outa COG@ swap andn outa COG! 
+;
+
+\ step_active( addr -- )
+: step_active
+        dup _step_position + L@ over _step_position_mask + C@
+        and 4* over + _step_bits + L@
+        swap _step_mask + L@
+        outa COG@ swap andn or outa COG!
+;
+
+
+\ step_init ( addr -- )
+: step_init
+        dup _step_mask + L@ dira COG@ or dira COG!
+        step_sleep       
+;
+
+: _step_create1
+        lockdict variable _step_size allot lastnfa nfa>pfa 2+ alignl freedict
+        dup _step_size 0 fill
+        4 ST@ >m 4 ST! 3 ST@ >m 3 ST! 2 ST@ >m  2 ST! 1 ST@ >m 1 ST!
+;
+
+: _step_create2
+        rot2 or rot or rot or over _step_mask + L!
+;
+
+: _step_create3
+        _step_bits + + L!
+;
+
+\ create a step structure
+
+\ step_create_halfstep name ( n1 n2 n3 n4 -- )
+: step_create_halfstep
+        _step_create1
+\ pin 1
+        4 ST@ over 0 _step_create3
+\ pin 1 2
+        4 ST@ 4 ST@ or over 4 _step_create3
+\ pin 2
+        3 ST@ over 8 _step_create3
+\ pin 2 3
+        3 ST@ 3 ST@ or over hC _step_create3
+\ pin 3
+        2 ST@ over h10 _step_create3
+\ pin 3 4 
+        2 ST@ 2 ST@ or over h14 _step_create3
+\ pin 4
+        1 ST@ over h18 _step_create3
+\ pin 4 1
+        1 ST@ 5 ST@ or over h1C _step_create3
+
+        _step_create2
+
+        d_700 over _step_max_velocity + L!
+        d_10  over _step_accel + L!
+        d_70  over _steps_to_speed + L!
+
+        _step_position_mask + 7 swap C!
+;
+
+
+\ step_create_fullstep name ( n1 n2 n3 n4 -- )
+: step_create_fullstep
+        _step_create1
+\ pin 1 2
+        4 ST@ 4 ST@ or over 0 _step_create3
+\ pin 2 3
+        3 ST@ 3 ST@ or over 4 _step_create3
+\ pin 3 4 
+        2 ST@ 2 ST@ or over 8 _step_create3
+\ pin 4 1
+        1 ST@ 5 ST@ or over h10 _step_create3
+
+        _step_create2
+
+        d_500 over _step_max_velocity + L!
+        d_10  over _step_accel + L!
+        d_50  over _steps_to_speed + L!
+        _step_position_mask + 3 swap C!
+;
+
+\ _step_time( addr -- ticks)
+: _step_time
+        dup _step_current_velocity + L@ dup
+\ addr cv cv
+        2 ST@ _step_accel + L@ +
+\ cv nv
+        rot _step_max_velocity + L@ min
+\ cv nv
+        over - 2/ +
+\ av
+        clkfreq swap u/
+;
+
+
+\ __step ( +-1 addr xx -- +-1 addr xx )
+: __step
+        over _step_position + dup L@ 4 ST@ + swap L!
+        over dup _step_current_velocity + L@ over _step_accel + L@ +
+        over _step_max_velocity + L@ min swap _step_current_velocity + L!
+        over step_active
+;
+
+
+[ifdef step_debug
+: waitcnt
+        over . dup . + cr
+;
+]
+
+\ step ( n addr -- )
+: step
+        over 0<
+        if
+                -1
+        else
+                over 0>
+                if
+                        1
+                else
+                        0
+                then
+        then
+\ n addr step
+        dup 0<>
+        if      
+                swap rot abs
+\ +-1 addr n
+
+                over _steps_to_speed + L@ 2* over <=
+                if
+                        over _steps_to_speed + L@ dup >r tuck  2* - >r
+                else
+                        dup 1 =
+                        if
+                                0 >r 0 >r
+                        else
+                                dup 2/ dup >r
+                                swap 1 and >r
+                        then
+                        
+                then
+[ifdef step_debug
+                st? rs?
+]
+                over _step_time
+[ifndef step_debug
+                cnt COG@ +
+]
+                swap            
+
+                0
+                do
+[ifdef step_debug
+                        i .long space
+                        over step_dump1
+]
+\ +-1 addr cnt
+                        __step
+                        over _step_time
+                        waitcnt
+                loop
+
+                r> dup 0=
+                if
+                        drop
+                else
+                        2 ST@ _step_accel + dup L@ >r 0 swap L!
+                        0
+                        do
+[ifdef step_debug
+                                i .long space
+                                over step_dump1
+]
+\ +-1 addr cnt
+                                __step
+                                over _step_time
+                                waitcnt
+                        loop
+                        over _step_accel + r> swap L!
+                then
+
+
+
+
+
+                r> dup 0=
+                if
+                        drop
+                else
+                        2 ST@ _step_accel + dup L@ negate swap L!
+                        0
+                        do
+[ifdef step_debug
+                                i .long space
+                                over step_dump1
+]
+\ +-1 addr cnt
+                                __step
+                                over _step_time
+                                waitcnt
+                        loop
+                        over _step_accel + dup L@ negate swap L!
+                then
+
+        then
+        drop 0 swap _step_current_velocity + L! drop
+; 
+
+: step_accel
+;
+
+: step_setspeed
+;
+
+[ifdef step_test
+d_16 d_17 d_18 d_19 step_create_halfstep moth
+d_16 d_17 d_18 d_19 step_create_fullstep motf
+
+
+\ _tstep ( steps addr -- )
+: _tstep
+        cnt COG@ >r
+        2dup step
+        cnt COG@ r> -
+\ steps addr ticks
+        2 ST@ abs
+        u/
+        d_1000_000 clkfreq u*/
+\ steps addr usec/step
+        ." step:: steps: " rot .
+\ addr usec/step
+        over 5 + C@ 3 = if ." fullstep " then
+        over 5 + C@ 7 = if ." halfstep " then
+        over 6 + C@ ." accel: " .
+        ." usec/step: " dup .
+        ." steps/sec: " d_1_000_000 swap u/ . cr
+        step_sleep
+;
+
+\ _step_test ( addr -- )
+: _step_test
+        dup step_init
+        
+        ." Hit a key to terminate tests~h0D~h0D"
+
+        fkey? nip 0=
+        if
+                d_12 0
+                do
+                        i over step_accel
+                        fkey? nip 0=
+                        if
+                                d_8192 over _tstep d_1000 delms
+                                fkey? nip 0=
+                                if
+                                        d-8192 over _tstep d_1000 delms
+                                else
+                                        leave
+                                then
+                        else
+                                leave
+                        then
+                loop
+        then
+        drop
+;
+
+: step_testh
+        moth _step_test
+;
+
+: step_testf
+        motf _step_test
+;
+]
+ 
+...
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+0
+h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
+fsload bot.f
+c" boot.f - Loaded bot.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+...
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+fswrite bot.f
+
+
+2 px? 27 px? 0= and
+[if
+        1 wconstant build_bot1
+]
+
+27 px? 2 px? 0= and
+[if
+        1 wconstant build_bot2
+]
+
+[ifdef build_bot1
+\ for the HC05
+
+1 wconstant hcProgPin
+0 wconstant hcRx
+2 wconstant hcTx
+
+16 wconstant _sr04_trig
+17 wconstant _sr04_echo
+
+3 wconstant _ready_led
+
+: _mota_pins d_24 d_25 d_26 d_27 ;
+: _motb_pins d_20 d_21 d_22 d_23 ;
+
+263 wconstant _distance_cal
+6052 wconstant _right_cal
+c" BOT " prop W@ ccopy
+1 propid W!
+]
+
+[ifdef build_bot2
+\ for the HC05
+\ green wire
+        22 wconstant hcProgPin
+\ white/orange wire
+        26 wconstant hcRx
+\ white/green wire
+        27 wconstant hcTx
+
+24 wconstant _sr04_trig
+25 wconstant _sr04_echo
+
+23 wconstant _ready_led
+
+: _mota_pins d_15 d_14 d_13 d_12 ;
+: _motb_pins d_11 d_10 d_9 d_8 ;
+
+263 wconstant _distance_cal
+6052 wconstant _right_cal
+c" BOT " prop W@ ccopy
+2 propid W!
+]
+
+fsload 4step.f
+fsload sr04.f
+
+_mota_pins      step_create_halfstep motha
+_motb_pins      step_create_halfstep mothb
+
+
+: init_motorA
+c" MOTOR A" cds W! motha step_init 0 motha step_accel 900 motha step_setspeed
+;
+
+: init_motorB
+c" MOTOR B" cds W! mothb step_init 0 mothb step_accel 900 mothb step_setspeed
+
+;
+
+: forwarda
+motha step motha step_sleep
+;
+
+: forwardb
+mothb step  mothb step_sleep
+;
+
+: reversea
+negate motha step  motha step_sleep
+;
+
+: reverseb
+negate mothb step  mothb step_sleep
+;
+
+
+: forward
+4096 _distance_cal */ <# #s #> dup 0 cogx 1 cogx
+c"  forwarda" 0 cogx
+c"  reverseb" 1 cogx
+;
+
+: reverse
+negate forward
+;
+
+: right
+_right_cal 3600 */
+<# #s #> dup 0 cogx 1 cogx
+c"  reversea" 0 cogx
+c"  reverseb" 1 cogx
+;
+
+: left
+negate right
+;
+
+
+: d
+_sr04_distance L@ . cr
+;
+
+: cal
+_sr04_distance L@
+c" 4096 forwarda" 0 cogx
+c" 4096 reverseb" 1 cogx
+
+c"  " 0 cogx
+c"  " 1 cogx
+_sr04_distance L@
+
+c" 4096 reversea" 0 cogx
+c" 4096 forwardb" 1 cogx
+
+c"  " 0 cogx
+c"  " 1 cogx
+_sr04_distance L@
+
+rot + 2/ swap - .
+;
+
+: h ." f=forward b=reverse l=left r=right "
+    ."  sr04_test sr04_display " cr ;
+
+: f forward ;
+: b reverse ;
+: l left ;
+: r right ;
+
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" _ready_led dup pinout pinhi" $S_con cogx
+c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+cogid >con
+c" init_motorA" 0 cogx
+c" init_motorB" 1 cogx
+c" _sr04_measure" 2 cogx
+c" sr04_display" 3 cogx
+then
+c" onreset6" (forget)
+;
+
+
+...
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+fswrite btstat.f
+
+
+230400 4/ wconstant hcBaud
+
+0 wconstant hcSerialCog
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+1 hcSerialCog sersetflags
+
+
+: hcSend
+        cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+
+hcProgPin pinhi hcProgPin pinout
+
+c" AT+VERSION~h0D~h0A" hcSend
+c" AT+ROLE?~h0D~h0A" hcSend
+c" AT+UART?~h0D~h0A" hcSend
+c" AT+NAME?~h0D~h0A" hcSend
+c" AT+PSWD?~h0D~h0A" hcSend
+
+hcProgPin pinlo 
+
+...
+
+fswrite btinit.f
+
+hcProgPin pinhi hcProgPin pinout
+
+c" AT+NAME=ANCONABOT-20130521~h0D~h0A" hcSend
+c" AT+PSWD=1111~h0D~h0A" hcSend
+c" AT+UART=230400,0,0~h0D~h0A" hcSend
+c" AT+VERSION~h0D~h0A" hcSend
+c" AT+ROLE?~h0D~h0A" hcSend
+c" AT+UART?~h0D~h0A" hcSend
+c" AT+NAME?~h0D~h0A" hcSend
+c" AT+PSWD?~h0D~h0A" hcSend
+
+hcProgPin pinlo 
+
+\ after the hc05 is power cycled, the baud rate will change, not like the hc06
+
+...
+
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+{
+\ fl
+
+: dw
+-1 _sr04_distance L! begin _sr04_distance L@ -1 <> until
+_sr04_distance L@ . cr
+
+;
+
+: ci
+        0 3600 right h0D 0 cogio W!
+        begin
+                dup . dw 1+
+                0 cogio W@ h0D <>
+        until
+        drop
+
+;
+
+
+
+: cil
+        0 3600 left h0D 0 cogio W!
+        begin
+                dup . dw 1+
+                0 cogio W@ h0D <>
+        until
+        drop
+
+;
+
+
+: CIR
+        dw 30 0 do
+                120 right h0D 0 cogio W!
+                begin
+                        0 cogio W@ h0D <>
+                until
+                i . dw
+        loop
+;
+
+: CIL
+        dw 30 0 do
+                120 left h0D 0 cogio W!
+                begin
+                        0 cogio W@ h0D <>
+                until
+                i . dw
+        loop
+;
+
+: tl
+        dw 30 0 do
+                120 left h0D 0 cogio W!
+                begin
+                        0 cogio W@ h0D <>
+                until
+        loop
+;
+        
+: tr
+        dw 30 0 do
+                120 right h0D 0 cogio W!
+                begin
+                        0 cogio W@ h0D <>
+                until
+        loop
+;
+
+}
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+fl
+
+wvariable _mon 0 _mon W!
+wvariable _monoff
+variable _monstate
+
+fl
+: stepmon
+        4 state andnC!
+        c" STEPMON" cds W!
+        _mon W@ 0=
+        if
+                lockdict here W@ _mon W! d8192 allot freedict
+        then
+        _mon W@ d8192 0 fill
+
+        0 _monoff W!
+        
+        ina COG@ h_0FF0_0000 and _monstate L!
+        begin
+                ina COG@ h_0FF0_0000 and dup _monstate L@ <>
+
+                if
+                        _monstate W@ cnt COG@ over _mon W@ + L!
+                        4+ h1FFF and _monstate W!
+                else
+                        drop
+                then            
+        0 until
+;
+
+: _dmon1
+        base W@ swap hex
+        1 max 2047 min dup .word h3A dup emit emit space
+        4* _mon W@ + dup L@ swap 4- L@ dup .long h3A emit space
+        - dup .long space
+        swap base W!
+        d1000000 clkfreq u*/mod swap clkfreq 2/ > if 1+ then dup .long space .
+;
+
+: dmon
+        d2048 1
+        do
+                i _dmon1 cr
+        loop
+;
+
+: dmo
+        d128 1
+        do
+                i _dmon1 cr
+        loop
+;
+
+: dm
+        d32 1
+        do
+                i _dmon1 cr
+        loop
+;
+
+: m 3 cogreset 100 delms c" stepmon" 3 cogx ;
+
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+{
+init_motorB
+12345 forwardb
+
+500 delms
+
+12345 reverseb
+
+st? 
+sc
+
+\ fsclear to coear filesystem
+\ HC key to P27
+\ HC Tx to P26
+\ HC Rx to P25
+
+}
+
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+}}}
+
+= CHANGES from bot.f =
+
+Sal's demo program bot.f was first pass at brining together several drivers o test the LittleRobot proof of concept prototype.  Now that we've been using it, there are a couple improvement we make right off the bat.  Here are things we changed, if you wish to compare the two.   
+
+ * SR04 resistor - 10k
+ * pinout - Don't use the pins already used by buttons 0-7 for peripherals
+ * pinout - Use the pins already used by buttons 0-7 for input 
+ * pinout - Use pins 8 to 15 for motors
+ * pinout - Don't use the pins already used by LED on 16-23 for our drivers
+ * pinout - Use the pins with LED 16-23 to display the distance measurement
+ * pinout - Use pins 24 to 27, as these are not assigned
+ * pinout - Use pin 24 for SR04 trigger
+ * pinout - Use pin 25 for SR04 echo
+ * pinout - Use pin 26 for blue tooth Tx
+ * pinout - Use pin 27 for blue tooth Rx
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
