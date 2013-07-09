@@ -69,31 +69,19 @@ Each kit consists of:
 || Battery Case || [http://www.ebay.com/itm/180907110359 4aa Battery case with switch] || 10 pieces for $8.00 || $0.80 ||
 || Chassis Foam 2"x4"x6"  || 4x2 (feet) foam sheet || $30.00 || $0.63||
 || rubber bands || http://www.staples.com/Staples-Economy-Rubber-Bands-Size-64-1-4-lb/product_143297 || $2.79 || $0.54 ||
+|| USB || http://www.ebay.com/itm/1-8m-USB-2-0-A-to-mini-B-5-pin-Cable-PSP-Cameras-BLACK-/380497120361?pt=US_USB_Cables_Hubs_Adapters&hash=item5897654c69 || $3.22 || $3.22 ||
 
-Purchase Price $104.41
+Purchase Price $107.63
 
-Bulk order price $44.15
+Bulk order price $47.34
 
 == Locally available materials ==
 
   * Two Wheels are not orderable until I get the source arranged, please purchase or fabricate locally]
-  * two #6 rubber bands [also cut 1 inch wide sections of a bike inner tube, this works well 
-  * 4xAA batteries.  Get them at the home center in a pack of 40.  there MAY be a issue with over voltage with alkaline,, might need to use NiMH.
+  * 4xAA batteries NiHM. Alkaline Batteries are too high at 1.5 volts, use NiMH.
 
-== incorrect parts ==
-
-  * [http://www.ebay.com/itm/200927863479 HC05 (Blue Tooth Serial Cable Replacement)] $2.00 + $1.98 shipping each
-
-This is just the carrier board, you still have to solder the module (HC05 HC06)
-
-Also, the unmounted HC05 and HC06 are cheaper, but need to be solderd to carrier boards.  This task is not fo the faint of heart.   
 
 == Today's Order  ==
-
-  * Library: 12 kits
-  * Ancona: 5 kits
-  * High School: 4 kits
-  * Private Parties:  4 kits
 
 *Total Oder: 25 kits* 
 
