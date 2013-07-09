@@ -87,15 +87,6 @@ Bulk order price $47.34
 
 == Shopping List ==
 
-Need to order 
-
-*USB HOST to MINI B* Don't forget this again!!!!!!
-
-40 pin M-F (did it go through?)
-
-and 
-
-[http://www.ebay.com/itm/230911436376  ULN2003 + 28BYJ-48 ] $2.72
 
 || (need)  ||  (ordered)  || item  || price  || 
 ||  (25)  || (25) ||  Processor Board: Propeller Quickstart  || $25  || 
