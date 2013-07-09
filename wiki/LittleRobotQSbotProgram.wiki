@@ -1,5 +1,5 @@
-#summary Refined Program for Quickstart bot
-#labels v5.5
+#summary Refined Program for Quickstart LittleRobot
+#labels v5.5,LittleRobot
 
 <wiki:toc max_depth="9" />
 
