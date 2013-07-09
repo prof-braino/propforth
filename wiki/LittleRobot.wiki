@@ -36,12 +36,6 @@ http://code.google.com/p/propforth/wiki/LittleRobotProgressChart2013spring
 
 http://code.google.com/p/propforth/wiki/LittleRobotBOM
 
-The BOM Linked above does not (yet) include the kits that we sourced from Jeff (OBC) at Propeller Powered.
-
-http://propellerpowered.com/shop/
-
-Propeller Powered may elect to source kits for us; by buying the parts in bulk at a discount from suppliers (in China, etc) and packaging them into kits.  The small make up is well worth the convenience. But we have not verified that this fits his business model.  The first round of kits went very  smoothly.  Now we are looking into a custom electronic board for the little robot that contains all the necessary parts in a least cost and least size package.   
-
 == from the BOM ==
 
 http://code.google.com/p/propforth/wiki/LittleRobotSteppers
@@ -50,14 +44,13 @@ http://code.google.com/p/propforth/wiki/LittleRobotUltraSonic
 
 http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
 
-
-== user created parts ==
+== findable parts ==
 
 http://code.google.com/p/propforth/wiki/LittleRobotChassis
 
 http://code.google.com/p/propforth/wiki/LittleRobotWheels
 
-= User Guide =
+= User Interface / User Guide =
 
 The User Guide is intended to define how a user will interact with the bot; this serves as a guideline for the code we need to write. 
 
@@ -67,11 +60,7 @@ The user guide is to be updated as we learn more about how folks REALLY use the 
 
 In any case, the high level user requirement drives the software requirements.  The degree to which we meet the requirements is what we measure. 
 
-= User Interface =
-
 The user interface is intended to describe the "nuts and bolts" of using the bot per the user interface.   The user guide and use interface pages may overlap or need to be combined into a single item. 
-
-http://code.google.com/p/propforth/wiki/LittleRobotUserInterface
 
 = External Links = 
 
@@ -100,27 +89,35 @@ The rest of this page is background and high level discussion.
 
 = Target Audience =
 
-Kids, older and younger siblings, parents, teachers.  Lend me  your ears!
+Kids, older and younger siblings, parents, teachers.  
 
-The Little Robot™ project is a demo for the Propforth™ software project. The same hardware and algorithms may be used with any other software development environment, feel free to do so.  We plan to work towards an end to end solution using PropForth, this may be a handy reference point for other implementations.  
+= What it is =
 
-The intent is to develop a package simple enough so "non-techie™" parents can help the kids learn about cool stuff like building robots from scratch.  It also might include math, physics, mechanics, etc, but these will be hidden and nobody will know, it can be our little secret. 
+The !LittleRobot™ project is a functional demo for the Propforth software project. 
+Propforth is an embedded systems development environment, and a robot is a typical application for such a system.  The software is free and open source. 
+
+The intent is to develop a package simple enough so "non-techie" parents can help the kids learn about cool stuff like building robots from scratch.  It also might include math, physics, mechanics, etc, but these will be hidden and nobody will know, it can be our little secret. 
 
 = Simple Enough for Parents™? =
 
 So how is this possible?  If it is possible, why hasn't it been done before?
 
-Actually, its done all the time, with varying degrees of success.  In the past, there have been various "simple" programming environments that use BASIC programming language. There have been assorted kits that use micro controllers.  There have been countless kits for building robots. In the past, offerings have been too specialized, too complex, too simplistic, too expensive, or insufficiently marketed.  Many have had some degree of success, but few enjoy widespread, enduring popularity.
+Actually, its done all the time, with varying degrees of success.  In the past, there have been various "simple" programming environments that use for example BASIC programming language. There have been assorted kits that use micro controllers.  There have been countless kits for building robots. In the past, offerings have been too specialized, too complex, too simplistic, too expensive, or insufficiently marketed.  Many have had some degree of success, but few enjoy widespread, enduring popularity.
 
 In recent months, several factors have changed, making this project attractive and promising.  Cheap equipment from China, 3D printing, the prop chip and this software project seem to point towards a "Little Robot" as a timely effort.
 
+= The software environment =
+
 This project uses the FORTH programming language on the Parallax Propeller micro chip.  
 
-FORTH is a neat language.  It is as easy as BASIC, but as powerful and fast as assembler. Like the C language, it can be considered a "universal assembler" language.  While C is especially suited for workstation processors, FORTH is especially suited for embedded applications on a micro controller.  Embedded applications are particularly suitable for small robots.  
+FORTH is a neat language.  It is as easy as BASIC, but as powerful and fast as assembler. Like the C language, it can be considered a "universal assembler" language.  While C is especially suited for workstation processors or other situation where one wants to avoid the specifics of the processor,
+FORTH is especially suited for embedded applications on a micro controller, where one wants capitolize on the unique abilities of the target processor. 
 
-FORTH is all about using numbers on a stack.  Folks familiar with other programming environments may find this unusual.  But kids have not prior experience.  They can learn anything, from Mario Karts to iPhones, if given the chance.  Nothing is any more unusual than anything else they've never seen before. 
+FORTH is all about using numbers on a stack.  Folks familiar with other programming environments may find this unusual.  But kids have no prior experience.  They can learn anything, from Mario Karts to iPhones, if given the chance.  Nothing is any more unusual than anything else they've never seen before. 
 
-Kids tend to figure out extremely complex systems such as playing thorugh a Mario world.  All we have to do is a structure like a video game (many rounds of practice for some gratification/goal, and a "boss challenge" at the end of the unit/chapter).   So the intent is to teach  how to view the "problem" as a collections of interesting puzzles to be solved (at least that's how I do it). 
+= Do-Different =
+
+Kids tend to figure out extremely complex systems such as playing through a Mario world.  All we have to do is a structure like a video game (many rounds of practice for some gratification/goal, and a "boss challenge" at the end of the unit/chapter).   So the intent is to teach  how to view the "problem" as a collections of interesting puzzles to be solved (at least that's how I do it). 
 
 = Easy to Start =
 
