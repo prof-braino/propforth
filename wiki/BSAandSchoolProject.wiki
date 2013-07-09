@@ -61,6 +61,8 @@ The least possible expense for a solution that fits all the minimum needs has be
 
 The kit from parts uses the software provided free from Parallax, the Prop Tool. It also can use PropForth.
 
+EDIT -- A refined kit from parts has been added:  See LittleRobot
+
  == * 12blocks+TBot * ==
 
 http://hannoware.com/
