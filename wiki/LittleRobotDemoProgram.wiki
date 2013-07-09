@@ -33,7 +33,7 @@ The program Looks at Pins P2 and P27.  This is the BLUETOOTH Tx line, it is held
 
 ~~We are using BOT 1 for the time being, it flashes the Quickstart LEDs~~
 
-The SR04 on pins 16 and 17 might have a problem, try bot2
+The SR04 on pins 16 and 17 might have a problem, switched to bot2
 
 {{{
 
@@ -63,7 +63,7 @@ c" BOT " prop W@ ccopy
 
 == BOT2 ==
 
-Bot 2 uses the LEDs differently.  We'll try this in a later session. 
+Bot 2 uses the LEDs differently.  We used this for a bit, now we are using LittleRobotQSbotProgram 
 
 == Connect the wires per the chart ==
 
