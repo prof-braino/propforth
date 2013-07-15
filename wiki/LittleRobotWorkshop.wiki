@@ -70,6 +70,9 @@ http://en.wikipedia.org/wiki/Tera_Term
  
 Mac OSX is recommended for Mac users.  Other version may work but have not been tested.
      * Brad's Spin Tool (link)
+
+Note: Brad's Spin Tool bst) is not supported.  BST will be replaced by simpleIDE which is currently in beta.
+
      * Cool_term (link) [replaced with a more suitable option]
 
 
@@ -79,15 +82,35 @@ Ubuntu 12.04 is recommended for Linux users.  Linux users are required to know h
 
     * SimpleIDE (beta)
 
+NOTE: simpleIDE is in beta and is not yet supported.  Use it as a beta user at your own descretion.
+
+http://forums.parallax.com/showthread.php/137928-PropGCC-SimpleIDE
+
+http://code.google.com/p/propgcc/downloads/list
+
+http://learn.parallax.com/propeller-c-set-simpleide
+
+https://sites.google.com/site/propellergcc/documentation/simpleide
+
     * minicon (link)
 
+https://help.ubuntu.com/community/Minicom
+
+http://en.wikipedia.org/wiki/Minicom
 
 
 == Android ==
 
+Android 3.0 or higher devices can be used.  The android device MUST have bluetooth support to be used with the wireless bluetooth interface described here. 
+
 To use the wireless communication on an android device, and suitable bluetooth terminal program is needed.  
 
 BlueTerm is the recommend android bluetooth terminal application. Blueterm is available via the App store. The user is responsible for installing  the bluetooth application on the android device of choice. 
+
+* blueterm 
+
+
+https://play.google.com/store/apps/details?id=es.pymasde.blueterm
 
 == IOS ==
 
