@@ -1,0 +1,48 @@
+#summary Check timing and execution speed of a piece of code
+#labels v5.5,speed
+
+= a Speed Test =
+
+Sometime we want to know how long a chunk of code takes to execute.  Here is a way to count the clock cycles using a cnt register
+
+= speed.f =
+
+speed.f is in the downloads section of this wiki.
+
+http://code.google.com/p/propforth/downloads/detail?name=speed.f
+
+The code is below for reference, BUT copy and paste it to your editor before pasting it to the TeraTerm terminal window (the browser can truncate line or add non printable character codes or other weird stuff).
+
+{{{
+\ overhead test
+: speedtest1
+   	cnt COG@
+
+ \ put word to be timed in here
+
+	cnt COG@
+	swap - . cr 
+;
+
+
+\ a looptest   \ for short items, subtract ovwerhead, about 120 H 288 decimal clock cycles (per speed test 1 )
+: speedtest2
+	cnt COG@
+	100 0 do
+		2000 0 do
+		loop
+	loop
+	cnt COG@
+	swap -  dup . ." total clocks" cr
+	100 u/ 2000 u/ . ." per loop" cr
+;
+}}}
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
