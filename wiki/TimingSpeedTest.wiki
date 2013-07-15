@@ -1,6 +1,11 @@
 #summary Check timing and execution speed of a piece of code
 #labels v5.5,speed
 
+<wiki:toc max_depth="9" />
+
+-----
+
+
 = a Speed Test =
 
 Sometime we want to know how long a chunk of code takes to execute.  Here is a way to count the clock cycles using a cnt register
@@ -38,11 +43,21 @@ The code is below for reference, BUT copy and paste it to your editor before pas
 ;
 }}}
 
+= Expanation =
+
+The way this one works is to
+- get cnt
+- do the action a whole bunch of times,
+- then divide by the number of times
+- get an average of how long they take.
+
+That way OVERHEAD of starting and stopping the test gets smaller compared to the thing you are testing. But you have to remember, after we figure how long the event itself takes, we still have to be aware of the time required to start and stop the action.
+
+= VERY SHORT INTERVAL & MEASUREMENT =
+
+ALSO - For the SR04 (ultrasonic range finder) it needs a 10uS pulse.  To do this, Sal inserted and extra "DUP DROP", and checked it with an oscilloscope.  Then he added additional "DUP DROP" pairs until he got the required interval of just over 10uS.
+
+Since the interval usually must be associated with something (like triggering and external part) you might want to figure this into your test.  The raw execution time of the kernel itself may mislead and not reflect the useful application of timing an external interaction. 
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= end =
