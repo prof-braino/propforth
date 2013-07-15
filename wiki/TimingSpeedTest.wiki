@@ -61,6 +61,39 @@ So you want to be aware of the value when you take one measurement; and the valu
 
 ALSO - For the SR04 (ultrasonic range finder) it needs a 10uS pulse.  To do this, Sal inserted and extra "DUP DROP", and checked it with an oscilloscope.  Then he added additional "DUP DROP" pairs until he got the required interval of just over 10uS.
 
+*From SR04.F*
+
+{{{
+	_sr04_trig pinlo _sr04_trig pinout \ make trigger output
+	_sr04_echo >m                      \ convert pin number to bit mask  
+	_sr04_trig >m                      \ convert pin number to bit mask
+	begin
+		dup _maskouthi dup dup drop _maskoutlo
+
+\ 1. dup _maskouthi - make trigger pin go hi
+\ 2. dup _maskoutlo - make trigger pin go low
+\ Notice the extra dup drop before the pin goes lo
+\ this is just enough to make the pulse long enough to trigger the SR04
+
+		over dup dup dup
+
+		waitpeq   \ wait till the echo pin goes hig
+		cnt COG@  \ get the cnt
+		rot2     
+
+		waitpne   \ wait till echo goes lo
+		cnt COG@ swap -       \ find the delta between counts
+		d_170_000 clkfreq */  \ divide by speed of sound in meters.  
+                                      \ Notice 340m/s  is pre-divided by 2, 
+                                      \ since its the two way round trip
+
+
+		_sr04_distance L!
+		
+		100 delms
+	0 until
+
+}}}
 Since the interval usually must be associated with something (like triggering and external part) you might want to figure this into your test.  The raw execution time of the kernel itself may mislead and not reflect the useful application of timing an external interaction. 
 
 
