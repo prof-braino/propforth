@@ -68,7 +68,7 @@ ALSO - For the SR04 (ultrasonic range finder) it needs a 10uS pulse.  To do this
 	_sr04_echo >m                      \ convert pin number to bit mask  
 	_sr04_trig >m                      \ convert pin number to bit mask
 	begin
-		dup _maskouthi dup dup drop _maskoutlo \ this is the timing code
+		dup _maskouthi dup dup drop dup drop _maskoutlo \ this is the timing code
 
 \ 1. dup _maskouthi - make trigger pin go hi
 \ 2. dup _maskoutlo - make trigger pin go low
