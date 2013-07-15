@@ -3,15 +3,15 @@
 
 <wiki:toc max_depth="9" />
 
-= LittleRobot(tm) Workshop =
+= !LittleRobot(tm) Workshop =
 
-LittleRobot(tm) Workshop is a single 4 hour session.  This presents the intro to embedded control systems material.  This session uses the Parallax Propeller microcontroller, the LittleRobot(tm) kit, and a PC.  
+!LittleRobot(tm) Workshop is a single 4 hour session.  This presents the intro to embedded control systems material.  This session uses the Parallax Propeller microcontroller, the !LittleRobot(tm) kit, and a PC.  
 
 The goal is to have participants assemble the kits and the expected result is a mobile roboitc platform that moves and can sensor the environment in a simple fashion.
 
-= The LittleRobot Project =
+= The !LittleRobot Project =
 
-The LittleRobot project is the DEMO for Propforth v5.5
+The !LittleRobot project is the DEMO for !PropForth v5.5
 
 The intent is to provide a lowest cost "starter" option to embedded control systems (robots).  
 
