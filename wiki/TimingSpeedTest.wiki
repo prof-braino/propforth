@@ -35,6 +35,11 @@ The code is below for reference, BUT copy and paste it to your editor before pas
 	cnt COG@
 	100 0 do
 		2000 0 do
+
+
+ \ put word to be timed in here
+
+
 		loop
 	loop
 	cnt COG@
