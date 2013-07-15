@@ -114,7 +114,11 @@ https://play.google.com/store/apps/details?id=es.pymasde.blueterm
 
 == IOS ==
 
+*IOS DEVICES ARE NOT SUPPORTED*
+
 To use the wireless communication on an IOS device, and suitable bluetooth terminal program is needed.  
+
+At this time, NO COMPATIBLE IOS BLUETOOTH SOLUTION IS KNOWN.  Certain hardware exists that MAY function, but the cost is greater than the entire rest of the project.  
 
 (none specified) is the recommend IOS bluetooth terminal application. (none specified) is available via the App store. The user is responsible for installing  the bluetooth application on the IOS device of choice. 
 
@@ -122,7 +126,7 @@ To use the wireless communication on an IOS device, and suitable bluetooth termi
 
 = SETUP =
 
-Install teh PC software per your operating system as describled above. The installation process will install teh proper drivers for connecting the Prop Quickstart. 
+Install the PC software per your operating system as described above. The installation process will install teh proper drivers for connecting the Prop Quickstart. 
 
 == INSTALL PROPTOOL ==
 
@@ -134,33 +138,23 @@ Installing Proptool (and BST, and SimpleIDE) will also install the requireed USB
 
 In this document,  "terminal program" refers to Teraterm on Windows, Cool Term on Mac, and Minicom on Linux. 
 
-== Bluetooth termainal Program ==
-
-To use the optional wireless communication via Bluetooth, a Bluetooth capable terminal program must be available. 
+Install the software per the included instructions for each. 
 
 === PC or Laptop ===
 
 On a Bluetooth equipped PC or laptop, the previously installed terminal program is sufficient. 
 
-Teraterm, Cool_term, and Minicom all see the Bluetooth connection abnd treat is as "just another serial port".  Handy!
+Teraterm, Cool_term, and Minicom all see the Bluetooth connection and treat is as "just another serial port".  Handy!
 
-=== Android ===
+=== smart phone ===
 
-Install Blueterm
 
-Before blueterm can communicate with the LittleRobot, the proper blue tooth module must be connected and the driver software install, as detailed below.   This is fun, we will get to it, be patient. 
-
-=== IOS ===
-
-We have not determined the IOS bluetooth terminal application to recommend as of this writing 20130524.  This item is still under test. ANY Bluetooth terminal program should be sufficient. We just haven't decied which to recommend. 
 
 ----
 
 = The LittleRobot(tm) KIT =
 
 The LittleRobot(tm) KIT is designed to be the lowest cost set of parts that can provide a complete, functional, mobile robotic development platform. For background see here:  CheapestPossibleRobot
-
-
 
 == LittleRobot BASIC Kit (without micro controler) BOM ==
 
@@ -196,9 +190,7 @@ The document will secify the Parallax Propeller Quick start. This can be purchas
 
 = Tools = 
 
-The project is designed to use NO TOOL.  We came close, but we still need: 
-
-  * screw driver for the machine screws.  We are trying a box of disposable Phillips head (+) bits from the home center, 10 for $1.
+The project is designed to require NO TOOLS.  
 
  
 ----
@@ -209,7 +201,7 @@ Prerequisites:
   * The PC is set up
   * PC software is installed
   * the serial drivers were successfully installed
-  * the PC is connected to the internet  and you are reading this page :)
+  * the PC is connected to the internet and you are reading this page :)
   
 
 # connect the Quickstart to the PC
@@ -231,7 +223,6 @@ greet
 
 
 === On OFF ===
-
 
 {{{
 
