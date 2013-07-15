@@ -41,7 +41,9 @@ User must have permissions to install the required software and drivers on the P
 
 == Propforth ==
 
-The primary software tool for this project is PropForth. PropForth is an implementation of the FORTH language and development environment for the Parallax Propeller micro controller. Please location the downloadable archive for propforth on the sites download section at:
+The primary software tool for this project is !PropForth. 
+
+!PropForth is an implementation of the FORTH language and development environment for the Parallax Propeller micro controller. Please location the downloadable archive for propforth on the sites download section at:
 
 http://code.google.com/p/propforth/downloads/detail?name=PropForth-V5.5-20130317.zip
 
