@@ -55,20 +55,33 @@ A suitable PC operating system must be loaded. Current options are Windows, Mac,
 The primary choice is  Windows XP.  Other version of windows also work. 
 The software required for windows systems are:
     * Proptool v1.3.2 (link)
+
+http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1.3.2.zip
+
+http://www.parallax.com/tabid/832/default.aspx
+
     * Teraterm 4.77 or higher (link)
-    
+
+http://en.sourceforge.jp/projects/ttssh2/downloads/58915/teraterm-4.78.exe/
+
+http://en.wikipedia.org/wiki/Tera_Term    
 
 === Mac OS ===
  
 Mac OSX is recommended for Mac users.  Other version may work but have not been tested.
      * Brad's Spin Tool (link)
-     * Cool_term (link)
+     * Cool_term (link) [replaced with a more suitable option]
+
 
 === Linux ===
 
 Ubuntu 12.04 is recommended for Linux users.  Linux users are required to know how to "get it working" on there own system.  Typically, anyone that uses linux is able to do this. Minimal support for linux operating system will be provided. 
+
     * SimpleIDE (beta)
+
     * minicon (link)
+
+
 
 == Android ==
 
