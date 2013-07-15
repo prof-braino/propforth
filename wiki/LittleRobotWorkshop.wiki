@@ -303,21 +303,53 @@ http://code.google.com/p/propforth/wiki/LittleRobotChassis
 
 Now that all the parts have been deomnstrated to function, the completed robot can operate. 
 
+The bot.f program is included in the propforthv5.5 download archive.  This is the initial example to be used as reference only.  We are to make our own program, andwe are free to use what ever pin configuration and devices we choose. 
+
+For the present purpose, we will use 
+
+QSbot.f
+
+which is a version of bot.f tailored to the Quickstart board.
+
 == Pin Configuration ==
 
 see the pin configuration section on this page
 
-http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram
+~~http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram~~
 
-=== BOT1 ===
+http://code.google.com/p/propforth/wiki/LittleRobotQSbotProgram
 
-=== BOT2 ===
+=== QSbot versus BOT1 & BOT2 ===
+
+QSbot is the hardware configuration we will use as the example in this session.  Bot1 and Bot2 are two more possible configuration, these are the ones Sal used during development of the LittleRobot.  We thought we would be using custom hardware at the time, since then we have determined that QSbot is the simplest method for our needs. 
 
 == EEprom.spin ==
 
+The LittleRobot uses the EEpom version of the propforth kernel.  This is the same development kernel, with support for using the built in EEprom as a simple file storage system.  
+
+The EEpropm files system kernel is located in you extracted download directory at:
+
+../PropForth-V5.5-20130317/V5.5/CurrentRelease/PropForthEEprom
+
+EEpromKernel.spin
+
+Use the proptool application on the PC to load EEpromKernel.spin firmware onto the Quickstart board.
+
+Verify the propforth command propmpt respomndes.
+
+Procede to the QSbot program. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotQSbotProgram
+
+-----
+
+= ADVANCED =
+
+ADVANCED users may wish to use Nick Lordi's Robot Control Language. 
+
 ----
 
-= ROBOT CONTROL LANGUAGE =
+== ROBOT CONTROL LANGUAGE ==
 
 Nick Lordi's Robot control language
 
@@ -327,28 +359,19 @@ http://code.google.com/p/propforth/wiki/LittleRobotNickLordiRobotControlLanguage
 
 ----
 
-= ADVANCED - GREEN =
+== ADVANCED - GREEN ==
 
 http://code.google.com/p/propforth/wiki/AndroidGREEN
 
-This is still in development. 
+This is a development app and not supported as a final user app. Expreiment with Green and give us feedback, so we can develop a proper, final app. 
 
-It totally works and is awesome, but you have to be able to install and unsigned android app. 
+Green is an "unsigned" android app, that is, the user takes full responsibility for installing and usng this app. 
 
-
-
-
-
-  
-  
-
-
-
-
+You have to be able to install and unsigned android app to use Green.apk. 
 
 == LittleRobot Microcontroller ==
 
-While the basic kit does not specific the micro controller, this project does requires a specific microcontroller, this ibeing the Parallax Propeller, in particular the Propeller Quickstart board.  This was suelected for maximum bang for the buck and because it the the most fun in my opinion. 
+While the basic kit does not specific the micro controller, this project does requires a specific microcontroller, this being the Parallax Propeller, in particular the Propeller Quickstart board.  This was selected for maximum bang for the buck and because it the the most fun in my opinion. 
 
 = Notes =
 
