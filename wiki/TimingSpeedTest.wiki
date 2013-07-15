@@ -46,10 +46,10 @@ The code is below for reference, BUT copy and paste it to your editor before pas
 = Expanation =
 
 The way this one works is to
-- get cnt
-- do the action a whole bunch of times,
-- then divide by the number of times
-- get an average of how long they take.
+ * get cnt
+ * do the action a whole bunch of times,
+ * then divide by the number of times
+ * get an average of how long they take.
 
 That way OVERHEAD of starting and stopping the test gets smaller compared to the thing you are testing. But you have to remember, after we figure how long the event itself takes, we still have to be aware of the time required to start and stop the action.
 
