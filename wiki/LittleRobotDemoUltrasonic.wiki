@@ -71,33 +71,21 @@ fswrite ansi.f
 
 ...
 
-
-
 fswrite sr04-testbed.f
 
 1 wconstant build_sr04
-[ifndef _sr04_trig
-\ 16 wconstant _sr04_trig
-\ 15 wconstant _sr04_trig
- 25 wconstant _sr04_trig
-
-]
-[ifndef _sr04_echo
-\ 17 wconstant _sr04_echo
-\ 14 wconstant _sr04_echo
- 24 wconstant _sr04_echo
-]
+24 wconstant _sr04_trig
+25 wconstant _sr04_echo
 
 variable _sr04_distance
 
-
 : _sr04_measure
-c" MEASURE" cds W!
-4 state andnC!
+               c" MEASURE" cds W!
+               4 state andnC!
 
-_sr04_trig pinlo _sr04_trig pinout
-_sr04_echo >m
-_sr04_trig >m
+  _sr04_trig pinlo _sr04_trig pinout
+  _sr04_echo >m
+  _sr04_trig >m
 begin
       dup _maskouthi dup dup dup dup drop drop drop _maskoutlo
       over dup dup dup
