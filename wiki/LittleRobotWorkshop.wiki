@@ -154,11 +154,11 @@ Teraterm, Cool_term, and Minicom all see the Bluetooth connection and treat is a
 
 ----
 
-= The LittleRobot(tm) KIT =
+= The !LittleRobot(tm) KIT =
 
-The LittleRobot(tm) KIT is designed to be the lowest cost set of parts that can provide a complete, functional, mobile robotic development platform. For background see here:  CheapestPossibleRobot
+The !LittleRobot(tm) KIT is designed to be the lowest cost set of parts that can provide a complete, functional, mobile robotic development platform. For background see here:  CheapestPossibleRobot
 
-== LittleRobot BASIC Kit (without micro controler) BOM ==
+== !LittleRobot PARTS-ONLY Kit (without micro controler) BOM ==
 
 The KIT is a set of parts to be added to a micro controller. The COST of the basic kit does not include the micro controller, as many micro controller options exist, and this project is designed for maximum flexibility. 
 
