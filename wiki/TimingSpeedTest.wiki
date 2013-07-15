@@ -47,11 +47,15 @@ The code is below for reference, BUT copy and paste it to your editor before pas
 
 The way this one works is to
  * get cnt
- * do the action a whole bunch of times,
- * then divide by the number of times
- * get an average of how long they take.
+ * execute the code snippet for the action a whole bunch of times,
+ * get cnt again
+ * figure the delta between the start and end cnt's
+ * divide by the number of times the code snippet was executed
+ * get an average of how long the execution took
 
 That way OVERHEAD of starting and stopping the test gets smaller compared to the thing you are testing. But you have to remember, after we figure how long the event itself takes, we still have to be aware of the time required to start and stop the action.
+
+So you want to be aware of the value when you take one measurement; and the value you get when you take the average of a few thousand measurements. The difference between these will be some th9ing to look for, in case your end result is different from what you expect. 
 
 = VERY SHORT INTERVAL & MEASUREMENT =
 
