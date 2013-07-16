@@ -41,7 +41,7 @@ The following is a modification of the script found in bot.f
 
 NOTICE this script is undergoing maintenance, and is subject to change.
 
-The first part of the script can be loaded with fastload (fl). * No, don't do it with boot.f, this isa one time event. *
+The first part of the script can be loaded with fastload (fl). Should we put this in the auto boot.f? * No, don't do it with boot.f, this is a one time event. *
 
 The rest has to be input manually (by cut and paste),when we get to the touchy part.
 
@@ -81,23 +81,28 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
 hcProgPin pinhi hcProgPin pinout
 
 \ REMEMBER the HC06 LED must be blinking!
-\ If it isn't , disconnect Gnd, and reconnect. It will blink
+\ If it isn't blinking, disconnect HC06 Gnd, and reconnect. It will blink
+\ If it isn't blinking, disconnect HC06 Vcc, and reconnect. It will blink
+ 
 
 }}}
 
 
-The above gets loaded automatically by boot.f
+The above gets loaded automatically by boot.f 
+* NO, auto boot.f at this point just gets confusing. Do all this manually with cut and paste *
 
 -----
 
-This part we do manually
+This part we do manually.  Copy and paste each lf therse three lines, one at a time.
 
 
 {{{
 
 
 c" AT" hcSend
+
 c" AT+VERSION" hcSend
+
 c" AT+NAME?" hcSend
 
 }}}
@@ -111,23 +116,6 @@ After the HC06 responds to
 You are ready to configure. 
 
 
-{{{
-\ note baud change immediately on hc06!!!!!
-\ don't do this until you've set everything else.
-\ c" AT+BAUD9" hcSend
-
-hcProgPin pinlo 
-
-1000 delms
-
-hcSerialCog cogreset 100 delms
-
-
-
-hcProgPin pinlo
-
-
-}}}
 
 
 Copy the following into an editor and  set the name correctly
@@ -135,6 +123,7 @@ Copy the following into an editor and  set the name correctly
 Send the commands one at a time 
 
 {{{
+
 c" AT" hcSend
 c" AT+VERSION" hcSend
 c" AT+NAMEQSbot-CPL-01-of-12" hcSend
@@ -152,8 +141,34 @@ After the device is all ready go to, we change the BAUD LAST
 This will change the transmission rate from a fast 9600 default baud to the very fast 230400 baud. 
 
 {{{
+\ note baud change immediately on hc06!!!!!
+\ don't do this until you've set everything else.
+\ c" AT+BAUD9" hcSend
+
 
 c" AT+BAUD9" hcSend
+
+
+}}}
+
+
+-----
+
+The following turn OFF the programming mode and resets the bluetooth prgramming and configuration cog that minds the HC06 pins (26 and 27)
+
+{{{
+
+hcProgPin pinlo 
+
+1000 delms
+
+hcSerialCog cogreset 100 delms
+
+hcProgPin pinlo
+
+}}}
+
+{{{
 
 hcProgPin pinlo 
 
@@ -165,6 +180,12 @@ hcProgPin pinlo
 
 
 }}}
+
+-----
+
+*CHECK - it maybe that the programming commands exectue, but won't "take" (won't be made permanent and saved) unless the KEY line (pin 1) is held high. *
+
+* ALSO - it may be the athe KEY line must be held HIGH from POWER UP until the end of the configuration events;  rather than high for each command and lo between commands. IF this is the case, connect KEY to Vcc and execute the configuration commands*
 
 -----
 
