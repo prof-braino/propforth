@@ -17,11 +17,37 @@ for addditional details.
 
 The workshop is using the HC06 modules mounted on a 6 pin carrier board.  only Vcc (3.3v), GND, Rxd and Txd are used.
 
-= Configuration Script =
+== Hardware connections ==
+
+Connect Vcc to 3.3volts.  This is different from all the other parts, the connection is for HC06 Vcc goes to 3.3 on the quickstart. 
+
+Connect GND to Vss as normal.
+
+Connect HC06 - Tx tp pin 26
+
+Connect HC06 - Rx tp pin 27
+
+Don't connect the (GREEN wire) KEY to P1 yet.  We only do this if the HC06 is stubborn.
+
+==  Power On ==
+
+When you apply power, the RED LIGHT on the HC06 should blink.  This means the HC06 is ready.
+
+If the HC06 RED LED does NOT blink, pull the power wire for a second or two, and reconnect.  Sometimes they come up flashing every time, sometimes they only come up every other time.  This is fine for our situation. 
+
+== Configuration Scripts ==
 
 The following is a modification of the script found in bot.f
 
-NOTICE this script is undergoing maintenance, do not use.
+NOTICE this script is undergoing maintenance, and is subject to change.
+
+The first part of the script can be loaded with fastload (fl). * No, don't do it with boot.f, this isa one time event. *
+
+The rest has to be input manually (by cut and paste),when we get to the touchy part.
+
+-----
+
+Start with the easy part:
 
 {{{
 fl
@@ -40,8 +66,7 @@ fl
 \  initally they come up at 9600,  switch this after we set it to 230400
 
  9600 4/ wconstant hcBaud
-\ 230400 4/ wconstant hcBaud
-
+\ 230400 4/ wconstant hcBaud 
 
 0 wconstant hcSerialCog
 
@@ -58,10 +83,35 @@ hcProgPin pinhi hcProgPin pinout
 \ REMEMBER the HC06 LED must be blinking!
 \ If it isn't , disconnect Gnd, and reconnect. It will blink
 
+}}}
+
+
+The above gets loaded automatically by boot.f
+
+-----
+
+This part we do manually
+
+
+{{{
+
+
 c" AT" hcSend
 c" AT+VERSION" hcSend
 c" AT+NAME?" hcSend
 
+}}}
+
+After the HC06 responds to 
+
+ * c" AT" hcSend    with OK 
+ * c" AT+VERSION" hcSend with  OKlinvorV1.8  
+ * c" AT+NAME?" hcSend  with OKsetname
+
+You are ready to configure. 
+
+
+{{{
 \ note baud change immediately on hc06!!!!!
 \ don't do this until you've set everything else.
 \ c" AT+BAUD9" hcSend
@@ -79,13 +129,6 @@ hcProgPin pinlo
 
 }}}
 
-AFter the HC06 responds to 
-
- * c" AT" hcSend    with OK 
- * c" AT+VERSION" hcSend with  OKlinvorV1.8  
- * c" AT+NAME?" hcSend  with OKsetname
-
-You are ready to configure. 
 
 Copy the following into an editor and  set the name correctly
 
@@ -97,13 +140,91 @@ c" AT+VERSION" hcSend
 c" AT+NAMEQSbot-CPL-01-of-12" hcSend
 c" AT+PIN1234" hcSend
 c" AT+PN" hcSend
+}}}
+
+The above should set the name of the device (that is dispalyed on the Android Bluetooth Device panel), and make the pin code / password to 1234
+
+-----
+
+
+After the device is all ready go to, we change the BAUD LAST
+
+This will change the transmission rate from a fast 9600 default baud to the very fast 230400 baud. 
+
+{{{
+
 c" AT+BAUD9" hcSend
+
+hcProgPin pinlo 
+
+1000 delms
+
+hcSerialCog cogreset 100 delms
+
+hcProgPin pinlo
+
+
+}}}
+
+-----
+
+NOw, the device should be fully programmed with it correct name and set to 230400 baud.
+
+It should no longer respond at 9600.
+
+Remove the old files from EEprom using 
+{{{
+
+fsls
+
+fsclear
+
+fsls
+
+}}}
+
+Replace the auto boot .f using the the following, and try the query command as at 230400:
+
+{{{
+
+fl
+
+\ for the HC06
+
+\ green wire - this is not used on the carrier mounted modules
+1 wconstant hcProgPin 
+
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+
+\  initally they come up at 9600,  switch this after we set it to 230400
+
+\ 9600 4/ wconstant hcBaud
+230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
+
+0 wconstant hcSerialCog
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+
+: hcSend
+        cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+
+hcProgPin pinhi hcProgPin pinout
+
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't , disconnect Gnd, and reconnect. It will blink
 
 }}}
 
 
 
------
+
 
 = Pair the devices =
 
