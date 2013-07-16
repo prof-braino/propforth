@@ -7,55 +7,17 @@
 
 The HC05 and HC06  Bluetooth module allows communication with the prop via bluetooth.  No cables are needed after initial programming. 
 
-The HC05/HC06 do not have "PINS" per se.  It has teeny micro notches or scallops that are much closer together than the standard .1 inch spacing I usually work with.  But, you can solder a bit of wire to the notch, and make a connection to the prop. 
+This pages covers the immediate set up steps for the HC06.  If you have problems, or want to use the hc05, see
 
-You can put a pin on the other end of the wire, and jab it right into the bread board or 40 pin female connector on a Quickstart board.
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothDETAILS
 
-It is advisable to mount the soldered board, so the solder joints don't break; these are really hard to fix once they rip the solder pad off the scallop. 
+for addditional details.
 
-You can use any color wire you want, if you use the same color as we do yours will match the pictures. :)
+= HC06 =
 
-This source code is also included in the propforth download archive beginning with release v 5.3
+The workshop is using the HC06 modules mounted on a 6 pin carrier board.  only Vcc (3.3v), GND, Rxd and Txd are used.
 
-= Discoveries =
 
-Some of the parts doesn't come up at 9600 (specificied default).  They DO come up at 38400 when power is applied to key first; then they can be programmed normally. 
-
-When parts don't pair rigth away, cycle the power.  They usually work the next time. 
-
-When paired parts don't connect right away, cycle the power. Paired parts usually connect the second time. 
-
-The parts only allow a limited number of pairings at a given time. Use the commands to clear previous pairing if you have trouble.
-
-IOS (iPhone, iPad, iTouch) DON'T allow seem to allow a serial terminal via bluetooth.  BUMMER.  Apple can be annoying like that.  Perhaps Boy Chance will port GREEN to IOS? 
-
-= HC05 page =
-
-LittleRobotBluetoothHC05
-
-Take the HC05 specific instructions have been place in the following page.
-
-http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
-
-= HC06 page =
-
-LittleRobotBluetoothHC06
-
-Take the HC06 specific instructions have been place in the following page.
-
-http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
-
-= set the DEVKERNEL to 25 and 26 =
-
-After the BT module has been programmed, it must be tested using the Bluetooth05-06.f routine to prove its working as a cable replacement for propforth. 
-
-Last thing will be to change the PropForth Kernel to talk on P25 & P26, instead of P30 and P31.  Usually, the Quickstart talks on pins 30 & 31, so propforth uses pins 30 and 31; we don't have to move any wires to burn the eeprom and to use teraterm.  Now we want Propforth to talk on pins 25 and 26, and use the HC05.  All we need to do is change   
-
-(Remember that KEY on P27 gets disconnected after programming; even though it CAN be used for something else, we are going to keep it here unassigned in case we need to get at it later). 
-
-NOTE: If something goes really wrong, you can flash the Quickstart back to a standard (P30 and P31) kernel at any time.   This puts you back to talking on the USB cable, plug it in and fix whatever.  After its fixed, reflash to the P25 & P26 kernel.  This step might be a little tricky, don't be alarmed if you have to try is a couple times until you get the hang of it. 
-
-FYI once more:  Propforth runs are 230400 by default, on pins 30 and 31
 
 -----
 
@@ -91,65 +53,7 @@ Select this, and enter your pin you define in the script, or 1234 if you left th
 
 You can now connect to this device using Blue term (the three dots in the lower right corner is the secret!)
 
-=== SENA BTerm ===
-
-SENA BTerm also works.  But you have to do some configuration.  More details will be posted when we can some particulars.  For now, just play
-
-= Modify the DEVKERNEL.SPIN for Serial Pins 26 & 27 =
-
-To use the HC05 as cable replacement:
-
-After you have run the above script in propforth, and gotten the OK response for each configuration command, the HC05 is ready for use.
-
-BUT you must also change the PROPFROTH KERNEL!
-
-By default, propforth talks on pins 30 and 31.  
-
-we have to change the spin file that creates the kernel to use pins 26 and 25 that connect to the HC05
-
-In the proforth spin source file 'PropForthDevFastSerialKernel.spin'
-
-Edit lines 116 and 117:
-
-{{{
-  dlrS_txpin = 25 ' 30           ' $S_txpin forth word 
-  dlrS_rxpin=  26 ' 31            ' $S_rxpin forth word 
-}}}
-
-Save the file as PropforthBluetooth.spin
-
-Load it onto the prop EEPROM
-
-The USB serial will no longer connect to propforth until the prop is reloaded with a standard kernel. 
-
-Propforth will come up looking for the virtual Bluetooth com port.
 
 = NOTES =
-
-== Note: 20130415 ==
-
-The instructions appeared to work fine when I wrote them, but now when I go back to use them things are strange.  It may be that I have a marginal or defective HC05 part.  I used the KEY-HI-POWERON-38400 method on this part.   
-
-== Check that the HC05 is visible for blue tooth pairing ==
-
-If you saw OK after each line in the script, the HC05 should be set up. The quickstart won't use it until reprogramed to use pins 26 & 27 for serial, but we can still test it.
-
-Using you r Blue tooth device (Cell phone, tablet, laptop, netbook, android device, what ever you plan to use as you wireless terminal for little robot). Attempt pairing 
-
-Example -Samsung Captivate Glide Android smart(ish) phone
-
-* Phone - ON
-* Blue tooth - ON
-* Applications - Settings - Wireless and Networks
-* Blue Tooth Settings
-* Blue Tooth (Checkbox is checked)
-* Search fo Devices
--- Scanning --
-
-
-
-== NOTE ==
-
-The HC05 and HC06 modules look identical, I can't see any difference. They might be the same physical module with only the MODE set differently internally, perhaps there is only a  firmware change.
 
 - end -
