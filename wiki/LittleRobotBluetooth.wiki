@@ -29,12 +29,12 @@ fl
 \ for the HC06
 
 \ green wire - this is not used on the carrier mounted modules
-1 wconstant hcProgPin
+1 wconstant hcProgPin 
 
-\ white/orange wire - BOT1
+\ white/orange wire - QSbot RXD to p27
 27 wconstant hcRx
 
-\ white/green wire - BOT1
+\ white/green wire - QSbot TXD to p26
 26 wconstant hcTx
 
 \  initally they come up at 9600,  switch this after we set it to 230400
