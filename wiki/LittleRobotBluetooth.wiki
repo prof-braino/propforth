@@ -1,5 +1,5 @@
 #summary HC05 and HC06 Bluetooth for Little Robot(tm)
-#labels Bluetooth,LittleRobot,bluetooth,v5.5
+#labels HC06,LittleRobot,bluetooth,v5.5
 
 <wiki:toc max_depth="9" />
 
