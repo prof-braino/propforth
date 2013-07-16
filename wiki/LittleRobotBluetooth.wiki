@@ -17,7 +17,14 @@ for addditional details.
 
 The workshop is using the HC06 modules mounted on a 6 pin carrier board.  only Vcc (3.3v), GND, Rxd and Txd are used.
 
+= Configuration Script =
 
+The following is a modification of the script found in bot.f
+
+{{{
+
+
+}}}
 
 -----
 
