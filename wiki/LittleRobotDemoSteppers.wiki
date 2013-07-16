@@ -3,11 +3,10 @@
 
 <wiki:toc max_depth="9" />
 
-= This page ias being updated for JUST stepper testing  =
 
 = stepper code =
 
-The stepper section of the QSbot.f program
+The stepper section of the QSbot.f program, modified for QSbot testing
 
 This is named QSbotStepper.f
 
@@ -17,7 +16,24 @@ This is linked from the page LittleRobotQSbotProgram
 
 This is the code that shows whether the stepper stepper hardware is connected correctly
 
-To check that the steppers are connected correctly: 
+To check that the steppers are connected correctly
+
+As in the blinky LED exercise, do pinout pinhi pinlo for the pins assigned to the steppers.  These are 8 to 11 for motor A, and 12 to 15 for motor B.
+
+You can just do a loop for pins 8 to 15 
+
+{{{
+: test
+      8 0 do cr i 8 + 
+            dup  ." test pin " .
+            dup pinout
+            dup pinhi
+            ." is now lit, press a key to continue " key drop
+            pinlo
+          loop
+;
+}}}
+                  
 
 == Load the Program ==
 
@@ -488,88 +504,79 @@ The proforth command prompt should say
 
 instead of the usual prompt, to indicate the mode of the program loaded. 
 
------
------
------
------
------
+= Menu =
 
-== The stepper initialization ==
+The menu routine is not really a menu, just a reminder of the command to manually move the bot. 
 
-The second part is to run the stepper initialization
+== moving straight ==
 
-FROM the code below, CHOOSE either HALF stepping or FULL stepping (one or the other but not both.)
+input the number of millimeters to move forward (f) or backward (b)
+
+111 f 
+
+will move the robot 111 millimeters forward when calibration is complete.
+
+== turning ==
+
+input tenth of degree to rotate right (r) or left (l)
+
+1800 r 
+
+will rotate the bot 180 degress to the right when calibration is complete.
+
+= Calibration = 
+
+Wheel calibration is controled by adjusting 
 
 {{{
-
-{
-
-Drives a 4 phase stepper motor, tested with 28byj stepper motor wth a uln2003 driver
-
-Create a structure, either a halfstep, or full step, specify the pins, 16 17 18 & 19 in this case
-
-\ DEFINE STEPPER PINS
-\ For half stepping
-     16 17 18 19 step_create_halfstep moth
-
-\ INITALIZE STEPPER DATASTRUCTURE
-\ Initialize
-     moth step_init
-
-\ THIS IS WHAT MAKES THE STEPPER MOVE!!!!!!!
-
-\ Step forward
-     4096 moth step
-
-\ This makes the stepper move the other way
-\ Step reverse
-     -4096 moth step
-
-\ Turn off drivers
-     moth step_sleep
-
-\ Turn on drivers
-     moth step_active
-
-\ Set the step speed - setting too fast a speed will cause it to skip steps (1100 for test motor)
-     1100 moth step_setspeed
-
-\ or
-\ For full stepping
-     16 17 18 19 step_create_fullstep motf
-
-
-\ Initialize
-     motf step_init
-
-\ Step forward
-     2048 motf step
-
-\ Step reverse
-     -2048 motf step
-
-\ Turn off drivers
-     motf step_sleep
-
-\ Turn on drivers
-     motf step_active
-
-\ Set the step speed - setting too fast a speed will cause it to skip steps (550 for test motor)
-     550 motf step_setspeed
-
-\ When you have done the above, try to figure out the following
-\ ASK if you get stuck
-
-step structure
-00 - 04 -- current step position - steps
-04 - 08 -- current step velocity - steps / sec
-08 - 0C -- max step velocity - steps / sec (should be a multiple of step acceleration)
-0C - 10 -- step acceleration - steps / sec / sec (min 2)
-10 - 14 -- step mask
-14 - 34 -- 8 longs - step values
-34 - 38 -- steps to speed
-38 - 39 -- step position mask
-}
-
-
+263 wconstant _distance_cal
+6052 wconstant _right_cal
 }}}
+
+== Moving STRAIGHT ==
+
+_distance_cal is the distance the bot will move from one complete revolution of the wheels. 
+
+The steppers move the wheel 4096 steps to make one complete revolution.
+
+So, in 4096 steps, the bot will travel the circumference of the wheel. Figure the circumference of the wheel by measuring the diameter. With the rubber treads, the milled acrylic wheels should be about 80mm diameter.  The circumference is Pi time the diameter.
+
+80 * 3.14159 so the circumference should be about 251mm
+
+Copy the source code to a text editor.
+
+Edit the file and change 
+
+{{{
+263 wconstant _distance_cal
+}}}
+to
+{{{
+251 wconstant _distance_cal
+}}}
+
+and see if the bot moves the correct distance. Adjust the value until you are satisfied. 
+
+== TURNING ==
+
+_right cal is the distance the wheel must move to make the bot turn 360 degrees.  
+
+Actually, the number is in tenths of degrees.  So we are calculating 3600 for a complete revolution. 
+
+After the moving straight distance is correct, set the turning calibration using
+
+{{{
+6052 wconstant _right_cal
+}}}
+
+We COULD figure out the wheel base of the bot and do the math, set a number and tweak our calculated value until it behaves correctly.  But since we have to tweak the value anyway, we can just start in with tweaking. 
+
+Make the bot do a 360, and determine if it goes too far or falls short.  Adjust the value, and do it again. 
+
+When you start getting close, make the bot do several complete revolutions, and continue adjusting. 
+
+
+
+== Additional tests ==
+
+There are test routines in the code.  If you wish to experiment,  try these and see what the different parameters control. 
