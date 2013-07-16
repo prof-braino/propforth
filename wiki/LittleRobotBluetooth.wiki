@@ -26,119 +26,53 @@ NOTICE this script is undergoing maintenance, do not use.
 {{{
 fl
 
-fswrite boot.f
-
-hA state orC! version W@ .cstr cr cr cr
-: findEETOP
-0
-h100000 h8000
-do
-i t0 2 eereadpage
-if
-leave
-else
-i h7FFE + t0 3 eereadpage
-if
-leave
-else
-drop i h8000 +
-then
-then
-h8000 +loop
-;
-
-c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
-c" boot.f - Loading QSbotHC06.f~h0D~h0D" .cstr hA state andnC!
-fsload QSbotHC06.f
-c" boot.f - Loaded QSbotHC06.f~h0D~h0D" .cstr hA state andnC!
-c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
-...
-
-
-fswrite QSbotHC06.f
-
 \ for the HC06
 
+\ green wire - this is not used on the carrier mounted modules
 1 wconstant hcProgPin
-26 wconstant hcTx
+
+\ white/orange wire - BOT1
 27 wconstant hcRx
 
-c" QSbotHC06 " prop W@ ccopy
-1 propid W!
+\ white/green wire - BOT1
+26 wconstant hcTx
 
-
-
-: onreset6
-fkey? and fkey? and or h1B <>
-if
-$S_con iodis $S_con cogreset 100 delms
-\ c" _ready_led dup pinout pinhi" $S_con cogx
-c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
-cogid >con
-\ c" init_motorA" 0 cogx
-\ c" init_motorB" 1 cogx
-\ c" _sr04_measure" 2 cogx
-then
-
-fsls
-
-c" onreset6" (forget)
-;
-
-
-...
-
-
-
-fswrite btstat.f
-
-
+\ 9600 4/ wconstant hcBaud
 230400 4/ wconstant hcBaud
+
 
 0 wconstant hcSerialCog
 
 hcSerialCog cogreset 100 delms
 c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
-1 hcSerialCog sersetflags
 
 
 : hcSend
-	cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+        cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
 ;
 
 hcProgPin pinhi hcProgPin pinout
 
-c" AT+VERSION~h0D~h0A" hcSend
-c" AT+ROLE?~h0D~h0A" hcSend
-c" AT+UART?~h0D~h0A" hcSend
-c" AT+NAME?~h0D~h0A" hcSend
-c" AT+PSWD?~h0D~h0A" hcSend
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't , disconnect Gnd, and reconnect. It will blink
+
+c" AT" hcSend
+c" AT+VERSION" hcSend
+c" AT+NAME?" hcSend
+
+\ note baud change immediately on hc06!!!!!
+\ don't do this until you've set everything else.
+\ c" AT+BAUD9" hcSend
 
 hcProgPin pinlo 
 
-...
+1000 delms
 
-fswrite btinit.f
+hcSerialCog cogreset 100 delms
 
-hcProgPin pinhi hcProgPin pinout
 
-c" AT+NAME=CPL01of12~h0D~h0A" hcSend
-c" AT+PSWD=1234~h0D~h0A" hcSend
-c" AT+UART=230400,0,0~h0D~h0A" hcSend
-c" AT+VERSION~h0D~h0A" hcSend
-c" AT+ROLE?~h0D~h0A" hcSend
-c" AT+UART?~h0D~h0A" hcSend
-c" AT+NAME?~h0D~h0A" hcSend
-c" AT+PSWD?~h0D~h0A" hcSend
 
-hcProgPin pinlo 
-
-\ HC05: after the hc05 is power cycled, the baud rate will change, not like the hc06
-\ HC06: Baud changes immediately. Change BAUD LAST
-
-...
-
-cr
+hcProgPin pinlo
 
 
 }}}
