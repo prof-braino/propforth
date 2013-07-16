@@ -37,8 +37,10 @@ fl
 \ white/green wire - BOT1
 26 wconstant hcTx
 
-\ 9600 4/ wconstant hcBaud
-230400 4/ wconstant hcBaud
+\  initally they come up at 9600,  switch this after we set it to 230400
+
+ 9600 4/ wconstant hcBaud
+\ 230400 4/ wconstant hcBaud
 
 
 0 wconstant hcSerialCog
@@ -76,6 +78,30 @@ hcProgPin pinlo
 
 
 }}}
+
+AFter the HC06 responds to 
+
+ * c" AT" hcSend    with OK 
+ * c" AT+VERSION" hcSend with  OKlinvorV1.8  
+ * c" AT+NAME?" hcSend  with OKsetname
+
+You are ready to configure. 
+
+Copy the following into an editor and  set the name correctly
+
+Send the commands one at a time 
+
+{{{
+c" AT" hcSend
+c" AT+VERSION" hcSend
+c" AT+NAMEQSbot-CPL-01-of-12" hcSend
+c" AT+PIN1234" hcSend
+c" AT+PN" hcSend
+c" AT+BAUD9" hcSend
+
+}}}
+
+
 
 -----
 
