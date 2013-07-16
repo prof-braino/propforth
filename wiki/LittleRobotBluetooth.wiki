@@ -280,6 +280,24 @@ Select this, and enter your pin you define in the script, or 1234 if you left th
 
 You can now connect to this device using Blue term (the three dots in the lower right corner is the secret!)
 
+= Auto Boot.f to Blue tooth =
+
+At this point, the HC06 Bluetooth device has been configured and paired with your Android or windows device. 
+
+Set the automatic boot.f script to switch to the bluetooth communication on reboot. 
+
+
+{{{
+fl
+
+wswrite boot.f
+
+}}}
+
+reboot.  The device will auotmatically switch to bluetooth communications.
+
+To stop the script from autobooting, hold the ESC and the the boot prcess will skip the boot process. 
+
 
 = NOTES =
 
