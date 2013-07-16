@@ -189,6 +189,9 @@ Replace the auto boot .f using the the following, and try the query command as a
 
 fl
 
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't , disconnect Gnd, and reconnect. It will blink
+
 \ for the HC06
 
 \ green wire - this is not used on the carrier mounted modules
@@ -217,8 +220,6 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
 
 hcProgPin pinhi hcProgPin pinout
 
-\ REMEMBER the HC06 LED must be blinking!
-\ If it isn't , disconnect Gnd, and reconnect. It will blink
 
 }}}
 
