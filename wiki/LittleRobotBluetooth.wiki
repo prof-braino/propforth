@@ -154,8 +154,94 @@ c" AT+BAUD9" hcSend
 
 }}}
 
+-----
+
+AFTER YOU CHANGE THE HC06 BAUD to 23040, power cycle the prop and HC06.
+
+Pull the Vcc wire again, and reconnect, to get the RED programming LED to flash again. 
+
+Check the the HC06 is in fact programmed to run and 230400 with the followwing:
+
+{{{
+
+fl
+
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't , disconnect Gnd, and reconnect. It will blink
+
+\ for the HC06
+
+\ green wire - this is not used on the carrier mounted modules
+1 wconstant hcProgPin 
+
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+
+\  initally they come up at 9600,  switch this after we set it to 230400
+
+\ 9600 4/ wconstant hcBaud
+230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
+
+0 wconsta{{{
+
+
+c" AT" hcSend
+
+c" AT+VERSION" hcSend
+}}}
+nt hcSerialCog
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+
+: hcSend
+        cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+
+hcProgPin pinhi hcProgPin pinout
+
+
+}}}
+
+Notice that this is sets 230400 baud, otherswise its the same as before.
+
+Do the same diagnositc queries as above 
+
+{{{
+c" AT" hcSend
+
+c" AT+VERSION" hcSend
+}}}
+
+Both should respond with OK, and the HC06 is set. 
+
+Scan for the HC06 using an android device pariing screen.  The new name should be displayed. 
+
+Pair with the device.  It should be listed as PAIRED DEVICE.  The red LED will continue to blink (until you CONNECT via blueterm)
 
 -----
+
+Use the following autoboot script to check the bluetooth setup.
+
+After power cycle or reboot, the prop serial  I/O pins will switch to the bluetooth pins.  You can connect via blueterm or GREEN.
+
+
+
+
+-----
+
+-----
+
+-----
+
+-----
+
+
+
 
 The following turn OFF the programming mode and resets the bluetooth prgramming and configuration cog that minds the HC06 pins (26 and 27)
 
@@ -209,45 +295,7 @@ fsls
 
 Replace the auto boot .f using the the following, and try the query command as at 230400:
 
-{{{
-
-fl
-
-\ REMEMBER the HC06 LED must be blinking!
-\ If it isn't , disconnect Gnd, and reconnect. It will blink
-
-\ for the HC06
-
-\ green wire - this is not used on the carrier mounted modules
-1 wconstant hcProgPin 
-
-\ white/orange wire - QSbot RXD to p27
-27 wconstant hcRx
-
-\ white/green wire - QSbot TXD to p26
-26 wconstant hcTx
-
-\  initally they come up at 9600,  switch this after we set it to 230400
-
-\ 9600 4/ wconstant hcBaud
-230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
-
-0 wconstant hcSerialCog
-
-hcSerialCog cogreset 100 delms
-c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
-
-
-: hcSend
-        cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
-;
-
-hcProgPin pinhi hcProgPin pinout
-
-
-}}}
-
-
+fghjfgjhfgjfgjhfgjhfgj
 
 
 
