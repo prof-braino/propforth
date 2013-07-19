@@ -135,7 +135,7 @@ The above should set the name of the device (that is displayed on the Android Bl
 
 -----
 
-=== Change the BAUS to 230400 LAST ===
+=== Change the BAUD to 230400 LAST ===
 
 After the device is all ready go to, we change the BAUD LAST
 
@@ -180,14 +180,7 @@ fl
 \ 9600 4/ wconstant hcBaud
 230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
 
-0 wconsta{{{
-
-
-c" AT" hcSend
-
-c" AT+VERSION" hcSend
-}}}
-nt hcSerialCog
+0 wconstant hcSerialCog
 
 hcSerialCog cogreset 100 delms
 c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
@@ -201,6 +194,7 @@ hcProgPin pinhi hcProgPin pinout
 
 
 }}}
+
 
 Notice that this is sets 230400 baud, otherswise its the same as before.
 
@@ -223,6 +217,7 @@ c" AT+VERSION" hcSend
 Use the following autoboot script to check the bluetooth setup.
 
 After power cycle or reboot, the prop serial  I/O pins will switch to the bluetooth pins.  You can connect via blueterm or GREEN.
+
 
 
 -----
