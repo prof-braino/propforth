@@ -106,11 +106,9 @@ c" AT+VERSION" hcSend
 
 NOTE:  This was an error: 'c" AT+NAME?" hcSend' as it changes the device name to '?'
 
-Try this to echo the name:
-{{{
-c" AT+NAME" hcSend
-}}}
+This does NOT echo the name: 'c" AT+NAME" hcSend'
 
+The way to see the name after it is set is via the bluetooth paring screen on the android device, only.
 
 After the HC06 responds to 
 
