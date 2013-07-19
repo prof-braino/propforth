@@ -47,6 +47,8 @@ The rest has to be input manually (by cut and paste),when we get to the touchy p
 
 -----
 
+=== load the default communication for 9600 ===
+
 Start with the easy part:
 
 {{{
@@ -83,8 +85,6 @@ hcProgPin pinhi hcProgPin pinout
 \ REMEMBER the HC06 LED must be blinking!
 \ If it isn't blinking, disconnect HC06 Gnd, and reconnect. It will blink
 \ If it isn't blinking, disconnect HC06 Vcc, and reconnect. It will blink
- 
-
 }}}
 
 
@@ -93,8 +93,9 @@ The above gets loaded automatically by boot.f
 
 -----
 
-This part we do manually.  Copy and paste each lf therse three lines, one at a time.
+=== Verify the device is communicating ===
 
+This part we do manually.  Copy and paste each lf therse three lines, one at a time.
 
 {{{
 c" AT" hcSend
@@ -116,7 +117,9 @@ After the HC06 responds to
 
 You are ready to configure. 
 
-Copy the following into an editor and  set the name correctly
+=== Set the device to a name of your choice ===
+
+Copy the following into an editor and  set the name correctly.  I used *CPL-01-of-12* here as I have a bunch of these to do before the next workshop. 
 
 Send the commands one at a time 
 
@@ -132,6 +135,8 @@ The above should set the name of the device (that is displayed on the Android Bl
 
 -----
 
+=== Change the BAUS to 230400 LAST ===
+
 After the device is all ready go to, we change the BAUD LAST
 
 This will change the transmission rate from a fast 9600 default baud to the very fast 230400 baud. 
@@ -144,6 +149,8 @@ c" AT+BAUD9" hcSend
 }}}
 
 -----
+
+=== Power cycle and 230400 communication ===
 
 AFTER YOU CHANGE THE HC06 BAUD to 23040, power cycle the prop and HC06.
 
@@ -205,13 +212,13 @@ c" AT" hcSend
 c" AT+VERSION" hcSend
 }}}
 
-Both should respond with OK, and the HC06 is set. 
-
-Scan for the HC06 using an android device pariing screen.  The new name should be displayed. 
-
-Pair with the device.  It should be listed as PAIRED DEVICE.  The red LED will continue to blink (until you CONNECT via blueterm)
+ * Both should respond with OK, and the HC06 is set. 
+ * Scan for the HC06 using an android device pairing screen.  The new name should be displayed. 
+ * Pair with the device.  It should be listed as PAIRED DEVICE.  The red LED will continue to blink (until you CONNECT via blueterm)
 
 -----
+
+=== Set the auto boot.f to  switch to bluetooth ===
 
 Use the following autoboot script to check the bluetooth setup.
 
@@ -285,7 +292,7 @@ Replace the auto boot .f using the the following, and try the query command as a
 
 fghjfgjhfgjfgjhfgjhfgj
 
-
+-----
 
 = Pair the devices =
 
