@@ -97,8 +97,6 @@ This part we do manually.  Copy and paste each lf therse three lines, one at a t
 
 
 {{{
-
-
 c" AT" hcSend
 
 c" AT+VERSION" hcSend
@@ -118,15 +116,11 @@ After the HC06 responds to
 
 You are ready to configure. 
 
-
-
-
 Copy the following into an editor and  set the name correctly
 
 Send the commands one at a time 
 
 {{{
-
 c" AT" hcSend
 c" AT+VERSION" hcSend
 c" AT+NAMEQSbot-CPL-01-of-12" hcSend
@@ -134,10 +128,9 @@ c" AT+PIN1234" hcSend
 c" AT+PN" hcSend
 }}}
 
-The above should set the name of the device (that is dispalyed on the Android Bluetooth Device panel), and make the pin code / password to 1234
+The above should set the name of the device (that is displayed on the Android Bluetooth Device panel), and make the pin code / password to 1234
 
 -----
-
 
 After the device is all ready go to, we change the BAUD LAST
 
@@ -147,11 +140,7 @@ This will change the transmission rate from a fast 9600 default baud to the very
 \ note baud change immediately on hc06!!!!!
 \ don't do this until you've set everything else.
 \ c" AT+BAUD9" hcSend
-
-
 c" AT+BAUD9" hcSend
-
-
 }}}
 
 -----
@@ -163,7 +152,6 @@ Pull the Vcc wire again, and reconnect, to get the RED programming LED to flash 
 Check the the HC06 is in fact programmed to run and 230400 with the followwing:
 
 {{{
-
 fl
 
 \ REMEMBER the HC06 LED must be blinking!
@@ -230,8 +218,6 @@ Use the following autoboot script to check the bluetooth setup.
 After power cycle or reboot, the prop serial  I/O pins will switch to the bluetooth pins.  You can connect via blueterm or GREEN.
 
 
-
-
 -----
 
 -----
@@ -256,6 +242,8 @@ hcSerialCog cogreset 100 delms
 hcProgPin pinlo
 
 }}}
+
+text
 
 {{{
 
