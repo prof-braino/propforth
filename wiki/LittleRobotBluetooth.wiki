@@ -304,21 +304,51 @@ cr
 
 }}}
 
+== Verify the Bluetooth connection ==
+
+After reboot or power cycle, the prop will switch the serial connection to the blue tooth I/O pins.
+
+The terminal program on a connected device will dispay the regular propforth prompt. 
+
+Type a propforth command like 'words' to show the connection is working. 
 
 
 -----
 
------
+= TROUBLE SHOOTING =
+
+If the auto boot.f command gives you trouble, press and hold the ESC key during boot.  This will skip the auto boot.f behavior.
+
+To remove a bad copy of the boot.f script:
+
+ * from the propforth command line:
+ * type 'fsls' to list the current script files
+ * type 'fsclear'  to remove the script name entry
+
+To put in a fixed/modified script:
+
+ * reload the script (copy and paste from your editor)
+ * reboot
+
+= NOTES =
+
+== DataSheet ==
+
+There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
+
+http://etang.co.uk/datasheet/hc06/Bluetooth_HC-06_datasheet%20by%20cn.pdf
+
+http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
 
 -----
 
+-----
 
 = old section =
 
 ignore this section, it was needed during editing and will be removed. 
 
 -----
-
 
 The following turn OFF the programming mode and resets the bluetooth prgramming and configuration cog that minds the HC06 pins (26 and 27)
 
@@ -413,16 +443,5 @@ wswrite boot.f
 reboot.  The device will auotmatically switch to bluetooth communications.
 
 To stop the script from autobooting, hold the ESC and the the boot prcess will skip the boot process. 
-
-
-= NOTES =
-
-== DataSheet ==
-
-There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
-
-http://etang.co.uk/datasheet/hc06/Bluetooth_HC-06_datasheet%20by%20cn.pdf
-
-http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
 
 - end -
