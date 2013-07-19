@@ -238,6 +238,7 @@ After power cycle or reboot, the prop serial  I/O pins will switch to the blueto
 
 
 {{{
+fl
 
 fswrite boot.f
 
