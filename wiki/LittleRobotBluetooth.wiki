@@ -207,45 +207,57 @@ c" AT+VERSION" hcSend
 }}}
 
  * Both should respond with OK, and the HC06 is set. 
+
+= Pair with an Android device =
+
+To pair with an Android or windows device:
+
+ * the red LED must be blinking 
  * Scan for the HC06 using an android device pairing screen.  The new name should be displayed. 
  * Pair with the device.  It should be listed as PAIRED DEVICE.  The red LED will continue to blink (until you CONNECT via blueterm)
 
------
+= Connect to the HC06 =
 
-=== Set the auto boot.f to  switch to bluetooth ===
+From your terminal program:
+ * Tera term on windows over bluetooth
+ * blueterm on Android
+ * GREEN on android
+
+Find Connect Device.  Select the HC06, it will display the name you set. The RED LED on the HC06 will flash, and stay on solid when the divice is connected. 
+
+The terminal will not respond yet, we have to set up the auto boot.f scrip still. 
+
+= Auto BOOT.F for HC06 testing =
 
 Use the following autoboot script to check the bluetooth setup.
+
+This is a trimmed version of the auto boot.f script.  It just switches the prop serial I/O pins to use the HC06 pins (26 & 27)
 
 After power cycle or reboot, the prop serial  I/O pins will switch to the bluetooth pins.  You can connect via blueterm or GREEN.
 
 
 
------
-
------
-
------
-
------
-
-
-
-
-The following turn OFF the programming mode and resets the bluetooth prgramming and configuration cog that minds the HC06 pins (26 and 27)
-
 {{{
-
-hcProgPin pinlo 
-
-1000 delms
-
-hcSerialCog cogreset 100 delms
-
-hcProgPin pinlo
 
 }}}
 
-text
+
+
+-----
+
+-----
+
+-----
+
+
+= old section =
+
+ignore this section, it was needed during editing and will be removed. 
+
+-----
+
+
+The following turn OFF the programming mode and resets the bluetooth prgramming and configuration cog that minds the HC06 pins (26 and 27)
 
 {{{
 
