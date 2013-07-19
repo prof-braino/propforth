@@ -164,7 +164,9 @@ Almost forgot!  Now that the module is paried with you device, we have to put th
 
 = DATA SHHET =
 
-ftp://imall.iteadstudio.com/Modules/IM120723009/DS_IM120723009.pdf
+http://www.mcu-turkey.com/wp-content/uploads/2013/01/HC-Serial-Bluetooth-Products-201104.pdf
+
+~~ftp://imall.iteadstudio.com/Modules/IM120723009/DS_IM120723009.pdf~~ no this is the hc05
 
 = HC06 unmounted, no carrier board =
 
