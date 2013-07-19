@@ -208,7 +208,7 @@ c" AT+VERSION" hcSend
 
  * Both should respond with OK, and the HC06 is set. 
 
-= Pair with an Android device =
+= Pair with an Bluetooth master device =
 
 To pair with an Android or windows device:
 
@@ -238,6 +238,25 @@ After power cycle or reboot, the prop serial  I/O pins will switch to the blueto
 
 
 {{{
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" _ready_led dup pinout pinhi" $S_con cogx
+c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+cogid >con
+then
+c" onreset6" (forget)
+;
+
+
+...
+
 
 }}}
 
