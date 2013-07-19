@@ -164,7 +164,7 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
 
   HC06 Tx goes to the prop quickstart pin 26
 
-  HC06 Rx goes to the prop quickstart pin 26
+  HC06 Rx goes to the prop quickstart pin 27
 
   === b. blue tooth POWER is 3.3 ===
 
@@ -184,110 +184,16 @@ REMEMBER!  The bluetooth modules use 3.3volts ONLY!  Do NOT connect the HC06 to 
 
   * hold down the ESC key during boot. This prevents the autoboot from rrunning, and so prevents the drivers from starting.  The stepper, LED, and BT programs are loaded and available, but do not start by themselves.
 
-  * unplug the BT Tx line.  The autoboot will run, and launch all the drivers.  But since it doesn't see the Tx high, it does not switch to BT pin, and the regular terminal will work. 
 
-BELOW IS THE PORTION OF THE CODE THAT DETERMINES the bot configuration.
-
-By checking which pin is held high, we can determine where the BT is, an thus which config. 
-
-Edit this to look at the QSbot BT Tx pin on P26
-
-{{{
-
-fswrite bot.f
-
-
-2 px? 27 px? 0= and
-[if
-        1 wconstant build_bot1
-]
-
-27 px? 2 px? 0= and
-[if
-        1 wconstant build_bot2
-]
-
-[ifdef build_bot1
-\ for the HC05
-
-1 wconstant hcProgPin
-0 wconstant hcRx
-2 wconstant hcTx
-
-16 wconstant _sr04_trig
-17 wconstant _sr04_echo
-
-3 wconstant _ready_led
-
-: _mota_pins d_24 d_25 d_26 d_27 ;
-: _motb_pins d_20 d_21 d_22 d_23 ;
-
-263 wconstant _distance_cal
-6052 wconstant _right_cal
-c" BOT " prop W@ ccopy
-1 propid W!
-]
-
-[ifdef build_bot2
-\ for the HC05
-\ green wire
-        22 wconstant hcProgPin
-\ white/orange wire
-        26 wconstant hcRx
-\ white/green wire
-        27 wconstant hcTx
-
-24 wconstant _sr04_trig
-25 wconstant _sr04_echo
-
-23 wconstant _ready_led
-
-: _mota_pins d_15 d_14 d_13 d_12 ;
-: _motb_pins d_11 d_10 d_9 d_8 ;
-
-263 wconstant _distance_cal
-6052 wconstant _right_cal
-c" BOT " prop W@ ccopy
-2 propid W!
-]
-
-fsload 4step.f
-fsload sr04.f
-
-
-}}}
-
-After the above section is edited, put the same in QSbot.f below.
-
-Next, the boot.f program reassigns the serial pins at boot time:
-
-{{{
-
-: onreset6
-fkey? and fkey? and or h1B <>
-if
-$S_con iodis $S_con cogreset 100 delms
-c" _ready_led dup pinout pinhi" $S_con cogx
-c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
-cogid >con
-c" init_motorA" 0 cogx
-c" init_motorB" 1 cogx
-c" _sr04_measure" 2 cogx
-c" sr04_display" 3 cogx
-then
-c" onreset6" (forget)
-;
-
-
-}}}
 
 Note that the baud rate is four time that listed; `57600 * 4 = 230400`
-
-These lines are the same as in the original, and must be present in QSbot.f
 
 -----
 
 = IV. QSbot.f =
+
+*CONTINUE HERE*
+
 
 QSbot.f includes a couple additions compared to the bot.f program contained in the propforth doanload archive. .
 
