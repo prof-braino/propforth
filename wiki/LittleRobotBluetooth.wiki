@@ -114,7 +114,7 @@ After the HC06 responds to
 
  * c" AT" hcSend    with OK 
  * c" AT+VERSION" hcSend with  OKlinvorV1.8  
- * c" AT+NAME?" hcSend  with OKsetname
+ * c" AT+NAMElittlerobotnewname" hcSend  with OKsetname
 
 You are ready to configure. 
 
