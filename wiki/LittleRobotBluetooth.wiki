@@ -332,7 +332,7 @@ To put in a fixed/modified script:
 
 = NOTES =
 
-== DataSheet ==
+== Data Sheet ==
 
 There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
 
@@ -344,7 +344,7 @@ http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
 
 -----
 
-= old section =
+== old section ==
 
 ignore this section, it was needed during editing and will be removed. 
 
@@ -394,11 +394,11 @@ fghjfgjhfgjfgjhfgjhfgj
 
 -----
 
-= Pair the devices =
+== Pair the devices ==
 
 The HC05 should be visible as a slave (pairable) device when re-powered
 
-== Windows XP ==
+=== Windows XP ===
 
 Run Blue Tooth Wizard 
 
@@ -410,7 +410,7 @@ XP will add two COM ports, on incoming and one out going.
 
 The outgoing port is the one you will use with Teraterm.  The incoming port doesn't do anything, but has to be there. 
 
-== Android ==
+=== Android ===
 
   * Select Settings.  
   * Under (or near) WiFi find Bluetooth. 
@@ -422,7 +422,7 @@ A short time later this will change to the name you assigned in the script.
 
 Select this, and enter your pin you define in the script, or 1234 if you left the default.
 
-=== Blueterm ===
+==== Blueterm ====
 
 You can now connect to this device using Blue term (the three dots in the lower right corner is the secret!)
 
