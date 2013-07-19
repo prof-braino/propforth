@@ -304,4 +304,12 @@ To stop the script from autobooting, hold the ESC and the the boot prcess will s
 
 = NOTES =
 
+== DataSheet ==
+
+There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
+
+http://etang.co.uk/datasheet/hc06/Bluetooth_HC-06_datasheet%20by%20cn.pdf
+
+http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
+
 - end -
