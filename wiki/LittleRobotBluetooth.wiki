@@ -102,10 +102,15 @@ This part we do manually.  Copy and paste each lf therse three lines, one at a t
 c" AT" hcSend
 
 c" AT+VERSION" hcSend
-
-c" AT+NAME?" hcSend
-
 }}}
+
+NOTE:  This was an error: 'c" AT+NAME?" hcSend' as it changes the device name to '?'
+
+Try this to echo the name:
+{{{
+c" AT+NAME" hcSend
+}}}
+
 
 After the HC06 responds to 
 
