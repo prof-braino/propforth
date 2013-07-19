@@ -235,7 +235,7 @@ This is a trimmed version of the auto boot.f script.  It just switches the prop 
 
 After power cycle or reboot, the prop serial  I/O pins will switch to the bluetooth pins.  You can connect via blueterm or GREEN.
 
-
+REMEMBER:  YOU MUST copy this to your editor, and paste it from there.  It doesn't work it you copy from the browser and paste directly to the terminal.
 
 {{{
 fl
