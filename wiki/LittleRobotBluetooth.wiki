@@ -317,6 +317,16 @@ Type a propforth command like 'words' to show the connection is working.
 
 = TROUBLE SHOOTING =
 
+The HC06 RED LED MUST BE BLINKING to program the HC06 via the PC terminal scripts.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+The HC06 RED LED MUST BE BLINKING to pair with the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+The HC06 RED LED MUST BE BLINKING to connect to the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+After the HC06 is PAIRED with your android device, the RED LED will continue to blinky
+
+After the HC06 is connected to the android terminal program , the RED LED will stay lit continuously
+
 If the auto boot.f command gives you trouble, press and hold the ESC key during boot.  This will skip the auto boot.f behavior.
 
 To remove a bad copy of the boot.f script:
