@@ -85,7 +85,10 @@ hcProgPin pinhi hcProgPin pinout
 
 c" AT" hcSend
 c" AT+VERSION" hcSend
-c" AT+NAME?" hcSend
+\ c" AT+NAME?" hcSend \ ERROR - this changes HC06 name to a question mark ?
+\ there is no way to echo the device name in programming mode,
+\ use the android paring screen to see the device name. 
+\ Sorry, that's what it does.
 
 \ note baud change immediately on hc06!!!!!
 \ don't do this until you've set everything else.
