@@ -360,7 +360,6 @@ step structure
 38 - 39 -- step position mask
 }
 
-
 \ 1 wconstant step_debug
 
 h0  wconstant _step_position
@@ -401,6 +400,9 @@ h39 wconstant _step_size
         ."            accel: " _step_accel + L@ .
 ;
 ]
+
+
+-----
 
 \ step_sleep ( addr -- )
 : step_sleep
@@ -712,10 +714,12 @@ h8000 +loop
 ;
 
 c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
-c" boot.f - Loading bot.f~h0D~h0D" .cstr hA state andnC!
-fsload bot.f
-c" boot.f - Loaded bot.f~h0D~h0D" .cstr hA state andnC!
+
+c" boot.f - Loading QSbotStepper.f~h0D~h0D" .cstr hA state andnC!
+fsload QSbotStepper.f
+c" boot.f - Loaded QSbotStepper.f~h0D~h0D" .cstr hA state andnC!
 c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
 ...
 
 \ - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - 
