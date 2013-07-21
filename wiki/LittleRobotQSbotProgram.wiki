@@ -201,6 +201,10 @@ These are just combine the oneset6 and boot.f from the individual drivers.
 The most recently uploaded version of a file (closest to the bottom of the fsls list) is the version that is used. This effectively overwrites the old version, without having to physically remove the old version. 
 
 {{{
+
+fl 
+
+
 \  ONRESET6 for HC06 bluetooth, steppers, S04 measurement, and LED display
 
 : onreset6
@@ -285,19 +289,6 @@ We may also add more functions to QSbot.f, depending on user needs.  On the list
   * SR04 - Add detect too close/too far
 
 QSbot.f is based on [http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram#bot-fixed.f bot-fixed.f], which is base on the original bot.f from the Extensions directory in the Propforth-v5.5 download.
-
-The code is being changed to match the pinout above.
-
-
-
-
-{{{
-
-
-}}}
-
-
-
 
 = CHANGES from bot.f =
 
