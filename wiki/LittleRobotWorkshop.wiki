@@ -70,13 +70,20 @@ http://en.wikipedia.org/wiki/Tera_Term
 
 === Mac OS ===
  
-Mac OSX is recommended for Mac users.  Other version may work but have not been tested.
+NOTE: Apple and Mac don't play well with the LittleRobot bluetooth device.  This is beyond our control, and beyond the scope of this project.  While it can be made to work, the Mac specific parts are very expensive and so we just declare them "NOT SUPPORTED".  It can still work, you just have to buy the extra parts on your own, and do the extra effort to get it going. You have been warned.  
+
+Mac OSX is recommended for Mac users.  Other versions may work but have not been tested.
+
      * Brad's Spin Tool (link)
 
-Note: Brad's Spin Tool bst) is not supported.  BST will be replaced by simpleIDE which is currently in beta.
+Note: Brad's Spin Tool (bst) is not supported.  BST will be replaced by simpleIDE which is currently in beta.  
+
+    * simpleIDE (see link below)
+
+Note: SimpleIDE is still is in beta and is not yet supported.  It already works, but you are on your own until it comes out of beta since we can't make any instructions for tool that are being changed. 
 
      * Cool_term (link) [replaced with a more suitable option]
-
+     * Vic and the kids have better tool, update the link to the Mac terminal program. 
 
 === Linux ===
 
@@ -111,8 +118,9 @@ BlueTerm is the recommend android bluetooth terminal application. Blueterm is av
 
 * blueterm 
 
-
 https://play.google.com/store/apps/details?id=es.pymasde.blueterm
+
+NOTE: blueterm is free.  So they 
 
 == IOS ==
 
