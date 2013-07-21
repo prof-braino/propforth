@@ -150,8 +150,6 @@ Teraterm, Cool_term, and Minicom all see the Bluetooth connection and treat is a
 
 === smart phone ===
 
-
-
 ----
 
 = The !LittleRobot(tm) KIT =
@@ -274,21 +272,6 @@ forward reverse forward reverse
 
 }}}
 
-== Stepper driver ==
-
-http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
-
-== Range finder driver ==
-
-http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic
-
-== blue tooth driver ==
-
-http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
-
-http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
-
-http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
 ----
 
@@ -393,6 +376,25 @@ Again the goals is to allow the kids to make a START.  They should be able to de
 
 The goal of this experiment is to see if we can find who interested and who's not, with risk to the least resources.   Parents MIGHT risk $50 on Billy's bot project, but event the rich families have trouble risking more than that on some stranger's untried odd-ball scheme. 
 
+= driver programs =
+
+The small programs that run the peripheral devices are called device drivers.  Those are discussed in the links above.   In case you want to get to tehm directly they are repeated here. 
+
+== Stepper driver ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoSteppers
+
+== Range finder driver ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotDemoUltrasonic
+
+== blue tooth driver ==
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC05
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
 = Details =
 
