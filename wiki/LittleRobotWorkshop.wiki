@@ -294,12 +294,11 @@ http://code.google.com/p/propforth/wiki/LittleRobotBluetoothHC06
 
 = Build Robot Chassis =
 
-Foloow notes here
+Follow notes here
 
 http://code.google.com/p/propforth/wiki/LittleRobotChassis
 
 ----
-
 
 = BOT.F =
 
