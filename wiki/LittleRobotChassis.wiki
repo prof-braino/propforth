@@ -21,9 +21,27 @@ Everything else is a matter of preference:
 
 So we have a lot of leeway, we can do pretty much what we want, according to conditions. 
 
+= Chassis Material Options =
+
+Make the chassic out of what ever you want.  The styrofoam included in the kit is enough to get you going, but should inspire you to use something better first change you get. 
+
 = Styrofoam = 
 
 One of the cheapest and easiest chassis materrial is styrofoam.  4 Foot by eight sheets can be obtained cheaply from the local home center.  These will not be the TOUGHEST bots in the world, but they will allow one to get started with experiments to determine what constitutes "tough enough". 
+
+This is cheap, not fancy.
+
+The stepper motor wires need to be routed AWAY from the wheels, or they might rub and mess up stearing, etc.   RRun the wires out the BOTTOM of the 1 inch holes.  Make a slot in BOTTOM of the 1 inch holes in the foam chassis. Use a wood screw or anything else handy.  The styrofaom is easy to work, you could use a spork if you wanted. 
+
+Use pins or toothpicks to attach the circuit boards to the foam.  You can optionally use screws, but these are not included in the kit as they are not mandatory.   
+
+Use green or blue painters tape (not regular masking tape, that stuff is bad news) to secure the battery case and other parts to the foam. 
+
+Any your done! Easy!  It looks a bit rough, as expected in engineering development;  this is not intended to be finished product manufacturing. 
+
+Return to the LittleRobotWorkshop page using the back button on your browser or the link below. 
+
+http://code.google.com/p/propforth/wiki/LittleRobotWorkshop
 
 = Scrap wood =
 
