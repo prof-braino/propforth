@@ -219,7 +219,7 @@ fl
     c" sr04_display" 3 cogx
 then
 
-Menu \ for stepper testing
+\ Menu \ for stepper testing
 c" onreset6" (forget)
 sr04_test
 ;
