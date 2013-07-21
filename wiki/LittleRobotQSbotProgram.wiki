@@ -190,13 +190,84 @@ Note that the baud rate is four time that listed; `57600 * 4 = 230400`
 
 -----
 
-= IV. QSbot.f =
+= IV. QSbot program =
 
-*CONTINUE HERE*
+The QSbot program is really just  modified ONREST6 and BOOT.f
 
-QSbot.f removes some of the development and diagnostic functions found in bot.f in the extensions directory in the propforth 5.5 download. If you wish to explore those, please locate the bot.f and compare to the code below. 
+After the devices are shown to work using the code linked above, the following onreset6 and boot.f files. 
 
-QSbot.f includes a couple additions compared to the bot.f program contained in the propforth download archive: 
+These are just combine the oneset6 and boot.f from the individual drivers. 
+
+The most recently uploaded version of a file (closest to the bottom of the fsls list) is the version that is used. This effectively overwrites the old version, without having to physically remove the old version. 
+
+{{{
+\  ONRESET6 for HC06 bluetooth, steppers, S04 measurement, and LED display
+
+: onreset6
+          fkey? and fkey? and or h1B <>
+  if
+    $S_con iodis $S_con cogreset 100 delms
+    c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+    cogid >con
+    c" init_motorA" 0 cogx
+    c" init_motorB" 1 cogx
+    c" _sr04_measure" 2 cogx
+    c" sr04_display" 3 cogx
+then
+
+Menu \ for stepper testing
+c" onreset6" (forget)
+sr04_test
+;
+
+\ BOOT.F for HC06 bluetooth, steppers, S04 measurement, and LED display
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+0 h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+
+c" boot.f - Loading ansi.f~h0D~h0D" .cstr hA state andnC!
+fsload  ansi.f
+c" boot.f - Loaded ansi.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Loading sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+fsload  sr04-testbed.f
+c" boot.f - Loaded sr04-testbed.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Loading QSbotStepper.f~h0D~h0D" .cstr hA state andnC!
+fsload QSbotStepper.f
+c" boot.f - Loaded QSbotStepper.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - Loading BTtest.f~h0D~h0D" .cstr hA state andnC!
+fsload BTtest.f
+c" boot.f - Loaded BTtest.f~h0D~h0D" .cstr hA state andnC!
+
+cr cr
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
+...
+
+cr
+
+}}}
+
+
+= NOTES =
 
   * The QS LEDs are used to visually represent the current distance measurement.  This also serves as a "Ready" indicator. 
   * QS LED count increments of 20mm ( try 15 or other values) 
