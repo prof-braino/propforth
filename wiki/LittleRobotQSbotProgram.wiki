@@ -194,16 +194,17 @@ Note that the baud rate is four time that listed; `57600 * 4 = 230400`
 
 *CONTINUE HERE*
 
+QSbot.f removes some of the development and diagnostic functions found in bot.f in the extensions directory in the propforth 5.5 download. If you wish to explore those, please locate the bot.f and compare to the code below. 
 
-QSbot.f includes a couple additions compared to the bot.f program contained in the propforth doanload archive. .
+QSbot.f includes a couple additions compared to the bot.f program contained in the propforth download archive: 
 
   * The QS LEDs are used to visually represent the current distance measurement.  This also serves as a "Ready" indicator. 
-  * QS LED count increments of 20 (15) mm
+  * QS LED count increments of 20mm ( try 15 or other values) 
   * SR04_display routine shows the numeric value for the distance measurement without scrolling 
   * The extra `dup drop` pairs are removed from the SR04 trigger pulse routine
   * The SR04 driver includes a 60 ms recovery time per the data sheet.
 
-On the list:
+We may also add more functions to QSbot.f, depending on user needs.  On the list of functions to add:
   * SR04 - Add a flag to control measurement ON/OFF
   * SR04 - add timeout for too long measurement (?)
   * SR04 - Add variance
@@ -214,22 +215,19 @@ On the list:
 
 QSbot.f is based on [http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram#bot-fixed.f bot-fixed.f], which is base on the original bot.f from the Extensions directory in the Propforth-v5.5 download.
 
-
 The code is being changed to match the pinout above.
 
 {{{
 fl
 
-
-
 fswrite sr04.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
-                   16 wconstant _sr04_trig
+                   24 wconstant _sr04_trig
 ]
 [ifndef _sr04_echo
-                   17 wconstant _sr04_echo
+                   25 wconstant _sr04_echo
 ]
 
 variable _sr04_distance
