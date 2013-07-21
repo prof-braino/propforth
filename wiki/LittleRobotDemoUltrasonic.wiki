@@ -152,6 +152,12 @@ c" LED" cds W!
         until
 ;
 
+
+
+: d
+_sr04_distance L@ . cr
+;
+
 ...
 
 
