@@ -97,3 +97,11 @@ Done
 Now you have a terminal with you at all times, and can connect to ANY of your many PropForth embedded systems wirelessly. 
 
 = end =
+
+JupiterACE is used with permission.  I contacted the current owners a couple years ago at
+
+http://www.jupiter-ace.co.uk/
+
+The nice fellow said "go for it!" 
+
+PropForth JupiterACE has no similarity to the original JupiterACE beyond running a version of forth.    
