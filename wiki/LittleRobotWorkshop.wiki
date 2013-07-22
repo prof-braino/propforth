@@ -154,9 +154,13 @@ Install the software per the included instructions for each.
 
 On a Bluetooth equipped PC or laptop, the previously installed terminal program is sufficient. 
 
-Teraterm, Cool_term, and Minicom all see the Bluetooth connection and treat is as "just another serial port".  Handy!
+Teraterm,  and Minicom all see the Bluetooth connection and treat is as "just another serial port".  Handy!
+
+On Apple MAc OS, coolterm does nto see the bluetooth serial cable replacement.  Mac OS is not supported for bluetooth connect at this time. 
 
 === smart phone ===
+
+Android 3.0 and above devices equipped with bluetooth can be used as a teminal for propforth and connect to LittleRobot.  Use blueterm or GREEN.apk
 
 ----
 
@@ -181,25 +185,23 @@ The Bill of Materials (BOM)  is the list of parts needed.  This list is intended
     * 20 M-F
     * 1 F-F
   * Battery PACK (4*AA), with wires and ON/OFF switch
-  * Batteries (4*AA)
+  * Batteries (4*AA) NiMH 1.2 volts.  (Note: Alkaline 1.5 volt cells must only have 3 cells, and the fourth cell is dummy).
   * (2) Wheels 
   * (2) rubber bands (to provide traction for the wheels)
-  * Velcro
+  * Velcro (optional)
   * (10) #4 machine screws, 1 inch
   * painter's tape (Blue or green)
-  * DUCT tape
-  
+  * DUCT tape (optional)
 
-We don't specifically need the Duct tape or painters tape, but life is easier when these are handy, so we keep them for luck. 
+We don't specifically need the Duct tape, but life is easier when these are handy. 
 
 == LittleRobot Microcontroler ==
 
-The document will secify the Parallax Propeller Quick start. This can be purchased locally for under $35, or directly from parallax for $25 + shipping. 
+The document will specify the Parallax Propeller Quick start. This can be purchased locally for under $35, or directly from parallax for $25 + shipping. 
 
 = Tools = 
 
 The project is designed to require NO TOOLS.  
-
  
 ----
 
@@ -290,31 +292,6 @@ Follow notes here
 http://code.google.com/p/propforth/wiki/LittleRobotChassis
 
 ----
-
-= BOT.F =
-
-Now that all the parts have been deomnstrated to function, the completed robot can operate. 
-
-The bot.f program is included in the propforthv5.5 download archive.  This is the initial example to be used as reference only.  We are to make our own program, andwe are free to use what ever pin configuration and devices we choose. 
-
-For the present purpose, we will use 
-
-QSbot.f
-
-which is a version of bot.f tailored to the Quickstart board.
-
-== Pin Configuration ==
-
-see the pin configuration section on this page
-
-~~http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram~~
-
-http://code.google.com/p/propforth/wiki/LittleRobotQSbotProgram
-
-=== QSbot versus BOT1 & BOT2 ===
-
-QSbot is the hardware configuration we will use as the example in this session.  Bot1 and Bot2 are two more possible configuration, these are the ones Sal used during development of the LittleRobot.  We thought we would be using custom hardware at the time, since then we have determined that QSbot is the simplest method for our needs. 
-
 == EEprom.spin ==
 
 The LittleRobot uses the EEpom version of the propforth kernel.  This is the same development kernel, with support for using the built in EEprom as a simple file storage system.  
@@ -332,6 +309,42 @@ Verify the propforth command propmpt respomndes.
 Procede to the QSbot program. 
 
 http://code.google.com/p/propforth/wiki/LittleRobotQSbotProgram
+
+-----
+
+= Pin Configuration =
+
+see the pin configuration section on this page
+
+~~http://code.google.com/p/propforth/wiki/LittleRobotDemoProgram~~
+
+http://code.google.com/p/propforth/wiki/LittleRobotQSbotProgram
+
+The LittleRobotQSbotProgram page includes the pin configuration for each device.
+
+= BOT.F =
+
+The bot.f program is included in the propforthv5.5 download archive.  
+
+This program includes a lots of test and diagnostic code you can use to explore propforth and the LittleRobot hardware. 
+
+This is the initial example to be used as reference only.  We are to make our own program, and we are free to use what ever pin configuration and devices we choose. 
+
+For the present purpose, we will use 
+
+QSbot.f
+
+which is a version of bot.f tailored to the Quickstart board.
+
+Each device is tested separately, and are shown to work separately.  The boot.f script is custom for each device durig testing.  After all the devices are working,  another boot.f is loaded which runs all the devices in unison.  
+
+http://code.google.com/p/propforth/wiki/LittleRobotQSbotProgram
+
+The LittleRobotQSbotProgram page takes us through all the devices and the driver software. 
+
+=== QSbot versus BOT1 & BOT2 ===
+
+QSbot is the hardware configuration we will use as the example in this session.  Bot1 and Bot2 are two more possible configuration, these are the ones Sal used during development of the LittleRobot.  We thought we would be using custom hardware at the time, since then we have determined that QSbot is the simplest method for our needs. 
 
 -----
 
