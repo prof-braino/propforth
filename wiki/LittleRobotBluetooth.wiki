@@ -427,6 +427,7 @@ c" AT+BAUD9" hcSend
 
 \ switch back to 9600
 \ c" AT+BAUD4" hcSend
+\ use this if SETNAME did not work
 
 \ =============================================
 \ Get Authenticated Device Count HC05 only
