@@ -11,7 +11,6 @@ USE http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
 
 Only use this page if the page above fails to get you running!
 
-
 - summary -
 
 So, these can be a little funky until you get used to them. Some don't seem to come up at 9600. Once they get programmed, they work.  Sometimes I've had to cycle the power a couple times if it doesn't connect right away, but they all work. 
@@ -174,7 +173,7 @@ Almost forgot!  Now that the module is paried with you device, we have to put th
   * the HC06 Tx pin P2 is defined as the Propforth Rx pin P2
 
 
-= DATA SHHET =
+= DATA SHEET =
 
 http://www.mcu-turkey.com/wp-content/uploads/2013/01/HC-Serial-Bluetooth-Products-201104.pdf
 
