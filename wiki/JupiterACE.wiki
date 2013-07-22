@@ -11,7 +11,7 @@ While it used its 1K of ram more efficiently than other choices with 4k, the mem
 
 The JupiterACE was gone before I ever started programming.  I always heard stories of how cool they were, and such wonderful things people could do with them.   Clearly it was more powerful, but different, than other machines of the time.  I always wanted to try it out, but never found one.
 
-= JupiterACE PropForth Standalone terminal 1 =
+= PropForth JupiterACE 1: Standalone VGA Terminal =
 
 The propeller chip has its own video built in, 7 more processors, runs 25 time faster, and 32 times more memory than the original JupiterACE.  
 
@@ -74,7 +74,7 @@ Android 3.0 and above devices support Bluetooth.  The cheap HC05 and HC06 blueto
 
 BY CONNNECTING TO PROFORTH VIA BLUETOOTH, you get the same function as a JupiterACE, without the overhead of VGA support.  This means we have more room for our application(s). 
 
-= JupiterACE Propforth with Android Terminal =
+= PropForth JupiterACE 2: Wireless Android Terminal =
 
 Any PropForth system can be a JupitierACE with wireless terminal, by adding a bluetooth module and an Android device.
 
