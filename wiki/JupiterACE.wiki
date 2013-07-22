@@ -1,0 +1,99 @@
+#summary JupiterACE retro forth computer
+#labels JupiterACE,v5.5,vga
+
+= JupiterACE =
+
+One of the earliest home PCs was the JupiterACE,  a Z80 based FORTH machine.  
+
+http://en.wikipedia.org/wiki/Jupiter_Ace
+
+While it used its 1K of ram more efficiently than other choices with 4k, the memory size difference created the perception that the machine was under equipped.  Also, the JupiterACE was monochrome, when other offerings had color.  
+
+The JupiterACE was gone before I ever started programming.  I always heard stories of how cool they were, and such wonderful things people could do with them.   Clearly it was more powerful, but different, than other machines of the time.  I always wanted to try it out, but never found one.
+
+= JupiterACE PropForth Standalone terminal 1 =
+
+The propeller chip has its own video built in, 7 more processors, runs 25 time faster, and 32 times more memory than the original JupiterACE.  
+
+Using PropForth we can make something similar to the JupiterACE.  It won't run Z80 code, but can do everything and more than the original. 
+
+In addition, we can add an SD card and have 4 Gig or more removable storage. We can add any peripherals we care to write software for, and we can add more physical chips.   The PropForth implementation really rocks this concept. 
+
+== Hardware for standalone VGA terminal ==
+
+The default hardware for the PropForth JupiterACE is the Prop DemoBoard.
+
+Any prop chip will work, all it needs is a VGA connector. This is built into the Demo board.  There are modules made for the Prop Protoboard, and any custom board can have VGA added.  The VGA pinout can be adjusted to any user choice. 
+
+== Firmware ==
+
+Any PropForth Kernel will suppot the JupiterACE implementations. 
+ *  Use the Devkernel to get started
+ * Use the SDfilesystem kernel if you wish to have tons of storage. 
+ * The EEprom file system can be used on pretty much anything with more than 32k EEprom,  being 64k or greater. The Demoboard, which only has 32k EEprom, so it need the dev kernel or the SD kernel.
+
+Write the propforth kernel to  the prop EEprom using the prop tool as normal. 
+
+== VGA support ==
+
+After the the kernel firmware  is loaded into EEprom, reboot and see the propforth prompt on the termianl window.
+
+Load VGA.f.
+
+Run VGASTART.  Notice the VGA and keyboard now respond.
+
+Use ALT+TAB to switch between the cog 2 and cog 3 terminal sessions.
+
+== JuptierACE at Powerup ==
+
+Connect a VGA terminal to your prop board. 
+
+Connect an SD card as described elsewhere.
+
+Load the SD kernel.
+
+Write vga.f to the SD
+
+Configure the boot.f script to load VGA.f and run VGASTART.
+
+Powercycle the prop.
+
+Enjoy a modern JupiterACE standalone computer
+
+= Goal Completed =
+
+The initial priomary goal for my joining the Propforth effort was to obtain a useable JupiterACE.  This goal has been achived. 
+
+However, in the process, we achived a much more significant rresult.
+
+== More Useful Result ==
+
+During the course of development,  the price of Android devices has come down as the power and usability has gone up.  A cheap android device can be had for less than the cost of a VGA monitor in most cases.  The Android device will run on batteries, fit in one's pocket, and often function as a phone and internet terminal. 
+
+Android 3.0 and above devices support Bluetooth.  The cheap HC05 and HC06 bluetooth models can be had for under $10. 
+
+BY CONNNECTING TO PROFORTH VIA BLUETOOTH, you get the same function as a JupiterACE, without the overhead of VGA support.  This means we have more room for our application(s). 
+
+= JupiterACE Propforth with Android Terminal =
+
+Any PropForth system can be a JupitierACE with wireless terminal, by adding a bluetooth module and an Android device.
+
+== Firmware ==
+
+Load any version of PropForth on any prop chip. 
+
+== Hardware ==
+
+Connect an HC05 or HC06 module to your propforth system as described elsewhere.
+
+Pair the bluetooth module with your android device. 
+
+Use your Android 3.0 or greater device as terminal (display + keyboard).
+
+Done
+
+= Goal Achieved with better result =
+
+Now you have a terminal with you at all times, and can connect to ANY of your many PropForth embedded systems wirelessly. 
+
+= end =
