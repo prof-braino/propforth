@@ -104,4 +104,4 @@ http://www.jupiter-ace.co.uk/
 
 The nice fellow said "go for it!" 
 
-PropForth JupiterACE has no similarity to the original JupiterACE beyond running a version of forth.    
+PropForth JupiterACE has no similarity to the original JupiterACE beyond running a version of forth as a standalone system.    
