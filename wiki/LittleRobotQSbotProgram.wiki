@@ -326,9 +326,10 @@ After a few tries, the bot will travel exactly 100mm when commanded. Test by com
    # The milled acrylic whells with the rubber tread should be about 80 millimeter.  
    # 80 times Pi is about 251.3, so the wheels will travel about 251.3 millimeters in one rotation. 
 
- === s * _distance_cal is the distance the bot move for one complete revolution of the wheels.
+ * _distance_cal is the distance the bot move for one complete revolution of the wheels.
  * _right_cal is the distance the wheels move to rotate 360 degrees.
-uccessive approximation: ===
+
+ === successive approximation: ===
 
    # Set the value too high, run the bot 100 mm, and see how far the bot actually travels. 
    # Set the value too low, run the bot 100 mm, and see how far the bot actually travels. 
