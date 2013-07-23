@@ -274,8 +274,8 @@ cr
 
 The two key motions have calibration values.  
 
- * '_distance_cal' is the distance the bot move for one complete revolution of the wheels.
- * '_right_cal' is the distance the wheels move to rotate 360 degrees.
+ * `_distance_cal` is the distance the bot move for one complete revolution of the wheels.
+ * `_right_cal` is the distance the wheels move to rotate 360 degrees.
 
 These calibration values are adjusted each time the wheel size of body size changes.  Other factors also influnece these values, such as friction between the floor and the wheels, and the friction between the tail peice and the floor.
 
@@ -290,7 +290,7 @@ There are two simple methods used to calibrate the bot motions
 
  Measure the diameter of the wheels. Use the diameter to calculate the circumference of the wheel.  The formula for circumference is 
  
- ' D  * Pi = Circumference '
+ ` D  * Pi = Circumference `
 
 The milled acrylic wheels with the rubber tread should be about 80 millimeter.  80 times Pi is about 251.3, so the wheels will travel about 251.3 millimeters in one rotation. 
 
