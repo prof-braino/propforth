@@ -355,13 +355,16 @@ After a few tries, the bot will rotate pretty much exactly 360 degrees.
 
  === measure and calculate:  ===
 
-# Measure the width of the chassis
-# From wheel center to wheel center is about 120 mm
-# `120 * pi = 376.99 `  The The wheel would have to travel 376 mm to rotate 360 degrees.  But both wheels are moving. Now I'm getting confused...
+ # Measure the width of the chassis
+ # From wheel center to wheel center is about 120 mm
+ # `120 * pi = 376.99 `  The The wheel would have to travel 376 mm to rotate 360 degrees.  But both wheels are moving. Now I'm getting confused...
 
  === successive approximation: ===
 
-... So lets just use successive approximation. I started with the deafult value for `_right_cal~ and ended with 5718 when I noticed the tail was sticking and the barreries were low. 
+... So lets just use successive approximation. I started with the deafult value for `_right_cal~ and ended with 5718 when I noticed the tail was sticking and the batteries were low. 
+
+
+
 
 == Tweaked code ==
 
@@ -370,6 +373,8 @@ All we need to do is keep loading the last file after we edit it.   The last ver
 After pasting this edited file into the termianl window, reboot
 
 After reboot, connect via blue tooth, and test again. 
+
+NOTE:  ASK ABOUT TEFLON TAPE ONE THE REAR SKID!!!!
 
 {{{
 \ reload with new calibration attempts:
