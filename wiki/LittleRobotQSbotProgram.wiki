@@ -395,48 +395,9 @@ fswrite QSbotStepper.f
 
 \ 5687 wconstant _right_cal \ ok, ten time was short
 \ 5688 wconstant _right_cal \ ok, ten times left was short 
-
- 5718 wconstant _right_cal \  might be ok 
-
-\  batteries were going dead,  needed teflon
-
-\ 5734 wconstant _right_cal \ before teflon
-\ 5742 wconstant _right_cal \ before teflon
-
-
-c" QSBOT " prop W@ ccopy
-
-_right_cal  propid W!  \ change this nubmer so we know we changed the code
-\ reload with new calibration attempts:
-
-fl 
-
-fswrite QSbotStepper.f
-
-: _mota_pins d_8 d_9 d_10 d_11 ;
-: _motb_pins d_12 d_13 d_14 d_15 ;
-
-\ 263 wconstant _distance_cal
-\ 251 wconstant _distance_cal
-
-252 wconstant _distance_cal
-
-\ 6052 wconstant _right_cal
-\ 6000 wconstant _right_cal
-\ 5000 wconstant _right_cal
-\ 5500 wconstant _right_cal
-\ 5750 wconstant _right_cal
-\ 5625 wconstant _right_cal
-
-\ 5687 wconstant _right_cal \ ok, ten time was short
-\ 5688 wconstant _right_cal \ ok, ten times left was short 
-
- 5718 wconstant _right_cal \  might be ok 
-
-\  batteries were going dead,  needed teflon
-
-\ 5734 wconstant _right_cal \ before teflon
-\ 5742 wconstant _right_cal \ before teflon
+\ 5718 wconstant _right_cal \ ok, ten time 
+\ 5734 wconstant _right_cal \ ok, ten time 
+ 5742 wconstant _right_cal \ ok, ten time 
 
 
 c" QSBOT " prop W@ ccopy
@@ -517,79 +478,6 @@ negate right
 
 ...
 
-fsload 4step.f
-
-_mota_pins      step_create_halfstep motha
-_motb_pins      step_create_halfstep mothb
-
-
-: init_motorA
-c" MOTOR A" cds W! motha step_init 0 motha step_accel 900 motha step_setspeed
-;
-
-: init_motorB
-c" MOTOR B" cds W! mothb step_init 0 mothb step_accel 900 mothb step_setspeed
-
-;
-
-: forwarda
-motha step motha step_sleep
-;
-
-: forwardb
-mothb step  mothb step_sleep
-;
-
-: reversea
-negate motha step  motha step_sleep
-;
-
-: reverseb
-negate mothb step  mothb step_sleep
-;
-
-
-: forward
-4096 _distance_cal */ <# #s #> dup 0 cogx 1 cogx
-c"  forwarda" 0 cogx
-c"  reverseb" 1 cogx
-;
-
-: reverse
-negate forward
-;
-
-: right
-_right_cal 3600 */
-<# #s #> dup 0 cogx 1 cogx
-c"  reversea" 0 cogx
-c"  reverseb" 1 cogx
-;
-
-: left
-negate right
-;
-
-: f forward ;
-: r right ;
-: l left ;
-: b reverse ; 
-
-: Menu 
-       cr cog? 
-       cr cr ." Commands are:" cr
-        cr ."  f forward "
-        cr ."  r right "
-        cr ."  l left "
-        cr ."  b reverse " 
-        cr cr
-; 
-
-\  we don't want a new onreset6 here
-\ we dont want a new boot.f
-\ we do want new call values in QSbotStepper.f
-
-...
 
 }}}
 
