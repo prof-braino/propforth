@@ -279,14 +279,14 @@ The two key motions have calibration values.
 
 These calibration values are adjusted each time the wheel size of body size changes.  Other factors also influnece these values, such as friction between the floor and the wheels, and the friction between the tail peice and the floor.
 
-== calibration methods ==
+== 1. calibration methods ==
 
 There are two simple methods used to calibrate the bot motions
 
  * measure and calculate
  * successive approximation 
 
-===measure and calculate: ===
+ === A. measure and calculate: ===
 
  Measure the diameter of the wheels. Use the diameter to calculate the circumference of the wheel.  The formula for circumference is 
  
@@ -294,7 +294,7 @@ There are two simple methods used to calibrate the bot motions
 
 The milled acrylic wheels with the rubber tread should be about 80 millimeter.  80 times Pi is about 251.3, so the wheels will travel about 251.3 millimeters in one rotation. 
 
-=== successive approximation: ===
+ === B. successive approximation: ===
 
    # Set the value too high, run the bot 100 mm, and see how far the bot actually travels. 
    # Set the value too low, run the bot 100 mm, and see how far the bot actually travels. 
@@ -304,17 +304,19 @@ The milled acrylic wheels with the rubber tread should be about 80 millimeter.  
 After a few tries, the bot will travel exactly 100mm
 
 
-== _distance_cal ==
+== 2. _distance_cal ==
 
 _distance_cal is the distance the bot move for one complete revolution of the wheels.
 
 
-*measure and calculate:  
+ === measure and calculate:  ===
+
    # Measure the diamter of the wheels.  
    # The milled acrylic whells with the rubber tread should be about 80 millimeter.  
    # 80 times Pi is about 251.3, so the wheels will travel about 251.3 millimeters in one rotation. 
 
-*successive approximation: 
+ === successive approximation: ===
+
    # Set the value too high, run the bot 100 mm, and see how far the bot actually travels. 
    # Set the value too low, run the bot 100 mm, and see how far the bot actually travels. 
    # Take the average of the last two values, run the bot 100 mm, and see how far the bot actually travels. 
@@ -322,12 +324,13 @@ _distance_cal is the distance the bot move for one complete revolution of the wh
 
 After a few tries, the bot will travel exactly 100mm
 
-* _right_cal is the distance the wheels move to rotate 360 degrees.
 
-== _right_cal ==
+== 3. _right_cal ==
 
-* _distance_cal is the distance the bot move for one complete revolution of the wheels.
-* _right_cal is the distance the wheels move to rotate 360 degrees.
+ _right_cal is the distance the wheels move to rotate 360 degrees.
+
+ * _distance_cal is the distance the bot move for one complete revolution of the wheels.
+ * _right_cal is the distance the wheels move to rotate 360 degrees.
 
 = NOTES =
 
