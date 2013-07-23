@@ -541,7 +541,7 @@ The steppers move the wheel 4096 steps to make one complete revolution.
 
 So, in 4096 steps, the bot will travel the circumference of the wheel. Figure the circumference of the wheel by measuring the diameter. With the rubber treads, the milled acrylic wheels should be about 80mm diameter.  The circumference is Pi time the diameter.
 
-80 * 3.14159 so the circumference should be about 251mm
+'80 * 3.14159 = 251.3' so the circumference should be about 251mm
 
 Copy the source code to a text editor.
 
