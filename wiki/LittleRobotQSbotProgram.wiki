@@ -296,18 +296,41 @@ The milled acrylic wheels with the rubber tread should be about 80 millimeter.  
 
  === B. successive approximation: ===
 
+Successive approximation is a way to test, and 'dial-in' till we find the correct value. 
+
+   # Set the value too high, test.
+   # Set the value too low, test. 
+   # Take the average of the last two values, test.
+   # repeat
+
+Each time, the average of the two previous values gets us closer.  The amount we change is alway half of the previous amount.  when the amount of change is 1 unit,  we are done.
+
+== 2. `_distance_cal` ==
+
+`_distance_cal` is the distance the bot move for one complete revolution of the wheels.
+
    # Set the value too high, run the bot 100 mm, and see how far the bot actually travels. 
    # Set the value too low, run the bot 100 mm, and see how far the bot actually travels. 
    # Take the average of the last two values, run the bot 100 mm, and see how far the bot actually travels. 
    # repeat
 
-After a few tries, the bot will travel exactly 100mm
+Each time, the average of the two previous values gets us closer.  The amount we change is alway half of the previous amount.  when the distance is exact or the amount of change is 1 unit,  we are done.
+
+After a few tries, the bot will travel exactly 100mm when commanded. Test by commanding 500 mm, etc, and verify that the bot travels the specified distance.
 
 
-== 2. '_distance_cal' ==
+== 3. `_right_cal` ==
 
-_distance_cal is the distance the bot move for one complete revolution of the wheels.
+`_right_cal` is the distance the wheels move to rotate 360 degrees.
 
+   # Set the value too high, 360 degrees right (`3600 r`, its in 1/10th of a degree) , and see how far the bot actually rotates. 
+   # Set the value too low, 360 degrees right (`3600 r`, its in 1/10th of a degree) , and see how far the bot actually rotates. 
+   # Take the average of the last two values, 360 degrees right (`3600 r`, its in 1/10th of a degree) , and see how far the bot actually rotates. 
+   # repeat
+
+After a few tries, the bot will rotate pretty much exactly 360 degrees. 
+
+-----
 
  === measure and calculate:  ===
 
