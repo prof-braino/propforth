@@ -466,6 +466,10 @@ negate right
 : r right ;
 : l left ;
 : b reverse ; 
+: .cal cr  
+." _distance_cal = " _distance_cal .
+."    _right_cal = " _right_cal .
+cr st?  ;
 
 : Menu 
        cr cog? 
@@ -474,6 +478,7 @@ negate right
         cr ."  r right "
         cr ."  l left "
         cr ."  b reverse " 
+        cr ."  .cal - print cal values "
         cr cr
 ; 
 
