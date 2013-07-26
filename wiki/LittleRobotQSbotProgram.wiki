@@ -396,14 +396,19 @@ fswrite QSbotStepper.f
 \ 5000 wconstant _right_cal
 \ 5500 wconstant _right_cal
 \ 5750 wconstant _right_cal
-\ 5625 wconstant _right_cal
 
-\ 5687 wconstant _right_cal \ ok, ten time was short
-\ 5688 wconstant _right_cal \ ok, ten times left was short 
-\ 5718 wconstant _right_cal \ ok, ten time 
-\ 5734 wconstant _right_cal \ ok, ten time 
- 5742 wconstant _right_cal \ ok, ten time 
+\ 5625 wconstant _right_cal  - 1x SHORT 5750 + 5625 /2 = 5687.5
 
+\ 5687 wconstant _right_cal \ ok, ten time was short 5750 + 5625 /2 = 5687.5
+\ 5688 wconstant _right_cal \ ok, ten time was short 5750+5687 /2 =5718
+\ 5718 wconstant _right_cal \ ok, ten time was too far? walked 5718 +5687 2/ =  5702
+\ 5702 wconstant _right_cal \ ok, ten times was short 5702 + 5718 2/ = 5710 
+\ 5710 wconstant _right_cal \ ok, ten times was short  5710 + 5718 2/ = 5714 
+\ 5714  wconstant _right_cal \ ok, twenty times was short 5714  + 5718 2/ = 
+\ 5716  wconstant _right_cal \ ok, thirty times was short 5716   + 5718 2/ = 
+ 5717  wconstant _right_cal \ ok, thirty times was short 5717 5716   + 5718 2/  
+\ change telfon, do it again...exact.  100x ...
+ 
 
 c" QSBOT " prop W@ ccopy
 
