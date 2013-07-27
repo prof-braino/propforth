@@ -236,7 +236,7 @@ greet
 
 {{{
 
-16 pin out
+16 pinout
 1000 delms
 16 pinhi
 1000 delms
@@ -245,6 +245,8 @@ greet
 
 
 }}}
+
+=== STACKS ====
 
 === Sequence - Loops ===
 
