@@ -1,6 +1,8 @@
 #summary JupiterACE retro forth computer
 #labels JupiterACE,v5.5,vga
 
+<wiki:toc max_depth="9" />
+
 = JupiterACE =
 
 One of the earliest home PCs was the JupiterACE,  a Z80 based FORTH machine.  
