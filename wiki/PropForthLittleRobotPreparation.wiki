@@ -4,7 +4,7 @@
 
 = Preparation =
 
-Setup your laptop in advance of the LitllRobot Workshop build session.  Every minute sent in advance is another minute we can spend on making the bot do cool stuff!
+Setup your laptop in advance of the LittleRobot Workshop build session.  Every minute sent in advance is another minute we can spend on making the bot do cool stuff!
 
 
 Required for the event are:
@@ -19,7 +19,7 @@ Required for the event are:
      * Blue tooth equipped smartphone
      * Bluetooth equipped tablet
 
-The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capabile of running a Bluetooth terminal application as descripbed below in "software".
+The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capable of running a Bluetooth terminal application as described below in "software".
 
 ----
 
@@ -38,7 +38,7 @@ http://code.google.com/p/propforth/downloads/detail?name=PropForth-V5.5-20130317
 
 == PC OS ==
   
-A suitable PC operating system must be loaded. Current options are Windows, Mac, and Linux.  Participants are responsible for familliarity fwith their operationing system of choice. 
+A suitable PC operating system must be loaded. Current options are Windows, Mac, and Linux.  Participants are responsible for familiarity with their operating system of choice. 
 
 === Windows ===
 
