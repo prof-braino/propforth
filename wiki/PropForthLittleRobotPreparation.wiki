@@ -9,17 +9,33 @@ Setup your laptop in advance of the LittleRobot Workshop build session.  Every m
 
 Required for the event are:
 
+
+
+== Provided by the hosting venue==
+
    * Internet Access
    * Electrical Power
    * sufficient workspace (two seats per participant)
+
+== Provided by the presentor ==
+
    * LittleRobot(tm) kits
-   * Parallax Propeller Quickstart board (or equivalent)
-   * Optional: Bluetooth device:
-     * Blue tooth equipped PC or Laptop
-     * Blue tooth equipped smartphone
-     * Bluetooth equipped tablet
+
+== PROVIDED BY THE PARTICANT ==
+
+ * Laptop or netbook
+   * at least one available USB port
+   * WiFi access
+   * optional bluetooth ability
+
+ * Android 3.0 or greater device with bluetooh
+   * blueterm terminal  application
+
+ * 4 AA NiHM batteries, fully charged in advance   
 
 The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capable of running a Bluetooth terminal application as described below in "software".
+
+The 4 AA NiMH batteries are optional, but are needed for wireless operation. Note Alkaline batteries will not work. 
 
 ----
 
