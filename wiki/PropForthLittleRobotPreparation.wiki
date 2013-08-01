@@ -1,0 +1,17 @@
+#summary Do this to prepare for Using PropForth and/or participating in a LittleRobot workshop session
+
+
+= Preparation =
+
+Setup your laptop in advance of the LitllRobot Workshop build session.  Every minute sent in advance is another minute we can spend on making the bot do cool stuff!
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
