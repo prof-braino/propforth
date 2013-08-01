@@ -1,4 +1,5 @@
 #summary Do this to prepare for Using PropForth and/or participating in a LittleRobot workshop session
+#labels v5.5,LittleRobot
 
 
 = Preparation =
@@ -6,12 +7,153 @@
 Setup your laptop in advance of the LitllRobot Workshop build session.  Every minute sent in advance is another minute we can spend on making the bot do cool stuff!
 
 
+Required for the event are:
+
+   * Internet Access
+   * Electrical Power
+   * sufficient workspace (two seats per participant)
+   * LittleRobot(tm) kits
+   * Parallax Propeller Quickstart board (or equivalent)
+   * Optional: Bluetooth device:
+     * Blue tooth equipped PC or Laptop
+     * Blue tooth equipped smartphone
+     * Bluetooth equipped tablet
+
+The bluetooth connection is for wireless communication with the LittleRobot.  The Bluetooth equipped device must be capabile of running a Bluetooth terminal application as descripbed below in "software".
+
+----
+
+= SOFTWARE =
+ 
+User must have permissions to install the required software and drivers on the PC.
+
+== Propforth ==
+
+The primary software tool for this project is !PropForth. 
+
+!PropForth is an implementation of the FORTH language and development environment for the Parallax Propeller micro controller. Please location the downloadable archive for propforth on the sites download section at:
+
+http://code.google.com/p/propforth/downloads/detail?name=PropForth-V5.5-20130317.zip
+
+
+== PC OS ==
+  
+A suitable PC operating system must be loaded. Current options are Windows, Mac, and Linux.  Participants are responsible for familliarity fwith their operationing system of choice. 
+
+=== Windows ===
+
+The primary choice is  Windows XP.  Other version of windows also work. 
+The software required for windows systems are:
+    * Proptool v1.3.2 (link)
+
+http://www.parallax.com/Portals/0/Downloads/sw/propeller/Setup-Propeller-Tool-v1.3.2.zip
+
+http://www.parallax.com/tabid/832/default.aspx
+
+    * Teraterm 4.77 or higher (link)
+
+http://en.sourceforge.jp/projects/ttssh2/downloads/58915/teraterm-4.78.exe/
+
+http://en.wikipedia.org/wiki/Tera_Term    
+
+=== Mac OS ===
+ 
+NOTE: Apple and Mac don't play well with the LittleRobot bluetooth device.  This is beyond our control, and beyond the scope of this project.  While it can be made to work, the Mac specific parts are very expensive and so we just declare them "NOT SUPPORTED".  It can still work, you just have to buy the extra parts on your own, and do the extra effort to get it going. You have been warned.  
+
+Mac OSX is recommended for Mac users.  Other versions may work but have not been tested.
+
+     * Brad's Spin Tool (link)
+
+Note: Brad's Spin Tool (bst) is not supported.  BST will be replaced by simpleIDE which is currently in beta.  
+
+    * simpleIDE (see link below)
+
+Note: SimpleIDE is still is in beta and is not yet supported.  It already works, but you are on your own until it comes out of beta since we can't make any instructions for tool that are being changed. 
+
+     * Cool_term (link) [replaced with a more suitable option]
+     * Vic and the kids have better tool, update the link to the Mac terminal program. 
+
+=== Linux ===
+
+Ubuntu 12.04 is recommended for Linux users.  Linux users are required to know how to "get it working" on there own system.  Typically, anyone that uses linux is able to do this. Minimal support for linux operating system will be provided. 
+
+    * SimpleIDE (beta)
+
+NOTE: simpleIDE is in beta and is not yet supported.  Use it as a beta user at your own descretion.
+
+http://forums.parallax.com/showthread.php/137928-PropGCC-SimpleIDE
+
+http://code.google.com/p/propgcc/downloads/list
+
+http://learn.parallax.com/propeller-c-set-simpleide
+
+https://sites.google.com/site/propellergcc/documentation/simpleide
+
+    * minicon (link)
+
+https://help.ubuntu.com/community/Minicom
+
+http://en.wikipedia.org/wiki/Minicom
+
+
+== Android ==
+
+Android 3.0 or higher devices can be used.  The android device MUST have bluetooth support to be used with the wireless bluetooth interface described here. 
+
+To use the wireless communication on an android device, and suitable bluetooth terminal program is needed.  
+
+BlueTerm is the recommend android bluetooth terminal application. Blueterm is available via the App store. The user is responsible for installing  the bluetooth application on the android device of choice. 
+
+* blueterm 
+
+https://play.google.com/store/apps/details?id=es.pymasde.blueterm
+
+NOTE: blueterm is free.  So they 
+
+== IOS ==
+
+*IOS DEVICES ARE NOT SUPPORTED*
+
+To use the wireless communication on an IOS device, and suitable bluetooth terminal program is needed.  
+
+At this time, NO COMPATIBLE IOS BLUETOOTH SOLUTION IS KNOWN.  Certain hardware exists that MAY function, but the cost is greater than the entire rest of the project.  
+
+(none specified) is the recommend IOS bluetooth terminal application. (none specified) is available via the App store. The user is responsible for installing  the bluetooth application on the IOS device of choice. 
+
+----
+
+= SETUP =
+
+Install the PC software per your operating system as described above. The installation process will install teh proper drivers for connecting the Prop Quickstart. 
+
+== INSTALL PROPTOOL ==
+
+In this document, Proptool specifically refers to Proptool v1.3.2 on Windows XP.  Unless otherswise notes the same instruction is to be applied to Brads Spin Tool (BST) on the Mac, and SimpleIDE (BETA) on linux.
+
+Installing Proptool (and BST, and SimpleIDE) will also install the requireed USB to serial driver needed for communicationg with the Quickstart via USB Cable
+
+== Install the TERMINAL Program ==
+
+In this document,  "terminal program" refers to Teraterm on Windows, Cool Term on Mac, and Minicom on Linux. 
+
+Install the software per the included instructions for each. 
+
+=== PC or Laptop ===
+
+On a Bluetooth equipped PC or laptop, the previously installed terminal program is sufficient. 
+
+Teraterm,  and Minicom all see the Bluetooth connection and treat is as "just another serial port".  Handy!
+
+On Apple MAc OS, coolterm does nto see the bluetooth serial cable replacement.  Mac OS is not supported for bluetooth connect at this time. 
+
+=== smart phone ===
+
+Android 3.0 and above devices equipped with bluetooth can be used as a teminal for propforth and connect to LittleRobot.  Use blueterm or GREEN.apk
+
+----
 
 
 
-= Details =
+= End setup to prepare for workshop =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+20130801
