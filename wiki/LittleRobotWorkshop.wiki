@@ -168,32 +168,21 @@ Android 3.0 and above devices equipped with bluetooth can be used as a teminal f
 
 The !LittleRobot(tm) KIT is designed to be the lowest cost set of parts that can provide a complete, functional, mobile robotic development platform. For background see here:  CheapestPossibleRobot
 
+The following is the current list of parts to be included in the kit:
+
+http://code.google.com/p/propforth/wiki/LittleRobotPackingList
+
+NOTE to TEAM:  update the site so all kit parts references point to LittleRobotPackingList
+
 == !LittleRobot PARTS-ONLY Kit (without micro controler) BOM ==
 
 The KIT is a set of parts to be added to a micro controller. The COST of the basic kit does not include the micro controller, as many micro controller options exist, and this project is designed for maximum flexibility. 
 
 Participants can obtain these on there own (search EBAY for suppliers from China, that's what we do) if there are participating independently; or the pre assembled kits can be obtained through the workshop for a nominal mark up. Because of our volume purchases we can generally get you a better price than you can on your own, and we do all the work for you, so the kits are most convenient all the way around. 
 
-The Bill of Materials (BOM)  is the list of parts needed.  This list is intended to be the complete set. It is a living list, and is updated as we discover better options.  The current stat as of this writing is:
- 
-  * SR04 Ultrasonic Range Finder
-  * HC05/HC06 Bluetooth serial cable replacement
-  * (2) mini stepper motor
-  * (2) ULN2003 stepper motor driver
-  * USB Host to mini-B 5 conductor cable
-  * Jumper WIRES
-    * 20 M-F
-    * 1 F-F
-  * Battery PACK (4*AA), with wires and ON/OFF switch
-  * Batteries (4*AA) NiMH 1.2 volts.  (Note: Alkaline 1.5 volt cells must only have 3 cells, and the fourth cell is dummy).
-  * (2) Wheels 
-  * (2) rubber bands (to provide traction for the wheels)
-  * Velcro (optional)
-  * (10) #4 machine screws, 1 inch
-  * painter's tape (Blue or green)
-  * DUCT tape (optional)
+The Bill of Materials (BOM)  is the list of parts needed.  This list is intended to be the complete set. It is a living list, and is updated as we discover better options.  
 
-We don't specifically need the Duct tape, but life is easier when these are handy. 
+http://code.google.com/p/propforth/wiki/LittleRobotBOM
 
 == LittleRobot Microcontroler ==
 
