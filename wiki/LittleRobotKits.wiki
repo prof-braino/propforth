@@ -44,6 +44,8 @@ Contact Jeff if you choose this option.
 
 *RECOMMENDED*  for sessions presented by Professor Braino,  since I'm going to be there anyway, its just easier if I bring them. 
 
+http://code.google.com/p/propforth/wiki/LittleRobotPackingList
+
 We discovered that we have to make changes to the kit of parts. In fact, we are constantly tweaking the parts as we progress in the project.  Its not far to Jeff to make him change mid-order, as he would get stuck with unused inventory. 
 
 So we decided just buy the stuff directly.  After the BOM becomes stable, we can turn it over to Jeff and/or others.
