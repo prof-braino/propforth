@@ -158,6 +158,93 @@ c" LED" cds W!
 _sr04_distance L@ . cr
 ;
 
+
+\ ===== SR04 diagnostic ===============
+\ sr04_sample 
+\ 1) need 100 samples 
+\ 2) valid is 3 to 4200,  display and toss rejects
+\ 3) save highest and lowest. Display and toss these at the end.  
+\ So collect 102 valid sample and keep 100
+\ 4) identify the highest and lowest of remaining values.
+\ 5) average the samples
+\ 6) final display:
+\  attempts low-toss high-toss low high delta average cr
+\ turns out we don't need to toss highest and lowest, 
+\ as we filter 3 4200 per data sheet
+
+wvariable valids
+        : valids+1 1 valids W+! ;
+       : @valids valids W@  ;
+       : .valids @valids . ;
+
+wvariable attempts
+        : attempts+1 1 attempts W+! ;
+       : @attempts attempts W@  ;
+       : .attempts @attempts . ;
+
+variable low  : @low  low  L@ ; : !low  low  L! ;
+variable high : @high high L@ ; : !high high L! ;
+variable SUM  : @SUM  SUM  L@ ; : !SUM  SUM  L! ;
+
+: @average @SUM @valids / ;
+
+: .result \ st?
+."  reading attempted: " .attempts  
+."  valid readings  " .valids   
+."  lowest  "  @low .  
+."   highest " @high . 
+."  delta +"  @high  @average - . ." / " @low @average - .   
+."  average " @average . 
+\ cr
+;
+
+: valid_reading? \ ( - reading t/f )
+     _sr04_distance L@      \ get a sample
+     dup 3 4200 between 
+; 
+
+: valid_reading \ ( - reading )
+  0 
+  begin drop
+        attempts+1  
+        valid_reading? 
+  until
+; \ this goes forever if SR04 disconnected
+
+: lowest? \ ( dist -  ) 
+  dup @low <    if !low else drop then
+;
+
+: highest? \ ( dist - ) 
+  dup @high >   if !high else drop  then
+;
+
+: sr04_init
+  0 valids W!
+  0 attempts W!
+  0 !SUM
+  valid_reading dup !low dup !high drop
+;
+
+\ ----------------------------------------
+: sr04_sample
+  sr04_init \ load first value
+begin
+     valid_reading
+\   st?
+       valids+1   
+       dup lowest?
+       dup highest?
+     @SUM  + !SUM
+\     2 delms
+     @valids 10000 < 0= until 
+    .result 
+;
+
+
+: s sr04_sample ;
+\ ==========================================
+
 ...
 
 
