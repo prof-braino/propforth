@@ -1,0 +1,22 @@
+#summary Kid Friendly Instruction for LittleRobot
+#labels v5.5,instuctions,kid
+
+= Introduction =
+
+WE decided to have an expert translate the LittleRobot instructions from Geezer Talk into Kid-Speak.
+
+Vic found some kids (assorted nephews and nieces, one going to U of I). 
+
+Yes, this was written for kids, and written by actual kids.  I was purposely kept away until they were finished. 
+
+The results are under review.
+
+https://sites.google.com/site/propforth/littlerobot-tutorial/step-0-introduction
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
