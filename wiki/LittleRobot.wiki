@@ -18,6 +18,32 @@ How To Get Started: See the FEATURED column on the main pages and find:
   * Instructions for builing the low cost LittleRobot (tm) demo project ( GettingStartedLittleRobot )
   * Explanation of the pin connections and demo program ( LittleRobotDemoProgram ) 
 
+=  Standard summary Explanation =
+
+LittleRobot project is the functional demo for Propforth. 
+
+LittleRobot provides and introduction to embedded systems by building and programming a lowest cost robot. The robot moves and senses its environment,  responds to program commands, and collects and sends data.  While the basic demo unit is very simple, all parts can be upgraded. Simple behaviors can be combined to form complex behaviors. 
+ro controller and all the ancilary required parts and tool usually found on an electronics bench.  To address this, we have developed a complete, toolless kit.  The kit requires no tools, and no prior experience, and no addtional parts. The complete LittleRobot kit of parts can be purchased directly from supplier sources on Ebay etc for about $100.  Pre-packaged kits are also available for slightly less, as these are purchased in bulk. 
+
+Participants are required to provide:
+ - a Laptop with an available USB port
+ - 4 AA NiHM batteries
+ - android 3.0 or high device with Blue tooth
+ - an internet connection
+
+
+The Propforth environment is a professional embedded systems development tools. It is also very simple, the idea is that it should be simple enought for children to have success.  The youngest participant to built afunctional bot has been a 9 year old third grader. 
+
+After the intial firmware is loaded, no further toolchain is required. The robot can be programmed using any standard terminal program from a PC, of wirelessly using a bluetooth terminal program from an android device.  No expensive, complex software development toolchain is needed, in contrast to most programming environments.  
+
+The key parts listed in the bill of materials (BOM) can be obtained for under $20.  As it turns out, most beginners do not have a micro controller and all the ancilary required parts and tool usually found on an electronics bench.  To address this, we have developed a complete, toolless kit.  The kit requires no tools, and no prior experience, and no addtional parts. The complete LittleRobot kit of parts can be purchased directly from supplier sources on Ebay etc for about $100.  Pre-packaged kits are also available for slightly less, as these are purchased in bulk. 
+
+Participants are required to provide:
+ - a Laptop with an available USB port
+ - 4 AA NiHM batteries
+ - android 3.0 or high device with Blue tooth
+ - an internet connection
+
 = Lots to look at =
 
 LittleRobot™ - index - this page
