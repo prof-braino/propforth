@@ -81,7 +81,7 @@ As stated above, the 10k ohm resistor MUST be between the ECHO out pin on the SR
 
 One end of the resistor goes in the end of the M-F jumper, the other goes in one end of the F-F jumper.
 
-==  M-F jumper wires (20x) == 
+==  M-F jumper wires (19x) == 
 
 All connections use a Male to Female jumper wire. 
 
