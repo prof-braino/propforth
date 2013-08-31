@@ -31,10 +31,10 @@ Printed, this list is the parts list included in the LittleRobot kits
 || 1 || Black wire 10 cm || Black usually means Negative or Ground || 
 || 2 || Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
 
-These parts are needed but are NOT included in the kits.  Each user is responsible for providing these. 
+These parts are required but are NOT included in the kits.  Each user is responsible for providing these. 
 
 ||  || User supplied parts || Not included in kit, User must provide these ||  
-|| 4 || AA NiMH rechargable batteries ||
+|| 4 || AA NiMH rechargable batteries || Must be fully charged in avdance ||
 || 1 || NiMH battery charger || The charge MUST be specifically for Nickel Metal Hydride (NiMH) batteries, or they will catch fire ||
 
 = Parts Details =
