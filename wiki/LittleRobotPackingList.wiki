@@ -29,13 +29,15 @@ Printed, this list is the parts list included in the LittleRobot kits
 || 1 || Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
 || 1 || Red wire 10 cm || Red usually means +5 volts || 
 || 1 || Black wire 10 cm || Black usually means Negative or Ground || 
-|| 2 || Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
+|| 2 || Wheels (milled acrylic) + card (Wright Hobbies, supplier)  || Thanks Eddy Wright! || 
 
 These parts are required but are NOT included in the kits.  Each user is responsible for providing these. 
 
 || Qty || *User supplied parts* || *Not included in kit, User must provide these* ||  
 || 4 || AA NiMH rechargeable batteries || Must be fully charged in advance  ||
 || 1 || NiMH battery charger || The charge MUST be specifically for Nickel Metal Hydride (NiMH) batteries, or they will catch fire ||
+|| 1 || laptop || windows XP recommended, user is responsible for OS ||
+|| 1 || android 3.0+ device || Android 3.0 or higher for wireless blue tooth operation ||  
 
 = Parts Details =
 
