@@ -1,0 +1,20 @@
+#summary One-Time Initialization of HC06
+#labels v5.5,Bluetooth,HC06
+
+= Initialization of new imported parts =
+
+When the HC06 arrives, it is set to default baud of 9600, and bluetooth name of livnor. 
+
+We change the baud to 230400 to match the propforth default.
+
+We change the name to something more related to LittleRobot or to the session host. 
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
