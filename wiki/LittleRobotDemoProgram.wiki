@@ -1,5 +1,5 @@
 #summary Sal's demo software for LittleRobot Demo
-#labels LittleRobot,v5.5
+#labels LittleRobot,v5.5,Deprecated
 
 <wiki:toc max_depth="9" />
 
