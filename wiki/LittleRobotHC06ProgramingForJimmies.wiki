@@ -44,15 +44,7 @@ This is not put into the boot.f script, as it is a one - time event.
 The rest has to be inputted manually (by cut and paste), when we get to the touchy part.
 
 
-== Data Sheet ==
 
-There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
-
-http://etang.co.uk/datasheet/hc06/Bluetooth_HC-06_datasheet%20by%20cn.pdf
-
-http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
-
------
 
 = HC06 workshop preparation scripts =
 
@@ -270,6 +262,16 @@ To put in a fixed/modified script:
  * reboot
 
 = NOTES =
+
+== Data Sheet ==
+
+There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
+
+http://etang.co.uk/datasheet/hc06/Bluetooth_HC-06_datasheet%20by%20cn.pdf
+
+http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
+
+-----
 
 = Details =
 
