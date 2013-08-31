@@ -9,6 +9,14 @@ The goal of this activity to set up the configuration of the HC06.  We will chan
 
 The steps to do this follow below. 
 
+= Materials = 
+
+For this activity, you will need the following:
+
+Prop board (Quickstart is ok) running ProForth v5.5 kernel.  Be sure the auto boot (boot.f) is disabled or cleared using fsclear.
+
+
+
 = HC06 =
 
 The workshop is using the HC06 modules mounted on a 6 pin carrier board.  only Vcc (3.3v), GND, Rxd and Txd are used.
