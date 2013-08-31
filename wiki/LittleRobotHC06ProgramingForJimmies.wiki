@@ -41,7 +41,7 @@ Connect HC06 - Rx tp pin 27
 
 When you apply power, the LED STATUS LIGHT on the HC06 should blink (this LED has been red or green on differnet batches.  It flashes about once per second).  This means the HC06 is ready.
 
-If the HC06 RED LED does NOT blink, pull the power wire for a second or two, and reconnect.  Sometimes they come up flashing every time, sometimes they only come up every other time.  This is fine for our situation. 
+If the HC06 LED does NOT blink, pull the power wire for a second or two, and reconnect.  Sometimes they come up flashing every time, sometimes they only come up every other time.  This is fine for our situation. 
 
 == Configuration Scripts ==
 
@@ -49,8 +49,7 @@ The following is a modification of the script found in bot.f
 
 This is not put into the boot.f script, as it is a one - time event.
 
-The rest has to be input manually (by cut and paste),when we get to the touchy part.
-
+The rest has to be inputted manually (by cut and paste), when we get to the touchy part.
 
 = TROUBLE SHOOTING =
 
