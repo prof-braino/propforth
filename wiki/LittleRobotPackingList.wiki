@@ -13,6 +13,8 @@ This version is modified from the kit provided by Propeller Powered January 2013
 
 = Version 20130622 contents =
 
+Printed, this list is the parts list included in the LittleRobot kits
+
 || LittleRobot || kit parts list || 
 || Quickstart (1x)|| microprocessor  || 
 || pinfinder (1x)|| Identifies pins by position  || 
