@@ -13,7 +13,13 @@ The steps to do this follow below.
 
 For this activity, you will need the following:
 
-Prop board (Quickstart is ok) running ProForth v5.5 kernel.  Be sure the auto boot (boot.f) is disabled or cleared using fsclear.
+Prop board (Quickstart is ok) running PropForth v5.5 kernel.  Be sure the auto boot (boot.f) is disabled or cleared using 'fsclear'.
+
+Un-programmed (virgin) HC06 modules to be programmed.
+
+4 jumper wires.
+
+Breadboard (optional)
 
 
 
