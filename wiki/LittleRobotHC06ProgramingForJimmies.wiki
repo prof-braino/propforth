@@ -5,11 +5,9 @@
 
 When the HC06 arrives, it is set to default baud of 9600, and bluetooth name of livnor. 
 
-We change the baud to 230400 to match the propforth default.
+The goal of this activity to set up the configuration of the HC06.  We will change the baud to 230400 to match the propforth default. We also change the name to something more related to LittleRobot or to the session host. 
 
-We change the name to something more related to LittleRobot or to the session host. 
-
-Add your content here.
+The steps to do this follow below. 
 
 = HC06 =
 
