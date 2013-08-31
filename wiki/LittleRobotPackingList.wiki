@@ -3,7 +3,7 @@
 
 = Packing List =
 
-In the interest of PAPERLESS office efforts, the LittleRobot Packing list will NOT be included in each kit.  
+In the interest of PAPERLESS office efforts, the LittleRobot Packing list will  be maintained online.  
 
 The packing List will be this web page.  If the kit changes, the contents of this pages is to be renamed to LittleRobotPackingListYYYMMDD according to the issue date, and the old version deprecated. 
 
