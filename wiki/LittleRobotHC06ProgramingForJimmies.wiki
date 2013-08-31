@@ -11,6 +11,233 @@ We change the name to something more related to LittleRobot or to the session ho
 
 Add your content here.
 
+= TROUBLE SHOOTING =
+
+The HC06 RED LED MUST BE BLINKING to program the HC06 via the PC terminal scripts.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+The HC06 RED LED MUST BE BLINKING to pair with the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+The HC06 RED LED MUST BE BLINKING to connect to the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+After the HC06 is PAIRED with your android device, the RED LED will continue to blinky
+
+After the HC06 is connected to the android terminal program , the RED LED will stay lit continuously
+
+If the auto boot.f command gives you trouble, press and hold the ESC key during boot.  This will skip the auto boot.f behavior.
+
+To remove a bad copy of the boot.f script:
+
+ * from the propforth command line:
+ * type 'fsls' to list the current script files
+ * type 'fsclear'  to remove the script name entry
+
+To put in a fixed/modified script:
+
+ * reload the script (copy and paste from your editor)
+ * reboot
+
+= NOTES =
+
+== Data Sheet ==
+
+There are several data sheets available.  They are all pretty much bad translations of the pretty bad chineese original. 
+
+http://etang.co.uk/datasheet/hc06/Bluetooth_HC-06_datasheet%20by%20cn.pdf
+
+http://www.wavesen.com/mysys/db_picture/news3/200951285105101.pdf
+
+-----
+
+= HC06 workshop preparation scripts =
+
+Braino used this script to process a dozen HC06 in a row.
+
+{{{
+fl
+
+\ for the HC06 -setup
+\ green wire - this is not used on the carrier mounted modules
+1 wconstant hcProgPin 
+
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+
+\  initally they come up at 9600,  switch this after we set it to 230400
+ 9600 4/ wconstant hcBaud
+\ 230400 4/ wconstant hcBaud 
+
+0 wconstant hcSerialCog
+
+hcSerialCog cogreset 100 delms
+
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+: hcSend cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr ;
+
+hcProgPin pinhi hcProgPin pinout
+
+c" AT" hcSend
+c" AT+VERSION" hcSend
+
+\ ===========================================
+\ hc06 - programming scripts
+
+c" AT" hcSend
+c" AT+VERSION" hcSend
+
+\ MUST pause before and after setting the name; must be 9600
+
+\ c" AT+NAMEQSbot-CPL-01-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-02-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-03-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-04-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-05-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-06-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-07-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-08-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-09-of-12" hcSend
+\ c" AT+NAMEQSbot-CPL-10-of-12" hcSend
+
+\ c" AT+NAMEQSbot-CPL-11-of-12" hcSend
+
+c" AT+NAMEQSbot-CPL-12-of-12" hcSend
+
+\ MUST pause before and after setting the name; must be 9600
+
+c" AT+PIN1234" hcSend
+c" AT+PN" hcSend
+
+\ =============================================
+
+\ hc06 - programming scripts BAUD
+
+\ note baud change immediately on hc06!!!!!
+\ don't do this until you've set everything else.
+\ c" AT+BAUD9" hcSend
+c" AT+BAUD9" hcSend
+
+\ switch back to 9600
+\ c" AT+BAUD4" hcSend
+\ use this if SETNAME did not work
+
+\ =============================================
+\ Get Authenticated Device Count HC05 only
+\ Use Get Authenticated Device Count to see if maybe there were too many pairings already.
+\ Even if there is only one, resetting this seems to have made some units pair.
+\ AT+ADCN?
+\ c" AT+ADCN?" hcSend
+\ AT+ RMAAD
+\ c" AT+ RMAAD" hcSend
+\ =============================================
+\ HC06 - final test 230400 baud
+
+fl
+
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't , disconnect Gnd, and reconnect. It will blink
+\ green wire - this is not used on the carrier mounted modules
+1 wconstant hcProgPin 
+
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+
+\  initally they come up at 9600,  switch this after we set it to 230400
+\ 9600 4/ wconstant hcBaud
+230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
+
+0 wconstant hcSerialCog
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+: hcSend cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr ;
+
+hcProgPin pinhi hcProgPin pinout
+
+c" AT" hcSend
+c" AT+VERSION" hcSend
+
+\ =============================================
+\ =============================================
+\ =============================================
+
+\ HC06 - final code auto boot switches to bluetooh comms
+
+fl
+
+fswrite BTtest.f
+
+\ green wire - this is not used on the carrier mounted modules
+\ 1 wconstant hcProgPin 
+
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+
+\  initally they come up at 9600,  switch this after we set it to 230400
+\ 9600 4/ wconstant hcBaud
+\ 230400 4/ wconstant hcBaud 
+\ 0 wconstant hcSerialCog
+\ hcSerialCog cogreset 100 delms
+\ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+\ : hcSend cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr ;
+
+: onreset6
+  fkey? and fkey? and or h1B <>
+if
+     $S_con iodis $S_con cogreset 100 delms
+     c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+     cogid >con
+then
+     c" onreset6" (forget)
+;
+
+...
+
+fswrite boot.f
+
+hA state orC! version W@ .cstr cr cr cr
+: findEETOP
+0
+h100000 h8000
+do
+i t0 2 eereadpage
+if
+leave
+else
+i h7FFE + t0 3 eereadpage
+if
+leave
+else
+drop i h8000 +
+then
+then
+h8000 +loop
+;
+
+c" boot.f - Finding top of eeprom, " .cstr findEETOP ' fstop 2+ alignl L! forget findEETOP c" Top of eeprom at: " .cstr fstop . cr
+c" boot.f - Loading BTtest.f~h0D~h0D" .cstr hA state andnC!
+fsload BTtest.f
+c" boot.f - Loaded BTtest.f~h0D~h0D" .cstr hA state andnC!
+c" boot.f - DONE PropForth Loaded~h0D~h0D" .cstr hA state andnC!
+
+...
+
+cr  \ final cr in case pasted from web page
+
+
+
+}}}
+
+
 
 = Details =
 
