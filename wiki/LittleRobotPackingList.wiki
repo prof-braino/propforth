@@ -15,21 +15,21 @@ This version is modified from the kit provided by Propeller Powered January 2013
 
 Printed, this list is the parts list included in the LittleRobot kits
 
-|| LittleRobot || kit parts list || 
-|| Quickstart (1x)|| microprocessor  || 
-|| pinfinder (1x)|| Identifies pins by position  || 
-|| HC06 (1x)|| blue tooth wireless serial connection || 
-|| SR04 (1x)|| Ultrasonic range finder up to 2 meters || 
-|| 28BYJ + ULN2003 (2x)|| stepper motor and driver  || 
-|| 10k ohm resistor (1x)|| current limiting resistor for 5v to 3.3v || 
-|| M-F jumper wires (19x)|| tool-less connectors || 
-|| F-F Jumper wire (1x)|| tool less conector for resistor || 
-|| Battery pack with switch and CUSTOM CONNECTOR (1x)|| 4 AA NiHM rechargable batteries 4.8volts  || 
-|| USB cable || USB Host to Mini B ||
-|| Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
-|| Red wire (1x)|| Red usually means +5volts || 
-|| Black wire  (1x)|| Black usually means Negative or Ground || 
-|| Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
+|| item count  || LittleRobot || kit parts list || 
+|| 1x || Quickstart || microprocessor  || 
+|| 1x || pinfinder (1x)|| Identifies pins by position  || 
+|| 1x || HC06 (1x)|| blue tooth wireless serial connection || 
+|| 1x || SR04 (1x)|| Ultrasonic range finder up to 2 meters || 
+|| 2x || 28BYJ + ULN2003 (2x)|| stepper motor and driver  || 
+|| 1x || 10k ohm resistor (1x)|| current limiting resistor for 5v to 3.3v || 
+|| 19x || M-F jumper wires (19x)|| tool-less connectors || 
+|| 1x || F-F Jumper wire (1x)|| tool less conector for resistor || 
+|| 1x || Battery pack with switch and CUSTOM CONNECTOR (1x)|| 4 AA NiHM rechargable batteries 4.8volts  || 
+|| 1x || USB cable || USB Host to Mini B ||
+|| 1x || Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
+|| 1x || Red wire 10 cm || Red usually means +5volts || 
+|| 1x || Black wire 10 cm || Black usually means Negative or Ground || 
+|| 2x || Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
 
 
 = Parts Details =
