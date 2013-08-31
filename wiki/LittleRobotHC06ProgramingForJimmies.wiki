@@ -11,6 +11,37 @@ We change the name to something more related to LittleRobot or to the session ho
 
 Add your content here.
 
+= HC06 =
+
+The workshop is using the HC06 modules mounted on a 6 pin carrier board.  only Vcc (3.3v), GND, Rxd and Txd are used.
+
+== Hardware connections ==
+
+Connect Vcc to 3.3volts.  This is different from all the other parts, the connection is for HC06 Vcc goes to 3.3 on the quickstart. 
+
+Connect GND to Vss as normal.
+
+Connect HC06 - Tx tp pin 26
+
+Connect HC06 - Rx tp pin 27
+
+Don't connect the (GREEN wire) KEY to P1 yet.  We only do this if the HC06 is stubborn.
+
+==  Power On ==
+
+When you apply power, the RED LIGHT on the HC06 should blink.  This means the HC06 is ready.
+
+If the HC06 RED LED does NOT blink, pull the power wire for a second or two, and reconnect.  Sometimes they come up flashing every time, sometimes they only come up every other time.  This is fine for our situation. 
+
+== Configuration Scripts ==
+
+The following is a modification of the script found in bot.f
+
+This is not put into the boot.f script, as it is a one - time event.
+
+The rest has to be input manually (by cut and paste),when we get to the touchy part.
+
+
 = TROUBLE SHOOTING =
 
 The HC06 RED LED MUST BE BLINKING to program the HC06 via the PC terminal scripts.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
