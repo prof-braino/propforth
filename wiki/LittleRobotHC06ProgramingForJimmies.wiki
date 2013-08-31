@@ -41,7 +41,7 @@ Don't connect the (GREEN wire) KEY to P1 yet.  We only do this if the HC06 is st
 
 ==  Power On ==
 
-When you apply power, the RED LIGHT on the HC06 should blink.  This means the HC06 is ready.
+When you apply power, the LED STATUS LIGHT on the HC06 should blink (this LED has been red or green on differnet batches.  It flashes about once per second).  This means the HC06 is ready.
 
 If the HC06 RED LED does NOT blink, pull the power wire for a second or two, and reconnect.  Sometimes they come up flashing every time, sometimes they only come up every other time.  This is fine for our situation. 
 
