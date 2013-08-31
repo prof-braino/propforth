@@ -21,14 +21,14 @@ Printed, this list is the parts list included in the LittleRobot kits
 || 1 || HC06 || blue tooth wireless serial connection || 
 || 1 || SR04  || Ultrasonic range finder up to 2 meters || 
 || 2 || 28BYJ + ULN2003  || 28BYJ stepper motor and ULN2003 driver board  || 
-|| 1 || 10k ohm resistor || current limiting resistor for 5v to 3.3v || 
+|| 1 || 10k ohm resistor || current limiting resistor for 5v to 3.3v taped to inside of bag || 
 || 19 || M-F jumper wires || tool-less connectors || 
 || 1 || F-F Jumper wire || tool less connector for resistor || 
 || 1 || Battery pack || with switch and CUSTOM CONNECTOR 4 AA NiHM rechargeable batteries 4.8volts  || 
 || 1 || USB cable || USB Host to Mini B ||
 || 1 || Chassis || pink Foam Block with 1/2 inch holes || 
-|| 1 || Red wire 10 cm || Red usually means +5 volts || 
-|| 1 || Black wire 10 cm || Black usually means Negative or Ground || 
+|| 1 || Red wire 10 cm || Red for +5 volts; taped to inside of bag || 
+|| 1 || Black wire 10 cm || Black for Negative or Ground; taped to inside of bag || 
 || 2 || Wheels  || milled acrylic  || 
 || 1 || card   || Wright Hobbies, supplier of wheels. Thanks Eddy Wright! || 
 
