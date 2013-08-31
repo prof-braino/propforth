@@ -1,4 +1,5 @@
 #summary Using M-F jumpers instead of Beadboard
+#labels Deprecated
 
 = Alternative: No Breadboards =
 
