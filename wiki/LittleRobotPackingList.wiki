@@ -25,10 +25,12 @@ Printed, this list is the parts list included in the LittleRobot kits
 || M-F jumper wires (19x)|| tool-less connectors || 
 || F-F Jumper wire (1x)|| tool less conector for resistor || 
 || Battery pack with switch and CUSTOM CONNECTOR (1x)|| 4 AA NiHM rechargable batteries 4.8volts  || 
+|| USB cable || USB Host to Mini B ||
 || Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
 || Red wire (1x)|| Red usually means +5volts || 
 || Black wire  (1x)|| Black usually means Negative or Ground || 
 || Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
+
 
 = Parts Details =
 
