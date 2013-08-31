@@ -3,7 +3,7 @@
 
 = Initialization of new imported parts =
 
-When the HC06 arrives, it is set to default baud of 9600, and bluetooth name of livnor. 
+When the HC06 arrives, it is set to default baud of 9600, and bluetooth name of livnor or FBT06 etc, all the modules would have the same name, which would cause an issue with multiple bots in a class.  
 
 The goal of this activity to set up the configuration of the HC06.  We will change the baud to 230400 to match the propforth default. We also change the name to something more related to LittleRobot or to the session host. 
 
