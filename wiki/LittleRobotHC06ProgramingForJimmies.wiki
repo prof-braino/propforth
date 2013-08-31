@@ -13,15 +13,10 @@ The steps to do this follow below.
 
 For this activity, you will need the following:
 
-Prop board (Quickstart is ok) running PropForth v5.5 kernel.  Be sure the auto boot (boot.f) is disabled or cleared using `fsclear`.
-
-Un-programmed (virgin) HC06 modules to be programmed.
-
-4 jumper wires.
-
-Breadboard (optional)
-
-
+  * Prop board (Quickstart is ok) running PropForth v5.5 kernel.  Be sure the auto boot (boot.f) is disabled or cleared using `fsclear`.
+  * Un-programmed (virgin) HC06 modules to be programmed.
+  * 4 jumper wires.Don't connect the (GREEN wire) KEY to P1 yet.  We only do this if the HC06 is stubborn.
+  * Breadboard (optional)
 
 = HC06 =
 
@@ -29,13 +24,10 @@ The workshop is using the HC06 modules mounted on a 6 pin carrier board.  only V
 
 == Hardware connections ==
 
-Connect Vcc to 3.3volts.  This is different from all the other parts, the connection is for HC06 Vcc goes to 3.3 on the quickstart. 
-
-Connect GND to Vss as normal.
-
-Connect HC06 - Tx tp pin 26
-
-Connect HC06 - Rx tp pin 27
+  * Connect Vcc to 3.3volts.  This is different from all the other parts, the connection is for HC06 Vcc goes to 3.3 on the quickstart. 
+  * Connect GND to Vss as normal.
+  * Connect HC06 - Tx tp pin 26
+  * Connect HC06 - Rx tp pin 27
 
 ==  Power On ==
 
