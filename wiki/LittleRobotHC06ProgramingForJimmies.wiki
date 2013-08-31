@@ -37,8 +37,6 @@ Connect HC06 - Tx tp pin 26
 
 Connect HC06 - Rx tp pin 27
 
-Don't connect the (GREEN wire) KEY to P1 yet.  We only do this if the HC06 is stubborn.
-
 ==  Power On ==
 
 When you apply power, the LED STATUS LIGHT on the HC06 should blink (this LED has been red or green on differnet batches.  It flashes about once per second).  This means the HC06 is ready.
