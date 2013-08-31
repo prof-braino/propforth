@@ -50,7 +50,7 @@ The rest has to be inputted manually (by cut and paste), when we get to the touc
 
 Braino used this script to process a dozen HC06 in a row.
 
-The script below configures pin 1, but we are not using this.  It is included in case it is needed for troubleshooting. Which it won't be, because this works pretty well. 
+The script below configures pin 1 as the programming key, but we are not using this.  It is included in case it is needed for troubleshooting. 
 
 {{{
 fl
