@@ -13,19 +13,20 @@ This version is modified from the kit provided by Propeller Powered January 2013
 
 = Version 20130622 contents =
 
- * Quickstart (1x)
- * pinfinder (1x)
- * HC06 (1x)
- * SR04 (1x)
- * 28BYJ + ULN2003 (2x)
- * 10k ohm resistor (1x)
- * M-F jumper wires (20x)
- * F-F Jumper wire (1x)
- * Battery pack with switch and CUSTOM CONNECTOR (1x)
- * Chassis (pink Foam Block with 1/2 inch holes) (1x)
- * Red wire (1x)
- * Black wire  (1x)
- * Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)
+|| LittleRobot || kit parts list || 
+|| * Quickstart (1x)|| microprocessor  || 
+||  * pinfinder (1x)||  || 
+||  * HC06 (1x)||  || 
+||  * SR04 (1x)||  || 
+||  * 28BYJ + ULN2003 (2x)||  || 
+||  * 10k ohm resistor (1x)||  || 
+||  * M-F jumper wires (20x)||  || 
+||  * F-F Jumper wire (1x)||  || 
+||  * Battery pack with switch and CUSTOM CONNECTOR (1x)||  || 
+||  * Chassis (pink Foam Block with 1/2 inch holes) (1x)||  || 
+||  * Red wire (1x)||  || 
+||  * Black wire  (1x)||  || 
+||  * Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)||  || 
 
 = Parts Details =
 
