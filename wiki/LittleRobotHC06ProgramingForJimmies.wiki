@@ -43,32 +43,6 @@ This is not put into the boot.f script, as it is a one - time event.
 
 The rest has to be inputted manually (by cut and paste), when we get to the touchy part.
 
-= TROUBLE SHOOTING =
-
-The HC06 RED LED MUST BE BLINKING to program the HC06 via the PC terminal scripts.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
-
-The HC06 RED LED MUST BE BLINKING to pair with the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
-
-The HC06 RED LED MUST BE BLINKING to connect to the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
-
-After the HC06 is PAIRED with your android device, the RED LED will continue to blinky
-
-After the HC06 is connected to the android terminal program , the RED LED will stay lit continuously
-
-If the auto boot.f command gives you trouble, press and hold the ESC key during boot.  This will skip the auto boot.f behavior.
-
-To remove a bad copy of the boot.f script:
-
- * from the propforth command line:
- * type 'fsls' to list the current script files
- * type 'fsclear'  to remove the script name entry
-
-To put in a fixed/modified script:
-
- * reload the script (copy and paste from your editor)
- * reboot
-
-= NOTES =
 
 == Data Sheet ==
 
@@ -270,6 +244,32 @@ cr  \ final cr in case pasted from web page
 }}}
 
 
+= TROUBLE SHOOTING =
+
+The HC06 LED MUST BE BLINKING to program the HC06 via the PC terminal scripts.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+The HC06 LED MUST BE BLINKING to pair with the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+The HC06 LED MUST BE BLINKING to connect to the bluetooth device terminal program.  Disconnect and reconnect the HC06 Vcc to put the HC06 into blink mode
+
+After the HC06 is PAIRED with your android device, the RED LED will continue to blinky
+
+After the HC06 is connected to the android terminal program , the RED LED will stay lit continuously
+
+If the auto boot.f command gives you trouble, press and hold the ESC key during boot.  This will skip the auto boot.f behavior.
+
+To remove a bad copy of the boot.f script:
+
+ * from the propforth command line:
+ * type 'fsls' to list the current script files
+ * type 'fsclear'  to remove the script name entry
+
+To put in a fixed/modified script:
+
+ * reload the script (copy and paste from your editor)
+ * reboot
+
+= NOTES =
 
 = Details =
 
