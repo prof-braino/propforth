@@ -16,21 +16,26 @@ This version is modified from the kit provided by Propeller Powered January 2013
 Printed, this list is the parts list included in the LittleRobot kits
 
 || item count  || LittleRobot || kit parts list || 
-|| 1x || Quickstart || microprocessor  || 
-|| 1x || pinfinder (1x)|| Identifies pins by position  || 
-|| 1x || HC06 (1x)|| blue tooth wireless serial connection || 
-|| 1x || SR04 (1x)|| Ultrasonic range finder up to 2 meters || 
-|| 2x || 28BYJ + ULN2003 (2x)|| stepper motor and driver  || 
-|| 1x || 10k ohm resistor (1x)|| current limiting resistor for 5v to 3.3v || 
-|| 19x || M-F jumper wires (19x)|| tool-less connectors || 
-|| 1x || F-F Jumper wire (1x)|| tool less conector for resistor || 
-|| 1x || Battery pack with switch and CUSTOM CONNECTOR (1x)|| 4 AA NiHM rechargable batteries 4.8volts  || 
-|| 1x || USB cable || USB Host to Mini B ||
-|| 1x || Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
-|| 1x || Red wire 10 cm || Red usually means +5volts || 
-|| 1x || Black wire 10 cm || Black usually means Negative or Ground || 
-|| 2x || Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
+|| 1 || Quickstart || microprocessor  || 
+|| 1 || pinfinder || Identifies pins by position  || 
+|| 1 || HC06 || blue tooth wireless serial connection || 
+|| 1 || SR04  || Ultrasonic range finder up to 2 meters || 
+|| 2 || 28BYJ + ULN2003  || 28BYJ stepper motor and ULN2003 driver board  || 
+|| 1 || 10k ohm resistor || current limiting resistor for 5v to 3.3v || 
+|| 19 || M-F jumper wires || tool-less connectors || 
+|| 1 || F-F Jumper wire || tool less connector for resistor || 
+|| 1 || Battery pack with switch and CUSTOM CONNECTOR (1x)|| 4 AA NiHM rechargeable batteries 4.8volts  || 
+|| 1 || USB cable || USB Host to Mini B ||
+|| 1 || Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
+|| 1 || Red wire 10 cm || Red usually means +5 volts || 
+|| 1 || Black wire 10 cm || Black usually means Negative or Ground || 
+|| 2 || Wheels (milled acrylic) (2x) + card (Wright Hobbies, supplier)  (1x)|| Thanks Eddy Wright! || 
 
+These parts are needed but are NOT included in the kits.  Each user is responsible for providing these. 
+
+||  || User supplied parts || Not included in kit, User must provide these ||  
+|| 4 || AA NiMH rechargable batteries ||
+|| 1 || NiMH battery charger || The charge MUST be specifically for Nickel Metal Hydride (NiMH) batteries, or they will catch fire ||
 
 = Parts Details =
 
