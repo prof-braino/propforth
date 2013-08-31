@@ -15,7 +15,7 @@ This version is modified from the kit provided by Propeller Powered January 2013
 
 Printed, this list is the parts list included in the LittleRobot kits
 
-|| item count  || *LittleRobot* || *kit parts list* || 
+|| Qty  || *LittleRobot* || *kit parts list* || 
 || 1 || Quickstart || microprocessor  || 
 || 1 || pinfinder || Identifies pins by position  || 
 || 1 || HC06 || blue tooth wireless serial connection || 
@@ -24,7 +24,7 @@ Printed, this list is the parts list included in the LittleRobot kits
 || 1 || 10k ohm resistor || current limiting resistor for 5v to 3.3v || 
 || 19 || M-F jumper wires || tool-less connectors || 
 || 1 || F-F Jumper wire || tool less connector for resistor || 
-|| 1 || Battery pack with switch and CUSTOM CONNECTOR (1x)|| 4 AA NiHM rechargeable batteries 4.8volts  || 
+|| 1 || Battery pack || with switch and CUSTOM CONNECTOR 4 AA NiHM rechargeable batteries 4.8volts  || 
 || 1 || USB cable || USB Host to Mini B ||
 || 1 || Chassis (pink Foam Block with 1/2 inch holes) (1x)|| replace this with your choice of found objects || 
 || 1 || Red wire 10 cm || Red usually means +5 volts || 
@@ -33,8 +33,8 @@ Printed, this list is the parts list included in the LittleRobot kits
 
 These parts are required but are NOT included in the kits.  Each user is responsible for providing these. 
 
-||  || *User supplied parts* || *Not included in kit, User must provide these* ||  
-|| 4 || AA NiMH rechargable batteries || Must be fully charged in advance  ||
+|| Qty || *User supplied parts* || *Not included in kit, User must provide these* ||  
+|| 4 || AA NiMH rechargeable batteries || Must be fully charged in advance  ||
 || 1 || NiMH battery charger || The charge MUST be specifically for Nickel Metal Hydride (NiMH) batteries, or they will catch fire ||
 
 = Parts Details =
