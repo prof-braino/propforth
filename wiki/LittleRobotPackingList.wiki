@@ -29,7 +29,8 @@ Printed, this list is the parts list included in the LittleRobot kits
 || 1 || Chassis || pink Foam Block with 1/2 inch holes || 
 || 1 || Red wire 10 cm || Red usually means +5 volts || 
 || 1 || Black wire 10 cm || Black usually means Negative or Ground || 
-|| 2 || Wheels (milled acrylic) + card (Wright Hobbies, supplier)  || Thanks Eddy Wright! || 
+|| 2 || Wheels  || milled acrylic  || 
+|| 1 || card   || Wright Hobbies, supplier of wheels. Thanks Eddy Wright! || 
 
 These parts are required but are NOT included in the kits.  Each user is responsible for providing these. 
 
