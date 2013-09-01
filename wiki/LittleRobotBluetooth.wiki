@@ -31,7 +31,7 @@ If you have a 6 pin HC06, there are two more pins that are not connected.  These
 
 ==  Power On ==
 
-When you apply power, the STAAUTS LIGHT on the HC06 should blink.  This means the HC06 is ready.
+When you apply power, the STATUS LED on the HC06 should blink.  This means the HC06 is ready.
 
 If the HC06 STATUS LED does NOT blink, pull the power wire for a second or two, and reconnect.  Sometimes they come up flashing every time, sometimes they only come up every other time.  This is fine for our situation. 
 
@@ -39,10 +39,9 @@ If the HC06 STATUS LED does NOT blink, pull the power wire for a second or two, 
 
 The following is a modification of the script found in bot.f and QSbot.f.  Feel free to modify these script once you are comfortable with their action. 
 
-The first part of the script can be loaded with fastload (fl). Should we put this in the auto boot.f? * No, don't do it with boot.f, this is a one time event. *
+The HC06 need to be configured rather than left as default.  The names need to to be unique and the baud needs to be set from 9600 to 230400.  This is typically done before the session; each manufacturer tends to set something just a little "off" from normal. This instuction assume pre-configured modules with unique names and 230400 baud. 
 
-The rest has to be input manually (by cut and paste),when we get to the touchy part.
-
+Full Instructions for configuring the HC06 can be found on this wiki, use at your own discretion. 
 
 = Pair with an Bluetooth master device =
 
@@ -56,8 +55,8 @@ To pair with an Android or windows device:
 
 From your terminal program:
  * Tera term on windows over bluetooth
- * blueterm on Android
- * GREEN on android
+ * blueterm terminal emulation app on Android
+ * GREEN termninal emulation and touch interface app on android
 
 Find Connect Device.  Select the HC06, it will display the name you set. The RED LED on the HC06 will flash, and stay on solid when the divice is connected. 
 
@@ -149,6 +148,38 @@ After reboot or power cycle, the prop will switch the serial connection to the b
 The terminal program on a connected device will dispay the regular propforth prompt. 
 
 Type a propforth command like 'words' to show the connection is working. 
+
+= Proceed to the final QSbot.f program =
+
+Leave the above programs BTtest.f aand boot.f in the eeprom memory.
+
+Use the file systems list function 
+{{{
+fsls 
+}}}
+
+to display that the files are present.  
+
+The BTtest is loaded by boot.f or other diagnostics as needed.  
+
+The boot.f file is superceded by the next boot.f later on, so fine left as it is.  
+
+Remembe, you can drop the last file in the list ussing the fsdrop command
+{{{
+fsdrop
+}}}
+
+Or you can remove all the files at once using the fsclear command.
+
+{{{
+fsclear
+}}}
+
+Be aware that you need to reload all the drivers in order after fsclear. 
+
+
+
+
 
 
 -----
