@@ -1,4 +1,5 @@
 #summary Forth scripts to configure HC06.
+#labels v5.5,bluetooth,HC06
 
 = FORTH scripts for initializing and configuring the HC06 =
 
