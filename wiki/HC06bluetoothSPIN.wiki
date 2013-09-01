@@ -23,9 +23,9 @@ A recent batch has the name: FBT06
 
 OBC at PropellerPowered.com offer BlueToothHelper.SPIN
 
-If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit BluetoothHelp.spin as follows:
+If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit BluetoothHelper.spin as follows:
 
- # Open BlueToothHelper.SPIN in the propeller Tool
+ # Open BlueToothHelper.SPIN in the propeller Tool 
  # Change line 29  
 {{{
   BT_TX_PIN     = 26 ' 0 
@@ -42,12 +42,22 @@ If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and
 {{{  
   KB_PIN        = 4 ' 26  we don't wnat Keyboard on pin 26 of QS, thats our pin   
 }}}
+ # Save the file 
 
- # Save the file, 
+Continue in the Proptool to load BluetoothHelper.spin into the Quickstart EEprom.
+
  # connect the Quickstart to the USB serial cable 
- # load  BluetoothHelper.pin into EEprom
+ # load  BluetoothHelper.pin into EEprom (F11)
+
+After the Load to EEprom process is complete, you should be able to verify communication and configure the HC06
+
  # start teratem, ensure the baud rate is set to 9600
  # connect the Bluetooth module
+ # hit the reset button on the Quickstart.  The Bluetooth Helper interface should be dispalyed in the teraterm window
+ # send the ` AT ` command.  The response should be ` OK `
+
+NOTE: This is the finicky part. If you r do not see OK, something is not communicating. DO NOT PANIC. OK, panic a little, but this is easy to fix.  Check some stuff until you figure it out.  Or CALL ME.  Take it slow, you'll figure it out. 
+
 
 
 
