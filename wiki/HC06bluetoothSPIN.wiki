@@ -70,9 +70,9 @@ NOTE: This is the finicky part. If you r do not see OK, something is not communi
 All the HC06 come out of the factory named the same thing.  The first three batches were 'livnor'.  This batch are all named 'FBT06'.  We want unique names so each participant can connect to the right part without have to memorize the mac address for each part.  I use something absolutely unique like the date and time and/or the Venue and a serial number. Examples:
 
   * 20130901DPPL01
-  * ParkDist027
+  * !ParkDist027
   * Vic03
-  * LittleRobotDemo017
+  * !LittleRobotDemo017
 
 You can use anything you want. You can name it `Device Not Found` if you want, but if you confuse yourself with something too clever you might end up on your own. 
 
