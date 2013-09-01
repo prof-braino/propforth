@@ -22,11 +22,11 @@ A recent batch has the name: FBT06
 
 = SPIN Utility to congifure HC06 =
 
-OBC at PropellerPowered.com offer BlueToothHelper.SPIN
+OBC at !PropellerPowered.com offer !BlueToothHelper.SPIN
 
-== Edit BluetoothHelper.SPIN in PRopTool ==
+== Edit BluetoothHelper.SPIN in PropTool ==
 
-If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit BluetoothHelper.spin as follows:
+If you are using the !LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit !BluetoothHelper.spin as follows:
 
  # Open BlueToothHelper.SPIN in the propeller Tool 
  # Change line 29  
