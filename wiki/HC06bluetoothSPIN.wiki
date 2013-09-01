@@ -23,6 +23,8 @@ A recent batch has the name: FBT06
 
 OBC at PropellerPowered.com offer BlueToothHelper.SPIN
 
+== Edit BluetoothHelper.SPIN in PRopTool ==
+
 If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit BluetoothHelper.spin as follows:
 
  # Open BlueToothHelper.SPIN in the propeller Tool 
@@ -44,10 +46,14 @@ If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and
 }}}
  # Save the file 
 
+== Load BluetoothHelper.SPIN into EEprom ==
+
 Continue in the Proptool to load BluetoothHelper.spin into the Quickstart EEprom.
 
  # connect the Quickstart to the USB serial cable 
  # load  BluetoothHelper.pin into EEprom (F11)
+
+== Verify Communications ==
 
 After the Load to EEprom process is complete, you should be able to verify communication and configure the HC06
 
@@ -57,6 +63,33 @@ After the Load to EEprom process is complete, you should be able to verify commu
  # send the ` AT ` command.  The response should be ` OK `
 
 NOTE: This is the finicky part. If you r do not see OK, something is not communicating. DO NOT PANIC. OK, panic a little, but this is easy to fix.  Check some stuff until you figure it out.  Or CALL ME.  Take it slow, you'll figure it out. 
+
+== Set the HC06 to a UNIQUE NAME ==
+
+All the HC06 come out of the factory named the same thing.  The first three batches were 'livnor'.  This batch are all named 'FBT06'.  We want unique names so each paticipante can connect to the right part without have to memorize the mac address for each part.  I use something absolutely unique like the date and time and/or the Venue and a serial number. Examples:
+
+  * 20130901DPPL01
+  * ParkDist027
+  * Vic03
+  * LittleRobotDemo017
+
+You can use anything you want. You can name it `Device Not Found` if you want, but if you confuse yourself with something too clever you might end up on your own. 
+
+From the BluetoothHelper display in the TeraTerm window, type the name command with your chosen name:
+
+{{{
+AT+NAMEBrainoIsTheCoolest
+}}}
+
+The Prompt should come back with OK and the name you sent:
+
+{{{
+OKBrainoIsTheCoolest
+}}}
+
+This name will be displayed in the BLUETOOTH DEVICES window on your Android device when you scan for device to pair, when you dispaly paired devices, and whehn you unpair a device.
+
+This name will be displayed in the BLUETERM window on your Android device when you 'Connect to Device'.
 
 
 
