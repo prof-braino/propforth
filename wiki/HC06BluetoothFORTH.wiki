@@ -1,13 +1,12 @@
 #summary Forth scripts to configure HC06.
 
-= Introduction =
+= FORTH scripts for initializing and configuring the HC06 =
 
-Add your content here.
+The HC06 Bluetooth serial replacement modules need configuration from the default.  By default the modules are set to a slow 9600 baud, and all have the same name depending on the manufacturer.  
 
+We set them to a unique new and the Propforth standard 230400 baud. 
 
------
-
-=== load the default communication for 9600 ===
+== load the default communication for 9600 ==
 
 Start with the easy part:
 
@@ -40,7 +39,15 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
         cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
 ;
 
+\ NOTE:  last batch of modules need a SPACE and CR after the command!!!
+: hcSendcr
+        cogid hcSerialCog iolink .cstr space cr 1000 delms cogid iounlink cr
+;
+
 hcProgPin pinhi hcProgPin pinout
+
+
+
 
 \ REMEMBER the HC06 LED must be blinking!
 \ If it isn't blinking, disconnect HC06 Gnd, and reconnect. It will blink
@@ -60,8 +67,9 @@ This part we do manually.  Copy and paste each lf therse three lines, one at a t
 
 {{{
 c" AT" hcSend
-
 c" AT+VERSION" hcSend
+c" AT" hcSendcr
+c" AT+VERSION" hcSendcr
 }}}
 
 NOTE:  This was an error: 'c" AT+NAME?" hcSend' as it changes the device name to '?'
