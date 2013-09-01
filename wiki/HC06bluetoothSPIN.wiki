@@ -27,7 +27,9 @@ If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and
 
  # Open BlueToothHelper.SPIN in the propeller Tool
  # Change line 29  
+
 {{{BT_TX_PIN     = 26 ' 0 }}}
+
  # Change line 30  `BT_RX_PIN     = 27 ' 1 `
  # Change line 47 `  VG_PIN        = 0 ' 16  we don't want vga on pin 16 of suickstart  `
  # Change line 48 `  KB_PIN        = 4 ' 26  we don't wnat Keyboard on pin 26 of QS, thats our pin   
