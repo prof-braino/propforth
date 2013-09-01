@@ -1,4 +1,5 @@
 #summary Using a SPIN utility to configure virgin HC06.
+#labels v5.5,Bluetooth,HC06
 
 = Introduction =
 
@@ -92,15 +93,17 @@ This name will be displayed in the BLUETOOTH DEVICES window on your Android devi
 This name will be displayed in the BLUETERM window on your Android device when you 'Connect to Device'.
 
 
+== Set the BAUD RAte to 230400 ==
+
+DO THIS LAST!!!! After you change the baud from 9600 to 230400, the set up tool (which talks at 9600) will not respond anymore. Something the HC06 will continue to respond at 9600 until the power is cycled. But just do the Baud rate last, that way you won't have to mess with changing the baud on BTHelper.spin.
+
+== Power Cycle ==
+
+After the name and baud rate are set, power cycle the HC06.  Pull the powerr wire or the module, and reconnect.  The BTHelper program should no longer see repsonses from the module.  Continue testing the module with the steps for configured HC06 in
+
+LittleRobotBluetooth
+
+http://code.google.com/p/propforth/wiki/LittleRobotBluetooth
 
 
-
-
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= End =
