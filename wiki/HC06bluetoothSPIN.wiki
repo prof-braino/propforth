@@ -3,12 +3,12 @@
 
 = Introduction =
 
-The HC06 bluetooth modules have been finicky to configure.
+The HC06 bluet ooth modules have been finicky to configure.
 
-If the forth scripts don't success, the spin script shuld, and vice versa.
+If the forth scripts don't success, the spin script should, and vice versa.
 
 All be need to do is 
- *  Set an approprate unique name
+ *  Set an appropriate unique name
  * Set the baud rate to 230400
 
 = The HC06 defaults =
@@ -20,15 +20,15 @@ Usually the HC06 comes with these defaults (per datasheet)
 
 A recent batch has the name: FBT06
 
-= SPIN Utility to congifure HC06 =
+= SPIN Utility to configure HC06 =
 
 OBC at !PropellerPowered.com offer !BlueToothHelper.SPIN
 
-== Edit BluetoothHelper.SPIN in PropTool ==
+== Edit !BluetoothHelper.SPIN in !PropTool ==
 
 If you are using the !LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit !BluetoothHelper.spin as follows:
 
- # Open BlueToothHelper.SPIN in the propeller Tool 
+ # Open !BlueToothHelper.SPIN in the propeller Tool 
  # Change line 29  
 {{{
   BT_TX_PIN     = 26 ' 0 
@@ -43,16 +43,16 @@ If you are using the !LittleRobot pin assignments, the Bluetooth Tx pin is 26 an
 }}}
  # Change line 48 
 {{{  
-  KB_PIN        = 4 ' 26  we don't wnat Keyboard on pin 26 of QS, thats our pin   
+  KB_PIN        = 4 ' 26  we don't want Keyboard on pin 26 of QS, thats our pin   
 }}}
  # Save the file 
 
-== Load BluetoothHelper.SPIN into EEprom ==
+== Load !BluetoothHelper.SPIN into EEprom ==
 
-Continue in the Proptool to load BluetoothHelper.spin into the Quickstart EEprom.
+Continue in the Proptool to load !BluetoothHelper.spin into the Quickstart !EEprom.
 
  # connect the Quickstart to the USB serial cable 
- # load  BluetoothHelper.pin into EEprom (F11)
+ # load  !BluetoothHelper.pin into EEprom (F11)
 
 == Verify Communications ==
 
@@ -60,14 +60,14 @@ After the Load to EEprom process is complete, you should be able to verify commu
 
  # start teratem, ensure the baud rate is set to 9600
  # connect the Bluetooth module
- # hit the reset button on the Quickstart.  The Bluetooth Helper interface should be dispalyed in the teraterm window
+ # hit the reset button on the Quickstart.  The Bluetooth Helper interface should be displayed in the teraterm window
  # send the ` AT ` command.  The response should be ` OK `
 
 NOTE: This is the finicky part. If you r do not see OK, something is not communicating. DO NOT PANIC. OK, panic a little, but this is easy to fix.  Check some stuff until you figure it out.  Or CALL ME.  Take it slow, you'll figure it out. 
 
 == Set the HC06 to a UNIQUE NAME ==
 
-All the HC06 come out of the factory named the same thing.  The first three batches were 'livnor'.  This batch are all named 'FBT06'.  We want unique names so each paticipante can connect to the right part without have to memorize the mac address for each part.  I use something absolutely unique like the date and time and/or the Venue and a serial number. Examples:
+All the HC06 come out of the factory named the same thing.  The first three batches were 'livnor'.  This batch are all named 'FBT06'.  We want unique names so each participant can connect to the right part without have to memorize the mac address for each part.  I use something absolutely unique like the date and time and/or the Venue and a serial number. Examples:
 
   * 20130901DPPL01
   * ParkDist027
@@ -76,7 +76,7 @@ All the HC06 come out of the factory named the same thing.  The first three batc
 
 You can use anything you want. You can name it `Device Not Found` if you want, but if you confuse yourself with something too clever you might end up on your own. 
 
-From the BluetoothHelper display in the TeraTerm window, type the name command with your chosen name:
+From the !BluetoothHelper display in the !TeraTerm window, type the name command with your chosen name:
 
 {{{
 AT+NAMEBrainoIsTheCoolest
@@ -88,18 +88,31 @@ The Prompt should come back with OK and the name you sent:
 OKBrainoIsTheCoolest
 }}}
 
-This name will be displayed in the BLUETOOTH DEVICES window on your Android device when you scan for device to pair, when you dispaly paired devices, and whehn you unpair a device.
+This name will be displayed in the BLUETOOTH DEVICES window on your Android device when you scan for device to pair, when you display paired devices, and when you unpair a device.
 
 This name will be displayed in the BLUETERM window on your Android device when you 'Connect to Device'.
 
 
-== Set the BAUD RAte to 230400 ==
+== Set the BAUD Rate to 230400 ==
 
-DO THIS LAST!!!! After you change the baud from 9600 to 230400, the set up tool (which talks at 9600) will not respond anymore. Something the HC06 will continue to respond at 9600 until the power is cycled. But just do the Baud rate last, that way you won't have to mess with changing the baud on BTHelper.spin.
+DO THIS LAST!!!! After you change the baud from 9600 to 230400, the set up tool (which talks at 9600) will not respond anymore. Something the HC06 will continue to respond at 9600 until the power is cycled. But just do the Baud rate last, that way you won't have to mess with changing the baud on !BTHelper.spin.
+
+The command which sets the baud to 230400 is `AT+BAUD9`
+
+
+{{{
+AT+BAUD9
+}}}
+
+The command should return the OK and the new baud rate: 
+
+{{{
+OK230400
+}}}
 
 == Power Cycle ==
 
-After the name and baud rate are set, power cycle the HC06.  Pull the powerr wire or the module, and reconnect.  The BTHelper program should no longer see repsonses from the module.  Continue testing the module with the steps for configured HC06 in
+After the name and baud rate are set, power cycle the HC06.  Pull the power wire or the module, and reconnect.  The !BTHelper program should no longer see responses from the module.  Continue testing the module with the steps for configured HC06 in
 
 LittleRobotBluetooth
 
