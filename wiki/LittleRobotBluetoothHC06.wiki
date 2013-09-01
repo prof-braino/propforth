@@ -1,5 +1,5 @@
 #summary HC06 bluetooth cable replacement - slave only
-#labels LittleRobot,v5.5,HC06,Bluetooth,SerialCableReplacement
+#labels LittleRobot,v5.5,HC06,Bluetooth,SerialCableReplacement,Deprecated
 
 <wiki:toc max_depth="9" />
 
