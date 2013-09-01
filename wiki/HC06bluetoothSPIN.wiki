@@ -1,0 +1,50 @@
+#summary Using a SPIN utility to configure virgin HC06.
+
+= Introduction =
+
+The HC06 bluetooth modules have been finicky to configure.
+
+If the forth scripts don't success, the spin script shuld, and vice versa.
+
+All be need to do is 
+ *  Set an approprate unique name
+ * Set the baud rate to 230400
+
+= The HC06 defaults =
+
+Usually the HC06 comes with these defaults (per datasheet)
+
+  * Name: livnor
+  * Baud: 9600
+
+A recent batch has the name: FBT06
+
+= SPIN Utility to congifure HC06 =
+
+OBC at PropellerPowered.com offer BlueToothHelper.SPIN
+
+If you are using the LittleRobot pin assignments, the Bluetooth Tx pin is 26 and the Bluetooth Rx pin is 27.  Edit BluetoothHelp.spin as follows:
+
+ # Open BlueToothHelper.SPIN in the propeller Tool
+ # Change line 29  `BT_TX_PIN     = 26 ' 0 `
+ # Change line 30  `BT_RX_PIN     = 27 ' 1 `
+ # Change line 47 `  VG_PIN        = 0 ' 16  we don't want vga on pin 16 of suickstart  `
+  # Change line 48 `  KB_PIN        = 4 ' 26  we don't wnat Keyboard on pin 26 of QS, thats our pin   
+  # Save the file, 
+  # connect the Quickstart to the USB serial cable 
+ # load  BluetoothHelper.pin into EEprom
+ # start teratem, ensure the baud rate is set to 9600
+  # connect the Bluetooth module
+
+
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
