@@ -67,8 +67,11 @@ This part we do manually.  Copy and paste each lf therse three lines, one at a t
 
 {{{
 c" AT" hcSend
+
 c" AT+VERSION" hcSend
+
 c" AT" hcSendcr
+
 c" AT+VERSION" hcSendcr
 }}}
 
