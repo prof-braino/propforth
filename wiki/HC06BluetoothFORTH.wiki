@@ -46,24 +46,17 @@ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
 
 hcProgPin pinhi hcProgPin pinout
 
-
-
-
 \ REMEMBER the HC06 LED must be blinking!
 \ If it isn't blinking, disconnect HC06 Gnd, and reconnect. It will blink
 \ If it isn't blinking, disconnect HC06 Vcc, and reconnect. It will blink
 }}}
 
 
-The above gets loaded automatically by boot.f 
-* NO, auto boot.f at this point just gets confusing. Do all this manually with cut and paste *
-
------
-
-
 === Verify the device is communicating ===
 
-This part we do manually.  Copy and paste each lf therse three lines, one at a time.
+This part we do manually.  Copy and paste each of these lines, one at a time.
+
+Notice that the last batch needed an extra space and cr afte the command. Depending on the manufacturer, some of the parts are a little fiddly.  This is likely an error from the factory, and why we get then so cheap.  With a little detective work, we can usually figure out how to get them to work, and once they are set up, they are very solid. 
 
 {{{
 c" AT" hcSend
@@ -75,7 +68,7 @@ c" AT" hcSendcr
 c" AT+VERSION" hcSendcr
 }}}
 
-NOTE:  This was an error: 'c" AT+NAME?" hcSend' as it changes the device name to '?'
+NOTE:  This was an error in one batch: 'c" AT+NAME?" hcSend' as it changes the device name to '?' 
 
 This does NOT echo the name: 'c" AT+NAME" hcSend'
 
