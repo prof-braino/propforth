@@ -5,6 +5,54 @@
 Add your content here.
 
 
+-----
+
+=== load the default communication for 9600 ===
+
+Start with the easy part:
+
+{{{
+fl
+
+\ for the HC06
+
+\ green wire - this is not used on the carrier mounted modules
+1 wconstant hcProgPin 
+
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+
+\  initally they come up at 9600,  switch this after we set it to 230400
+
+ 9600 4/ wconstant hcBaud
+\ 230400 4/ wconstant hcBaud 
+
+0 wconstant hcSerialCog
+
+hcSerialCog cogreset 100 delms
+c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+
+
+: hcSend
+        cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr
+;
+
+hcProgPin pinhi hcProgPin pinout
+
+\ REMEMBER the HC06 LED must be blinking!
+\ If it isn't blinking, disconnect HC06 Gnd, and reconnect. It will blink
+\ If it isn't blinking, disconnect HC06 Vcc, and reconnect. It will blink
+}}}
+
+
+The above gets loaded automatically by boot.f 
+* NO, auto boot.f at this point just gets confusing. Do all this manually with cut and paste *
+
+-----
+
 = Details =
 
 Add your content here.  Format your content with:
