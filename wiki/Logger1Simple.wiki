@@ -285,6 +285,8 @@ While I've been typing this, the log has been filling up with data that say its 
 fread log
 }}}
 
+Notice that even at 230400 baud, it takes a little time to print out the records. It took me 21 second to print data for 32 minutes worth of log.
+
 Clear the log using:
 
 {{{
