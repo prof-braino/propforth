@@ -283,7 +283,7 @@ Prop0 Cog6 ok
 While I've been typing this, the log has been filling up with data that say its from 2012-01-01 5 AM.  
 {{{
 fread log
-}}
+}}}
 
 Clear the log using:
 
