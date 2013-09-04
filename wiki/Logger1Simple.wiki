@@ -297,7 +297,7 @@ Check that new data is in the log:
 
 {{{
 fread log
-}}
+}}}
 
 == Set the time ==
 
