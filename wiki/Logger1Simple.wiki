@@ -336,7 +336,41 @@ Note the time when you enter
  fread log
 }}}
 
-The last record should be the time at which you hit enter.
+The last record should be the current record at the time at which you hit enter.
+
+== Clear the Log  again ==
+
+After you are satisfied the time is set correctly, clear the log one more time.
+
+{{{
+ClearLog
+}}}
+
+The logger will log the correct time once per second.
+
+== Calibrate ==
+
+After 24 hours or longer, check the time.  Determine if it has drifted (is the clock running fast or slow?)
+
+Determine the offset from the last displayed time and the current time.  This offset is in clock ticks.
+
+Enter this offset using the word:
+{{{
+setDriftCorrection
+}}}
+
+
+= Next Version of Logger =
+
+Next version will be a bit better than Simple Logger.
+
+ * The system will detect the day roll over, and create a new file for each day. This should help control file size, and make offloading data a bit more  manageable.
+ *multiple events (30?) can be logged simultaneously.  While time stamp collisions are possible, they should not be very likely.
+
+Possible changes:
+  * Since the time stamp does not roll over for 7000 years, why do we need to start at 1970?  We could just as easily (and transparently) start when the calendar starts. 
+
+
 
 
 
