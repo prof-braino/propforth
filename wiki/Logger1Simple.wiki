@@ -314,6 +314,34 @@ To set the time we use the setLocalTime finction defined in the time.f file, whi
 
 }}}
 
+Notice that we put the time in in UTC.  
+
+In my case I'm at CST (UTC -7), so I have to add 7 hours to the local time.
+
+It was 2013 Sept 4 15:09:30 so I set up to put in the correct time at exactly 15:10:11, which is 22:10:11 UTC
+
+{{{
+Prop0 Cog6 ok
+2013 09 04 22 10 11 setTime
+Prop0 Cog6 ok
+}}}
+
+When the second on my clock rolled over to 11, I hit enter. 
+
+== Check the time = 
+
+Note the time when you enter 
+
+{{{
+ fread log
+}}}
+
+The last record should be the time at which you hit enter.
+
+
+
+
+
 = Details =
 
 Add your content here.  Format your content with:
