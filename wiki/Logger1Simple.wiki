@@ -130,6 +130,155 @@ Here are the comments for the time module
 \
 }}}
 
+= RUNNING the Logger example =
+
+Load the PropForth SD Kernel.  I used a Quickstart and the default pin assignments from spinneret. 
+
+http://code.google.com/p/propforth/wiki/SDsetupREVISITED#Spineret_%28standard%29_Pinout
+
+This is  kind is kind of neat in that Quickstart LEDs flash each time a record is written.
+
+== test the SD kernel ==
+
+Reboot the quickstart.   If you have no SD plugged in the slot, or you have an un-initialize SD card, you should get the cryptic error message.
+
+Run the CrEatE_SD script if you have not already done so.
+
+Reboot the Quickstat again.  When the SD is initialized and plugged in correctly, you should be the boot message sdispalying the SD size etc.
+
+
+{{{
+
+Prop0 Cog4 ok
+fread .sdcardinfo
+
+SDCard size:      3,858,435 Kbytes
+
+File System: sys
+                      Start Block:              1
+                        End Block:         65,538
+        File System Size (blocks):         65,537
+        File System Size  (bytes):         32,765 Kbytes
+
+File System: usr
+                      Start Block:         65,538
+                        End Block:      7,716,864
+        File System Size (blocks):      7,651,326
+        File System Size  (bytes):      3,825,665 Kbytes
+
+Prop0 Cog4 ok
+
+Prop0 Cog4 ok
+c" braino rules 2X !!!usrboot.f  -  DONE~h0D~h0D" .cstr
+braino rules 2X !!!usrboot.f  -  DONE
+
+Prop0 Cog4 ok
+
+sdboot.f  -  DONE - PropForth Loaded
+
+Prop0 Cog5 ok
+
+Prop0 Cog5 ok
+
+
+CON:Prop0 Cog6 RESET - last status: 0 ok
+
+Prop0 Cog6 RESET - last status: 0 ok
+Prop0 Cog6 ok
+
+Prop0 Cog6 ok
+
+Prop0 Cog6 ok
+
+
+}}}
+
+NOTE: the goofy message `braino rules 2X !!!usrboot.f  -  DONE`  is present to demonstarte that the script is running, and that it took my modifications.
+
+
+== Load Logger example code ==
+
+Open the Logger zipfile you downloaded. 
+
+Open each of the files in turn in your editor, and paste these into the terminal emulator as normal.
+
+I did:
+
+ * DoubleMath.f
+ * time.f  - I modified this to time-cst.f, changing the timezone from Vancouver to Chicago.
+ * LoggerBoot.f
+ * Loggerinit.f
+
+Notice that the first three files create source code files on the mountsys partition.  You can display these to verify their contents using:
+
+{{{
+mountsys
+
+ls
+
+fread DoubleMath.f
+fread  time.f  
+fread LoggerBoot.f
+}}}
+
+
+Notice that the last one LoggerInit.f creates a file `log` on the mountusr partion.   You can display the contents of this using:
+
+{{{
+mountusr
+
+ls 
+
+fread log
+}}}
+
+Notice the log is empty when you first start out.
+
+== Reboot to automatically start the logger ==
+
+Reboot
+
+Notice the Quickstart LED's start flashing about EXACTLY every second. (They are not really exactly every second yet, you did not do calibration yet; but its purdy durn close).
+
+AFter several seconds, dispaly the contenct of the log file agian
+
+
+{{{
+mountusr
+
+ls 
+
+fread log
+}}}
+
+Notice the log has data
+
+
+{{{
+
+Prop0 Cog6 ok
+mountusr
+Prop0 Cog6 ok
+ls
+65667 .partion-usr/
+65796 log
+Prop0 Cog6 ok
+fread log
+2012-01-01_05:00:01.366692 CNT REGISTER: F78FED11 timeStamp: 1325419201384406 unixTimeStamp: 1325419201
+2012-01-01_05:00:02.366693 CNT REGISTER: FC54A111 timeStamp: 1325419202384402 unixTimeStamp: 1325419202
+2012-01-01_05:00:03.366692 CNT REGISTER: 11954F1 timeStamp: 1325419203384126 unixTimeStamp: 1325419203
+2012-01-01_05:00:04.366692 CNT REGISTER: 5DE08B1 timeStamp: 1325419204384134 unixTimeStamp: 1325419204
+2012-01-01_05:00:05.366692 CNT REGISTER: AA2BCD1 timeStamp: 1325419205384142 unixTimeStamp: 1325419205
+2012-01-01_05:00:06.366693 CNT REGISTER: F677141 timeStamp: 1325419206384126 unixTimeStamp: 1325419206
+2012-01-01_05:00:07.366692 CNT REGISTER: 142C2511 timeStamp: 1325419207384395 unixTimeStamp: 1325419207
+2012-01-01_05:00:08.366693 CNT REGISTER: 18F0D901 timeStamp: 1325419208384398 unixTimeStamp: 1325419208
+2012-01-01_05:00:09.366693 CNT REGISTER: 1DB58CF1 timeStamp: 1325419209384406 unixTimeStamp: 1325419209
+
+Prop0 Cog6 ok
+
+}}}
+
+
 = Details =
 
 Add your content here.  Format your content with:
