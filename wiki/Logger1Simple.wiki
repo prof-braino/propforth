@@ -278,6 +278,39 @@ Prop0 Cog6 ok
 
 }}}
 
+== clear the log ==
+
+While I've been typing this, the log has been filling up with data that say its from 2012-01-01 5 AM.  
+{{{
+fread log
+}}
+
+Clear the log using:
+
+{{{
+ClearLog
+}}}
+
+Check that new data is in the log:
+
+{{{
+fread log
+}}
+
+== Set the time ==
+
+We can do any operation without stopping the logger.   This include  reading the log, and setting the time.  The logger cog takes care of it. 
+
+To set the time we use the setLocalTime finction defined in the time.f file, which is autoloaded on boot.
+
+{{{
+
+\ setLocalTime ( y m d h m s -- ) subtracts the time zone, then sets UTC time
+: setLocalTime
+	ymdhms>t _dsetLocaltime
+;
+
+}}}
 
 = Details =
 
