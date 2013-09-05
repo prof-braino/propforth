@@ -330,13 +330,17 @@ When the second on my clock rolled over to 11, I hit enter.
 
 == Check the time = 
 
-Note the time when you enter 
+Use the time command to dispaly the current time
 
 {{{
- fread log
+Prop0 Cog6 ok
+time
+2013-09-05_14:07:00.509498
+Prop0 Cog6 ok
+
 }}}
 
-The last record should be the current record at the time at which you hit enter.
+If you wait till the minute rolls over at 59 seconds, you should be able to hit the enter key within a faction of a second.
 
 == Clear the Log  again ==
 
