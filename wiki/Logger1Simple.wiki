@@ -359,9 +359,19 @@ Enter this offset using the word:
 setDriftCorrection
 }}}
 
+Is this per pay, or per hour?  The source says different in two places - opened issue 205
+
 If you figured the correction right, it should be dead on after 24 hours.  Check it again in a week if you want to get REALLY close.  Bu after a certain point it doesn't really help much, the error in putting in the correct time (hitting enter EXACTLY when the second roll over) is greater than the number of ticks you are correcting.  
 
 It turns out the clock drifts with temperature.  If the unit is in a controlled environment (in the basement shop) the temperature does not drift much.  If it is in an variable environment (the garage) it tends to drift in as the day heats up, and out again as the night cools off.  But it tends to average out over time.  
+
+After about a day, the clock seemed to be slow by about a second. Should this be added to the count? So I tried setting the drift correction to 1 second worth of ticks. 
+
+{{{
+80_000_000 setDriftCorrection
+}}}
+
+
 
 == temperature compensation ==
 
