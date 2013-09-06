@@ -358,12 +358,20 @@ After 24 hours or longer, check the time.  Determine if it has drifted (is the c
 
 Determine the offset from the last displayed time and the current time.  This offset is in clock ticks.
 
+After the clock has been left to run for some amount of time, for example a day or a week, determine the difference between the time displayed and the actual time. 
+
+Divide the delta between the two times by the number of (days, hours?) of the time interval.  Use this value for the drift correction.
+
+== setDriftCorrection ==
+
+Calculate the value (number of ticks) difference between the displayed time and the actual time. Divide this delta by the time interval the clock was run.
+
 Enter this offset using the word:
 {{{
 setDriftCorrection
 }}}
 
-Is this per pay, or per hour?  The source says different in two places - opened issue 205
+Issue 205:  Is this per pay, or per hour?  The source says different in two places - opened issue 205
 
 After about a day, the clock seemed to be slow by about a second. Should this be added to the count? So I tried setting the drift correction to 1 second worth of ticks. 
 
@@ -386,14 +394,45 @@ Ok, I'll try -80,000,000
 
 Note: I still haven't determined if this is tick per hour, or ticks per day.  I suppose if I were smart I would trace through the code...
 
+==  second try ==
+
+After messing with the drift correction value, I reset it to zero, reset the clock, cleared the log, and let is run over night. 
+
+The time when I set the clock was exactly when the seconds rolled over to 2013-09-05_22:00:00, thus I set the UTC time using `2013 9 6 5 0 0 setTime`
+
+{{{
+Prop0 Cog6 ok
+2013 9 6 5 0 0 setTime ClearLog
+Prop0 Cog6 ok
+fread log
+2013-09-05_22:00:00.417800 CNT REGISTER: 8BF2A614 timeStamp: 1378443600435353 unixTimeStamp: 1378443600
+2013-09-05_22:00:01.417800 CNT REGISTER: 90B75A44 timeStamp: 1378443601435349 unixTimeStamp: 1378443601
+Prop0 Cog6 ok
+}}}
+
+Next morning, I checked it 5:09 AM
+
+{{{
+Prop0 Cog6 ok
+time
+2013-09-06_05:09:00.125509
+Prop0 Cog6 ok
+time
+2013-09-06_05:10:00.275570
+Prop0 Cog6 ok
+}}}
+
+Looks like no drift this time!  Maybe there was an error when I set the clock the first tie.  I'm going to leave it go until this evening to let it run a full 24 hours. 
+
 ...
+
+== setDriftCorrection is correct ==
 
 If you figured the correction right, it should be dead on after 24 hours.  
 
+Check it again in a week if you want to get REALLY close.  Bu after a certain point it doesn't really help much, the error setting the correct time (hitting `enter` EXACTLY when the second roll over) plus the error of reading the time (hitting `enter` EXACTLY when the second roll over) is greater than the number of ticks you are correcting.  
 
-Check it again in a week if you want to get REALLY close.  Bu after a certain point it doesn't really help much, the error in putting in the correct time (hitting enter EXACTLY when the second roll over) is greater than the number of ticks you are correcting.  
-
-It turns out the clock drifts with temperature.  If the unit is in a controlled environment (in the basement shop) the temperature does not drift much.  If it is in an variable environment (the garage) it tends to drift in as the day heats up, and out again as the night cools off.  But it tends to average out over time.  
+The crystal drifts with temperature.  If the unit is in a controlled environment (in the basement shop) the temperature does not drift much.  If it is in an variable environment (the garage) it tends to drift in as the day heats up, and out again as the night cools off.  But it tends to average out over time.  
 
 == temperature compensation ==
 
