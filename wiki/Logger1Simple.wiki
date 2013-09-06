@@ -371,7 +371,6 @@ After about a day, the clock seemed to be slow by about a second. Should this be
 80_000_000 setDriftCorrection
 }}}
 
-If you figured the correction right, it should be dead on after 24 hours.  
 
 A few hours later I tried checking the time at exactly 20:19:00
 
@@ -383,7 +382,11 @@ time
 Prop0 Cog6 ok
 }}}
 
+Ok, I'll try -80,000,000
 
+...
+
+If you figured the correction right, it should be dead on after 24 hours.  
 
 
 Check it again in a week if you want to get REALLY close.  Bu after a certain point it doesn't really help much, the error in putting in the correct time (hitting enter EXACTLY when the second roll over) is greater than the number of ticks you are correcting.  
