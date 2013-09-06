@@ -371,7 +371,22 @@ After about a day, the clock seemed to be slow by about a second. Should this be
 80_000_000 setDriftCorrection
 }}}
 
-If you figured the correction right, it should be dead on after 24 hours.  Check it again in a week if you want to get REALLY close.  Bu after a certain point it doesn't really help much, the error in putting in the correct time (hitting enter EXACTLY when the second roll over) is greater than the number of ticks you are correcting.  
+If you figured the correction right, it should be dead on after 24 hours.  
+
+A few hours later I tried checking the time at exactly 20:19:00
+
+I got:
+{{{
+Prop0 Cog6 ok
+time
+2013-09-05_20:19:06.310991
+Prop0 Cog6 ok
+}}}
+
+
+
+
+Check it again in a week if you want to get REALLY close.  Bu after a certain point it doesn't really help much, the error in putting in the correct time (hitting enter EXACTLY when the second roll over) is greater than the number of ticks you are correcting.  
 
 It turns out the clock drifts with temperature.  If the unit is in a controlled environment (in the basement shop) the temperature does not drift much.  If it is in an variable environment (the garage) it tends to drift in as the day heats up, and out again as the night cools off.  But it tends to average out over time.  
 
