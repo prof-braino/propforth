@@ -314,7 +314,7 @@ To set the time we use the setLocalTime finction defined in the time.f file, whi
 
 }}}
 
-Notice that we put the time in in UTC.  
+Notice that we can put the time in in UTC using setTime.  * Should this be renamed setUTCtime ? *
 
 In my case I'm at CST (UTC -7), so I have to add 7 hours to the local time.
 
