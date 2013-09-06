@@ -384,6 +384,8 @@ Prop0 Cog6 ok
 
 Ok, I'll try -80,000,000
 
+Note: I still haven't determined if this is tick per hour, or ticks per day.  I suppose if I were smart I would trace through the code...
+
 ...
 
 If you figured the correction right, it should be dead on after 24 hours.  
