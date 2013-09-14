@@ -364,8 +364,10 @@ fl
 
 \ mountsys
 
-\ 100 fwrite usrboot.f
-fswrite boot.f
+ 100 fwrite usrboot.f
+
+\ fswrite boot.f
+
 version W@  .cstr cr
 
 c" usrboot.f  -  initializing~h0D~h0D" .cstr
