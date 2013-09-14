@@ -199,6 +199,130 @@ c" usrboot.f  -  DONE~h0D~h0D" .cstr
 
 }}}
 
+On powercycle or reboot, run the 'cog?' command to see that ach dirver is running:
+
+{{{
+Prop0 Cog6 ok
+cog?
+Cog:0  #io chan:1                     TIME COUNTER
+Cog:1  #io chan:1 PropForth v5.5 2013Feb20 11:30 0
+Cog:2  #io chan:1                          MEASURE
+Cog:3  #io chan:1                           LOGGER
+Cog:4  #io chan:1 PropForth v5.5 2013Feb20 11:30 0
+Cog:5  #io chan:1 PropForth v5.5 2013Feb20 11:30 0
+Cog:6  #io chan:1 PropForth v5.5 2013Feb20 11:30 0  6(0)->7(0)
+Cog:7  #io chan:1                           SERIAL  7(0)->6(0)
+Prop0 Cog6 ok
+
+
+}}}
+
+= Step 4 - Log the SR04 data =
+
+After the logger and the SR04 are working, change the logger routing to log the SR04.  Add the appropriate line to the 'logdata' word as shown below, and paste the new 'LoggerBoot-SR04.f' file into the terminal.  Reboot.
+
+Use 'ClearLog' to erase the old data from the log file.   Be sure to 'mountusr' to switch to the user partition on the SD, that is where the 'log' file resides.
+
+{{{
+fl
+
+mountsys
+
+100 fwrite usrboot.f
+version W@  .cstr cr
+
+c" usrboot.f  -  initializing~h0D~h0D" .cstr
+
+1 sd_mount
+
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-7 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+\
+\ End config parameters
+\
+
+
+fload DoubleMath.f
+fload time.f
+fload SR04-SD.f
+
+lockdict wvariable logBuffer 256 allot freedict
+: logdata
+	getLocalTime formatTime logBuffer ccopy
+	c"  CNT REGISTER: " logBuffer cappend
+	base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
+	c"  timeStamp: " logBuffer cappend
+	base W@ decimal timeStamp <# d#s #> logBuffer cappend base W!
+	c"  unixTimeStamp: " logBuffer cappend
+	base W@ decimal unixTimeStamp <# d#s #> logBuffer cappend base W!
+  
+ c"  SR04 mm: "      logBuffer cappend
+ base W@ decimal _sr04_distance  L@ <# #s #> logBuffer cappend base W!
+
+	c" ~h0D" logBuffer cappend
+	logBuffer
+;
+
+
+
+\ clkfreq constant logperiod  \ log everry second
+clkfreq 10 * constant logperiod  \ log every 10 second
+
+\ log very second
+: logger
+	4 state andnC!
+	c" LOGGER" cds W!
+	mountusr
+	cnt COG@ clkfreq +
+	begin
+		logperiod waitcnt
+		logdata C@++ c" log" 7 lock sd_append 7 unlock
+		
+	0 until 
+;
+
+: ClearLog
+	mountusr
+	7 lock 0 c" log" sd_trunc 7 unlock
+;
+
+c" logger" nfcog cogx
+
+fread .sdcardinfo
+
+c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+
+...
+
+}}}
+
+= Step 5 - Connect via Blue tooth =
+
+If you wish to connect wirelessly via blue tooth, it is advisable to do this last. 
+
+After the SD kernel is shown to be working; and the logger is working, and the dirft offset has been calibrated, and the SR04 is working, and the SRR04 is logging, add the line to 'LoggerBoot-SR04.f' to switch the serial lines to the HC06. 
+
+{{{
+
+
+}}}
+
+
+
+
+
+
 
 = Details =
 
