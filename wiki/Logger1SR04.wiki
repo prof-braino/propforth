@@ -391,10 +391,10 @@ c" usrboot.f  -  initializing~h0D~h0D" .cstr
 \
 
 
-fsload DoubleMath.f
-fsload time.f
+fload DoubleMath.f
+fload time.f
 
-fsload BTtest.f
+fload BTtest.f
 
 [ifdef setDriftCorrection
 34320 setDriftCorrection  \ for20130901 DPPL01  
