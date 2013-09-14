@@ -25,9 +25,93 @@ Add the SR04 ultrasonic range finder
 
 If you want to position the display output, you can do some crude but effective screen placement using ANSI terminal codes as shown in LittleRobotDemoUltrasonic
 
+As always, remember:
+ * SR04 needs 10k ohm resistor between echo and pin 25 (prop input pin)
+ * SR04 connects to Vin (5volts)
+ 
+{{{
+\ SR04 for SD logging
+
+fl                                                                                  fl
+
+10 fwrite SR04-SD.f
+
+1 wconstant build_sr04
+[ifndef _sr04_trig
+	d_24 wconstant _sr04_trig
+]
+[ifndef _sr04_echo
+	d_25 wconstant _sr04_echo
+]
+
+variable _sr04_distance
+
+: _sr04_measure
+	c" MEASURE" cds W!
+	4 state andnC!
+
+	_sr04_trig pinlo _sr04_trig pinout
+	_sr04_echo >m
+	_sr04_trig >m
+	begin
+		dup _maskouthi dup dup drop _maskoutlo
+
+		over dup dup dup
+
+		waitpeq
+		cnt COG@
+		rot2
+
+		waitpne
+		cnt COG@ swap -
+		d_170_000 clkfreq */
+
+
+		_sr04_distance L!
+		
+		100 delms
+	0 until
+;
+
+[ifdef sr04_test
+: sr04_test
+	begin
+		_sr04_distance L@ . 
+		fkey? nip
+    
+    100 delms
+    
+	until
+;
+]
+
+\ c" _sr04_measure" 1 cogx
+
+c" _sr04_measure" nfcog cogx
+
+
+...
 
 
 
+
+}}}
+
+For testing, manually load the code at the end
+
+{{{
+: sr04_test
+	begin
+		_sr04_distance L@ . 
+		fkey? nip
+    
+    100 delms
+    
+	until
+;
+}}}
+
+and run the word 'sr04_test' to display the SRR04 distance on the terminal display
 
 
 = Details =
