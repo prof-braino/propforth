@@ -1,0 +1,56 @@
+#summary Add Bluetooth HC06 to Logger1Simple.
+#labels v5.5
+
+= Introduction =
+
+Add the HC04 Bluetooth Cable replacement to Logger1Simple
+
+This allows access to the logger when operating remote from the PC.
+
+=  Step 1 Logger =
+
+Load the SD kernel, with double math, and time support, as described in
+
+Logger1Simple
+
+found in the zip archive on the downloads subpage.
+
+http://code.google.com/p/propforth/downloads/detail?name=Logger-2013-05-12.zip
+
+Note that the time.f etc and other source files are different from the version in the extensions directory, as they have been modified to run from SD and log to SD.
+
+= Step 2 Bluetooth =
+
+Running over bluetooth is straightforward. 
+
+Simply change the serial line assignment from the default (usually prop pins 30 & 31) to the pins assigned to the HC06.  For these demos, I have been using pins 24 and 25, but these can be moved to any available pins.
+
+Ensure the following is added to the most recent boot.f (for EEprom file system) or usrboot.f (SD filesystem)
+
+{{{
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" _ready_led dup pinout pinhi" $S_con cogx
+c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+cogid >con
+
+then
+
+c" onreset6" (forget)
+;
+
+}}}
+
+Note that you can press and hold the ESC key (key code hex 1B) on your PC keyboard during the boot sequence to prevent the application from switching to HC06.  This can be handy if you need to use the PC terminal to change the source code. 
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
