@@ -1,4 +1,5 @@
 #summary Logger1Simple with SR04
+#labels v5.5,SR04,Logger
 
 = Introduction =
 
@@ -17,6 +18,10 @@ Logger1Simple  page.
 = Step 2 SR04 =
 
 Add the SR04 ultrasonic range finder
+
+If you want ot position the display output, you can do some crude but effective screen placement using ANSI terminal codes as shown in LittleRobotDemoUltrasonic
+
+
 
 
 
