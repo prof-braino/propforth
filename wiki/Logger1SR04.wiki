@@ -390,26 +390,67 @@ c" usrboot.f  -  initializing~h0D~h0D" .cstr
 \ End config parameters
 \
 
-
 fload DoubleMath.f
 fload time.f
-
+fload SR04-SD.f
 fload BTtest.f
+
+lockdict wvariable logBuffer 256 allot freedict
+: logdata
+        getLocalTime formatTime logBuffer ccopy
+        c"  CNT REGISTER: " logBuffer cappend
+        base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
+        c"  timeStamp: " logBuffer cappend
+        base W@ decimal timeStamp <# d#s #> logBuffer cappend base W!
+        c"  unixTimeStamp: " logBuffer cappend
+        base W@ decimal unixTimeStamp <# d#s #> logBuffer cappend base W!
+  
+ c"  SR04 mm: "      logBuffer cappend
+ base W@ decimal _sr04_distance  L@ <# #s #> logBuffer cappend base W!
+
+        c" ~h0D" logBuffer cappend
+        logBuffer
+;
+
+
+
+\ clkfreq constant logperiod  \ log everry second
+clkfreq 10 * constant logperiod  \ log every 10 second
+
+\ log very second
+: logger
+        4 state andnC!
+        c" LOGGER" cds W!
+        mountusr
+        cnt COG@ clkfreq +
+        begin
+                logperiod waitcnt
+                logdata C@++ c" log" 7 lock sd_append 7 unlock
+                
+        0 until 
+;
+
+: ClearLog
+        mountusr
+        7 lock 0 c" log" sd_trunc 7 unlock
+;
+
+c" logger" nfcog cogx
+
+fread .sdcardinfo
 
 [ifdef setDriftCorrection
 34320 setDriftCorrection  \ for20130901 DPPL01  
 \ 0 setDriftCorrection 
 ]
 
-
 cr cr c" setDriftCorrection is " .cstr _driftCorrectionNumerator dL@ du.
 
 c" usrboot.f  -  DONE~h0D~h0D" .cstr
 
-
-
 ...
 
+cr
 
 }}}
 
