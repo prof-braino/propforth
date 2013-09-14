@@ -311,12 +311,118 @@ c" usrboot.f  -  DONE~h0D~h0D" .cstr
 
 If you wish to connect wirelessly via blue tooth, it is advisable to do this last. 
 
-After the SD kernel is shown to be working; and the logger is working, and the dirft offset has been calibrated, and the SR04 is working, and the SRR04 is logging, add the line to 'LoggerBoot-SR04.f' to switch the serial lines to the HC06. 
+After the SD kernel is shown to be working; and the logger is working, and the dirft offset has been calibrated, and the SR04 is working, and the SRR04 is logging, add blue tooth suupport using the HC06.
+
+First paste 'BTtest-SD.f' , this is the regular BTtest.f modified for SD.
 
 {{{
+fl
+
+\ mountsys
+
+\ 100 fwrite usrboot.f
+fswrite boot.f
+version W@  .cstr cr
+
+c" usrboot.f  -  initializing~h0D~h0D" .cstr
+
+\ 1 sd_mount
+
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-7 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+\
+\ End config parameters
+\
+
+
+fsload DoubleMath.f
+fsload time.f
+
+fsload BTtest.f
+
+[ifdef setDriftCorrection
+34320 setDriftCorrection  \ for20130901 DPPL01  
+\ 0 setDriftCorrection 
+]
+
+
+cr cr c" setDriftCorrection is " .cstr _driftCorrectionNumerator dL@ du.
+
+c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+
+
+...
+
+}}}
+
+Then past the final version of 'LoggerBoot-SR04.f' to switch the serial lines to the HC06. 
+
+{{{
+fl
+
+\ mountsys
+
+\ 100 fwrite usrboot.f
+fswrite boot.f
+version W@  .cstr cr
+
+c" usrboot.f  -  initializing~h0D~h0D" .cstr
+
+\ 1 sd_mount
+
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-7 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+\
+\ End config parameters
+\
+
+
+fsload DoubleMath.f
+fsload time.f
+
+fsload BTtest.f
+
+[ifdef setDriftCorrection
+34320 setDriftCorrection  \ for20130901 DPPL01  
+\ 0 setDriftCorrection 
+]
+
+
+cr cr c" setDriftCorrection is " .cstr _driftCorrectionNumerator dL@ du.
+
+c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+
+
+...
 
 
 }}}
+
+
+
+
 
 
 
