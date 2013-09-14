@@ -28,6 +28,8 @@ If you want to position the display output, you can do some crude but effective 
 As always, remember:
  * SR04 needs 10k ohm resistor between echo and pin 25 (prop input pin)
  * SR04 connects to Vin (5volts)
+
+Loading the follwoing will write the SRR04-SD.f file to memory
  
 {{{
 \ SR04 for SD logging
@@ -112,6 +114,90 @@ For testing, manually load the code at the end
 }}}
 
 and run the word 'sr04_test' to display the SRR04 distance on the terminal display
+
+= Step 3 Update usrboot.f =
+
+Change usrboot.f to include the line to load (and launch) the SR04 driver.  For clarity, I name this file 'usrboot-SD04.f' in the source directory on the PC. 
+
+{{{
+fl
+
+mountsys
+
+100 fwrite usrboot.f
+version W@  .cstr cr
+
+c" usrboot.f  -  initializing~h0D~h0D" .cstr
+
+1 sd_mount
+
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-7 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+\
+\ End config parameters
+\
+
+
+fload DoubleMath.f
+fload time.f
+fload SR04-SD.f
+
+lockdict wvariable logBuffer 256 allot freedict
+: logdata
+	getLocalTime formatTime logBuffer ccopy
+	c"  CNT REGISTER: " logBuffer cappend
+	base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
+	c"  timeStamp: " logBuffer cappend
+	base W@ decimal timeStamp <# d#s #> logBuffer cappend base W!
+	c"  unixTimeStamp: " logBuffer cappend
+	base W@ decimal unixTimeStamp <# d#s #> logBuffer cappend base W!
+
+
+	c" ~h0D" logBuffer cappend
+	logBuffer
+;
+
+
+
+clkfreq constant logperiod
+\ log very second
+: logger
+	4 state andnC!
+	c" LOGGER" cds W!
+	mountusr
+	cnt COG@ clkfreq +
+	begin
+		logperiod waitcnt
+		logdata C@++ c" log" 7 lock sd_append 7 unlock
+		
+	0 until 
+;
+
+: ClearLog
+	mountusr
+	7 lock 0 c" log" sd_trunc 7 unlock
+;
+
+c" logger" nfcog cogx
+
+fread .sdcardinfo
+
+c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+
+...
+
+}}}
 
 
 = Details =
