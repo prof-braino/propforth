@@ -321,7 +321,9 @@ First paste 'BTtest-SD.f' , this is the regular BTtest.f modified for SD.
 
 fl
 
-fswrite BTtest.f
+mountsys
+
+100 fwrite BTtest.f
 
 \ green wire - this is not used on the carrier mounted modules
 \ 1 wconstant hcProgPin 
