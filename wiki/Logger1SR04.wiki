@@ -1,0 +1,28 @@
+#summary Logger1Simple with SR04
+
+= Introduction =
+
+This demo adds SR04 to Logger1Simple
+
+= Step 1 Logger1Simple =
+
+Load the SD kernel, and simple logger package found in 
+
+http://code.google.com/p/propforth/downloads/detail?name=Logger-2013-05-12.zip
+
+on the downloads section accoding to the instructions on the 
+
+Logger1Simple  page.
+
+= Step 2 SR04 =
+
+Add the SR04 ultrasonic range finder
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
