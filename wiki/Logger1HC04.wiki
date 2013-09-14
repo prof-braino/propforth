@@ -1,4 +1,5 @@
 #summary Add Bluetooth HC06 to Logger1Simple.
+#labels v5.5,logger,bluetooth,HC06
 
 = Introduction =
 
@@ -24,10 +25,26 @@ Running over bluetooth is straightforward.
 
 Simply change the serial line assignment from the default (usually prop pins 30 & 31) to the pins assigned to the HC06.  For these demos, I have been using pins 24 and 25, but these can be moved to any available pins.
 
+Ensure the following is added to the most recent boot.f (for EEprom file system) or usrboot.f (SD filesystem)
+
 {{{
 
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" _ready_led dup pinout pinhi" $S_con cogx
+c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+cogid >con
+
+then
+
+c" onreset6" (forget)
+;
 
 }}}
+
+Note that you can press and hold the ESC key (key code hex 1B) on your PC keyboard during the boot sequence to prevent the application from switching to HC06.  This can be handy if you need to use the PC terminal to change the source code. 
 
 
 
