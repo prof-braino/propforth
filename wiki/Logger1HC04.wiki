@@ -1,5 +1,5 @@
 #summary Add Bluetooth HC06 to Logger1Simple.
-#labels v5.5,logger,bluetooth,HC06
+#labels v5.5,logger,bluetooth,HC06,Deprecated
 
 = Introduction =
 
