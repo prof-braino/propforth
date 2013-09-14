@@ -15,11 +15,16 @@ on the downloads section accoding to the instructions on the
 
 Logger1Simple  page.
 
+NOTE: By default, logger 1 simple uses 
+  * cog 0 for TIME COUNTER
+  * cog 3 for LOGGER
+
 = Step 2 SR04 =
 
 Add the SR04 ultrasonic range finder
 
-If you want ot position the display output, you can do some crude but effective screen placement using ANSI terminal codes as shown in LittleRobotDemoUltrasonic
+If you want to position the display output, you can do some crude but effective screen placement using ANSI terminal codes as shown in LittleRobotDemoUltrasonic
+
 
 
 
