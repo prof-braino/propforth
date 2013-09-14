@@ -316,53 +316,42 @@ After the SD kernel is shown to be working; and the logger is working, and the d
 First paste 'BTtest-SD.f' , this is the regular BTtest.f modified for SD.
 
 {{{
+
+\ HC06 - final code auto boot switches to bluetooh comms
+
 fl
 
-\ mountsys
+fswrite BTtest.f
 
-\ 100 fwrite usrboot.f
-fswrite boot.f
-version W@  .cstr cr
+\ green wire - this is not used on the carrier mounted modules
+\ 1 wconstant hcProgPin 
 
-c" usrboot.f  -  initializing~h0D~h0D" .cstr
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
 
-\ 1 sd_mount
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
 
-\
-\ Begin config parameters
-\
-[ifndef timeZoneHours
--7 constant timeZoneHours
-]
-[ifndef timeZoneMinutes
-0 constant timeZoneMinutes
-]
-[ifndef doubleTimerCog
-0 wconstant doubleTimerCog
-]
-\
-\ End config parameters
-\
+\  initally they come up at 9600,  switch this after we set it to 230400
+\ 9600 4/ wconstant hcBaud
+\ 230400 4/ wconstant hcBaud 
+\ 0 wconstant hcSerialCog
+\ hcSerialCog cogreset 100 delms
+\ c" hcRx hcTx hcBaud serial" hcSerialCog cogx 100 delms
+\ : hcSend cogid hcSerialCog iolink .cstr 1000 delms cogid iounlink cr ;
 
-
-fsload DoubleMath.f
-fsload time.f
-
-fsload BTtest.f
-
-[ifdef setDriftCorrection
-34320 setDriftCorrection  \ for20130901 DPPL01  
-\ 0 setDriftCorrection 
-]
-
-
-cr cr c" setDriftCorrection is " .cstr _driftCorrectionNumerator dL@ du.
-
-c" usrboot.f  -  DONE~h0D~h0D" .cstr
-
-
+: onreset6
+  fkey? and fkey? and or h1B <>
+if
+     $S_con iodis $S_con cogreset 100 delms
+     c" hcRx hcTx 57600 serial" $S_con cogx 100 delms
+     cogid >con
+then
+     c" onreset6" (forget)
+;
 
 ...
+
 
 }}}
 
