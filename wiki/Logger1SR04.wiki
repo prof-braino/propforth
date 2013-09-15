@@ -5,9 +5,13 @@
 
 This demo adds SR04 to Logger1Simple
 
-= Step 1 Logger1Simple =
+= Step 1 SD kernel  =
 
-Load the SD kernel, and simple logger package found in 
+Load the SD kernel, 
+
+= Step 2 Logger1Simple = 
+
+Load simple logger package found in 
 
 http://code.google.com/p/propforth/downloads/detail?name=Logger-2013-05-12.zip
 
@@ -19,7 +23,7 @@ NOTE: By default, logger 1 simple uses
   * cog 0 for TIME COUNTER
   * cog 3 for LOGGER
 
-= Step 2 SR04 =
+= Step 3 SR04 =
 
 Add the SR04 ultrasonic range finder
 
@@ -115,7 +119,7 @@ For testing, manually load the code at the end
 
 and run the word 'sr04_test' to display the SRR04 distance on the terminal display
 
-= Step 3 Update usrboot.f =
+= Step 4 Update usrboot.f =
 
 Change usrboot.f to include the line to load (and launch) the SR04 driver.  For clarity, I name this file 'usrboot-SD04.f' in the source directory on the PC. 
 
@@ -217,7 +221,7 @@ Prop0 Cog6 ok
 
 }}}
 
-= Step 4 - Log the SR04 data =
+= Step 5 - Log the SR04 data =
 
 After the logger and the SR04 are working, change the logger routing to log the SR04.  Add the appropriate line to the 'logdata' word as shown below, and paste the new 'LoggerBoot-SR04.f' file into the terminal.  Reboot.
 
@@ -307,7 +311,7 @@ c" usrboot.f  -  DONE~h0D~h0D" .cstr
 
 }}}
 
-= Step 5 - Connect via Blue tooth =
+= Step 6 - Connect via Blue tooth =
 
 If you wish to connect wirelessly via blue tooth, it is advisable to do this last. 
 
