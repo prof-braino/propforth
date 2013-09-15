@@ -12,9 +12,9 @@ This demo adds SR04 to Logger1Simple
 
 From the PropForth download archive, location the SD kernel directory in the current release. 
 
-'\My Documents\PropforthV5.5\CurrentRelease\PropForthSD'
+`\My Documents\PropforthV5.5\CurrentRelease\PropForthSD`
 
-Load the SD kernel 'SDkernel.spin' using the proptool, as per normal.  
+Load the SD kernel `SDkernel.spin` using the proptool, as per normal.  
 
 = Step 2 - Logger 1 Simple = 
 
