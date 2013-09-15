@@ -1,6 +1,9 @@
 #summary Logger1Simple with SR04
 #labels v5.5,SR04,Logger
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 This demo adds SR04 to Logger1Simple
