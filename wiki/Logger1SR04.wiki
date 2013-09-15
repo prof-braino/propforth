@@ -56,13 +56,172 @@ NOTE: By default, logger 1 simple uses
   * cog 0 for TIME COUNTER
   * cog 3 for LOGGER
 
-== DoubleMath.f ==
+== DoubleMath . f ==
 
 DoubleMath.f is the same as the default Logger1Simple download.
 
 Paste this into the terminal emulator program first.
 
 Use mountusr,  ls, and fread DounbleMath.f to veify the source file is in SD.
+
+== time f ==
+
+Time.f is the same as the default Logger1Simple download.
+
+In this file, we can modify line 51 to change the logging frequency.  When clkfreq is used as the logging frequency, a log file record is recorded once every second.  multiplying this by 10 records once every 10 seconds etc. 
+
+Recall that the crystal's drift is corrected each time the time is read. In the default case, the drift is corrected every second. The drift correction is stated in term of tick per hour.  I think the drift needs to be correct once each hour at minimum, but I didn't check it.  I think the might be affected by how often the records are collected, and how big the records are. Spare, short records might need a different correction than lots of long records, even on the same board.  I think what really matters is consistent record size and logging frequency, and setting the correction case by case. 
+
+== logger init  f ==
+
+LoggerInit.f is a short script that creates a  50 meg file on the mountusr partition.  Recall each block is 512 bytes. 100_000 blocks is 51.2 meg.
+
+This script MUST be run or the logge won't log anything.  It will run, but the data won't have anyplace to go. 
+
+Use the following command to switch to the user partiion, list the directory (by default is has one file , log), and display the contents of the log.
+ 
+{{{
+mountusr 
+ls 
+fread log
+}}}
+
+== SR04SD f ==
+
+SR04-SD.f sets up the SR04 driver.  It uses the same pinout as the QSbot.f program discussed in the LittleRobot demo. 
+
+When the program loads at boot time, it automatically starts the MEASURE routine on the next free cog. 
+
+use `cog?` to show which tasks are running on each cog. 
+
+== Logger Boot 10 hc06 f ==
+
+Logger boot10-HC06.f is a modified LoggerBoot.f
+
+This loads itself onto the SD card, and create the new usrboot.f file. 
+
+The new userboot.f file is loaded automatically at boot time. 
+
+It set the timezone, and sets the drift correction (whoops! I didn't put that in.  It goes AFTER the fload time.f; but I haven't figured the coreection for this test rig anyway).
+
+It loads the drivers, and starts all the tasks.
+
+IF you HOLD DOWN the ESC key while its booting, the boot will be aborted. 
+
+IF you wait uuntil the scripts start loading THEN hold down the escape key, you can load all the driver, but prevent it from switching to blue tooh at the very end.  HANDY during DEBUG.
+
+{{{
+fl
+
+mountsys
+
+100 fwrite usrboot.f
+version W@  .cstr cr
+
+c" usrboot.f  -  initializing~h0D~h0D" .cstr
+
+1 sd_mount
+
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-7 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+
+\ from time.f
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+\
+\ End config parameters
+\
+
+
+fload DoubleMath.f
+fload time.f
+
+fload SR04SD.f
+
+
+lockdict wvariable logBuffer 256 allot freedict
+: logdata
+	getLocalTime formatTime logBuffer ccopy
+	c"  CNT REGISTER: " logBuffer cappend
+	base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
+\	c"  timeStamp: " logBuffer cappend
+\	base W@ decimal timeStamp <# d#s #> logBuffer cappend base W!
+\	c"  unixTimeStamp: " logBuffer cappend
+\	base W@ decimal unixTimeStamp <# d#s #> logBuffer cappend base W!
+
+	c"  SR04 mm: " logBuffer cappend
+	base W@ decimal _sr04_distance L@ <# #s #> logBuffer cappend base W!
+
+	c" ~h0D" logBuffer cappend
+	logBuffer
+;
+
+
+
+\ clkfreq constant logperiod \ once each second
+ clkfreq 10 * constant logperiod \ once each ten seconds
+
+\ log very second
+: logger
+	4 state andnC!
+	c" LOGGER" cds W!
+	mountusr
+	cnt COG@ clkfreq +
+	begin
+		logperiod waitcnt
+		logdata C@++ c" log" 7 lock sd_append 7 unlock
+		
+	0 until 
+;
+
+: ClearLog
+	mountusr
+	7 lock 0 c" log" sd_trunc 7 unlock
+;
+
+\ =========
+\ for the HC06
+\ white/orange wire - QSbot RXD to p27
+27 wconstant hcRx
+
+\ white/green wire - QSbot TXD to p26
+26 wconstant hcTx
+\ 9600 4/ wconstant hcBaud
+230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
+
+nfcog wconstant hcSerialCog
+\ hcSerialCog cogreset 100 delms
+\  c" hcRx hcTx hcBaud serial " hcSerialCog cogx 100 delms
+\ ==========
+
+
+c" logger" nfcog cogx
+
+fread .sdcardinfo
+
+c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+: onreset6
+fkey? and fkey? and or h1B <>
+if
+$S_con iodis $S_con cogreset 100 delms
+c" hcRx hcTx hcBaud serial" $S_con cogx 100 delms
+cogid >con
+\ c" _sr04_measure" 2 cogx
+then
+c" onreset6" (forget)
+;
+...
+
+}}}
 
 -----
 
