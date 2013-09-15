@@ -42,19 +42,37 @@ The logger is presented in four modules.
   * Logger Init
   * Logger Boot
 
+Paste each of these into the terminal window in turn.
+
 == Logger init ==
 
-Logger init just creates a big file on the SD
+Logger Init just creates a big file on the SD.  The the log file is name  `log` and is on the user partition.
+
+Mount the user parition with the command `mountusr`
+
+{{{
+mountusr
+}}}
+
+List the contents of the directory with the `ls` command (similar in function to the linux ls command line command, but without the fancy stuff).
+
+{{{
+ls
+}}}
 
 == Logger Boot ==
 
-Logger Boot loads the Double Math and Time support, and starts the microsecond timer. 
+Logger Boot creates a new version of `usrboot.f` on the SD.  Remember, the kernel looks for a file name sdboot.f and if found, runs this script at boot time.  The default sdboot.f file runs usrboot.f 
+
+The version of usrboot.f that Logger Boot  creates loads the Double Math and Time support, and starts the microsecond timer on cog 0.
 
 == Double Math ==
 
-The time module needs double math, as it tracks 64 bit counts
+Double Math is loaded first.  The time module needs double math, as time uses 64 bit counter values.  The boot script usrboot.f calls the source code files in the proper order, so they can be written to the SD in any physical order.  
 
 == TIME ==
+
+Time uses doble math, so time.f must be loaded after doblemath.f.  Load order is performed in the usrboot.f script. 
 
 Here are the comments for the time module
 
