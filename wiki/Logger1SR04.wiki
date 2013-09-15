@@ -7,7 +7,7 @@
 = Introduction =
 
 This demo adds SR04 to Logger1Simple
-
+-----
 = Step 1 - SD kernel  =
 
 == Make the SD slot ==
@@ -40,6 +40,7 @@ Load the SD initialization script sdfsInitScript.f
 
 Simply paste this into the termianl emulator, and it does the work.  
 
+-----
 
 = Step 2 - Logger 1 Simple = 
 
@@ -62,6 +63,8 @@ DoubleMath.f is the same as the default Logger1Simple download.
 Paste this into the terminal emulator program first.
 
 Use mountusr,  ls, and fread DounbleMath.f to veify the source file is in SD.
+
+-----
 
 = Step 3 SR04 =
 
@@ -159,6 +162,7 @@ For testing, manually load the code at the end
 
 and run the word 'sr04_test' to display the SRR04 distance on the terminal display
 
+-----
 = Step 4 Update usrboot.f =
 
 Change usrboot.f to include the line to load (and launch) the SR04 driver.  For clarity, I name this file 'usrboot-SD04.f' in the source directory on the PC. 
@@ -260,7 +264,7 @@ Prop0 Cog6 ok
 
 
 }}}
-
+-----
 = Step 5 - Log the SR04 data =
 
 After the logger and the SR04 are working, change the logger routing to log the SR04.  Add the appropriate line to the 'logdata' word as shown below, and paste the new 'LoggerBoot-SR04.f' file into the terminal.  Reboot.
@@ -350,6 +354,8 @@ c" usrboot.f  -  DONE~h0D~h0D" .cstr
 ...
 
 }}}
+
+-----
 
 = Step 6 - Connect via Blue tooth =
 
@@ -498,15 +504,7 @@ cr
 
 }}}
 
-
-
-
-
-
-
-
-
-
+-----
 
 = Details =
 
