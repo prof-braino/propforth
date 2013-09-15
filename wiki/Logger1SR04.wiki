@@ -56,7 +56,7 @@ NOTE: By default, logger 1 simple uses
   * cog 0 for TIME COUNTER
   * cog 3 for LOGGER
 
-== DoubleMath  f ==
+== Double Math f ==
 
 DoubleMath.f is the same as the default Logger1Simple download.
 
