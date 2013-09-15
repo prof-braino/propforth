@@ -8,11 +8,11 @@
 
 This demo adds SR04 to Logger1Simple
 
-= Step 1 SD kernel  =
+= Step 1 - SD kernel  =
 
 Load the SD kernel, 
 
-= Step 2 Logger1Simple = 
+= Step 2 - Logger 1 Simple = 
 
 Load simple logger package found in 
 
