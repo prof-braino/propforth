@@ -10,11 +10,36 @@ This demo adds SR04 to Logger1Simple
 
 = Step 1 - SD kernel  =
 
+== Make the SD slot ==
+
+I used the Spinneret standard pinout from http://code.google.com/p/propforth/wiki/SDsetupREVISITED#Spineret_%28standard%29_Pinout
+
+Solder wires to the SD adapter.  
+
+Connect it up per the instructions.
+
+Put the new card in the slot.
+
+== Load the kernel ==
+
 From the PropForth download archive, location the SD kernel directory in the current release. 
 
 `\My Documents\PropforthV5.5\CurrentRelease\PropForthSD`
 
 Load the SD kernel `SDkernel.spin` using the proptool, as per normal.  
+
+NOTE: the card will give you some error messages until you initiale it in the next step.  This is normal. 
+
+== initialize the SD card ==
+
+From the PropForth download archive, location the SD kernel directory in the current release. 
+
+`\My Documents\PropforthV5.5\CurrentRelease\PropForthSD`
+
+Load the SD initialization script sdfsInitScript.f
+
+Simply paste this into the termianl emulator, and it does the work.  
+
 
 = Step 2 - Logger 1 Simple = 
 
@@ -22,13 +47,21 @@ Load simple logger package found in
 
 http://code.google.com/p/propforth/downloads/detail?name=Logger-2013-05-12.zip
 
-on the downloads section accoding to the instructions on the 
+on the downloads section according to the instructions on the 
 
 Logger1Simple  page.
 
 NOTE: By default, logger 1 simple uses 
   * cog 0 for TIME COUNTER
   * cog 3 for LOGGER
+
+== DoubleMath.f ==
+
+DoubleMath.f is the same as the default Logger1Simple download.
+
+Paste this into the terminal emulator program first.
+
+Use mountusr,  ls, and fread DounbleMath.f to veify the source file is in SD.
 
 = Step 3 SR04 =
 
