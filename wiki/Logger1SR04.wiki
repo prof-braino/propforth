@@ -101,9 +101,9 @@ Loading the follwoing will write the SRR04-SD.f file to memory
 {{{
 \ SR04 for SD logging
 
-fl                                                                                  fl
+fl
 
-10 fwrite SR04-SD.f
+10 fwrite SR04SD.f
 
 1 wconstant build_sr04
 [ifndef _sr04_trig
