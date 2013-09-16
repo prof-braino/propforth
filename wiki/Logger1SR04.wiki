@@ -408,11 +408,13 @@ Use 'ClearLog' to erase the old data from the log file.   Be sure to 'mountusr' 
 
 If you wish to connect wirelessly via blue tooth, it is advisable to do this last. 
 
-After the SD kernel is shown to be working; and the logger is working, and the dirft offset has been calibrated, and the SR04 is working, and the SR04 is logging, add blue tooth suupport using the HC06.
+After the SD kernel is shown to be working; and the logger is working, and the drift offset has been calibrated, and the SR04 is working, and the SR04 is logging, add blue tooth support using the HC06.
 
-Then past the final version of 'LoggerBoot-SR04.f' to switch the serial lines to the HC06. 
+If you hit the reset button and IMMEDIATELY hold the ESC key, the kernel will skip all autoboot behavior.
 
-To deactivate the code that automatically switches to the blue tooth connection, comment out the code for
+If you want until the scrips start loading (the text start rolling past) THEN you hold down the ESC key, the script will load, but the ONREST6 word will not switch over to bluetooth.  This is handy during debugging, you can still make changes from the terminal program on the PC. 
+
+To completely deactivate the code that automatically switches to the blue tooth connection, comment out the code for
 {{{
 onreset6
 }}}
