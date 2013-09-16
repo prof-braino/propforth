@@ -116,7 +116,20 @@ As always, remember:
  * SR04 needs 10k ohm resistor between echo and pin 25 (prop input pin)
  * SR04 connects to Vin (5volts)
 
-Loading the follwoing will write the SRR04-SD.f file to memory
+== SR04SD f ==
+
+SR04-SD.f sets up the SR04 driver.  It uses the same pinout as the QSbot.f program discussed in the LittleRobot demo. 
+
+When the program loads at boot time, it automatically starts the MEASURE routine on the next free cog. 
+
+use `cog?` to show which tasks are running on each cog. 
+
+
+NOTE: This is modified from the file in the download archive.  I had to reload this a zillion times till I got it just how I wanted it.  Its fun, but sometimes you have to start over from the init script as the top of this page. Just do it, its well worth the experimentation. 
+
+
+
+Loading the following will write the SRR04-SD.f file to memory
  
 {{{
 \ SR04 for SD logging
@@ -190,23 +203,22 @@ For testing, manually load the code at the end
 ;
 }}}
 
-and run the word 'sr04_test' to display the SRR04 distance on the terminal display
+and run the word 'sr04_test' to display the SR04 distance on the terminal display
 
-== SR04SD f ==
+run 
+{{{ 
+cog? 
+}}}
 
-SR04-SD.f sets up the SR04 driver.  It uses the same pinout as the QSbot.f program discussed in the LittleRobot demo. 
+to see the current task-cog assignments 
 
-When the program loads at boot time, it automatically starts the MEASURE routine on the next free cog. 
-
-use `cog?` to show which tasks are running on each cog. 
 
 -----
 = Step 4 Update usrboot.f =
 
 Change usrboot.f to include the line to load (and launch) the SR04 driver.  For clarity, I name this file 'usrboot-SD04.f' in the source directory on the PC. 
 
-
-On powercycle or reboot, run the 'cog?' command to see that ach dirver is running:
+On power cycle or reboot, run the 'cog?' command to see that driver is running:
 
 {{{
 Prop0 Cog6 ok
@@ -239,7 +251,7 @@ It loads the drivers, and starts all the tasks.
 
 IF you HOLD DOWN the ESC key while its booting, the boot will be aborted. 
 
-IF you wait uuntil the scripts start loading THEN hold down the escape key, you can load all the driver, but prevent it from switching to blue tooth at the very end. See `Onreset6`.   HANDY during DEBUG.
+IF you wait until the scripts start loading THEN hold down the escape key, you can load all the driver, but prevent it from switching to blue tooth at the very end. See `Onreset6`.   HANDY during DEBUG.
 
 {{{
 fl
@@ -256,6 +268,9 @@ c" usrboot.f  -  initializing~h0D~h0D" .cstr
 \
 \ Begin config parameters
 \
+
+\  NOTE: change to your actual time zone!
+
 [ifndef timeZoneHours
 -7 constant timeZoneHours
 ]
