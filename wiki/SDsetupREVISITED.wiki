@@ -7,6 +7,8 @@
 
 You MUST have the PULL UP RESISTORS or it won't work.  Do I have you attention?  See below for the pull up resistors you must have.  Or it won't work.   Did I mention it won't work without the pull up resistors?
 
+ALSO - connect the SD to 3.3 volts! NOT Vin!
+
 = HARDWARE =
 
 == SD CARD tabs ==
