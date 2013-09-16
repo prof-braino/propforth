@@ -263,8 +263,8 @@ fload SR04SD.f
 lockdict wvariable logBuffer 256 allot freedict
 : logdata
 	getLocal Time formatTime logBuffer ccopy
-	c"  CNT REGISTER: " logBuffer cappend
-	base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
+\	c"  CNT REGISTER: " logBuffer cappend
+\	base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
 \	c"  timeStamp: " logBuffer cappend
 \	base W@ decimal timeStamp <# d#s #> logBuffer cappend base W!
 \	c"  unixTimeStamp: " logBuffer cappend
