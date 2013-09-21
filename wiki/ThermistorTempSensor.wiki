@@ -5,18 +5,25 @@
 
 = Introduction =
 
-Use a Thermistor for a simple temperature sensor
+Use a Thermistor for a simple temperature sensor.
 
+Requires:
+
+  * 0.1uF capacitor (other values work, adjust code as needed)
+  * 1 prop pin
+  * 1 cog
 
 = Example =
 
-The circuit I use is cap between pin & ground, thermistor between pin and 3.3v
+Example circuit is cap between pin & ground, thermistor between pin and 3.3v
 
 {{{
 3.3v -----/\/\/\/\/\/\----+-----||---------- gnd
-                                 |
-pin---------------------
+                          |
+pin-----------------------
 }}}
+
+The pin connects between the thermistor and the capacitor. 
 
 {{{
 \  _temp? ( pin# -- count)
