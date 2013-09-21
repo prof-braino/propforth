@@ -1,0 +1,47 @@
+#summary Simple Thermistor Temperature sensor
+
+<wiki:toc max_depth="9" />
+
+
+= Introduction =
+
+Use a Thermistor for a simple temperature sensor
+
+
+= Example =
+
+The circuit I use is cap between pin & ground, thermistor between pin and 3.3v
+
+{{{
+3.3v -----/\/\/\/\/\/\----+-----||---------- gnd
+                                 |
+pin---------------------
+}}}
+
+{{{
+\  _temp? ( pin# -- count)
+: _temp?
+dup pinlo dup pinout
+1 delms
+cnt COG@ over pinin
+swap >m dup waitpeq
+cnt COG@ swap -
+;
+
+\  _10temp? ( pin# -- count) take 10 readings, return average count /256
+: _10temp?
+0
+h10 0
+do
+over _temp? +
+loop
+nip
+h100 u/mod swap h80 >= abs +
+;
+
+}}}
+
+the 1 ms delay may need to be longer depending on the capacitor, larger cap -> longer delay
+
+
+-----
