@@ -26,6 +26,10 @@ pin-----------------------
 The pin connects between the thermistor and the capacitor. 
 
 {{{
+\ I happened to use pin 7
+
+7 wconstant _therm_pin
+
 \  _temp? ( pin# -- count)
 : _temp?
 dup pinlo dup pinout
@@ -37,18 +41,37 @@ cnt COG@ swap -
 
 \  _10temp? ( pin# -- count) take 10 readings, return average count /256
 : _10temp?
-0
-h10 0
+0      
+h10 0  \ actually its 16 decimal readings
 do
-over _temp? +
+over _temp? + 
 loop
-nip
-h100 u/mod swap h80 >= abs +
+nip           
+h100 u/mod swap h80 >= abs +  
 ;
 
 }}}
 
 the 1 ms delay may need to be longer depending on the capacitor, larger cap -> longer delay
 
+= explanation =
+
+At 20C, the raw count from `_temp?` is around 54,000 ticks.  This varies by 10%.  
+
+So here's how some noise is removed from the reading in the word `_10temp?` 
+
+`h100 u/mod swap h80 >= abs +  `
+
+The above line does total (on the stack) divided by 256; swap puts remainder on top, if remainder is greater than half 256,  round up.  
+
+Now the value returned by `_10temp?` for 20C is around 3400 and varies by about 20.
+
+= conversion =
+
+So `_temp?` gets the raw reading, which is the charge time, around 54,000 plus or minus 10%; `_10temp?` scales this down to around 3400 +/- 20.  Now all we have to do is convert to C. 
+
+So I need a couple more data points. I'll put some ice water in a thermos, and check that with the probe on my fancy volt meter. then I will know the `_temp?` and `_10temp?` readings for wat ever the ice water temperature reads. 
+
+But first, need to make some thermistors into probes.  Thermistors soldered to long enough wires, covered in silicon caulk, and stuffed into shrink wrap.  When dry, lightly heat the shrink wrap.  Easy enough, even a Braino can do it, so I've been told.  We'll see.....
 
 -----
