@@ -89,7 +89,7 @@ I added the ANSI control sequences so I could position the output on the termina
 
 {{{
 
-\ thermistor.f 2013-09-21 braino from Sal's example
+\ thermistor.f 2013-09-21 braino from Sals example
 \ using 10k (cheapest) thermistor
 \ needs 0.1uF capacitor
 \ uses 1 prop pin
