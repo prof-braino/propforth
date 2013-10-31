@@ -75,3 +75,181 @@ So I need a couple more data points. I'll put some ice water in a thermos, and c
 But first, need to make some thermistors into probes.  Thermistors soldered to long enough wires, covered in silicon caulk, and stuffed into shrink wrap.  When dry, lightly heat the shrink wrap.  Easy enough, even a Braino can do it, so I've been told.  We'll see.....
 
 -----
+
+= thermistor with conversion table =
+
+My first thermistor was measures at three points:
+ * below boiling 91C = 532 ticks
+ * room temperature 23c = 3624 ticks
+ * just above freezing 3c = 10211 ticks
+
+The digital probe (on the volt meter) was not waterproof, so I had to put it and the thermistor inside the finger of a latex glove. and stick this in a mug of water.  It took a couple minutes for the reading to stablize (due to the glove and the air gaps etc).
+
+I added the ANSI control sequences so I could position the output on the terminal screen, instead of just scrolling off the top.  Its easier on the old eyes. 
+
+{{{
+
+\ thermistor.f 2013-09-21 braino from Sal's example
+\ using 10k (cheapest) thermistor
+\ needs 0.1uF capacitor
+\ uses 1 prop pin
+\ connect thermistor to 3.3v and to pin;
+\ connect capacitor to ground and pin
+\ 3.3v -----/\/\/\/\/\/\----+-----||---------- gnd
+\                           |
+\ pin-----------------------
+ 
+\ ANSI escape sequences for serial terminal interface
+\ 20120704 change h_ for hex values in v5.0 - braino
+\ 20101227 Line 27 "a >"  to "9 >" ; Line 67 "version" to "(version)" for propforthV4.0
+\ 20101030 prof_braino original version
+
+fl
+\ ascii code for red text      " ESC[31m "
+\ hex character codes            1b 5b 33 31 6d
+\ forth code for ascii red text v4.0: 1b emit 5b emit 33 emit 31 emit 6d emit          
+\ forth code for ascii red text v5.0: h_1B emit h_5B emit h_33 emit h_31 emit h_6D emit          
+
+\ ascii escape sequence start with ESC
+
+\ second char of two character is 64 to 95   (@ to _)  40h to 5Fh
+\ multi char are esc + [ + (@ to ~) 64 to 126  40h to  7Eh
+\ next is [   5Bh
+\ m is for graphics mode colors attributes
+{ : to57 csi ." 5;7f" ;  : to2010 csi ." 20;10f" ; }
+\ f is for position, needs character not value           
+
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
+
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+
+
+27 wconstant _therm_pin
+
+\  therm R to C table: index is degrees C, value is R time
+\  0C to 100C
+
+wvariable RindexC  12562 RindexC W!
+
+\ 12562 w,
+11650 w, 10915 w, 10211 w, 9571 w, 8988 w, 8450 w, 7969 w, 7490 w, 7100 w, 6700 w,
+6350 w,  6050 w,  5740 w,  5450 w, 5200 w, 4950 w, 4720 w, 4500 w, 4300 w, 4120 w,
+3940 w,  3775 w,  3610 w,  3475 w, 3325 w, 3200 w, 3070 w, 2950 w, 2840 w, 2740 w,
+2640 w,  2540 w,  2450 w,  2367 w, 2280 w, 2205 w, 2133 w, 2061 w, 1989 w, 1927 w,
+1865 w,  1807 w,  1749 w,  1698 w, 1645 w, 1595 w, 1548 w, 1503 w, 1458 w, 1415 w,
+1375 w,  1335 w,  1297 w,  1263 w, 1229 w, 1195 w, 1162 w, 1131 w, 1103 w, 1075 w,
+1047 w,  1019 w,  993 w,   969 w,  945 w,  923 w,  900 w,  878 w,  858 w,  837 w,
+817 w,   798 w,   780 w,   763 w,  746 w,  729 w,  713 w,  697 w,  682 w,  667 w,
+653 w,   639 w,   626 w,   613 w,  600 w,  588 w,  576 w,  564 w,  553 w,  542 w,
+532 w,   521 w,   511 w,   501 w,  492 w,  482 w,  473 w,  465 w,  456 w,  448 w,
+
+variable hi 
+variable lo
+: @hi hi L@ ; : !hi hi L! ; : .hi @hi . ; 
+: @lo lo L@ ; : !lo lo L! ; : .lo @lo . ; 
+
+variable d_count
+: 0d_count  0 d_count L! ; 
+: d_count+ 1 d_count L@ + d_count L! ;
+: .d_count  d_count L@ .  ;
+
+
+variable _therm_reading   \ store current reading here
+
+
+\ @RindexC  ( offset - RtimeValue )
+: @RindexC    2* RindexC + W@  ;
+
+\ : .test 101 0 do i @RindexC . loop ;
+
+
+\  _temp? ( pin# -- count)
+: _temp?
+dup pinlo dup pinout
+1 delms  
+cnt COG@ over pinin
+swap >m dup waitpeq
+cnt COG@ swap -
+                \ 100 delms \ leave as input to reduce self heating?
+;
+
+\ 27C =  54928
+
+
+\  _10temp? ( pin# -- count) take 10 readings, return average count /256
+: _10temp?
+           0
+           h10 0 do over _temp? + loop
+           nip
+           h100 u/mod swap h80 >= abs +
+;
+
+: therm  st? sc st?    ."  Thermistor test "
+       begin _therm_pin _10temp? . fkey? swap drop until 
+;
+
+: therm_init  \ ( - )
+            0d_count
+            _therm_pin _10temp? dup !hi dup !lo \ reading still on stack
+            100 0 do 
+                     dup
+                     i @RindexC >
+                     if 36 3  AT  preclear i 1+ ." Degrees C=" .  postclear  leave then
+                  loop
+  drop
+;
+
+
+: therm_test
+            therm_init
+begin  
+     _therm_pin _10temp? d_count+ 
+     dup @hi > if dup !hi then
+     dup @lo < if dup !lo then
+
+2 5  AT 
+
+     dup  . 
+      _therm_reading  L!   
+ ."  hi:" .hi ."   lo:" .lo ."  Delta=" @hi @lo - . ." d_count:" .d_count ."  Average=" 
+  @hi @lo -            \ is the delta greater than 
+  @hi @lo + 2 /  dup .  100 /  7 spaces  \  1% the average \ display average
+  > \ < 0= \ < (not)  \  >  no, this is 1 degree C LOW
+fkey? swap drop
+                or 
+ until
+;
+
+
+: therm_scan
+  begin
+        therm_test 
+        fkey? swap drop
+  until
+
+;
+
+: test cls st? sc therm_scan ;
+
+
+
+}}}
