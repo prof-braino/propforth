@@ -46,13 +46,14 @@ Switch to Gnome
 
 = from Unix (Fedora18) =
 
-I do these linux commands from the linux display, but they should work from Sugar in the terminal dispaly
+I do these linux commands from the linux display, but they should work from Sugar in the terminal display
 
 = Minicon and Picocom=  
 
 Make sure your wireless network connection is operating
 
-install minicon and picocom. We only need one, I haven't desiced which is better, so I'm installing both.  Having both doesn't hurt.
+install minicon and picocom. We only need one, I haven't decided which is better, so I'm installing both.  Having both doesn't hurt.
+
 {{{
 su -l
 yum -y install minicom
@@ -119,7 +120,7 @@ I think it always comes up as USB0 if only one converter is present. Additional 
 		  1 = /dev/ttyUSB1	Second USB serial converter
 
 
-== configurare minicom ==
+== configure minicom ==
 
 sudo minicom -s
 
@@ -146,13 +147,13 @@ minicom
 }}}
  * The permissions may be incorrect.  See the above steps for chmod
  * lock file may be missing. See above for lock file
- * device might not be plugged in and operating.  If its not plugged in, it does not remember /dev/ttyUSB0 untilsomething is plugged in again
+ * device might not be plugged in and operating.  If its not plugged in, it does not remember /dev/ttyUSB0 until something is plugged in again
 
 = editing forth source on the XO =
 
-I tried this a while back.  It was awkward with the teeny keyboard, weird touchpad, and unfamilliar OS. 
+I tried this a while back.  It was awkward with the teeny keyboard, weird touchpad, and unfamiliar OS. 
 
-With an external keyboad and mouse its not so bad, and might be better with wireless mouse and keyboard.  
+With an external keyboard and mouse its not so bad, and might be better with wireless mouse and keyboard.  
 
 But the stopping point point was proptool, which did not run on linux. Since we could not load from source, there was no need for editing programs, so I stopped this exploration. 
 
