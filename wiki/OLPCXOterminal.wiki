@@ -60,6 +60,7 @@ yum -y install minicom
 }}}
 
 {{{
+su -l
 yum -y install picocom
 }}}
 
