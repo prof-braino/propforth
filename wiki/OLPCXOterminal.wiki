@@ -141,6 +141,7 @@ minicom
 
 = NOTES =
 
+Thanks to stanford clark for the notes: http://stanford-clark.com/OLPC.html
 
 *NOTE* If you see, each time minicom starts,
 {{{
