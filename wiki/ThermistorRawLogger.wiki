@@ -101,7 +101,7 @@ The individual snippets will be listed here for explanation.  If you try to past
 
 the SD init script is in the propforthSD kernel directory.
 
-During development, we can re-initalize the SD to wipe it clean and start over using the SD init script 'sdfsInitScript.f'
+During development, we can re-initalize the SD to wipe it clean and start over using the SD init script `sdfsInitScript.f`
 
 {{{
 sdfsInitScript.f
