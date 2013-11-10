@@ -11,17 +11,11 @@ At least one thermistor needs to be calibrated from each batch.
 Possibly each thermistor should be calibrated when in its final circuit configuration. 
 
 = overview =
-
 The thermistor raw data collection package has a bunch of parts:
-
  # thermistor driver - 
    # read the sensor, 
    # store the data to RAM memory.  
    # Runs on its own cog, in the back
-{{{
-
-}}}
-
 ground
  # logger - write records to SD card memory
    # fetch the actual temperature (as written to RAM)
@@ -44,21 +38,15 @@ ground
    # we don't need to know or track the time. but its often handy to have timestamps
    # time needs double math (doublemath.f)
    # time needs the 64 bit time calculations and formatting (time.f)
-   
-
 == Thermistor driver ==
-
 This source code is loaded first.  It sets up 
   * the thermistor PIN 
   * the thermistor HUB RAM memory location
   * the thermistor driver routine
-
 == GUI ==
-
 This source code is loaded second.  It sets up 
   * the temperature variable location HUB RAM memory location
   * the temperature prompt ("Please enter Temp C:")
-
 The gui routine asks the user for current temperature the thermistor is experiencing.  This is typically from a known good instrument, such as lab thermometer or a bench thermometer.   Other sources of known temperature are:
   * boiling water (100C)
   * icewater (0C). Use crushed ice in an insulated mug etc.
@@ -67,11 +55,9 @@ Boiling and freezing are the high and low points for my data range, so far
 My Centech P37772 multi meter with probe and digital temperature display only reached 3C fro ice water, and 91C for boiling water.  I need to retest after this logger is complete. 
 
 == logger == 
-
 This code is loaded third. 
   * defines the logger routine
   * needs to have the LOGGED variable defined
-
 The logger sits in a continuous loop.  When it detects that a numeric value has been entered and stored in the HUB RAM location, it begins logging.
 
 The logger logs:
@@ -82,9 +68,7 @@ The logger logs:
  * a carriage return (so the flog file displays properly)
 
 After the thermistor record has been logged,  the logger routine sets the temperature value to 'NULL' or something (that won't be interpreted as a temperature).  The logger then waits until the next temperature is entered.
-   
 == boot routine  ==
-
 The boot routine:
  * loads the source code files from SD, in the proper order
  * launches the background tasks on available cogs
@@ -93,13 +77,10 @@ The boot routine:
  * launches the GUI routine
 
 When the GUI routine is launched, it prompts the operator for the first temperature
-
 = Source Code =
-
 The source code will be posted on the Dowloads section of this wiki as a fingle file containing several routines. (link here)
 
 The individual snippetts will be listed here for explanation
-
 == Thermistor.f ==
 
 {{{
