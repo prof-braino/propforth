@@ -97,10 +97,46 @@ The source code will be posted on the Downloads section of this wiki as a single
 
 The individual snippets will be listed here for explanation.  If you try to paste these into the terminal window, remember that you have to hit <enter> after the last line loads.  (Copy and paste from this web page via browser does not terminate the last line).
 
+== clear the files from the SD card ==
+
+the SD init script is in the propforthSD kernel directory.
+
 During development, we can re-initalize the SD to wipe it clean and start over using the SD init script 'sdfsInitScript.f'
 
 {{{
 sdfsInitScript.f
+}}}
+
+Open the file and paste its contents into the editor.  You should see the dispaly pause when the initiaiaztion word executes: 
+
+' _sd_CrEaTe'
+
+After the initialization word, the ls should show the SD to contain only
+
+on "partion" mountsys
+
+{{{
+Prop0 Cog6 ok
+mountsys
+Prop0 Cog6 ok
+ls
+390 usrboot.f
+491 .partion-sys/
+130 .sdcardinfo
+133 sdboot.f
+Prop0 Cog6 ok
+}}}
+
+on "partion" mountusr
+
+{{{
+Prop0 Cog6 ok
+mountusr
+Prop0 Cog6 ok
+ls
+65667 .partion-usr/
+Prop0 Cog6 ok
+
 }}}
 
 
