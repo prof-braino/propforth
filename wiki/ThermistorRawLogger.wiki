@@ -93,7 +93,7 @@ When the GUI routine is launched, it prompts the operator for the first temperat
 
 The source code will be posted on the Downloads section of this wiki as a single file containing several routines. (link here)
 
-The individual snippets will be listed here for explanation.  If you try to paste these into the terminal window, remember that you have to hit <enter> after the last line loads.  (Copy from this web page does not terminate the last line).
+The individual snippets will be listed here for explanation.  If you try to paste these into the terminal window, remember that you have to hit <enter> after the last line loads.  (Copy and paste from this web page via browser does not terminate the last line).
 
 == Thermistor.f ==
 
