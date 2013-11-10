@@ -109,7 +109,7 @@ sdfsInitScript.f
 
 Open the file and paste its contents into the editor.  You should see the dispaly pause when the initiaiaztion word executes: 
 
-'_sd_CrEaTe'
+`_sd_CrEaTe`
 
 After the initialization word, the ls should show the SD to contain only
 
