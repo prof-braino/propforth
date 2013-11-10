@@ -235,7 +235,8 @@ lockdict wvariable logBuffer 256 allot freedict
 \       Log data for all thermistors.
 
 	c"  METER-displayed: " logBuffer cappend
-        meter@ <# d#s #> logBuffer cappend 
+\        meter@ <# d#s #> logBuffer cappend 
+        meter@ <# #s #> logBuffer cappend 
 
 \ collect ten reading for each meter temperature entered
 \ adjust this to control the number of sample logged 
@@ -243,7 +244,8 @@ lockdict wvariable logBuffer 256 allot freedict
         c"  Therm-readings: " logBuffer cappend
  
         10 0 do 
-                 temp@ <# d#s #> logBuffer cappend 
+\                 temp@ <# d#s #> logBuffer cappend 
+                  temp@ <# #s #> logBuffer cappend 
                  c"  " logBuffer cappend
         loop 
 
