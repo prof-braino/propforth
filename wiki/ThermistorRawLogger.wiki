@@ -203,6 +203,16 @@ variable _meter_display \ type in the number displayed on the VOM digital temper
     _meter_display L@
 ;  
 
+: get_METER 
+            ." enter the temp from the digital thermometer: " 
+            interpret  
+            ."  logging data for " 
+            dup . ."  degrees Centigrade " 
+            meter!      
+
+;
+
+
 ...
 
 }}}
