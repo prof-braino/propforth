@@ -108,7 +108,8 @@ fl
 \ therm-driver.f 2013-11-10 braino based on Sal's example
 \ just log the RAW therm data.
 
-\ using 10k (cheapest) thermistor
+\ using 10k (cheapest) thermistor        cnt COG@ clkfreq +
+
 \ needs 0.1uF capacitor
 \ uses 1 prop pin
 \ connect thermistor to 3.3v and to pin;
@@ -262,34 +263,16 @@ c" usrboot.f  -  initializing~h0D~h0D" .cstr
 
 \ fload DoubleMath.f
 \ fload time.f
- fload therm-driver.f
- fload therm-driver.f
- fload therm-driver.f
- fload therm-driver.f
- fload therm-driver.f
 
-
-
-
-
-
-
-
-
-
-
+ fload therm-driver.f   
+\ fload therm-ui.f
+\ fload therm-logger.f
 
 fread .sdcardinfo      \ display the previously recorded card info file
 
-c" 
-
 c" logger" nfcog cogx  \ launch logger on next free cog
 
-
-
 c" usrboot.f  -  DONE~h0D~h0D" .cstr
-
-
 
 }}}
 
