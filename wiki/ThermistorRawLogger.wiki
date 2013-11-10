@@ -70,6 +70,50 @@ The logger logs:
 
 After the thermistor record has been logged,  the logger routine sets the temperature value to 'NULL' or something (that won't be interpreted as a temperature).  The logger then waits until the next temperature is entered.
    
+== boot routine  ==
+
+The boot routine:
+ * loads the source code files from SD, in the proper order
+ * launches the background tasks on available cogs
+ * switches to bluetooth by default
+ * optional stays connected to the PC (terminal emulator program)
+ * launches the GUI routine
+
+When the GUI routine is launched, it prompts the operator for the first temperature
+
+= Source Code =
+
+The source code will be posted on the Dowloads section of this wiki as a fingle file containing several routines. (link here)
+
+The individual snippetts will be listed here for explanation
+
+== Thermistor.f ==
+
+{{{
+
+}}}
+
+
+== GUI.f ==
+
+{{{
+
+}}}
+
+
+== Logger.f ==
+
+
+{{{
+
+}}}
+
+== BOOT.f ==
+
+
+{{{
+
+}}}
 
 
 = Details =
