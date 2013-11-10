@@ -17,7 +17,12 @@ The thermistor raw data collection package has a bunch of parts:
  # thermistor driver - 
    # read the sensor, 
    # store the data to RAM memory.  
-   # Runs on its own cog, in the background
+   # Runs on its own cog, in the back
+{{{
+
+}}}
+
+ground
  # logger - write records to SD card memory
    # fetch the actual temperature (as written to RAM)
    # fetch the last sensor reading (as stored to RAM)
@@ -37,6 +42,8 @@ The thermistor raw data collection package has a bunch of parts:
  # time
    # this is optional
    # we don't need to know or track the time. but its often handy to have timestamps
+   # time needs double math (doublemath.f)
+   # time needs the 64 bit time calculations and formatting (time.f)
    
 
 == Thermistor driver ==
@@ -56,6 +63,8 @@ The gui routine asks the user for current temperature the thermistor is experien
   * boiling water (100C)
   * icewater (0C). Use crushed ice in an insulated mug etc.
 Boiling and freezing are the high and low points for my data range, so far
+
+My Centech P37772 multi meter with probe and digital temperature display only reached 3C fro ice water, and 91C for boiling water.  I need to retest after this logger is complete. 
 
 == logger == 
 
