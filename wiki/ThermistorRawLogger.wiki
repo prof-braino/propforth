@@ -15,8 +15,7 @@ The thermistor raw data collection package has a bunch of parts:
  # thermistor driver - 
    # read the sensor, 
    # store the data to RAM memory.  
-   # Runs on its own cog, in the back
-ground
+   # Runs on its own cog, in the background
  # logger - write records to SD card memory
    # fetch the actual temperature (as written to RAM)
    # fetch the last sensor reading (as stored to RAM)
