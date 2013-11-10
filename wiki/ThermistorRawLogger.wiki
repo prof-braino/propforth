@@ -1,6 +1,6 @@
 #summary Collect data fo thermistor calibration.
 
-= Introduction =
+= Overview =
 
 Each batch of thermistors is different.  Within a batch there can be variation. After we add the wires and connect to the final circuit, a given part can end up different from its siblings from the same batch. 
 
@@ -10,7 +10,9 @@ At least one thermistor needs to be calibrated from each batch.
 
 Possibly each thermistor should be calibrated when in its final circuit configuration. 
 
-= overview =
+-----
+
+= Module Subsystem Requirements =
 
 The thermistor raw data collection package has a bunch of parts:
  # thermistor driver - 
@@ -89,9 +91,9 @@ When the GUI routine is launched, it prompts the operator for the first temperat
 
 = Source Code =
 
-The source code will be posted on the Dowloads section of this wiki as a fingle file containing several routines. (link here)
+The source code will be posted on the Downloads section of this wiki as a single file containing several routines. (link here)
 
-The individual snippetts will be listed here for explanation
+The individual snippets will be listed here for explanation.  If you try to paste these into the terminal window, remember that you have to hit <enter> after the last line loads.  (Copy from this web page does not terminate the last line).
 
 == Thermistor.f ==
 
