@@ -2,9 +2,13 @@
 
 = Introduction =
 
-Each batch of thermistors is different.  Within a batch there can be variation. After we add the wires and connect tto tthe final circuit, a given part can end up different from its siblings from the same batch. 
+Each batch of thermistors is different.  Within a batch there can be variation. After we add the wires and connect to the final circuit, a given part can end up different from its siblings from the same batch. 
 
-The should help with collecting datta for calibrating thermistors.
+The should help with collecting data for calibrating thermistors.
+
+At least one thermistor needs to be calibrated from each batch.
+
+Possibly each thermistor should be calibrated when in its final circuit configuration. 
 
 = overview =
 
