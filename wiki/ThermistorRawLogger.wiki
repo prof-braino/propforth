@@ -97,7 +97,7 @@ The source code will be posted on the Downloads section of this wiki as a single
 
 The individual snippets will be listed here for explanation.  If you try to paste these into the terminal window, remember that you have to hit <enter> after the last line loads.  (Copy and paste from this web page via browser does not terminate the last line).
 
-== Thermistor.f ==
+== therm-driver.f ==
 
 {{{
 fl
@@ -138,7 +138,7 @@ variable _therm_reading   \ store current reading here
 }}}
 
 
-== GUI.f ==
+== therm-ui.f ==
 
 {{{
 fl
@@ -164,7 +164,7 @@ variable _meter_display \ type in the number displayed on the VOM digital temper
 }}}
 
 
-== Logger.f ==
+== therm-logger.f ==
 
 
 {{{
@@ -172,6 +172,54 @@ variable _meter_display \ type in the number displayed on the VOM digital temper
 fl
 
 100 fwrite therm-logger.f
+
+
+lockdict wvariable logBuffer 256 allot freedict
+
+: logdata
+\	getLocalTime formatTime logBuffer ccopy  \ Start by logging the time
+\       Log data for all thermistors.
+
+	c"  METER-displayed: " logBuffer cappend
+        meter@ <# d#s #> logBuffer cappend 
+
+\ collect ten reading for each meter temperature entered
+\ adjust this to control the number of sample logged 
+
+        c"  Therm-readings: " logBuffer cappend
+ 
+        10 0 do 
+                 temp@ <# d#s #> logBuffer cappend 
+                 c"  " logBuffer cappend
+        loop 
+
+\ end each record with CR so it displays on the terminal
+
+        c" ~h0D" logBuffer cappend  
+	logBuffer                  \ return the address of this buffer
+;
+
+\ log when new meter reading is entered
+
+: logger
+	4 state andnC!
+	c" LOGGER" cds W!
+	mountusr
+	begin
+                meter@   hDEADBEEF = 0=                  \ temperature? 
+                if                                       \ if degrees is set...
+		logdata C@++ c" log" 7 lock sd_append 7 unlock   \ log a record
+                hDEADBEEF meter!                         \ turn the logger off
+                then
+        0 until 
+;
+
+\ user can enter ClearLog to erase the entire contents of the log file
+
+: ClearLog
+	mountusr
+	7 lock 0 c" log" sd_trunc 7 unlock
+;
 
 
 ...
