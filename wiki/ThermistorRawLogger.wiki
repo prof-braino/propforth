@@ -165,6 +165,11 @@ fl
 
 variable _therm_reading   \ store current reading here
 
+\ NOTE that _temp? does NOT read the temperature or resistance from the thermistor
+\ _temp? returns the number of ticks for the capacitor to discharge through the thermistor.  I should change this when it works...
+
+
+
 \  _temp? ( pin# -- count)
 : _temp?
          dup pinlo dup pinout
@@ -174,8 +179,10 @@ variable _therm_reading   \ store current reading here
          cnt COG@ swap -
 ;
 
-\ NOTE that _temp? does NOT read the temperature or resistance from the thermistor
-\ _temp? returns the number of ticks for the capacitor to discharge through the thermistor
+: temp! 
+        _therm_pin _temp? 
+        _therm_reading  L!       
+;
 
 : temp@   \ ( - therm value )
         _therm_reading  L@ 
