@@ -177,6 +177,12 @@ variable _therm_reading   \ store current reading here
 \ NOTE that _temp? does NOT read the temperature or resistance from the thermistor
 \ _temp? returns the number of ticks for the capacitor to discharge through the thermistor
 
+: temp@   \ ( - therm value )
+        _therm_reading  L@ 
+;
+
+
+
 ...
 
 }}}
