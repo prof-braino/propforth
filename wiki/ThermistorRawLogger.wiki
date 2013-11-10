@@ -43,14 +43,14 @@ The thermistor raw data collection package has a bunch of parts:
 
 == Thermistor driver ==
 
-This source code is loaded first.  It sets up 
+This source code is loaded first.  It sets up: 
   * the thermistor PIN 
   * the thermistor HUB RAM memory location
   * the thermistor driver routine
 
 == GUI ==
 
-This source code is loaded second.  It sets up 
+This source code is loaded second.  It sets up: 
   * the temperature variable location HUB RAM memory location
   * the temperature prompt ("Please enter Temp C:")
 The gui routine asks the user for current temperature the thermistor is experiencing.  This is typically from a known good instrument, such as lab thermometer or a bench thermometer.   Other sources of known temperature are:
@@ -62,7 +62,7 @@ My Centech P37772 multi meter with probe and digital temperature display only re
 
 == logger == 
 
-This code is loaded third. 
+This code is loaded third. The logger routine:
   * defines the logger routine
   * needs to have the LOGGED variable defined
 The logger sits in a continuous loop.  When it detects that a numeric value has been entered and stored in the HUB RAM location, it begins logging.
