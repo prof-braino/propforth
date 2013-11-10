@@ -45,11 +45,10 @@ This source code is loaded first.  It sets up
 == GUI ==
 
 This source code is loaded second.  It sets up 
-  * the thermistor PIN 
-  * the thermistor HUB RAM memory location
-  * the thermistor driver routine
+  * the temperature variable location HUB RAM memory location
+  * the temperature prompt ("Please enter Temp C:")
 
-The gui routine asks the user for current temperature the thermistor is experincing.  This is typically from a known good instrument, such as lab thermometer or a bench thermometer.   Other sources of known temperature are:
+The gui routine asks the user for current temperature the thermistor is experiencing.  This is typically from a known good instrument, such as lab thermometer or a bench thermometer.   Other sources of known temperature are:
   * boiling water (100C)
   * icewater (0C). Use crushed ice in an insulated mug etc.
 Boiling and freezing are the high and low points for my data range, so far
@@ -67,7 +66,9 @@ The logger logs:
  * the temperature in degrees C as entered by the user
  * a text label for readings
  * one or more reading from the thermistor
- * a carriage return (so the flog file displays properly
+ * a carriage return (so the flog file displays properly)
+
+After the thermistor record has been logged,  the logger routine sets the temperature value to 'NULL' or something (that won't be interpreted as a temperature).  The logger then waits until the next temperature is entered.
    
 
 
