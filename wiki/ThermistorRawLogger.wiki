@@ -24,7 +24,7 @@ The thermistor raw data collection package has a bunch of parts:
    # fetch the last sensor reading (as stored to RAM)
    # format the record,  write to SD
    # Runs on its own cog, in the background
- # GUI - 
+ # UI (user Interface) - 
    # prompt the user for input (temperature the thermistor is experiencing)
    # collect input from the operator, store to RAM memory 
    # display the status of the process (temperature, reading, in-progress, READY)
@@ -40,6 +40,8 @@ The thermistor raw data collection package has a bunch of parts:
    # we don't need to know or track the time. but its often handy to have timestamps
    # time needs double math (doublemath.f)
    # time needs the 64 bit time calculations and formatting (time.f)
+
+-----
 
 == Thermistor driver ==
 
@@ -100,10 +102,10 @@ The individual snippets will be listed here for explanation.  If you try to past
 {{{
 fl
 
-100 fwrite thermistorRAWlog.f
+100 fwrite therm-driver.f
 
 
-\ thermistor.f 2013-09-21 braino from Sal's example
+\ therm-driver.f 2013-11-10 braino based on Sal's example
 \ just log the RAW therm data.
 
 \ using 10k (cheapest) thermistor
@@ -119,17 +121,19 @@ fl
 
 variable _therm_reading   \ store current reading here
 
-
-
 \  _temp? ( pin# -- count)
 : _temp?
-dup pinlo dup pinout
-1 delms  
-cnt COG@ over pinin
-swap >m dup waitpeq
-cnt COG@ swap -
+         dup pinlo dup pinout
+         1 delms  
+         cnt COG@ over pinin
+         swap >m dup waitpeq
+         cnt COG@ swap -
 ;
 
+\ NOTE that _temp? does NOT read the temperature or resistance from the thermistor
+\ _temp? returns the number of ticks for the capacitor to discharge through the thermistor
+
+...
 
 }}}
 
@@ -139,13 +143,23 @@ cnt COG@ swap -
 {{{
 fl
 
+100 fwrite therm-ui.f
 
-variable _meter_display \ type in the number from the VOM digital temperature porbe
+variable _meter_display \ type in the number displayed on the VOM digital temperature probe
 
-: meter! 
+\ meter! stores the degrees C entered by the user
+
+: meter! \ ( degrees - )
          _meter_display L!   
 ;
 
+\ meter@ fetches the degrees C entered by the user and leaves it on the top of stack
+
+: meter@ \ ( - degrees )
+    _meter_display L@
+;  
+
+...
 
 }}}
 
@@ -155,12 +169,79 @@ variable _meter_display \ type in the number from the VOM digital temperature po
 
 {{{
 
+fl
+
+100 fwrite therm-logger.f
+
+
+...
+
 }}}
 
-== BOOT.f ==
+== usrboot.f ==
+
+Remeber, the autoboot routine for SD is named usrboot.f
+
+usrboot.f is the the default name for automatic boot time behavior.
+
+if usrboot.f is present on SD,  the propforthSD kernel will call and run this script 
 
 
 {{{
+
+fl
+
+mountsys 
+100 fwrite usrboot.f
+version W@  .cstr cr
+c" usrboot.f  -  initializing~h0D~h0D" .cstr
+1 sd_mount
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-6 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+\
+\ End config parameters
+\
+
+\ fload DoubleMath.f
+\ fload time.f
+ fload therm-driver.f
+ fload therm-driver.f
+ fload therm-driver.f
+ fload therm-driver.f
+ fload therm-driver.f
+
+
+
+
+
+
+
+
+
+
+
+
+fread .sdcardinfo      \ display the previously recorded card info file
+
+c" 
+
+c" logger" nfcog cogx  \ launch logger on next free cog
+
+
+
+c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+
 
 }}}
 
