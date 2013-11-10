@@ -98,6 +98,50 @@ The individual snippets will be listed here for explanation.  If you try to past
 == Thermistor.f ==
 
 {{{
+fl
+
+100 fwrite thermistorRAWlog.f
+
+
+\ thermistor.f 2013-09-21 braino from Sal's example
+\ just log the RAW therm data.
+
+\ using 10k (cheapest) thermistor
+\ needs 0.1uF capacitor
+\ uses 1 prop pin
+\ connect thermistor to 3.3v and to pin;
+\ connect capacitor to ground and pin
+\ 3.3v -----/\/\/\/\/\/\----+-----||---------- gnd
+\                           |
+\ pin-----------------------
+ 
+\ ANSI escape sequences for serial terminal interface
+\ 20120704 change h_ for hex values in v5.0 - braino
+\ 20101227 Line 27 "a >"  to "9 >" ; Line 67 "version" to "(version)" for propforthV4.0
+\ 20101030 prof_braino original version
+
+\ fl
+
+27 wconstant _therm_pin
+
+variable _therm_reading   \ store current reading here
+
+variable _meter_display \ type in the number from the VOM digital temperature porbe
+
+: meter! 
+         _meter_display L!   
+;
+
+
+\  _temp? ( pin# -- count)
+: _temp?
+dup pinlo dup pinout
+1 delms  
+cnt COG@ over pinin
+swap >m dup waitpeq
+cnt COG@ swap -
+;
+
 
 }}}
 
