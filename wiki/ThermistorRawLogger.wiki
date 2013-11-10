@@ -1,0 +1,79 @@
+#summary Collect data fo thermistor calibration.
+
+= Introduction =
+
+Each batch of thermistors is different.  Within a batch there can be variation. After we add the wires and connect tto tthe final circuit, a given part can end up different from its siblings from the same batch. 
+
+The should help with collecting datta for calibrating thermistors.
+
+= overview =
+
+The thermistor raw data collection package has a bunch of parts:
+
+ # thermistor driver - 
+   # read the sensor, 
+   # store the data to RAM memory.  
+   # Runs on its own cog, in the background
+ # logger - write records to SD card memory
+   # fetch the actual temperature (as written to RAM)
+   # fetch the last sensor reading (as stored to RAM)
+   # format the record,  write to SD
+   # Runs on its own cog, in the background
+ # GUI - 
+   # prompt the user for input (temperature the thermistor is experiencing)
+   # collect input from the operator, store to RAM memory 
+   # display the status of the process (temperature, reading, in-progress, READY)
+   # launched by user
+   # runs on the cog6, the user cog, in the foreground
+ # Boot routine
+   # this load the other source files
+   # this launches the routines on the other cogs
+   # this switched user input to bluetooth by deafult
+   # this allow the user to interview, and prevent the input switch to bluetooth.  This is needed so we can run connected to the PC if desired. 
+ # time
+   # this is optional
+   # we don't need to know or track the time. but its often handy to have timestamps
+   
+
+== Thermistor driver ==
+
+This source code is loaded first.  It sets up 
+  * the thermistor PIN 
+  * the thermistor HUB RAM memory location
+  * the thermistor driver routine
+
+== GUI ==
+
+This source code is loaded second.  It sets up 
+  * the thermistor PIN 
+  * the thermistor HUB RAM memory location
+  * the thermistor driver routine
+
+The gui routine asks the user for current temperature the thermistor is experincing.  This is typically from a known good instrument, such as lab thermometer or a bench thermometer.   Other sources of known temperature are:
+  * boiling water (100C)
+  * icewater (0C). Use crushed ice in an insulated mug etc.
+Boiling and freezing are the high and low points for my data range, so far
+
+== logger == 
+
+This code is loaded third. 
+  * defines the logger routine
+  * needs to have the LOGGED variable defined
+
+The logger sits in a continuous loop.  When it detects that a numeric value has been entered and stored in the HUB RAM location, it begins logging.
+
+The logger logs:
+ * a text label for temperature 
+ * the temperature in degrees C as entered by the user
+ * a text label for readings
+ * one or more reading from the thermistor
+ * a carriage return (so the flog file displays properly
+   
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
