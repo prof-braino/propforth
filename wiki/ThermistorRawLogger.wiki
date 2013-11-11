@@ -274,7 +274,7 @@ fl
 lockdict wvariable logBuffer 256 allot freedict
 
 : logdata
-	c"  METER-displayed: " logBuffer cappend
+	c"  METER-displayed: " logBuffer ccopy
         meter@ <# #s #> logBuffer cappend 
 
 \ collect ten reading for each meter temperature entered
