@@ -139,6 +139,28 @@ Prop0 Cog6 ok
 
 }}}
 
+== create the logfile "log" ==
+
+The logfile is named `log`
+
+The logfile `log` is 50 meg by default, that is 1000 diskblocks in size.  Recall that SD disk blocks are 512 bytes.  2 blocks make 1 K.  2000 pairs of 512 byte blocks makes 1 meg. 100,000 blocks make 50 meg. 
+
+this is a forth script named `Log-INIT.f`
+
+I think maybe  we should differentiatte between source code definitions files versus scripts, but we don't do tat yet.  Anyway, this is a script, it executes as it is loaded, then its done. 
+
+`fstat log` shows the status of the file log
+
+{{{
+
+mountusr
+\ create a 50 Mbyte logfile
+100_000 fcreate log
+
+fstat log
+
+}}}
+
 
 == therm-driver.f ==
 
