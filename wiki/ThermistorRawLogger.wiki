@@ -168,8 +168,7 @@ fstat log
 {{{
 fl
 
-100 fwrite therm-driver.f
-
+ 100 fwrite therm-driver.f
 
 \ therm-driver.f 2013-11-10 braino based on Sal's example
 \ just log the RAW therm data.
@@ -189,8 +188,7 @@ fl
 variable _therm_reading   \ store current reading here
 
 \ NOTE that _temp? does NOT read the temperature or resistance from the thermistor
-\ _temp? returns the number of ticks for the capacitor to discharge 
-\ through the thermistor. 
+\ _temp? returns the number of ticks for the capacitor to discharge through the thermistor. 
 \ I should change this when it works
 
 \  _temp? ( pin# -- count)
@@ -219,7 +217,6 @@ variable _therm_reading   \ store current reading here
         0 until
 ;
  
-
 ...
 
 }}}
@@ -228,6 +225,8 @@ variable _therm_reading   \ store current reading here
 == therm-ui.f ==
 
 {{{
+
+
 fl
 
 100 fwrite therm-ui.f
@@ -235,26 +234,38 @@ fl
 variable _meter_display \ type in the number displayed on the VOM digital temperature probe
 
 \ meter! stores the degrees C entered by the user
-
 : meter! \ ( degrees - )
          _meter_display L!   
 ;
 
 \ meter@ fetches the degrees C entered by the user and leaves it on the top of stack
-
 : meter@ \ ( - degrees )
     _meter_display L@
 ;  
 
+hDEADBEEF meter! \ initialize the flag
+
+wvariable flag
+: !flag flag W! ;
+: @flag flag W@ ;
+
 : get_METER 
-            ." enter the temp from the digital thermometer: " 
+            
+            ." Enter the temp from the digital thermometer: " 
             interpret  
             ."  logging data for " 
-            dup . ."  degrees Centigrade " 
+            dup . ."  degrees Centigrade "  
+            cr
+            dup h1B = !flag
             meter!      
-
 ;
 
+: SCAN 
+      begin
+           get_METER
+           
+      @flag until
+;
 
 ...
 
@@ -266,62 +277,56 @@ variable _meter_display \ type in the number displayed on the VOM digital temper
 
 {{{
 
+
 fl
 
 100 fwrite therm-logger.f
 
-
 lockdict wvariable logBuffer 256 allot freedict
 
 : logdata
-	c"  METER-displayed: " logBuffer ccopy
+        c"  METER-degrees-C: " logBuffer ccopy
         meter@ <# #s #> logBuffer cappend 
 
 \ collect ten reading for each meter temperature entered
 \ adjust this to control the number of sample logged 
 
         c"  Therm-readings: " logBuffer cappend
- 
         10 0 do 
-                 temp@ <# #s #> logBuffer cappend 
-                 c"  " logBuffer cappend
+                  temp@ <# #s #> logBuffer cappend 
+                  c"  " logBuffer cappend
         loop 
 
 \ end each record with CR so it displays on the terminal
 
         c" ~h0D" logBuffer cappend  
-	logBuffer                  \ return the address of this buffer
+        logBuffer                  \ return the address of this buffer
 ;
 
 \ log when new meter reading is entered
-
 : logger-body
                meter@   hDEADBEEF = 0=                  \ temperature? 
-                if                                       \ if degrees is set...
+                if                                       \ if degrees is set
                 logdata C@++ c" log" 7 lock sd_append 7 unlock   \ log a record
                 hDEADBEEF meter!                         \ turn the logger off
                 then
 ;
 
-
-
-
 : logger
-	4 state andnC!
-	c" LOGGER" cds W!
-	mountusr
-	begin
-                logger-body
+        4 state andnC!
+        c" LOGGER" cds W!
+        mountusr
+        begin
+               logger-body 
+                1 delms \ is this needed?
         0 until 
 ;
 
 \ user can enter ClearLog to erase the entire contents of the log file
-
 : ClearLog
-	mountusr
-	7 lock 0 c" log" sd_trunc 7 unlock
+        mountusr
+        7 lock 0 c" log" sd_trunc 7 unlock
 ;
-
 
 ...
 
@@ -342,31 +347,14 @@ fl
 
 mountsys 
 100 fwrite usrboot.f
+
 version W@  .cstr cr
 c" usrboot.f  -  initializing~h0D~h0D" .cstr
 1 sd_mount
-\
-\ Begin config parameters
-\
-[ifndef timeZoneHours
--6 constant timeZoneHours
-]
-[ifndef timeZoneMinutes
-0 constant timeZoneMinutes
-]
-[ifndef doubleTimerCog
-0 wconstant doubleTimerCog
-]
-\
-\ End config parameters
-\
-
-\ fload DoubleMath.f
-\ fload time.f
 
  fload therm-driver.f   
-\ fload therm-ui.f
-\ fload therm-logger.f
+ fload therm-ui.f
+ fload therm-logger.f
 
 fread .sdcardinfo      \ display the previously recorded card info file
 
@@ -374,6 +362,10 @@ c" logger" nfcog cogx  \ launch logger on next free cog
 c" therm-scan" nfcog cogx  \ launch therm monitor on next free cog
 
 c" usrboot.f  -  DONE~h0D~h0D" .cstr
+
+
+...
+
 
 }}}
 
