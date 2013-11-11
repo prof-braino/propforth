@@ -211,7 +211,14 @@ variable _therm_reading   \ store current reading here
         _therm_reading  L@ 
 ;
 
-
+: therm-scan
+        4 state andnC!
+        c" THERM" cds W!
+        begin
+             temp!
+        0 until
+;
+ 
 
 ...
 
