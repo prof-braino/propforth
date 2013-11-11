@@ -157,6 +157,7 @@ mountusr
 \ create a 50 Mbyte logfile
 100_000 fcreate log
 
+mountusr
 fstat log
 
 }}}
@@ -188,10 +189,9 @@ fl
 variable _therm_reading   \ store current reading here
 
 \ NOTE that _temp? does NOT read the temperature or resistance from the thermistor
-\ _temp? returns the number of ticks for the capacitor to discharge through the thermistor. 
+\ _temp? returns the number of ticks for the capacitor to discharge 
+\ through the thermistor. 
 \ I should change this when it works
-
-
 
 \  _temp? ( pin# -- count)
 : _temp?
@@ -274,11 +274,7 @@ fl
 lockdict wvariable logBuffer 256 allot freedict
 
 : logdata
-\	getLocalTime formatTime logBuffer ccopy  \ Start by logging the time
-\       Log data for all thermistors.
-
 	c"  METER-displayed: " logBuffer cappend
-\        meter@ <# d#s #> logBuffer cappend 
         meter@ <# #s #> logBuffer cappend 
 
 \ collect ten reading for each meter temperature entered
@@ -287,8 +283,7 @@ lockdict wvariable logBuffer 256 allot freedict
         c"  Therm-readings: " logBuffer cappend
  
         10 0 do 
-\                 temp@ <# d#s #> logBuffer cappend 
-                  temp@ <# #s #> logBuffer cappend 
+                 temp@ <# #s #> logBuffer cappend 
                  c"  " logBuffer cappend
         loop 
 
@@ -300,16 +295,23 @@ lockdict wvariable logBuffer 256 allot freedict
 
 \ log when new meter reading is entered
 
+: logger-body
+               meter@   hDEADBEEF = 0=                  \ temperature? 
+                if                                       \ if degrees is set...
+                logdata C@++ c" log" 7 lock sd_append 7 unlock   \ log a record
+                hDEADBEEF meter!                         \ turn the logger off
+                then
+;
+
+
+
+
 : logger
 	4 state andnC!
 	c" LOGGER" cds W!
 	mountusr
 	begin
-                meter@   hDEADBEEF = 0=                  \ temperature? 
-                if                                       \ if degrees is set...
-		logdata C@++ c" log" 7 lock sd_append 7 unlock   \ log a record
-                hDEADBEEF meter!                         \ turn the logger off
-                then
+                logger-body
         0 until 
 ;
 
