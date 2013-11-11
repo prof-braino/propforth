@@ -370,9 +370,52 @@ c" usrboot.f  -  DONE~h0D~h0D" .cstr
 }}}
 
 
-= Details =
+= DATA LOGGED =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Run the word `SCAN` to collect data.
+
+Hit the prop reset button to end.  (Sorry, its late, must read to the kids)
+
+{{{
+Prop0 Cog6 ok
+SCAN
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 26
+ logging data for 26  degrees Centigrade 
+Enter the temp from the digital thermometer: 8
+ logging data for 8  degrees Centigrade 
+Enter the temp from the digital thermometer: 
+CON:Prop0 Cog0 RESET - last status: 0 ok
+}}}
+
+
+The data might look something like this:
+{{{
+Prop0 Cog6 ok
+mountusr
+Prop0 Cog6 ok
+fread log
+ METER-degrees-C: 26 Therm-readings: 51520 51552 51552 51488 51568 51504 51488 51488 51584 51504 
+ METER-degrees-C: 26 Therm-readings: 51920 51936 51936 51888 51856 51904 51760 51872 51648 51920 
+ METER-degrees-C: 26 Therm-readings: 51904 51872 51696 51840 51952 51648 51920 51904 51872 51920 
+ METER-degrees-C: 26 Therm-readings: 51776 51760 51840 51824 51728 51680 51824 51840 51856 51872 
+ METER-degrees-C: 26 Therm-readings: 51728 51856 51808 51552 51744 51712 51872 51696 51856 51888 
+ METER-degrees-C: 26 Therm-readings: 51904 51904 51968 51936 51920 51920 51984 51904 51984 51920 
+ METER-degrees-C: 26 Therm-readings: 52000 51968 51872 52000 52016 52016 52000 52016 52000 52016 
+ METER-degrees-C: 26 Therm-readings: 51840 52048 52096 52064 52032 52112 52080 52032 52144 51920 
+ METER-degrees-C: 8 Therm-readings: 51936 51840 51952 51968 51968 51904 51952 51952 51904 51984 
+Prop0 Cog6 ok
+}}}
