@@ -369,7 +369,7 @@ c" usrboot.f  -  initializing~h0D~h0D" .cstr
 fread .sdcardinfo      \ display the previously recorded card info file
 
 c" logger" nfcog cogx  \ launch logger on next free cog
-c" temp!" nfcog cogx  \ launch therm monitor on next free cog
+c" therm-scan" nfcog cogx  \ launch therm monitor on next free cog
 
 c" usrboot.f  -  DONE~h0D~h0D" .cstr
 
