@@ -421,3 +421,5 @@ fread log
  METER-degrees-C: 8 Therm-readings: 51936 51840 51952 51968 51968 51904 51952 51952 51904 51984 
 Prop0 Cog6 ok
 }}}
+
+notice the final 8 is just text.  the routine does not have any way of knowing your reference temperature, you can put in what ever number you want. also notice the this must be a number for now, i user interpret instead of doing it "right" with lit etc.
