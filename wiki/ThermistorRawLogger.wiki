@@ -333,6 +333,22 @@ lockdict wvariable logBuffer 256 allot freedict
 ...
 
 }}}
+-----
+== therm-BT ==
+
+add the following to use HC06 bluetooth module.  this is useful if bring the logger to the stove for the boiling water, or outside fora different ambient temeprature
+
+{{{
+fl
+
+mountsys 
+100 fwrite therm-BT.f
+
+\ no words defined yet
+
+...
+}}}
+
 
 == usrboot.f ==
 
