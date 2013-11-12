@@ -50,7 +50,7 @@ This source code is loaded first.  It sets up:
   * the thermistor HUB RAM memory location
   * the thermistor driver routine
 
-== GUI ==
+== UI (user interface) ==
 
 This source code is loaded second.  It sets up: 
   * the temperature variable location HUB RAM memory location
