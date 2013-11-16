@@ -345,8 +345,35 @@ mountsys
 100 fwrite therm-BT.f
 
 \ no words defined yet
+26 wconstant hcRx
+27 wconstant hcTx
+
+230400 4/ wconstant hcBaud  \ NOW we are 230400 !!!
+
+nfcog wconstant hcSerialCog
+
+: BT \ switch to BT unless ESC key is detected
+     fkey? and fkey? and or h1B <>
+     if
+       cr ." switching to Blue Tooth "  100 delms
+       $S_con iodis $S_con cogreset 100 delms
+       c" hcRx hcTx hcBaud serial" $S_con cogx 100 delms
+       cogid >con
+     then
+     cr ."   terminal ready " cr
+;
+
+
+: start-BT cr 
+          ." Automatically Switch to Bluetooth, "
+          ."  or ESC within 3 seconds for wired terminal "
+          3000 delms 
+          BT
+;
+
 
 ...
+
 }}}
 
 
