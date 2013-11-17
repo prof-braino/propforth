@@ -1,4 +1,4 @@
-#summary Collect data fo thermistor calibration.
+#summary Collect data for thermistor calibration.
 
 <wiki:toc max_depth="9" />
 
@@ -493,3 +493,5 @@ Prop0 Cog6 ok
 }}}
 
 notice the final 8 is just text.  the routine does not have any way of knowing your reference temperature, you can put in what ever number you want. also notice the this must be a number for now, i user interpret instead of doing it "right" with lit etc.
+
+- 20131116-1527 -
