@@ -29,8 +29,11 @@ There are new functions in theis demo for the auto log files.
 
 * \ ftail filename ( -- )
 
+print the last block of the file
+
 * \ fhead filename ( -- )
 
+print the first block of the file
 
 
 = Source code =
