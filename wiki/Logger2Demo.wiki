@@ -17,6 +17,241 @@ Difference is after midnight, a new log is created if it does not exist. New log
 
 See http://propforth.googlecode.com/files/Logger2Daily.zip
 
+= usrrDAILYboot.f =
+
+
+{{{
+fl
+
+mountsys
+
+100 fwrite usrboot.f
+version W@  .cstr cr
+
+c" usrDAILYboot.f  -  initializing~h0D~h0D" .cstr
+
+1 sd_mount
+
+\
+\ Begin config parameters
+\
+[ifndef timeZoneHours
+-8 constant timeZoneHours
+]
+[ifndef timeZoneMinutes
+0 constant timeZoneMinutes
+]
+[ifndef doubleTimerCog
+0 wconstant doubleTimerCog
+]
+[ifndef loggerCog
+1 wconstant loggerCog
+]
+\
+\ End config parameters
+\
+
+
+fload DoubleMath.f
+fload time.f
+
+
+clkfreq constant logperiod
+256 wconstant recordsize
+recordsize d_60 d_60 d_24 u* u* u* d_512 u/ 1+ constant logfileNumBlocks
+lockdict wvariable logBuffer recordsize 2- allot freedict
+
+lockdict wvariable logFileName d10 allot freedict
+
+wvariable lastDay -1 lastDay W!
+
+: logdata
+	getLocalTime formatTime logBuffer ccopy
+	c"  CNT REGISTER: " logBuffer cappend
+	base W@ hex cnt COG@ <# #s #> logBuffer cappend base W!
+	c"  timeStamp: " logBuffer cappend
+	base W@ decimal timeStamp <# d#s #> logBuffer cappend base W!
+	c"  unixTimeStamp: " logBuffer cappend
+	base W@ decimal unixTimeStamp <# d#s #> logBuffer cappend base W!
+
+
+	c" ~h0D" logBuffer cappend
+	logBuffer
+;
+
+: ClearLog
+	mountusr
+	7 lock 0 logFileName sd_trunc 7 unlock
+;
+
+
+\ createLogfile( -- ) if the day has changed create a new logfile
+\ create a new log file every day at midnight and name it YYYYMMDD and make sure it is large
+\ enough to hold log records for a day, use logperiod for size calculation
+: createLogfile
+	_dgetLocaltime dow dup lastDay W@ =
+	if
+		drop
+	else
+		lastDay W!
+		getTime 2drop 2drop <# # # drop h2D #C # # drop h2D #C # # # # #> logFileName ccopy
+		logFileName logfileNumBlocks sd_createfile drop
+		ClearLog
+	then
+;
+
+
+\ log very second
+: logger
+	4 state andnC!
+	c" Day-LOGGER" cds W!
+	mountusr
+
+	cnt COG@ clkfreq +
+	begin
+		createLogfile
+		logperiod waitcnt
+		logdata C@++ logFileName 7 lock sd_append 7 unlock
+	0 until 
+;
+
+
+
+
+\ sd_headblk ( n1 -- ) n1 - header block number of file,
+\				read the file and emit the chars
+: sd_headblk
+\							should validate
+	dup
+	if
+		dup sd_blockread 1+
+\ 							( firstblock -- )
+		sd_cogbuf h2A + COG@ d_4096 min
+		h200 u/mod
+\ 							( firstblock remainder numblocks -- )
+		rot swap
+\							( remainder firstblock numblocks -- )
+		dup
+		if
+			2dup bounds
+			do
+				i sd_blockread
+				sd_cogbuf h80 bounds
+				do
+					i cog>pad
+					pad h80 .str
+				h20 +loop
+			loop
+		then
+\ 							( remainder firstblock numblocks -- )
+		+ sd_blockread
+\ 							( remainder -- )
+		sd_cogbuf h80 bounds
+		do
+			i
+			cog>pad
+			pad over h80 min
+			.str
+			h80 -
+			dup 0 <=
+			if
+				leave
+			then
+		h20 +loop
+		drop				
+	else
+		drop
+	then
+	padbl
+;
+\ sd_head ( filename -- ) read the file and emit the chars
+: sd_head
+	sd_find sd_headblk
+;
+
+\ fhead filename ( -- )
+: fhead _sd_fsp dup if sd_head else drop _fnf then ;
+
+
+
+
+\ sd_tailblk ( n1 -- ) n1 - header block number of file,
+\				read the file and emit the chars
+: sd_tailblk
+\							should validate
+	dup
+	if
+		dup sd_blockread 1+
+\ 							( firstblock -- )
+		sd_cogbuf h2A + COG@
+
+		dup d_4096 - h_1FF andn d_512 u/
+\							( block size blockoffset -- )
+		rot over + rot2
+		h200 u* -
+
+		h200 u/mod
+\ 							( firstblock remainder numblocks -- )
+		rot swap
+\							( remainder firstblock numblocks -- )
+		dup
+		if
+			2dup bounds
+			do
+				i sd_blockread
+				sd_cogbuf h80 bounds
+				do
+					i cog>pad
+					pad h80 .str
+				h20 +loop
+			loop
+		then
+\ 							( remainder firstblock numblocks -- )
+		+ sd_blockread
+\ 							( remainder -- )
+		sd_cogbuf h80 bounds
+		do
+			i
+			cog>pad
+			pad over h80 min
+			.str
+			h80 -
+			dup 0 <=
+			if
+				leave
+			then
+		h20 +loop
+		drop				
+	else
+		drop
+	then
+	padbl
+;
+\ sd_tail ( filename -- ) read the file and emit the chars
+: sd_tail
+	sd_find sd_tailblk
+;
+
+\ ftail filename ( -- )
+: ftail _sd_fsp dup if sd_tail else drop _fnf then ;
+
+
+: startLogger
+	-1 lastDay W!
+	loggerCog cogreset 10 delms
+	c" logger" loggerCog cogx
+;
+
+startLogger
+
+fread .sdcardinfo
+
+c" usrDAILYboot.f  -  DONE~h0D~h0D" .cstr
+
+...
+
+}}}
+
 
 
 = Details =
