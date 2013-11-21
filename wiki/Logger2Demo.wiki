@@ -1,0 +1,27 @@
+#summary One-sentence summary of this page.
+#labels v5.5
+
+= Introduction =
+
+Logger 2 demo is similar to Logger 1 demo: Once each second, a record is collected
+
+Record contains:
+ * time and date text stamp,
+ * CNT register (hex), 
+ * 64 bit time value, 
+ * unix time
+
+Difference is after midnight, a new log is created if it does not exist. New log file size is based on buffer size and logging frequency. Log file may have one block extra due to rounding.
+
+= Source code =
+
+See http://propforth.googlecode.com/files/Logger2Daily.zip
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
