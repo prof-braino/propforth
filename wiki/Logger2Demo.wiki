@@ -13,11 +13,32 @@ Record contains:
 
 Difference is after midnight, a new log is created if it does not exist. New log file size is based on buffer size and logging frequency. Log file may have one block extra due to rounding.
 
+= Use =
+
+Be sure to set the time.
+
+On boot, the logger begin wrriting to logfile `2012-01-01` by default.  If this happens repeatedly, the file could get over written.
+
+When the clock is set, the data is immediately logged to the new log file.
+
+The file is auto created with enough room for a full day  (24 hours) of records. 
+
+= New functions =
+
+There are new functions in theis demo for the auto log files.
+
+* \ ftail filename ( -- )
+
+* \ fhead filename ( -- )
+
+
+
 = Source code =
 
 See http://propforth.googlecode.com/files/Logger2Daily.zip
 
-= usrrDAILYboot.f =
+
+= usrDAILYboot.f =
 
 
 {{{
