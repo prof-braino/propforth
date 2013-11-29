@@ -32,7 +32,7 @@ As a user you can either embrace their thinking or rebel. I chose the latter and
 
 These words will allow 32 bit Gforth code to compile, although at some loss of efficiency.
 
-_editor's note: The above is exactly what we had in mind  :)_
+_editor's note: The above is exactly what we had in mind  :) Notice that every allocation will consume four bytes_
 
 Another difference is that most Forths have a construct called create does> to allocate storage and define runtime behavior. 
 
