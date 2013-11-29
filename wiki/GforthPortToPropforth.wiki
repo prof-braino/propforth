@@ -16,7 +16,7 @@ So they didn’t define an implicit storage unit and words like ! and @, or cell
 
 Instead the authors expected users to always specify the storage unit with the L or W prefix.
 
-_editors note: The Cog Ram is 32 bit longs, while Hub Ram and EEPROM 16 bit words.  So we opted to play it safe and explicitly state the size every time.  This meant there would be no default cell size untime dteremined by the user, as done in Martin's example that follows__
+_editors note: The Cog Ram is 32 bit longs, while Hub Ram and EEPROM 16 bit words.  So we opted to play it safe and explicitly state the size every time.  This meant there would be no default cell size until determined by the user, as done in Martin's example that follows__
 
 In practice this means code like the following won’t compile
 
