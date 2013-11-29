@@ -36,7 +36,11 @@ As a user you can either embrace their thinking or rebel. I chose the latter and
 
 These words will allow 32 bit Gforth code to compile, although at some loss of efficiency.
 
-Another difference is that most Forths have a construct called create does> to allocate storage and define runtime behavior. While Propforth has the create word, it is missing the does> keyword. While the authors of Propforth have their reasons for this, this is problematic because does> is used to define arrays as follows:
+_editor's note: The above is exactly what we had in mind  :)_
+
+Another difference is that most Forths have a construct called create does> to allocate storage and define runtime behavior. 
+
+While Propforth has the create word, it is missing the does> keyword. While the authors of Propforth have their reasons for this, this is problematic because does> is used to define arrays as follows:
 
 {{{
 \ Used to allocate an array of cells of the desired size passed on stack
@@ -51,6 +55,7 @@ swap cells + ; \ run time gives address of cell at index
 2 array servo_pins
 }}}
 
+
 You would then use “1 0 servo_pins !” to store 1 in the 0th array element. To work around the absence of does> you can define the storage and the runtime behavior with two words as follows:
 
 {{{
@@ -59,6 +64,9 @@ variable servo_pins 2 cells allot
 }}}
 
 Now use “1 0 servo_pin() !” does the same as the above code.
+
+
+_editor's note: propforth's create does not leave an entry in the dictionary by itself (different from other forths).  So the does> would not work in any way that one would expect.  We decide to simply have the user define a separate words for the compile time behavior and the run time behavior. While there is a cost being one definition more work during development, there is an enduring net saving in dictionary space_ 
 
 A few rapid fire differences:
 
