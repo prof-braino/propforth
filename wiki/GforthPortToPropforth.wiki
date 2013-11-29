@@ -70,7 +70,7 @@ _editor's note: propforth's create does not leave an entry in the dictionary by 
 
 A few rapid fire differences:
 
-• .s is not supported, use st? to dump the stack instead. _editor's note: .s is something very specific, and st? is not that, but accomplishes what we want.  The user can define .s if desired.  ': .s st? ;' would be one possibility_
+• .s is not supported, use st? to dump the stack instead. _editor's note: .s is something very specific, and st? is not that, but accomplishes what we want.  The user can define .s if desired._   ': .s st? ;' _would be one possibility_
 
 • Recursion via the recurse keyword is not supported.  _editor's note: the default stack is too small.  See http://code.google.com/p/propforth/wiki/Recursion call the function again without consuming more stack.  This is NOT necessarily appropriate for all cases, but its something_
 
