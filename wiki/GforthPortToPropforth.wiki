@@ -6,7 +6,7 @@ Martin_h notes on porting Gforth source code to Propforth
 
 Thanks Martin!
 
-= n =
+= notes =
 
 FYI Here are my notes on moving from Gforth to Propforth.
 
