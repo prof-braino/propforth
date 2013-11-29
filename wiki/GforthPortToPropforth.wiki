@@ -12,21 +12,25 @@ FYI Here are my notes on moving from Gforth to Propforth.
 
 Propforth is a dialect of Forth and doesn’t support all of the words you would find in an ANS compliant dialect. This is because the authors of Propforth designed it to straddle the line between a 32 bits Forth (e.g. GForth) and 16 bits version (e.g. AmForth). So they didn’t define an implicit storage unit and words like ! and @, or cell and cells are unimplemented as they require one. Instead the authors expected users to always specify the storage unit with the L or W prefix. In practice this means code like the following won’t compile
 
+{{{
 variable servo_pins 2 cells allot
 1 servo_pin !
-
+}}}
 As a user you can either embrace their thinking or rebel. I chose the latter and defined these Gforth compatibility words:
 
+{{{
 4 constant cell
 : cells cell * ;
 : -rot rot rot ;
 : ! L! ;
 : @ L@ ;
+}}}
 
 These words will allow 32 bit Gforth code to compile, although at some loss of efficiency.
 
 Another difference is that most Forths have a construct called create does> to allocate storage and define runtime behavior. While Propforth has the create word, it is missing the does> keyword. While the authors of Propforth have their reasons for this, this is problematic because does> is used to define arrays as follows:
 
+{{{
 \ Used to allocate an array of cells of the desired size passed on stack
 : array ( n -- addr )
 create
@@ -37,11 +41,14 @@ Does>
 swap cells + ; \ run time gives address of cell at index
 
 2 array servo_pins
+}}}
 
 You would then use “1 0 servo_pins !” to store 1 in the 0th array element. To work around the absence of does> you can define the storage and the runtime behavior with two words as follows:
 
+{{{
 variable servo_pins 2 cells allot
 : servo_pin() cells servo_pin + ;
+}}}
 
 Now use “1 0 servo_pin() !” does the same as the above code.
 
