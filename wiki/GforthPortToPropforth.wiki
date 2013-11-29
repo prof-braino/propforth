@@ -10,7 +10,15 @@ Thanks Martin!
 
 FYI Here are my notes on moving from Gforth to Propforth.
 
-Propforth is a dialect of Forth and doesn’t support all of the words you would find in an ANS compliant dialect. This is because the authors of Propforth designed it to straddle the line between a 32 bits Forth (e.g. GForth) and 16 bits version (e.g. AmForth). So they didn’t define an implicit storage unit and words like ! and @, or cell and cells are unimplemented as they require one. Instead the authors expected users to always specify the storage unit with the L or W prefix. In practice this means code like the following won’t compile
+Propforth is a dialect of Forth and doesn’t support all of the words you would find in an ANS compliant dialect. This is because the authors of Propforth designed it to straddle the line between a 32 bits Forth (e.g. GForth) and 16 bits version (e.g. AmForth  http://amforth.sourceforge.net/). 
+
+So they didn’t define an implicit storage unit and words like ! and @, or cell and cells are unimplemented as they require one. 
+
+Instead the authors expected users to always specify the storage unit with the L or W prefix.
+
+_editors note: The Cog Ram is 32 bit longs, while Hub Ram and EEPROM 16 bit words.  So we opted to play it same and explicitly state the size every time.  This meant there would be no default cell size untime dteremined by the user, as done in Martin's example that follows__
+
+In practice this means code like the following won’t compile
 
 {{{
 variable servo_pins 2 cells allot
