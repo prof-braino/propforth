@@ -18,25 +18,45 @@ If you are upgrading from a previous configuration (e.g. from PropForth 5.5)
 
 In START -> Settings -> Control Panel -> System:
 
-Advanced -> Envirronment Variables -> System Variables:
+Advanced -> Environment Variables -> System Variables:
 
-Create an envirnment varriable HOME.  If there was an environment variable HOME in the USER VARIABLES section (I  think this was per the pf5.5 instructions), remove the definittion from USER VARAIBLES and create a HOME environment variable in System Variable. 
+Edit or create the environment variable as follows.
+
+== HOME ==
+
+Create an environment variable HOME.  If there was an environment variable HOME in the USER VARIABLES section (I  think this was per the pf5.5 instructions), remove the definittion from USER VARAIBLES and create a HOME environment variable in System Variable. 
 
 HOME is the location of the Go source files.  My original path may have been created by the Go install, it was in My Documents and had a crazy long path.  These tend to choke if they are too long, so I made my Propforth directory 
 
 C:\PropForth6.0
 
-and the therefore the definition fo HOME is
+and the therefore the definition for HOME is
 
 {{{
 HOME  C:\PropForth6.0\
 }}}
 
-HOME
+Simply create this directoy of C:, and unzip the Propforth 6.0 archive.
 
 
 
-Chenage the environment varibles 
+== GOROOT ==
+
+GOROOT is the location of the GO language source files. 
+
+Minie is instlled at 
+
+C:\Go
+
+so the definition for the GOROOT environment variable is
+
+{{{
+GOROOT C:\Go
+}}}
+
+== PATH ==
+
+
 
 = Unzip 2013-12-15-mygozip.file2013-12-15-mygozip.file =
 
