@@ -1,0 +1,30 @@
+#summary Setup PropForth 6.0 prototype.
+
+= Introduction =
+
+These are the instructions for setting up PropForth 6.0 on a windows PC.
+
+PropForth 6.0 is available to team members.  Contact braino if you want a copy of the zip file.  This is not ready for public release. 
+
+= Windows PC =
+
+
+
+
+= Set Up GO language =
+
+= Unzip 2013-12-15-mygozip.file2013-12-15-mygozip.file =
+
+
+
+2013-12-15-mygozip.file
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
