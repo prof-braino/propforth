@@ -474,6 +474,8 @@ _sorry, the above is just a paste of my notes, I have not have time to clean it 
 
 = Build Automation =
 
+_note: we ran the build automation while we were talking, but I missed some of the notes.  I'll try to recreate it here, otherwise we have to wait till next week_
+
 Tera term must be closed to run the build automation.  GoProxyTerm talks directly to the prop.
 
 
