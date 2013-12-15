@@ -332,17 +332,17 @@ wl
 
 In addition to load balanced multitasking, the pF kernel has some differences.
 
-# The kernel shrunk to 255 longs including stacks.
-# More words are optimized in assembler.
-# the base kernel is slow, number conversion gets optimized in assembler, the optimized kernels are much faster.
-# all the kernels are generated from scratch.  We start with the high level forth souce, and create a base kernel. The base kernel creates the next optimized kernel.
-# the base kernel takes about 15 minutes to build.
-# final optimized kernel takes about 2 minutes to build.
-# the total build time, from first base kernel to final  optimized kernel, is about 37 minutes.
+ * The kernel shrunk to 255 longs including stacks.
+ * More words are optimized in assembler.
+ * the base kernel is slow, number conversion gets optimized in assembler, the optimized kernels are much faster.
+ * all the kernels are generated from scratch.  We start with the high level forth souce, and create a base kernel. The base kernel creates the next optimized kernel.
+ * the base kernel takes about 15 minutes to build.
+ * final optimized kernel takes about 2 minutes to build.
+ * the total build time, from first base kernel to final  optimized kernel, is about 37 minutes.
 
-== test the multitasker ==
+==  the multitasker ==
 
-OK, I got a little exited at thisoint, andmy notes are a little sketchy.
+OK, I got a little exited at this point, and my notes are a little sketchy.
 
 run the mpMon word, ths word is built into themp kernel:
 
@@ -366,9 +366,96 @@ mpMon is a SNAPSHOT of the machine when it executed.
 
 mpMon tells the MAXIUM and AVERAGE number of slices to get to each task, this time around.
 
+Highlights of the multitasker:
+
   * mpGC is the multiprop GarageCollector task
   * mpMon is the multirop monitoring tsk.
   * mpST is the multipropstack frame. Each task has to leave the stack exactly as it found it. 
+  * each task executes once, then goes back in the queue
+  * the next free cog gets the next task from the queue and executes it. Tasks are not assigned a specific cog (except the serial cog for now)
+  * when the cogs finishes the task, it goes back in the pool.
+  * If a cog gets a slow task (like user keyboard input or writing to SD) that cogs is not not available in the pool for a long time (maybe 100 ms).  The pool processing capacity is diminished by 1/7th.  
+
+== TEST the multitasker ==
+
+C:\PropForthv6.0\mygo\V6.0\kernels\MAKE\src\optimize\mp
+
+find mptest.f
+
+
+paste in the whole thing don't need fl
+bottom of file paste in:
+
+1 gc
+
+initW
+
+w+
+
+mpMon mpRes
+
+10 10 send 1000 delms mpMon
+-10 10 send 1000 delms mpMon
+
+1 gc 5 gc 10 gc 100 gc
+
+ multiprocessor test, takes a while. 
+
+ scroll back up,
+ 1 gc turn garabeg collection off for 1 ms for debug, then turn it back on.
+ 
+ initw defines 128 ques, inputt to a task, out to a task,
+ q o0 oin put goes to q1 out put, so links  the bucnh of tasks together. 
+
+ w+ adds 128 0to127 tasks to background processing. 
+ 
+ now mpMon should lots of tasks in background.
+ 
+ inout 128 into q1
+ 
+ background task needs service that needs 500 uS, system is overloads.  if we need 1.2 millise seconds.
+ if we need 1700 uS, we are NOT overloaded. 
+HOW often do we need to monitor a pin?  
+If we only need to to look at it every 1700 uS we will be fine. till we run out of slots, we can add about 128 slots.
+number is variable, as many free cogs, thats how many tasks are running all the time. 
+six (or seven) cogs are watxching the queue, and it takes about 1700 uS for them to get back around to a given task. 
+
+-10 10 send 1000 delms mpMon
+send it through, terminal at end.
+
+1 gc 5 gc 10 gc 100 gc
+
+allows garbage coolector to clear out tasks'
+
+mpST at zero, means it done processing and terminated, but still in queue,
+garbage collector will take it out of the queue,
+
+next time fewer in queue
+
+then ll gone.
+
+garabage collector runs in background.  looks for finished tasks, takes them out of queue.
+takes time, but is nice as long as we're not near limit.
+
+LOGGING: 20 or 30 things. start background tasks doing logging.
+the only we g=worry about, don't over load, and am I getting suffiecent performance,
+then everything just runs, gets attention every once in a while, and 
+once in a while it 1.78ms for 128 tasks. 
+
+7 cogs, 128 tasks. worst case 1.7 ms.  One cog, write to SD once in a while. Pull one cog for a long operation.
+while cog is running, only 6 cogs runing slow it slows down, but only by 1/7 
+Long time is like 100 ms.   then it goes back to max.
+
+First thing we run out of memory
+with 128 tasks, we used up most of the memery
+here W@ .
+30908  MPF0 Cog6 ok
+
+This is the max we can get out of a prop.
+
+EX Most stuff has been 20-30 tsk for calculation and advanced control. Works well with 20-30 tasks
+since April.  
+If we get a prop with more memory, we are good to go.
 
 
 -----
