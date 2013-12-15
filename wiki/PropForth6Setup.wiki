@@ -6,9 +6,13 @@ These are the instructions for setting up PropForth 6.0 on a windows PC.
 
 PropForth 6.0 is available to team members.  Contact braino if you want a copy of the zip file.  This is not ready for public release. 
 
+-----
+
 = Windows PC =
 
 For the time being, windows PC is required. We need PROPELLANT to compile the SPIN source files.  Linux support will be included as the tools become available. 
+
+-----
 
 = Set Up GO language =
 
@@ -62,6 +66,8 @@ C:\go\bin on my rig.
 PATH %systemroot%\system32\; < a bunch of other junk> ; C:\go\bin
 }}}
 
+-----
+
 = Unzip 2013-12-15-mygozip.file =
 
 Our email won't let us send executable files.  So we renamed the zip archive from 
@@ -82,13 +88,75 @@ to
 
 Extract the contents of this file to youur newly created 
 
-C:\Proppforth6.0
+C:\PropForth6.0
 
 directory
 
+-----
 
 = Run goshell.bat =
 
+Navigate to the Propforth 6.0 directory. 
+
+Look at the contents of goshell.bat with MORE or using a text editor such as notepad, etc.
+
+Notice the line 
+
+{{{
+ set PROPFLOWCONTROL=1
+}}}
+
+FLOWCONTROL MUST BE ON for the build process.  You can change it so flow control is OFF for other purposes, but you would have to use fl to loading source code files.  So leave flow control on for now, we'll cover turning it off and defining fl elsewhere if it comes up (it won't).
+
+Double click goshell.bat to run the configuration script
+
+------
+
+= Test the setup =
+
+The first time through, expect to have to futz with the environment variables.
+
+Also expect to have to recompile a couple programs, this is fairly simple and painless, and only needs to be done once. 
+
+== TEST GO ==
+
+From the command prompt (after running goshell.bat) type go:
+
+{{{
+Go is a tool for managing Go Source Code
+
+...
+}}}
+
+You should see the 20 lines or so of go prompt.  If you see this Go is set up.  Procede to the next step, of go back nad futz with go installation.
+
+== Test GoTerm ==
+
+From the command prompt (after running goshell.bat) type goterm:
+
+You should see the page or so of usage instructions for goterm.  If not (only the first time), recompile goterm.  (By default, the archive is compiled for Sal's 64 bit machine.  If you have a cheap old 32 bit machine like me, we recompile). 
+
+=== recompile gotem ===
+
+CD to  C:\PropForth6.0\mygo\pkg\windows_386
+
+{{{
+cd C:\PropForth6.0\mygo\pkg\windows_386
+}}}
+
+there should be three or fou files that end in .a
+
+Delete all the files there.  
+
+From the command prompt window where goshell.bat was run type:
+
+{{{
+go install goterrm
+}}}
+
+The should be no error message, or any message of any kind, and the prompt should return a few seconds later (or immediately if you have a fast machine). 
+
+Test goterm as above. 
 
 
 
