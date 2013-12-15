@@ -171,13 +171,110 @@ Environment variables in the form $XXX are translated to hXXX by SXW (where XXX 
 
 If you see the goterm usage instructions, the goterm program is properly compiled.
 
-== test GOPROXYTERM ==
+== GOPROXYTERM ==
 
 GoProxyterm is the new bit in PropForth 6.0
 
 It uses properly implemented flow control.  This eliminated the need for the fl (fastload) word.  Now, we can use ANY PC capabile of 230400 baud on the serial port. if the PC is slow, the build process will wait.  We no long have to deal with overun on source load. :0
 
-== Test GOPROXYTERM ==
+compile goproxyterm.  From the command prompt window where goshell.bat was run type:
+
+{{{
+go install goproxyterm
+}}}
+
+As withgoterm, the command prompt should return almost immediately with no error message.
+
+=== Test GOPROXYTERM ===
+
+From the command prompt window where goshell.bat was run type:
+
+{{{
+goproxyterm
+}}}
+
+You shoud\ld see:
+
+{{{
+C:\PropForthv6.0\mygo>goproxyterm
+Starting: goproxyterm  0 0 100 200 0
+2013-12-15 14:43:05.255972 -0600 CST Using 2 CPUs
+2013-12-15 14:43:05.255972 -0600 CST error: Incorrect number of arguments
+usage: goproxyterm comPort baud rawPort telnetPort debug[0-3]
+
+C:\PropForthv6.0\mygo>
+}}}
+
+Spiffy!  OK, this is somethingwe just caught, there is a copy paste in the goproxyterm instructions. it says telnetprot is the fouth arguement. This is not so, and have been corrected for the next iteration.  The telnet port is NOT included as an arguement, it is automatically assumed to be rawport+100.  There is also a debug port which is automatically rawport + 200. Anyway the instruction should look like this:
+{{{
+usage: goproxyterm comPort baud rawPort debug[0-3]
+}}}
+
+Assuming we are using com22 (I have a lot of USB serial devices), we always use 230400 buad these days, we usually use 3000 as rawport, and we want debug on max so we can see everything for the time being.  So we would use:
+
+{{{
+goproxyterm com22 230400 3000 3
+}}}
+
+This of course is still from the window where goshell.bat was run.
+
+If everything is finally setup, you should seesomething like:
+
+{{{
+C:\PropForthv6.0\mygo>goproxyterm com22 230400 3000 3
+Starting: goproxyterm com22 230400 3000 3100 3200 3
+2013-12-15 14:56:32.427847 -0600 CST Using 2 CPUs
+Started:  goproxyterm com22 230400 Raw:3000 Telnet:3100 Debug:3200 3
+        [0[1]{02}]
+2013-12-15 14:56:32.490347 -0600 CST Listening on 127.0.0.1:3000
+2013-12-15 14:56:32.505972 -0600 CST Listening on 192.168.0.235:3000
+2013-12-15 14:56:32.505972 -0600 CST Listening on 127.0.0.1:3100
+2013-12-15 14:56:32.521597 -0600 CST Listening on 192.168.0.235:3100
+2013-12-15 14:56:32.521597 -0600 CST Listening on 127.0.0.1:3200
+2013-12-15 14:56:32.521597 -0600 CST Listening on 192.168.0.235:3200
+2013-12-15 14:56:32.521597 -0600 CST READY
+
+}}}
+
+Your rig is set up and ready to go.
+
+= TERATERM =
+
+Now we can talk to the propforth command promt using teraterm.
+
+The settings for teraterm are different now that we use flow control.
+
+Start teraterm. 
+
+Connect to the prop using File -> new connection -> TCP/IP ->  Host: 'localhost'
+
+Recall that goproxyterm is already talking on the USB serial virtual comport (com22 in my case).
+
+Note: if you tyr to connect to loacal host and t says connnection refused, then goproxyterm is notlistening.  Close a bunch of windows, rerun goproxyterm with the proper parameters, andtry again after youget the "Listening" message.
+
+NOTiCE that in Teraterm SETUP -> TERMINAL 
+
+must be changed to CR+LF now.
+
+SAVE this in the teraterm default SETUP -> SAVE SETUP ... 
+
+TERATERM.INI
+
+= Test PF6.0 =
+
+PF6.0 is a VERY MINIMAL dictionaryat this time. There is no "words" commnd (with formating, but the is wl for "words list".
+
+type inwl to se the list of forth words
+
+{{{
+wl
+}}}
+
+Notive tht the goproxyterm window also displays the character and additional diagnostics as the words list scrolls by.
+
+= Build Automation =
+
+
 
 
 = Details =
