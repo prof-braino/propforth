@@ -1,4 +1,5 @@
 #summary Setup PropForth 6.0 prototype.
+#labels Deprecated
 
 = Introduction =
 
