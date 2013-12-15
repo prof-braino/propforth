@@ -262,13 +262,6 @@ Started:  goproxyterm com22 230400 Raw:3000 Telnet:3100 Debug:3200 3
 
 Your rig is set up and ready to go.
 
-
-= terterm direct to virtual comport =
-
-
-
-
-
 = TERATERM local host =
 
 Now we can talk to the propforth command promt using teraterm.
@@ -301,9 +294,50 @@ type in wl to see the list of forth words
 wl
 }}}
 
-Notive tht the goproxyterm window also displays the character and additional diagnostics as the words list scrolls by.
+Notice that the goproxyterm window also displays the character and additional diagnostics as the words list scrolls by.
+
+= multitasking kernel =
+
+OK, this is way cool.  Load the multitasking kernel;
+
+Navigate to 
+
+{{{
+C:\PropForthv6.0\mygo\V6.0\kernels\MAKE\results\outputFiles
+}}}
+
+and load the multitsking tool with the proptool:
+{{{
+mpKernel.spin
+}}}
+
+run goproxyterm again as above. In my case
+
+{{{
+goproxyterm com22 230400 3000 3
+}}}
+
+Connect with teraterm as above, localhost port 3100
+
+use wl to see the minimal word list.
+
+{{{
+wl
+
+}}}
+
+== differences ==
+
+
 
 = Build Automation =
+
+Tera term must be closed to run the build automation.  GoProxyTerm tlks directly to the prop.
+
+
+
+From the winldow command prompt window where goshell.bat was run:
+
 
 
 
