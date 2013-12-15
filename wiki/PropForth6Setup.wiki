@@ -21,7 +21,7 @@ Set up Go Language according to the instructions.
 If you are upgrading from a previous configuration (e.g. from PropForth 5.5) 
 
 In START -> Settings -> Control Panel -> System:
-
+i
 Advanced -> Environment Variables -> System Variables:
 
 Edit or create the environment variable as follows.
@@ -47,7 +47,7 @@ Simply create this directory of C:, and unzip the 'PropForth' 6.0 archive.
 GOROOT is the location of the GO language source files. 
 
 Minie is instlled at 
-
+i
 C:\go
 
 so the definition for the GOROOT environment variable is
@@ -158,7 +158,9 @@ The should be no error message, or any message of any kind, and the prompt shoul
 
 Test goterm as above. 
 
+{{{
 
+}}}
 
 = Details =
 
