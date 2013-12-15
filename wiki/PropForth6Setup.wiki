@@ -328,6 +328,20 @@ wl
 
 == differences ==
 
+In addition to load balanced multu\itasking, the pF kernel has some differences.
+
+# The kernel shrunk to 255 longs including stacks.
+# More words are optimized in assembler.
+# the base kernel is slow, number conversion gets optimized in assembler, the optimized kernels are much faster.
+# all the kernels are generated from scratch.  We start with the high level forth souce, and create a base kernel. The base kernel creates the next optimized kernel.
+# the base kernel takes about 15 minutes to build.
+# final optimized kernel takes about 2 minutes to build.
+# the total build time, from first base kernel to final  optimized kernel, is about 37 minutes.
+
+== testthe multitasker ==
+
+OK, I got a little exited at thisoint, andmy notes are a little sketchy.
+
 
 
 = Build Automation =
