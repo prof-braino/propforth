@@ -36,9 +36,7 @@ and the therefore the definition for HOME is
 HOME  C:\PropForth6.0\
 }}}
 
-Simply create this directoy of C:, and unzip the Propforth 6.0 archive.
-
-
+Simply create this directory of C:, and unzip the 'PropForth' 6.0 archive.
 
 == GOROOT ==
 
@@ -46,23 +44,50 @@ GOROOT is the location of the GO language source files.
 
 Minie is instlled at 
 
-C:\Go
+C:\go
 
 so the definition for the GOROOT environment variable is
 
 {{{
-GOROOT C:\Go
+GOROOT C:\go
 }}}
 
 == PATH ==
 
+The PATH varriable need to include the path to the GO executatbles.  These are in 
 
+C:\go\bin on my rig.  
 
-= Unzip 2013-12-15-mygozip.file2013-12-15-mygozip.file =
+{{{
+PATH %systemroot%\system32\; < a bunch of other junk> ; C:\go\bin
+}}}
 
+= Unzip 2013-12-15-mygozip.file =
 
+Our email won't let us send executable files.  So we renamed the zip archive from 
+
+2013-12-15-mygo.zip
+
+to
 
 2013-12-15-mygozip.file
+
+and we were able to send this via email.  Simply rename this file back from 
+
+2013-12-15-mygozip.file
+
+to
+
+2013-12-15-mygo.zip
+
+Extract the contents of this file to youur newly created 
+
+C:\Proppforth6.0
+
+directory
+
+
+= Run goshell.bat =
 
 
 
