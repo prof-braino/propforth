@@ -284,6 +284,8 @@ SAVE this in the teraterm default SETUP -> SAVE SETUP ...
 
 TERATERM.INI
 
+-----
+
 = Test PF6.0 =
 
 PF6.0 is a VERY MINIMAL dictionaryat this time. There is no "words" commnd (with formating, but the is wl for "words list".
@@ -328,7 +330,7 @@ wl
 
 == differences ==
 
-In addition to load balanced multu\itasking, the pF kernel has some differences.
+In addition to load balanced multitasking, the pF kernel has some differences.
 
 # The kernel shrunk to 255 longs including stacks.
 # More words are optimized in assembler.
@@ -338,11 +340,38 @@ In addition to load balanced multu\itasking, the pF kernel has some differences.
 # final optimized kernel takes about 2 minutes to build.
 # the total build time, from first base kernel to final  optimized kernel, is about 37 minutes.
 
-== testthe multitasker ==
+== test the multitasker ==
 
 OK, I got a little exited at thisoint, andmy notes are a little sketchy.
 
+run the mpMon word, ths word is built into themp kernel:
 
+{{{
+ MPF0 Cog6 ok
+mpMon
+lag(us):: max avg: 307492 108 slices/s:: min avg: 3 9241
+
+word_name        dataname:addr mpST maxT(us)    in                in2               out               out2
+
+      mpGC_x       mpGC_d:17500 228 73
+     mpMon_x      mpMon_d:17432 228 111
+
+ MPF0 Cog6 ok
+
+}}}
+
+Notice the MP kernel propmt is now MPF0
+
+mpMon is a SNAPSHOT of the machine when it executed.
+
+mpMon tells the MAXIUM and AVERAGE number of slices to get to each task, this time around.
+
+  * mpGC is the multiprop GarageCollector task
+  * mpMon is the multirop monitoring tsk.
+  * mpST is the multipropstack frame. Each task has to leave the stack exactly as it found it. 
+
+
+-----
 
 = Build Automation =
 
