@@ -1,4 +1,5 @@
 #summary Setup PropForth 6.0 prototype.
+#labels PF6.0
 
 = Introduction =
 
@@ -478,13 +479,37 @@ _note: we ran the build automation while we were talking, but I missed some of t
 
 Tera term must be closed to run the build automation.  GoProxyTerm talks directly to the prop.
 
+== find the build automation output files =
 
+In a file explorer window look in
+{{{
+C:\PropForthv6.0\mygo\V6.0\kernels\MAKE\results\resultFiles
+}}}
 
-From the winldow command prompt window where goshell.bat was run:
+Notive the time stamps (first time they are all the time the archive was extracted, after that they are the time build completed)
 
+= launch the automation =
 
+From the window command prompt window where goshell.bat was run:
 
+cd to 
 
+{{{
+C:\PropForthv6.0\mygo\V6.0\kernels
+}}}
+
+find 
+{{{
+buildall.bat
+}}}
+
+this just calls a bunch of scripts. 
+
+run buildall.bat
+
+notice the result files directory is now empty, and the automation is  running scripts. 
+
+in 37 minutes, the build proces is complete.  WOW! that was easy!
 
 = Details =
 
