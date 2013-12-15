@@ -136,7 +136,7 @@ From the command prompt (after running goshell.bat) type goterm:
 
 You should see the page or so of usage instructions for goterm.  If not (only the first time), recompile goterm.  (By default, the archive is compiled for Sal's 64 bit machine.  If you have a cheap old 32 bit machine like me, we recompile). 
 
-=== recompile gotem ===
+=== recompile goterm ===
 
 CD to  C:\PropForth6.0\mygo\pkg\windows_386
 
@@ -151,7 +151,7 @@ Delete all the files there.
 From the command prompt window where goshell.bat was run type:
 
 {{{
-go install goterrm
+go install goterm
 }}}
 
 The should be no error message, or any message of any kind, and the prompt should return a few seconds later (or immediately if you have a fast machine). 
@@ -170,6 +170,30 @@ Environment variables in the form $XXX are translated to hXXX by SXW (where XXX 
 }}}
 
 If you see the goterm usage instructions, the goterm program is properly compiled.
+
+= Install pF6.0 BootOptimizeKernel.spin =
+
+BootOptimizeKernel.spin
+
+= load PF6.0 boot kernel =
+
+navigate to 
+
+{{{
+C:\PropForthv6.0\mygo\V6.0\kernels\MAKE\results\outputFiles
+}}}
+
+and click on 
+
+{{{
+BootOptimizeKernel.spin
+}}}
+
+and load BootOptimizeKernel.spin using the proptool.
+
+Remember, if it say comportnot found, you left teraterm running on the comport. Close teraterm first, then load the kernel using proptool.
+
+
 
 == GOPROXYTERM ==
 
@@ -238,7 +262,14 @@ Started:  goproxyterm com22 230400 Raw:3000 Telnet:3100 Debug:3200 3
 
 Your rig is set up and ready to go.
 
-= TERATERM =
+
+= terterm direct to virtual comport =
+
+
+
+
+
+= TERATERM local host =
 
 Now we can talk to the propforth command promt using teraterm.
 
@@ -264,7 +295,7 @@ TERATERM.INI
 
 PF6.0 is a VERY MINIMAL dictionaryat this time. There is no "words" commnd (with formating, but the is wl for "words list".
 
-type inwl to se the list of forth words
+type in wl to see the list of forth words
 
 {{{
 wl
