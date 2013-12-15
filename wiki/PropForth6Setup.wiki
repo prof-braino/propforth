@@ -29,7 +29,7 @@ C:\PropForth6.0
 and the therefore the definition fo HOME is
 
 {{{
-HOME  C:\PropForth6.0
+HOME  C:\PropForth6.0\
 }}}
 
 HOME
