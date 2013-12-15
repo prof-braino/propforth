@@ -159,8 +159,26 @@ The should be no error message, or any message of any kind, and the prompt shoul
 Test goterm as above. 
 
 {{{
+C:\PropForthv6.0\mygo>goterm
+error: %!s(<nil>)
+usage: goterm [ipaddr:port | com_port baud flowcontrol[0|1]] [commands]*
 
+Commands - blank lines ignored, buffered input hit <ENTER>, ${environmet_variable} is expanded if defined
+Environment variables in the form $XXX are translated to hXXX by SXW (where XXX are valid forth hex characters including _)
+
+...
 }}}
+
+If you see the goterm usage instructions, the goterm program is properly compiled.
+
+== test GOPROXYTERM ==
+
+GoProxyterm is the new bit in PropForth 6.0
+
+It uses properly implemented flow control.  This eliminated the need for the fl (fastload) word.  Now, we can use ANY PC capabile of 230400 baud on the serial port. if the PC is slow, the build process will wait.  We no long have to deal with overun on source load. :0
+
+== Test GOPROXYTERM ==
+
 
 = Details =
 
