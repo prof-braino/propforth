@@ -378,14 +378,19 @@ Highlights of the multitasker:
 
 == TEST the multitasker ==
 
+
+navigate to:
+{{{
 C:\PropForthv6.0\mygo\V6.0\kernels\MAKE\src\optimize\mp
+}}}
 
-find mptest.f
+find *mptest.f*
 
+paste in the whole thing into the teraterm window, we don't need fl
 
-paste in the whole thing don't need fl
-bottom of file paste in:
+bottom of file find in the comments paste in:
 
+{{{
 1 gc
 
 initW
@@ -398,33 +403,36 @@ mpMon mpRes
 -10 10 send 1000 delms mpMon
 
 1 gc 5 gc 10 gc 100 gc
+}}}
 
- multiprocessor test, takes a while. 
+this is the multiprocessor test, it takes a while. 
 
- scroll back up,
+scroll back up,
  1 gc turn garabeg collection off for 1 ms for debug, then turn it back on.
  
- initw defines 128 ques, inputt to a task, out to a task,
- q o0 oin put goes to q1 out put, so links  the bucnh of tasks together. 
+ initw defines 128 tsks, input to a task, out to a task,
+ so the output of one task goes into the input of the next task. So it links the bunch of tasks together. 
 
- w+ adds 128 0to127 tasks to background processing. 
+ w+ adds 128 (0 to 127) tasks to background processing. 
  
- now mpMon should lots of tasks in background.
+ now mpMon should show lots of tasks in background.
  
  inout 128 into q1
- 
- background task needs service that needs 500 uS, system is overloads.  if we need 1.2 millise seconds.
- if we need 1700 uS, we are NOT overloaded. 
+
+So, on mine, it says 696 micro seconds lag. That means if we will hit each task once every 696 micro seconds.  If a task needed to be handled every 500 microseconds, we would be late. But if we only only need to monitor it every 1200 microseconds, we have plenty of time.  In this case we have 128 tasks, ifwe only have one task it would be 696/128, we culd service the task every38 micro seconds.  So we have to make sure we have sufficient time for the nuber of task and our time window..  
+
 HOW often do we need to monitor a pin?  
+
 If we only need to to look at it every 1700 uS we will be fine. till we run out of slots, we can add about 128 slots.
 number is variable, as many free cogs, thats how many tasks are running all the time. 
-six (or seven) cogs are watxching the queue, and it takes about 1700 uS for them to get back around to a given task. 
-
+six (or seven) cogs are watching the queue, and it takes about 1700 uS for them to get back around to a given task. 
+{{{
 -10 10 send 1000 delms mpMon
+}}}
 send it through, terminal at end.
-
+{{{
 1 gc 5 gc 10 gc 100 gc
-
+}}}
 allows garbage coolector to clear out tasks'
 
 mpST at zero, means it done processing and terminated, but still in queue,
@@ -443,26 +451,30 @@ then everything just runs, gets attention every once in a while, and
 once in a while it 1.78ms for 128 tasks. 
 
 7 cogs, 128 tasks. worst case 1.7 ms.  One cog, write to SD once in a while. Pull one cog for a long operation.
-while cog is running, only 6 cogs runing slow it slows down, but only by 1/7 
+while cog is running, only 6 cogs running slow it slows down, but only by 1/7  
 Long time is like 100 ms.   then it goes back to max.
 
 First thing we run out of memory
-with 128 tasks, we used up most of the memery
+with 128 tasks, we used up most of the memory
+
+{{{
 here W@ .
 30908  MPF0 Cog6 ok
+}}}
 
 This is the max we can get out of a prop.
 
-EX Most stuff has been 20-30 tsk for calculation and advanced control. Works well with 20-30 tasks
+EX Most stuff has been 20-30 tasks for calculation and advanced control. Works well with 20-30 tasks
 since April.  
 If we get a prop with more memory, we are good to go.
 
+_sorry, the above is just a paste of my notes, I have not have time to clean it up yet_
 
 -----
 
 = Build Automation =
 
-Tera term must be closed to run the build automation.  GoProxyTerm tlks directly to the prop.
+Tera term must be closed to run the build automation.  GoProxyTerm talks directly to the prop.
 
 
 
