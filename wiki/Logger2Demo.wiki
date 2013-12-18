@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Auto-create a new logfile after midnight.
 #labels v5.5
 
 = Introduction =
