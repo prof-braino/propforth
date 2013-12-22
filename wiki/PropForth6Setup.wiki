@@ -263,6 +263,17 @@ Started:  goproxyterm com22 230400 Raw:3000 Telnet:3100 Debug:3200 3
 
 Your rig is set up and ready to go.
 
+== 20131221 Note ==
+
+In prototype from 20131221 (2013-12-22--07_00mygozip.file) 
+
+ * copy from C:\PropForthv6.0\mygo\goDISTRIBUTEDbinaries
+ * to C:\PropForthv6.0\mygo\bin 
+
+I have 32 bit rig, so I used C:\PropForthv6.0\mygo\goDISTRIBUTEDbinaries\windows_386
+
+Go knows what version it is, so we don't have to recompile. (I don't know, it just works)
+
 = TERATERM local host =
 
 Now we can talk to the propforth command promt using teraterm.
