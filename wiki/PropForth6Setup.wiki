@@ -69,11 +69,11 @@ PATH %systemroot%\system32\; < a bunch of other junk> ; C:\go\bin
 
 -----
 
-= Unzip 2013-12-15-mygozip.file =
+= Unzip 2013-xx-xx-mygozip.file =
 
 Our email won't let us send executable files.  So we renamed the zip archive from 
 
-2013-12-15-mygo.zip
+2013-12-15-mygo.zip  
 
 to
 
@@ -81,11 +81,11 @@ to
 
 and we were able to send this via email.  Simply rename this file back from 
 
-2013-12-15-mygozip.file
+2013-12-22--07_00mygozip.file ~~2013-12-15-mygozip.file~~
 
 to
 
-2013-12-15-mygo.zip
+2013-12-22--07_00mygo.zip ~~2013-12-15-mygo.zip~~
 
 Extract the contents of this file to youur newly created 
 
