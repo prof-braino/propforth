@@ -1,6 +1,8 @@
 #summary Setup PropForth 6.0 prototype.
 #labels PF6.0
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 These are the instructions for setting up PropForth 6.0 on a windows PC.
