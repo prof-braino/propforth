@@ -140,7 +140,7 @@ From the command prompt (after running goshell.bat) type goterm:
 You should see the page or so of usage instructions for goterm.  If not (only the first time), recompile goterm.  (By default, the archive is compiled for Sal's 64 bit machine.  If you have a cheap old 32 bit machine 
 like me, we recompile). 
 
-== goDISTRIBUTEDbinaries ==
+=== goDISTRIBUTEDbinaries ===
 
 C:\Propforth6\mygo\goDISTRIBUTEDbinaries
 
