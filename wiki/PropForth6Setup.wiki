@@ -133,13 +133,6 @@ Go is a tool for managing Go Source Code
 
 You should see the 20 lines or so of go prompt.  If you see this Go is set up.  Procede to the next step, of go back nad futz with go installation.
 
-== Test goterm ==
-
-From the command prompt (after running goshell.bat) type goterm:
-
-You should see the page or so of usage instructions for goterm.  If not (only the first time), recompile goterm.  (By default, the archive is compiled for Sal's 64 bit machine.  If you have a cheap old 32 bit machine 
-like me, we recompile). 
-
 === goDISTRIBUTEDbinaries ===
 
 C:\Propforth6\mygo\goDISTRIBUTEDbinaries
@@ -157,6 +150,15 @@ windows_amd64
 to
 
 C:\Propforth6\mygo\bin
+
+
+
+== Test goterm ==
+
+From the command prompt (after running goshell.bat) type goterm:
+
+You should see the page or so of usage instructions for goterm.  If not (only the first time), recompile goterm.  (By default, the archive is compiled for Sal's 64 bit machine.  If you have a cheap old 32 bit machine 
+like me, we recompile). 
 
 
 === recompile goterm ===
