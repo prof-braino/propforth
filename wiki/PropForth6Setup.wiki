@@ -133,7 +133,7 @@ Go is a tool for managing Go Source Code
 
 You should see the 20 lines or so of go prompt.  If you see this Go is set up.  Procede to the next step, of go back nad futz with go installation.
 
-== Test GoTerm ==
+== Test goterm ==
 
 From the command prompt (after running goshell.bat) type goterm:
 
