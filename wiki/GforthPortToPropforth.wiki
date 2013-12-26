@@ -1,5 +1,8 @@
 #summary Porting Gforth source code to Propforth
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 Martin_h notes on porting Gforth source code to Propforth
