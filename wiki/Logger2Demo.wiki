@@ -1,6 +1,9 @@
 #summary Auto-create a new logfile after midnight.
 #labels v5.5
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 Logger 2 demo is similar to Logger 1 demo: Once each second, a record is collected
