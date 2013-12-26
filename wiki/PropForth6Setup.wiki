@@ -356,6 +356,8 @@ In addition to load balanced multitasking, the pF kernel has some differences.
 
 OK, I got a little exited at this point, and my notes are a little sketchy.
 
+** Remember that goproxyterm must be running on the goshell.bat command line, and we are connected on teraterm to TCP/IP localhost. **
+
 run the mpMon word, ths word is built into themp kernel:
 
 {{{
