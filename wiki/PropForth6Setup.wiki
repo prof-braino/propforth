@@ -1,4 +1,4 @@
-#summary Setup PropForth 6.0 prototype.
+#summary Setup PropForth 6.0 prototype. For PropForth Team only, still in development
 #labels PF6.0
 
 <wiki:toc max_depth="9" />
