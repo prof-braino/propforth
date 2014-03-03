@@ -40,7 +40,7 @@ Open the file in an editor, copy and paster the contents into tera term
 
 = test the code =
 
-The defintions at the end are word we want.  definitions bounded by '[ifdef' are debug words, they can be skipped until neded.
+The defintions at the end are word we want.  definitions bounded by `[ifdef` are debug words, they can be skipped until neded.
 
 == bmpTemp ==
 
