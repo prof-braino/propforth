@@ -46,13 +46,13 @@ The defintions at the end are word we want.  definitions bounded by `[ifdef` are
 
 I used teraterm to run the word bmpTemp  (sort for BMP085 Temperature); and use the period word to displapprin the value off the stack:
 
-{
+{{{
 Prop0 Cog6 ok
 bmpTemp
 Prop0 Cog6 ok
 .
 234 Prop0 Cog6 ok
-}
+}}}
 
 The value 234 is tenths of degree Centigrade.  So the BMP085 says its 23.4 C in here.  The probe on the multimeter says its 21C or 22C.  I say it feels a lot colder than that, but its snowing outside and I just feel cold. Anyway, it looks close, so that will do till for now. 
 
@@ -60,11 +60,11 @@ The value 234 is tenths of degree Centigrade.  So the BMP085 says its 23.4 C in 
 
 run the bmpPressure routine, and display the result that was left on the stack
 
-{
+{{{
 Prop0 Cog6 ok
 bmpPressure .
 100473 Prop0 Cog6 ok
-}
+}}}
 
 This says the barometric pressure is 100473 Pascals or 1004.73 hPa or 1004.73 millibar.  The weather report says the pressure today is around 30.43 inches of mercury or 1030.48 millibar.  So something looks a little off here too. 
 
@@ -82,7 +82,7 @@ This version of bmp085_alt.f has the altitude calculations.  The math is a littl
 
 The code is included here for convenience:
 
-{
+{{{
 1 wconstant build_bmp085alt
 
 lockdict variable _bmp085_pd
@@ -177,7 +177,7 @@ bmpTemp bmpPressure bmpAlt .
 ;
 
 
-}
+}}}
 
 
 
