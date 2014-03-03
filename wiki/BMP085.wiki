@@ -25,9 +25,24 @@ The I2C bus has unique ID for each device. If we can talk to the EEPROM ((i.e  f
 
 = Load the code =
 
+The prop chip needs a propforth kernel and the bmp085 driver code.
+
+== devkernel ==
+
 I used the propforth 5.5 devkernel.spin to start.
 
+== bmp085 driver ==
+
 Next, load bmp085.f
+
+Open the file in an editor, copy and paster the contents into tera term
+
+
+= test the code =
+
+The defintions at the end are word we want.  definitions bounded by '[ifdef' are debug words, they can be skipped until neded.
+
+== bmpTemp ==
 
 I used teraterm to run the word bmpTemp  (sort for BMP085 Temperature); and use the period word to pprin the value off the stack:
 
@@ -41,7 +56,7 @@ Prop0 Cog6 ok
 
 The value 234 is tenths of degree Centigrade.  So the BMP085 says its 23.4 C in here.  The probe on the multimeter says its 21C or 22C.  I say it feels a lot colder than that, but its snowing outside and I just feel cold. Anyway, it looks close, so that will do till for now. 
 
-
+== bmpPressure ==
 
 
 
