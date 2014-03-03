@@ -58,8 +58,15 @@ The value 234 is tenths of degree Centigrade.  So the BMP085 says its 23.4 C in 
 
 == bmpPressure ==
 
+run the bmpPressure routine, and display the result that was left on the stack
 
+{
+Prop0 Cog6 ok
+bmpPressure .
+100473 Prop0 Cog6 ok
+}
 
+This says the barometric pressure is 1004.73 hPa 
 
 
 
