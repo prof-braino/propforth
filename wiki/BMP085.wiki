@@ -188,9 +188,18 @@ We need to know the local barometric pressure at sea level for  the moment we ar
 As above, today's weather said xxxx millibar.
 
 {{{
-xxx  bmpPressure bmpAlt . 
+Prop0 Cog6 ok
+103000 bmpPressure bmpAlt .
+212505 Prop0 Cog6 ok
 
 }}}
+
+This says the elevation is 212.505 meters above sea level.  The local maps say I should be about 199 meters above sea level.
+
+My GY-80 is a bit old, and the data sheet says something about "within one year".
+
+It looks like I have some calibrations to look at....
+
 
 [ continue ]
 
