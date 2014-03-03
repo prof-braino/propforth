@@ -23,7 +23,7 @@ Looks pretty simple.
 
 The I2C bus has unique ID for each device. If we can talk to the EEPROM ((i.e  f the prop boots from EEPROM) the I2C bus is working.   If we use the correct slave ID for the BMP085 ($0x77) we should be talking to the device using the same routines as for EEPROM. EEPROM support exists in all PropFORTH kernels, we don't need to use the EEPROM file system kernel unless we want the EEPROM file system.
 
-= Load the code =
+= Load the code PART 1 =
 
 The prop chip needs a propforth kernel and the bmp085 driver code.
 
@@ -31,7 +31,7 @@ The prop chip needs a propforth kernel and the bmp085 driver code.
 
 I used the propforth 5.5 devkernel.spin to start.
 
-== bmp085 driver ==
+== bmp085 driver  ==
 
 Next, load bmp085.f
 
@@ -66,7 +66,15 @@ bmpPressure .
 100473 Prop0 Cog6 ok
 }
 
-This says the barometric pressure is 1004.73 hPa 
+This says the barometric pressure is 100473 Pascals or 1004.73 hPa or 1004.73 millibar.  The weather report says the pressure today is around 30.43 inches of mercuRy or 1030.48 millibar.  
+
+= LOAD CODE PART 2 =
+
+The file bmp085_alt.f was messed out in one place in the download archive.  
+
+`2013FEB23mygo V5.5 RC1/mygo/V5.5/CurrentRelease/Extensions`
+
+The correct version is in the source kernel
 
 
 
