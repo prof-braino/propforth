@@ -10,18 +10,42 @@ is present on the GY-80 10DOF IMU.
 
 The BMP085 communicates using I2C, SCL an SDA, same as the EEPROM already present on the prop boards. 
 
+Also, if we can talk to the BMP085, we should also be able to talk to the other devices on the GY-80, which are the HMC5883L magnetometer, the ADXL345 accelerometer, and the L3G4200D gyroscope. 
+
 = I2C connection =
 
 Looks pretty simple. 
 
-* 3.3v to 3.3v
-* GND to GND
-* SCL to SCL
-* SDA to SDA
+  * 3.3v to 3.3v
+  * GND to GND
+  * SCL to SCL
+  * SDA to SDA
 
 The I2C bus has unique ID for each device. If we can talk to the EEPROM ((i.e  f the prop boots from EEPROM) the I2C bus is working.   If we use the correct slave ID for the BMP085 ($0x77) we should be talking to the device using the same routines as for EEPROM. EEPROM support exists in all PropFORTH kernels, we don't need to use the EEPROM file system kernel unless we want the EEPROM file system.
 
-Also, if we can talk to the BMP085, we should also be able to talk to the other divces on the GY-80, which are the HMC5883L magnetometer, the ADXL345 accelerometer, and the L3G4200D gyroscope. 
+= Load the code =
+
+I used the propforth 5.5 devkernel.spin to start.
+
+Next, load bmp085.f
+
+I used teraterm to run the word bmpTemp  (sort for BMP085 Temperature); and use the period word to pprin the value off the stack:
+
+{
+Prop0 Cog6 ok
+bmpTemp
+Prop0 Cog6 ok
+.
+234 Prop0 Cog6 ok
+}
+
+The value 234 is tenths of degree Centigrade.  So the BMP085 says its 23.4 C in here.  The probe on the multimeter says its 21C or 22C.  I say it feels a lot colder than that, but its snowing outside and I just feel cold. Anyway, it looks close, so that will do till for now. 
+
+
+
+
+
+
 
 
 = Details =
