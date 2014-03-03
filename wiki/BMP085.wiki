@@ -179,6 +179,20 @@ bmpTemp bmpPressure bmpAlt .
 
 }}}
 
+== bmpAlt ==
+
+The stack notes say ( base pressure )
+
+We need to know the local barometric pressure at sea level for  the moment we are reading. If we use the general value 101325 pascals or 1013.25 millibars, we will have errors depending on the weather. 
+
+As above, today's weather said xxxx millibar.
+
+{{{
+xxx  bmpPressure bmpAlt . 
+
+}}}
+
+[ continue ]
 
 
 = Details =
