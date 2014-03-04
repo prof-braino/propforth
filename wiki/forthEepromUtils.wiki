@@ -24,6 +24,13 @@ Notice that we won't find this code in the end user public release, since the hi
 
 = code =
 
+The commented sections below capture the output of the software logic analyser (LAC - discussed elsewhere).  This shows the timing used to communicate with the EEprom devices on the I2C bus SDA & SCL (prop pins 28 & 29)
+
+
+
+
+
+
 {{{
 
 1 wconstant build_EepromUtils
