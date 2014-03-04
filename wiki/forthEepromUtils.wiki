@@ -26,7 +26,7 @@ Notice that we won't find this code in the end user public release, since the hi
 
 The commented sections below capture the output of the software logic analyser (LAC - discussed elsewhere).  This shows the timing used to communicate with the EEprom devices on the I2C bus SDA & SCL (prop pins 28 & 29)
 
-The commented code is the high level forth code used to generate the  optimized assembler assembler code that is executed by the kernel.  The optimized code is in 64 bit encoded.  Recall that 64 bit encoding uses lots more alphabet characters. Reminder -  the 64 bit encoded characters load faster, we take this text file (sans comments) and loading it into memory. 
+The commented code is the high level forth code used to generate the  optimized assembler assembler code that is executed by the kernel.  The optimized code is in 64 bit encoded.  Recall that 64 bit encoding uses lots more alphabet characters. Reminder -  the 64 bit encoded characters load and interpret faster, we take this text file (sans comments) and loading it into memory. 
 
 
 {{{
