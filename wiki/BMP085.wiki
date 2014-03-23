@@ -23,7 +23,9 @@ Looks pretty simple.
 
 The I2C bus has unique ID for each device. If we can talk to the EEPROM ((i.e  f the prop boots from EEPROM) the I2C bus is working.   If we use the correct slave ID for the BMP085 ($0x77) we should be talking to the device using the same routines as for EEPROM. EEPROM support exists in all PropFORTH kernels, we don't need to use the EEPROM file system kernel unless we want the EEPROM file system.
 
-= hints =
+----
+
+= HINTS =
 
 = eeread and eewrite ==
 
@@ -38,8 +40,6 @@ The I2C slave address(es) of the BMP085 is hEF and xEE per the data sheet
 
 Sending xEF reads from the device and xEE writes to the device.  
 
-
-
 == bmps and bmpr ==
 
 I think the "r" and "s" mean send and recieve
@@ -47,6 +47,7 @@ I think the "r" and "s" mean send and recieve
 === bmps === 
 
 bmps means bmp SEND
+
 {{{
 : _bmps
 	_eestart hEE _eewrite swap _eewrite or
@@ -81,9 +82,9 @@ We are using the 16 bit values, but the support for 24 bits is included.
 
 We also tell the device which register we want to read from or write to.
 
-
-
 The register dumped in bmDUMP are from the data sheet section 3.4 Calibration coefficients listed in Table 4: Calibration coefficients.
+
+The registers IDs are numbers, two bytes (4 hex characters) 
 
 = Load the code PART 1 =
 
