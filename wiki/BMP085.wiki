@@ -31,11 +31,10 @@ The eeread and eewrite words read from and write to the I2C bus devices.
 
 The I2C slave address(es) of the BMP085 is hEF and xEE per the data sheet
 
-{{{
-4.2 Device and register address
+ 4.2 Device and register address
 
-The BMP085 module address is shown below. The LSB of the device address distinguishes between read (1) and write (0) operation, corresponding to address 0xEF (read) and 0xEE (write).
-}}}
+ The BMP085 module address is shown below. The LSB of the device address    distinguishes between read (1) and write (0) operation, corresponding to address  0xEF (read) and 0xEE (write).
+
 
 Sending xEF reads from the device and xEE writes to the device.  
 
