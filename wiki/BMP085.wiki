@@ -86,6 +86,8 @@ The register dumped in bmDUMP are from the data sheet section 3.4 Calibration co
 
 The registers IDs are numbers, two bytes (4 hex characters) 
 
+----
+
 = Load the code PART 1 =
 
 The prop chip needs a propforth kernel and the bmp085 driver code.
