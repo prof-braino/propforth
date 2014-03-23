@@ -23,6 +23,66 @@ Looks pretty simple.
 
 The I2C bus has unique ID for each device. If we can talk to the EEPROM ((i.e  f the prop boots from EEPROM) the I2C bus is working.   If we use the correct slave ID for the BMP085 ($0x77) we should be talking to the device using the same routines as for EEPROM. EEPROM support exists in all PropFORTH kernels, we don't need to use the EEPROM file system kernel unless we want the EEPROM file system.
 
+= hints =
+
+= eeread and eewrite ==
+
+The eeread and eewrite words read from and write to the I2C bus devices. 
+
+The I2C slave address(es) of the BMP085 is hEF and xEE per the data sheet
+
+Sending xEF reads from the device and xEE writes to the device.  
+
+
+4.2 Device and register address
+
+The BMP085 module address is shown below. The LSB of the device address distinguishes between read (1) and write (0) operation, corresponding to address 0xEF (read) and 0xEE (write).
+
+== bmps and bmpr ==
+
+I think the "r" and "s" mean send and recieve
+
+=== bmps === 
+
+bmps means bmp SEND
+{{{
+: _bmps
+	_eestart hEE _eewrite swap _eewrite or
+	if
+		h44 ERR
+	then
+;
+}}}
+
+=== bmpr ===
+
+bmpr means BMP RECEIVE 
+
+\ _bmpr ( addr -- )
+: _bmpr
+	_bmps _eestart hEF _eewrite
+	if
+		h45 ERR
+	then
+;
+
+== 16 or 24 bit values ==
+
+We are using the 16 bit values, but the support for 24 bits is included. 
+
+\ _bmpr16 ( addr -- u16) means send give it a register ID/address and it will return a 16 bit unsigned value
+
+\ _bmpr24 ( addr -- u24) means send give it a register ID/address and it will return a 24 bit unsigned value
+
+
+== bmpDUMP ==
+
+We also tell the device which register we want to read from or write to.
+
+
+
+The register dumped in bmDUMP are from the data sheet section 3.4 Calibration coefficients listed in Table 4: Calibration coefficients.
+
 = Load the code PART 1 =
 
 The prop chip needs a propforth kernel and the bmp085 driver code.
