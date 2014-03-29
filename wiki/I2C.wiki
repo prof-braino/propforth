@@ -79,10 +79,11 @@ I2C is implemented in the kernel to talk to the AT24C512 EEPROM built in to ever
 
 The I2C words are 
 
-`eestart`
-'eestop'
-'eeread'
-'eewrite'
+
+`_eestart`
+`_eestop`
+`_eeread`
+`_eewrite`
 
 
 = Details =
