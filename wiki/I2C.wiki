@@ -84,11 +84,19 @@ The I2C words are
  * `_eeread`
  * `_eewrite`
 
+There are just four commands, so its easy. Here's what they do: 
+
  * `_eestart`  - token which tells devices on I2C bus to start listening
  * `_eestop`  - token wiich tells devices on I2C bus to go back to sleep 
  * `_eeread` - token which tells devices on I2C bus to send a value (from the address about to be sent)
  * `_eewrite` - token which tells devices on I2C bus to write a value (to the address about to be sent)
 
+So, now go back to the page for the device...
+
+ * ADXL345
+ * BMP085
+ * ADXL345
+ * L3G4200D
 
 
 = Details =
