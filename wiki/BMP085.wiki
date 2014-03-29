@@ -167,13 +167,15 @@ I used the propforth 5.5 devkernel.spin to start.
 
 Next, load bmp085.f
 
-bmp085.f is in the extensions directory of the download, it is included here for reference.  Don't copy/pastefrom the google page, copying from the html page causes text errors.
+bmp085.f is in the extensions directory of the download, it is included here for reference.  Don't copy/pastefrom the google page, copying from the html page causes errors due to the browserrr formatting.  The code is included here for reference only.
 
 {{{
 fl
 
 1 wconstant build_bmp085
 
+
+: bmp_debug ; \ this is the line we add to turn on the debug code
 
 [ifdef bmp_debug
 wvariable bmp_debug 1 bmp_debug W!
@@ -661,6 +663,10 @@ bmpTemp bmpPressure bmpAlt .
 
 The stack notes say ( base pressure )
 
+BASE - the barometric pressure at sea level at this  moment (from a weather report or barometer etc.
+
+pressure -  the pressure the BMP085 reads at this moment.
+
 We need to know the local barometric pressure at sea level for  the moment we are reading. If we use the general value 101325 pascals or 1013.25 millibars, we will have errors depending on the weather. 
 
 As above, today's weather said xxxx millibar.
@@ -672,6 +678,8 @@ Prop0 Cog6 ok
 
 }}}
 
+
+
 This says the elevation is 212.505 meters above sea level.  The local maps say I should be about 199 meters above sea level.
 
 My GY-80 is a bit old, and the data sheet says something about "within one year".
@@ -680,6 +688,86 @@ It looks like I have some calibrations to look at....
 
 
 [ continue ]
+
+= interactive testing =
+
+Load BMP085.f
+
+Load BMP085_ALT.f
+
+Load the following:
+
+{{{
+
+fl 
+
+10 wconstant average 
+
+\ averaged_temp ( - ) average 300 sample of temperature
+: averaged_temp 
+        0  average 0 do  
+                  bmpTemp 
+                  \ st? 
+                  + 
+               loop
+          average /
+;
+
+\ averaged_press ( - ) average 300 sample of temperature
+: averaged_press 
+         0  average 0 do  
+                    bmpPressure 
+                    \ st? 
+                    + 
+                    loop
+          average /
+;
+
+: esc h_1B emit ;
+: csi esc h_5B emit ;
+: m ." m" ;    
+: smallf ." f" ; 
+: K ." K" ;
+: semicolon ." ;" ;
+
+\ v>c convert a value ( 0-9 ) for a digit character for emit 
+: v>c h_30 + emit ;
+\ .digits ( n -  ." emit as DECIMAL characters" ) for AT  convert 0-99 for emit
+: .digits 
+          dup h_9 > if h_0A u/mod v>c then \ greater than 9 mod decimal 10
+          v>c ;
+\ AT  ( x y - ) put cursor at x,y
+: AT csi .digits semicolon .digits smallf ;
+
+: home       csi ." 1;1f" ;
+: clear      csi ." 2J" ; 
+: preclear   csi ." 1J" ;
+: postclear  csi ." 0J" ;
+: cls home clear  ;
+
+
+\ bmp_ave ( - ) \ average of 300 samples
+: bmp_ave 
+;
+         
+
+: bmp_loop
+  cls
+
+2 5 AT ." TEMPERATURE PRESSURE ALTITUDE "
+  111 0 do 2 7 AT
+          averaged_temp . 
+          averaged_press .
+          101325 bmpPressure
+  postclear
+        loop
+;
+
+
+
+}}}
+
+
 
 
 = Details =
