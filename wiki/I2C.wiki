@@ -11,8 +11,35 @@ Then again we might just leave it if nobody cares.
 The consequence of leaving it is that the I2C must be explained to each new user.
 The consequence of refactorying the I2C out is that is potentially confuses folks that are used to it. However, the refactoring should not affect anything that uses eeprom. It would take a couple more byte in dictionary space.
 
+= flow diagrams =
 
+I am accustomed to using what we called "Call Flow Diagram" at the telecom jobs. 
+This can exactly define the mesaging sequence for communications.
 
+Master I2C Start (I2C-Start) and Slave Acknowledge (Sack) are defined in the I2C materials if you are curious, but the low level definitions are not needed here s they are already implemented for us in the existing kernel.
+
+In the flow diagram below the side with the colon sends the token, and the arrow => or <= points to the reciever.
+
+I2C sequence is:
+
+....Master      -command-    Slave
+
+1.  Master:I2C-start=>       Slave
+2.  Master:slaveAddr=>       Slave
+3.  Master           <= Sack:Slave
+4.  Master:regAddr  =>       Slave
+5.  Master           <= Sack:Slave
+6.  Master:regData  =>       Slave
+7.  Master           <= Sack:Slave
+...
+N.  M:I2C-stop      =>       Slave
+             
+ * Master = Microcontroller (P8X32A)
+ * Slave = EEPROM, BMP085, etc
+ * I2C-Start = a specific set of pulses and timing the master sends which tell the  * slave device to get ready to act
+ * slaveAddr:  the built-in I2C bus address number for the part we want to talk to
+ * Sack = Slave Acknowledge token - a specific set of pulses and timing the slave sends back to the master to say "ok, I got it!"
+ * I2C-Stop = - a specific set of pulses and timing the master sends to the slave to say "ok, we're cone for now"
 
 
  = Hardware: Wires = 
