@@ -33,9 +33,13 @@ I2C sequence is:
 || Master:|| regData  || =>  ||     ||  Slave|| 
 || Master ||          ||  <= || Sack|| :Slave|| 
 
-... and the above contines until the master sends Nack (no more acknowledge)
+and the above contines until the master sends Nack (no more acknowledge)
 
-|| M:|| I2C-stop  ||     =>  ||     ||  Slave|| 
+|| Master:|| I2C-stop  ||     =>  ||     ||  Slave|| 
+
+At this point the slave stops talking after the seeing the NACK token from the master.
+
+The abbreviations above are defined as:
              
  * Master = Microcontroller (P8X32A)
  * Slave = EEPROM, BMP085, etc
