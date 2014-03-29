@@ -36,7 +36,7 @@ N.  M:I2C-stop      =>       Slave
              
  * Master = Microcontroller (P8X32A)
  * Slave = EEPROM, BMP085, etc
- * I2C-Start = a specific set of pulses and timing the master sends which tell the  * slave device to get ready to act
+ * I2C-Start = a specific set of pulses and timing the master sends which tell the slave device to get ready to act
  * slaveAddr:  the built-in I2C bus address number for the part we want to talk to
  * Sack = Slave Acknowledge token - a specific set of pulses and timing the slave sends back to the master to say "ok, I got it!"
  * I2C-Stop = - a specific set of pulses and timing the master sends to the slave to say "ok, we're cone for now"
