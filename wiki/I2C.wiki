@@ -16,15 +16,25 @@ The consequence of refactorying the I2C out is that is potentially confuses folk
 I am accustomed to using what we called "Call Flow Diagram" at the telecom jobs. 
 This can exactly define the mesaging sequence for communications.
 
-Master I2C Start (I2C-Start) and Slave Acknowledge (Sack) are defined in the I2C materials if you are curious, but the low level definitions are not needed here s they are already implemented for us in the existing kernel.
+The device on the left sends the listed message to the device on the right. 
 
-In the flow diagram below the side with the colon sends the token, and the arrow => or <= points to the reciever.
+The device on the right responds to the last message with the reply listed.
+
+Any transaction between the device can be described using a flow diagram (otherwise there might be some problem). 
+
+= tokens used =
+
+Master I2C Start (I2C-Start) and Slave Acknowledge (Sack) are defined in the I2C materials if you are curious, but the low level definitions are not needed here as they are already implemented for us in the existing kernel.  This is just to explain whats happening. 
+
+In the flow diagram below the side with the colon sends the token, and the arrow => or <= points from the sender to the receiver.
+
+= I2C Protocol =
 
 I2C sequence is:
 
 || I2C ||
 
-|| Master || -command-|| direction  || response ||    Slave || 
+|| *Master* || _command_ || direction  || _response_ ||    *Slave* || 
 || Master:|| I2C-start|| =>  ||     ||  Slave|| 
 || Master:|| slaveAddr|| =>  ||     ||  Slave|| 
 || Master ||          ||  <= || Sack|| :Slave|| 
@@ -58,10 +68,6 @@ The four wires are:
  * RxD
 
 TxD and RxD are transmit and receive. 
-
-= I2C Protocol =
-
-oops, dinner time
 
 
 = Details =
