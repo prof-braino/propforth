@@ -22,15 +22,17 @@ In the flow diagram below the side with the colon sends the token, and the arrow
 
 I2C sequence is:
 
-....Master      -command-    Slave
+|| I2C ||
 
- #  Master:I2C-start=>       Slave
- #  Master:slaveAddr=>       Slave
- #  Master           <= Sack:Slave
- #  Master:regAddr  =>       Slave
- #  Master           <= Sack:Slave
- #  Master:regData  =>       Slave
- #  Master           <= Sack:Slave
+|| ....Master ||      -command-  ||   Slave || 
+
+||   Master:|| I2C-start|| =>  ||      Slave|| 
+||   Master:slaveAddr=>       Slave
+||  Master           <= Sack:Slave
+||  Master:regAddr  =>       Slave
+||  Master           <= Sack:Slave
+||  Master:regData  =>       Slave
+||  Master           <= Sack:Slave
 
 ...
 
