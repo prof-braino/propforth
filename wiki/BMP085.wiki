@@ -57,10 +57,21 @@ bmps means bmp SEND
 ;
 }}}
 
+ * `_eestart` - I2C start token
+ * `hEE _eewrite` -  send xEE to BMP085,  this means we want to write to a register
+ * `swap` this takes the result from the previous `_eewrite` and swaps it with the address that was passed in on the stack
+ * `_eewrite` - this uses the address passed in on the stack; thisis where we actually tell the BMP085 the register that we want to see
+ * `or` - or the reslts of the two write commands. If the result was not 0, then there was some error. 
+
+hex 44 means 'there was an error in `_bmps`, and we have t find this clde and figure out why. 
+
+
+
 === bmpr ===
 
 bmpr means BMP RECEIVE 
 
+{{{
 \ _bmpr ( addr -- )
 : _bmpr
 	_bmps _eestart hEF _eewrite
@@ -68,6 +79,30 @@ bmpr means BMP RECEIVE
 		h45 ERR
 	then
 ;
+}}}
+
+ * `_bmps` - do the bmps command (send)
+ * `_eestart` - listen for a command
+ * `hEF _eewrite` -  this time we will write to the register
+ 
+hesx 45 means there was and error in the bmpr, we have to find this code and figure out why. 
+
+
+=== control register ===
+
+{{{
+\ _bmpcrw ( c -- )  \  xF4 is  control register
+: _bmpcrw
+	hF4 _bmps _eewrite _eestop
+	if
+		h46 ERR
+	then
+;
+}}}
+
+ * `hF4 _bmps` - hex F4 is the BMP085 control register.
+ * `_eewrite` - this command consumes the value on the stack, that gets written to the control register
+ * `_eestop` tells the device to go back to whatever it does wneh its not answering the master
 
 == 16 or 24 bit values ==
 
@@ -80,11 +115,43 @@ We are using the 16 bit values, but the support for 24 bits is included.
 
 == bmpDUMP ==
 
-We also tell the device which register we want to read from or write to.
+Put this line in the beginning of the source code file...
+
+{{{
+: bmp_debug ;
+}}}
+
+... after the `fl` and before the first `[ifdef` to activate the debug code. 
+
+When loaded, tthe sourece code willinclude all the debug functions listed. 
 
 The register dumped in bmDUMP are from the data sheet section 3.4 Calibration coefficients listed in Table 4: Calibration coefficients.
 
 The registers IDs are numbers, two bytes (4 hex characters) 
+
+If the BMP085 is connecte properly and functioning, the output should look similar to this:
+
+{{{
+Prop0 Cog6 ok
+_bmpDump
+     Chip ID: 0x55 
+Chip Version: 0x1 
+         AC1: 8643 
+         AC2: -1112 
+         AC3: -14457 
+         AC4: 33862 
+         AC5: 26075 
+         AC6: 21265 
+          B1: 5498 
+          B2: 58 
+          MB: -32768 
+          MC: -11075 
+          MD: 2432 
+Prop0 Cog6 ok
+
+
+
+}}}
 
 ----
 
