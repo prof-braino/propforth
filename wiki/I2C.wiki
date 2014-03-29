@@ -20,6 +20,10 @@ The device on the left sends the listed message to the device on the right.
 
 The device on the right responds to the last message with the reply listed.
 
+We list it as ONE message per line.
+
+Messages are listed in SEQUENCE first message at the top, last message at the bottom. 
+
 Any transaction between the device can be described using a flow diagram (otherwise there might be some problem). 
 
 = tokens used =
