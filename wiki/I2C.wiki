@@ -24,14 +24,16 @@ I2C sequence is:
 
 ....Master      -command-    Slave
 
-1.  Master:I2C-start=>       Slave
-2.  Master:slaveAddr=>       Slave
-3.  Master           <= Sack:Slave
-4.  Master:regAddr  =>       Slave
-5.  Master           <= Sack:Slave
-6.  Master:regData  =>       Slave
-7.  Master           <= Sack:Slave
+ #  Master:I2C-start=>       Slave
+ #  Master:slaveAddr=>       Slave
+ #  Master           <= Sack:Slave
+ #  Master:regAddr  =>       Slave
+ #  Master           <= Sack:Slave
+ #  Master:regData  =>       Slave
+ #  Master           <= Sack:Slave
+
 ...
+
 N.  M:I2C-stop      =>       Slave
              
  * Master = Microcontroller (P8X32A)
