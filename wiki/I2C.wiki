@@ -25,14 +25,13 @@ I2C sequence is:
 || I2C ||
 
 || ....Master ||      -command-  ||   Slave || 
-
 ||   Master:|| I2C-start|| =>  ||      Slave|| 
-||   Master:slaveAddr=>       Slave
-||  Master           <= Sack:Slave
-||  Master:regAddr  =>       Slave
-||  Master           <= Sack:Slave
-||  Master:regData  =>       Slave
-||  Master           <= Sack:Slave
+||   Master:|| slaveAddr|| =>||        Slave|| 
+||  Master||            <= || Sack:Slave|| 
+||  Master:|| regAddr ||  => ||       Slave|| 
+||  Master  ||         ||  <= || Sack:Slave|| 
+||  Master:|| regData ||  => ||       Slave|| 
+||  Master ||          ||  <= || Sack:Slave
 
 ...
 
