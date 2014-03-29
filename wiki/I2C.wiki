@@ -4,6 +4,17 @@
 
 I2C is a communication bus.  I2C uses two wires (TxD, RxD) for communication between the microcontroller and the device.  Actually there are four wires, two for communication, and two more, one for power (3.3volts for the prop) and ground. 
 
+The Prop EEprom uses I2C communications. 
+The I2C driver support was originally developed in the context of the EEprom.
+The I2C words have eeprom names. We might re-factor the th I2C layer out of the eeprom words for clarity;
+Then again we might just leave it if nobody cares. 
+The consequence of leaving it is that the I2C must be explained to each new user.
+The consequence of refactorying the I2C out is that is potentially confuses folks that are used to it. However, the refactoring should not affect anything that uses eeprom. It would take a couple more byte in dictionary space.
+
+
+
+
+
  = Hardware: Wires = 
 
 The four wires are:
