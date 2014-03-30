@@ -91,6 +91,14 @@ There are just four commands, so its easy. Here's what they do:
  * `_eeread` - token which tells devices on I2C bus to send a value (from the address about to be sent)
  * `_eewrite` - token which tells devices on I2C bus to write a value (to the address about to be sent)
 
+== EEREAD ==
+
+_eeread is cool in that it takes a flag.
+
+0 _eeread means there are to be MORE reads, so the I2C auto-increment function can be used. The slave device register pointer increments to the next register, and another _eeread gets the next value. FAST!
+
+-1 _eeread (or any non-zero value) means this is the last register we plan to read. 
+
 So, now go back to the page for the device...
 
  * ADXL345
