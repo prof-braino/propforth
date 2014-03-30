@@ -9,6 +9,7 @@ ADXL345 is an [I2C] bus device.
 
 http://www.analog.com/static/imported-files/data_sheets/ADXL345.pdf
 
+{{{
 \ data registers (Address 0x32 to Address 0x37)
 \   0x32 X-Axis Data 0
 \   0x33 X-Axis Data 1
@@ -50,6 +51,7 @@ http://www.analog.com/static/imported-files/data_sheets/ADXL345.pdf
 \ are still updated at the sampling rate set by the wakeup bits (D1:D0).
 \ When clearing the sleep bit, it is recommended that the part be placed into standby mode 
 \ and then set back to measurement mode with a subsequent write. This
+}}}
 
 = Creating the Driver = 
 
