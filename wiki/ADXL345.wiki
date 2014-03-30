@@ -5,6 +5,61 @@
 ADXL345 is an [I2C] bus device.
 
 
+= Highlights From the Data Sheet = 
+
+http://www.analog.com/static/imported-files/data_sheets/ADXL345.pdf
+
+\ data registers (Address 0x32 to Address 0x37)
+\   0x32 X-Axis Data 0
+\   0x33 X-Axis Data 1
+\   0x34 y-Axis Data 0
+\   0x35 y-Axis Data 1
+\   0x36 z-Axis Data 0
+\   0x37 z-Axis Data 1
+
+\ FIFO 32 values 
+\ FIFO_CTL register (Address 0x38) mode selected by the settings FIFO_MODE bits (Bits[D7:D6]) 
+
+\ bypass, FIFO, stream, trigger
+\ bypass: fifo not used = possibly, try first
+\ FIFO:  stops sets watermark until samples less than specified = Maybe
+\ stream: sets watermark, discards old **** = yes
+\ trigger: holds 32 samples, needs to be reset for next trigger = no
+
+\ self test : function is enabled (via the SELF_TEST bit in the DATA_FORMAT register, Address 0x31)
+\  the part must be in normal power operation (LOW_POWER bit = 0 in BW_RATE register, Address 0x2C) 
+\  and be placed into a data rate of 100 Hz through 800 Hz or 3200 Hz for the self-test function to
+\  operate correctly.
+
+\ tap threshold 0 - 16 G - Reg 0x1D
+\ x20 (32d) = 1 g
+\ x30 (48d) = 2 g
+
+
+\ Measure Bit
+\ A setting of 0 in the measure bit places the part into standby mode, 
+\ and a setting of 1 places the part into measurement mode. 
+\ The ADXL345 powers up in standby mode with minimum power consumption.
+
+\ Sleep Bit
+\ A setting of 0 in the sleep bit puts the part into the normal mode of operation, 
+\ and a setting of 1 places the part into sleep mode. Sleep mode suppresses DATA_READY, 
+\ stops transmission of data to FIFO, and switches the sampling rate to one specified by the wakeup bits. 
+\ In sleep mode, only the activity function can be used. 
+\ When the DATA_READY interrupt is suppressed, the output data registers (Register 0x32 to Register 0x37) 
+\ are still updated at the sampling rate set by the wakeup bits (D1:D0).
+\ When clearing the sleep bit, it is recommended that the part be placed into standby mode 
+\ and then set back to measurement mode with a subsequent write. This
+
+= Creating the Driver = 
+
+The ADXL345 drive is base on the [BMP085] driver, which in turn is built on the EEPROM support in the kernel.
+
+== addresses ==
+
+{{{
+With the ALT ADDRESS pin high, the 7-bit I 2 C address for the device is 0x1D, followed by the R/W bit. This translates to 0x3A for a write and 0x3B for a read. An alternate I 2 C address of 0x53 (followed by the R/W bit) can be chosen by grounding the ALT ADDRESS pin (Pin 12).  This translates to 0xA6 for a write and 0xA7 for a read.
+}}}
 = Details =
 
 Add your content here.  Format your content with:
