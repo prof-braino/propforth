@@ -57,9 +57,30 @@ The ADXL345 drive is base on the [BMP085] driver, which in turn is built on the 
 
 == addresses ==
 
-{{{
+Data sheet - Page 18 - I2C
+
 With the ALT ADDRESS pin high, the 7-bit I 2 C address for the device is 0x1D, followed by the R/W bit. This translates to 0x3A for a write and 0x3B for a read. An alternate I 2 C address of 0x53 (followed by the R/W bit) can be chosen by grounding the ALT ADDRESS pin (Pin 12).  This translates to 0xA6 for a write and 0xA7 for a read.
-}}}
+
+0x1D = 11101 followed by a R/W bit means shift the patten 1 bit to the left:
+
+111010 and 111011, which are x3A (write) and x3B (read).
+
+if there is need for a different address, 0x53 which is 1010011
+
+The alternates would be 10100110 xA6 (write) and 10100111 xA7 (read)
+
+= Differences from BMO085 =
+
+The BMP085 has a control register 
+
+The ADXL345 we write directly to each register.
+
+
+
+
+
+
+
 = Details =
 
 Add your content here.  Format your content with:
