@@ -71,7 +71,7 @@ if there is need for a different address, 0x53 which is 1010011
 
 The alternates would be 10100110 xA6 (write) and 10100111 xA7 (read)
 
-= Differences from BMO085 =
+= Differences from BMP085 =
 
 The BMP085 has a control register 
 
