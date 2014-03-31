@@ -59,7 +59,7 @@ bmps means bmp SEND
 
  * `_eestart` - I2C start token
  * `hEE _eewrite` -  send xEE to BMP085,  this means we want to write to a register
- * `swap` this takes the result from the previous `_eewrite` and swaps it with the address that was passed in on the stack
+ * `swap` this takes the result from the preceding  `_eewrite` and swaps it with the address that was passed in on the stack
  * `_eewrite` - this uses the address passed in on the stack; thisis where we actually tell the BMP085 the register that we want to see
  * `or` - or the reslts of the two write commands. If the result was not 0, then there was some error. 
 
