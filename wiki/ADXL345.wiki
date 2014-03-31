@@ -104,7 +104,7 @@ fl
                _ADXLr  -1 _eeread _eestop 
 ;
 
-\ _ADXL.DEVID ( -- ID:xE5 ) \ Register 0x00 DEVID (Read Only) fixed device ID code of 0xE5 (345 octal).
+\ _ADXL.DEVID ( -- ID:xE5 ) \ Register 0x00 DEVID (Read Only) fixed device ID code of 0xE5 (345 octal) 229 decimal.
 : ADXL.DEVID          h00   ;
 : ADXL.THRESH_TAP     h1D   ;
 : ADXL.OFSX           h1E   ;
@@ -375,7 +375,7 @@ b1000_0111  !FIFO_CTL \ streamFIFO, INT1,  7 samples to watermark
 
 }}}
 
-Whoopie!  The code runs, it looks like the device works.  I wonder what all those little numbers mean?  
+Whoopie!  The code runs, it looks like the device works. 
 
 SAMPLE OUTPUT:
 
@@ -419,6 +419,8 @@ SAMPLE OUTPUT:
 
 
 }}}
+
+I wonder what all those little numbers mean?  
 
 Now the fun part begins!
 
