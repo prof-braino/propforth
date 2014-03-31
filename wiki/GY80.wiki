@@ -2,13 +2,23 @@
 
 = GY-80 Inertial Measurement unit =
 
-The GY-80 is a very inexpensive inertial measurement unit.
+The GY-80 is a very inexpensive 10DOF inertial measurement unit.
 
 I got mine off Ebay for about $50, it was insanely cheap at the time.  Now they are going for about $14.  Be aware that these might be rejects or in some way defective.  They still work and are fun to play with, and are fine for experimentation purposes.  
 
+There are newer parts on the market that are more capable and possibly cheaper.  Some have upgraded versions of these parts, so potentially there are drop-in replacements and the same code works.  CHECK THE DATA SHEET, as always!
+
+= Uses =
+
+IMU is handy for meausuring changes in speed and position (inertia).  If we know speed and direction, we can determine our position in relation to a known point, such as our starting point.  If we have no other information, we can call this "dead reckoning" or "deduced reckoning".
+
+We can use this for Robo-Magellan, or Quad Copter navigation and control. 
+
+NOTE:  GPS is separate from this IMU, we can add GPS later. 
+
 = I2C =
 
-The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are acutually FOUR I2C bus parts. The use the same [I2C] wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
+The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are actually FOUR I2C bus parts on the GY-80. The use the same [I2C] wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
 
 The parts are 
  * ADXL345 accelerometer
