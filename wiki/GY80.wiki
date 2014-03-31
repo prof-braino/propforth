@@ -8,7 +8,7 @@ I got mine off Ebay for about $50, it was insanely cheap at the time.  Now they 
 
 = I2C =
 
-The GY-80 uses  I2C bus  to talk with the microprocessor.  There are acutually FOUR I2C bus parts. The use the same I2C wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
+The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are acutually FOUR I2C bus parts. The use the same [I2C] wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
 
 The parts are 
  * ADXL345 accelerometer
