@@ -1,0 +1,32 @@
+#summary GY-80 IMU.
+
+= GY-80 Inertial Measurement unit =
+
+The GY-80 is a very inexpensive inertial measurement unit.
+
+I got mine off Ebay for about $50, it was insanely cheap at the time.  Now they are going for about $14.  Be aware that these might be rejects or in some way defective.  They still work and are fun to play with, and are fine for experimentation purposes.  
+
+= I2C =
+
+The GY-80 uses  I2C bus  to talk with the microprocessor.  There are acutually FOUR I2C bus parts. The use the same I2C wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
+
+The parts are 
+ * ADXL accelerometer
+ * BMP085 barometric pressure sensor
+ * HMC5883L magnetometer (Compass)
+ * L3G4200D gyroscope
+
+The accelerometer, gyroscope, and magnetometer all are 3 axis. 
+
+ * [ADXL]
+ * [BMP085]
+ * [HMC5883L]
+ * [L3G4200D]
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
