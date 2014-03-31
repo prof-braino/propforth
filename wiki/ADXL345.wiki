@@ -377,6 +377,49 @@ b1000_0111  !FIFO_CTL \ streamFIFO, INT1,  7 samples to watermark
 
 Whoopie!  The code runs, it looks like the device works.  I wonder what all those little numbers mean?  
 
+SAMPLE OUTPUT:
+
+{{{
+  x=17      
+  y=-6      
+  z=-277    
+ FIFO Status:32    
+
+
+ _ADXL.DEVID               229 
+  _ADXL.THRESH_TAP     63 
+  _ADXL.OFSX           0 
+  _ADXL.OFSY           0 
+  _ADXL.OFSZ           0 
+  _ADXL.DUR            63 11 
+  _ADXL.Latent         63  
+  _ADXL.Window         63 
+  _ADXL.THRESH_ACT     63 35 
+  _ADXL.THRESH_INACT   63 
+  _ADXL.TIME_INACT     63   
+  _ADXL.ACT_INACT_CTL  255  
+  _ADXL.THRESH_FF      63   
+  _ADXL.TIME_FF        63   
+  _ADXL.TAP_AXES       15     
+  _ADXL.ACT_TAP_STATUS 3 4    
+  _ADXL.BW_RATE          13   
+  _ADXL.POWER_CT       11    
+  _ADXL.INT_ENABLE     252 
+  _ADXL.INT_MAP        0 
+  _ADXL.INT_SOURCE       131 
+  _ADXL.DATA_FORMAT    0 
+  _ADXL.DATAX0         16     
+  _ADXL.DATAX1         0      
+  _ADXL.DATAY0         7      
+  _ADXL.DATAY1         0      
+  _ADXL.DATAZ0         233    
+  _ADXL.DATAZ1         254    
+  _ADXL.FIFO_CTL       135    
+  _ADXL.FIFO_STATUS    32    
+
+
+}}}
+
 Now the fun part begins!
 
 
