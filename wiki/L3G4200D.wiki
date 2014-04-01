@@ -185,7 +185,9 @@ wvariable _L3GOss 3 _L3GOss W!
 ;
 
 
-
+\ this section is ANSI control codes for testing
+\ this should not be present in the final driver,
+\ as this driver would run on a background cog, not the user interface
 
 : esc h_1B emit ;
 : csi esc h_5B emit ;
@@ -211,6 +213,8 @@ wvariable _L3GOss 3 _L3GOss W!
 : clear-eol  csi h_0 .digits K ;
 : clear-bol  csi h_1 .digits K ;
 : clear-line csi h_2 .digits K ;
+
+\  end of ANSI support
 
 : test
       cls
