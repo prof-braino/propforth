@@ -1,4 +1,4 @@
-#summary L3G42000 MEMS gyro driver
+#summary L3G42000 MEMS gyro driver I2C
 
 = Introduction =
 
