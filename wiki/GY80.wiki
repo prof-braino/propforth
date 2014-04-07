@@ -69,7 +69,7 @@ wvariable ADXL.XYZDATA 4 allot
 \ _ADXLr8 ( addr - U8 )  register read
 : _ADXLr8 _ADXLr -1 _eeread _eestop ;
 
-\ don't need all the individual register addresses unless changing defaults
+\ dont need all the individual register addresses unless changing defaults
 \ in fact, we are doing a multi-read, so we only need the FIRST data register,
 \  which is dataX0 at address hex 32
 : ADXL.DEVID          h00   ;
