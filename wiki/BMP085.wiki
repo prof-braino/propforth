@@ -1,4 +1,4 @@
-#summary BMP085 temperature and pressure sensor, used as altimeter
+#summary BMP085 temperature and pressure sensor, used as altimeter I2C
 
 = BMP085 =
 
