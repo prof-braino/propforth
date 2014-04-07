@@ -1,4 +1,4 @@
-#summary HMC5883L Compass driver.
+#summary HMC5883L Compass driver I2C.
 
 = Introduction =
 
