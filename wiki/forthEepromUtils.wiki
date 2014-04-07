@@ -1,4 +1,4 @@
-#summary The EEPROM utilities in ALL proporthkernels.
+#summary The EEPROM utilities in ALL propFORTH kernels.
 
 = Introduction =
 
