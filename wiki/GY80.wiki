@@ -91,7 +91,6 @@ wvariable ADXL.XYZDATA 4 allot
 
 \ ADXLrXYZ! ( - ) read current XYZ and store in array ADXL.XYZDATA
 : ADXLrXYZ!
-
              ADXL.DATAX0 
              _ADXLr
            \ DATAx0 is least significant byte; DATAx1 is the most significant byte
@@ -219,8 +218,6 @@ wvariable _bmpOss 3 _bmpOss W!
 : BMP085!  bmpTemp bmpPressure bmp.data dup 2+ rot swap L! W! ;
 
 : BMP085@ bmp.data dup W@ swap 2+ L@ ;
-            
-
 
 \ bmpTemp bmpPressure
 
@@ -280,7 +277,6 @@ wvariable HMC5883L 4 allot
 
 \ **************************************************************
 
-
 1 wconstant build_L3G4200D
 
 wvariable L3G4200D 8 allot
@@ -320,11 +316,6 @@ wvariable L3G4200D 8 allot
 
 : autoINC h80 or ;
 
-
-
-
-: autoINC h80 or ;
-
 \  temperature is 1 C per digit 
 \ 0 =-40C 125 = 85c
 \  60D = h3C = 20C = expected test reading in the lab = h3C (3A-3F)
@@ -345,14 +336,6 @@ wvariable L3G4200D 8 allot
 \ _U16signed32 ( U16 -- s32) convert unsigned word to signed long
 : _U16signed32 dup h8000 and if hFFFF0000 or then ;
 
-
-
-
-
-
-
-
-
 : !L3G8 _L3Gw8 ; \  MAYBE!!!!!!!
 \ this section define setting any setable registers
 \ : !L3G.WHO_AM_I      h0F    ; \ readonly = xD3 
@@ -363,7 +346,6 @@ wvariable L3G4200D 8 allot
 : !L3G.CTRL_REG5     h24 !L3G8  ; \ default = x0
 
 : L3G.CONFIGURE
-
   b0000_1111 !L3G.CTRL_REG1 \ min speed, power on
   b0010_0111 !L3G.CTRL_REG2 \ normal 200Hz  0.1
   b0000_0000 !L3G.CTRL_REG3 \ idsable interupts (default)
@@ -374,7 +356,6 @@ wvariable L3G4200D 8 allot
 : L3G.start
            L3G.CONFIGURE
 ;
-
 
 : L3G4200D!
             L3G.OUT_TEMP 
@@ -395,17 +376,13 @@ wvariable L3G4200D 8 allot
           L3G4200D W!      \ temp
 ;
 
-
 : L3G4200D@
-          
           L3G4200D 8 + W!   \ z
           L3G4200D 6 + W!   \ y
           L3G4200D 4+ W!   \ x
           L3G4200D 2+ W!   \ stat
           L3G4200D W!      \ temp
 ;
-
-
 
 \ **************************************************************
 
@@ -495,8 +472,6 @@ wvariable L3G4200D 8 allot
       33 3 AT  L3G4200D 2+ W@ (signed) . 3 spaces \  clear-eol 
 ;
 
-
-
 \ This is a diagnostic that displays the AXDL data in the foreground cog session
 : GY80
       cls 2 8 AT start.GY80
@@ -509,7 +484,6 @@ wvariable L3G4200D 8 allot
 ;
 
 \ GY80
-
 
 }}}
 
