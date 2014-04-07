@@ -1,4 +1,4 @@
-#summary GY-80 IMU.
+#summary GY-80 IMU. I2C
 
 = GY-80 Inertial Measurement unit =
 
