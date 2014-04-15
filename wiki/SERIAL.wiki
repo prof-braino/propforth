@@ -76,7 +76,7 @@ The division operation only hapens once at compile time, so the effect is neglig
 
 == the full code ==
 
-{
+{{{
 
 : term
 	over cognchan min ." Hit CTL-P to exit term, CTL-Q exit nest1 CTL-R exit nest2 ... CTL-exit nest9~h0D~h0A"
@@ -91,7 +91,9 @@ cog?
 
 5 0 term
 
-}
+}}}
+
+
 = Custom Serial Connection =
 
 From forum post 
