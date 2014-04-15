@@ -58,6 +58,10 @@ serial ttakes three parameters:  Tx-pin Rx-pin and Baud rate.
 
 Remember, we must divide the baud rate by four!  The baud rate USED to fit in a word (2 bytes) memory cell up to baud 57600. But the biggest number in a word is 65535.  Now we routinely use 230400.  Rather than use the extra memory, and make a bunch of other code changes, Sal decided to use (baud divided by four).
 
+Tx = pin 0
+Rx = pin 1
+baud (115200) = 115200/4 = 28800
+
 We could do the example above either 
 {{{
 c" 0 1  115200 4 /  serial" nfcog cogx
@@ -85,7 +89,7 @@ The division operation only hapens once at compile time, so the effect is neglig
 	cogid iounlink
 ;
 
-c" 0 1 115200 4 /  serial" nfcog cogx
+c" 0 1 28800  serial" nfcog cogx
 
 cog?
 
