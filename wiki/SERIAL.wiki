@@ -5,8 +5,94 @@
 <wiki:toc max_depth="9" />
 
 
+= regular full duplex serial connection =
 
-= Introduction =
+To start a regular full duplex serial connection, we use the "term" and "serial" words. 
+
+serial is optimized in assembly and built into the kernel.
+
+term is a short but scarey looking bit of code, we can just paste it in with out digging too deep at the moment. 
+
+== term ==
+
+define the "term" word:
+
+{{{
+\ terrm \ ( cog 0 - )
+: term
+      over cognchan min 
+      ." Hit CTL-P to exit term, CTL-Q exit nest1 CTL-R exit nest2 ... CTL-exit nest9~h0D~h0A"
+
+      >r >r cogid 0 r> r> (iolink)
+
+      begin 
+           key dup h10 = 
+           if drop -1 
+           else dup h11 h19 
+                between 
+                if 
+                   1- 
+                then 
+                emit 0 
+           then 	
+      until
+      cogid iounlink
+;
+
+}}}
+
+The "term" word is abbreviation for terminal.  The parameters passed on the stack are the cog to talk to, and a flag (that is always zero for me, I should figure out what it for). 
+
+
+== serial ==
+
+{{{
+c"  0 1 115200 4 /  serial" nfcog cogx
+}}}
+
+serial ttakes three parameters:  Tx-pin Rx-pin and Baud rate.
+
+ * Tx is the pin you have selected to talk on (transmit)
+ * Rx is the pin you have selected to listen (recieve)
+ * baud is the Baud Rate DIVIDED BY FOUR!!!
+
+Remember, we must divide the baud rate by four!  The baud rate USED to fit in a word (2 bytes) memory cell up to baud 57600. But the biggest number in a word is 65535.  Now we routinely use 230400.  Rather than use the extra memory, and make a bunch of other code changes, Sal decided to use (baud divided by four).
+
+We could do the example above either 
+{{{
+c" 0 1  115200 4 /  serial" nfcog cogx
+}}}
+
+or
+
+{{{
+c" 0 1 28800  serial" nfcog cogx
+}}}
+
+The division operation only hapens once at compile time, so the effect is negligible. And having "baud 4 /" helps me remember.  OK, its a little weird, space is at a premium, and it works. 
+
+
+
+
+== the full code ==
+
+{
+
+: term
+	over cognchan min ." Hit CTL-P to exit term, CTL-Q exit nest1 CTL-R exit nest2 ... CTL-exit nest9~h0D~h0A"
+	>r >r cogid 0 r> r> (iolink)
+	begin key dup h10 = if drop -1 else dup h11 h19 between if 1- then emit 0 then 	until
+	cogid iounlink
+;
+
+c" 0 1 115200 4 /  serial" nfcog cogx
+
+cog?
+
+5 0 term
+
+}
+= Custom Serial Connection =
 
 From forum post 
 
