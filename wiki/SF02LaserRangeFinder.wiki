@@ -1,0 +1,111 @@
+#summary SF02/f Time of Flight Laser Range Finder
+
+<wiki:toc max_depth="9" />
+
+
+= Acknowledgement =
+
+Prof Braino is US distributor for the Lightware Optoelctronics
+
+So I get to play with their fancy laser range finder products
+
+= Time of Flight  =
+
+The SF02/f measures the time for a very sharp edge pulse from a very powerful laser diode to travel from the diode to the target and back to the very sensitive detector. 
+
+It uses a technique called [http://en.wikipedia.org/wiki/Digital_down_converter Down Conversion]
+
+It actually sends and detects and measures a zillion pulses and combines these to make a single reading.  It give 12 readings per second.
+
+= Serial Communications =
+
+The SF02 talks over serial at 115200 baud by default.
+
+== PC terminal emulator ==
+
+A PC terminal emulator program can talk to the SF02 using the built in virtual serial port. Plug in the serial cable to the SF02 and to the PC, open the terminal emulator program (TeraTerm on Windows,  Minicom on Linux) connect to USB0.
+
+The SF02 starts dispalying the current measurement immediately. Readings are delivers 12 times per second.  The transfer is limited by the speed of the serial connection, I think. 
+
+== Microcontroller Direct Serial ==
+
+The microcontroller can talk to the SF02 using simple serial. 
+
+I'm using a Propeller quickstart in this example.  If you use another micro controllerr, check the data sheet. You will ruin something if you connect the power incorrectly.
+
+Connect wires for the serial connection to SF02/f screw terminals 8, 9, and 10. 
+
+ * 8 - TxD
+ * 9 - RxD 
+ * 10 Ground
+
+Also connect wires to +5volts in and Ground
+
+ * 2 - Ground
+ * 3 - +5 Volts
+ 
+Last, connect a wire to digital trigger.
+
+ * 5 - digital trigger
+
+Now to connect the micro controller.  I'm using a bread board between the SF02/f and teh quickstart, but of course you can do it any way that's convenient. 
+
+I'm going to use quickstart pins 20 and 21 for TxD and RxD because I like to see the LEDs flash and show that communications are happening.
+
+The Quickstart will be connected to the PC USB serial, so the quickstart will proivde power to the SF02/f.  
+
+Connect SF02/f terminal 3 (+5volts) to Quickstart header position 40 Vin
+Connect SF02/f terminal 2 (Ground)  to Quickstart header position 39 Vss
+Connect SF02/f terminal 8 (TxD) to Quickstart header position 20 (QS-RxD)
+Connect SF02/f terminal 9 (RxD) to Quickstart header position 21 (QS-TxD)
+Connect SF02/f terminal 10 (Ground) to Quickstart header position 39 Vss
+
+Notice that there are TWO connection from the SF02/f terminals to the Quickstart ground.  You probably could get by with just one  ground connected in this case.  In other case, it might have problems. I would say just connect them both if you have a breadboard. 
+
+= PropFORTH simple serial =
+
+PropFORTH simple serial is ... simple. And its serial.  Wow!
+
+The 'serial' word takes three parameters from the stack:
+
+ * TxD pin 
+ * RxD pin 
+ * Baud - notice that this is "baud divided by four"
+
+The 'serial' word returns no values on the stack.
+
+
+{{{
+\ serial ( TxD RxD Baud/4 -)
+}}}
+
+=== Why baud divded by four? ===
+
+When PropFORTH first came out, the vaue for the highest baud rate would fit in a single 16 bit word.  The highest baud rate we thought we'd need was 57,600.  Later Sal need a faster connetion, and needed a large value, but did n't want to give up an extra word (in several places).  To make the value fit in a 16 bit word, the baud is divded by 4.  So, if our baud is 115,200; we can write this
+
+{{{
+57600 4 /
+}}}
+
+
+Or we could just use 28800.  I prefer to write 57600 4 / to remind me that thats whats going on.  Its weird but is save some space.
+
+=== the serial command ===
+
+
+{{{
+c" 20 21 28800 serial" 5 cogx
+}}}
+
+* `c"` - builds a string in scratchpad memory (don't worry about this, we just use it)
+
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
