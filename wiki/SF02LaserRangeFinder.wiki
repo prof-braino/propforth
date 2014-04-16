@@ -164,7 +164,11 @@ fl
 ;
 
 
-c" 20 21 28800 serial" 5 cogx
+: start5
+          c" 20 21 28800 serial" 5 cogx
+;
+
+start5
 
 cog?
 
