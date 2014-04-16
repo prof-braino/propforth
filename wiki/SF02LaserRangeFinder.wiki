@@ -84,20 +84,108 @@ The 'serial' word returns no values on the stack.
 When PropFORTH first came out, the vaue for the highest baud rate would fit in a single 16 bit word.  The highest baud rate we thought we'd need was 57,600.  Later Sal need a faster connetion, and needed a large value, but did n't want to give up an extra word (in several places).  To make the value fit in a 16 bit word, the baud is divded by 4.  So, if our baud is 115,200; we can write this
 
 {{{
-57600 4 /
+115200 4 /
 }}}
 
 
-Or we could just use 28800.  I prefer to write 57600 4 / to remind me that thats whats going on.  Its weird but is save some space.
+Or we could just use '28800'.  I prefer to write '115200 4 /' to remind me that thats whats going on.  Its weird but is save some space.
 
 === the serial command ===
 
 
 {{{
-c" 20 21 28800 serial" 5 cogx
+c" 20 21 115200 4 /  serial" 5 cogx
 }}}
 
-* `c"` - builds a string in scratchpad memory (don't worry about this, we just use it)
+ * 'c"' - builds a string in scratchpad memory (don't worry about this, we just use it)
+ * '20 21 57600 4 / serial'  - this defines pin 20 as TxD, pin 21 as RxD,  and sends in the proper value for 115200 baud
+ * '5 cogx' - this sends the string we just defined in memory to cog 5; cog 5 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
+
+{{{
+cog?
+}}}
+
+shows that serial is running on cog 5 in addition to the regualr cog 6 command line
+
+= TERM routine =
+
+Now we define the term word.  This allows our session on cog 6 to talk to whatever is oing on at cog 5, and come back to cog 6 when we want.
+
+{{{
+
+: term
+	over cognchan min ." Hit CTL-P to exit term, CTL-Q exit nest1 CTL-R exit nest2 ... CTL-exit nest9~h0D~h0A"
+	>r >r cogid 0 r> r> (iolink)
+	begin
+		key dup h10 =
+		if
+			drop -1
+		else
+			dup h11 h19 between
+			if
+				1-
+			then
+			emit 0
+		then
+	until
+	cogid iounlink
+;
+
+
+}}}
+
+= pastable code block =
+
+Paste the whole block into the terminal session. Include the 'fl' at the begining and the blank line at the end.  If there is no black line when you pasted (pasting from the wiki has this problem, hit entter a couple times
+
+If the prop is plugged in and the SF02/f is connected correctly....
+
+
+{{{
+
+fl
+
+: term
+	over cognchan min ." Hit CTL-P to exit term, CTL-Q exit nest1 CTL-R exit nest2 ... CTL-exit nest9~h0D~h0A"
+	>r >r cogid 0 r> r> (iolink)
+	begin
+		key dup h10 =
+		if
+			drop -1
+		else
+			dup h11 h19 between
+			if
+				1-
+			then
+			emit 0
+		then
+	until
+	cogid iounlink
+;
+
+
+c" 20 21 28800 serial" 5 cogx
+
+cog?
+
+5 0 term
+
+
+}}}
+
+... when you PRESS the D KEY
+
+you should see a reading diplayed on the terminal screen. 
+
+= tie trigger low =
+
+Ok, I could have told you to tie trigger to ground  at the start.  But then you would not have bbeen able to see the trigger function work. 
+
+Ok, trigger to ground by connecting the wire from SF02/f terminal 5 to prop ground.
+
+Now the Prop terminal displays readings continuously. 
+
+ 
 
 
 Add your content here.
