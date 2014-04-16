@@ -189,7 +189,21 @@ Ok, trigger to ground by connecting the wire from SF02/f terminal 5 to prop grou
 
 Now the Prop terminal displays readings continuously. 
 
- 
+= Noisy Data? =
+
+The reading from the SF02/f appears to bounce around a bit.  Why is that?
+
+In my case, the wall is about 3 meters away. I'm getting readings of mosttly 3.00, but many are 2.98, and some are 3.01
+
+So, the wall is not perfectly, and the wall is not precisely orthogonal to the sensor (its at a slight angle).  So one part of the wall is slightly closer than another part of the wall. Even if the wall was EXACTLY orthogonal to the sensor, one point would be closest, and the rest would be progressively farther away. 
+
+Remember, the SF02/f aggregate the measurement from many many pulses.  Some read a little closer, and some read a little farther.   But they tend to be plus or minus 2 cm.  
+
+At 2 meterrs, 2cm either way doesn't make much difference.  At 40 meters, it matters less, it a very small fraction of error compared to the correct reading.  
+
+Success!
+
+
 
 
 Add your content here.
