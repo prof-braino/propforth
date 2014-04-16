@@ -99,7 +99,7 @@ c" 20 21 115200 4 /  serial" 5 cogx
 
  * 'c"' - builds a string in scratchpad memory (don't worry about this, we just use it)
  * '20 21 57600 4 / serial'  - this defines pin 20 as TxD, pin 21 as RxD,  and sends in the proper value for 115200 baud
- * '5 cogx' - this sends the string we just defined in memory to cog 5; cog 5 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
+ * '4 cogx' - this sends the string we just defined in memory to cog 5; cog 5 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
 
 {{{
 cog?
@@ -164,15 +164,15 @@ fl
 ;
 
 
-: start5
-          c" 20 21 28800 serial" 5 cogx
+: start4
+          c" 20 21 28800 serial" 4 cogx
 ;
 
-start5
+start4
 
 cog?
 
-5 0 term
+4 0 term
 
 
 }}}
