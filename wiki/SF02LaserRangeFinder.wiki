@@ -94,22 +94,23 @@ Or we could just use `28800`.  I prefer to write `115200 4 /` to remind me that 
 
 
 {{{
-c" 20 21 115200 4 /  serial" 5 cogx
+c" 20 21 115200 4 /  serial" 4 cogx
 }}}
 
  * `c"` - builds a string in scratchpad memory (don't worry about this, we just use it)
  * `20 21 57600 4 / serial`  - this defines pin 20 as TxD, pin 21 as RxD,  and sends in the proper value for 115200 baud
- * `4 cogx` - this sends the string we just defined in memory to cog 5; cog 5 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
+ * `4 cogx` - this sends the string we just defined in memory to cog 4; cog 4 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
 
 {{{
 cog?
 }}}
 
-shows that serial is running on cog 5 in addition to the regular cog 6 command line
+shows that serial is running on cog 4 in addition to the regular cog 6 command line
 
 = TERM routine =
 
-Now we define the term word.  This allows our session on cog 6 to talk to whatever is doing on at cog 5, and come back to cog 6 when we want.
+Now we define the term word.  This allows our session on cog 6 to talk to whatever is doing on at cog 4, and come back to cog 6 when we want.
+
 
 {{{
 
