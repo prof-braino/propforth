@@ -48,11 +48,11 @@ Last, connect a wire to digital trigger.
 
  * 5 - digital trigger
 
-Now to connect the micro controller.  I'm using a bread board between the SF02/f and teh quickstart, but of course you can do it any way that's convenient. 
+Now to connect the micro controller.  I'm using a bread board between the SF02/f and the quickstart, but of course you can do it any way that's convenient. 
 
 I'm going to use quickstart pins 20 and 21 for TxD and RxD because I like to see the LEDs flash and show that communications are happening.
 
-The Quickstart will be connected to the PC USB serial, so the quickstart will proivde power to the SF02/f.  
+The Quickstart will be connected to the PC USB serial, so the quickstart will provide power to the SF02/f.  
 
 Connect SF02/f terminal 3 (+5volts) to Quickstart header position 40 Vin
 Connect SF02/f terminal 2 (Ground)  to Quickstart header position 39 Vss
@@ -66,13 +66,13 @@ Notice that there are TWO connection from the SF02/f terminals to the Quickstart
 
 PropFORTH simple serial is ... simple. And its serial.  Wow!
 
-The 'serial' word takes three parameters from the stack:
+The `serial` word takes three parameters from the stack:
 
  * TxD pin 
  * RxD pin 
  * Baud - notice that this is "baud divided by four"
 
-The 'serial' word returns no values on the stack.
+The `serial` word returns no values on the stack.
 
 
 {{{
