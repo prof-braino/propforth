@@ -196,7 +196,9 @@ The reading from the SF02/f appears to bounce around a bit.  Why is that?
 
 In my case, the wall is about 3 meters away. I'm getting readings of mostly 3.00, but many are 2.98, and some are 3.01
 
-So, the wall is not perfectly, and the wall is not precisely orthogonal to the sensor (its at a slight angle).  So one part of the wall is slightly closer than another part of the wall. Even if the wall was EXACTLY orthogonal to the sensor, one point would be closest, and the rest would be progressively farther away. 
+So, the wall is not perfectly flat, and the wall is not precisely orthogonal to the sensor (its at a slight angle).    So one part of the wall is slightly closer than another part of the wall. Some points from the target itself can vary more than the SF02/f sensor variance, which is already +/- 2cm.  Even if the wall was EXACTLY orthogonal to the sensor, one point would be closest, and the rest would be progressively farther away. Hence we get a range readings, as the target has more that a single point. All target we will ever detect will have more than a single point, and all targets will potentially give a range of readings.  Best case will be +/- 2cm, worst case could be a wider variance around the targets general visible center.  For example, a wall at an obliqque angle would have some point several meters closer, and several meters farther away.  This actually can tell us a LOT about the target we are detecting, but we have to make our filter smart enough to figure out the meaning of any given data.  And this is the Fun part of embedded sensor systems!
+
+
 
 Remember, the SF02/f aggregate the measurement from many many pulses.  Some read a little closer, and some read a little farther.   But they tend to be plus or minus 2 cm.  
 
