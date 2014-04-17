@@ -81,14 +81,14 @@ The `serial` word returns no values on the stack.
 
 === Why baud divded by four? ===
 
-When PropFORTH first came out, the vaue for the highest baud rate would fit in a single 16 bit word.  The highest baud rate we thought we'd need was 57,600.  Later Sal need a faster connetion, and needed a large value, but did n't want to give up an extra word (in several places).  To make the value fit in a 16 bit word, the baud is divded by 4.  So, if our baud is 115,200; we can write this
+When PropFORTH first came out, the vaue for the highest baud rate would fit in a single 16 bit word.  The highest baud rate we thought we'd need was 57,600.  Later Sal need a faster connection, and needed a large value, but didn't want to give up an extra word (in several places).  To make the value fit in a 16 bit word, the baud is divide by 4.  So, if our baud is 115,200; we can write this
 
 {{{
 115200 4 /
 }}}
 
 
-Or we could just use '28800'.  I prefer to write '115200 4 /' to remind me that thats whats going on.  Its weird but is save some space.
+Or we could just use `28800`.  I prefer to write `115200 4 /` to remind me that tats whats going on.  Its weird but is save some space.
 
 === the serial command ===
 
@@ -97,19 +97,19 @@ Or we could just use '28800'.  I prefer to write '115200 4 /' to remind me that 
 c" 20 21 115200 4 /  serial" 5 cogx
 }}}
 
- * 'c"' - builds a string in scratchpad memory (don't worry about this, we just use it)
- * '20 21 57600 4 / serial'  - this defines pin 20 as TxD, pin 21 as RxD,  and sends in the proper value for 115200 baud
- * '4 cogx' - this sends the string we just defined in memory to cog 5; cog 5 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
+ * `c"` - builds a string in scratchpad memory (don't worry about this, we just use it)
+ * `20 21 57600 4 / serial`  - this defines pin 20 as TxD, pin 21 as RxD,  and sends in the proper value for 115200 baud
+ * `4 cogx` - this sends the string we just defined in memory to cog 5; cog 5 executes that text strings, and if its a forth program, runs the program.  In this case is is a valid forth program, and we are in business!
 
 {{{
 cog?
 }}}
 
-shows that serial is running on cog 5 in addition to the regualr cog 6 command line
+shows that serial is running on cog 5 in addition to the regular cog 6 command line
 
 = TERM routine =
 
-Now we define the term word.  This allows our session on cog 6 to talk to whatever is oing on at cog 5, and come back to cog 6 when we want.
+Now we define the term word.  This allows our session on cog 6 to talk to whatever is doing on at cog 5, and come back to cog 6 when we want.
 
 {{{
 
@@ -134,7 +134,7 @@ Now we define the term word.  This allows our session on cog 6 to talk to whatev
 
 }}}
 
-= pastable code block =
+= paste-able code block =
 
 Paste the whole block into the terminal session. Include the 'fl' at the begining and the blank line at the end.  If there is no black line when you pasted (pasting from the wiki has this problem, hit entter a couple times
 
@@ -179,11 +179,11 @@ cog?
 
 ... when you PRESS the D KEY
 
-you should see a reading diplayed on the terminal screen. 
+you should see a reading displayed on the terminal screen. 
 
 = tie trigger low =
 
-Ok, I could have told you to tie trigger to ground  at the start.  But then you would not have bbeen able to see the trigger function work. 
+Ok, I could have told you to tie trigger to ground  at the start.  But then you would not have been able to see the trigger function work. 
 
 Ok, trigger to ground by connecting the wire from SF02/f terminal 5 to prop ground.
 
@@ -193,13 +193,13 @@ Now the Prop terminal displays readings continuously.
 
 The reading from the SF02/f appears to bounce around a bit.  Why is that?
 
-In my case, the wall is about 3 meters away. I'm getting readings of mosttly 3.00, but many are 2.98, and some are 3.01
+In my case, the wall is about 3 meters away. I'm getting readings of mostly 3.00, but many are 2.98, and some are 3.01
 
 So, the wall is not perfectly, and the wall is not precisely orthogonal to the sensor (its at a slight angle).  So one part of the wall is slightly closer than another part of the wall. Even if the wall was EXACTLY orthogonal to the sensor, one point would be closest, and the rest would be progressively farther away. 
 
 Remember, the SF02/f aggregate the measurement from many many pulses.  Some read a little closer, and some read a little farther.   But they tend to be plus or minus 2 cm.  
 
-At 2 meterrs, 2cm either way doesn't make much difference.  At 40 meters, it matters less, it a very small fraction of error compared to the correct reading.  
+At 2 meters, 2cm either way doesn't make much difference.  At 40 meters, it matters less, it a very small fraction of error compared to the correct reading.  
 
 Success!
 
