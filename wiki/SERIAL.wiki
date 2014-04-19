@@ -56,7 +56,11 @@ serial ttakes three parameters:  Tx-pin Rx-pin and Baud rate.
  * Rx is the pin you have selected to listen (recieve)
  * baud is the Baud Rate DIVIDED BY FOUR!!!
 
-Remember, we must divide the baud rate by four!  The baud rate USED to fit in a word (2 bytes) memory cell up to baud 57600. But the biggest number in a word is 65535.  Now we routinely use 230400.  Rather than use the extra memory, and make a bunch of other code changes, Sal decided to use (baud divided by four).
+Remember, we must divide the baud rate by four!  The baud rate USED to fit in a word (2 bytes) memory cell up to baud 57600. But the biggest number in a word is 65535.  
+
+Now we routinely use 230400. This would require a larger memory cell allocation. Sal considered using a another word, and storing the baud value in a long.  While this would only cost 1 more word for the storage, it would require a bunch of code changes to access the long. The net cost increase would be more than just one word. 
+
+Rather than use the extra memory, and make a bunch of other code changes, Sal decided to use (baud divided by four).  This way, all current valid baud rates still fit in a word size cell. While other code changes were made to support higher baud rates, those had to happen anyway.  This solution appear to have the minimum impact on code size and execution speed.
 
 Tx = pin 0
 Rx = pin 1
