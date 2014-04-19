@@ -73,7 +73,7 @@ or
 c" 0 1 28800  serial" nfcog cogx
 }}}
 
-The division operation only hapens once at compile time, so the effect is negligible. And having "baud 4 /" helps me remember.  OK, its a little weird, space is at a premium, and it works. 
+The division operation only hapens once at compile time, so the impact of the expensive division operation on execution speed is negligible. And having "baud 4 /" helps me remember.  OK, its a little weird, space is at a premium, and it works. 
 
 
 
