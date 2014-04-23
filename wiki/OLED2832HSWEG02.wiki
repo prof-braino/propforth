@@ -1,0 +1,741 @@
+#summary OLED display(128X32) driver UG-2832HSWEG02 Controller:SSD1306
+
+= Introduction =
+
+
+= OLED-DISP =
+
+{{{
+fl
+
+{
+OLED display(128X32) driver
+UG-2832HSWEG02   Controller:SSD1306
+     
+ 
+PropForth 5.5
+2014/04/12 22:54:53
+
+OLED display(128X32)   Propeller
+           VDD    ----  3.3V
+           GND    ----  GND
+           RES    ----  P0      
+           SCL    ----  P28   
+           SDA    ----  P29   
+}
+
+\ =========================================================================== 
+\ 8X8 Font Characters 
+\ =========================================================================== 
+wvariable Font -2 allot
+h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, h00 c,
+h00 c, h06 c, h5F c, h5F c, h06 c, h00 c, h00 c, h00 c,
+h00 c, h03 c, h07 c, h00 c, h07 c, h03 c, h00 c, h00 c,
+h14 c, h7F c, h7F c, h14 c, h7F c, h7F c, h14 c, h00 c,
+h24 c, h2E c, h2A c, h6B c, h6B c, h3A c, h12 c, h00 c,
+h46 c, h66 c, h30 c, h18 c, h0C c, h66 c, h62 c, h00 c,
+h30 c, h7A c, h4F c, h5D c, h37 c, h7A c, h48 c, h00 c,
+h00 c, h04 c, h07 c, h03 c, h00 c, h00 c, h00 c, h00 c,
+h00 c, h1C c, h3E c, h63 c, h41 c, h00 c, h00 c, h00 c,
+h00 c, h41 c, h63 c, h3E c, h1C c, h00 c, h00 c, h00 c,
+h08 c, h2A c, h3E c, h1C c, h1C c, h3E c, h2A c, h08 c,
+h08 c, h08 c, h3E c, h3E c, h08 c, h08 c, h00 c, h00 c,
+h00 c, h80 c, hE0 c, h60 c, h00 c, h00 c, h00 c, h00 c,
+h08 c, h08 c, h08 c, h08 c, h08 c, h08 c, h00 c, h00 c,
+h00 c, h00 c, h60 c, h60 c, h00 c, h00 c, h00 c, h00 c,
+h60 c, h30 c, h18 c, h0C c, h06 c, h03 c, h01 c, h00 c,
+h3E c, h7F c, h41 c, h49 c, h41 c, h7F c, h3E c, h00 c,
+h40 c, h42 c, h7F c, h7F c, h40 c, h40 c, h00 c, h00 c,
+h62 c, h73 c, h59 c, h49 c, h6F c, h66 c, h00 c, h00 c,
+h22 c, h63 c, h49 c, h49 c, h7F c, h36 c, h00 c, h00 c,
+h18 c, h1C c, h16 c, h53 c, h7F c, h7F c, h50 c, h00 c,
+h27 c, h67 c, h45 c, h45 c, h7D c, h39 c, h00 c, h00 c,
+h3C c, h7E c, h4B c, h49 c, h79 c, h30 c, h00 c, h00 c,
+h03 c, h03 c, h71 c, h79 c, h0F c, h07 c, h00 c, h00 c,
+h36 c, h7F c, h49 c, h49 c, h7F c, h36 c, h00 c, h00 c,
+h06 c, h4F c, h49 c, h69 c, h3F c, h1E c, h00 c, h00 c,
+h00 c, h00 c, h66 c, h66 c, h00 c, h00 c, h00 c, h00 c,
+h00 c, h80 c, hE6 c, h66 c, h00 c, h00 c, h00 c, h00 c,
+h08 c, h1C c, h36 c, h63 c, h41 c, h00 c, h00 c, h00 c,
+h24 c, h24 c, h24 c, h24 c, h24 c, h24 c, h00 c, h00 c,
+h00 c, h41 c, h63 c, h36 c, h1C c, h08 c, h00 c, h00 c,
+h02 c, h03 c, h51 c, h59 c, h0F c, h06 c, h00 c, h00 c,
+h3E c, h7F c, h41 c, h5D c, h5D c, h1F c, h0E c, h00 c,
+h7C c, h7E c, h13 c, h13 c, h7E c, h7C c, h00 c, h00 c,
+h41 c, h7F c, h7F c, h49 c, h49 c, h7F c, h36 c, h00 c,
+h1C c, h3E c, h63 c, h41 c, h41 c, h63 c, h22 c, h00 c,
+h41 c, h7F c, h7F c, h41 c, h63 c, h3E c, h1C c, h00 c,
+h41 c, h7F c, h7F c, h49 c, h5D c, h41 c, h63 c, h00 c,
+h41 c, h7F c, h7F c, h49 c, h1D c, h01 c, h03 c, h00 c,
+h1C c, h3E c, h63 c, h41 c, h51 c, h73 c, h72 c, h00 c,
+h7F c, h7F c, h08 c, h08 c, h7F c, h7F c, h00 c, h00 c,
+h00 c, h41 c, h7F c, h7F c, h41 c, h00 c, h00 c, h00 c,
+h30 c, h70 c, h40 c, h41 c, h7F c, h3F c, h01 c, h00 c,
+h41 c, h7F c, h7F c, h08 c, h1C c, h77 c, h63 c, h00 c,
+h41 c, h7F c, h7F c, h41 c, h40 c, h60 c, h70 c, h00 c,
+h7F c, h7F c, h0E c, h1C c, h0E c, h7F c, h7F c, h00 c,
+h7F c, h7F c, h06 c, h0C c, h18 c, h7F c, h7F c, h00 c,
+h1C c, h3E c, h63 c, h41 c, h63 c, h3E c, h1C c, h00 c,
+h41 c, h7F c, h7F c, h49 c, h09 c, h0F c, h06 c, h00 c,
+h1E c, h3F c, h21 c, h71 c, h7F c, h5E c, h00 c, h00 c,
+h41 c, h7F c, h7F c, h09 c, h19 c, h7F c, h66 c, h00 c,
+h26 c, h6F c, h49 c, h49 c, h7B c, h32 c, h00 c, h00 c,
+h03 c, h41 c, h7F c, h7F c, h41 c, h03 c, h00 c, h00 c,
+h7F c, h7F c, h40 c, h40 c, h7F c, h7F c, h00 c, h00 c,
+h1F c, h3F c, h60 c, h60 c, h3F c, h1F c, h00 c, h00 c,
+h7F c, h7F c, h30 c, h18 c, h30 c, h7F c, h7F c, h00 c,
+h61 c, h73 c, h1E c, h0C c, h1E c, h73 c, h61 c, h00 c,
+h07 c, h4F c, h78 c, h78 c, h4F c, h07 c, h00 c, h00 c,
+h47 c, h63 c, h71 c, h59 c, h4D c, h67 c, h73 c, h00 c,
+h00 c, h7F c, h7F c, h41 c, h41 c, h00 c, h00 c, h00 c,
+h01 c, h03 c, h06 c, h0C c, h18 c, h30 c, h60 c, h00 c,
+h00 c, h41 c, h41 c, h7F c, h7F c, h00 c, h00 c, h00 c,
+h08 c, h0C c, h06 c, h03 c, h06 c, h0C c, h08 c, h00 c,
+h80 c, h80 c, h80 c, h80 c, h80 c, h80 c, h80 c, h80 c,
+h00 c, h00 c, h01 c, h03 c, h06 c, h04 c, h00 c, h00 c,
+h20 c, h74 c, h54 c, h54 c, h3C c, h78 c, h40 c, h00 c,
+h41 c, h7F c, h3F c, h48 c, h48 c, h78 c, h30 c, h00 c,
+h38 c, h7C c, h44 c, h44 c, h6C c, h28 c, h00 c, h00 c,
+h30 c, h78 c, h48 c, h49 c, h3F c, h7F c, h40 c, h00 c,
+h38 c, h7C c, h54 c, h54 c, h5C c, h18 c, h00 c, h00 c,
+h48 c, h7E c, h7F c, h49 c, h03 c, h02 c, h00 c, h00 c,
+h98 c, hBC c, hA4 c, hA4 c, hF8 c, h7C c, h04 c, h00 c,
+h41 c, h7F c, h7F c, h08 c, h04 c, h7C c, h78 c, h00 c,
+h00 c, h44 c, h7D c, h7D c, h40 c, h00 c, h00 c, h00 c,
+h60 c, hE0 c, h80 c, h80 c, hFD c, h7D c, h00 c, h00 c,
+h41 c, h7F c, h7F c, h10 c, h38 c, h6C c, h44 c, h00 c,
+h00 c, h41 c, h7F c, h7F c, h40 c, h00 c, h00 c, h00 c,
+h7C c, h7C c, h08 c, h38 c, h0C c, h7C c, h78 c, h00 c,
+h7C c, h7C c, h04 c, h04 c, h7C c, h78 c, h00 c, h00 c,
+h38 c, h7C c, h44 c, h44 c, h7C c, h38 c, h00 c, h00 c,
+h84 c, hFC c, hF8 c, hA4 c, h24 c, h3C c, h18 c, h00 c,
+h18 c, h3C c, h24 c, hA4 c, hF8 c, hFC c, h84 c, h00 c,
+h44 c, h7C c, h78 c, h4C c, h04 c, h1C c, h18 c, h00 c,
+h48 c, h5C c, h54 c, h54 c, h74 c, h24 c, h00 c, h00 c,
+h00 c, h04 c, h3E c, h7F c, h44 c, h24 c, h00 c, h00 c,
+h3C c, h7C c, h40 c, h40 c, h3C c, h7C c, h40 c, h00 c,
+h1C c, h3C c, h60 c, h60 c, h3C c, h1C c, h00 c, h00 c,
+h3C c, h7C c, h60 c, h38 c, h60 c, h7C c, h3C c, h00 c,
+h44 c, h6C c, h38 c, h10 c, h38 c, h6C c, h44 c, h00 c,
+h9C c, hBC c, hA0 c, hA0 c, hFC c, h7C c, h00 c, h00 c,
+h4C c, h64 c, h74 c, h5C c, h4C c, h64 c, h00 c, h00 c,
+h08 c, h08 c, h3E c, h77 c, h41 c, h41 c, h00 c, h00 c,
+h00 c, h00 c, h7F c, h7F c, h00 c, h00 c, h00 c, h00 c,
+h41 c, h41 c, h77 c, h3E c, h08 c, h08 c, h00 c, h00 c,
+h02 c, h03 c, h01 c, h03 c, h02 c, h03 c, h01 c, h00 c,
+h4C c, h5E c, h73 c, h01 c, h73 c, h5E c, h4C c, h00 c,
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+\ Slave addres h3C for OLED display(128X32)  sa0=0
+h78 wconstant OLED
+0 wconstant P0
+
+\ mode
+0 wconstant page    \ Page Addressing 
+1 wconstant hrz     \ Horizontal Addressing
+2 wconstant vrt     \ Vertical Addressing
+
+\ Initialize by values for SSD1306-registers
+\ Default values are comment.
+wvariable init_tbl -2 allot
+\ hAE            \ Display Off sleep-mode (Default)
+
+\ hD5          \ DisplayClock, Ratio/Oscillatpr
+\ h80          \    (Default valuue)
+
+hA8 c,         \ Multiplex Ratio
+h1F c,         \    1/32 duty
+
+\ hD3          \ Display Offset
+\ h00          \    (Default valuue)
+
+h40 c,         \ Display RAM display start line (Default valuue)
+
+h8D c,         \ Charge Pump Settong
+h14 c,         \    Ensble Charge Pump
+
+\ h20          \ Memory Address Mode 
+\ h02          \    Page Address Mode (Default)
+
+\ hA4          \ Entire Display ON (Default)
+
+\ hA0          \ Segment Re-map (Default)
+
+\ hC0          \ COM output, Scan direction normal mode (Default)
+
+hDA c,         \ COM Pins
+h02 c,         \      Sequential COM pin(Default), Disable COM left/right remap
+
+\ h81          \ Contrast control
+\ h7F          \    (Default valuue)
+
+\ hD9          \ Ptr-charge Period
+\ h22          \    (Default valuue)
+
+hDB c,         \ Vcomh Deselect Level
+h30 c,         \ 0.83Vcc
+
+\ hA6          \ Normal Display (Default)
+
+hAF c,         \ Display On
+
+
+
+
+\ =========================================================================== 
+\ Main
+\ =========================================================================== 
+                                                                               
+\ Write controlbyte
+\ ( n1 -- t/f )   n1:0=command, 1=data  t/f:true if there was an error
+: controlbyte if h40 else h80 then _eewrite ;
+
+\ Send command
+\ ( n1 n2 -- n3 )  n1:t/f  n2:command data   n3:t/f
+: command
+0 controlbyte            \ ( t/f n2 t/f ) 
+rot or swap              \ ( t/f n2 )
+_eewrite or              \ ( t/f )
+;
+
+\ -- Set mode
+\ ( n1 -- )  n1:page, hrz, vrt 
+: set_mode
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite            \ ( n1 t/f )
+swap                     \ ( t/f n1 )
+0 over =                
+if
+     swap                \ ( n1 t/f )
+     \ Page
+     h20 command         \ Memory Addressing Mode 
+     h02 command         \    Page Addressing Mode
+     hB0 command         \ Page Start Address
+     h00 command         \ Lower Column Start Address  
+     h10 command         \ Higher Column Start Address   
+                         \ ( n1 t/f )    
+else 1 over =            
+if                       \ ( t/f n1 )
+     swap                \ ( n1 t/f )
+     \ Horizontal
+     h20 command         \ Memory Addressing Mode 
+     h00 command         \    Horizontal Addressing Mode
+     h21 command         \ Column Address 
+     h00 command         \    Column Start Address (Default)
+     h7F command         \    Column End Address   (Default)
+     h22 command         \ Page Address 
+     h00 command         \    Page Start Address
+     h03 command         \    Page End Address
+                         \ ( n1 t/f )
+else      
+     swap
+     \ Vertical
+     h20 command         \ Memory Addressing Mode 
+     h01 command         \    Vertical Addressing Mode
+     h21 command         \ Column Address 
+     h00 command         \    Column Start Address (Default)
+     h7F command         \    Column End Address   (Default)
+     h22 command         \ Page Address 
+     h00 command         \    Page Start Address
+     h03 command         \    Page End Address
+                         \ ( n1 t/f )
+thens
+\ Stop I2C
+ _eestop 
+err?
+drop
+;
+                                                                              
+\ Reset SSD1306
+\ ( -- )
+: ssd1306_reset
+P0 pinout
+P0 pinhi 1 delms P0 pinlo d150 delms P0 pinhi 1 delms
+;
+
+wvariable ss
+\ Clear GDDRAM on Page Addressing Mode
+\ ( -- )
+: clr_mem_page
+\ Start I2C 
+ 4 0 do
+     _eestart
+     \ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+     OLED _eewrite                                         
+     hB0 i + command
+     h00 command
+     h10 command
+     1 controlbyte or
+     \ Write o to GDDRAM
+     d128 0 do ss W@ _eewrite or loop         
+     \ Stop I2C
+     _eestop 
+     err?
+ loop
+;
+{
+\ Code below don't work
+: clr_mem1
+\ Start I2C 
+_eestart
+OLED _eewrite                                        
+8 0 do     
+     \ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+     0 controlbyte or hB0 i + st? _eewrite or
+     0 controlbyte or h00 _eewrite or
+     0 controlbyte or h10 _eewrite or
+     1 controlbyte or
+     \ Write o to GDDRAM
+     d128 0 do ss W@ _eewrite or loop 
+loop        
+\ Stop I2C
+_eestop 
+err?
+;
+}
+
+\ Clear GDDRAM on Horizontal/Vertical Addressing Mode
+\ ( -- )
+: clr_mem_hv
+\ Start I2C 
+ 4 0 do
+     _eestart
+     \ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+     OLED _eewrite                                         
+     1 controlbyte or
+     \ Write o to GDDRAM
+     d512 0 do 0 _eewrite or loop         
+     \ Stop I2C
+     _eestop 
+     err?
+ loop
+;
+
+\ Initialize SSD1306
+\ ( -- )
+: init_oled
+ssd1306_reset
+
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite                                         
+\ Write values to setting registers 
+d10 0 do
+     \ Write command
+     i init_tbl + C@ command
+loop
+\ Stop I2C
+_eestop 
+err?
+;
+
+\ Display off OLED_LCD
+\ ( -- )
+: lcd_off
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hAE command                                  \ Display Off (sleep-mode)
+\ Stop I2C
+ _eestop 
+err?
+;
+
+\ Display on after lcd_off
+\ ( -- )
+: lcd_on
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hAF command                                  \ Display On
+\ Stop I2C
+ _eestop 
+err?
+;
+
+\ Power off OLED_LCD
+\ Shutdown OLED_LCD
+\ ( -- )
+: power_off
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hAE command                                  \ Display Off (sleep-mode)
+h8D command                                  \ Charge Pump Settong
+h10 command                                  \    Disble Charge Pump
+d150 delms
+\ Stop I2C
+ _eestop 
+err?
+;
+
+\ Display 8X8 Font by using Page/Horizpntal Addressing Mode
+\ ( -- )   
+: test
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+1 controlbyte or                                      
+\ Write o to GDDRAM
+d768 0 do Font i + C@ _eewrite or d10 delms loop         
+\ Stop I2C
+_eestop 
+err?
+;
+
+\ Display-test 8X8 font on Page mode
+\ ( -- )
+: page_test
+init_oled                \ Initialize OLED-LCD
+clr_mem_page             \ Clear GDDRAM
+page set_mode
+test                     \ Display 8X8 font to page0-line
+;
+
+\ Display-test 8X8 font on Horizontal mode
+\ ( -- )
+: hrz_test
+init_oled                \ Initialize OLED-LCD
+hrz set_mode
+clr_mem_hv               \ Clear GDDRAM
+test                     \ Display 8X8 font to page0-line
+;
+
+
+
+
+\ Output character 
+{
+address          column 
+row  n          b31 b30 b29 . . . b1  b0
+ |   n+4         0   0   0        0   0
+ |   .
+ |   .
+\|/  n+d124      0   0   0        0   0
+}
+\ bit15 of row_line --> character's top
+\ bit0 of row_line --> character's bottom
+variable row_line
+variable odd
+\ ( n -- )  n:character code
+: prop_char
+dup 1 and if 2 else 1 then odd L!       \ Check even/odd
+hFE and
+d64 u* h8000 +                          \ Get ROM Font address
+
+\ column=d16
+d16 0 do
+     dup
+    
+     d32 0 do
+          row_line L@ 1 rshift row_line L!             \ Shift row_line to right
+          dup L@ odd L@                                \ ( address data odd )
+          and                                          \ ( address t/f )          
+          if 
+               row_line L@ h80000000 or row_line L!    \ Uodate bit-data of row_line 
+          then                                         \ ( address )
+          \ Add +4 to address   ( to next row )       
+          4 +                                          \ ( address+4 )
+     loop     
+     drop
+
+     \ --- Write 32bit-data to GDDRAM ---
+     4 0 do
+          i row_line + C@ _eewrite or
+     loop
+     \ ------------------------------------
+     \ next colummn bit
+     odd L@ 2 lshift odd L!                       
+
+loop
+drop
+;
+
+\ Display-test 16X32 font on Vertical mode
+\ ( -- )
+: vrt_test
+init_oled                \ Initialize OLED-LCD
+vrt set_mode
+clr_mem_hv               \ Clear GDDRAM
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+1 controlbyte or
+\ Displaing Propeller ROM Font                                      
+h100 0 do
+     i prop_char      100 delms
+loop
+\ Stop I2C
+_eestop 
+err?
+
+;
+
+\ Display-test 16X32 font on Vertical mode
+\ ( -- )
+: vrt_test_remap
+init_oled                \ Initialize OLED-LCD
+vrt set_mode
+clr_mem_hv               \ Clear GDDRAM
+
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hA1 command                                  \ Segment remap
+hC8 command                                  \ Scan derection remap
+\ hDA command                                  \ COM pins CHard Configuration
+\ h02 command                                  \    
+\ Stop I2C
+ _eestop 
+err?
+
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+1 controlbyte or
+\ Displaing Propeller ROM Font                                      
+h100 0 do
+     i prop_char     \ 100 delms
+loop
+\ Stop I2C
+_eestop 
+err?
+
+;
+
+: hrz_test_remap
+init_oled                \ Initialize OLED-LCD
+hrz set_mode
+clr_mem_hv               \ Clear GDDRAM
+
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hA1 command                                  \ Segment remap
+hC8 command                                  \ Scan derection remap
+\ hDA command                                  \ COM pins CHard Configuration
+\ h02 command                                  \    
+\ Stop I2C
+ _eestop 
+err?
+
+test                     \ Display 8X8 font to page0-line
+;
+
+: page_test_remap
+init_oled                \ Initialize OLED-LCD
+clr_mem_page             \ Clear GDDRAM
+page set_mode
+
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hA1 command                                  \ Segment remap
+hC8 command                                  \ Scan derection remap
+\ hDA command                                  \ COM pins CHard Configuration
+\ h02 command                                  \    
+\ Stop I2C
+ _eestop 
+err?
+
+
+test                     \ Display 8X8 font to page0-line
+;
+
+: vrt_remap
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+OLED _eewrite
+hA1 command                                  \ Segment remap
+hC8 command                                  \ Scan derection remap
+\ hDA command                                  \ COM pins CHard Configuration
+\ h02 command                                  \    
+\ Stop I2C
+ _eestop 
+err?
+;
+
+
+
+
+}}}
+
+
+= Font Converter =
+
+{{{
+
+fl
+
+hex
+{
+PropForth5.5
+
+Converting Font-type from column-line to row-line
+2014/01/02 9:13:15
+
+Character "!"
+addr  b7 b6 b5 b4 b3 b2 b1 b0          addr  b7 b6 b5 b4 b3 b2 b1 b0
+0     0  0  1  1  0  0  0  0           0     0  0  0  0  0  0  0  0
+1     0  1  1  1  1  0  0  0           1     0  0  0  0  0  1  1  0
+2     0  1  1  1  1  0  0  0  ---->    2     0  1  0  1  1  1  1  1
+3     0  0  1  1  0  0  0  0           3     0  1  0  1  1  1  1  1
+4     0  0  1  1  0  0  0  0           4     0  0  0  0  0  1  1  0
+5     0  0  0  0  0  0  0  0           5     0  0  0  0  0  0  0  0
+6     0  0  1  1  0  0  0  0           6     0  0  0  0  0  0  0  0
+7     0  0  0  0  0  0  0  0           7     0  0  0  0  0  0  0  0
+
+}
+
+\ =========================================================================== 
+\ Variable 
+\ =========================================================================== 
+variable work_area 4 allot
+
+
+\ Character Font 8X8dots  
+wvariable Font -2 allot
+h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, \ (space)
+h30 c, h78 c, h78 c, h30 c, h30 c, h00 c, h30 c, h00 c, \ !
+h6C c, h6C c, h28 c, h00 c, h00 c, h00 c, h00 c, h00 c, \ " "
+h6C c, h6C c, hFE c, h6C c, hFE c, h6C c, h6C c, h00 c, \ #
+h18 c, h7E c, hC0 c, h7C c, h06 c, hFC c, h18 c, h00 c, \ $
+h00 c, hC6 c, hCC c, h18 c, h30 c, h66 c, hC6 c, h00 c, \ %
+h38 c, h6C c, h38 c, h76 c, hDC c, hCC c, h76 c, h00 c, \ &
+h30 c, h30 c, h60 c, h00 c, h00 c, h00 c, h00 c, h00 c, \ \
+h18 c, h30 c, h60 c, h60 c, h60 c, h30 c, h18 c, h00 c, \ (
+h60 c, h30 c, h18 c, h18 c, h18 c, h30 c, h60 c, h00 c, \ )
+h00 c, h66 c, h3C c, hFF c, h3C c, h66 c, h00 c, h00 c, \ *
+h00 c, h30 c, h30 c, hFC c, h30 c, h30 c, h00 c, h00 c, \ +
+h00 c, h00 c, h00 c, h00 c, h00 c, h30 c, h30 c, h60 c, \ ,
+h00 c, h00 c, h00 c, hFC c, h00 c, h00 c, h00 c, h00 c, \ -
+h00 c, h00 c, h00 c, h00 c, h00 c, h30 c, h30 c, h00 c, \ .
+h06 c, h0C c, h18 c, h30 c, h60 c, hC0 c, h80 c, h00 c, \ /
+h7C c, hC6 c, hC6 c, hD6 c, hC6 c, hC6 c, h7C c, h00 c, \ 0
+h30 c, h70 c, h30 c, h30 c, h30 c, h30 c, hFC c, h00 c, \ 1
+h78 c, hCC c, h0C c, h38 c, h60 c, hCC c, hFC c, h00 c, \ 2
+h78 c, hCC c, h0C c, h38 c, h0C c, hCC c, h78 c, h00 c, \ 3
+h1C c, h3C c, h6C c, hCC c, hFE c, h0C c, h1E c, h00 c, \ 4
+hFC c, hC0 c, hF8 c, h0C c, h0C c, hCC c, h78 c, h00 c, \ 5
+h38 c, h60 c, hC0 c, hF8 c, hCC c, hCC c, h78 c, h00 c, \ 6
+hFC c, hCC c, h0C c, h18 c, h30 c, h30 c, h30 c, h00 c, \ 7
+h78 c, hCC c, hCC c, h78 c, hCC c, hCC c, h78 c, h00 c, \ 8
+h78 c, hCC c, hCC c, h7C c, h0C c, h18 c, h70 c, h00 c, \ 9
+h00 c, h30 c, h30 c, h00 c, h00 c, h30 c, h30 c, h00 c, \ :
+h00 c, h30 c, h30 c, h00 c, h00 c, h30 c, h30 c, h60 c, \ ;
+h18 c, h30 c, h60 c, hC0 c, h60 c, h30 c, h18 c, h00 c, \ <
+h00 c, h00 c, hFC c, h00 c, h00 c, hFC c, h00 c, h00 c, \ =
+h60 c, h30 c, h18 c, h0C c, h18 c, h30 c, h60 c, h00 c, \ >
+h78 c, hCC c, h0C c, h18 c, h30 c, h00 c, h30 c, h00 c, \ ?
+h7C c, hC6 c, hDE c, hDE c, hDC c, hC0 c, h78 c, h00 c, \ @
+h30 c, h78 c, hCC c, hCC c, hFC c, hCC c, hCC c, h00 c, \ A
+hFC c, h66 c, h66 c, h7C c, h66 c, h66 c, hFC c, h00 c, \ B
+h3C c, h66 c, hC0 c, hC0 c, hC0 c, h66 c, h3C c, h00 c, \ C
+hF8 c, h6C c, h66 c, h66 c, h66 c, h6C c, hF8 c, h00 c, \ D
+hFE c, h62 c, h68 c, h78 c, h68 c, h62 c, hFE c, h00 c, \ E
+hFE c, h62 c, h68 c, h78 c, h68 c, h60 c, hF0 c, h00 c, \ F
+h3C c, h66 c, hC0 c, hC0 c, hCE c, h66 c, h3E c, h00 c, \ G
+hCC c, hCC c, hCC c, hFC c, hCC c, hCC c, hCC c, h00 c, \ H
+h78 c, h30 c, h30 c, h30 c, h30 c, h30 c, h78 c, h00 c, \ I
+h1E c, h0C c, h0C c, h0C c, hCC c, hCC c, h78 c, h00 c, \ J
+hE6 c, h66 c, h6C c, h78 c, h6C c, h66 c, hE6 c, h00 c, \ K
+hF0 c, h60 c, h60 c, h60 c, h62 c, h66 c, hFE c, h00 c, \ L
+hC6 c, hEE c, hFE c, hFE c, hD6 c, hC6 c, hC6 c, h00 c, \ M
+hC6 c, hE6 c, hF6 c, hDE c, hCE c, hC6 c, hC6 c, h00 c, \ N
+h38 c, h6C c, hC6 c, hC6 c, hC6 c, h6C c, h38 c, h00 c, \ O
+hFC c, h66 c, h66 c, h7C c, h60 c, h60 c, hF0 c, h00 c, \ P
+h78 c, hCC c, hCC c, hCC c, hDC c, h78 c, h1C c, h00 c, \ Q
+hFC c, h66 c, h66 c, h7C c, h6C c, h66 c, hE6 c, h00 c, \ R
+h78 c, hCC c, hC0 c, h78 c, h0C c, hCC c, h78 c, h00 c, \ S
+hFC c, hB4 c, h30 c, h30 c, h30 c, h30 c, h78 c, h00 c, \ T
+hCC c, hCC c, hCC c, hCC c, hCC c, hCC c, hFC c, h00 c, \ U
+hCC c, hCC c, hCC c, hCC c, hCC c, h78 c, h30 c, h00 c, \ V
+hC6 c, hC6 c, hC6 c, hD6 c, hFE c, hEE c, hC6 c, h00 c, \ W
+hC6 c, h6C c, h38 c, h38 c, h6C c, hC6 c, hC6 c, h00 c, \ X
+hCC c, hCC c, hCC c, h78 c, h30 c, h30 c, h78 c, h00 c, \ Y
+hFE c, hC6 c, h8C c, h18 c, h32 c, h66 c, hFE c, h00 c, \ Z
+h78 c, h60 c, h60 c, h60 c, h60 c, h60 c, h78 c, h00 c, \ [
+hC0 c, h60 c, h30 c, h18 c, h0C c, h06 c, h02 c, h00 c, \ \
+h78 c, h18 c, h18 c, h18 c, h18 c, h18 c, h78 c, h00 c, \ ]
+h10 c, h38 c, h6C c, hC6 c, h00 c, h00 c, h00 c, h00 c, \ ^
+h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, hFF c, \ _
+h30 c, h18 c, h0C c, h00 c, h00 c, h00 c, h00 c, h00 c, \ `
+h00 c, h00 c, h78 c, h0C c, h7C c, hCC c, h76 c, h00 c, \ a
+hE0 c, h60 c, h60 c, h7C c, h66 c, h66 c, hDC c, h00 c, \ b
+h00 c, h00 c, h78 c, hCC c, hC0 c, hCC c, h78 c, h00 c, \ c
+h1C c, h0C c, h0C c, h7C c, hCC c, hCC c, h76 c, h00 c, \ d
+h00 c, h00 c, h78 c, hCC c, hFC c, hC0 c, h78 c, h00 c, \ e
+h38 c, h6C c, h60 c, hF0 c, h60 c, h60 c, hF0 c, h00 c, \ f
+h00 c, h00 c, h76 c, hCC c, hCC c, h7C c, h0C c, hF8 c, \ g
+hE0 c, h60 c, h6C c, h76 c, h66 c, h66 c, hE6 c, h00 c, \ h
+h30 c, h00 c, h70 c, h30 c, h30 c, h30 c, h78 c, h00 c, \ i
+h0C c, h00 c, h0C c, h0C c, h0C c, hCC c, hCC c, h78 c, \ j
+hE0 c, h60 c, h66 c, h6C c, h78 c, h6C c, hE6 c, h00 c, \ k
+h70 c, h30 c, h30 c, h30 c, h30 c, h30 c, h78 c, h00 c, \ l
+h00 c, h00 c, hCC c, hFE c, hD6 c, hD6 c, hC6 c, h00 c, \ m
+h00 c, h00 c, hF8 c, hCC c, hCC c, hCC c, hCC c, h00 c, \ n
+h00 c, h00 c, h78 c, hCC c, hCC c, hCC c, h78 c, h00 c, \ o
+h00 c, h00 c, hDC c, h66 c, h66 c, h7C c, h60 c, hF0 c, \ p
+h00 c, h00 c, h76 c, hCC c, hCC c, h7C c, h0C c, h1E c, \ q
+h00 c, h00 c, hDC c, h76 c, h66 c, h60 c, hF0 c, h00 c, \ r
+h00 c, h00 c, h7C c, hC0 c, h78 c, h0C c, hF8 c, h00 c, \ s
+h10 c, h30 c, h7C c, h30 c, h30 c, h34 c, h18 c, h00 c, \ t
+h00 c, h00 c, hCC c, hCC c, hCC c, hCC c, h76 c, h00 c, \ u
+h00 c, h00 c, hCC c, hCC c, hCC c, h78 c, h30 c, h00 c, \ v
+h00 c, h00 c, hC6 c, hD6 c, hD6 c, hFE c, h6C c, h00 c, \ w
+h00 c, h00 c, hC6 c, h6C c, h38 c, h6C c, hC6 c, h00 c, \ x
+h00 c, h00 c, hCC c, hCC c, hCC c, h7C c, h0C c, hF8 c, \ y
+h00 c, h00 c, hFC c, h98 c, h30 c, h64 c, hFC c, h00 c, \ z
+h1C c, h30 c, h30 c, hE0 c, h30 c, h30 c, h1C c, h00 c, \ {
+h30 c, h30 c, h30 c, h30 c, h30 c, h30 c, h30 c, h00 c, \ |
+hE0 c, h30 c, h30 c, h1C c, h30 c, h30 c, hE0 c, h00 c, \ }
+h76 c, hDC c, h00 c, h00 c, h00 c, h00 c, h00 c, h00 c, \ ~
+h38 c, h6C c, hC6 c, hC6 c, h6C c, h28 c, hEE c, h00 c, \ ohm
+
+
+: font_convert
+d96 0 do
+     8 0 do
+          j 8 u* i + Font + C@     \ Get Font column byte
+          i work_area + C!     
+     loop
+            
+     h80 0                              \ ( h80 0 )
+     8 0 do
+                                   
+          8 0 do
+               1 rshift                 \ ( h80 0 )
+               over                     \ ( h80 0 h80 )
+               i work_area + C@ and     \ ( h80 0 1/0 )
+               if h80 else 0 then       \ ( h80 0 h80/0 )
+               or                       \ ( h80 h80/0 )               
+          loop
+          h68 emit 
+          .byte                         \ ( h80 )
+          space ." c, "
+          1 rshift 0                    \ ( h40 0 )
+     loop
+     2drop
+     cr
+loop
+;
+
+
+
+
+}}}
