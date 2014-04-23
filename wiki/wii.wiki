@@ -1,5 +1,8 @@
 #summary Wii nunchuk driver for PropForth
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
