@@ -12,7 +12,7 @@
 
 [ UG-282hsweg02 datasheet]
 
-This one is marked confidential, but I think they just wanted it to look fancy, because you can't have a public data sheet for a product you are selling and not make the datasheet public.  
+The UG datasheet is marked confidential, but I think they just wanted it to look fancy, because you can't have a public data sheet for a product you are selling and not make the datasheet public.  
 
 But since it is marked confidential, just google for it and get it from someplace else, I don't want the IP gestapo callin on  me.  
 
