@@ -1,5 +1,8 @@
 #summary 3-axis Gyroscope L3GD20 module driver
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
