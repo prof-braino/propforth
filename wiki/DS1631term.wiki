@@ -1,0 +1,208 @@
+#summary DS1631(Thermometer and Thermostat) driver
+
+= Introduction =
+
+{{{
+
+fl
+
+{
+DS1631(Thermometer and Thermostat) driver 
+     
+ 
+PropForth 5.5
+2014/01/06 15:14:16
+
+Ds1631      Propeller
+       1 SDA    ----  P29 
+       2 SCL    ----  P28 
+       3 Tout   ----
+       4 GND    ----  GND
+       5 A0     ----  GND
+       6 A1     ----  GND
+       7 A2     ----  GND
+       8 VDD    ----  3.3V
+       
+}
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+\ Slave addres h48 for DS1631 A0=A1=A2=GND
+h90 wconstant DS1631
+
+\ command name
+h51 wconstant Start
+h22 wconstant Stop
+hAA wconstant Temp
+hA1 wconstant TH
+hA2 wconstant TL
+hAC wconstant Config
+h54 wconstant POR 
+0 wconstant 9bit
+1 wconstant 10bit
+2 wconstant 11bit
+3 wconstant 12bit
+
+\ =========================================================================== 
+\ Variables 
+\ =========================================================================== 
+wvariable tmp
+
+
+\ =========================================================================== 
+\  Word for I2C_device
+\ =========================================================================== 
+
+\ Write control-byte to DS1631
+\ ( n1 n2 -- t/f )  n1:register  n2:slave_address  t/f:true if there was an error
+: control_wr
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+_eewrite                      \ ( n1 t/f )
+\ Write command
+swap _eewrite or              \ ( t/f )
+\ Stop I2C
+ _eestop 
+;
+
+\ =========================================================================== 
+\ Main
+\ =========================================================================== 
+
+
+\ Issue "Start Convert"
+\ ( -- )
+: start_conv Start DS1631 control_wr err? ;
+
+\ Issue "Stop Convert"
+\ ( -- )
+: stop_conv Stop DS1631 control_wr err? ; 
+
+\ Write data to Configuration register
+\ ( n1 -- )  n1:data
+: wr_config 1 Config DS1631 i2c_wr_multi err? ;
+
+\ Read from Configuration register
+\ ( -- n1 )   n1:configuration byte
+: rd_config 1 Config DS1631 i2c_rd_multi err? ;
+
+\ Read Temp
+\ ( -- n1 n2 )  n1:Temperature MS-byte n2:Temperature LS-byte
+: rd_Temp 2 Temp DS1631 i2c_rd_multi err? ;
+
+\ Read TempThreshold_Hi
+\ ( -- n1 n2 )  n1:Temp_Hi-Threshold MS-byte n2:Temp_Hi-Threshold LS-byte
+: rd_TH 2 TH DS1631 i2c_rd_multi err? ;
+
+\ Read TempThreshold_Lo
+\ ( -- n1 n2 )  n1:Temp_Lo-Threshold MS-byte n2:Temp_Hi-Threshold LS-byte
+: rd_TL 2 TL DS1631 i2c_rd_multi err? ;
+
+\ Write TempThreshold_Hi
+\ ( n1 n2 -- )  n1:Temp_Hi-Threshold LS-byte n2:Temp_Hi-Threshold MS-byte
+: wr_TH 2 TH DS1631 i2c_wr_multi err? ;
+
+\ Write TempThreshold_Lo
+\ ( n1 n2 -- )  n1:Temp_Lo-Threshold LS-byte n2:Temp_Lo-Threshold MS-byte
+: wr_TL 2 TL DS1631 i2c_wr_multi err? ;
+
+\ Initiate a software power-on-reset(POR)
+\ ( -- )
+: reset POR DS1631 control_wr err? ;
+
+
+\ Set resolution (Default:12bit)
+\ ( n1 -- ) n1:9bit, 10bit, 11bit, 12bit
+: set_resolution 
+2 lshift
+rd_config           \ Get configuration
+hF3 and or
+wr_config           \ Write configuration
+;
+
+\ Check resolution
+\ ( -- n1 )  n1:0=9bit, 1=10bit, 2=11bit, 3=12bit
+: resolution?
+rd_config           \ Get configuration
+2 rshift 3 and
+;
+
+\ Print integaer/fraction for Templrature/TH/TL
+\ ( n1 n2 -- )  n1:fraction[LS-byte]  n2:integer[MS-byte]
+: print_degree
+\ Integer
+. h2E emit
+\ Calculate fraction
+4 rshift d625 swap
+4 0 do
+     2dup 
+     1 i lshift and if tmp W@ + tmp W! else drop then
+     swap 1 lshift swap
+loop
+2drop
+\ Print fraction part
+tmp W@ dup d1000 >=
+if .
+else dup d100 >=
+if h30 emit .
+else dup d10 >=
+if h30 emit h30 emit .
+else h30 emit h30 emit h30 emit .
+thens 
+;
+
+\ Print out Temperature/TH/TL by degree [Only 12bits]
+\ ( n1 n2 -- )  n1:MS-byte  n2:LS-byte
+: degree
+0 tmp W!
+swap dup h80 and 0=      \ Check if minus
+if
+     \ positive
+     print_degree
+else
+     \ negative
+     h2D emit
+     \ Back to positive
+     8 lshift or h10 - invert hFFFF and
+     dup hFF and swap 8 rshift
+     
+     print_degree
+then
+\ ." degree" cr
+;
+
+\ Display register
+\ ( -- )
+: disp_reg
+hex
+." Temperature:" 9 emit rd_Temp 2dup swap 8 lshift or .word 9 emit decimal degree hex cr
+." Temp-High:" 9 emit rd_TH 2dup swap 8 lshift or .word 9 emit decimal degree hex cr
+." Temp-Low:" 9 emit rd_TL 2dup swap 8 lshift or .word 9 emit decimal degree hex cr
+." Configuration:" 9 emit rd_config .byte cr
+decimal
+;
+
+\ Display Temperature
+\ ( -- )
+: measure
+rd_config h9F and wr_config        \ Clear TempFlag
+start_conv
+." Temp" 9 emit 9 emit ." TH" 9 emit 9 emit ." TL" 9 emit 9 emit ." TempFlag" cr
+0
+begin
+     rd_Temp degree 9 emit rd_TH degree 9 emit rd_TL degree 9 emit rd_config 5 rshift . cr
+     1+ dup d20 =
+     if
+          cr ." Temp:" 9 emit 9 emit ." TH" 9 emit 9 emit ." TL" 9 emit 9 emit ." TempFlag" cr
+          drop 0
+     then 
+     d100 delms
+     fkey? swap drop
+until
+stop_conv
+drop
+;
+
+}}}
