@@ -1,5 +1,8 @@
 #summary MCP4725 A/D converter
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 PDF:
