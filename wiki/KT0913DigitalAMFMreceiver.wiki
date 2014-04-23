@@ -1,0 +1,198 @@
+#summary caskaz.
+
+= Introduction =
+
+PDF: 
+
+
+{{{
+fl
+
+{
+KT0913 Digital AM/FM receiver
+PropForth5.5
+           KT0913
+          --------------
+         |CH         VOL|
+GND -----|DVSS       SDA|----- P28
+Rout ----|Rout       SCL|----- P29
+Lout ----|Lout     RFGND|----- FM antenna->|
+GND  ----|AVSS     RFINP|----- FM antenna-<|
+3.3V ----|AVDD     AMINP|----- AM antenna->|
+P0   ----|XI       AMINN|----- AM antenna-<|
+         |XO      ENABLE|----- 3.3V
+          --------------
+          
+2014/03/14 13:02:06
+}
+
+\ a cog special register
+[ifndef ctra
+h1F8	wconstant ctra 
+]
+
+[ifndef frqa
+h1FA	wconstant frqa
+]
+
+[ifndef phsa
+h1FC	wconstant phsa
+]
+
+\ =========================================================================== 
+\ Constants for KT0913
+\ =========================================================================== 
+\ OLED KT0913
+\ Slave addres h35 for KT0913
+h6A wconstant KT0913
+\ APIN for NCO(12MHz)
+0 wconstant apin
+
+\ register name
+2 wconstant SEEK
+3 wconstant TUNE
+4 wconstant VOLUME
+5 wconstant DSPCFGA
+hA wconstant LOCFGA
+
+\ =========================================================================== 
+\ Constants for KT0913
+\ =========================================================================== 
+wvariable FM
+
+\ =========================================================================== 
+\ Main
+\ =========================================================================== 
+
+\ Read 2bytes from register of KT0913
+\ Print out message if there are error of i2c.
+\ ( n1 -- n2 n3 ) n1:register address   n2:upper byte n3:lower byte
+: rd_KT0913 2 swap KT0913 i2c_rd_multi err? ;
+
+\ Get word from KT0913 register
+\ ( n1 -- n2 ) n1:register address   n2:word(16bits)
+: get_KT0913 rd_KT0913 swap 8 lshift or ;
+ 
+\ Write 2bytes to register of KT0913
+\ Print out message if there are error of i2c.
+\ ( n1 n2 -- ) n1:data (16bits n2:register address
+: wr_KT0913 
+swap dup                      \ ( n2 n1 n1 ) 
+8 rshift                      \ ( n2 data[b7-b0] data[b15-b8] ) 
+rot 2 swap                    \ ( data[b7-b0] data[b15-b8] 2 n2 )
+KT0913                        \ ( data[b7-b0] data[b15-b8] 2 n2 KT0913 )
+i2c_wr_multi err? 
+;
+ 
+\ Read KT Mark
+\ ( -- )
+: ID 
+1 rd_KT0913              \ register address h01
+swap emit emit cr
+;
+
+\ Read status
+\ ( -- )
+: status
+." STATUSA: h"
+h12 rd_KT0913            \ register address h12
+swap 8 lshift or 
+hex .word decimal cr
+." STATUSC: h"
+h14 rd_KT0913            \ register address h12
+swap 8 lshift or
+hex .word decimal cr
+;
+
+\ Set inittial values to KT0913
+\ ( -- )
+: set_initil_data
+1 rd_KT0913              \ register h01
+swap 8 lshift or h4B54 <>
+if ." Chip ID error" cr then
+\ nothing about register h02 h03 h04 h05 h0A h0C h0F h12  
+h1302 h16 wr_KT0913      \ register h16 RCLK_EN(bit12)=1(Reference clock) REFCLK<11:8>=0011(12MHz)
+h5401 h33 wr_KT0913      \ register h33 AMSPACE<15:14>=01(9kHz) 
+;
+
+\ Print ready-statment
+\ ( -- )
+: ready_msg and 0= if ." not " then ." ready" cr ;
+
+\ Initialize KT0913
+\ ( -- )
+: KT0913
+\ Set clock for KT0913 to 12MHz
+h10000000 apin or ctra COG!      \ NCO/PWM single-ended
+d644245094 frqa COG!
+apin pinout
+\ Set initial values to KT0913
+set_initil_data
+cr
+
+d100 delms
+\ Read STATUSA register                                 
+h12 rd_KT0913         
+drop
+dup ." Xtal is " h80 ready_msg
+dup ." System PLL is " 8 ready_msg 
+." LO Synthesizer is " 4 ready_msg
+\ Read STATUSC register                                 
+h14 rd_KT0913   
+drop
+dup ." Power is " h80 ready_msg 
+." Chip is " h20 ready_msg
+;
+
+\ Tune FM-frequency
+\ ( n1 -- )  n1:FM frquency[kHz]
+: FM_Tune
+FM W@ 
+if
+     \ Previous is AM
+     h16 get_KT0913 h7FFF and h16 wr_KT0913
+     0 FM W!      
+then
+d50 u/mod         
+swap 0=
+if
+     h8000 or 3 wr_KT0913
+else
+     drop
+     ." Invalid frequency" cr
+then
+;
+                                                                       
+\ Tune AM-frequency
+\ ( n1 -- )  n1:FM frquency[kHz]
+: AM_Tune
+FM W@ 0=
+if
+     h16 get_KT0913 h8000 or h16 wr_KT0913
+     1 FM W!     
+then 
+h8000 or h17 wr_KT0913
+;
+
+\ Adjust volume
+\ ( n1 -- )  n1:volume value[0 - 31]
+: vol
+hF rd_KT0913 hE0 and rot or   \ b7-b0
+swap 8 lshift                 \ B15 - b8
+or hF wr_KT0913
+;
+
+
+
+
+
+
+}}}
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
