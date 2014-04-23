@@ -1,5 +1,8 @@
 #summary PCF8574 IO expander
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
