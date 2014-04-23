@@ -6,7 +6,14 @@
 
 = Introduction =
 
+
+
+
 PDF instructions: 
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-UTRJdlRrQzAtT0E/edit?usp=sharing instructions]
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-R0NpeHNDeVc4N1k/edit?usp=sharing datasheet]
 
 = code =
 {{{
