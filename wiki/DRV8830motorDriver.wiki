@@ -4,6 +4,12 @@
 
 
 = Introduction =
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-S0p1endrUldQcFU/edit?usp=sharing datasheet]
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-SzVlaDdRY3RtN2c/edit?usp=sharing instructions]
+
+
 {{{
 
 fl
