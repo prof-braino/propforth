@@ -7,6 +7,10 @@
 
 PDF:
 
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-WEhWeTJ4V2dZTjA/edit?usp=sharing instructions]
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-OGs0eUcwTDEwdE0/edit?usp=sharing datasheet]
+
 = code =
 
 {{{
