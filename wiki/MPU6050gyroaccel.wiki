@@ -1,0 +1,174 @@
+#summary 3-axis-jyro/3-axis-accelerometer (MPU6050)
+
+
+= Introduction =
+
+{{{
+
+fl
+
+{
+3-axis-jyro/3-axis-accelerometer (MPU6050)
+      
+PropForth 5.5
+2014/04/03 15:15:07
+
+  MPU6050 module     Propeller
+          Vcc   ----  3.3V
+          SCL   ----  SCL
+          SDA   ----  SDA
+          AD0   ----  GND
+          GND   ----  GND
+          INT    
+}
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+\ Slave addres h68 for MPU6050 (AD0:GND) 
+hD0 wconstant MPU6050
+
+\ register
+d26 wconstant CONFIG          
+d59 wconstant ACCEL_XOUT_H
+d107 wconstant PWR_MGMT_1
+
+\ =========================================================================== 
+\ Main 
+\ =========================================================================== 
+
+\ Initilize MPU6050
+\ ( -- )
+: init_MPU6050
+1 1 PWR_MGMT_1 MPU6050 i2c_wr_multi err?    \ Eneble Temperature-sensor
+1 1 CONFIG MPU6050 i2c_wr_multi err?
+;
+
+\ reset_MPU6050
+\ ( -- )
+: reset_MPU h80 1 PWR_MGMT_1 MPU6050 i2c_wr_multi err? ;
+
+\ Read 1byte from register
+\ ( n1 -- n2 )  n1:register n2:data
+: rd_reg 1 swap MPU6050 i2c_rd_multi err? ;
+
+\ Combine reading 2bytes to 1word(accel/Temp/Gyro)
+\ ( n1 -- n2 )  n1:register number  n2:data[word]
+: get_word
+2 swap MPU6050 i2c_rd_multi err?
+swap 8 lshift or
+;
+
+\ Verifying the identity of device [h68]
+\ ( -- ) 
+: WHO_AM_I 
+1 h75 MPU6050 i2c_rd_multi err?
+hex ." h" . decimal cr
+;
+
+\ Reading self_test registers
+\ ( -- )
+: rd_selftest
+4 h0D MPU6050 i2c_rd_multi err?
+hex 
+." SELFTEST_A:h" . cr
+." SELFTEST_Z:h" . cr
+." SELFTEST_Y:h" . cr
+." SELFTEST_X:h" . cr
+decimal
+;
+
+\ Reading config registers
+\ ( -- )
+: rd_config
+3 h1A MPU6050 i2c_rd_multi err?
+hex 
+." CONFIG      :h" . cr
+." GYRO_CONFIG :h" . cr
+." ACCEL_CONFIG:h" . cr
+decimal
+;
+
+\ TAB
+\ ( -- )
+: tab 9 emit ;
+
+\ Convert 2bytes to word and display word
+\ ( n1 n2 -- )   n1:H-byte n2:L-byte  
+: convert
+dup h8000 and 
+if hFFFF0000 or then 
+. tab
+;
+
+\ Display list-title
+\ ( -- )
+: title ." Acc-X" tab ." ACC-Y" tab ." Acc-Z" tab ." Temp[dereeC]" tab ." Gyro-X" tab ." Gyro-Y" tab ." Gyro-Z" cr ;
+
+\ Read raw data for Accel/Temp/Gyro
+\ ccel-range:+-2g 
+\ Gyro-range:+-250degree/s
+\ ( -- )
+: raw-data
+init_MPU6050
+title
+0                   \ Line number                   
+begin
+     ACCEL_XOUT_H
+     7 0 do
+          dup
+          \ Read H-byte and L-byte for each Accel/Temp/Gyro
+          get_word
+          swap       
+          \ Add 2 to register number
+          2+
+     loop
+     drop
+     >r >r >r >r >r >r 
+     \ Accel_X
+     convert 
+     \ Accel_Y
+     r> 
+     convert 
+     \ Accel_Z
+     r> 
+     convert 
+     \ Temp
+     r>
+     \ Check if negative
+     dup h8000 and   
+     if 
+          hFFFF0000 or negate d100 u* d340 u/ negate                     
+     else 
+          d100 u* d340 u/
+     then                
+     d3653 +
+     d100 u/mod . h2E emit
+      . 
+     tab tab
+     \ Gyro_X
+     r>
+     convert 
+     \ Gyro_Y
+     r> 
+     convert 
+     \ Gyro_Z
+     r> 
+     convert 
+     cr
+     
+     1+ dup d20 =
+     if
+          cr 
+          title
+          drop 0
+     then          
+     
+     fkey? swap drop
+     d100 delms
+until
+drop
+;
+     
+
+}}}
