@@ -1,5 +1,8 @@
 #summary OLED display(128X32) driver UG-2832HSWEG02 Controller:SSD1306
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 
