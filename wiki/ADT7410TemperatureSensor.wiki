@@ -1,0 +1,268 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+PDF instructions: 
+
+= code =
+{{{
+fl
+
+{
+Temperature Sensor ADT7410     
+ 
+PropForth 5.5
+2014/01/05 11:33:27
+
+    ADT7410 module      Propeller
+           VDD    ----  3.3V
+           GND    ----  GND
+           SCL    ----  P28   
+           SDA    ----  P29   
+           A0-GND
+           A1-GBD
+}
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+\ Slave addres h48 for OLED display(128X32)  A0=A1=0
+h90 wconstant ADT7410
+
+\ register name
+0 wconstant TempHi
+1 wconstant TempLo
+2 wconstant status
+3 wconstant config
+4 wconstant TH_SP_Hi
+5 wconstant TH_SP_Lo
+6 wconstant TL_SP_Hi
+7 wconstant TL_SP_Lo
+8 wconstant TCRIT_SP_Hi
+9 wconstant TCRIT_SP_Lo
+d10 wconstant THYST_SP
+d11 wconstant ID
+d12 wconstant soft_reset
+\ Resolution
+1 wconstant 16bit
+0 wconstant 13bit
+\ Mode
+0 wconstant cont
+1 wconstant 1-shot
+2 wconstant SPS
+3 wconstant shutdown
+
+\ =========================================================================== 
+\  Variables
+\ =========================================================================== 
+wvariable tmp
+wvariable mode
+0 mode W!
+
+\ =========================================================================== 
+\ Main
+\ =========================================================================== 
+
+\ Reset ADT7410
+\ ( -- )
+: reset_ADT7410 
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+ADT7410 _eewrite h2F _eewrite or err?                        \   h80 1 3 ADT7410 i2c_wr_multi err?    
+\ Stop I2C
+_eestop 
+;
+
+\ Change resolution to 16bit or 13bit
+\ ( n1 -- ) n1:16bit/13bit
+: change_bit
+\ read register3    
+1 config ADT7410 i2c_rd_multi err?           \ ( 16bit/13bit register3 )
+
+\ Start I2C 
+_eestart
+\ Write slave address[wr], then receive Acknowledge-bit(ACK:Lo  NACK:Hi) 
+ADT7410 _eewrite                             \ ( 16bit/13bit register3 t/f )
+\ Write register 
+config _eewrite or                           \ ( 16bit/13bit register3 t/f )
+rot2                                         \ ( t/f 16bit/13bit register3 )
+swap                                         \ ( t/f register3 16bit/13bit )
+if
+     h80 or                                  \ ( t/f register3 )
+else
+     h7F and                                 \ ( t/f register3 )
+then
+_eewrite or                                  \ ( t/f )
+err?     
+;
+
+
+\ Display all register's value
+\ ( -- ) 
+: disp_reg
+hex
+." Address  " ." value(hex)" cr
+2 TempHi ADT7410 i2c_rd_multi err? 
+." 0" 9 emit swap .byte  cr             \ register0
+." 1" 9 emit .byte cr                   \ register1
+1 status ADT7410 i2c_rd_multi err?
+." 2" 9 emit .byte cr                   \ register2
+1 config ADT7410 i2c_rd_multi err?
+." 3" 9 emit .byte cr                   \ register3
+2 TH_SP_Hi ADT7410 i2c_rd_multi err?
+." 4" 9 emit swap .byte cr              \ register4
+." 5" 9 emit .byte cr                   \ register5
+2 TL_SP_Hi ADT7410 i2c_rd_multi err?
+." 6" 9 emit swap .byte  cr             \ register6
+." 7" 9 emit .byte  cr                  \ register7
+2 TCRIT_SP_Hi ADT7410 i2c_rd_multi err?  
+." 8" 9 emit swap .byte cr              \ register8
+." 9" 9 emit .byte  cr                  \ register9
+
+1 THYST_SP ADT7410 i2c_rd_multi err?
+." 10" 9 emit .byte cr                  \ register10
+1 ID ADT7410 i2c_rd_multi err?
+." 11" 9 emit .byte cr                  \ register11
+decimal
+;
+
+\ Set mode
+\ ( n1 -- )  n1:cont, 1-shot, SPS, shutdown
+: set_mode
+dup mode W!                                  \ Save value to mode
+5 lshift                                     \ ( n1 )
+\ Read register3    
+1 config ADT7410 i2c_rd_multi err?           \ ( n1 register3 )
+h9F and or
+\ Write register
+1 config ADT7410 i2c_wr_multi
+err?
+;
+
+
+\ Print Temperature (13bit)
+\ ( -- ) 
+: print_Temp
+2 TempHi ADT7410 i2c_rd_multi err?      \ ( MS-byte LS-byte )
+\ Print each flag 
+dup 4
+3 0 do 
+     2dup and 
+     if ." ON" else ." OFF" then 
+     9 emit 1 rshift 
+loop
+2drop
+\ Print temperature                     \ ( MS-byte LS-byte )
+swap 8 lshift or                        \ ( Temperature )
+\ Get bit15-bit3
+3 rshift
+\ Check sigh-bit                        
+dup h1000 and 0=
+if   
+     \ positive
+     dup                 
+     4 rshift .          \ Print integer-part
+else 
+     \ negative
+     h2D emit            \ print "-"
+     invert hFFF and 1+  \ Get positive number
+     dup
+     4 rshift .          \ Print integer-part
+then
+h2E emit                 \ print "."
+\ Calculate fraction
+0 tmp W!
+hF and d625 swap
+4 0 do
+     2dup 
+     1 i lshift and if tmp W@ + tmp W! else drop then
+     swap 1 lshift swap
+loop
+2drop
+\ Print fraction part
+tmp W@ dup d1000 >=
+if .
+else dup d100 >=
+if h30 emit .
+else dup d10 >=
+if h30 emit h30 emit .
+else h30 emit h30 emit h30 emit .
+thens 
+cr
+;
+
+: title ." T-CRIT" 9 emit ." T-HIGH." 9 emit ." T-LOW" 9 emit ." Temperature[degree] " ;
+
+\ Measure temperature by each mode
+\ ( n1 -- )  n1:cont, 1-shot, SPS
+: Measure_Temp
+dup 3 =
+if 
+     drop      \ Ignore shutdown mode
+else
+     dup 0=
+     if
+          drop
+          \ Continuous mode
+          cont set_mode
+          title ." [Continuous mode]" cr
+          0
+          begin
+               print_Temp 
+               1+ dup d20 =
+               if
+                    cr title ." [Continuous mode]" cr
+                    drop 0
+               then
+               \ Check ready-flag                          
+               begin 1 status ADT7410 i2c_rd_multi err?  0= until
+               fkey? swap drop
+          until                   
+     else
+          dup 1 =
+          if
+               drop
+               \ 1-shot
+               title ." [1-shot mode]" cr
+               0
+               begin
+                    1-shot set_mode
+                    d240 delms
+                    print_Temp 
+                    1+ dup d20 =
+                    if
+                         cr title ." [1-shot mode]" cr
+                         drop 0
+                    then                          
+                    fkey? swap drop
+               until
+          else
+               drop
+               \ SPS mode
+               SPS set_mode
+               d60 delms                               \ Wait 60msec only first time
+               title ." [SPS mode]" cr    
+               0 
+               begin
+                    print_Temp 
+                    1+ dup d20 =
+                    if
+                         cr title ." [SPS mode]" cr
+                         drop 0
+                    then
+                    d1000 delms                        \ Wait 1sec                          
+                    fkey? swap drop
+               until
+thens
+drop
+;
+
+}}}
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
