@@ -1,5 +1,9 @@
 #summary 3-axis digital compass HMC5883L-module driver
 
+<wiki:toc max_depth="9" />
+
+
+
 = Introduction =
 
 {{{
