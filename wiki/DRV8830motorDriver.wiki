@@ -1,5 +1,7 @@
 #summary MotorDriver using DRV8830
 
+<wiki:toc max_depth="9" />
+
 
 = Introduction =
 {{{
