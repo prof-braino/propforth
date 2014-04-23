@@ -1,5 +1,8 @@
 #summary i2c_utility
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 This is awesome.  It figures out the addresses of all I2C devices present. 
