@@ -1,0 +1,174 @@
+#summary Wii nunchuk driver for PropForth
+
+= Introduction =
+
+{{{
+fl
+
+{
+Wii nunchuk driver for PropForth
+     Wii nunchuk   Propeller
+     clk            P28   0x1c
+     dat            P29   0x1d
+Diagram below is showing the pinout looking into the connector (which plugs into the Wii Remote)
+ _______ 
+| 1 2 3 |
+|       |
+| 6 5 4 |
+|_-----_|          Peopeller
+
+1 - SDA  --------- P29
+2 - 
+3 - VCC  --------- 3.3V
+4 - SCL  --------- P28
+5 - 
+6 - GND  --------- GND
+
+Cutted connecter.   2012/8/8
+VCC(Red)    --------- 3.3V
+GND (White) --------- GND
+SDA(Green)  --------- P29
+SCL(Yellow) --------- P28
+
+    PropForth5.5  
+2014/03/15 23:46:41
+    
+}
+
+\ slow _eeread
+\ ( t/f -- c1 ) flag should be true is this is the last read
+: _slow_eeread
+	_sdai 0 8 0
+	do
+		1 lshift _sclh _sda? _scll
+		if
+			1 or 
+		then
+	loop
+	swap
+	if
+		_sdah
+	else
+		_sdal
+	then
+	_sdao _sclh _scll _sdal
+;
+
+\ slow _eewrite
+\ ( c1 -- t/f ) write c1 to the eeprom, true if there was an error
+: _slow_eewrite
+	80 8 0
+	do
+		2dup and
+		if
+			_sdah
+		else
+			_sdal
+		then 
+		_sclh _scll 1 rshift
+	loop
+	2drop
+	_sdai _sclh _sda? _scll _sdal _sdao
+;
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+\ Slave addres h52 for Wii-nunchaku
+hA4 wconstant nunchuk
+
+d127 wconstant cal_joy_x
+d135 wconstant cal_joy_y
+d200 wconstant cal_z
+
+d40000000 constant 500msec
+
+\ =========================================================================== 
+\ Variables 
+\ =========================================================================== 
+variable sx
+variable sy
+wvariable ax
+wvariable ay
+variable az
+wvariable cb
+wvariable z
+
+\ =========================================================================== 
+\ Main 
+\ =========================================================================== 
+\ Write data to Wii-nunchuk
+\ ( n1 n2 n3 -- t/f )   n1:data n2:register n3:slave address   t/f: true if there are error
+: wr_nunchuk
+_eestart 
+_slow_eewrite swap _slow_eewrite or     \ ( n1 t/f )
+swap _slow_eewrite or                   \ ( t/f )
+_eestop
+;
+
+\ Initialize Wii-nunchuku
+\ ( -- t/f )     t/f: true if there are error
+: init_nunchuk 
+h55 hF0 nunchuk wr_nunchuk 
+0 hFB nunchuk wr_nunchuk or 
+;
+
+
+\ Read data for Wii-nunchuk 
+\ ( -- n1-n6 t/f )    n1-n6:data(6bytes) t/f: true if there are error
+: readNunchuk 
+_eestart nunchuk _slow_eewrite 0 _slow_eewrite _eestop or   \ ( t/f )      
+1 delms                                                     \ Wait
+_eestart nunchuk 1 or _slow_eewrite or                      \ ( t/f )
+>r                                                          \ Push
+\ Read 6bytes 
+5 0 do 0 _slow_eeread loop -1 _slow_eeread _eestop          \ Read 6bytes      
+r>                                                          \ Pop
+; 
+
+\ Calculate data[joy_x,joy_y,ax,ay,az,c-button,z-button]
+\ ( n1..n6 -- )  n1..n6:6bytes
+: get_value
+dup 1 and z W!      \ z-button
+dup 2 and cb W!      \ c-button
+2 rshift dup 3 and ax W!
+2 rshift dup 3 and ay W!
+2 rshift 3 and az L!
+\ 2 lshift az L@ + cal_z - az L! 
+2 lshift az L@ + cal_z - az L!
+2 lshift ay W+!
+2 lshift ax W+!
+
+cal_joy_y - sy L!
+cal_joy_x - sx L!
+;
+
+\ Display [joy_x,joy_y,ax,ay,az,c-button,z-button]
+\ ( -- )
+: test_Nunchuk 
+init_nunchuk err?               
+cnt COG@ 500msec +
+begin     
+     readNunchuk err?          
+     get_value
+     ." SX:" sx L@ . ." SY:" sy L@ .  ." AX:" ax W@ . ." AY:" ay W@ . ." AZ:" az L@ . ." c:" cb W@ . ." z:" z W@ . cr                     
+     500msec waitcnt        
+fkey? swap drop until     
+drop
+;
+
+: x_wave
+init_nunchuk err?               
+cnt COG@ 500msec +
+begin     
+     readNunchuk err?          
+     get_value
+     ax W@ d10 u/ 1- spaces h2A emit cr 
+     500msec waitcnt        
+fkey? swap drop until     
+drop
+;
+
+
+
+}}}
