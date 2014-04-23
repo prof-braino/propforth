@@ -1,5 +1,8 @@
 #summary Caskaz is a master of I2C, and PropFORTH
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 Caskaz gets lots of parts to play with. He writes drivers for them in PropFORTH. Usually he publishes them in the Parallax forum threads, for example
