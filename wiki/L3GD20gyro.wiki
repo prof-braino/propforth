@@ -5,6 +5,11 @@
 
 = Introduction =
 
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-UC1qV01xVU10elU/edit?usp=sharing datasheet]
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-bXd5Z01WTElXZWM/edit?usp=sharing instructions]
+
+
 {{{
 
 fl
