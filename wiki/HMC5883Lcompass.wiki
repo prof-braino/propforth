@@ -6,6 +6,10 @@
 
 = Introduction =
 
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-Y1E2d09vSzdvYlU/edit?usp=sharing datasheet]
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-WnBIM2dZNnUxSU0/edit?usp=sharing instructions]
+
 {{{
 
 fl
