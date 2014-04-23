@@ -1,5 +1,8 @@
 #summary Ambient Light Sensor (BH1750FVI)
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
