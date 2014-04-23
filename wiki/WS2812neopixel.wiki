@@ -1,0 +1,576 @@
+#summary NeoPixelRing(WS2812:16pcs)
+
+= Introduction =
+
+
+= pt1 =
+
+{{{
+
+fl                                                               fl
+
+{
+NeoPixelRing(WS2812:16pcs)
+      
+PropForth 5.5
+2014/03/29 22:29:02
+
+Propeller    NeoPixelRing
+      P0 ---  Data Input
+              5V  ----------- 5V-PS
+     GND ---  GND ----------- GND
+}
+
+
+\ =========================================================================== 
+\ Variables 
+\ =========================================================================== 
+\ LED-array for NeoPixelRing (64bytes:4bytes/1LED)
+variable NeoPixel d60 allot
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+0 wconstant ser_out
+d16 wconstant LEDs
+
+variable Pixel -4 allot
+hFFFFFF l, 
+h15ECED l, h50B3ED l, h8C78ED l, hBE45ED l, hF016ED l,
+hEF2F33 l, hEF5064 l, hEF87AA l, hEFADD5 l, hEFE1F2 l,
+hD5E1D6 l, hA6E1A4 l, h81E17E l, h57E14D l, h11E122 l,
+
+\ =========================================================================== 
+\ Main 
+\ =========================================================================== 
+
+\ Send 16-data[GRB:24bits] to NeoPixelRing
+\ ( n1 n2 n3 -- )  n1:serial-out port n2:LED count n3:address for LED-array 
+lockdict create _pixel_ring forthentry
+$C_a_lxasm w, h13E  h113  1- tuck - h9 lshift or here W@ alignl h10 lshift or l,
+z2Wi]BB l, z1SyLI[ l, z2Wi]JB l, z1SyLI[ l, z2Wy]O1 l, zfi]RB l, z1[ix[m l, z1bixnm l,
+z1SyLI[ l, z2Wi][w l, z20i]ak l, z3ry]W0 l, z2Wi]fk l, z2Wi]nl l, z8i]vo l, z20y]b4 l,
+zfy]r8 l, z2Wya0O l, zgy]r1 l, z2Wf][u l, z2WZ][s l, z1bix[m l, z20i]ak l, z3rf][v l,
+z3rZ][t l, z1[ix[m l, z3ry]W0 l, z3[ya4\ l, z3[y]nX l, z1SV04S l, 0 l, 0 l,
+0 l, 0 l, 0 l, 0 l, 0 l, 0 l, zS l, z10 l,
+zr l, zj l, zxW l,
+freedict
+
+
+\ Pack R-G-B byte to Long
+\ ( n1 n2 n3 -- n4 ) n1:R n2:G n3:B   n4:G-R-B Long
+: color rot 8 lshift or swap d16 lshift or ;
+
+\ Pack R-G-B byte to Long and set each color to level
+\ ( n1 n2 n3 n4 -- n5 )  n1:R n2:G n3:B n4:level   n5:G-R-B Long
+: colorx
+dup 0< 
+if
+     drop 3drop 0                  \ If level<0
+else
+     dup d255 >
+     if
+          drop color               \ If level>255
+     else     
+          dup                      \ ( n1 n2 n3 n4 n4 )
+          rot u* d255 u/ >r   \ ( n1 n2 n4 )
+          dup                 \ ( n1 n2 n4 n4 )
+          rot u* d255 u/ >r   \ ( n1 n4 )
+          u* d255 u/ r> r>    \ ( n1' n2' n3' )
+          color               \ ( n5 )
+     then
+then
+;
+          
+\ Set GRB value to position inside NeoPixel array
+\ GRB is packed Long in form G-R-B
+\ ( n1 n2 -- )  n1:G-R-B(Long) n2:position (0 to LEDs-1)
+: set_GRB NeoPixel + L! ;
+
+\ Set all LEDs to GRB
+\ ( n1 -- ) n1:G-R-B(Long)
+: set_all
+NeoPixel
+LEDs 0 do 2dup L! 4+ loop 
+2drop
+;
+
+
+: demo
+h00_00_00 set_all
+c" ser_out LEDs NeoPixel _pixel_ring" 0 cogx
+
+NeoPixel Pixel  
+LEDs 0 do
+     2dup
+     L@ swap L!
+     4+ swap 4+ swap
+loop
+2drop
+
+begin fkey? swap drop until
+0 cogreset
+;
+
+
+
+{
+\ Send 16-data[GRB:24bits] to NeoPixelRing
+\ ( n1 n2 n3 -- )  n1:serial-out port n2:LED count n3:address for LED-array 
+fl
+build_BootOpt :rasm
+          \ Set LED-array addrss to __start
+          mov       __start , $C_stTOS
+          spop
+          \ Set LED count to __ledcount
+          mov       __ledcount , $C_stTOS
+          spop
+          \ Set port to output and to lo
+          mov       __txmask , # 1
+          shl       __txmask , $C_stTOS
+          andn      outa , __txmask
+          or        dira , __txmask
+          spop
+          
+__rgbmain
+          \ Issue reset
+          mov       __bittimer , __reset
+          add       __bittimer , cnt
+          waitcnt   __bittimer , # 0
+          
+          \ load LED-array addrss and LED count        
+          mov       __current , __start
+          mov       __nleds , __ledcount
+          
+__frameloop
+          \ Get contents and add 4 to address          
+          rdlong    __colorbits , __current
+          add       __current , # 4
+          
+\ Shift out long in colorbits to NeoPixelRing
+          \ Shift 8bit __colorbits to left    [00GGRRBB -> GGRRBB00]
+          shl       __colorbits , # 8
+          mov       __nbits , # d24 
+
+__loop
+          \ Shift left 1bit
+          shl       __colorbits , # 1 wc
+if_c      mov       __bittimer ,  __bit1hi
+if_nc     mov       __bittimer ,  __bit0hi     
+          or        outa , __txmask
+          add       __bittimer , cnt
+if_c      waitcnt   __bittimer ,  __bit1lo
+if_nc     waitcnt   __bittimer ,  __bit0lo     
+          andn      outa , __txmask
+          waitcnt   __bittimer , # 0
+          djnz      __nbits , # __loop
+          
+          djnz      __nleds , # __frameloop
+          
+          jmp       # __rgbmain
+          
+          
+\ variables
+__start
+          0
+__ledcount
+          0
+__txmask
+          0
+__bittimer
+          0
+__current
+          0 
+__nleds
+          0         
+__colorbits
+          0
+__nbits 
+          0
+                              
+\ constants
+\ 350nsec                    
+__bit0hi
+          d28
+\ 800nsec
+__bit0lo
+          d64
+\ 700nsec
+__bit1hi
+          d56
+\ 600nsec
+__bit1lo
+          d48
+\ 50usec
+__reset
+          d4000
+
+;asm _pixel_ring
+
+}
+
+}}}
+
+
+
+= pt 2 =
+
+
+{{{
+fl                                                               fl
+
+{
+NeoPixelRing(WS2812:16pcs)
+      
+PropForth 5.5
+2014/03/30 21:07:34
+
+Propeller    NeoPixelRing
+      P0 ---  Data Input
+              5V  ----------- 5V-PS
+     GND ---  GND ----------- GND(5V-PS)
+}
+
+
+\ =========================================================================== 
+\ Variables 
+\ =========================================================================== 
+\ LED-array for NeoPixelRing (64bytes:4bytes/1LED)
+variable NeoPixel d60 allot
+
+wvariable base
+wvariable index
+
+\ =========================================================================== 
+\ Constants 
+\ =========================================================================== 
+\ serial pin to NeoPixelRing
+0 wconstant ser_out
+\ LED count
+d16 wconstant LEDs
+
+\ color table [RR_GG_BB]
+variable color_table -4 allot
+h00_00_00 l, \ OFF 
+h00_00_00 l, \ BLACK 
+hFF_00_00 l, \ RED
+h00_FF_00 l, \ GREEN
+h00_00_FF l, \ BLUE
+hFF_FF_FF l, \ WHITE
+h00_FF_FF l, \ CYAN
+hFF_00_FF l, \ MAGENTA
+hFF_FF_00 l, \ YELLOW
+h7F_FF_00 l, \ CHARTREUSE
+hFF_60_00 l, \ ORANGE
+h7F_FF_D4 l, \ AQUAMARINE
+hFF_5F_5F l, \ PINK 
+h3F_E0_C0 l, \ TURQUOISE
+hC8_FF_FF l, \ REALWHITE
+h3F_00_7F l, \ INDIGO
+hBF_7F_BF l, \ VIOLET
+h32_00_10 l, \ MAROON
+h0E_06_00 l, \ BROWN
+hDC_28_3C l, \ CRIMSON
+h8C_00_FF l, \ PURPLE
+
+
+\ =========================================================================== 
+\ Main 
+\ =========================================================================== 
+
+\ Send LEDs-data[GRB:24bits] to NeoPixelRing
+\ ( n1 n2 n3 -- )  n1:serial-out port n2:LED count n3:address for LED-array 
+lockdict create _pixel_ring forthentry
+$C_a_lxasm w, h140  h113  1- tuck - h9 lshift or here W@ alignl h10 lshift or l,
+z2Wi]RB l, z1SyLI[ l, z2Wi]ZB l, z1SyLI[ l, z2Wy]b1 l, zfi]eB l, z1[ix[o l, z1bixno l,
+z1SyLI[ l, z2Wi]ny l, z20i]qk l, z3ry]j0 l, z2Wi]vm l, z2Wia4n l, z8iaCq l, z20y]r4 l,
+zWya88 l, z2WyaGO l, z1YVaG7 l, z[daCt l, z\ya81 l, z2Wf]nw l, z2WZ]nu l, z1bix[o l,
+z20i]qk l, z3rf]nx l, z3rZ]nv l, z1[ix[o l, z3ry]j0 l, z3[yaK\ l, z3[ya4X l, z1SV04S l,
+0 l, 0 l, 0 l, 0 l, 0 l, 0 l, 0 l, 0 l,
+zS l, z10 l, zr l, zj l, zxW l,
+freedict
+
+
+\ Pack R-G-B byte to Long
+\ ( n1 n2 n3 -- n4 ) n1:R[byte] n2:G[byte] n3:B[byte]   n4:R-G-B [Long]
+: color swap 8 lshift or swap d16 lshift or ;
+
+\ Pack R-G-B byte to Long and set each color to level
+\ ( n1 n2 n3 n4 -- n5 )  n1:R[byte] n2:G[byte] n3:B[byte] n4:level[0 to 255]   n5:R-G-B [Long]
+: colorx
+dup 0< 
+if
+     drop 3drop 0                  \ If level<0
+else
+     dup d255 >
+     if
+          drop color               \ If level>255
+     else     
+          dup                      \ ( n1 n2 n3 n4 n4 )
+          rot u* d255 u/ >r   \ ( n1 n2 n4 )
+          dup                 \ ( n1 n2 n4 n4 )
+          rot u* d255 u/ >r   \ ( n1 n4 )
+          u* d255 u/ r> r>    \ ( n1' n2' n3' )
+          color               \ ( n5 )
+     then
+then
+;
+                
+\ Set R-G-B[Long] value to position inside NeoPixel array
+\ R-G-B is packed Long in form hRR_GG_BB
+\ ( n1 n2 -- )  n1:R-G-B(Long) n2:position (0 to LEDs-1)
+: set 4 u* NeoPixel + L! ;
+
+\ Writes rgb elements to position in NeoPixel
+\ r, g, and b are byte values, 0 to 255
+\ ( n1 n2 n3 n4 -- )  n1:position[0 to LEDs-1] n2:R[byte] n3:G[byte] n4:B[byte]
+: set_rgb color swap set ;
+
+\ Set all LEDs to RGB
+\ rgb is packed long in form hRR_GG_BB
+\ ( n1 -- ) n1:R-G-B(Long)
+: set_all
+NeoPixel
+LEDs 0 do 2dup L! 4+ loop 
+2drop
+;
+
+\ Fills from 1st to last position with rgb
+\ rgb is packed long in form hRR_GG_BB
+\ ( n1 n2 n3 -- )  n1:R-G-B(Long) n2:last(1 to NeoPixel) n3:1st( 0 to NeoPixel-1)
+: fill
+\ If n2 <= n1, nothing
+2dup > 
+if
+     swap 1+ swap do
+          dup i 4 u* NeoPixel + L!
+     loop
+     drop 
+else
+     3drop
+then
+;
+
+
+\ Display color-table[from address of color-table to index of color-table] and repeat n3-times from 0 to 15 on NeoPixelRing
+\ ( n1 n2 n3 -- )  n1:delay[msec]  n2:address of color-table  n3:index of color-table
+: color_chase
+dup index W!
+0 do                               \ ( n1 n2 )
+     i base W!                                      
+     LEDs 0 do
+          dup                      \ ( n1 n2 n2 )
+          base W@ 4 u* +           \ ( n1 n2 n2+base*4)
+          L@                       \ ( n1 n2 RGB )
+          i set                    \ Writes rgb elements to position in NeoPixel
+          base W@ 1+ dup 
+          index W@ =               \ Check if base is equal to index
+          if 
+               drop 0 base W!      \ back to original base
+          else 
+               base W!             \ next base
+          then
+          over delms               \ ( n1 n2 )
+     loop
+loop
+2drop
+;
+
+\ Sequentially fills strip with color rgb
+\ ( n1 n2 )  n1:delay[msec] n2:R-G-B(Long)
+: color_wipe
+LEDs 0 do
+     2dup      \ ( n1 n2 n1 n2 )
+     i set     \ ( n1 n2 n1 )
+     delms
+loop
+2drop
+;
+
+\ Creates color from 0 to 255 color-position input
+\ colors transition r->g->b back to r
+\ ( n1 -- n2 )  n1:color-position  n2:R-G-B[Long]
+: wheel
+dup
+d85 <
+if
+     3 u* dup            \ ( color-position*3 color-position*3 )
+     d255 swap -         \ ( color-position*3 R )
+     swap 0              \ ( R G B )                   
+else
+     dup d170 <
+     if
+          d85 - 3 u*     \ ( color-position*3 )
+          0 swap         \ ( R color-position*3 )
+          dup            \ ( R color-position*3 color-position*3 )
+          d255 swap -    \ ( R color-position*3 255-color-position*3 )
+          swap           \ ( R G B )
+     else
+          d170 - 3 u*    \ ( color-position*3 )
+          dup            \ ( color-position*3 color-position*3 )
+          0 swap         \ ( color-position*3 0 color-position*3 )
+          d255 swap -    \ ( R G B )
+thens
+color                    \ ( R-G-B[Long] )
+;
+
+\ Creates color from 0 to 255 color-position input
+\ colors transition r->g->b back to r
+\ level is brightness, 0 to 255
+\ ( n1 n2 -- n3 )  n1:color-position n2:level   n3:R-G-B[Long]
+: wheelx
+>r                       \ Push level
+dup                      \ ( n1 )  
+d85 <
+if
+     3 u* dup            \ ( color-position*3 color-position*3 )
+     d255 swap -         \ ( color-position*3 R )
+     swap 0              \ ( R G B )                   
+else
+     dup d170 <
+     if
+          d85 - 3 u*     \ ( color-position*3 )
+          0 swap         \ ( R color-position*3 )
+          dup            \ ( R color-position*3 color-position*3 )
+          d255 swap -    \ ( R color-position*3 255-color-position*3 )
+          swap           \ ( R G B )
+     else
+          d170 - 3 u*    \ ( color-position*3 )
+          dup            \ ( color-position*3 color-position*3 )
+          0 swap         \ ( color-position*3 0 color-position*3 )
+          d255 swap -    \ ( R G B )
+thens
+r>                       \  ( R G B n1 )
+colorx                   \ ( R-G-B[Long] )
+;
+
+\ ( n1 -- )  n1:delay[msec]
+: rainbow
+d255 0 do
+     dup
+     LEDs 0 do
+          j i + hFF and wheel i    \ ( R-G-B[Long] (0 to LEDs-1) ) 
+          set
+     loop
+     delms
+loop
+drop
+;
+
+: demo
+0 set_all
+c" ser_out LEDs NeoPixel _pixel_ring" 0 cogx
+d100 color_table 8 + 6 color_chase
+d100 color_table 8 + L@ color_wipe
+d100 color_table L@ color_wipe
+
+d255 0 do
+     i d128 wheelx
+     set_all
+     d50 delms
+loop
+d20 rainbow
+0 set_all
+d10 delms
+0 cogreset
+;
+
+
+{
+\ Send 16-data[GRB:24bits] to NeoPixelRing
+\ ( n1 n2 n3 -- )  n1:serial-out port n2:LED count n3:address for LED-array 
+fl
+build_BootOpt :rasm
+          \ Set LED-array addrss to __start
+          mov       __start , $C_stTOS
+          spop
+          \ Set LED count to __ledcount
+          mov       __ledcount , $C_stTOS
+          spop
+          \ Set port to output and to lo
+          mov       __txmask , # 1
+          shl       __txmask , $C_stTOS
+          andn      outa , __txmask
+          or        dira , __txmask
+          spop
+          
+__rgbmain
+          \ Issue reset
+          mov       __bittimer , __reset
+          add       __bittimer , cnt
+          waitcnt   __bittimer , # 0
+          
+          \ load LED-array addrss and LED count        
+          mov       __current , __start
+          mov       __nleds , __ledcount
+          
+__frameloop
+          \ Get contents and add 4 to address          
+          rdlong    __colorbits , __current
+          add       __current , # 4
+          
+          ror       __colorbits , # 8
+          mov       __nbits , # d24 
+
+__loop          
+          \ Check if nbits is 24,16,8
+          test      __nbits , # 7 wz
+          \ if yes, modify colorbits
+if_z      rol       __colorbits , __nbits  
+          \ MSB --> Carry
+          rol       __colorbits , # 1 wc     
+if_c      mov       __bittimer ,  __bit1hi
+if_nc     mov       __bittimer ,  __bit0hi     
+          or        outa , __txmask
+          add       __bittimer , cnt
+if_c      waitcnt   __bittimer ,  __bit1lo
+if_nc     waitcnt   __bittimer ,  __bit0lo     
+          andn      outa , __txmask
+          waitcnt   __bittimer , # 0
+          djnz      __nbits , # __loop
+          
+          djnz      __nleds , # __frameloop
+          
+          jmp       # __rgbmain
+          
+          
+\ variables
+__start
+          0
+__ledcount
+          0
+__txmask
+          0
+__bittimer
+          0
+__current
+          0 
+__nleds
+          0         
+__colorbits
+          0
+__nbits 
+          0
+                              
+\ constants
+\ 350nsec                    
+__bit0hi
+          d28
+\ 800nsec
+__bit0lo
+          d64
+\ 700nsec
+__bit1hi
+          d56
+\ 600nsec
+__bit1lo
+          d48
+\ 50usec
+__reset
+          d4000
+
+;asm _pixel_ring
+}
+
+
+}}}
