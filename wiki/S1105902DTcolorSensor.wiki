@@ -1,5 +1,8 @@
 #summary ColorSensor S11059-02DT
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
