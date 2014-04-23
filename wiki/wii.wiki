@@ -5,6 +5,13 @@
 
 = Introduction =
 
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-UjZJV2dxUUp6N0k/edit?usp=sharing Wii nunchuk instructions]
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-Z1Z4T1djLTh4M0E/edit?usp=sharing Wii Nunchuk datasheet]
+
+
+
 {{{
 fl
 
