@@ -1,5 +1,8 @@
 #summary DS1631(Thermometer and Thermostat) driver
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
