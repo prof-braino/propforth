@@ -7,7 +7,9 @@
 = Introduction =
 
 PDF: 
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-YjFwaHdSZ0d5VWc/edit?usp=sharing datasheet]
 
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-QnBCTXVEZmF5TjQ/edit?usp=sharing instructions]
 
 {{{
 fl
