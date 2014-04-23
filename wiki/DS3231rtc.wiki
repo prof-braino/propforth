@@ -1,5 +1,8 @@
 #summary RTC DS3231 driver
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
