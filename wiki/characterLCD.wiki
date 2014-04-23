@@ -1,5 +1,8 @@
 #summary i2c-charcterLCD made by using GPIO_Expander(PCF8574)
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 {{{
