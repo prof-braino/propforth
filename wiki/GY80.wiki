@@ -71,6 +71,17 @@ Forth source code for GY-80 simple dirver
 
 [https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing Gy-80 driver - simple]
 
+Cog 7 runs the terminal serial driver 
+Cog 6 is the user command line
+Cog 5 loaded the code, now is is idle and available
+Cog 4 was the next free cog during load, and is assigned reading the I2C bus to query the sensors. 
+
+The remaining cogs are available
+
+The devices are being read at the speed of the I2C bus (400Khz) 
+
+The display is being updated at 230400 baud.  I believe the display is only showing a portion of the data, because the data is updated faster than the display is receiving. 
+
 == Graph ==
 
 Display with a retro ANSI character graphics display (IN PROGRESS)
