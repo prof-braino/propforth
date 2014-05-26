@@ -18,9 +18,7 @@ We can use this for Robo-Magellan, or Quad Copter navigation and control.
 
 NOTE:  GPS is separate from this IMU, we can add GPS later. 
 
-= I2C =
-
-The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are actually FOUR I2C bus parts on the GY-80. The use the same [I2C] wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
+= GY-80 sensors =
 
 The parts are 
  * ADXL345 accelerometer
@@ -51,6 +49,12 @@ The program code was developed in the order presented above.  Each item was comp
 
 The result of the method is we go over the first part a zillion time, because the first part is re-checked after any new part is integrated. Even so there is still room for improvements. Some functions could be standardized across all parts. Some functions where standardization was attempted should NOT be standardized, maybe, because the part is "just different". You are free to make any changes and offer suggestions if you are pleased with the result. 
 
+
+= I2C =
+
+The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are actually FOUR I2C bus parts on the GY-80. The use the same [I2C] wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
+
+I2C is expalined in detail elsewhere. PropForth has built-in support for the EEPROM, so I2C "just works".  But we still have to understand I2C a bit to grasp whats going on in the drivers. 
 
 
 = GY80 driver =
