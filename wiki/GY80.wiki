@@ -12,7 +12,7 @@ There are newer parts on the market that are more capable and possibly cheaper. 
 
 = Uses =
 
-IMU is handy for meausuring changes in speed and position (inertia).  If we know speed and direction, we can determine our position in relation to a known point, such as our starting point.  If we have no other information, we can call this "dead reckoning" or "deduced reckoning".
+IMU is handy for measuring changes in speed and position (inertia).  If we know speed and direction, we can determine our position in relation to a known point, such as our starting point.  If we have no other information, we can call this "dead reckoning" or "deduced reckoning".
 
 We can use this for Robo-Magellan, or Quad Copter navigation and control. 
 
@@ -52,22 +52,35 @@ The result of the method is we go over the first part a zillion time, because th
 
 = I2C =
 
-The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are actually FOUR I2C bus parts on the GY-80. The use the same [I2C] wires and commands that we already se to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
+The GY-80 uses  [I2C] bus  to talk with the microprocessor.  There are actually FOUR I2C bus parts on the GY-80. The use the same [I2C] wires and commands that we already use to talk to the EEPROM, so support is already built into the kernel for  free. Neet!
 
-I2C is expalined in detail elsewhere. PropForth has built-in support for the EEPROM, so I2C "just works".  But we still have to understand I2C a bit to grasp whats going on in the drivers. 
+I2C is explained in detail elsewhere. PropForth has built-in support for the EEPROM, so I2C "just works".  But we still have to understand I2C a bit to grasp whats going on in the drivers. 
 
+ * PropForth shifts a value out the I2C lines.  This is the address of one of the parts. 
+ * The part acknowledges. (by shifting back a particular number) 
+ * PropForth sends the address of one of the part's registers.  
+ * The part acknowledges. 
+ * PropForth sned a number code to either Reads or writes the register.  
+ * The part sends or receives the data.  
+ * PropForth send a No-Acknowledge (a special number) to tell the part we are done. 
+
+That's all there is to it. 
 
 = GY80 driver =
 
 The individual drivers are combined into a single module.
 
-One cog tends all I2C bus devices, the foreground cog displys the sensor output as simple text.
+One cog tends all I2C bus devices, by reading their data, and dropping it into HUB RAM. (COMPLETED)
+
+The foreground cog reads the current values from RAM, and displays the sensor output data as simple text on the display. (COMPLETED)
+
+Other cogs can send the RAM data to SD, or process the data for example with a Kalman filter.  (IN PROGRESS)
 
 == Simple ==
 
 Just display the data values 
 
-Forth source code for GY-80 simple dirver
+Forth source code for GY-80 simple driver (COMPLETED)
 
 [https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing Gy-80 driver - simple]
 
