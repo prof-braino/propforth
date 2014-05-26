@@ -1,5 +1,7 @@
 #summary GY-80 IMU. I2C
 
+<wiki:toc max_depth="9" />
+
 = GY-80 Inertial Measurement unit =
 
 The GY-80 is a very inexpensive 10DOF inertial measurement unit.
@@ -32,6 +34,24 @@ The accelerometer, gyroscope, and magnetometer all are 3 axis.
  * [BMP085]
  * [HMC5883L]
  * [L3G4200D]
+
+= GY80 Application = 
+
+The GY80 can be organized as several parts.
+
+ * the low level drivers for the four sensors
+ * the initialization of the sensors at power up
+ * ANSI terminal support for the terminal (android device) character base user interface (UI)
+ * The terminal interface display
+ * The display support for each sensor data
+ * The real time click support
+ * the Data Logger
+
+The program code was developed in the order presented above.  Each item was completed before moving on to the next item in the lost.  When a new item was completed, the previous items were checked, to ensure new code did not disrupt existing code.  Also new discoveries (a better way to do something) were applied to the old code, and the changes were retested in the same manner. 
+
+The result of the method is we go over the first part a zillion time, because the first part is re-checked after any new part is integrated. Even so there is still room for improvements. Some functions could be standardized across all parts. Some functions where standardization was attempted should NOT be standardized, maybe, because the part is "just different". You are free to make any changes and offer suggestions if you are pleased with the result. 
+
+
 
 = GY80 driver =
 
