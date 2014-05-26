@@ -73,7 +73,7 @@ Forth source code for GY-80 simple dirver
 
 == Graph ==
 
-Display with a retro ANSI character graphics display
+Display with a retro ANSI character graphics display (IN PROGRESS)
 
 == Logging ==
 
