@@ -100,9 +100,13 @@ The devices are being read at the speed of the I2C bus (400Khz)
 
 The display is being updated at 230400 baud.  I believe the display is only showing a portion of the data, because the data is updated faster than the display is receiving. 
 
-== ~~GY-80 driver Graph: Data values displayed as magnitude vectors on a a graph ==
+== GY-80 driver Graph: Data values displayed as magnitude vectors on a a graph ==
 
-Display with a retro ANSI character graphics display (IN PROGRESS)
+Display with a retro ANSI character graphics display (COMPLETE)
+
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-Mnp5VnpoSEFQZ2M GY-80GraphSimple]
+
+NOTE this version is optimized to display on Samsung Captivate Glide in landscape orientation. Change the AxisLength parameter to display in a larger terminal 
 
 == ~~GY-80 driver Logging: write the data values to a 4Gig SD card for online analysis ==
 
