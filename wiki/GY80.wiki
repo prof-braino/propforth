@@ -44,8 +44,11 @@ The GY80 can be organized as several parts.
  * The display support for each sensor data
  * The real time click support
  * the Data Logger
+ * the Kalman filter to determine our current position and orientation in space using "dead reckoning"
+ * the PID loop to orient a bot with respect to position and gravity
+ * the navigator to tell the bot the sequence of position and orientation to achieve.
 
-The program code was developed in the order presented above.  Each item was completed before moving on to the next item in the lost.  When a new item was completed, the previous items were checked, to ensure new code did not disrupt existing code.  Also new discoveries (a better way to do something) were applied to the old code, and the changes were retested in the same manner. 
+The program code was (is being) developed in the order presented above.  Each item was completed before moving on to the next item in the lost.  When a new item was completed, the previous items were checked, to ensure new code did not disrupt existing code.  Also new discoveries (a better way to do something) were applied to the old code, and the changes were retested in the same manner. 
 
 The result of the method is we go over the first part a zillion time, because the first part is re-checked after any new part is integrated. Even so there is still room for improvements. Some functions could be standardized across all parts. Some functions where standardization was attempted should NOT be standardized, maybe, because the part is "just different". You are free to make any changes and offer suggestions if you are pleased with the result. 
 
