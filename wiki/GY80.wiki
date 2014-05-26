@@ -100,7 +100,7 @@ The devices are being read at the speed of the I2C bus (400Khz)
 
 The display is being updated at 230400 baud.  I believe the display is only showing a portion of the data, because the data is updated faster than the display is receiving. 
 
-== GY-80 driver Graph: Data values displayed as magnitude vectors on a a graph ==
+== ~~GY-80 driver Graph: Data values displayed as magnitude vectors on a a graph ==
 
 Display with a retro ANSI character graphics display (IN PROGRESS)
 
