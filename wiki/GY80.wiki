@@ -85,7 +85,9 @@ Just display the data values
 
 Forth source code for GY-80 simple driver (COMPLETED)
 
-CLick the link to download the Forth source code from Google Drive [https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing Gy-80 driver - simple]
+Click the link to download the Forth source code from Google Drive 
+
+*[https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing Gy-80 driver - simple]
 
 Cog 7 runs the terminal serial driver 
 Cog 6 is the user command line
