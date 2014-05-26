@@ -87,7 +87,7 @@ Forth source code for GY80 simple driver (COMPLETED)
 
 Click the link to download the Forth source code from Google Drive 
 
-*[https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing GY-80 driver - simple]
+*[https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/ GY-80 driver - simple]
 
 Cog 7 runs the terminal serial driver 
 Cog 6 is the user command line
@@ -104,7 +104,9 @@ The display is being updated at 230400 baud.  I believe the display is only show
 
 Display with a retro ANSI character graphics display (COMPLETE)
 
-[https://drive.google.com/file/d/0B8d8RsrY7Rt-Mnp5VnpoSEFQZ2M GY-80GraphSimple]
+Click the link to download the Forth source code from Google Drive 
+
+*[https://drive.google.com/file/d/0B8d8RsrY7Rt-Mnp5VnpoSEFQZ2M GY-80 Graph Simple]
 
 NOTE this version is optimized to display on Samsung Captivate Glide in landscape orientation. Change the AxisLength parameter to display in a larger terminal 
 
