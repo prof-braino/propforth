@@ -76,7 +76,7 @@ The foreground cog reads the current values from RAM, and displays the sensor ou
 
 Other cogs can send the RAM data to SD, or process the data for example with a Kalman filter.  (IN PROGRESS)
 
-== Simple ==
+== Simple: data values displayed as numbers  ==
 
 Just display the data values 
 
@@ -95,15 +95,15 @@ The devices are being read at the speed of the I2C bus (400Khz)
 
 The display is being updated at 230400 baud.  I believe the display is only showing a portion of the data, because the data is updated faster than the display is receiving. 
 
-== Graph ==
+== Graph: Data values displayed as magnitude vectors on a a graph ==
 
 Display with a retro ANSI character graphics display (IN PROGRESS)
 
-== Logging ==
+== Logging: write the data values to a 4Gig SD card for online analysis ==
 
 Log to SD
 
-== Logger with Graphics ==
+== Logger with Graphics  ==
 
 Log to SD also display the graph on terminal screen (including Android over Bluetooth)
 
