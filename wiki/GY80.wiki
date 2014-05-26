@@ -69,7 +69,7 @@ I2C is explained in detail elsewhere. PropForth has built-in support for the EEP
 
 That's all there is to it. 
 
-= GY80 driver =
+= GY-80 driver =
 
 The individual drivers are combined into a single module.
 
@@ -79,15 +79,15 @@ The foreground cog reads the current values from RAM, and displays the sensor ou
 
 Other cogs can send the RAM data to SD, or process the data for example with a Kalman filter.  (IN PROGRESS)
 
-== Simple: data values displayed as numbers  ==
+== GY-80 driver Simple: data values displayed as numbers  ==
 
 Just display the data values 
 
-Forth source code for GY-80 simple driver (COMPLETED)
+Forth source code for GY80 simple driver (COMPLETED)
 
 Click the link to download the Forth source code from Google Drive 
 
-*[https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing Gy-80 driver - simple]
+*[https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing GY-80 driver - simple]
 
 Cog 7 runs the terminal serial driver 
 Cog 6 is the user command line
@@ -100,17 +100,17 @@ The devices are being read at the speed of the I2C bus (400Khz)
 
 The display is being updated at 230400 baud.  I believe the display is only showing a portion of the data, because the data is updated faster than the display is receiving. 
 
-== Graph: Data values displayed as magnitude vectors on a a graph ==
+== GY-80 driver Graph: Data values displayed as magnitude vectors on a a graph ==
 
 Display with a retro ANSI character graphics display (IN PROGRESS)
 
-== Logging: write the data values to a 4Gig SD card for online analysis ==
+== GY-80 driver Logging: write the data values to a 4Gig SD card for online analysis ==
 
 Log to SD
 
 The logger includes 64 bit time stamps based on the prop 32 bit internal counters. At 80Mhz, the counter rolls over about every 57 seconds.  Using the additional 32bit long allows unique times stamps with 12.5ns resolution for about 7,133 years.  Typically we can only log events several times a second.  The result is every data logged should have a unique time stamp, no matter how many loggers we have running. (If we started logging on every Prop chip ever made, or started two identical applications at exactly the same time,  we MIGHT see records with the same time stamp.  This seems unlikely, and we have not observed any collision yet).  
 
-== Logger with Graphics  ==
+== GY-80 driver Logger with Graphics  ==
 
 Log to SD also display the graph on terminal screen (including Android over Bluetooth)
 
