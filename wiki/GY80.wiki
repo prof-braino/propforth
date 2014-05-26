@@ -63,11 +63,25 @@ The individual drivers are combined into a single module.
 
 One cog tends all I2C bus devices, the foreground cog displys the sensor output as simple text.
 
-Gy-80 driver - simple
+== Simple ==
 
-https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing
+Just display the data values 
 
+Forth source code for GY-80 simple dirver
 
+[https://drive.google.com/file/d/0B8d8RsrY7Rt-dmQyellLcGVrQzQ/edit?usp=sharing Gy-80 driver - simple]
+
+== Graph ==
+
+Display with a retro ANSI character graphics display
+
+== Logging ==
+
+Log to SD
+
+== Logger with Graphics ==
+
+Log to SD also display the graph on terminal screen (including Android over Bluetooth)
 
 
 = Details =
