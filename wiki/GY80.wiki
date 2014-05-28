@@ -114,11 +114,22 @@ NOTE this version is optimized to display on Samsung Captivate Glide in landscap
 
 Log to SD
 
+IN PROGRESS
+
 The logger includes 64 bit time stamps based on the prop 32 bit internal counters. At 80Mhz, the counter rolls over about every 57 seconds.  Using the additional 32bit long allows unique times stamps with 12.5ns resolution for about 7,133 years.  Typically we can only log events several times a second.  The result is every data logged should have a unique time stamp, no matter how many loggers we have running. (If we started logging on every Prop chip ever made, or started two identical applications at exactly the same time,  we MIGHT see records with the same time stamp.  This seems unlikely, and we have not observed any collision yet).  
+
 
 == ~~GY-80 driver Logger with Graphics  ==
 
+
 Log to SD also display the graph on terminal screen (including Android over Bluetooth)
+
+
+INCOMPLETE
+
+Ran out of Hub memory due to too many diagnostics, etc. 
+
+I still plan to try a grapphic dispplay while logging.  I might weed out some extraneous functions.  Or I might have to remove the Altimeter function from the BMP085.
 
 
 = Details =
