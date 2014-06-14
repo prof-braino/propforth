@@ -123,17 +123,13 @@ INSTRUCTIONS
  #  1b) - SD card - I'm using pins 16-21 as on Spinneret (default)
  #  1c) - GY-80 - connected on EEPROM pins SDA and SCL
  #  1d) (optional) HC05 blue tooth serial cable replacement (for Android as interface)
-
  # 2) Software - SD kernel
 Load propforthSD kernel (.spin) using PropTool etc as usual
-
  # 3) Start the  terminal emulator program in the usual manner (described elsewhere) 
-
  # 4) COPY/PASTE the following source code files into the terminal window in the usual manner (described elsewhere)  
-
  # 5) - The file:
 
-      00-sdfsInitScript.f
+      `00-sdfsInitScript.f`
 
 only needs be pasted in once, this initializes and setsup the SD card.
 If you wish to delete the SD card contents (e.g. to start over clean)
@@ -141,12 +137,12 @@ reboot and paste this file into the terminal again.
 
  # 6) -These files may be copy/pasted into the terminal in their entirety:
 
-      11-DoubleMath.f
-      12-time.f
+      `11-DoubleMath.f`
+      `12-time.f`
 
  # 7) - This file creates all the driver files for the GY-80
 
-       13- GY80-load D Application 20140608-1331 logger Graph FINAL.f
+       `13- GY80-load D Application 20140608-1331 logger Graph FINAL.f`
 
 NOTICE that the file has many comment lines with 
 
@@ -161,11 +157,11 @@ and paste the modified code into the termnal window as  usual.
 
  # 8) - This file creates logboot.f on the SD card
 
-15-loggerBootDailyFiles-GY-80-20140612-0001 LOGGER signed FASTER4- FINAL.f
+       `15-loggerBootDailyFiles-GY-80-20140612-0001 LOGGER signed FASTER4- FINAL.f`
 
  # 9) - This file creates graphboot.f on the SD card
 
-17-loggerBootDailyFiles-GY-80-20140614-1445 GRAPH-signed.f
+      `17-loggerBootDailyFiles-GY-80-20140614-1445 GRAPH-signed.f`
 
 NOTICE - you only need one or the other of logboot.f or graphboot.f
 
@@ -183,32 +179,31 @@ select either of the following:
 
 *for logboot.f*
 
-reboot - to clear the system
+`reboot` - to clear the system
 
-fload logboot.f   - to autoload all the drivers in the correct order
+`fload logboot.f`   - to autoload all the drivers in the correct order
 
-GY-80 - starts the non graphic numberic terminal display.  exit with the ESC key or reboot
+`GY-80` - starts the non graphic numberic terminal display.  exit with the ESC key or reboot
 
-mountusr ls  - mount the user data particion, and list the files
+`mountusr ls`  - mount the user data particion, and list the files
 
-fread IMU2012-01-01 - display the contents of the default log file
+`fread IMU2012-01-01` - display the contents of the default log file
 
-2014 12 17 13 59 00 setLocalTime   -  set the time to December 17 2014, 1:59 PM; this creates a new logfile
+`2014 12 17 13 59 00 setLocalTime`   -  set the time to December 17 2014, 1:59 PM; this creates a new logfile
 
-fread IMU2014-12-17 - display the contents of the 
+`fread IMU2014-12-17` - display the contents of the 
 
 *for graphboot.f*
 
-reboot - to clear the system
+`reboot` - to clear the system
 
-fload graphboot.f   - to autoload all the drivers in the correct order
+`fload graphboot.f`   - to autoload all the drivers in the correct order
 
-GY-80 - starts the terminal graphic display.  exit with the ESC key or reboot
+`GY-80` - starts the terminal graphic display.  exit with the ESC key or reboot
 
-mountusr ls  - mount the user data particion, and list the files
+`mountusr ls`  - mount the user data particion, and list the files
 
-fread IMUnoTIMExxxx - display the contents of the loag file
-
+`fread IMUnoTIMExxxx` - display the contents of the loag file
 
 
 === GY-80 driver Logging: write the data values to a 4Gig SD card for online analysis ===
