@@ -166,11 +166,11 @@ and paste the modified code into the termnal window as  usual.
 
 NOTICE - you only need one or the other of logboot.f or graphboot.f
 
-logboot.f loads the drivers for GY-80 (BMP085, ADXL345, L3G4, HCM5883) and for TIME (doublemath.f and time.f)
-logboot.f does NOT include altimeter support
+*`logboot.f` loads the drivers for GY-80 (`BMP085, ADXL345, L3G4, HCM5883`) and for TIME (doublemath.f and time.f)
+`logboot.f` does NOT include altimeter support
 
-graphboot.f loads the drivers for GY-80 (BMP085, ADXL345, L3G4, HCM5883) and for the character based data graphing routines
-graphboot.f does NOT include time support
+*`graphboot.f` loads the drivers for GY-80 (`BMP085, ADXL345, L3G4, HCM5883`) and for the character based data graphing routines
+`graphboot.f` does NOT include time support
 
 (Sorry, there was't enough room for both without optimization in assembler, that is a later step)
 
@@ -178,7 +178,7 @@ graphboot.f does NOT include time support
 
 select either of the following:
 
-*for logboot.f*
+===*for logboot.f*===
 
 `reboot` - to clear the system
 
@@ -194,7 +194,7 @@ select either of the following:
 
 `fread IMU2014-12-17` - display the contents of the 
 
-*for graphboot.f*
+===*for graphboot.f*===
 
 `reboot` - to clear the system
 
@@ -207,7 +207,7 @@ select either of the following:
 `fread IMUnoTIMExxxx` - display the contents of the loag file
 
 
-=== GY-80 driver Logging: write the data values to a 4Gig SD card for online analysis ===
+= GY-80 driver Logging: write the data values to a 4Gig SD card for online analysis =
 
 Log to SD
 
@@ -216,7 +216,7 @@ https://drive.google.com/file/d/0B8d8RsrY7Rt-VTJIOElVM3lHblU/edit?usp=sharing
 The logger includes 64 bit time stamps based on the prop 32 bit internal counters. At 80Mhz, the counter rolls over about every 57 seconds.  Using the additional 32bit long allows unique times stamps with 12.5ns resolution for about 7,133 years.  Typically we can only log events several times a second.  The result is every data logged should have a unique time stamp, no matter how many loggers we have running. (If we started logging on every Prop chip ever made, or started two identical applications at exactly the same time,  we MIGHT see records with the same time stamp.  This seems unlikely, and we have not observed any collision yet).  
 
 
-=== GY-80 driver Logger with Graphics  ===
+= GY-80 driver Logger with Graphics =
 
 
 Log to SD also display the graph on terminal screen (including Android over Bluetooth)
@@ -228,10 +228,4 @@ Ran out of Hub memory due to too many diagnostics, etc.
 Ended up removing the TIME SUPPORT and adding back the altimeter.
 
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+<end>
