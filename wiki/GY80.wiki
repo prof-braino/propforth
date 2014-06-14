@@ -118,16 +118,16 @@ This is phase 1 of the Propforth IMU project.
 
 INSTRUCTIONS
 
- * 1) Hardware:
- * 1a) - Quickstart or other Prop board (Parallax P8X32A)
- * 1b) - SD card - I'm using pins 16-21 as on Spinneret (default)
- * 1c) - GY-80 - connected on EEPROM pins SDA and SCL
- * 1d) (optional) HC05 blue tooth serial cable replacement (for Android as interface)
- * 2) Software - SD kernel
+ * Hardware:
+ * - Quickstart or other Prop board (Parallax P8X32A)
+ * - SD card - I'm using pins 16-21 as on Spinneret (default)
+ * - GY-80 - connected on EEPROM pins SDA and SCL
+ * (optional) HC05 blue tooth serial cable replacement (for Android as interface)
+ * Software - SD kernel
 Load propforthSD kernel (.spin) using PropTool etc as usual
- * 3) Start the  terminal emulator program in the usual manner (described elsewhere) 
- * 4) COPY/PASTE the following source code files into the terminal window in the usual manner (described elsewhere)  
- * 5) - The file:
+ * Start the  terminal emulator program in the usual manner (described elsewhere) 
+ * COPY/PASTE the following source code files into the terminal window in the usual manner (described elsewhere)  
+ * The file:
 
       `00-sdfsInitScript.f`
 
@@ -135,13 +135,13 @@ only needs be pasted in once, this initializes and setsup the SD card.
 If you wish to delete the SD card contents (e.g. to start over clean)
 reboot and paste this file into the terminal again. 
 
- * 6) -These files may be copy/pasted into the terminal in their entirety:
+ * These files may be copy/pasted into the terminal in their entirety:
 
       `11-DoubleMath.f`
 
       `12-time.f`
 
- * 7) - This file creates all the driver files for the GY-80
+ * This file creates all the driver files for the GY-80
 
        `13- GY80-load D Application 20140608-1331 logger Graph FINAL.f`
 
@@ -156,11 +156,11 @@ without having to erase the cared and start over every time you try a change.
 BEGIN the copy operation with the "`fl`" (do not include the comment designator "`\`" )
 and paste the modified code into the termnal window as  usual.
 
- * 8) - This file creates logboot.f on the SD card
+ * - This file creates logboot.f on the SD card
 
        `15-loggerBootDailyFiles-GY-80-20140612-0001 LOGGER signed FASTER4- FINAL.f`
 
- * 9) - This file creates graphboot.f on the SD card
+ * - This file creates graphboot.f on the SD card
 
       `17-loggerBootDailyFiles-GY-80-20140614-1445 GRAPH-signed.f`
 
@@ -174,7 +174,7 @@ graphboot.f does NOT include time support
 
 (Sorry, there was't enough room for both without optimization in assembler, that is a later step)
 
- * 10)  Load and run the application:
+ * Load and run the application:
 
 select either of the following:
 
