@@ -1,0 +1,42 @@
+#summary Propforth IMU functional demo
+
+= Propforth IMU =
+
+The Propforth IMU project uses an Interial Measurement Unit (IMU) to determine positional data by "dead reckoning".  Starting at any arbitrary point in space, the IMU measure changes in orientation with a 3 axis gyroscope, and changes in velocity using a 3 axis accelerometer. Also present are barometric pressure sensor, and a three axis magnetometer; the low level drivers have ben implemented in case we decide we need altitude and compass. 
+
+= Phase 1 - Drivers & raw reading =
+
+The IMU selected is the GY-80.  The low level drivers for the GY-80 devices is described here:
+
+https://code.google.com/p/propforth/wiki/GY80
+
+The drivers collect the raw readings from the GY-80, log the data to SD.
+
+The drivers also include a diagnostic to display the data on the terminal screen in graphic format. 
+
+New data from the GY-80 devices is read and saved to memory more than 10 times per second.  The I2C bus is running at 400khz, but the serial connection only runs at 230400 baud, so the terminal screen is only updated 10 times per second. So the data is being read at least that fast. 
+
+The SD card is relatively slow.  The SD card can only save the data about four times per second.  During development this is fine, we just want to see the data and figure out how we are going to process it. 
+
+= Phase 2 - Kalman filter raw reading into positional data =
+
+Phase 2 plans to convert the raw reading into positional data in the prop on the fly. 
+
+Instead of logging lots of raw data (and missing much of it) we will try to convert the readings into discreet points in space rlative to the starting point.  Then we should be able to get better position and be able to log at a slower rate. 
+
+= Phase 3 - Log position and distance =
+
+Since I have access to the SF02 laser range finder, I should be able to include the SF02 distance reading along with position and orientation. 
+
+This will gives us:
+ * the unit's position and orientation
+ * the orientation and distance to an object 
+ * The point between the unit and the object must be empty
+
+So we should be able to create a model of the local environment. 
+
+= Phase 4 - display the position and distance measurements on an android device =
+
+Once we have all the unit's position, orientation, and distance measurements, we will try to dispaly them. One method would be to compare an android device IMU data to the Prop IMU data. By moving the android device, we might be able to see the points that Prop saw.  Kind of like a very sparce virtual reality display.  I don't know if it will be usable for any purpose, but It might be fun to do. 
+
+<end>
