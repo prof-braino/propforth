@@ -110,7 +110,9 @@ Click the link to download the Forth source code from Google Drive
 
 NOTE this version is optimized to display on Samsung Captivate Glide in landscape orientation. Change the AxisLength parameter to display in a larger terminal 
 
-== GY-80 logger with and without  graphic display ==
+== GY-80 logger with and without  graphic display - FANCY ==
+
+https://drive.google.com/file/d/0B8d8RsrY7Rt-VTJIOElVM3lHblU/edit?usp=sharing
 
 PROPFORTH GY-80 IMU drivers and datalogger
 
