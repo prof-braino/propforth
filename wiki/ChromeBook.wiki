@@ -1,0 +1,46 @@
+#summary Load programs to the prop from a chromebook
+
+= Introduction =
+
+Lots of school kids are getting chromebooks through the schools.
+
+Some of the more advance members of the Parallax forums are working on loading program code to the propeller chip from a chromebook.  
+
+http://forums.parallax.com/showthread.php/157215-Open-Propeller-Project-7-Programming-Propellers-from-a-Chromebook
+
+This page test whether a geezer (me) can get a chromebook to load code to a prop using a chromebook (my daughter's).
+
+I am starting with a virtual machine before I try the actual chromebook, so I won't get in trouble with the school if I mess something up.
+
+= setup =
+
+== virtual box ==
+
+I loaded virtualbox on my linux PC
+
+The virtual PC is running Linux Mint 17-64 MATE. 
+
+== chromium ==
+
+I tried loading the chromium development tools, using Martin_h's suggestion.
+
+http://arnoldthebat.co.uk/wordpress/chromium-os/
+
+but did not succeed.
+
+== browswer == 
+
+heater offered another approach.
+
+http://forums.parallax.com/showthread.php/157215-Open-Propeller-Project-7-Programming-Propellers-from-a-Chromebook?p=1299403&viewfull=1#post1299403
+
+I loaded Google chrome.  That worked.
+
+Now to load extensions...
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
