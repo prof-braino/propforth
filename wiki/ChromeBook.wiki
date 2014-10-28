@@ -42,6 +42,8 @@ Now to load extensions...
 
 Attached is msrobots editor17 web IDE for Spin tweaked to work as a Chrome extension. You can try it out as follows.
 
+http://forums.parallax.com/attachment.php?attachmentid=111638&d=1414349780
+
 1) Unpack it some place. You will get a directory called editor17 full of goodies.
 
 2) Install it into your Chrome browser by selecting "Tools" tools from the control menu and then "Extensions".
@@ -66,6 +68,8 @@ What we need is to add serial port loader support. This requires:
 2) Integrating that into the app. 
 
 (zip is in post attachment)
+
+
 
 = Details =
 
