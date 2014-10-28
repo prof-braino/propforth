@@ -38,6 +38,35 @@ I loaded Google chrome.  That worked.
 
 Now to load extensions...
 
+== heater's instructions ==
+
+Attached is msrobots editor17 web IDE for Spin tweaked to work as a Chrome extension. You can try it out as follows.
+
+1) Unpack it some place. You will get a directory called editor17 full of goodies.
+
+2) Install it into your Chrome browser by selecting "Tools" tools from the control menu and then "Extensions".
+
+3) In the resulting extensions tab check the little "developer mode" box.
+
+4) Click the "load unpacked extensions" button.
+
+5) In the resulting file navigator select the editor17 directory,
+
+6 ) Hit the launch button to run it. You will also have an icon for it in the Apps page.
+
+
+Now. Sadly pretty much none of editor17 works properly as a chrome app at this moment, apart from the editor itself. I was hoping to find time to have a look at it.
+
+Even if it all worked as well as it does when served up from a web page it lacks any way to program the Prop apart from sending the binary to the server and having the server do the loading into the Prop.
+
+What we need is to add serial port loader support. This requires:
+
+1) Creating a loader program, probably by converting the loader from PropellerIDE into Javascript using the Emscripten compiler.
+
+2) Integrating that into the app. 
+
+(zip is in post attachment)
+
 = Details =
 
 Add your content here.  Format your content with:
