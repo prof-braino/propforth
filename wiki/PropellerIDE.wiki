@@ -185,7 +185,7 @@ If your gotten this far, you should have propforth running on your prop board, l
 
 Download the Quickstart touch bouttom demo from:
 
-
+http://propforth.googlecode.com/files/QuickstartTouchDemo20120611-1540.txt
 
 
 = extra notes =
