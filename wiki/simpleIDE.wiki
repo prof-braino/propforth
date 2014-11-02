@@ -59,7 +59,9 @@ The terminal window will show a bunch of messy debug messages, ignore these.
 
 The terminal window will show a bunch of error messages, [widget assert failed] ignore these as well. 
 
-This is how it is exepected to look.
+This is how it is expected to look.
+
+Close the simple IDE window(s)
 
 = Create a launcher Icon =
 
@@ -78,6 +80,19 @@ Launcher Type: Application?
 Name: simpleIDE
 
 Command: Browse: (navigate to /usr/bin/simpleide ) 
+
+
+= Launch and test = 
+
+Launch the simple IDE application using either the command line or the launch icon
+
+The Welcome.c program should be dispalyed in green in the main window.
+
+The window title should display 
+
+`/home/<userID>/Document/simpleIDE/My Project/Welcome.side`
+
+
 
 
 
