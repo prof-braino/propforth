@@ -2,7 +2,19 @@
 
 = Introduction =
 
-Add your content here.
+WE still need SPIN to load the PropFORTH 5.5 kernel.
+
+My last windows box died, so I can no longer use PropTool
+
+PropellerIDE can load SPIN from linux 
+
+= Hardware =
+
+PC - I'm using Linux Mint 17 (MATE)
+
+Propeller - I'm using a Propeller Quickstart for this experiment
+
+= Software =
 
 
 = Details =
