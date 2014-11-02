@@ -26,6 +26,14 @@ The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel h
 
 I selected : propelleride-0.19-amd64.deb 
 
+Open a terminal
+
+navigate to your downloads directory (shown is FIRFOX's default)
+
+{{{
+cd Downloads
+}}}
+
 Instructions say 
 
 `After downloading, run:`
