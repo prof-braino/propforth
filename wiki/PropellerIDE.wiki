@@ -106,6 +106,15 @@ Add your user loggin ID to the dialout group
 sudo adduser ${USER} dialout
 }}}
 
+ALSO - I had to shutdown and restart the virtual machine for this GROUP setting o update.  SO:
+
+= Powercycle the PC =
+
+If I knew what I was doing, I could enter a command to update the groups setting.    But I don't, and power ccyling is quicker than googling 4000 comments about how to get dialout to update. 
+
+
+
+
 
 = extra notes =
 
