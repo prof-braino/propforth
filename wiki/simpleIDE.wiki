@@ -96,7 +96,7 @@ The window title should display
 
 Connect the prop board.  If using a virtualbox setup, don't forget to select 
 
-devices> USB device >  FTDI FT@#@R USB UART [0600]
+devices> USB device >  `FTDI FT232R USB UART [0600]`
 
 The unlabeled field in the upper right of the window should automagically display 
 
