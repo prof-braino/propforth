@@ -94,7 +94,12 @@ I created directory named *prop* in my home directory, this is a likely choice.
 
 = Connect Prop  =
 
+Ensure there is only one FTDI USB to serial converter on the system during setup.  (I had several props connected to my rig and tthings were confusing).
 
+If you have a virtual PC running your Propeller IDE, select Devices > USB Devices and click the FTDI evice for your prop.  It should have a check mark when its connected. 
+
+
+ 
 
 = extra notes =
 
