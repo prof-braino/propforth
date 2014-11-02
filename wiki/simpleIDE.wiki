@@ -1,0 +1,32 @@
+#summary simple IDE complies and loads C code to the prop
+
+= Introduction =
+
+simple IDE compiles and loads C code to to the prop.
+
+The kalman filter code I received is in C.  I want to see if it works as-is before I try to mess with it in FORTH.
+
+= Harrdware =
+
+PC - Linux Minut 17 -64
+
+Propeller - Quickstart
+
+= Software =
+
+This should be fairly refined at this point. 
+
+http://learn.parallax.com/propeller-c-set-simpleide
+
+== download ==
+
+== install ==
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
