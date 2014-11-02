@@ -121,6 +121,15 @@ The Blue and Red LEDs on the prop board (or prop plug) flash, and t we are taklk
 
 = Load the Welcome program =
 
+Select DEBUG >> DEBUG F8
+
+A blue window open it says HELLO
+
+Success!
+
+
+= Load a Propforth kernel =
+
 
 
 = extra notes =
