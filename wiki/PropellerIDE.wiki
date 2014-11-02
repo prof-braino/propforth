@@ -16,14 +16,13 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 = Software =
 
+FRom the follwoing ling, select the download for your system:
 
-https://lamestation.atlassian.net/wiki/display/PI/PropellerIDE+Home
-
-The icons on this page do not launch the download.  (Clever! Tricked did you?)
-
-The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel has a downloads]] link
+https://lamestation.atlassian.net/wiki/display/PI/Downloads 
 
 I selected : propelleride-0.19-amd64.deb 
+
+Close the browser, you are done with it.
 
 Open a terminal
 
@@ -33,9 +32,7 @@ navigate to your downloads directory (shown is FIRFOX's default)
 cd Downloads
 }}}
 
-Instructions say 
-
-`After downloading, run:`
+In the terminal window, type the command:
 
 {{{
 sudo dpkg -i propelleride-0.19-amd64.deb
@@ -46,6 +43,35 @@ Get an error that saying libftdi1 is not installed.  Ignore this and continue wi
 {{{
 sudo apt-get install -f
 }}}
+
+At this point, you can type 
+
+{{{
+propelleride
+}}}
+
+in any terminal window, and the prop IDE will launch.
+
+I created a launcher so I can click instead of type:
+
+Right click on PANEL
+
+select + Add To Panel
+
+select Custom Application Launcher
+
+[Create Launcher Type: Application]
+
+Name: PropIDE
+
+Command: Browse: (navigate to /usr/bin/propide )
+
+When Prop IDE opens, it will ask you to select a location to save Welcome.spin
+
+I created directory named *prop* in my home directory, this is a likely choice.
+
+
+
 
 = extra notes =
 
