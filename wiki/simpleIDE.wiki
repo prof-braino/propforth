@@ -47,6 +47,20 @@ sudo adduser ${USER} dialout
 
 Powercycle so the changes take.
 
+= START simple IDE first time form a command line =
+
+You MUST start simple IDE from a terminal command line the first time or it will not work.  At least that's what I think I saw.
+
+== SELECT the Defaults ==
+
+The installer will suggest a path.  Do not change it or it will not work. 
+
+The terminal window will show a bunch of messy debug messages, ignore these. 
+
+The terminal window will show a bunch of error messages, [widget assert failed] ignore these as well. 
+
+This is how it is exepected to look.
+
 = Create a launcher Icon =
 
 This is how its done in Mint 17, please adjust these steps if you use ubuntu, etc.
