@@ -144,19 +144,19 @@ In the propellerIDE, navigate to devkernel.spin
 
 DEBUG >> BURN F11
 
-= Connect using picocom =
+= Connect using minicom =
 
 Open a terminal, type: 
 
 {{{
-sudo apt-get install picocomm
+sudo apt-get install minicom
 }}}
 
-in the terminal, type picocom
+in the terminal, type minicom
 
 
 {{{
-picocom /dev/ttyUSB0 -o
+minicom /dev/ttyUSB0 -o
 }}}
 
 
