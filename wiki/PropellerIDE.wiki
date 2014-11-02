@@ -98,8 +98,14 @@ Ensure there is only one FTDI USB to serial converter on the system during setup
 
 If you have a virtual PC running your Propeller IDE, select Devices > USB Devices and click the FTDI evice for your prop.  It should have a check mark when its connected. 
 
+= Dialout =
 
- 
+Add your user loggin ID to the dialout group
+
+{{{
+sudo adduser ${USER} dialout
+}}}
+
 
 = extra notes =
 
