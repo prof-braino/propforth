@@ -112,7 +112,14 @@ ALSO - I had to shutdown and restart the virtual machine for this GROUP setting 
 
 If I knew what I was doing, I could enter a command to update the groups setting.    But I don't, and power ccyling is quicker than googling 4000 comments about how to get dialout to update. 
 
+= reconnect the Prop board =
 
+NOW at long last, I restart the machine.  when I select the FTDI USB to serial converter, tthe check box is checked.  When select DEBUG >> Identify Hardware F7;
+the AUTO box in the upper right of the window changes to /dev/ttyUSB0
+
+The Blue and Red LEDs on the prop board (or prop plug) flash, and t we are taklking!
+
+= Load the Welcome program =
 
 
 
