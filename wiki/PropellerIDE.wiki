@@ -39,29 +39,13 @@ Instructions say
 
 {{{
 sudo dpkg -i propelleride-0.19-amd64.deb
-sudo apt-get install -f
 }}}
 
-Get an error that saying libftdi1 is not installed
-
-jazzed tells us:
-
-
-What you are seeing is normal.
-
-Now, do the command $ apt-get install -f
-
-This allows linux to resolve dependencies for us! 
-
-Doing the above gives an error asking if you are root
-
-The REAL command is:
+Get an error that saying libftdi1 is not installed.  Ignore this and continue with:
 
 {{{
 sudo apt-get install -f
 }}}
-
-
 
 = extra notes =
 
