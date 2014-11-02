@@ -47,7 +47,23 @@ sudo adduser ${USER} dialout
 
 Powercycle so the changes take.
 
+= Create a launcher Icon =
 
+This is how its done in Mint 17, please adjust these steps if you use ubuntu, etc.
+
+I created a launcher so I can click instead of type:
+
+Right click on PANEL
+
+select + Add To Panel
+
+select Custom Application Launcher
+
+Launcher Type: Application?
+
+Name: simpleIDE
+
+Command: Browse: (navigate to /usr/bin/simpleide ) 
 
 = Details =
 
