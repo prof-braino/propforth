@@ -27,6 +27,26 @@ I downloaded the instruction linked on the page, those are special in that the t
 
 == install ==
 
+in a terminal window enter
+
+{{{
+sudo dpkg -i simpleide-0.6.99-amd64-debian-linux.deb
+}}}
+
+you will get errors, ignore them and type
+
+{{{
+sudo apt-get install -f
+}}}
+
+After this finsishes, add your user ID to the dialout group
+
+{{{
+sudo adduser ${USER} dialout
+}}}
+
+Powercycle so the changes take.
+
 
 
 = Details =
