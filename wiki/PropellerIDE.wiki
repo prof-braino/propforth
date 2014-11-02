@@ -130,6 +130,36 @@ Success!
 
 = Load a Propforth kernel =
 
+Download the Propforth 5.5 archive to your machine if you have not done so already:
+
+http://propforth.googlecode.com/files/PropForth-V5.5-20130317.zip
+
+Move the archive to you prop directory (created above) $ /home/${USER}/prop
+
+Extract here
+
+In the propellerIDE, navigate to devkernel.spin
+
+`/home/${USER}/prop/v5.5/CurrentRelease/propforth/devkernel.spin`
+
+DEBUG >> BURN F11
+
+= Connect using picocom =
+
+Open a terminal, type: 
+
+{{{
+sudo apt-get install picocomm
+}}}
+
+in the terminal, type picocom
+
+
+{{{
+picocom
+}}}
+
+
 
 
 = extra notes =
