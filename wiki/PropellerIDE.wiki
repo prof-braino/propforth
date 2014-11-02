@@ -16,6 +16,10 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 = Software =
 
+This link does not appear to download anything
+
+https://lamestation.atlassian.net/wiki/display/PI/PropellerIDE+Home
+
 
 = Details =
 
