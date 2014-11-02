@@ -44,7 +44,17 @@ sudo apt-get install -f
 
 Get an error that saying libftdi1 is not installed
 
+What you are seeing is normal.
 
+Now, do the command $ 
+
+{{{
+apt-get install -f
+}}}
+
+This allows linux to resolve dependencies for us! 
+
+- Thanks for hiding this!  
 
 = extra notes =
 
