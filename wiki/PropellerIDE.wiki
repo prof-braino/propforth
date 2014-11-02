@@ -10,7 +10,7 @@ PropellerIDE can load SPIN from linux
 
 = Hardware =
 
-PC - I'm using Linux Mint 17 (MATE)
+PC - I'm using Linux Mint 17 (MATE) 64 bit
 
 Propeller - I'm using a Propeller Quickstart for this experiment
 
@@ -18,10 +18,21 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 The icons on this page do not launch the download.  (Clever! Tricked did you?)
 
-The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel has a downloads]] link
 
 https://lamestation.atlassian.net/wiki/display/PI/PropellerIDE+Home
 
+The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel has a downloads]] link
+
+I selected : propelleride-0.19-amd64.deb 
+
+Instructions say 
+
+`After downloading, run:`
+
+{{{
+sudo dpkg -i propelleride-0.19-amd64.deb
+sudo apt-get install -f
+}}}
 
 = Details =
 
