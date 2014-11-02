@@ -16,7 +16,9 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 = Software =
 
-This link does not appear to download anything
+The icons on this page do not launch the download.  (Clever! Tricked did you?)
+
+The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel has a downloads]] link
 
 https://lamestation.atlassian.net/wiki/display/PI/PropellerIDE+Home
 
