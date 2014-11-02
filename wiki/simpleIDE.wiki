@@ -22,6 +22,9 @@ http://learn.parallax.com/propeller-c-set-simpleide
 
 I used 0.9.66 for Linux (64 bit i686)
 
+I downloaded the instruction linked on the page, those are special in that the text has a carrage return after each letter.  Wonderful. 
+
+
 == install ==
 
 
