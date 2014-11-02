@@ -156,8 +156,34 @@ in the terminal, type minicom
 
 
 {{{
-minicom /dev/ttyUSB0 -o
+sudo minicom /dev/ttyUSB0 -s
 }}}
+
+Select Serial Port Setup
+
+Select A - serial Port:  /dev/ttyUSB0
+
+Select E - A 230400 Baud
+
+Select save as .. default
+
+Select Exit
+
+hit the enter key a couple times.
+
+you should the PROP0 Cog6 OK propforth propmpt
+
+{{{
+PROP0 Cog6 OK
+}}}
+
+Use CTL+A then Z to get to the menu at anytime.  After the first time, you should not have to use sudo to launch minicom
+
+If your gotten this far, you should have propforth running on your prop board, loaded from linux. 
+
+= Quickstart touch demo =
+
+Download the Quickstart touch bouttom demo from:
 
 
 
