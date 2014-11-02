@@ -65,6 +65,8 @@ Name: simpleIDE
 
 Command: Browse: (navigate to /usr/bin/simpleide ) 
 
+
+
 = Details =
 
 Add your content here.  Format your content with:
