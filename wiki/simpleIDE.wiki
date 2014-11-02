@@ -92,6 +92,20 @@ The window title should display
 
 `/home/<userID>/Document/simpleIDE/My Project/Welcome.side`
 
+== Connect the prop board ==
+
+Connect the prop board.  If using a virtualbox setup, don't forget to select 
+
+devices> USB device >  FTDI FT@#@R USB UART [0600]
+
+The unlabeled field in the upper right of the window should automagically display 
+
+{{{
+/dev/ttyUSB0
+}}}
+
+if it does not, use the drop down list to select /dev/ttyUSB0
+
 
 
 
