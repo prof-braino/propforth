@@ -117,9 +117,10 @@ After a bit, a blue window should open, and display Hello!
 
 = changing projects, adding files =
 
+SimpleIDE uses the concept of "project" in addition to files, to help organize the *.c, *.h and other file types.  Its just another file that organizes the other files.   
+
 Projects and file dependencies can take getting used to.  
 
-Ask somebody that uses C to help. 
-
+Ask somebody that uses C to help.  Since everybody has there own idea of "organized" there might not be one "best" method to organize.  
 
 = END =
