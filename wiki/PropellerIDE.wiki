@@ -16,11 +16,10 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 = Software =
 
-The icons on this page do not launch the download.  (Clever! Tricked did you?)
 
 https://lamestation.atlassian.net/wiki/display/PI/PropellerIDE+Home
 
-
+The icons on this page do not launch the download.  (Clever! Tricked did you?)
 
 The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel has a downloads]] link
 
@@ -42,6 +41,10 @@ Instructions say
 sudo dpkg -i propelleride-0.19-amd64.deb
 sudo apt-get install -f
 }}}
+
+Get an error that saying libftdi1 is not installed
+
+
 
 = extra notes =
 
