@@ -156,7 +156,7 @@ in the terminal, type picocom
 
 
 {{{
-picocom
+picocom /dev/ttyUSB0 -o
 }}}
 
 
