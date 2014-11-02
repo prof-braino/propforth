@@ -16,7 +16,13 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 = Software =
 
-FRom the follwoing ling, select the download for your system:
+The software is still in development, so the instructions are pretty confusing.  
+
+Which I s why I needed to write this page.
+
+== download the Propeller IDE package ==
+
+From the following ling, select the download for your system:
 
 https://lamestation.atlassian.net/wiki/display/PI/Downloads 
 
@@ -31,6 +37,8 @@ navigate to your downloads directory (shown is FIRFOX's default)
 {{{
 cd Downloads
 }}}
+
+== install the propeller IDE package == 
 
 In the terminal window, type the command:
 
@@ -52,6 +60,17 @@ propelleride
 
 in any terminal window, and the prop IDE will launch.
 
+== configure default locattion for your SPIN files ==
+
+When Prop IDE opens for the first time, it will ask you to select a location to save Welcome.spin
+
+I created directory named *prop* in my home directory, this is a likely choice.
+
+
+== Create a launcher Icon ==
+
+This is how its done in Mint 17, please adjust these steps if you use ubuntu, etc. 
+
 I created a launcher so I can click instead of type:
 
 Right click on PANEL
@@ -66,10 +85,14 @@ Name: PropIDE
 
 Command: Browse: (navigate to /usr/bin/propide )
 
-When Prop IDE opens, it will ask you to select a location to save Welcome.spin
+== configure default locattion for your SPIN files ==
+
+When Prop IDE opens for the first time, it will ask you to select a location to save Welcome.spin
 
 I created directory named *prop* in my home directory, this is a likely choice.
 
+
+= Connect Prop  =
 
 
 
