@@ -20,6 +20,8 @@ http://learn.parallax.com/propeller-c-set-simpleide
 
 == download ==
 
+I used 0.9.66 for Linux (64 bit i686)
+
 == install ==
 
 
