@@ -187,6 +187,25 @@ Download the Quickstart touch bouttom demo from:
 
 http://propforth.googlecode.com/files/QuickstartTouchDemo20120611-1540.txt
 
+Save this to your prop directory, (or anywhere you can get at it)
+
+Open the file in a text editor
+
+add at least ONE carriage control to the end of the file (go to the end of the file and hit enter a couple time to ensure there is a blank line at the end.  The editor cuts off the last character when the file is saved to goolge code).
+
+Highlight all the text in the file (use CTL+A)
+
+Paste all the text into the minicom window.
+
+The text loads, when the save forth word executes, you will see a bunch of periods scroll across the screen.
+
+When that stops hit enter a bunch of times to get the prompt back, and touch the touch buttons on the Quickstart.
+
+
+The buttons are being run in one cog, and the command line and terminal are handled in another cog!
+
+Neat!
+
 
 = extra notes =
 
