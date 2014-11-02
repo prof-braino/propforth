@@ -18,8 +18,9 @@ Propeller - I'm using a Propeller Quickstart for this experiment
 
 The icons on this page do not launch the download.  (Clever! Tricked did you?)
 
-
 https://lamestation.atlassian.net/wiki/display/PI/PropellerIDE+Home
+
+
 
 The [[https://lamestation.atlassian.net/wiki/display/PI/Downloads | LEFT Panel has a downloads]] link
 
@@ -33,6 +34,11 @@ Instructions say
 sudo dpkg -i propelleride-0.19-amd64.deb
 sudo apt-get install -f
 }}}
+
+= extra notes =
+
+https://code.google.com/p/easyside/
+
 
 = Details =
 
