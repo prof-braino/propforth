@@ -171,11 +171,7 @@ Select Exit
 
 hit the enter key a couple times.
 
-you should see the propforth prompt:
-
-{{{
-PROP0 Cog6 OK
- }}}
+you should see the `PROP0 Cog6 OK` propforth prompt:
 
 {{{
 PROP0 Cog6 OK
