@@ -73,17 +73,17 @@ This is how its done in Mint 17, please adjust these steps if you use ubuntu, et
 
 I created a launcher so I can click instead of type:
 
-Right click on PANEL
+ * Right click on PANEL
 
-select + Add To Panel
+ * select + Add To Panel
 
-select Custom Application Launcher
+ * select Custom Application Launcher
 
-[Create Launcher Type: Application]
+ * [Create Launcher Type: Application]
 
-Name: PropIDE
+ * Name: PropIDE
 
-Command: Browse: (navigate to /usr/bin/propide )
+ * Command: Browse: (navigate to /usr/bin/propide )
 
 == configure default locattion for your SPIN files ==
 
