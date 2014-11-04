@@ -56,7 +56,6 @@ When Prop IDE opens for the first time, it will ask you to select a location to 
 
 I created directory named *prop* in my home directory, this is a likely choice.
 
-
 == Create a launcher Icon ==
 
 This is how its done in Mint 17, please adjust these steps if you use ubuntu, etc. 
@@ -70,22 +69,21 @@ I created a launcher so I can click instead of type:
  * Name: PropIDE
  * Command: Browse: (navigate to /usr/bin/propide )
 
-== configure default locattion for your SPIN files ==
+== Configure default location for your SPIN files ==
 
-When Prop IDE opens for the first time, it will ask you to select a location to save Welcome.spin
+(If you didn't do this in the step above) when Prop IDE opens for the first time, it will ask you to select a location to save Welcome.spin
 
 I created directory named *prop* in my home directory, this is a likely choice.
 
-
 = Connect Prop  =
 
-Ensure there is only one FTDI USB to serial converter on the system during setup.  (I had several props connected to my rig and tthings were confusing).
+Ensure there is only one FTDI USB to serial converter on the system during setup.  (I had several props connected to my rig and things were confusing).
 
 If you have a virtual PC running your Propeller IDE, select Devices > USB Devices and click the FTDI evice for your prop.  It should have a check mark when its connected. 
 
-= Dialout =
+= Linux Dialout Group =
 
-Add your user loggin ID to the dialout group
+Add your user login ID to the dialout group
 
 {{{
 sudo adduser ${USER} dialout
@@ -95,7 +93,7 @@ ALSO - I had to shutdown and restart the virtual machine for this GROUP setting 
 
 = Powercycle the PC =
 
-If I knew what I was doing, I could enter a command to update the groups setting.    But I don't, and power cycling is quicker than Googling 4000 comments about how to get dialout to update. 
+If I knew what I was doing, I could enter a command to update the groups setting.    But I don't, and power cycling is quicker than Googling 4000 comments about how to get dialout to update.   We should be able to simply log out and log back in again, but sometime this causes an `xorg` task to run in an endless loop or something (as seen from the `top` command in a terminal command line), and its gets messy.  So I just power cycle.  Its ham-fisted but it works.
 
 = reconnect the Prop board =
 
