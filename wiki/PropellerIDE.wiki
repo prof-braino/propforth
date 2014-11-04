@@ -2,17 +2,13 @@
 
 = Introduction =
 
-WE still need SPIN to load the PropFORTH 5.5 kernel.
-
-My last windows box died, so I can no longer use PropTool
-
-PropellerIDE can load SPIN from linux 
+We still need SPIN to load the PropFORTH 5.5 kernel.  My last windows box died, so I can no longer use PropTool. PropellerIDE can load SPIN from Linux.
 
 = Hardware =
 
 PC - I'm using Linux Mint 17 (MATE) 64 bit
 
-Propeller - I'm using a Propeller Quickstart for this experiment
+Propeller - I'm using a [http://www.parallax.com/product/40000 |Propeller Quickstart] for this experiment
 
 = Software =
 
@@ -118,7 +114,7 @@ The Blue and Red LEDs on the prop board (or prop plug) flash, and t we are taklk
 
 Select DEBUG >> DEBUG F8
 
-A blue window open it says HELLO
+A blue window open,  it says HELLO!
 
 Success!
 
