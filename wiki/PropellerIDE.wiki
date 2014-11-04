@@ -22,7 +22,7 @@ Which I s why I needed to write this page.
 
 == download the Propeller IDE package ==
 
-From the following ling, select the download for your system:
+From the following link, select the download for your system:
 
 https://lamestation.atlassian.net/wiki/display/PI/Downloads 
 
@@ -32,7 +32,7 @@ Close the browser, you are done with it.
 
 Open a terminal
 
-navigate to your downloads directory (shown is FIRFOX's default)
+navigate to your `/downloads` directory (shown is FIREFOX's default)
 
 {{{
 cd Downloads
