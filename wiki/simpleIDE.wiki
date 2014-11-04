@@ -2,7 +2,7 @@
 
 = Introduction =
 
-simple IDE compiles and loads C code to to the prop.
+simpleIDE compiles and loads C code to to the prop.
 
 The kalman filter code I received is in C.  I want to see if it works as-is before I try to mess with it in FORTH.
 
