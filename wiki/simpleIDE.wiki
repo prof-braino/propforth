@@ -2,15 +2,12 @@
 
 = Introduction =
 
-simpleIDE compiles and loads C code to to the prop.
-
-The kalman filter code I received is in C.  I want to see if it works as-is before I try to mess with it in FORTH.
+simpleIDE compiles and loads C code to to the prop. The kalman filter code I received is in C.  I want to see if it works as-is before I try to mess with it in FORTH.
 
 = Hardware =
 
-PC - Linux Minut 17 -64
-
-Propeller - Quickstart
+ * PC - Linux Minut 17 -64
+ * Propeller - Quickstart
 
 = Software =
 
@@ -20,10 +17,8 @@ http://learn.parallax.com/propeller-c-set-simpleide
 
 == download ==
 
-I used 0.9.66 for Linux (64 bit i686)
-
-I downloaded the instruction linked on the page, those are special in that the text has a carrage return after each letter.  Wonderful. 
-
+ * I used 0.9.66 for Linux (64 bit i686)
+ * I downloaded the instruction linked on the page, those are special in that the text has a carrage return after each letter.  Wonderful. 
 
 == install ==
 
@@ -53,15 +48,11 @@ You MUST start simple IDE from a terminal command line the first time or it will
 
 == SELECT the Defaults ==
 
-The installer will suggest a path.  Do not change it or it will not work. 
-
-The terminal window will show a bunch of messy debug messages, ignore these. 
-
-The terminal window will show a bunch of error messages, [widget assert failed] ignore these as well. 
-
-This is how it is expected to look.
-
-Close the simple IDE window(s)
+ * The installer will suggest a path.  Do not change it or it will not work. 
+ * The terminal window will show a bunch of messy debug messages, ignore these. 
+ * The terminal window will show a bunch of error messages, [widget assert failed] ignore these as well. 
+ * This is how it is expected to look.
+ * Close the simple IDE window(s)
 
 = Create a launcher Icon =
 
@@ -69,24 +60,18 @@ This is how its done in Mint 17, please adjust these steps if you use ubuntu, et
 
 I created a launcher so I can click instead of type:
 
-Right click on PANEL
-
-select + Add To Panel
-
-select Custom Application Launcher
-
-Launcher Type: Application?
-
-Name: simpleIDE
-
-Command: Browse: (navigate to /usr/bin/simpleide ) 
-
+ * Right click on PANEL
+ * select + Add To Panel
+ * select Custom Application Launcher
+ * Launcher Type: Application?
+ * Name: simpleIDE
+ * Command: Browse: (navigate to /usr/bin/simpleide ) 
 
 = Launch and test = 
 
 Launch the simple IDE application using either the command line or the launch icon
 
-The Welcome.c program should be dispalyed in green in the main window.
+ * The Welcome.c program should be dispalyed in green in the main window.
 
 The window title should display 
 
@@ -106,12 +91,11 @@ The unlabeled field in the upper right of the window should automagically displa
 
 if it does not, use the drop down list to select /dev/ttyUSB0
 
-
 == run the example program ==
 
 At the top of the window, select
 
-Program >> Run with Terminal F8
+ * Program >> Run with Terminal F8
 
 After a bit, a blue window should open, and display Hello!
 
