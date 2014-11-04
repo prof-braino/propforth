@@ -18,10 +18,7 @@ Which I s why I needed to write this page.
 
 == download the Propeller IDE package ==
 
- # From the following link, select the download for your system:
-
-https://lamestation.atlassian.net/wiki/display/PI/Downloads 
-
+ # From the following link, select the download for your system: https://lamestation.atlassian.net/wiki/display/PI/Downloads 
  # I selected : propelleride-0.19-amd64.deb 
  # Close the browser, you are done with it.
  # Open a terminal
