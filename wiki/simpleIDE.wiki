@@ -47,7 +47,7 @@ sudo adduser ${USER} dialout
 
 Powercycle so the changes take.
 
-= START simple IDE first time form a command line =
+= START simple IDE first time from a command line =
 
 You MUST start simple IDE from a terminal command line the first time or it will not work.  At least that's what I think I saw.
 
