@@ -8,7 +8,7 @@ We still need SPIN to load the PropFORTH 5.5 kernel.  My last windows box died, 
 
 PC - I'm using Linux Mint 17 (MATE) 64 bit
 
-Propeller - I'm using a [http://www.parallax.com/product/40000 |Propeller Quickstart] for this experiment
+Propeller - I'm using a [http://www.parallax.com/product/40000 Propeller Quickstart] for this experiment
 
 = Software =
 
