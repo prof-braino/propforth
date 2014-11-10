@@ -76,7 +76,7 @@ We have been give a bunch of stuff.  Mostly hex values that could be I2C address
 || 0xC5  || I2C address write || 0xC5 read ||
 
 
-
+Clear up whether each is talking about an I2C id (I2C address), register, register offset address, or code to be loaded into a particular register. 
 
 
 = Details =
