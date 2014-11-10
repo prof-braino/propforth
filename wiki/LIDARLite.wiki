@@ -27,11 +27,23 @@ LIDAR Lite is I2C or PWM.  While the SF02 can spit readings directly to your ser
 
 One part of the manual says I2C address is 0x84 another place says 0xC4. So is it 0x84 or 0xC4?  
 
+=== write ===
+
+Manual says: Measurement: Write register 0x00 with value 0x04 (This performs a DC stabilization cycle, Signal Acquisition, Data processing).
+Refer to the section "I2C Protocol Summary” in this manual for more information about I2C Communications
+
+=== poll ===
+
+Manual says: Periodically poll the unit and wait until an ACK is received. The unit responds to read or write requests with a NACK when the sensor is busy processing a command or performing a measurement. (Optionally, wait approx. 20 milliseconds after acquisition and then proceed to read of high and low bytes)
+
+
 
 === read ===
 
 Manual says:   Read: register 0x0f, returns the upper 8 bits of distance in cm, register 0x10, returns the lower 8 bits of distance in cm. 
-(Optionally a 2 ! Byte read starting at 0x8f can be done) 
+(Optionally a 2 Byte read starting at 0x8f can be done) 
+
+=== what it means ===
 
 
 
