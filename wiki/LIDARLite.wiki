@@ -69,7 +69,6 @@ We have been give a bunch of stuff.  Mostly hex values that could be I2C address
 || 0x10 || register  || lower 8 bits of distance in cm || 
 || 0x8f || register  || 16 bits of distance in cm || 
 || 0x62 through 0x42 || Array of possible address for LIDAR-Lite Sensor || ??? ||
-
 || 0xC4 || I2C address write ||  0xC4 write ||
 || 0xC5  || I2C address write || 0xC5 read ||
 
