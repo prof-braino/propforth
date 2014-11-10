@@ -1,0 +1,42 @@
+#summary LIDAR-Lite laser range finder
+
+= Introduction =
+
+LIDAR-Lite was introduced as a kickstarter. This was claimed to be the same performance as the $350 SF02 laser range finder.  Naturally, I was curious, and backed the project.  We can never have too many great sensors. 
+
+However, I am sceptical.  There's no way.  If this does work I will be very pleased.  But the only was to test is side by side.  So here goes.
+
+= LIDAR Lite I2C =
+
+
+== Documentation ==
+
+First let me say that the documentation for LIDAR Lite is nasty.  Of all the links on their web site this one
+
+http://pulsedlight3d.com/pl3d/wp-content/uploads/2014/10/LIDAR-Lite-Operating-Manual.pdf
+
+is the one one worth anything. 
+
+Lidar Lite guys, please read your site, make the links work.   Thanks!
+
+== I2C ==
+
+LIDAR Lite is I2C or PWM.  While the SF02 can spit readings directly to your serial terminal application, the LIDAR-Lite MUST talk through an external microcontroller.   Fair enough, most folks are going to hook this up to an arduinl, etc. anyway.  But its slower getting started. 
+
+=== I2C address ===
+
+One part of the manual says I2C address is 0x84 another place says 0xC4. So is it 0x84 or 0xC4?  
+
+
+
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
