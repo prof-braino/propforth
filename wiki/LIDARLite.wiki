@@ -28,7 +28,10 @@ LIDAR Lite is I2C or PWM.  While the SF02 can spit readings directly to your ser
 One part of the manual says I2C address is 0x84 another place says 0xC4. So is it 0x84 or 0xC4?  
 
 
+=== read ===
 
+Manual says:   Read: register 0x0f, returns the upper 8 bits of distance in cm, register 0x10, returns the lower 8 bits of distance in cm. 
+(Optionally a 2 ! Byte read starting at 0x8f can be done) 
 
 
 
