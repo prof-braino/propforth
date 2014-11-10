@@ -52,7 +52,11 @@ unsigned char LIDARLite_ADDRESSES[] = {0x62,0x42}; // Array of possible address 
 char LIDARLite_ADDRESS; // Variable to save the LIDAR-Lite Address when we find it in the array
 }}}
 
+The manual says:
 
+The effective 8 bit I2C address is: 0xC4 write, 0xC5 read. 
+
+This make more sense, or at least looks familiar to I2C.
 
 = Details =
 
