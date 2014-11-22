@@ -11,18 +11,15 @@ However, I am sceptical.  There's no way.  If this does work I will be very plea
 
 == Documentation ==
 
-First let me say that the documentation for LIDAR Lite is nasty.  Of all the links on their web site this one
+The documentation for LIDAR Lite is in need of some work.  As of this writting,  the item marked "data sheet" is actuall marketing material.  The item marked User Guide has some of the material we would want from a data sheet. 
 
 http://pulsedlight3d.com/pl3d/wp-content/uploads/2014/10/LIDAR-Lite-Operating-Manual.pdf
 
-is the one one worth anything. 
-
-Lidar Lite guys, please read your site, make the links work.   Thanks!
+I'm giving comments, perhaps the materials will be improved.
 
 == I2C ==
 
 LIDAR Lite is I2C or PWM.  While the SF02 can spit readings directly to your serial terminal application, the LIDAR-Lite MUST talk through an external microcontroller.   Fair enough, most folks are going to hook this up to an arduinl, etc. anyway.  But its slower getting started. 
-
 
 LIDAR-Lite is an I2C slave. Host microcontroller (our Prop in our case) is I2C master.
 
@@ -30,36 +27,37 @@ LIDAR-Lite is an I2C slave. Host microcontroller (our Prop in our case) is I2C m
 
 One part of the manual says I2C address is 0x84 another place says 0xC4. So is it 0x84 or 0xC4?  
 
+UPDATE: LIDAR Lite uses I2C address 0xC4 to transmit to the device, and I2C address 0xC5 to recive from the device. 
+
 === write ===
 
 Manual says: Measurement: Write register 0x00 with value 0x04 (This performs a DC stabilization cycle, Signal Acquisition, Data processing).
-Refer to the section "I2C Protocol Summary” in this manual for more information about I2C Communications
+Refer to the section "I2C Protocol Summary” in this manual for more information about I2C Communications.  
+
+Success!
 
 === poll ===
 
 Manual says: Periodically poll the unit and wait until an ACK is received. The unit responds to read or write requests with a NACK when the sensor is busy processing a command or performing a measurement. (Optionally, wait approx. 20 milliseconds after acquisition and then proceed to read of high and low bytes)
 
+Update: Propforth 5.5  needs to DELAYS added between I2C command to the LIDAR Lite.  Otherwise, it appears Propforth sends the next command before the LIDAR-Lite is ready, and  ends up waiting forever, as the LIDAR-Lite never sees the command. 
 
+Add delay of 37  milliseconds after setting the control register to "measure" 
 
 === read ===
 
 Manual says:   Read: register 0x0f, returns the upper 8 bits of distance in cm, register 0x10, returns the lower 8 bits of distance in cm. 
 (Optionally a 2 Byte read starting at 0x8f can be done) 
 
+I started with the two reads of 1 byte, and its working.  Next I should try the single 16 bit read.
+
 === what it means ===
-
-Here's wahts in the ardunio source code:
-
-{{{
-unsigned char LIDARLite_ADDRESSES[] = {0x62,0x42}; // Array of possible address for LIDAR-Lite Sensor
-char LIDARLite_ADDRESS; // Variable to save the LIDAR-Lite Address when we find it in the array
-}}}
 
 The manual says:
 
 The effective 8 bit I2C address is: 0xC4 write, 0xC5 read. 
 
-This make more sense, or at least looks familiar to I2C.
+Load the control register (at address 0) with Value 4 to make a single measurement
 
 = Sort this out =
 
@@ -71,12 +69,87 @@ We have been give a bunch of stuff.  Mostly hex values that could be I2C address
 || 0x0f || register  || upper 8 bits of distance in cm || 
 || 0x10 || register  || lower 8 bits of distance in cm || 
 || 0x8f || register  || 16 bits of distance in cm || 
-|| 0x62 through 0x42 || Array of possible address for LIDAR-Lite Sensor || ??? ||
 || 0xC4 || I2C address write ||  0xC4 write ||
 || 0xC5  || I2C address write || 0xC5 read ||
 
+I don't know if this is correct, but it was in the materials:
 
-Clear up whether each is talking about an I2C id (I2C address), register, register offset address, or code to be loaded into a particular register. 
+|| 0x62 through 0x42 || Array of possible address for LIDAR-Lite Sensor || ??? ||
+
+= Braino's PropFORTH 5.5 test code =
+
+This is what I have running at this moment:
+
+{{{
+
+fl
+
+1 wconstant build_LIDAR
+
+wvariable lo wvariable hi 
+
+: hiloinit 32767 lo W!  0 hi W!  ;
+
+: ?lo dup lo W@ < if lo W! else drop then ;
+: ?hi dup hi W@ > if hi W! else drop then ;
+: .hilo  hi W@  .  lo W@  . ;
+
+\ _LIDARs ( addr -- ) Send - [I2C write address] reg to write 
+: _LIDARs 
+\        _eestart hC4 _eewrite 2 delms   swap _eewrite or 
+        _eestart hC4 _eewrite   swap _eewrite or 
+        if              h44 ERR         then ;
+\ _LIDARr ( addr -- )  recieve - [I2C read address] reg to read 
+: _LIDARr
+\        _LIDARs 2 delms  _eestart hC5 _eewrite 
+        _LIDARs  _eestart hC5 _eewrite 
+        if              h45 ERR         then ;
+\ Measurement:  Write register 0x00 with value 0x04
+\ _Lidarcrw ( c -- ) send charon stack to ctl reg 0x00
+: _Lidarcrw
+	h00 _LIDARs  _eewrite _eestop
+	if
+		h46 ERR
+	then
+;
+\ \ no 10 25 31, 34 stopped;  yes 100 50 37 
+:  measure  h04 _Lidarcrw 37 delms ;
+
+\ -------------------
+
+\  : LidarControlRegister h00 _LIDARs ; 
+
+\  :  measure LidarControlRegister h04 _LIDARs ;
+
+\ Read: reg 0x0f, upper 8 bits dist; reg 0x10 lower 8 bits dist ; 2Byte 0x8f
+
+\ _LIDARr8 ( addr - U8 )  register read
+: _LIDARr8 
+               _LIDARr  -1 _eeread _eestop 
+;
+
+: LIDAR.LO measure h10 _LIDARr8 dup ?lo dup ?hi ;
+
+: LIDAR.HI measure h0F _LIDARr8  ;
+
+\ measure LIDAR.HI 8 lshift LIDAR.LO or . 
+
+\ : PL  LIDAR.HI 8 lshift 2 delms LIDAR.LO or  ;
+\ : PL  LIDAR.HI 8 lshift 3 delms LIDAR.LO or  ;
+: PL  LIDAR.HI 8 lshift LIDAR.LO or  ;
+
+: .PL PL . ;
+
+\  checking ( count - count+1 ) 
+: checking 1+ dup . .PL ." === "  .hilo  cr ;
+
+: test 
+      0 hiloinit
+      begin   checking
+        fkey? swap drop until ;    
+
+
+}}}
 
 
 = Details =
