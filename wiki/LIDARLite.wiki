@@ -44,6 +44,12 @@ Update: Propforth 5.5  needs to DELAYS added between I2C command to the LIDAR Li
 
 Add delay of 37  milliseconds after setting the control register to "measure" 
 
+The lines with delays of 2 milliseconds and 3 milliseconds in the code below
+
+2 delms and 3 delms
+
+are commented out.
+
 === read ===
 
 Manual says:   Read: register 0x0f, returns the upper 8 bits of distance in cm, register 0x10, returns the lower 8 bits of distance in cm. 
@@ -150,6 +156,33 @@ wvariable lo wvariable hi
 
 
 }}}
+
+= distance readings = 
+
+Like the SF02, the data readings "bounce around" a bit. 
+
+The test code reads measurements in a continuous loop.  I print the current reading, and save highest and lowest reading so far. 
+
+I aim the device at a target a known distance, and measure to 10,000 iteration.  I should probably just capture the measurements, and make a distribuation graph using a spread sheet.   But I'm just playing for now. 
+
+== 150 cm distance ==
+
+This was probably 84 centimeters, from the top of my bench to the ceiling. 
+
+The 1st measurement was 84 cm, most measurements were around 84 cm.
+
+ * 3rd measurement was 83 cm, 
+ * 8th was 82 cm.
+ * 21rst measurement was 85 cm.
+ * 69th was 86 cm.
+ * 383th was 81 cm.
+ * 1244th was 80 cm
+ * 5409th was 87 cm.
+ * 9361rst was 57 cm (wow, talk about an outlier!)
+
+== 15cm distance ==
+
+I measured this with a ruler:
 
 
 = Details =
