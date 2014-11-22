@@ -197,22 +197,37 @@ The next 5000 mesaurements were between 24 and 9 cm
 
 == 6 cm distance ==
 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+The 1st measurement was 6 cm, most measurements were between 9 and 1 cm.
+
+ * 2cnd was 2
+ * 8th was 7
+ * 21rst was 8
+ * 24th was 9
+ * 31rst was 1
+ * 276th was 10 
+
+The measurements were between 10 and 1 cm up to the end 3707 reading. Which feels about right. 
+
+== 8 cm ==
+
+8 cm distance was unusual in that very few measurements were 8 cm. 
+
+
+ * 1rst was 11 cm
+ * 2cns was 10 cm
+ * 3rd was 7
+ * 13th was 13 cm
+ * 22cnd was 6 cm
+ * 48th was 14 cm
+ * 94th was 5 cm
+ * 123 was 15 cm
+ * 1293 was 16 cm
+ * 4792 was 4 cm
+
+the remaining 5000 measurements were between 16 and 4 cm
+
+
+
  * 
  * 
  * 
