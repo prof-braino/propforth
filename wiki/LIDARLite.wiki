@@ -178,6 +178,9 @@ The 1st measurement was 84 cm, most measurements were around 84 cm.
  * 383th was 81 cm.
  * 1244th was 80 cm
  * 5409th was 87 cm.
+
+The remianing measurements we between 87 and 89 cm until
+
  * 9361rst was 57 cm (wow, talk about an outlier!)
 
 == 15cm distance ==
