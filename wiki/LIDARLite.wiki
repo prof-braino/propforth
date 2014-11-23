@@ -253,7 +253,31 @@ Now to compare the LIDAR-Lite by measure the same targets, back to back.
 
 [ to be continued 20141122 ]
 
+== side by side in the lab ==
 
+In the lab, both device read about the same, and do not interfere with each other. 
+
+The update rate is not visibly different to mt eyeballs.  The values scroll across the screen at the same rate.  The LIDAR Lite and the SF02 yeild consistent reading, although the LIDAR Lite displays the measure ment as about 10 cont shorter, or the SF02 displays the distance as about 10 cm longer.  I did not measure the exact distance with a ruler.  Both devices allow adjusting the zero distance in software configuration, if I recall correctly.   
+
+== side by side at night ==
+
+Its not too cold out, so i went outside.  In the dark both units measure consistently up to about 16 meters.  
+
+At 16 meters, the LIDAR-Lite starts to give readings of 0 (zero).  0 is the value LIDAR-Lite gives for invalid reading. 
+
+The SF02 continues to give solid measurements up to about 31 meters.  At this distance targets are far enough away that the jitter in my hand affects aim.  If I stop moving, and aim well, I can get the SF02 to measure consistently. ABOVE 40 meters, actually afrom about 39 to 42 metes, the measurements are interspersed with readings of --- which is SF02 notation for invalid reading. 
+
+== side by side over cast daylight ==
+
+We have already observed the SF02 is not affected by daylight. SF02 can measure the distance to targets of sufficient visible area in daylight, the readings start to get flaky around 40 meters.
+
+Question: Can LIDAR Lite measure to 16 meters in daylight?
+
+== side by side direct, full sunlight ==
+
+We have already observed the SF02 is not affected by full sunlight. SF02 can measure the distance to targets of sufficient visible area in full sunlight, the readings start to get flaky around 40 meters.
+
+Question: Can LIDAR Lite measure to 16 meters in full sunlight?
 
 = Details =
 
