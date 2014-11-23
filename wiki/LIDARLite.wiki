@@ -273,6 +273,30 @@ We have already observed the SF02 is not affected by daylight. SF02 can measure 
 
 Question: Can LIDAR Lite measure to 16 meters in daylight?
 
+UPDATE: 20141123
+
+A) I found bigger target.  One was a water tower. Could not measure it easily, because it was raining and I didn't want to stay outside. Also, the parts othogonal to my postion we very far, and the parts colse to me were an oblique angle. 
+
+B) Found a local building large wall with windows and other features. 
+
+B1) SF02 measured continuously to 31 meters, then to 41 meters when I aimed carefully. Farthest measurements were 42 meters. There were no measurements above 42 meters.
+
+B2) LIDAR-Lite measured continuously to 5 meters, then to 6 meters when I aimed carefully.  There were measurements up to 8 meters, but these were mixed with invalid (zero) and incorrect (1.5 m, 4.6m,  etc) 
+
+C) Went to the local school, and found a flat brick wall on the  playground that was about 2 stories tall, with no windows or or other features. 
+
+C1) LIDAR-Lite measured continuous to about 6 meters. Aiming carelfully produced measurements to 11 meters.  There were no measurements above 12 meters.
+
+C2) SF02 measured continuously to 35 meters.  I could scan left to right along the length of the wall and recieved valid, reasonable measurements. Above 35 meters I had to aim carefully, as a slight motion would no longer be pointing at the wall.   Aiming reasonably carefully yieled measurements to 42 meters.  There were not meausrements above 44 meters.
+
+Conclusion:  Overcast conditions
+
+LIDAR-Lite can measure to house size targets up to 6 meters.
+LIDAR Lite may be able to measure very large targets (for example down to the ground) up to 11 meters, if the united is aim orthogonally.
+
+SF02 can measure to house sized targets to 35 meters, 42 if aimed orthogonally. 
+SF02 can aim to very large targets (as down to the ground) to 35 meters, and up to 42 meters if aimed orthogonally.
+
 == side by side direct, full sunlight ==
 
 We have already observed the SF02 is not affected by full sunlight. SF02 can measure the distance to targets of sufficient visible area in full sunlight, the readings start to get flaky around 40 meters.
