@@ -229,30 +229,31 @@ The measurements were between 10 and 1 cm up to the end 3707 reading. Which feel
 
 the remaining 5000 measurements were between 16 and 4 cm
 
+= sde by side comparison of LIDAR-Lite with SF02 =
+
+I have an OLPC it has a daylight readable screen.  It is running a version of Debian linux.  The GUI is not very fast but the connand line stuff is plenty fast enough. 
+
+I open a terminal session windown and run minicom.  I have one window for SF02, and one for LIDAR-Lite via the prop.  The SF02 is running at 115200 baud, while the prop is running at 230400. Both parts deliver about 12 readings per second, so I don't think the different baud rates will have a bif impact.  I can adjust these from the default values later if needed. 
+
+I plan to point one unit to the right and one to the left, so the lasers to not interfere with each other.  I also plan to test if the laser DO interfere with each other if they are pointed at each other. 
+
+== Note: laser wave length ==
+
+The SF02 laser is 850nm.  The LIDAR-Lite laser is 905nm.
+
+Using a USB web cam with the IR filter removed, I can easily see the SF02 850nm laser.  However, I can just BARELY see the 905nm laser on the LIDAR Lite, and then only when well aimed at the camera. 
+
+With a smart phone camera (with IR filter in place) I still see the SF02 laser fairly easily.  I cannot see LIDAR-Lite laser at all. 
+
+== measuring variaous target in various condition ==
+
+It has been previously shown that the SF02 can detect arbitrary targets of sufficient visible area at its full stated range under any conditions.   That is, we can't detect a gnat at 40 meters, but we definitely can detect a house. When the lSF02 is aimed at an orthognal wall, the reading is most stable.  As the angle to the target changes, the measurement gets greater variation.  The unit work equally GREAT in full sunlight as on a cloudy day. 
+
+Now to compare the LIDAR-Lite by measure the same targets, back to back.
+
+[ to be continued 20141122 ]
 
 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
 
 = Details =
 
