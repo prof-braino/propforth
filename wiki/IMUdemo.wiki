@@ -1,5 +1,7 @@
 #summary Propforth IMU functional demo
 
+<wiki:toc max_depth="9" />
+
 = Propforth IMU =
 
 The Propforth IMU project uses an Interial Measurement Unit (IMU) to determine positional data by "dead reckoning".  Starting at any arbitrary point in space, the IMU measure changes in orientation with a 3 axis gyroscope, and changes in velocity using a 3 axis accelerometer. Also present are barometric pressure sensor, and a three axis magnetometer; the low level drivers have ben implemented in case we decide we need altitude and compass. 
