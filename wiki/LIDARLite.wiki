@@ -165,7 +165,9 @@ wvariable lo wvariable hi
 
 }}}
 
-= distance readings = 
+= 3.3 volt testing - distance readings = 
+
+The LIDAR Lite will function using 3.3 volt power.  However, the range is decreased.  I have sufggestedthat this information should be included in the data sheet if if gets updated. 
 
 Like the SF02, the data readings "bounce around" a bit. 
 
@@ -237,7 +239,7 @@ The measurements were between 10 and 1 cm up to the end 3707 reading. Which feel
 
 the remaining 5000 measurements were between 16 and 4 cm
 
-= sde by side comparison of LIDAR-Lite with SF02 =
+= side by side comparison of LIDAR-Lite (at 3.3 volts) with SF02 =
 
 I have an OLPC it has a daylight readable screen.  It is running a version of Debian linux.  The GUI is not very fast but the connand line stuff is plenty fast enough. 
 
@@ -310,6 +312,20 @@ SF02 can aim to very large targets (as down to the ground) to 35 meters, and up 
 We have already observed the SF02 is not affected by full sunlight. SF02 can measure the distance to targets of sufficient visible area in full sunlight, the readings start to get flaky around 40 meters.
 
 Question: Can LIDAR Lite measure to 16 meters in full sunlight?
+
+= 5.0 volt testing =
+
+The LIDAR Lite guys informedme that the part will not work as well at 3.3 volts as at 5.0 volts.  Since the data sheet says 2.7 to 6.0 volts is acceptable, I suggest there should a mention of the effort of the different operating voltages. 
+
+I slowly learned that the The prop as a 3.3volt I2C master should work with any 5.0 volt I2C slave with no damage to either part. As long as the master send I2C high 0.7 * Vin and I2C low 0.3 * Vin , the LIDAR Lite I2C slave should see the commands and respond.  
+
+In this case the prop Quickstart is is runnong of the PC USB 5.0 volts, which actualy measures at 4.3 volts. So :
+
+|| I2C HI = || 0.7 * 4.3 = ||  ||
+|| I2C low = ||0.3 * 4.3 = ||  ||
+
+
+
 
 = Details =
 
