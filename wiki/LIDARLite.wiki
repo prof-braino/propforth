@@ -19,6 +19,12 @@ http://pulsedlight3d.com/pl3d/wp-content/uploads/2014/10/LIDAR-Lite-Operating-Ma
 
 I'm giving comments, perhaps the materials will be improved.
 
+== power ==
+
+The reference linked above states the LIDAR Lite will function from 2.7 volts up to 6.0 volts.  Initially, I could not get the part to talk at 5 volt, perhaps the SDA line does not need a 10K resistor (from the SR04).
+
+ I used the Prop quickstart 3.3 Vdd.  I got the part to talk, and did my first round of tests.  Since then I found that the I2C does NO need any resistor, as the 3.3 Volt prop as I2C Master will either work or it won't, nothing will get damaged. The LIDAR Lite guys informed me that the part will not perform at 3.3 volt as well as it does at 5.0 volts, so I will do another round of tests.
+
 == I2C ==
 
 LIDAR Lite is I2C or PWM.  While the SF02 can spit readings directly to your serial terminal application, the LIDAR-Lite MUST talk through an external microcontroller.   Fair enough, most folks are going to hook this up to an arduinl, etc. anyway.  But its slower getting started. 
