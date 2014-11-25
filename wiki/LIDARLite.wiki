@@ -323,10 +323,12 @@ I slowly learned that the The prop as a 3.3volt I2C master should work with any 
 
 In this case the prop Quickstart is is runnong of the PC USB 5.0 volts, which actualy measures at 4.3 volts. So :
 
-|| I2C HI = || 0.7 * 4.3 = ||  ||
-|| I2C low = ||0.3 * 4.3 = ||  ||
+|| I2C HI = || 0.7 * 4.3 = || 3.01 volts ||
+|| I2C low = ||0.3 * 4.3 = || 1.29 volts ||
 
+So the prop should be able to deliver a signal to which the LIDAR lite can respond. 
 
+NOTE:  the 4.3 volt signal may still be weak for optimum performance from the LIDAR Lite,further experiments may be needed.
 
 
 = Details =
