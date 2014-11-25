@@ -4,7 +4,9 @@
 
 LIDAR-Lite was introduced as a kickstarter. This was claimed to be the same performance as the $350 SF02 laser range finder.  Naturally, I was curious, and backed the project.  We can never have too many great sensors. 
 
-However, I am sceptical.  There's no way.  If this does work I will be very pleased.  But the only was to test is side by side.  So here goes.
+However, I am sceptical.  There's no way.  How can an $80 device, with physically smaller optics, and a less powerful laser, perform 50% better (50% further range) that the $350 SF02 previously tested?  Could the characteristics of the 905 nm laser in the LIDAR Lite account for the performance improvements over the SF02 850nm laser?
+
+If this does work I will be very pleased.  But the only way to know is to put both through there paces, side by side.  So here goes.
 
 = LIDAR Lite I2C =
 
