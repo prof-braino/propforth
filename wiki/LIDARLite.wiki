@@ -1,5 +1,7 @@
 #summary LIDAR-Lite laser range finder
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 LIDAR-Lite was introduced as a kickstarter. This was claimed to be the same performance as the $350 SF02 laser range finder.  Naturally, I was curious, and backed the project.  We can never have too many great sensors. 
