@@ -330,6 +330,8 @@ So the prop should be able to deliver a signal to which the LIDAR lite can respo
 
 NOTE:  the 4.3 volt signal may still be weak for optimum performance from the LIDAR Lite,further experiments may be needed.
 
+Today its snowing, I can't take my rig out to do proper testing.
+
 
 = Details =
 
