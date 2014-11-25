@@ -1,5 +1,7 @@
 #summary One-sentence summary of this page.
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 We still need SPIN to load the PropFORTH 5.5 kernel.  My last windows box died, so I can no longer use PropTool. PropellerIDE can load SPIN from Linux.
