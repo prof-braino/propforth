@@ -1,5 +1,7 @@
 #summary Load programs to the prop from a chromebook
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Lots of school kids are getting chromebooks through the schools.
