@@ -1,5 +1,7 @@
 #summary I2C implementation in PropFORTH.
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 I2C is a communication bus.  I2C uses two wires (TxD, RxD) for communication between the microcontroller and the device.  Actually there are four wires, two for communication, and two more, one for power (3.3volts for the prop) and ground. 
