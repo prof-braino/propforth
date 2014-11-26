@@ -1,9 +1,11 @@
 #summary L3G42000 MEMS gyro driver I2C
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
-Add your content here.
-
+Gyro in GY-80
 
 = code =
 
