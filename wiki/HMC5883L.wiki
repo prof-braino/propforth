@@ -1,5 +1,7 @@
 #summary HMC5883L Compass driver I2C.
 
+<wiki:toc max_depth="9" />
+
 = Introduction =
 
 Add your content here.
