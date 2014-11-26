@@ -1,9 +1,13 @@
 #summary ADXL345 driver I2C.
 
+<wiki:toc max_depth="9" />
+
+
 = Introduction =
 
 ADXL345 is an [I2C] bus device.
 
+Accelerometer in GY-80 IMU
 
 = Highlights From the Data Sheet = 
 
