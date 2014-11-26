@@ -5,7 +5,7 @@
 
 = Introduction =
 
-Gyro in GY-80
+3 axis Gyro in GY-80
 
 = code =
 
