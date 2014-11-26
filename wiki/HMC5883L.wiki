@@ -4,8 +4,7 @@
 
 = Introduction =
 
-Add your content here.
-
+HMC5883L is 3 axis magentometer in GY-80
 
 = code =
 
