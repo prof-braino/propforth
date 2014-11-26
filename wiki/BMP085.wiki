@@ -1,5 +1,7 @@
 #summary BMP085 temperature and pressure sensor, used as altimeter I2C
 
+<wiki:toc max_depth="9" />
+
 = BMP085 =
 
 The BMP085 barometic pressure sensor
