@@ -1,0 +1,17 @@
+#summary L293 H-bridge.
+
+= Introduction =
+
+An H bridge is allows a small logic level signal to control DC of greater voltage and current. 
+
+Using L293 with the prop, we can use the prop 3.3 volts at a few milliamps to control power to a DC motor.  The L293 four half H-bridge can control two DC motors, and both are reversible.
+
+= Quick Demo =
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
