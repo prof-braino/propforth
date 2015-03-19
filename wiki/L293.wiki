@@ -13,6 +13,18 @@ Using L293 with the prop, we can use the prop 3.3 volts at a few milliamps to co
  * Breadboard
  * assorted jumper wires
 
+
+= Quick Demo =
+
+The Quickstart Touch Demo http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo20120611-1540.txt is a handy place to start.
+
+When the resistive touch pads on pins 0-7 are touched, the LEDS on pins 16-21 are lighted.  The output pins are set high to light the LEDs.  These can also be used to control the L293 inputs.
+
+ * Load propforth 5.5 to the Quickstart per the instruction in the archive.
+ * Load the Quickstart touch demo to the prop following the instructions in the demo.
+ * Verify the LEDs light when the touch pads are touched.
+
+
 = Circuit =
 
  * Insert the L293 pins into the bread board.
@@ -26,19 +38,7 @@ Using L293 with the prop, we can use the prop 3.3 volts at a few milliamps to co
  * Connect L293 A3 to Prop pin 22
  * Connect L293 A4 to Prop pin 23
 
-= Quick Demo =
-
-The Quickstart Touch Demo http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo20120611-1540.txt is a handy place to start.
-
-When the resistive touch pads on pins 0-7 are touched, the LEDS on pins 16-21 are lighted.  The output pins are set high to light the LEDs.  These can also be used to control the L293 inputs.
-
-Load propforth 5.5 to the Quickstart per the instruction in the archive.
-
-Load the Quickstart touch demo to the prop following the instructions in the demo.
-
-Verify the LEDs light when the touch pads are touched.
-
-= Circuit =
+= Result =
 
 = Details =
 
