@@ -44,17 +44,17 @@ When connected to a USB power source, the quickstart will boot up.  Propforth wi
 
 The Quickstartouchdemo should be running, and the quickstart blue LEDs should light when the cooresponding resistive touch pad button is pressed. 
 
-When 16 or 17 is touched, motor A should turn clockwise for 16, and counter clockwise for 17.  Or vice versa depending on how the motor is swapped.
+When pad 0 or 1 is touched (LED 16 or 17 lights up), motor A should turn clockwise for 16, and counter clockwise for 17.  Or vice versa depending on how the motor is swapped.
 
-When 22 or 23 is touched, motor B should turn clockwise for 16, and counter clockwise for 17.  Or vice versa depending on how the motor is swapped.
+When pad 6 or 7 is touched (LED 22 or 23 lights up), motor B should turn clockwise for 22, and counter clockwise for 23.  Or vice versa depending on how the motor is swapped.
 
 When no LEDs are lit, the motor turn freely.
 
-NOTE on Emergency STOP:  The Quickstart touch demo tests the resistive touch pad and sets the LED output more than 60 times a second.  Even though the the motor control pins APEAR to be on at the same time,  they might not be.  The result is the Emergency Stop behavior might not noticable using the Quickstart touch demo.
+NOTE on Emergency STOP:  The Quickstart touch demo tests the resistive touch pad and sets the LED output more than 60 times a second.  Even though the the motor control pins APPEAR to be on at the same time,  they might not be.  The result is the Emergency Stop behavior might not noticable using the Quickstart touch demo.
 
 = Next Step =
 
-Once the test set up is demostrated to be completely working, we can procede with other experiments.
+Once the test set up is demonstrated to be completely working, we can procede with other experiments.
 
 == different power ==
 
