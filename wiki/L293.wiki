@@ -6,11 +6,49 @@ An H bridge is allows a small logic level signal to control DC of greater voltag
 
 Using L293 with the prop, we can use the prop 3.3 volts at a few milliamps to control power to a DC motor.  The L293 four half H-bridge can control two DC motors, and both are reversible.
 
+= Parts =
+
+Prop Quickstart
+L293
+
+Breadboard
+assorted jumper wires
+
+= Circuit -
+
+* Insert the L293 pins into the bread board.
+
+Connect quickstart Vss to L293 Ground.  Be sure to connect ALL the L293 to ground, there are several.
+
+Connect quickstart 3.3volts to VCC1 and Enable
+
+Connect quickstart Vin (5 volts) to VCC2
+
+Connect motor A to L293 1Y and L293 2Y
+
+Connect motor B to L293 3Y and L293 4Y
+
+Connect L293 A1 to Prop pin 16
+Connect L293 A2 to Prop pin 17
+Connect L293 A1 to Prop pin 16
+Connect L293 A1 to Prop pin 16
+
+
+
+
 = Quick Demo =
 
 The Quickstart Touch Demo http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo20120611-1540.txt is a handy place to start.
 
 When the resistive touch pads on pins 0-7 are touched, the LEDS on pins 16-21 are lighted.  The output pins are set high to light the LEDs.  These can also be used to control the L293 inputs.
+
+Load propforth 5.5 to the Quickstart per the instruction in the archive.
+
+Load the Quickstart touch demo to the prop following the instructions in the demo.
+
+Verify the LEDs light when the touch pads are touched.
+
+= Circuit =
 
 = Details =
 
