@@ -72,4 +72,4 @@ If you have questions or comments, I can be contacted as use id prof_braino on t
 
 http://forums.parallax.com/forum.php
 
-The Propforththread is at: http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for-download/
+The Propforth 5.5 conversation thread is at: http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for-download/
