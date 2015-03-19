@@ -8,6 +8,9 @@ Using L293 with the prop, we can use the prop 3.3 volts at a few milliamps to co
 
 = Quick Demo =
 
+The Quickstart Touch Demo http://code.google.com/p/propforth/downloads/detail?name=QuickstartTouchDemo20120611-1540.txt is a handy place to start.
+
+When the resistive touch pads on pins 0-7 are touched, the LEDS on pins 16-21 are lighted.  The output pins are set high to light the LEDs.  These can also be used to control the L293 inputs.
 
 = Details =
 
