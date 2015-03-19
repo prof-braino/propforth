@@ -16,7 +16,7 @@ assorted jumper wires
 
 = Circuit -
 
-* Insert the L293 pins into the bread board.
+ * Insert the L293 pins into the bread board.
 
 Connect quickstart Vss to L293 Ground.  Be sure to connect ALL the L293 to ground, there are several.
 
