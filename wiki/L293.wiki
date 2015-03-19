@@ -57,9 +57,27 @@ NOTE on Emergency STOP:  The Quickstart touch demo tests the resistive touch pad
 
 Once the test set up is demonstrated to be completely working, we can procede with other experiments.
 
-== different power ==
+== different power, connected to the PC ==
 
-Remove the jumper from prop Vin to Vcc2.  Replace this with a difference power source.  A 9 volt battery or a 12 volt battery pack (8 alcaline batteries of 1.5 volts each) will  work well.  Connect the battry + to Vcc2, and battery - to L293 ground. The motors will turn faster and with more torque using the higher volt packs.  The prop will continue to work from the 5 volt USB power, effectively controling the larger voltage circuit. 
+Remove the jumper from prop Vin to Vcc2.  Replace this with a difference power source.  A 9 volt battery or a 12 volt battery pack (8 alkaline batteries of 1.5 volts each) will  work well.  Connect the battry + to Vcc2, and battery - to L293 ground. The motors will turn faster and with more torque using the higher volt packs.  The prop will continue to work from the 5 volt USB power, effectively controling the larger voltage circuit. 
+
+== Stand alone with 9 volt Battery ==
+
+Connect a 9 volt battery + to the Prop Vin and to the L293 Vcc2, and battery - to the ground for both.  The 9 volt battery is suitable tfor the prop 4.5-9 volt Vin. The motor will turn much faster.   
+
+== Stand alone using a USB Power bank ==
+
+A USB power bank is the rechargable battery pack that can recharge a phone or other device with a USB power input connection.  These are still fairly rare at this writing but are becoming more commonplace.
+
+The Quickstart normally will not boot unless it is connected to a computer.  We need to add another jumper to allow the quickstart to use the USB power bank instead of a computerr. 
+
+Add one more jumper from Vss to /USB_PWR_EN (Prop Quickstart header connector position 30).  The rig may now run from the USB power bank.
+
+If the prop reboot when the motors start to turn, the cable may be too flimsy.  A short micro USB cable from Ebay had this problem. I replaced the short cheap cable I got from Ebay with a much fatter cable.  The rig now works well.
+
+== Stand alone with 12 volt battery pack ==
+
+Ensure that 12 Volts is NOT connected to Vin.  12 volts excedes the quick start input.  The quickstart must be run with a separate 4.5 - 9 volt power source, either battery or USB.  Just make sure all the grounds are connected. 
 
 == Different software ==
 
