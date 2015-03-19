@@ -22,17 +22,10 @@ assorted jumper wires
  * Connect quickstart Vin (5 volts) to VCC2
  * Connect motor A to L293 1Y and L293 2Y
  * Connect motor B to L293 3Y and L293 4Y
-
-Connect L293 A1 to Prop pin 16
-
-Connect L293 A2 to Prop pin 17
-
-Connect L293 A3 to Prop pin 22
-
-Connect L293 A4 to Prop pin 23
-
-
-
+ * Connect L293 A1 to Prop pin 16
+ * Connect L293 A2 to Prop pin 17
+ * Connect L293 A3 to Prop pin 22
+ * Connect L293 A4 to Prop pin 23
 
 = Quick Demo =
 
