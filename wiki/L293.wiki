@@ -8,11 +8,10 @@ Using L293 with the prop, we can use the prop 3.3 volts at a few milliamps to co
 
 = Parts =
 
-Prop Quickstart
-L293
-
-Breadboard
-assorted jumper wires
+ * Prop Quickstart
+ * L293
+ * Breadboard
+ * assorted jumper wires
 
 = Circuit =
 
