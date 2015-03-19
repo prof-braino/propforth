@@ -27,8 +27,8 @@ When the resistive touch pads on pins 0-7 are touched, the LEDS on pins 16-21 ar
 
 = Circuit =
 
- * Insert the L293 pins into the bread board.
- * Connect quickstart Vss to L293 Ground.  Be sure to connect ALL the L293 to ground, there are several.
+ * Insert the L293 pins into the bread board. Be sure to straddle the center gap, so each pin has it own conductor row.
+ * Connect quickstart Vss to L293 Ground.  Be sure to connect ALL the L293 to ground, there are several. Legs 4 and 5 must be connected to each other, and also connected to 12 and 13. I used three jumper to connect these together, and a fourth jumper to connect these to the prop Vss.
  * Connect quickstart 3.3volts to VCC1 and Enable
  * Connect quickstart Vin (5 volts) to VCC2
  * Connect motor A to L293 1Y and L293 2Y
