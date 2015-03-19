@@ -40,9 +40,36 @@ When the resistive touch pads on pins 0-7 are touched, the LEDS on pins 16-21 ar
 
 = Result =
 
-= Details =
+When connected to a USB power source, the quickstart will boot up.  Propforth will be loaded from EEPROM into memory.  The Quickstarttouchdemo should have automatically saved itself in the EEPROM boot image, and should immediately run at boot.  
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The Quickstartouchdemo should be running, and the quickstart blue LEDs should light when the cooresponding resistive touch pad button is pressed. 
+
+When 16 or 17 is touched, motor A should turn clockwise for 16, and counter clockwise for 17.  Or vice versa depending on how the motor is swapped.
+
+When 22 or 23 is touched, motor B should turn clockwise for 16, and counter clockwise for 17.  Or vice versa depending on how the motor is swapped.
+
+When no LEDs are lit, the motor turn freely.
+
+NOTE on Emergency STOP:  The Quickstart touch demo tests the resistive touch pad and sets the LED output more than 60 times a second.  Even though the the motor control pins APEAR to be on at the same time,  they might not be.  The result is the Emergency Stop behavior might not noticable using the Quickstart touch demo.
+
+= Next Step =
+
+Once the test set up is demostrated to be completely working, we can procede with other experiments.
+
+== different power ==
+
+Remove the jumper from prop Vin to Vcc2.  Replace this with a difference power source.  A 9 volt battery or a 12 volt battery pack (8 alcaline batteries of 1.5 volts each) will  work well.  Connect the battry + to Vcc2, and battery - to L293 ground. The motors will turn faster and with more torque using the higher volt packs.  The prop will continue to work from the 5 volt USB power, effectively controling the larger voltage circuit. 
+
+== Different software ==
+
+Now we can write new software for the prop to to control DC motors for an arbitrary appplication. Using just two I/O pins per DC motor, we can control the direction of rotation by setting one pin high and the other low. 
+
+Both pin low allow the moter to turn freely (coast) and both pins high cause the motor to emergency stop (from the L293 datasheet).  
+
+= end =
+
+If you have questions or comments, I can be contacted as use id prof_braino on the Parallax Forums.
+
+http://forums.parallax.com/forum.php
+
+The Propforththread is at: http://forums.parallax.com/showthread.php/146693-Propforth-v5.5-is-available-for-download/
