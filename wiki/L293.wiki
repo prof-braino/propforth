@@ -53,7 +53,7 @@ When no LEDs are lit, the motor turn freely.
 
 NOTE on Emergency STOP:  The Quickstart touch demo tests the resistive touch pad and sets the LED output more than 60 times a second.  Even though the the motor control pins APPEAR to be on at the same time,  they might not be.  The result is the Emergency Stop behavior might not noticable using the Quickstart touch demo.
 
-= Next Step =
+= Next Steps =
 
 Once the test set up is demonstrated to be completely working, we can procede with other experiments.
 
