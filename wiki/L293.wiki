@@ -1,4 +1,5 @@
 #summary L293 H-bridge.
+#labels L293,H-Bridge
 
 = Introduction =
 
