@@ -87,7 +87,7 @@ Both pin low allow the moter to turn freely (coast) and both pins high cause the
 
 = end =
 
-If you have questions or comments, I can be contacted as use id prof_braino on the Parallax Forums.
+If you have questions or comments, I can be contacted as user id prof_braino on the Parallax Forums.
 
 http://forums.parallax.com/forum.php
 
