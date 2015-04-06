@@ -2,11 +2,13 @@
 
 = Introduction =
 
-Add your content here.
+Adding this wiki page so I don't have to download the file every time.
 
+Here is all the code and can be pasted into the propforth command line for version 5.5
 
 {{{
 \ 20120611 Braino
+\ Caskaz's propforth version of the Quickstart Touch Demo
 
 \  REMEMBER to ADD 100K ohm resistor across 33-38 as pull up for "No prop found" issue
 \ http://forums.parallax.com/showthread.php?137928-PropGCC-SimpleIDE&p=1094355&viewfull=1#post1094355
