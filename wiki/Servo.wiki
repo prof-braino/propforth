@@ -10,16 +10,14 @@ UPDATES 2015-04-18 for propforth 5.5
 This page is a supplement to to the main PROPFORTH.HTM reference document.  Propforth.htm is included in the propforth download. When extracted,  the path to PROPFORTH.htm is 
 
 
-* linux - /home/$USER/PropFORTH/V5.5/doc
-
-* Winodws(old) ..\My Documents\!xx\mygo\V5.x\doc\!PropForth.htm
+ * linux - /home/$USER/PropFORTH/V5.5/doc
+ * Winodws(old) ..\My Documents\!xx\mygo\V5.x\doc\!PropForth.htm
 
 This page is a supplement to to the comments in servo.f 
 servo.f is included in the proforth download. When extracted,  the path to servo.f is 
 
-* linux - /home/$USER/PropFORTH/V5.5/CurrentRelease/Extensions
-
-* winodws (old) - ..\My Documents\!xx\mygo\V5.x\kernels\!BootKernel\!BootOptimizeKernel\!BootOptimizeDevKernel\servo.f
+ * linux - /home/$USER/PropFORTH/V5.5/CurrentRelease/Extensions
+ * winodws (old) - ..\My Documents\!xx\mygo\V5.x\kernels\!BootKernel\!BootOptimizeKernel\!BootOptimizeDevKernel\servo.f
 
 Note: sections specific to PWM and servo may be added to the main propforth reference. This page is working towards a draft for these updates. Thanks Vic for running through this.
 
