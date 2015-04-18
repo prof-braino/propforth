@@ -5,9 +5,14 @@
 
 = Servo =
 
+UPDATES 2015-04-18 for propforth 5.5
+
 This page is a supplement to to the main PROPFORTH.HTM reference document.  Propforth.htm is included in the propforth download. When extracted,  the path to PROPFORTH.htm is 
 
-..\My Documents\!xx\mygo\V5.x\doc\!PropForth.htm
+
+linux - /home/$USER/PropFORTH/V5.5/doc
+
+Winodws ..\My Documents\!xx\mygo\V5.x\doc\!PropForth.htm
 
 This page is a supplement to to the comments in servo.f 
 servo.f is included in the proforth download. When extracted,  the path to servo.f is 
