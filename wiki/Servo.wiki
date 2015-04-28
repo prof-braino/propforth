@@ -29,18 +29,18 @@ Hobby Servo is controlled by sending it a pulse every 20 milliseconds. The width
 
 == Not always the MAX ==
 
-Most cheaper servos do not move the full 180 degrees.  Some expensive servos move greater than 180.
+Most cheaper servos (like the ones I buy in bulk for experiments) do not move the full 180 degrees.  Some expensive servos move greater than 180 (or so I've heard).
 
 A given servo may or may not have a full 180 degrees ( +90 and - 90) of valid motion. Some may have more than 180 degrees of motion, but usually its less. Some may oney go 170 degrees, othersmay only go 135 degrees.  
 
-If a servo is commanded to the maximum or minimum position, it may or may not bet able to go all the the way, depending on the quality of the servo. 
+If a servo is commanded to the maximum or minimum position, it may or may not be able to go all the the way, depending on the quality of the servo. 
 
  * Digital servos compensate, and usually go to some valid position. 
- * Analog servos can try to go beyond the range they are capable. If an analog servo starts to chatter, it may have reaached the end of its range. Commanding it further (which is why its chattering) may force it to stall or go through the stops. 
+ * Analog servos can try to go beyond the range they are capable. If an analog servo starts to chatter, it may have reached the end of its range. Commanding it further (which is why its chattering) may force it to stall or go through the stops. 
 
 Requesting the a servo to move beyond its physical limit can cause the servo to "chatter"; it hits the end stop but continues to try to move farther. We had a case where a cheap servo was used, and it broke through the end stops.  So we went conservative, and change the DEFAULT code to stop short of the usual limit.
 
-By DEFAULT propforth sets the the Absolute allowable limits are 0.75 to 2.25   (1.5 is alway middle). The limits are adjustable in code.  It is suggested that users get familiar with the code and controlling the servo before changing the defaults.  Then, it is suggested to find out the max for your specific servos, and set those as the limits in software.
+By DEFAULT propforth sets the the Absolute allowable limits are 0.75 to 2.25 (pulse width in ms), rather than 0.50 and 2.50 ms (1.5 is alway middle). The limits are adjustable in code.  It is suggested that users get familiar with the code and controlling the servo before changing the defaults.  Then, it is suggested to find out the max for your specific servos, and set those as the limits in software.
 
 == One I/O pin per servo ==
 
