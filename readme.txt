@@ -1,5 +1,8 @@
 README
 
+Regarding "EXPORT TO GITHUB 2015-04-29": 
+The propforth releases on google code we packaged as a single zip file download. The files were not posted separately in the "source" tab.  The propforth kernel is more like a single executable, and less like a library of standalone functions.  However, github does not appear to allow upload of a zipfile archive.  I tried to upload the individual kernels (devkernel.spin, EEpromKernel.spin, and SDkernel.spn) but lost the grouping for the associated files.  If you want to see the source, refer to the original PropForth-V5.5-20130317.zip on google code.
+
 
 All the source code for this project is in the downloads section of this site
 
